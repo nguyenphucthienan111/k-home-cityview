@@ -43,7 +43,7 @@ export default function Header({ currentHash }: HeaderProps) {
           {/* Logo with KOG SVG */}
           <a href="#home" className="flex items-center gap-2 group hover:opacity-80 transition-opacity">
             <img 
-              src="/assets/KOG_Web_RGB_01.svg" 
+              src="/KOG_Web_RGB_01.svg" 
               alt="K-Home CityView Logo" 
               className="h-8 w-auto"
             />
