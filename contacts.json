@@ -1,0 +1,62 @@
+[
+  {
+    "id": "c-1784538568716",
+    "name": "Nguyen Phuc Thien An",
+    "email": "annptse171081@fpt.edu.vn",
+    "phone": "0706676010",
+    "projectSlug": "k-home-grand-urban",
+    "projectName": "K-Home Grand Urban",
+    "message": "123",
+    "status": "Chờ liên hệ",
+    "notes": "ok",
+    "createdAt": "2026-07-20T09:09:28.716Z"
+  },
+  {
+    "id": "c-1",
+    "name": "Nguyễn Văn Hải",
+    "email": "hainguyen@gmail.com",
+    "phone": "0912345678",
+    "projectSlug": "k-home-grand-urban",
+    "projectName": "K-Home Grand Urban",
+    "message": "Tôi muốn tìm hiểu căn hộ 2 phòng ngủ hướng Đông Nam, vui lòng gửi bảng báo giá và chính sách chiết khấu.",
+    "status": "Chờ liên hệ",
+    "notes": "Khách hàng có nhu cầu mua ở thực, tài chính sẵn 2 tỷ.",
+    "createdAt": "2026-07-19T09:05:59.596Z"
+  },
+  {
+    "id": "c-2",
+    "name": "Trần Thị Mai",
+    "email": "maitran@yahoo.com",
+    "phone": "0987654321",
+    "projectSlug": "k-home-resort-villas",
+    "projectName": "K-Home Resort Villas",
+    "message": "Cần tư vấn căn biệt thự song lập view trực diện biển. Có hỗ trợ vay ngân hàng không?",
+    "status": "Đang thương lượng",
+    "notes": "Đang chờ ngân hàng phê duyệt khoản vay 50%. Khách rất thiện chí.",
+    "createdAt": "2026-07-20T04:05:59.598Z"
+  },
+  {
+    "id": "c-3",
+    "name": "Phạm Minh Hoàng",
+    "email": "hoangpm@techcorp.vn",
+    "phone": "0905112233",
+    "projectSlug": "k-home-sky-garden",
+    "projectName": "K-Home Sky Garden",
+    "message": "Cần đặt lịch xem nhà mẫu Penthouse vào cuối tuần này.",
+    "status": "Đã liên hệ",
+    "notes": "Đã xếp lịch xem nhà mẫu vào 9h sáng thứ Bảy tuần này.",
+    "createdAt": "2026-07-20T09:05:59.598Z"
+  },
+  {
+    "id": "c-4",
+    "name": "Lê Hoàng Yến",
+    "email": "yenlh@gmail.com",
+    "phone": "0933445566",
+    "projectSlug": "k-home-riverside-mansion",
+    "projectName": "K-Home Riverside Mansion",
+    "message": "Muốn tham quan vị trí thực tế dự án Riverside Mansion.",
+    "status": "Đã chốt",
+    "notes": "Đã ký văn bản đặt cọc căn Villa sông số 05. Tiến hành thanh toán đợt 1 vào tuần sau.",
+    "createdAt": "2026-07-18T09:05:59.598Z"
+  }
+]

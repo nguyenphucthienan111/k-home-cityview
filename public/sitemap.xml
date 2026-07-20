@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Trang chủ -->
+  <url>
+    <loc>https://k-homecityview.vn/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://k-homecityview.vn/#home</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Danh sách dự án -->
+  <url>
+    <loc>https://k-homecityview.vn/#projects</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Dự án chi tiết (K-Home Grand Urban) -->
+  <url>
+    <loc>https://k-homecityview.vn/#projects/k-home-grand-urban</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dự án chi tiết (K-Home Resort Villas) -->
+  <url>
+    <loc>https://k-homecityview.vn/#projects/k-home-resort-villas</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dự án chi tiết (K-Home Sky Garden) -->
+  <url>
+    <loc>https://k-homecityview.vn/#projects/k-home-sky-garden</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dự án chi tiết (K-Home Riverside Mansion) -->
+  <url>
+    <loc>https://k-homecityview.vn/#projects/k-home-riverside-mansion</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tin tức -->
+  <url>
+    <loc>https://k-homecityview.vn/#news</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Tin tức chi tiết (Công bố Giai đoạn 2) -->
+  <url>
+    <loc>https://k-homecityview.vn/#news/chinh-thuc-cong-bo-k-home-grand-urban-giai-doan-2</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tin tức chi tiết (Xu hướng căn hộ xanh) -->
+  <url>
+    <loc>https://k-homecityview.vn/#news/xu-huong-lua-chon-can-ho-xanh-thong-minh</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tin tức chi tiết (Lãi suất vay mua nhà) -->
+  <url>
+    <loc>https://k-homecityview.vn/#news/lai-suat-mua-nha-giam-sau-co-hoi-vang</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Giới thiệu -->
+  <url>
+    <loc>https://k-homecityview.vn/#about</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Liên hệ -->
+  <url>
+    <loc>https://k-homecityview.vn/#contact</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

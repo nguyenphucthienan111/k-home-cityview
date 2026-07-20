@@ -1,0 +1,6 @@
+{
+  "name": "K-Home CityView",
+  "description": "K-Home CityView - Nơi kiến tạo giá trị sống thượng lưu. Trải nghiệm danh sách dự án bất động sản cao cấp, tin tức thị trường và quản lý liên hệ khách hàng thông minh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
