@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
 interface HeaderProps {
@@ -7,6 +7,18 @@ interface HeaderProps {
 
 export default function Header({ currentHash }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Theo dõi scroll để thay đổi backdrop blur
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Normalize hash for menu selection
   const activeTab = currentHash.split("/")[0] || "#home";
@@ -20,18 +32,21 @@ export default function Header({ currentHash }: HeaderProps) {
   ];
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all border-b border-gray-100">
+    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      scrolled 
+        ? 'bg-white/70 backdrop-blur-2xl shadow-lg border-gray-200/30 supports-[backdrop-filter]:bg-white/40' 
+        : 'bg-white/95 backdrop-blur-md shadow-sm border-gray-100'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo with high-end real estate typography */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <span className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center text-white font-tech font-bold text-xl shadow-md shadow-amber-600/20 group-hover:bg-amber-700 transition-colors">
-              K
-            </span>
-            <span className="font-display text-2xl font-bold tracking-tight text-slate-800">
-              K-Home <span className="text-amber-600 font-sans font-light">CityView</span>
-            </span>
+          {/* Logo with KOG SVG */}
+          <a href="#home" className="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+            <img 
+              src="/assets/KOG_Web_RGB_01.svg" 
+              alt="K-Home CityView Logo" 
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Desktop Menu */}
@@ -81,7 +96,11 @@ export default function Header({ currentHash }: HeaderProps) {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 py-4 px-4 shadow-lg space-y-3 transition-all">
+        <div className={`md:hidden border-t py-4 px-4 shadow-lg space-y-3 transition-all ${
+          scrolled
+            ? 'bg-white/80 backdrop-blur-2xl border-gray-200/30 supports-[backdrop-filter]:bg-white/50'
+            : 'bg-white/95 backdrop-blur-md border-gray-100'
+        }`}>
           {menuItems.map((item) => {
             const isActive = activeTab === item.href;
             return (

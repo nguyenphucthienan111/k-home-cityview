@@ -32,6 +32,39 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Hero Slideshow States
+  const [activeHeroSlide, setActiveHeroSlide] = useState<number>(0);
+
+  const heroProjects = [
+    {
+      name: "K-Home CityView Biên Hòa",
+      image: "/k-home-cityview-bg.jpg.webp",
+      location: "Đường Điều Xiển, P. Hố Nai, TP. Biên Hòa, Đồng Nai",
+      scale: "2,85 hecta",
+      product: "1.352 căn hộ NOXH và 30 căn shophouse",
+      developer: "Kim Oanh Land • K-Home Group",
+      partner: "Global Vireon Studio, Kiến Trúc Việt, CDC Jsc, K-City",
+    },
+    {
+      name: "K-Home Midtown Trảng Bom",
+      image: "/k-home-midtown-bg.jpg.webp",
+      location: "Giữa 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, P. Trảng Bom, Đồng Nai",
+      scale: "13,97 hecta",
+      product: "542 căn hộ NOXH và 20 căn shophouse",
+      developer: "Kim Oanh Land • K-Home Group",
+      partner: "Global Vireon Studio, Kiến Trúc Việt, NAGECCO, K-City",
+    },
+    {
+      name: "K-Home Avenue Nhơn Trạch",
+      image: "/k-home-avenue-bg.jpg.webp",
+      location: "Đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, tỉnh Đồng Nai",
+      scale: "5,3 hecta",
+      product: "1.022 căn hộ NOXH và 82 căn shophouse",
+      developer: "Kim Oanh Land • K-Home Group",
+      partner: "Surbana Jurong, Global Vireon Studio, Handong, Coninco, K-City",
+    },
+  ];
+
   // Quick Hero Filter states
   const [heroType, setHeroType] = useState<string>("all");
   const [heroPrice, setHeroPrice] = useState<string>("all");
@@ -59,6 +92,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     { id: "testimonials", label: "Chia sẻ cư dân" },
     { id: "consultation", label: "Đăng ký tư vấn VIP" }
   ];
+
+  // Auto-advance hero slideshow every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveHeroSlide((prev) => (prev + 1) % heroProjects.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, [heroProjects.length]);
 
   useEffect(() => {
     fetch("/api/projects")
@@ -297,17 +338,16 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           ========================================================= */}
       <section 
         id="hero" 
-        className="relative min-h-[720px] lg:min-h-[820px] w-full flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 pt-24 pb-16 lg:py-0"
+        className="relative min-h-[720px] lg:min-h-[820px] w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-16 lg:py-0"
       >
-        {/* Dynamic Glowing Accents on Orange Base */}
+        {/* Custom Background Image with Overlay */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=85"
+            src="/hero-background.jpg"
             alt="K-Home Premium Luxury Architecture"
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay scale-100 animate-[pulse_10s_infinite_alternate]"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_50%)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-orange-600/60 via-transparent to-amber-400/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
         </div>
 
         {/* Diagonal Wave Lines for Premium Texture */}
@@ -337,27 +377,27 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </h1>
               </div>
 
-              {/* Spec Sheet Table (Matching client's screen exact design) */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 space-y-4 shadow-xl">
-                <div className="grid grid-cols-3 py-1.5 border-b border-white/10 text-xs items-center">
-                  <span className="font-semibold text-amber-200 uppercase tracking-wide">Vị trí</span>
-                  <span className="col-span-2 text-white font-medium text-right sm:text-left">Đường Điều Xiển, phường Hố Nai, TP. Biên Hòa, Đồng Nai</span>
+              {/* Spec Sheet Table - Dynamic theo slide đang active */}
+              <div className="bg-white/20 backdrop-blur-md rounded-2xl p-5 border border-white/30 space-y-4 shadow-xl">
+                <div className="grid grid-cols-3 py-1.5 border-b border-white/20 text-xs items-center">
+                  <span className="font-semibold text-amber-100 uppercase tracking-wide">Vị trí</span>
+                  <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].location}</span>
                 </div>
-                <div className="grid grid-cols-3 py-1.5 border-b border-white/10 text-xs items-center">
-                  <span className="font-semibold text-amber-200 uppercase tracking-wide">Quy mô</span>
-                  <span className="col-span-2 text-white font-medium text-right sm:text-left">2,85 hecta</span>
+                <div className="grid grid-cols-3 py-1.5 border-b border-white/20 text-xs items-center">
+                  <span className="font-semibold text-amber-100 uppercase tracking-wide">Quy mô</span>
+                  <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].scale}</span>
                 </div>
-                <div className="grid grid-cols-3 py-1.5 border-b border-white/10 text-xs items-center">
-                  <span className="font-semibold text-amber-200 uppercase tracking-wide">Sản phẩm</span>
-                  <span className="col-span-2 text-white font-medium text-right sm:text-left">1.352 căn hộ NOXH và 30 căn shophouse</span>
+                <div className="grid grid-cols-3 py-1.5 border-b border-white/20 text-xs items-center">
+                  <span className="font-semibold text-amber-100 uppercase tracking-wide">Sản phẩm</span>
+                  <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].product}</span>
                 </div>
-                <div className="grid grid-cols-3 py-1.5 border-b border-white/10 text-xs items-center">
-                  <span className="font-semibold text-amber-200 uppercase tracking-wide">Phát triển</span>
-                  <span className="col-span-2 text-white font-medium text-right sm:text-left">Kim Oanh Land • K-Home Group</span>
+                <div className="grid grid-cols-3 py-1.5 border-b border-white/20 text-xs items-center">
+                  <span className="font-semibold text-amber-100 uppercase tracking-wide">Phát triển</span>
+                  <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].developer}</span>
                 </div>
                 <div className="grid grid-cols-3 py-1.5 text-xs items-center">
-                  <span className="font-semibold text-amber-200 uppercase tracking-wide">Đối tác</span>
-                  <span className="col-span-2 text-white font-medium text-right sm:text-left line-clamp-1 hover:line-clamp-none transition-all">Global Vireon Studio, Kiến Trúc Việt, CDC Jsc, K-City</span>
+                  <span className="font-semibold text-amber-100 uppercase tracking-wide">Đối tác</span>
+                  <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].partner}</span>
                 </div>
               </div>
 
@@ -376,34 +416,68 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </button>
                 <button
                   onClick={() => onNavigate("#contact")}
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white px-7 py-3.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5"
+                  className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
                 >
                   Nhận Báo Giá Đợt 1
                 </button>
               </div>
             </div>
 
-            {/* Right Side: Magnificent Architectural Rendering */}
-            <div className="lg:col-span-7 relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-white/10 rounded-3xl filter blur-xl opacity-30" />
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/25 h-[340px] sm:h-[450px]">
-                <img
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
-                  alt="K-Home CityView Architecture Sunset"
-                  className="w-full h-full object-cover transform hover:scale-105 duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-600/40 via-transparent to-transparent" />
+            {/* Right Side: Project Slideshow Carousel */}
+            <div className="lg:col-span-7 hidden lg:flex flex-col gap-3">
+              
+              {/* Carousel Container */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/25 h-[340px] sm:h-[450px] w-full">
+                {/* Blur Glow Background */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-white/5 rounded-3xl filter blur-xl opacity-30 pointer-events-none" />
                 
-                {/* Floating Specs */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 text-slate-800 shadow-xl border border-white flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] text-amber-600 font-extrabold uppercase tracking-widest block">Dự án bàn giao chuẩn</span>
-                    <span className="text-base font-extrabold text-slate-900 block mt-0.5">K-Home CityView Biên Hòa</span>
+                {/* Slides */}
+                {heroProjects.map((project, idx) => (
+                  <div
+                    key={idx}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
+                      idx === activeHeroSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    
+                    {/* Floating Info Card - Bottom Left */}
+                    <div className="absolute bottom-0 left-0 w-max">
+                      <div className="bg-white/20 backdrop-blur-lg rounded-tr-2xl px-4 py-3 shadow-xl border border-white/30 flex flex-col gap-2 text-center">
+                        <div>
+                          <span className="text-[8px] text-amber-300 font-extrabold uppercase tracking-widest block drop-shadow-lg">Dự án bàn giao chuẩn</span>
+                          <span className="text-base font-extrabold text-white block mt-0.5 drop-shadow-lg">{project.name}</span>
+                        </div>
+                        <div className="bg-white/20 backdrop-blur-md text-amber-100 py-1 px-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 border border-white/30 drop-shadow-lg mx-auto">
+                          <Activity className="w-3 h-3 text-amber-300 animate-pulse" /> Đang thi công
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="bg-amber-500/10 text-amber-700 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center gap-1.5">
-                    <Activity className="w-3.5 h-3.5 text-amber-600 animate-pulse" /> Đang thi công
-                  </div>
-                </div>
+                ))}
+              </div>
+
+              {/* Dots Navigation - outside carousel, full clickable */}
+              <div className="flex items-center justify-center gap-3 py-1 z-10">
+                {heroProjects.map((project, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveHeroSlide(idx)}
+                    style={{ cursor: "pointer" }}
+                    className={`transition-all duration-300 rounded-full border-0 outline-none focus:outline-none ${
+                      idx === activeHeroSlide
+                        ? "w-6 h-2.5 bg-amber-400 shadow-lg shadow-amber-400/50"
+                        : "w-2.5 h-2.5 bg-white/50 hover:bg-white/80"
+                    }`}
+                    aria-label={`Chuyển sang ${project.name}`}
+                  />
+                ))}
               </div>
             </div>
 
