@@ -72,6 +72,45 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Interactive Showroom Active Tab
   const [activeShowroomTab, setActiveShowroomTab] = useState<number>(0);
 
+  // Project Carousel (right panel of amenities section)
+  const [activeProjectTab, setActiveProjectTab] = useState<number>(0);
+
+  const projectCarousel = [
+    {
+      slug: "k-home-cityview-ho-nai",
+      name: "K-Home CityView Hố Nai",
+      tag: "Nhà ở xã hội · Biên Hòa",
+      location: "Đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, Đồng Nai",
+      price: "Từ 950 triệu",
+      scale: "2,85 ha · 4 Block · 1.816 căn",
+      badge: "Đang mở bán",
+      badgeColor: "bg-amber-500",
+      image: "/cityview.jpg"
+    },
+    {
+      slug: "k-home-avenue-nhon-trach",
+      name: "K-Home Avenue Nhơn Trạch",
+      tag: "Nhà ở xã hội · Nhơn Trạch",
+      location: "Đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, tỉnh Đồng Nai",
+      price: "Từ 750 triệu",
+      scale: "84 ha · 4 Block 12 tầng · 1.104 căn",
+      badge: "Sắp mở bán",
+      badgeColor: "bg-blue-500",
+      image: "/avenue.jpg"
+    },
+    {
+      slug: "k-home-midtown-trang-bom",
+      name: "K-Home Midtown Trảng Bom",
+      tag: "Nhà ở xã hội · Trảng Bom",
+      location: "KDC Bàu Xéo, huyện Trảng Bom, tỉnh Đồng Nai",
+      price: "Trả góp 3,5 – 4,5tr/tháng",
+      scale: "13,97 ha · 15 tầng · 562 căn",
+      badge: "Đang thi công",
+      badgeColor: "bg-green-600",
+      image: "/midtown.jpg"
+    }
+  ];
+
   // Investment Calculator States
   const [investmentValue, setInvestmentValue] = useState<number>(10); // Billions VNĐ
   const [paymentOption, setPaymentOption] = useState<string>("fast"); // fast (12%), standard (3%), support (0%)
@@ -81,12 +120,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const projectsSectionRef = useRef<HTMLDivElement>(null);
 
+  // Auto-rotate project carousel every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveProjectTab((prev) => (prev + 1) % 3);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   // Definition of Sections for Floating Sidebar Dot Navigation
   const homeSections = [
     { id: "hero", label: "Tổng quan dự án" },
     { id: "stats", label: "Chữ tín thương hiệu" },
     { id: "philosophy", label: "Mã gen K-Home" },
-    { id: "amenities", label: "Đặc quyền cư dân" },
+    { id: "amenities", label: "Tiện ích nội khu" },
     { id: "calculator", label: "Phân tích đầu tư" },
     { id: "featured-projects", label: "Danh mục kiệt tác" },
     { id: "testimonials", label: "Chia sẻ cư dân" },
@@ -237,32 +284,32 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const showroomGallery = [
     {
-      title: "Hồ Bơi Vô Cực Trên Cao",
-      tag: "Đặc quyền nghỉ dưỡng",
-      desc: "Trải nghiệm tầm nhìn bao trọn chân mây tại hồ bơi tràn rộng hơn 1.000m² với công nghệ lọc nước muối sinh học tiên tiến.",
-      image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80",
-      stats: "Diện tích: 1,200m² | Độ cao: Tầng 35"
+      title: "Hồ Bơi Người Lớn & Trẻ Em",
+      tag: "Tiện ích nội khu",
+      desc: "Hệ thống hồ bơi tiêu chuẩn dành cho cả người lớn và trẻ em, được trang bị tại cả 3 dự án K-Home — mang đến không gian thư giãn và vui chơi ngay trong khuôn viên chỉ dành cho cư dân.",
+      images: ["/cityview.jpg", "/avenue.jpg", "/midtown.jpg"],
+      stats: "Có tại: Hố Nai · Nhơn Trạch · Trảng Bom"
     },
     {
-      title: "Bến Du Thuyền Thượng Lưu",
-      tag: "Trải nghiệm đẳng cấp",
-      desc: "Nơi kết nối đam mê và những hành trình khơi xa của giới tinh anh, cung cấp dịch vụ đậu tàu tiêu chuẩn quốc tế và quản lý chuyên nghiệp.",
-      image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80",
-      stats: "Chiều dài: 450m | 40 Chỗ neo đậu"
+      title: "Sân Chơi Trẻ Em",
+      tag: "Giáo dục & Gia đình",
+      desc: "Trường học và sân chơi trẻ em được quy hoạch ngay trong khu dân cư, giúp các gia đình an tâm về môi trường học tập và vui chơi an toàn cho con em ngay tại nơi ở.",
+      images: ["/cityview1.jpg", "/avenue1.jpg", "/midtown1.webp"],
+      stats: "Có tại: Hố Nai · Nhơn Trạch · Trảng Bom"
     },
     {
-      title: "Căn Hộ Thông Minh AI",
-      tag: "Công nghệ tương lai",
-      desc: "Giải pháp điều khiển nhà thông minh hoàn toàn bằng giọng nói và trí tuệ nhân tạo, tối ưu hóa mức năng lượng tiêu thụ thông minh.",
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
-      stats: "Bản quyền K-Home Smart | Tích hợp AI"
+      title: "Khu Thể Dục Ngoài Trời",
+      tag: "Sức khỏe cư dân",
+      desc: "Phòng tập gym và khu thể dục ngoài trời được bố trí trong khuôn viên dự án, đáp ứng nhu cầu rèn luyện thể chất hàng ngày của cư dân mà không cần ra ngoài khu.",
+      images: ["/cityview2.jpg", "/avenue2.png", "/midtown2.webp"],
+      stats: "Có tại: Hố Nai · Nhơn Trạch · Trảng Bom"
     },
     {
-      title: "Hệ Thống An Ninh 3 Lớp",
-      tag: "An tâm tuyệt đối",
-      desc: "Kiểm soát ra vào thông minh bằng công nghệ nhận diện khuôn mặt FaceID 3D kết hợp camera nhiệt hồng ngoại bảo vệ gia chủ 24/7.",
-      image: "https://images.unsplash.com/photo-1557597774-9d2739f05a86?auto=format&fit=crop&w=1200&q=80",
-      stats: "Phản ứng nhanh dưới 60s | Bảo mật AI"
+      title: "Sky Garden & Vườn Cảnh Quan",
+      tag: "Không gian xanh",
+      desc: "Vườn cảnh quan, Sky Garden và nhà sinh hoạt cộng đồng tạo nên không gian gắn kết hàng xóm, nghỉ ngơi cuối tuần và thư giãn giữa thiên nhiên ngay trong lòng khu đô thị.",
+      images: ["/cityview3.jpg", "/avenue3.jpg", "/midtown3.webp"],
+      stats: "Có tại: Hố Nai · Nhơn Trạch · Trảng Bom"
     }
   ];
 
@@ -677,16 +724,16 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             {/* Left Column: Interactive Tab Buttons */}
             <div className="lg:col-span-5 space-y-6">
               <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/60 border border-amber-200/50 px-3.5 py-1.5 rounded-full inline-block">
-                Không gian sống thượng đỉnh
+                Tiện ích nội khu 3 dự án
               </span>
               <h2 className="text-3xl md:text-5xl font-display font-extrabold leading-tight text-slate-900">
                 Hành Trình <br />Trải Nghiệm <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-500">
-                  Đặc Quyền Cư Dân
+                  Sống Tiện Nghi
                 </span>
               </h2>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Khám phá hệ sinh thái tiện ích nội khu được chế tác cầu kỳ, mang lại những khoảnh khắc nghỉ dưỡng riêng tư tuyệt đối chỉ dành riêng cho cư dân K-Home.
+                Cả 3 dự án K-Home tại Đồng Nai đều được quy hoạch đầy đủ tiện ích nội khu thiết yếu — từ hồ bơi, trường học đến vườn cảnh quan và trạm sạc xe điện, đáp ứng trọn vẹn nhu cầu sống của gia đình.
               </p>
 
               {/* Indicator Controls */}
@@ -694,7 +741,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 {showroomGallery.map((item, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveShowroomTab(idx)}
+                    onClick={() => { setActiveShowroomTab(idx); setActiveProjectTab(0); }}
                     className={`w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between cursor-pointer group ${
                       activeShowroomTab === idx
                         ? "bg-amber-500/10 border-amber-400 text-slate-900 shadow-sm font-semibold"
@@ -717,36 +764,96 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
-            {/* Right Column: Display Board with Luxury Overlays */}
-            <div className="lg:col-span-7">
-              <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[360px] sm:h-[450px] group bg-slate-100">
-                <img
-                  src={showroomGallery[activeShowroomTab].image}
-                  alt={showroomGallery[activeShowroomTab].title}
-                  className="w-full h-full object-cover transform duration-1000 scale-102 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                
-                {/* Visual Gradient Dark Overlay (strictly kept inside the image card for reading specifications) */}
+            {/* Right Column: Project Carousel */}
+            <div className="lg:col-span-7 space-y-4">
+              {/* Main carousel image — clickable → navigate to project */}
+              <div
+                onClick={() => onNavigate(`#projects/${projectCarousel[activeProjectTab].slug}`)}
+                className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[360px] sm:h-[430px] group bg-slate-100 cursor-pointer"
+              >
+                {/* Images – stacked, fade transition via opacity — source from active amenity tab */}
+                {projectCarousel.map((project, idx) => (
+                  <img
+                    key={project.slug}
+                    src={showroomGallery[activeShowroomTab].images[idx]}
+                    alt={project.name}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 scale-[1.02] group-hover:scale-105 transform ${
+                      activeProjectTab === idx ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                
-                {/* Floating Specs Tag */}
-                <div className="absolute top-6 left-6 bg-amber-500 text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md">
-                  {showroomGallery[activeShowroomTab].tag}
+
+                {/* Badge */}
+                <div className={`absolute top-5 left-5 ${projectCarousel[activeProjectTab].badgeColor} text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md transition-all duration-300`}>
+                  {projectCarousel[activeProjectTab].badge}
                 </div>
 
-                <div className="absolute bottom-8 left-8 right-8 space-y-2 text-white">
-                  <h3 className="text-2xl font-bold font-display text-white">
-                    {showroomGallery[activeShowroomTab].title}
+                {/* "Xem dự án" hint on hover */}
+                <div className="absolute top-5 right-5 bg-white/20 backdrop-blur-sm border border-white/30 text-white text-[10px] font-bold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-1.5">
+                  Xem dự án <ArrowUpRight className="w-3 h-3" />
+                </div>
+
+                {/* Project info overlay */}
+                <div className="absolute bottom-6 left-6 right-6 space-y-2 text-white">
+                  <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider">
+                    {projectCarousel[activeProjectTab].tag}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold font-display text-white leading-tight">
+                    {projectCarousel[activeProjectTab].name}
                   </h3>
-                  <p className="text-slate-200 text-xs leading-relaxed max-w-lg">
-                    {showroomGallery[activeShowroomTab].desc}
+                  <p className="text-slate-300 text-xs flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    {projectCarousel[activeProjectTab].location}
                   </p>
-                  <div className="pt-2 flex items-center gap-2 text-[11px] font-mono text-amber-300 bg-white/10 rounded-lg px-3 py-1.5 w-fit border border-white/10">
-                    <Activity className="w-3.5 h-3.5 animate-pulse text-amber-400" />
-                    {showroomGallery[activeShowroomTab].stats}
+                  <div className="flex items-center gap-3 pt-1">
+                    <div className="bg-white/15 border border-white/20 rounded-lg px-3 py-1.5 text-[11px] font-bold text-amber-200">
+                      {projectCarousel[activeProjectTab].price}
+                    </div>
+                    <div className="bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-[11px] text-slate-300">
+                      {projectCarousel[activeProjectTab].scale}
+                    </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Thumbnail navigation — thumbnail cũng dùng ảnh theo tab tiện ích */}
+              <div className="flex items-center justify-center gap-3">
+                {projectCarousel.map((project, idx) => (
+                  <button
+                    key={project.slug}
+                    onClick={() => setActiveProjectTab(idx)}
+                    className={`relative rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${
+                      activeProjectTab === idx
+                        ? "border-amber-500 shadow-md shadow-amber-500/30 w-20 h-14 opacity-100"
+                        : "border-transparent w-16 h-12 opacity-50 hover:opacity-80 hover:border-amber-300"
+                    }`}
+                    aria-label={project.name}
+                  >
+                    <img
+                      src={showroomGallery[activeShowroomTab].images[idx]}
+                      alt={project.name}
+                      className="w-full h-full object-cover"
+                    />
+                    {activeProjectTab === idx && (
+                      <div className="absolute inset-0 bg-amber-500/20" />
+                    )}
+                  </button>
+                ))}
+              </div>
+
+              {/* Progress bar auto-rotate indicator */}
+              <div className="flex gap-2 px-1">
+                {projectCarousel.map((_, idx) => (
+                  <div key={idx} className="flex-1 h-0.5 bg-slate-200 rounded-full overflow-hidden">
+                    <div
+                      className={`h-full bg-amber-500 rounded-full transition-all ${
+                        activeProjectTab === idx ? "w-full duration-[4000ms]" : activeProjectTab > idx ? "w-full duration-0" : "w-0 duration-0"
+                      }`}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 

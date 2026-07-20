@@ -105,8 +105,8 @@ export default function App() {
           className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-[#0068FF] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           title="Liên hệ Zalo"
         >
-          {/* Pulse effect */}
-          <span className="absolute inset-0 rounded-full bg-[#0068FF]/30 animate-pulse pointer-events-none" />
+          {/* Subtle ring on hover only */}
+          <span className="absolute inset-0 rounded-full ring-2 ring-[#0068FF]/0 group-hover:ring-[#0068FF]/40 transition-all duration-300 pointer-events-none" />
 
           {/* Label on Hover */}
           <span className="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-right pointer-events-none border border-slate-800">
