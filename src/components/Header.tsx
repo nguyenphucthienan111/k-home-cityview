@@ -75,11 +75,11 @@ export default function Header({ currentHash }: HeaderProps) {
           {/* Actions - Contact Hotline */}
           <div className="hidden md:flex items-center gap-5">
             <a
-              href="tel:0901234567"
+              href="tel:0933354093"
               className="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-md shadow-amber-600/10 flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
-              0901 234 567
+              0933 354 093
             </a>
           </div>
 
@@ -120,11 +120,11 @@ export default function Header({ currentHash }: HeaderProps) {
           })}
           <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
             <a
-              href="tel:0901234567"
+              href="tel:0933354093"
               className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-amber-600 text-white text-sm font-medium shadow-md hover:bg-amber-700"
             >
               <Phone className="w-4 h-4" />
-              Gọi Hotline: 0901 234 567
+              Gọi Hotline: 0933 354 093
             </a>
           </div>
         </div>

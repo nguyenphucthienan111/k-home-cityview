@@ -393,7 +393,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <input
                     type="tel"
                     required
-                    placeholder="VD: 0901234567"
+                    placeholder="VD: 0933354093"
                     value={formPhone}
                     onChange={(e) => setFormPhone(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-lg text-sm outline-none transition-all"
@@ -428,7 +428,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             )}
 
             <div className="pt-4 border-t border-slate-100 flex items-center justify-center gap-2 text-slate-400 text-xs">
-              <Phone className="w-3.5 h-3.5" /> Hotline: <a href="tel:0901234567" className="text-slate-600 font-bold hover:text-amber-600">0901 234 567</a>
+              <Phone className="w-3.5 h-3.5" /> Hotline: <a href="tel:0933354093" className="text-slate-600 font-bold hover:text-amber-600">0933 354 093</a>
             </div>
           </div>
         </div>

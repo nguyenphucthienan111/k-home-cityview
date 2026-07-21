@@ -14,12 +14,7 @@ export default function Footer() {
           {/* Column 1: Brand Intro */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="w-8 h-8 bg-amber-500 rounded flex items-center justify-center text-white font-sans font-extrabold text-lg shadow-sm">
-                K
-              </span>
-              <span className="font-display text-xl font-bold text-slate-800 tracking-tight">
-                K-Home <span className="text-amber-600 font-sans font-light">CityView</span>
-              </span>
+              <img src="/KOG_Web_RGB_01.svg" alt="K-Home Group Logo" className="h-10 w-auto" />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
               Nhà phát triển bất động sản uy tín hàng đầu Việt Nam, mang sứ mệnh kiến tạo những cộng đồng văn minh, sang trọng và nâng tầm trải nghiệm sống của giới tinh hoa.
@@ -42,7 +37,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-                <a href="tel:0901234567" className="hover:text-amber-600 font-medium transition-colors">0901 234 567</a>
+                <a href="tel:0933354093" className="hover:text-amber-600 font-medium transition-colors">0933 354 093</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 shrink-0" />
@@ -92,12 +87,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-500">
               <li><a href="#about" className="hover:text-amber-600 transition-colors">• Câu chuyện thương hiệu</a></li>
               <li><a href="#contact" className="hover:text-amber-600 transition-colors">• Đăng ký tham quan thực tế</a></li>
-              <li>
-                <a href="#admin" className="hover:text-amber-600 hover:bg-amber-100/80 transition-colors flex items-center gap-1.5 text-amber-700 font-semibold bg-amber-100/50 py-2 px-3 rounded-lg w-max shadow-sm">
-                  <ShieldCheck className="w-4 h-4" />
-                  Hệ Thống CRM Khách Hàng
-                </a>
-              </li>
             </ul>
           </div>
         </div>

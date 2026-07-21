@@ -1279,7 +1279,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             >
               Đăng Ký Tư Vấn VIP <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-[10px] text-amber-100/90 mt-3 font-medium">Hotline hỗ trợ 24/7: 0901 234 567</p>
+            <p className="text-[10px] text-amber-100/90 mt-3 font-medium">Hotline hỗ trợ 24/7: 0933 354 093</p>
           </div>
         </div>
       </section>

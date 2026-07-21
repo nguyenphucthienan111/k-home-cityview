@@ -871,7 +871,7 @@ export default function AdminDashboardView() {
               {[
                 { title: "WebSite & Organization Schema", desc: "Xác định rõ thương hiệu Home360, tối ưu hóa hiển thị thương hiệu chính thống trên Google Knowledge Graph.", status: "Đã xác thực" },
                 { title: "BreadcrumbList Schema", desc: "Tạo cấu trúc thanh điều hướng phân cấp trực quan cho Googlebot dễ dàng cào dữ liệu và lập chỉ mục.", status: "Đã xác thực" },
-                { title: "RealEstateAgent & LocalBusiness", desc: "Cung cấp tọa độ dự án, số hotline 0901 234 567 và thông tin tư vấn chính gốc phục vụ tối ưu SEO Bản đồ địa phương.", status: "Đã xác thực" }
+                { title: "RealEstateAgent & LocalBusiness", desc: "Cung cấp tọa độ dự án, số hotline 0933 354 093 và thông tin tư vấn chính gốc phục vụ tối ưu SEO Bản đồ địa phương.", status: "Đã xác thực" }
               ].map((item, index) => (
                 <div key={index} className="bg-slate-50 border border-slate-100 rounded-xl p-4 space-y-1.5 relative">
                   <span className="absolute top-4 right-4 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1">
