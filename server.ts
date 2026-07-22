@@ -88,7 +88,7 @@ const SEED_CONTACTS = [
   },
 ];
 
-// ─── Static Data (Projects & News — không đổi) ────────────────────────────────
+// ─── Static Data (Projects & News) ────────────────────────────────────────────
 const projects = [
   {
     id: "1", slug: "k-home-cityview-ho-nai", title: "K-Home CityView Biên Hòa",
