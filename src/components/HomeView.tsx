@@ -678,7 +678,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </h2>
           <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full" />
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            Mỗi m2 tại dự án của K-Home CityView không chỉ là bê tông cốt thép, mà là một tác phẩm kiến trúc độc bản được thổi hồn nghệ thuật để bảo chứng một chuẩn sống tôn quý nhất.
+            Mỗi m2 tại các dự án K-Home không chỉ là bê tông cốt thép, mà là một tác phẩm kiến trúc độc bản được thổi hồn nghệ thuật để bảo chứng một chuẩn sống tôn quý nhất.
           </p>
         </div>
 

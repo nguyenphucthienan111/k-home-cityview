@@ -6,6 +6,8 @@ import {
   CheckSquare, AlertCircle, Sparkles, ChevronRight, Lock, Key, LogOut
 } from "lucide-react";
 import { Contact } from "../types";
+import ConfirmModal from "./ConfirmModal";
+import Toast, { ToastItem } from "./Toast";
 
 export default function AdminDashboardView() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
@@ -32,6 +34,35 @@ export default function AdminDashboardView() {
   // Editing notes state
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editNotes, setEditNotes] = useState("");
+
+  // Confirm modal state
+  const [confirmModal, setConfirmModal] = useState<{
+    isOpen: boolean;
+    title: string;
+    message: string;
+    icon: "delete" | "logout";
+    variant: "danger" | "warning";
+    onConfirm: () => void;
+  }>({
+    isOpen: false,
+    title: "",
+    message: "",
+    icon: "delete",
+    variant: "danger",
+    onConfirm: () => {},
+  });
+
+  // Toast state
+  const [toasts, setToasts] = useState<ToastItem[]>([]);
+
+  const showToast = (type: ToastItem["type"], message: string) => {
+    const id = crypto.randomUUID();
+    setToasts((prev) => [...prev, { id, type, message }]);
+  };
+
+  const removeToast = (id: string) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  };
 
   const fetchContacts = () => {
     if (!isAuthenticated) return;
@@ -76,6 +107,7 @@ export default function AdminDashboardView() {
       if (res.ok && data.token) {
         sessionStorage.setItem("admin_token", data.token);
         setIsAuthenticated(true);
+        showToast("success", "Đăng nhập thành công! Chào mừng trở lại.");
       } else {
         setLoginError(data.error || "Tài khoản hoặc mật khẩu không chính xác!");
       }
@@ -87,27 +119,48 @@ export default function AdminDashboardView() {
   };
 
   const handleLogout = () => {
-    if (window.confirm("Bạn có chắc chắn muốn đăng xuất khỏi hệ thống quản trị CRM không?")) {
-      sessionStorage.removeItem("admin_token");
-      setIsAuthenticated(false);
-      setUsernameInput("");
-      setPasswordInput("");
-    }
+    setConfirmModal({
+      isOpen: true,
+      title: "Đăng xuất hệ thống",
+      message: "Bạn có chắc chắn muốn đăng xuất khỏi hệ thống quản trị CRM không?",
+      icon: "logout",
+      variant: "warning",
+      onConfirm: () => {
+        sessionStorage.removeItem("admin_token");
+        setIsAuthenticated(false);
+        setUsernameInput("");
+        setPasswordInput("");
+        setConfirmModal((prev) => ({ ...prev, isOpen: false }));
+        showToast("info", "Đã đăng xuất khỏi hệ thống CRM.");
+      },
+    });
   };
 
   // Delete handler
   const handleDelete = (id: string) => {
-    if (!window.confirm("Bạn có chắc chắn muốn xóa khách hàng tiềm năng này khỏi hệ thống CRM không?")) return;
-    
-    fetch(`/api/contacts/${id}`, {
-      method: "DELETE",
-      headers: getAuthHeaders(),
-    })
-      .then((res) => res.json())
-      .then(() => {
-        fetchContacts();
-      })
-      .catch((err) => console.error("Error deleting contact:", err));
+    setConfirmModal({
+      isOpen: true,
+      title: "Xóa khách hàng tiềm năng",
+      message: "Bạn có chắc chắn muốn xóa lead này khỏi hệ thống CRM không? Hành động này không thể hoàn tác.",
+      icon: "delete",
+      variant: "danger",
+      onConfirm: () => {
+        setConfirmModal((prev) => ({ ...prev, isOpen: false }));
+        fetch(`/api/contacts/${id}`, {
+          method: "DELETE",
+          headers: getAuthHeaders(),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            fetchContacts();
+            showToast("success", "Đã xóa lead khỏi hệ thống CRM thành công.");
+          })
+          .catch((err) => {
+            console.error("Error deleting contact:", err);
+            showToast("error", "Xóa lead thất bại. Vui lòng thử lại.");
+          });
+      },
+    });
   };
 
   // Update status handler
@@ -140,8 +193,12 @@ export default function AdminDashboardView() {
       .then(() => {
         setEditingId(null);
         fetchContacts();
+        showToast("success", "Đã lưu ghi chú thành công.");
       })
-      .catch((err) => console.error("Error saving notes:", err));
+      .catch((err) => {
+        console.error("Error saving notes:", err);
+        showToast("error", "Lưu ghi chú thất bại. Vui lòng thử lại.");
+      });
   };
 
   // Stats calculation
@@ -169,6 +226,7 @@ export default function AdminDashboardView() {
   if (!isAuthenticated) {
     return (
       <div className="max-w-md mx-auto my-16 p-8 bg-white border border-slate-100 rounded-3xl shadow-xl space-y-6">
+        <Toast toasts={toasts} onRemove={removeToast} />
         <div className="text-center space-y-2">
           <div className="mx-auto w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600">
             <Lock className="w-6 h-6" />
@@ -238,9 +296,6 @@ export default function AdminDashboardView() {
         </form>
 
         <div className="pt-4 border-t border-slate-100 text-center space-y-2">
-          <p className="text-[11px] text-slate-400">
-            * Liên hệ quản trị viên hệ thống để được cấp tài khoản.
-          </p>
           <a
             href="#home"
             className="inline-block text-[11px] text-amber-600 hover:underline font-medium"
@@ -255,6 +310,20 @@ export default function AdminDashboardView() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       
+      <ConfirmModal
+        isOpen={confirmModal.isOpen}
+        title={confirmModal.title}
+        message={confirmModal.message}
+        icon={confirmModal.icon}
+        variant={confirmModal.variant}
+        confirmLabel={confirmModal.icon === "logout" ? "Đăng xuất" : "Xóa lead"}
+        cancelLabel="Hủy bỏ"
+        onConfirm={confirmModal.onConfirm}
+        onCancel={() => setConfirmModal((prev) => ({ ...prev, isOpen: false }))}
+      />
+
+      <Toast toasts={toasts} onRemove={removeToast} />
+
       {/* 1. Header & Actions */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-8">
         <div className="space-y-1">

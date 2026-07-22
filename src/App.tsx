@@ -79,8 +79,9 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating Contact Widget (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      {/* Floating Contact Widget — ẩn trên trang admin */}
+      {hash !== "#admin" && (
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* Call Hotline Button */}
         <a
           href="tel:0933354093"
@@ -130,6 +131,7 @@ export default function App() {
           <MessageCircle className="w-5.5 h-5.5" />
         </a>
       </div>
+      )}
     </div>
   );
 }
