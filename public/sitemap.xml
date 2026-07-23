@@ -1,159 +1,160 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- ===== TRANG CHỦ ===== -->
+  <!-- ===== TRANG CHá»¦ ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/</loc>
+    <loc>https://k-home-dongnai.vercel.app/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ===== DANH SÁCH DỰ ÁN / LOẠI CĂN ===== -->
+  <!-- ===== DANH SÃCH Dá»° ÃN / LOáº I CÄ‚N ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#projects</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ===== DỰ ÁN K-HOME CITYVIEW ===== -->
+  <!-- ===== Dá»° ÃN K-HOME CITYVIEW ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-cityview-ho-nai</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-cityview-ho-nai</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-cityview-ho-nai/1pn-a</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-cityview-ho-nai/1pn-a</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-cityview-ho-nai/1pn-b</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-cityview-ho-nai/1pn-b</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-cityview-ho-nai/2pn</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-cityview-ho-nai/2pn</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-cityview-ho-nai/3pn</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-cityview-ho-nai/3pn</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ===== DỰ ÁN K-HOME MIDTOWN ===== -->
+  <!-- ===== Dá»° ÃN K-HOME MIDTOWN ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-midtown-trang-bom</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-midtown-trang-bom</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-midtown-trang-bom/studio</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-midtown-trang-bom/studio</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-midtown-trang-bom/1pn-a</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-midtown-trang-bom/1pn-a</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-midtown-trang-bom/1pn-b</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-midtown-trang-bom/1pn-b</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-midtown-trang-bom/2pn</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-midtown-trang-bom/2pn</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ===== DỰ ÁN K-HOME AVENUE ===== -->
+  <!-- ===== Dá»° ÃN K-HOME AVENUE ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-avenue-nhon-trach</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-avenue-nhon-trach</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-avenue-nhon-trach/studio</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-avenue-nhon-trach/studio</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-avenue-nhon-trach/1pn</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-avenue-nhon-trach/1pn</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-avenue-nhon-trach/2pn-nho</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-avenue-nhon-trach/2pn-nho</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#projects/k-home-avenue-nhon-trach/2pn-lon</loc>
+    <loc>https://k-home-dongnai.vercel.app/#projects/k-home-avenue-nhon-trach/2pn-lon</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ===== TIN TỨC ===== -->
+  <!-- ===== TIN Tá»¨C ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#news</loc>
+    <loc>https://k-home-dongnai.vercel.app/#news</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#news/chinh-thuc-cong-bo-k-home-grand-urban-giai-doan-2</loc>
+    <loc>https://k-home-dongnai.vercel.app/#news/chinh-thuc-cong-bo-k-home-grand-urban-giai-doan-2</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#news/xu-huong-lua-chon-can-ho-xanh-thong-minh</loc>
+    <loc>https://k-home-dongnai.vercel.app/#news/xu-huong-lua-chon-can-ho-xanh-thong-minh</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#news/lai-suat-mua-nha-giam-sau-co-hoi-vang</loc>
+    <loc>https://k-home-dongnai.vercel.app/#news/lai-suat-mua-nha-giam-sau-co-hoi-vang</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- ===== CÁC TRANG KHÁC ===== -->
+  <!-- ===== CÃC TRANG KHÃC ===== -->
   <url>
-    <loc>https://k-homedongnai.vn/#about</loc>
+    <loc>https://k-home-dongnai.vercel.app/#about</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://k-homedongnai.vn/#contact</loc>
+    <loc>https://k-home-dongnai.vercel.app/#contact</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
 </urlset>
+

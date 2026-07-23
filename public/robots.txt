@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
+# Không cho crawl trang admin
+Disallow: /#admin
+
 # Sitemaps
-Sitemap: https://k-homecityview.vn/sitemap.xml
+Sitemap: https://k-home-dongnai.vercel.app/sitemap.xml
