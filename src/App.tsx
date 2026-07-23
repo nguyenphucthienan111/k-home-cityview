@@ -4,12 +4,13 @@ import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
 import ProjectsView from "./components/ProjectsView";
 import ProjectDetailView from "./components/ProjectDetailView";
+import UnitDetailView from "./components/UnitDetailView";
 import NewsView from "./components/NewsView";
 import NewsDetailView from "./components/NewsDetailView";
 import AboutView from "./components/AboutView";
 import ContactView from "./components/ContactView";
 import AdminDashboardView from "./components/AdminDashboardView";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function App() {
   const [hash, setHash] = useState<string>(window.location.hash || "#home");
@@ -36,6 +37,13 @@ export default function App() {
   const renderContent = () => {
     const cleanHash = hash || "#home";
 
+    // Unit detail deep link: e.g., #projects/k-home-cityview-ho-nai/1pn-a
+    if (cleanHash.startsWith("#projects/") && cleanHash.split("/").length === 3) {
+      const parts = cleanHash.replace("#projects/", "").split("/");
+      const [projectSlug, unitSlug] = parts;
+      return <UnitDetailView projectSlug={projectSlug} unitSlug={unitSlug} onNavigate={navigateTo} />;
+    }
+
     // Project detail deep link: e.g., #projects/k-home-grand-urban
     if (cleanHash.startsWith("#projects/")) {
       const slug = cleanHash.replace("#projects/", "");
@@ -48,11 +56,19 @@ export default function App() {
       return <NewsDetailView slug={slug} onNavigate={navigateTo} />;
     }
 
-    switch (cleanHash) {
+    switch (cleanHash.split("?")[0]) {
       case "#home":
         return <HomeView onNavigate={navigateTo} />;
-      case "#projects":
-        return <ProjectsView onNavigate={navigateTo} />;
+      case "#projects": {
+        // Parse query params from hash: #projects?project=xxx&bedrooms=yyy
+        const queryStr = cleanHash.includes("?") ? cleanHash.split("?")[1] : "";
+        const params = new URLSearchParams(queryStr);
+        return <ProjectsView
+          onNavigate={navigateTo}
+          initialProject={params.get("project") || "all"}
+          initialBedrooms={params.get("bedrooms") || "all"}
+        />;
+      }
       case "#news":
         return <NewsView onNavigate={navigateTo} />;
       case "#about":
@@ -106,14 +122,11 @@ export default function App() {
           className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-[#0068FF] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           title="Liên hệ Zalo"
         >
-          {/* Subtle ring on hover only */}
           <span className="absolute inset-0 rounded-full ring-2 ring-[#0068FF]/0 group-hover:ring-[#0068FF]/40 transition-all duration-300 pointer-events-none" />
-
-          {/* Label on Hover */}
           <span className="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-right pointer-events-none border border-slate-800">
             Nhắn tin Zalo
           </span>
-          <span className="font-extrabold text-[12px] tracking-wider uppercase">Zalo</span>
+          <img src="/z.png" alt="Zalo" className="w-6 h-6 object-contain" />
         </a>
 
         {/* Messenger Button */}
@@ -124,11 +137,10 @@ export default function App() {
           className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
           title="Chat Messenger"
         >
-          {/* Label on Hover */}
           <span className="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-right pointer-events-none border border-slate-800">
             Messenger Chat
           </span>
-          <MessageCircle className="w-5.5 h-5.5" />
+          <img src="/messenger.png" alt="Messenger" className="w-6 h-6 object-contain" />
         </a>
       </div>
       )}

@@ -1,18 +1,34 @@
+export interface UnitType {
+  slug: string;
+  name: string;
+  bedrooms: number;
+  bathrooms: number;
+  constructionArea: string;
+  usableArea: string;
+  price: string;
+  priceNumber: number;
+  furnished: boolean;
+  description?: string;  // mô tả riêng cho loại căn
+  images: string[];
+}
+
 export interface Project {
   id: string;
   slug: string;
   title: string;
   location: string;
-  type: string; // e.g. "Căn hộ chung cư", "Biệt thự nghỉ dưỡng", "Penthouse", "Nhà phố thương mại"
-  price: string; // e.g. "Từ 3.2 Tỷ"
-  priceNumber: number; // For filtering, in billions
-  area: string; // e.g. "54m² - 110m²"
+  type: string;
+  price: string;
+  priceNumber: number;
+  area: string;
   image: string;
   description: string;
   longDescription: string;
   gallery: string[];
   amenities: string[];
-  status: string; // "Đang mở bán", "Sắp mở bán", "Đã bàn giao"
+  unitTypes?: UnitType[];
+  mapEmbedUrl?: string;
+  status: string;
   rating: number;
   floorCount: number;
   developer: string;

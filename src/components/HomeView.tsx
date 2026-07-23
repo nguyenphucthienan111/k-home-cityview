@@ -38,7 +38,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const heroProjects = [
     {
       name: "K-Home CityView Biên Hòa",
-      image: "/k-home-cityview-bg.jpg.webp",
+      image: "/k-home cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2.webp",
       location: "Đường Điều Xiển, P. Hố Nai, TP. Biên Hòa, Đồng Nai",
       scale: "2,85 hecta",
       product: "1.352 căn hộ NOXH và 30 căn shophouse",
@@ -47,7 +47,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     {
       name: "K-Home Midtown Trảng Bom",
-      image: "/k-home-midtown-bg.jpg.webp",
+      image: "/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp",
       location: "Giữa 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, P. Trảng Bom, Đồng Nai",
       scale: "13,97 hecta",
       product: "542 căn hộ NOXH và 20 căn shophouse",
@@ -56,7 +56,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     {
       name: "K-Home Avenue Nhơn Trạch",
-      image: "/k-home-avenue-bg.jpg.webp",
+      image: "/k-home avenue/PC02-TT-10K_2-min.jpg.webp",
       location: "Đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, tỉnh Đồng Nai",
       scale: "5,3 hecta",
       product: "1.022 căn hộ NOXH và 82 căn shophouse",
@@ -66,8 +66,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   ];
 
   // Quick Hero Filter states
-  const [heroType, setHeroType] = useState<string>("all");
-  const [heroPrice, setHeroPrice] = useState<string>("all");
+  const [heroProject, setHeroProject] = useState<string>("all");
+  const [heroBedrooms, setHeroBedrooms] = useState<string>("all");
 
   // Interactive Showroom Active Tab
   const [activeShowroomTab, setActiveShowroomTab] = useState<number>(0);
@@ -84,8 +84,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       price: "Từ 950 triệu",
       scale: "2,85 ha · 4 Block · 1.816 căn",
       badge: "Đang bốc thăm",
-      badgeColor: "bg-amber-500",
-      image: "/cityview.jpg"
+      badgeColor: "#f59e0b",
+      image: "/k-home cityview/V11_TH_EXT_NOTM_POOL_2.webp"
     },
     {
       slug: "k-home-avenue-nhon-trach",
@@ -95,8 +95,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       price: "Từ 750 triệu",
       scale: "84 ha · 4 Block 12 tầng · 1.104 căn",
       badge: "Sắp công bố",
-      badgeColor: "bg-blue-500",
-      image: "/avenue.jpg"
+      badgeColor: "#3b82f6",
+      image: "/k-home avenue/PC01-TT-copy_2_2-min.jpg.webp"
     },
     {
       slug: "k-home-midtown-trang-bom",
@@ -106,8 +106,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       price: "Trả góp 3,5 – 4,5tr/tháng",
       scale: "13,97 ha · 15 tầng · 562 căn",
       badge: "Đã công bố",
-      badgeColor: "bg-green-600",
-      image: "/midtown.jpg"
+      badgeColor: "#16a34a",
+      image: "/k-home midtown/Du-an-K-Home-Midtown-3d-ho-boi-view-2-2048x1150.webp"
     }
   ];
 
@@ -137,8 +137,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       priceMin: 0.95,
       priceMax: 1.95,
       priceStep: 0.05,
-      noteMin: "950tr (1PN+)",
-      noteMax: "1,9 tỷ (3PN)",
+      noteMin: "950tr (1 Phòng Ngủ +)",
+      noteMax: "1,9 tỷ (3 Phòng Ngủ)",
       schedule: [
         { dot: "Cọc",      pct: "30.000.000đ",       note: "Ký phiếu xác nhận cọc" },
         { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
@@ -157,7 +157,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       priceMax: 1.5,
       priceStep: 0.05,
       noteMin: "750tr (Studio)",
-      noteMax: "1,5 tỷ (2PN-L)",
+      noteMax: "1,5 tỷ (2 Phòng Ngủ-L)",
       schedule: [
         { dot: "Cọc",      pct: "30.000.000đ",       note: "Ký phiếu xác nhận cọc" },
         { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
@@ -332,38 +332,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [allProjects]);
 
-  // Handle hero quick search
+  // Handle hero quick search — navigate sang #projects với filter params trong hash
   const handleHeroSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    let filtered = [...allProjects];
-
-    if (heroType !== "all") {
-      filtered = filtered.filter(p => p.type.toLowerCase().includes(heroType.toLowerCase()) || heroType.toLowerCase().includes(p.type.toLowerCase()));
-    }
-
-    if (heroPrice === "under-5") {
-      filtered = filtered.filter(p => p.priceNumber < 5);
-    } else if (heroPrice === "5-15") {
-      filtered = filtered.filter(p => p.priceNumber >= 5 && p.priceNumber <= 15);
-    } else if (heroPrice === "above-15") {
-      filtered = filtered.filter(p => p.priceNumber > 15);
-    }
-
-    setFilteredProjects(filtered);
-
-    // Scroll to projects section smoothly
-    const featuredEl = document.getElementById("featured-projects");
-    if (featuredEl) {
-      featuredEl.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const params: string[] = [];
+    if (heroProject !== "all") params.push(`project=${heroProject}`);
+    if (heroBedrooms !== "all") params.push(`bedrooms=${heroBedrooms}`);
+    const hash = params.length > 0 ? `#projects?${params.join("&")}` : "#projects";
+    onNavigate(hash);
   };
 
   // Reset filters
   const resetFilters = () => {
-    setHeroType("all");
-    setHeroPrice("all");
-    setFilteredProjects(allProjects);
+    setHeroProject("all");
+    setHeroBedrooms("all");
   };
 
   // Calculate for NOXH — dùng config theo dự án được chọn
@@ -688,44 +670,40 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
             
             <form onSubmit={handleHeroSearch} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
-              {/* Filter 1: Type */}
+              {/* Filter 1: Dự án */}
               <div className="space-y-2">
-                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Loại Hình Bất Động Sản</label>
+                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Chọn Dự Án</label>
                 <div className="relative">
                   <select
-                    value={heroType}
-                    onChange={(e) => setHeroType(e.target.value)}
+                    value={heroProject}
+                    onChange={(e) => setHeroProject(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 appearance-none cursor-pointer"
                   >
-                    <option value="all">Tất cả loại hình</option>
-                    <option value="căn hộ">Căn Hộ Cao Cấp</option>
-                    <option value="biệt thự">Biệt Thự Nghỉ Dưỡng</option>
-                    <option value="penthouse">Penthouse Triệu Đô</option>
-                    <option value="nhà phố">Nhà Phố Thương Mại</option>
+                    <option value="all">Tất cả dự án</option>
+                    <option value="k-home-cityview-ho-nai">K-Home CityView Biên Hòa</option>
+                    <option value="k-home-midtown-trang-bom">K-Home Midtown Trảng Bom</option>
+                    <option value="k-home-avenue-nhon-trach">K-Home Avenue Nhơn Trạch</option>
                   </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">
-                    ▼
-                  </div>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">▼</div>
                 </div>
               </div>
 
-              {/* Filter 2: Price Range */}
+              {/* Filter 2: Loại căn */}
               <div className="space-y-2">
-                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Khoảng Giá (VND)</label>
+                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Loại Căn Hộ</label>
                 <div className="relative">
                   <select
-                    value={heroPrice}
-                    onChange={(e) => setHeroPrice(e.target.value)}
+                    value={heroBedrooms}
+                    onChange={(e) => setHeroBedrooms(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 appearance-none cursor-pointer"
                   >
-                    <option value="all">Mọi mức ngân sách</option>
-                    <option value="under-5">Dưới 5 Tỷ VNĐ</option>
-                    <option value="5-15">Từ 5 Tỷ - 15 Tỷ VNĐ</option>
-                    <option value="above-15">Trên 15 Tỷ VNĐ</option>
+                    <option value="all">Tất cả loại căn</option>
+                    <option value="studio">Studio</option>
+                    <option value="1pn">Căn 1 Phòng Ngủ</option>
+                    <option value="2pn">Căn 2 Phòng Ngủ</option>
+                    <option value="3pn">Căn 3 Phòng Ngủ</option>
                   </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">
-                    ▼
-                  </div>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">▼</div>
                 </div>
               </div>
 
@@ -736,9 +714,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   className="flex-grow bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3.5 px-6 rounded-xl text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20"
                 >
                   <Search className="w-4 h-4 shrink-0" />
-                  Tìm Nhanh Rổ Hàng
+                  Xem Rổ Hàng
                 </button>
-                {(heroType !== "all" || heroPrice !== "all") && (
+                {(heroProject !== "all" || heroBedrooms !== "all") && (
                   <button
                     type="button"
                     onClick={resetFilters}
@@ -937,7 +915,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
                 {/* Badge */}
-                <div className={`absolute top-5 left-5 ${projectCarousel[activeProjectTab].badgeColor} text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md transition-all duration-300`}>
+                <div
+                  className="absolute top-5 left-5 text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md transition-all duration-300"
+                  style={{ backgroundColor: projectCarousel[activeProjectTab].badgeColor }}
+                >
                   {projectCarousel[activeProjectTab].badge}
                 </div>
 
@@ -1321,11 +1302,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                           </div>
                           
                           <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
-                            project.status === "Đang mở bán" 
+                            project.status === "Đang bốc thăm"
+                              ? "bg-amber-500 text-white"
+                              : project.status === "Sắp công bố"
+                              ? "bg-blue-600 text-white"
+                              : project.status === "Đã công bố"
                               ? "bg-emerald-600 text-white"
-                              : project.status === "Sắp mở bán"
-                              ? "bg-amber-500 text-slate-950"
-                              : "bg-blue-600 text-white"
+                              : "bg-slate-600 text-white"
                           }`}>
                             {project.status}
                           </div>

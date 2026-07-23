@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid } from "lucide-react";
 import { Project } from "../types";
+import Lightbox from "./Lightbox";
 
 interface ProjectDetailViewProps {
   slug: string;
@@ -9,6 +10,34 @@ interface ProjectDetailViewProps {
 
 export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailViewProps) {
   const [project, setProject] = useState<Project | null>(null);
+
+  // Parse **bold** markers and \n\n paragraph breaks into JSX
+  const renderRichText = (text: string) => {
+    return text.split("\n\n").map((paragraph, pIdx) => {
+      // Heading: toàn bộ đoạn là **...**
+      const headingMatch = paragraph.match(/^\*\*(.+)\*\*$/);
+
+      if (headingMatch) {
+        return (
+          <div key={pIdx}>
+            {pIdx > 0 && <hr className="border-slate-200 my-5" />}
+            <h4 className="text-base font-bold text-slate-800 mb-2">
+              {headingMatch[1]}
+            </h4>
+          </div>
+        );
+      }
+
+      const parts = paragraph.split(/\*\*(.*?)\*\*/g);
+      return (
+        <p key={pIdx} className="text-slate-600 text-sm leading-relaxed">
+          {parts.map((part, i) =>
+            i % 2 === 1 ? <strong key={i} className="text-slate-800 font-semibold">{part}</strong> : part
+          )}
+        </p>
+      );
+    });
+  };
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview"); // overview, amenities, map
 
@@ -93,22 +122,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       });
   };
 
-  // Lightbox functions
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
-  };
-
-  const nextPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (!project) return;
-    setLightboxIndex((prev) => (prev + 1) % project.gallery.length);
-  };
-
-  const prevPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (!project) return;
-    setLightboxIndex((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
   };
 
   if (loading) {
@@ -236,9 +252,10 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Tabs Selector */}
           <div className="flex border-b border-slate-100">
             {[
-              { id: "overview", label: "Tổng Quan & Mô Tả" },
+              { id: "overview",  label: "Tổng Quan & Mô Tả" },
+              { id: "units",     label: "Bảng Giá & Loại Hình" },
               { id: "amenities", label: "Tiện Ích Đẳng Cấp" },
-              { id: "map", label: "Vị Trí Bản Đồ" }
+              { id: "map",       label: "Vị Trí Bản Đồ" }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -280,14 +297,67 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
               <div className="space-y-4">
                 <h3 className="text-xl font-display font-semibold text-slate-800">Mô Tả Chi Tiết Dự Án</h3>
-                <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-line">
-                  {project.longDescription}
-                </p>
+                <div className="space-y-3">
+                  {renderRichText(project.longDescription)}
+                </div>
               </div>
             </div>
           )}
 
-          {/* Tab 2: Amenities */}
+          {/* Tab 2: Unit Types */}
+          {activeTab === "units" && (
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-display font-semibold text-slate-800 mb-1">Bảng Giá & Loại Hình Căn Hộ</h3>
+                <p className="text-slate-500 text-sm">Cập nhật bảng giá đợt 1 từ chủ đầu tư Kim Oanh Group. Giá có thể thay đổi theo từng đợt mở bán.</p>
+              </div>
+
+              {project.unitTypes && project.unitTypes.length > 0 ? (
+                <div className="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-amber-50 border-b border-amber-100">
+                        <th className="text-left px-5 py-3.5 text-xs font-bold text-amber-800 uppercase tracking-wider">Loại căn hộ</th>
+                        <th className="text-center px-5 py-3.5 text-xs font-bold text-amber-800 uppercase tracking-wider">DT xây dựng</th>
+                        <th className="text-center px-5 py-3.5 text-xs font-bold text-amber-800 uppercase tracking-wider">DT sử dụng</th>
+                        <th className="text-right px-5 py-3.5 text-xs font-bold text-amber-800 uppercase tracking-wider">Giá bán</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 bg-white">
+                      {project.unitTypes.map((unit, idx) => (
+                        <tr
+                          key={idx}
+                          onClick={() => onNavigate(`#projects/${project.slug}/${unit.slug}`)}
+                          className="hover:bg-amber-50/40 transition-colors cursor-pointer group"
+                        >
+                          <td className="px-5 py-4 font-semibold text-slate-800 group-hover:text-amber-700 flex items-center gap-2">
+                            {unit.name}
+                            <span className="text-[10px] text-amber-500 font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                              Xem chi tiết →
+                            </span>
+                          </td>
+                          <td className="px-5 py-4 text-center text-slate-600">{unit.constructionArea}</td>
+                          <td className="px-5 py-4 text-center text-slate-600">{unit.usableArea}</td>
+                          <td className="px-5 py-4 text-right font-bold text-amber-600">{unit.price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="text-center py-10 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                  <LayoutGrid className="w-8 h-8 text-slate-300 mx-auto mb-2" />
+                  <p className="text-slate-400 text-sm">Bảng giá sẽ được cập nhật sớm.</p>
+                </div>
+              )}
+
+              <p className="text-xs text-slate-400 italic">
+                * Giá trên là giá tham khảo đợt 1, chưa bao gồm phí quản lý, VAT và các khoản phí khác. Liên hệ chuyên viên để nhận báo giá chính xác nhất.
+              </p>
+            </div>
+          )}
+
+          {/* Tab 3: Amenities */}
           {activeTab === "amenities" && (
             <div className="space-y-6">
               <h3 className="text-xl font-display font-semibold text-slate-800">Chuỗi Đặc Quyền Sống Thượng Lưu</h3>
@@ -305,23 +375,23 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             </div>
           )}
 
-          {/* Tab 3: Location Map */}
+          {/* Tab 4: Location Map */}
           {activeTab === "map" && (
             <div className="space-y-6">
-              <h3 className="text-xl font-display font-semibold text-slate-800">Tọa Độ Kim Cương Độc Tôn</h3>
+              <h3 className="text-xl font-display font-semibold text-slate-800">Vị Trí Dự Án</h3>
               <p className="text-slate-500 text-sm">
-                Sở hữu khả năng kết nối không giới hạn, chỉ mất từ 5-10 phút di chuyển tới các khu trung tâm hành chính, thương mại, y tế quốc tế trọng điểm xung quanh.
+                {project.location}
               </p>
               <div className="w-full h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.509932242149!2d106.7007028!3d10.7753062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1e0a8fc7e1%3A0xe9e9836501d5eec4!2sDistrict%201%2C%20Ho%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000"
+                  src={project.mapEmbedUrl || `https://www.google.com/maps/embed/v1/place?key=AIzaSyD&q=${encodeURIComponent(project.location + ", Vietnam")}`}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Map location"
+                  title={`Bản đồ ${project.title}`}
                 ></iframe>
               </div>
             </div>
@@ -437,56 +507,12 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* Fullscreen Lightbox Modal */}
       {lightboxOpen && (
-        <div className="fixed inset-0 bg-slate-950/98 z-[100] flex flex-col items-center justify-center select-none">
-          {/* Close button */}
-          <button
-            onClick={() => setLightboxOpen(false)}
-            className="absolute top-6 right-6 text-slate-400 hover:text-white p-2 cursor-pointer bg-white/5 hover:bg-white/10 rounded-full transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
-
-          {/* Navigation Controls */}
-          <button
-            onClick={prevPhoto}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-3 cursor-pointer bg-white/5 hover:bg-white/10 rounded-full transition-colors"
-          >
-            <ChevronLeft className="w-8 h-8" />
-          </button>
-
-          <button
-            onClick={nextPhoto}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-3 cursor-pointer bg-white/5 hover:bg-white/10 rounded-full transition-colors"
-          >
-            <ChevronRight className="w-8 h-8" />
-          </button>
-
-          {/* Main Photo */}
-          <div className="max-w-4xl max-h-[75vh] px-4 flex items-center justify-center">
-            <img
-              src={project.gallery[lightboxIndex]}
-              alt={`Gallery detail ${lightboxIndex}`}
-              className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl animate-fade-in"
-            />
-          </div>
-
-          {/* Meta & Indicators */}
-          <div className="mt-8 text-center space-y-2 text-slate-400">
-            <p className="text-sm font-semibold text-white">Hình {lightboxIndex + 1} / {project.gallery.length}</p>
-            <p className="text-xs text-slate-400">{project.title} - Phối cảnh không gian sống thượng lưu</p>
-            <div className="flex justify-center gap-1.5 mt-2">
-              {project.gallery.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setLightboxIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                    lightboxIndex === idx ? "bg-amber-500 w-4" : "bg-slate-700 hover:bg-slate-500"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <Lightbox
+          images={project.gallery}
+          initialIndex={lightboxIndex}
+          caption={`${project.title} - Phối cảnh không gian sống`}
+          onClose={() => setLightboxOpen(false)}
+        />
       )}
 
     </div>
