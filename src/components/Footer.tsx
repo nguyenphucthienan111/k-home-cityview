@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { MapPin, Mail, Phone, Clock, ArrowUp, ShieldCheck, Gem } from "lucide-react";
 
 export default function Footer() {
@@ -57,22 +57,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-500">
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
                   • Căn Hộ Chung Cư Cao Cấp
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
                   • Biệt Thự Nghỉ Dưỡng Ven Biển
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
                   • Căn Hộ Penthouse Thượng Lưu
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
                   • Shophouse Nhà Phố Thương Mại
                 </a>
               </li>
@@ -85,8 +85,8 @@ export default function Footer() {
               Khách Hàng & Đối Tác
             </h4>
             <ul className="space-y-2 text-sm text-slate-500">
-              <li><a href="#about" className="hover:text-amber-600 transition-colors">• Câu chuyện thương hiệu</a></li>
-              <li><a href="#contact" className="hover:text-amber-600 transition-colors">• Đăng ký tham quan thực tế</a></li>
+              <li><a href="/about" className="hover:text-amber-600 transition-colors">• Câu chuyện thương hiệu</a></li>
+              <li><a href="/contact" className="hover:text-amber-600 transition-colors">• Đăng ký tham quan thực tế</a></li>
             </ul>
           </div>
         </div>
@@ -97,8 +97,8 @@ export default function Footer() {
             © {new Date().getFullYear()} K-Home CityView. Tất cả quyền được bảo lưu. Bản quyền thuộc về K-Home Group.
           </div>
           <div className="flex items-center gap-6">
-            <a href="#about" className="hover:text-amber-600 transition-colors">Điều khoản sử dụng</a>
-            <a href="#about" className="hover:text-amber-600 transition-colors">Chính sách bảo mật</a>
+            <a href="/about" className="hover:text-amber-600 transition-colors">Điều khoản sử dụng</a>
+            <a href="/about" className="hover:text-amber-600 transition-colors">Chính sách bảo mật</a>
             <button
               onClick={scrollToTop}
               className="bg-white hover:bg-amber-50 text-amber-600 p-2.5 rounded-full shadow-sm border border-amber-200 transition-all cursor-pointer flex items-center justify-center hover:scale-110"

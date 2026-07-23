@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { 
   Users, PhoneCall, ShieldAlert, CheckCircle, FileText, Search, RefreshCw, 
   Trash2, Edit3, MessageSquare, Check, X, TrendingUp, Eye, MousePointerClick, 
@@ -297,7 +297,7 @@ export default function AdminDashboardView() {
 
         <div className="pt-4 border-t border-slate-100 text-center space-y-2">
           <a
-            href="#home"
+            href="/"
             className="inline-block text-[11px] text-amber-600 hover:underline font-medium"
           >
             Quay lại Trang Chủ

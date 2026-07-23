@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { ArrowLeft, CheckCircle, MapPin, Phone, Send, Eye, BedDouble, Bath, Sofa } from "lucide-react";
 import { Project, UnitType } from "../types";
 import Lightbox from "./Lightbox";
@@ -141,7 +141,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
         <h2 className="text-2xl font-bold text-slate-800">Không tìm thấy loại căn hộ</h2>
         <p className="text-slate-500 text-sm">Loại căn bạn tìm kiếm không tồn tại.</p>
         <button
-          onClick={() => onNavigate("#projects")}
+          onClick={() => onNavigate("/projects")}
           className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium text-xs tracking-wider uppercase transition-colors cursor-pointer"
         >
           Quay lại danh sách
@@ -155,7 +155,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
       
       {/* Back navigation */}
       <button
-        onClick={() => onNavigate("#projects")}
+        onClick={() => onNavigate("/projects")}
         className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 text-sm font-medium transition-colors cursor-pointer group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

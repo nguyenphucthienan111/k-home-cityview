@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+﻿import React, { useEffect, useState, useRef } from "react";
 import { 
   ArrowRight, 
   Star, 
@@ -338,7 +338,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     const params: string[] = [];
     if (heroProject !== "all") params.push(`project=${heroProject}`);
     if (heroBedrooms !== "all") params.push(`bedrooms=${heroBedrooms}`);
-    const hash = params.length > 0 ? `#projects?${params.join("&")}` : "#projects";
+    const hash = params.length > 0 ? `#projects?${params.join("&")}` : "/projects";
     onNavigate(hash);
   };
 
@@ -595,7 +595,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   Tìm hiểu thêm <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => onNavigate("#contact")}
+                  onClick={() => onNavigate("/contact")}
                   className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
                 >
                   Nhận Báo Giá Đợt 1
@@ -897,7 +897,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div className="lg:col-span-7 space-y-4">
               {/* Main carousel image — clickable → navigate to project */}
               <div
-                onClick={() => onNavigate(`#projects/${projectCarousel[activeProjectTab].slug}`)}
+                onClick={() => onNavigate(`/projects/${projectCarousel[activeProjectTab].slug}`)}
                 className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[360px] sm:h-[430px] group bg-slate-100 cursor-pointer"
               >
                 {/* Images – stacked, fade transition via opacity — source from active amenity tab */}
@@ -1216,7 +1216,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             <div className="pt-5 relative z-10">
               <button
-                onClick={() => onNavigate("#contact")}
+                onClick={() => onNavigate("/contact")}
                 className="w-full bg-white hover:bg-amber-50 text-amber-800 font-bold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-lg"
               >
                 Tư Vấn Hồ Sơ Miễn Phí <ArrowRight className="w-3.5 h-3.5" />
@@ -1244,7 +1244,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             
             <div className="flex items-center gap-4">
               <button
-                onClick={() => onNavigate("#projects")}
+                onClick={() => onNavigate("/projects")}
                 className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
               >
                 Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
@@ -1286,7 +1286,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       <div
                         key={project.id}
                         className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-                        onClick={() => onNavigate(`#projects/${project.slug}`)}
+                        onClick={() => onNavigate(`/projects/${project.slug}`)}
                       >
                         {/* Image */}
                         <div className="relative h-72 overflow-hidden bg-slate-100">
@@ -1450,7 +1450,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           
           <div className="shrink-0 relative z-10 w-full lg:w-auto text-center">
             <button
-              onClick={() => onNavigate("#contact")}
+              onClick={() => onNavigate("/contact")}
               className="w-full lg:w-auto bg-white hover:bg-amber-100 text-amber-800 px-10 py-5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-orange-500/20 hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
             >
               Đăng Ký Tư Vấn Miễn Phí <ArrowRight className="w-4 h-4" />
