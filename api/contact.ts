@@ -26,6 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(201).json({ success: true, contact });
   } catch (err: any) {
     console.error("POST /api/contact error:", err);
-    return res.status(500).json({ error: "Lỗi máy chủ. Vui lòng thử lại." });
+    return res.status(500).json({ 
+      error: "Lỗi máy chủ. Vui lòng thử lại.",
+      detail: err?.message || String(err)
+    });
   }
 }
