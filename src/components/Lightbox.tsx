@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import { imgUrl } from "../utils/imageUrl";
 
 interface LightboxProps {
   images: string[];
@@ -128,7 +129,7 @@ export default function Lightbox({ images, initialIndex, caption, onClose }: Lig
       <div className="absolute inset-0 flex items-center justify-center px-20 pt-16 pb-24 pointer-events-none z-10">
         <img
           ref={imgRef}
-          src={images[index]}
+          src={imgUrl(images[index])}
           alt={`Ảnh ${index + 1}`}
           draggable={false}
           onDoubleClick={handleImgDoubleClick}

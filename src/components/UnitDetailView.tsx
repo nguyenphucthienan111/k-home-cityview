@@ -2,6 +2,7 @@
 import { ArrowLeft, CheckCircle, MapPin, Phone, Send, Eye, BedDouble, Bath, Sofa } from "lucide-react";
 import { Project, UnitType } from "../types";
 import Lightbox from "./Lightbox";
+import { imgUrl } from "../utils/imageUrl";
 
 interface UnitDetailViewProps {
   projectSlug: string;
@@ -217,7 +218,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
               className="relative h-48 rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-slate-100"
             >
               <img
-                src={img}
+                src={imgUrl(img)}
                 alt={`${unit.name} ${idx + 1}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

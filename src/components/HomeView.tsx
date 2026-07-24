@@ -22,6 +22,7 @@ import {
   Info
 } from "lucide-react";
 import { Project } from "../types";
+import { imgUrl } from "../utils/imageUrl";
 
 interface HomeViewProps {
   onNavigate: (hash: string) => void;
@@ -623,7 +624,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }`}
                   >
                     <img
-                      src={project.image}
+                      src={imgUrl(project.image)}
                       alt={project.name}
                       className="w-full h-full object-cover"
                     />
@@ -1294,7 +1295,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         {/* Image */}
                         <div className="relative h-72 overflow-hidden bg-slate-100">
                           <img
-                            src={project.image}
+                            src={imgUrl(project.image)}
                             alt={project.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />

@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useState, useMemo } from "react";
 import { Search, MapPin, SlidersHorizontal, BedDouble, Bath, Sofa, ChevronRight } from "lucide-react";
 import { Project, UnitType } from "../types";
+import { imgUrl } from "../utils/imageUrl";
 
 interface ProjectsViewProps {
   onNavigate: (hash: string) => void;
@@ -260,7 +261,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
               {/* Image */}
               <div className="relative h-52 overflow-hidden bg-slate-100">
                 <img
-                  src={unit.images[0]}
+                  src={imgUrl(unit.images[0])}
                   alt={unit.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
