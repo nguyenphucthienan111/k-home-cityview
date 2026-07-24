@@ -116,6 +116,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [investmentValue, setInvestmentValue] = useState<number>(1.0); // Tỷ VNĐ
   const [paymentOption, setPaymentOption] = useState<string>("policy");
   const [selectedCalcProject, setSelectedCalcProject] = useState<string>("k-home-cityview-ho-nai");
+  const [selectedUnitIndex, setSelectedUnitIndex] = useState<number>(0);
 
   // Config theo từng dự án
   const projectCalcConfig: Record<string, {
@@ -123,11 +124,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     loanYears: number;
     loanPercent: number;
     policyRate: number;
-    priceMin: number;
-    priceMax: number;
-    priceStep: number;
-    noteMin: string;
-    noteMax: string;
+    units: { label: string; area: string; price: number; priceMin: number; priceMax: number; priceLabel: string }[];
     schedule: { dot: string; pct: string; note: string }[];
   }> = {
     "k-home-cityview-ho-nai": {
@@ -135,18 +132,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       loanYears: 25,
       loanPercent: 75,
       policyRate: 5.4,
-      priceMin: 0.95,
-      priceMax: 1.95,
-      priceStep: 0.05,
-      noteMin: "950tr (1 Phòng Ngủ +)",
-      noteMax: "1,9 tỷ (3 Phòng Ngủ)",
+      units: [
+        { label: "1PN+A", area: "47,3m²",  price: 1.0,   priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950tr – 1,05 tỷ" },
+        { label: "1PN+B", area: "62,4m²",  price: 1.325, priceMin: 1.25,  priceMax: 1.40,  priceLabel: "1,25 – 1,40 tỷ" },
+        { label: "2PN",   area: "70,4m²",  price: 1.55,  priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,50 – 1,60 tỷ" },
+        { label: "3PN",   area: "84,4m²",  price: 1.9,   priceMin: 1.80,  priceMax: 2.00,  priceLabel: "1,80 – 2,00 tỷ" },
+      ],
       schedule: [
-        { dot: "Cọc",      pct: "30.000.000đ",       note: "Ký phiếu xác nhận cọc" },
-        { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
-        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ hạn đợt 1" },
-        { dot: "Đợt 3",    pct: "5%",                 note: "30 ngày kể từ hạn đợt 2" },
-        { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ thông báo BG" },
+        { dot: "Cọc",        pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+        { dot: "Đợt 1",      pct: "15%",                note: "7 ngày kể từ ngày cọc, Ký HĐDVTV" },
+        { dot: "Đợt 2",      pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+        { dot: "Đợt 3",      pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 2" },
+        { dot: "Đợt 4",      pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
+        { dot: "Bàn giao",   pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
       ],
     },
     "k-home-avenue-nhon-trach": {
@@ -154,18 +152,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       loanYears: 25,
       loanPercent: 75,
       policyRate: 5.4,
-      priceMin: 0.75,
-      priceMax: 1.5,
-      priceStep: 0.05,
-      noteMin: "750tr (Studio)",
-      noteMax: "1,5 tỷ (2 Phòng Ngủ-L)",
+      units: [
+        { label: "Studio", area: "38m²",   price: 0.75,  priceMin: 0.75,  priceMax: 0.85,  priceLabel: "Từ 750 triệu" },
+        { label: "1PN+",   area: "47m²",   price: 0.95,  priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950 triệu" },
+        { label: "2PN-S",  area: "65m²",   price: 1.4,   priceMin: 1.40,  priceMax: 1.50,  priceLabel: "Từ 1,4 tỷ" },
+        { label: "2PN-L",  area: "69,5m²", price: 1.5,   priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,5 tỷ" },
+      ],
       schedule: [
-        { dot: "Cọc",      pct: "30.000.000đ",       note: "Ký phiếu xác nhận cọc" },
-        { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
-        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ hạn đợt 1" },
-        { dot: "Đợt 3",    pct: "5%",                 note: "30 ngày kể từ hạn đợt 2" },
+        { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+        { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, khách TT đợt 1 và ký HĐDVTV" },
+        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn TT đợt 1" },
+        { dot: "Đợt 3",    pct: "5%",                 note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
         { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ thông báo BG" },
+        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
       ],
     },
     "k-home-midtown-trang-bom": {
@@ -173,18 +172,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       loanYears: 20,
       loanPercent: 70,
       policyRate: 5.4,
-      priceMin: 0.8,
-      priceMax: 1.5,
-      priceStep: 0.05,
-      noteMin: "~800tr (Studio)",
-      noteMax: "~1,5 tỷ (2PN)",
+      units: [
+        { label: "Studio", area: "~35m²",  price: 0.8,   priceMin: 0.80,  priceMax: 0.90,  priceLabel: "Từ ~800 triệu" },
+        { label: "1PN+A",  area: "~47m²",  price: 1.0,   priceMin: 1.00,  priceMax: 1.15,  priceLabel: "Từ ~1,0 tỷ" },
+        { label: "1PN+B",  area: "~55m²",  price: 1.2,   priceMin: 1.20,  priceMax: 1.35,  priceLabel: "Từ ~1,2 tỷ" },
+        { label: "2PN",    area: "~65m²",  price: 1.4,   priceMin: 1.40,  priceMax: 1.55,  priceLabel: "Từ ~1,4 tỷ" },
+      ],
       schedule: [
-        { dot: "Cọc",      pct: "30.000.000đ",       note: "Ký phiếu xác nhận cọc" },
+        { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
         { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
-        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ hạn đợt 1" },
-        { dot: "Đợt 3",    pct: "10%",                note: "30 ngày kể từ hạn đợt 2" },
+        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+        { dot: "Đợt 3",    pct: "10%",                note: "30 ngày kể từ ngày đến hạn đợt 2" },
         { dot: "Đợt 4",    pct: "70% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ thông báo BG" },
+        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
       ],
     },
   };
@@ -356,12 +356,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const getCalculatorResults = () => {
     const cfg = projectCalcConfig[selectedCalcProject];
     const loanPercent = paymentOption === "cash" ? 0 : cfg.loanPercent;
-    const interestRate = paymentOption === "commercial" ? 8.0 : cfg.policyRate;
+    const interestRate = cfg.policyRate;
     const loanYears = paymentOption === "cash" ? 0 : cfg.loanYears;
 
-    const totalPrice = investmentValue;
-    const downPayment = totalPrice * (100 - loanPercent) / 100;
-    const loanAmount = totalPrice * loanPercent / 100;
+    const downPayment = investmentValue * (100 - loanPercent) / 100;
+    const loanAmount = investmentValue * loanPercent / 100;
 
     let monthlyPayment = 0;
     if (loanAmount > 0 && loanYears > 0) {
@@ -375,18 +374,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       ? (monthlyPayment * loanYears * 12) - loanAmount * 1000
       : 0;
 
-    const recommended = allProjects.filter(p =>
-      p.priceNumber >= investmentValue * 0.7 && p.priceNumber <= investmentValue * 1.3
-    ).slice(0, 2);
-
     return {
+      unitPrice: investmentValue.toFixed(2),
       downPayment: downPayment.toFixed(2),
       loanAmount: loanAmount.toFixed(2),
       monthlyPayment: monthlyPayment.toFixed(1),
       totalInterest: totalInterest.toFixed(0),
       loanYears,
       loanPercent,
-      recommended
     };
   };
 
@@ -1008,225 +1003,288 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </h2>
           <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full" />
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            Nhập giá trị căn hộ dự kiến và phương thức vay để ước tính số tiền trả trước, khoản vay và trả góp hàng tháng theo lãi suất ưu đãi NOXH.
+            Chọn dự án, mức giá và phương thức thanh toán để xem lịch đóng tiền và số tiền trả góp hàng tháng.
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl border border-slate-100 p-6 md:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-12 relative overflow-hidden">
+        <div className="bg-white rounded-3xl border border-slate-100 p-6 md:p-12 shadow-xl space-y-10 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-32 h-32 bg-amber-500/5 rounded-br-full" />
-          
-          {/* Controls - Left Side */}
-          <div className="lg:col-span-7 space-y-8 relative z-10">
-            <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-4">
-              <Calculator className="w-5 h-5 text-amber-600" /> Nhập Thông Số Kế Hoạch Mua Nhà
-            </h3>
 
-            {/* Bước 1: Chọn dự án */}
-            <div className="space-y-3">
-              <span className="text-sm font-semibold text-slate-700 block">
-                <span className="bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full mr-2">01</span>
-                Chọn dự án bạn quan tâm:
-              </span>
-              <div className="grid grid-cols-1 gap-2">
-                {Object.entries(projectCalcConfig).map(([slug, cfg]) => (
+          {/* ── BƯỚC 1: Chọn dự án ── */}
+          <div className="space-y-4 relative z-10">
+            <p className="text-sm font-semibold text-slate-700">
+              <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">01</span>
+              Chọn dự án bạn quan tâm:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {Object.entries(projectCalcConfig).map(([slug, cfg]) => (
+                <button
+                  key={slug}
+                  type="button"
+                  onClick={() => { setSelectedCalcProject(slug); setSelectedUnitIndex(0); setPaymentOption(""); }}
+                  className={`w-full text-left px-4 py-3.5 rounded-xl border-2 transition-all cursor-pointer ${
+                    selectedCalcProject === slug
+                      ? "border-amber-500 bg-amber-50 shadow-sm"
+                      : "border-slate-200 hover:border-amber-300 bg-white"
+                  }`}
+                >
+                  <div className={`w-4 h-4 rounded-full border-2 mb-2 ${selectedCalcProject === slug ? "bg-amber-500 border-amber-500" : "border-slate-300"}`} />
+                  <span className="font-bold text-sm text-slate-800 block">{cfg.name}</span>
+                  <span className="text-[11px] text-slate-400 block mt-0.5">
+                    Vay {cfg.loanPercent}% · {cfg.loanYears} năm · {cfg.policyRate}%/năm
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* ── BƯỚC 2: Chọn loại căn hộ ── */}
+          {selectedCalcProject && (
+            <div className="space-y-4 relative z-10 pt-2 border-t border-slate-100">
+              <p className="text-sm font-semibold text-slate-700">
+                <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">02</span>
+                Chọn loại căn hộ:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {projectCalcConfig[selectedCalcProject].units.map((unit, idx) => (
                   <button
-                    key={slug}
+                    key={idx}
                     type="button"
-                    onClick={() => {
-                      setSelectedCalcProject(slug);
-                      setInvestmentValue(cfg.priceMin);
-                    }}
-                    className={`w-full text-left px-4 py-3 rounded-xl border transition-all flex items-center justify-between cursor-pointer ${
-                      selectedCalcProject === slug
+                    onClick={() => { setSelectedUnitIndex(idx); setInvestmentValue(unit.priceMin); }}
+                    className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${
+                      selectedUnitIndex === idx
                         ? "border-amber-500 bg-amber-50 shadow-sm"
                         : "border-slate-200 hover:border-amber-300 bg-white"
                     }`}
                   >
-                    <div>
-                      <span className="font-bold text-sm text-slate-800">{cfg.name}</span>
-                      <span className="text-[11px] text-slate-400 block mt-0.5">
-                        Vay tối đa {cfg.loanPercent}% · {cfg.loanYears} năm · Lãi suất NOXH {cfg.policyRate}%/năm
-                      </span>
-                    </div>
-                    <div className={`w-4 h-4 rounded-full border-2 shrink-0 ml-3 ${
-                      selectedCalcProject === slug ? "bg-amber-500 border-amber-500" : "border-slate-300"
-                    }`} />
+                    <div className={`w-4 h-4 rounded-full border-2 mb-2 ${selectedUnitIndex === idx ? "bg-amber-500 border-amber-500" : "border-slate-300"}`} />
+                    <span className="block text-base font-extrabold text-slate-800">{unit.label}</span>
+                    <span className="text-xs text-slate-400 block">{unit.area}</span>
+                    <span className="text-xs font-bold text-amber-600 block mt-1">{unit.priceLabel}</span>
                   </button>
                 ))}
               </div>
             </div>
+          )}
 
-            {/* Bước 2: Slider giá trị căn hộ */}
-            <div className="space-y-4">
-              <span className="text-sm font-semibold text-slate-700 block">
-                <span className="bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full mr-2">02</span>
-                Giá trị căn hộ dự kiến:
-              </span>
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-500 text-xs">Kéo để chọn mức giá</span>
-                <span className="text-lg font-bold text-amber-600 bg-amber-50 px-3.5 py-1 rounded-lg">
+          {/* ── BƯỚC 3: Slider chọn mức giá trong phân khúc ── */}
+          {selectedCalcProject && (
+            <div className="space-y-4 relative z-10 pt-2 border-t border-slate-100">
+              <p className="text-sm font-semibold text-slate-700">
+                <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">03</span>
+                Chọn mức giá cụ thể:
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-slate-500">
+                  {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].label} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].area}
+                </span>
+                <span className="text-xl font-extrabold text-amber-600 bg-amber-50 px-4 py-1.5 rounded-xl">
                   {investmentValue} Tỷ VNĐ
                 </span>
               </div>
               <input
                 type="range"
-                min={projectCalcConfig[selectedCalcProject].priceMin}
-                max={projectCalcConfig[selectedCalcProject].priceMax}
-                step={projectCalcConfig[selectedCalcProject].priceStep}
+                min={projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMin}
+                max={projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMax}
+                step={0.01}
                 value={investmentValue}
                 onChange={(e) => setInvestmentValue(parseFloat(e.target.value))}
                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-500"
               />
               <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-                <span>{projectCalcConfig[selectedCalcProject].noteMin}</span>
-                <span>{projectCalcConfig[selectedCalcProject].noteMax}</span>
+                <span>{(projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMin * 1000).toFixed(0)} triệu (giá thấp nhất)</span>
+                <span>{(projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMax * 1000).toFixed(0)} triệu (giá cao nhất)</span>
               </div>
             </div>
+          )}
 
-            {/* Bước 3: Gói vay */}
-            <div className="space-y-3">
-              <span className="text-sm font-semibold text-slate-700 block">
-                <span className="bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full mr-2">03</span>
-                Chọn gói vay:
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <button type="button" onClick={() => setPaymentOption("policy")}
-                  className={`p-4 rounded-xl border text-left flex flex-col justify-between h-24 cursor-pointer transition-all ${
-                    paymentOption === "policy" ? "border-amber-500 bg-amber-500/5 shadow-sm" : "border-slate-200 hover:border-amber-300 bg-slate-50/50"
-                  }`}>
-                  <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${paymentOption === "policy" ? "bg-amber-500 text-white" : "bg-slate-200 text-slate-400"}`}>✓</span>
-                  <div>
-                    <span className="block text-sm font-bold text-slate-800">NH Chính Sách XH</span>
-                    <span className="text-xs text-amber-600 font-semibold block">
-                      {projectCalcConfig[selectedCalcProject].policyRate}%/năm · {projectCalcConfig[selectedCalcProject].loanYears} năm
-                    </span>
+          {/* ── BƯỚC 4: Chọn phương thức thanh toán ── */}
+          {selectedCalcProject && (
+            <div className="space-y-4 relative z-10 pt-2 border-t border-slate-100">
+              <p className="text-sm font-semibold text-slate-700">
+                <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">04</span>
+                Phương thức thanh toán:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Vốn tự có */}
+                <button
+                  type="button"
+                  onClick={() => setPaymentOption("cash")}
+                  className={`p-5 rounded-2xl border-2 text-left cursor-pointer transition-all ${
+                    paymentOption === "cash" ? "border-amber-500 bg-amber-50 shadow-md" : "border-slate-200 hover:border-amber-300 bg-white"
+                  }`}
+                >
+                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mb-3 ${paymentOption === "cash" ? "bg-amber-500 border-amber-500 text-white" : "border-slate-300"}`}>
+                    {paymentOption === "cash" && <span className="text-[10px] font-bold">✓</span>}
                   </div>
+                  <span className="block text-base font-extrabold text-slate-800">Bằng vốn tự có</span>
+                  <span className="text-xs text-slate-500 block mt-1">Thanh toán theo {projectCalcConfig[selectedCalcProject].schedule.length} đợt, không cần vay NH</span>
                 </button>
 
-                <button type="button" onClick={() => setPaymentOption("commercial")}
-                  className={`p-4 rounded-xl border text-left flex flex-col justify-between h-24 cursor-pointer transition-all ${
-                    paymentOption === "commercial" ? "border-amber-500 bg-amber-500/5 shadow-sm" : "border-slate-200 hover:border-amber-300 bg-slate-50/50"
-                  }`}>
-                  <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${paymentOption === "commercial" ? "bg-amber-500 text-white" : "bg-slate-200 text-slate-400"}`}>✓</span>
-                  <div>
-                    <span className="block text-sm font-bold text-slate-800">NH Thương Mại</span>
-                    <span className="text-xs text-amber-600 font-semibold block">
-                      ~8%/năm · {projectCalcConfig[selectedCalcProject].loanYears} năm
-                    </span>
+                {/* Vay ngân hàng */}
+                <button
+                  type="button"
+                  onClick={() => setPaymentOption("policy")}
+                  className={`p-5 rounded-2xl border-2 text-left cursor-pointer transition-all ${
+                    paymentOption === "policy" ? "border-amber-500 bg-amber-50 shadow-md" : "border-slate-200 hover:border-amber-300 bg-white"
+                  }`}
+                >
+                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mb-3 ${paymentOption === "policy" ? "bg-amber-500 border-amber-500 text-white" : "border-slate-300"}`}>
+                    {paymentOption === "policy" && <span className="text-[10px] font-bold">✓</span>}
                   </div>
-                </button>
-
-                <button type="button" onClick={() => setPaymentOption("cash")}
-                  className={`p-4 rounded-xl border text-left flex flex-col justify-between h-24 cursor-pointer transition-all ${
-                    paymentOption === "cash" ? "border-amber-500 bg-amber-500/5 shadow-sm" : "border-slate-200 hover:border-amber-300 bg-slate-50/50"
-                  }`}>
-                  <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${paymentOption === "cash" ? "bg-amber-500 text-white" : "bg-slate-200 text-slate-400"}`}>✓</span>
-                  <div>
-                    <span className="block text-sm font-bold text-slate-800">Thanh Toán 1 Lần</span>
-                    <span className="text-xs text-amber-600 font-semibold block">Không cần vay</span>
-                  </div>
+                  <span className="block text-base font-extrabold text-slate-800">Bằng vốn vay ngân hàng</span>
+                  <span className="text-xs text-slate-500 block mt-1">Vay tối đa {projectCalcConfig[selectedCalcProject].loanPercent}% · 25% trả dần theo đợt</span>
                 </button>
               </div>
             </div>
+          )}
 
-            {/* Bảng tiến độ thanh toán — động theo dự án */}
-            {paymentOption !== "cash" && (
-              <div className="space-y-3">
-                <span className="text-sm font-semibold text-slate-700 block">
-                  📅 Lịch đóng tiền vốn tự có ({100 - projectCalcConfig[selectedCalcProject].loanPercent}%):
-                </span>
-                <div className="rounded-xl border border-slate-100 overflow-hidden text-[11px]">
-                  <div className="grid grid-cols-3 bg-amber-500 text-white font-bold px-3 py-2">
-                    <span>Đợt</span>
-                    <span className="text-center">Tiến độ</span>
-                    <span className="text-right">Ghi chú</span>
+          {/* ── BẢNG TIẾN ĐỘ (hiện ngay sau khi chọn phương thức) ── */}
+          {paymentOption && (
+            <div className="relative z-10 pt-2 border-t border-slate-100 space-y-4">
+              <p className="text-sm font-semibold text-slate-700">
+                <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">05</span>
+                Lịch đóng tiền — Phương thức {paymentOption === "cash" ? "bằng vốn tự có" : "bằng vốn vay ngân hàng"}:
+              </p>
+
+              {/* Bảng tiến độ */}
+              <div className="rounded-2xl border border-slate-100 overflow-hidden text-xs shadow-sm">
+                <div className="grid grid-cols-3 bg-amber-500 text-white font-bold px-4 py-2.5">
+                  <span>Đợt</span>
+                  <span className="text-center">Tiến độ</span>
+                  <span className="text-right">Thời gian / Ghi chú</span>
+                </div>
+                {(paymentOption === "cash"
+                  ? [
+                      { dot: "Cọc",        pct: "30.000.000đ",       note: "Ngay khi ký Phiếu xác nhận cọc" },
+                      { dot: "Đợt 1",      pct: "15%",               note: "7 ngày kể từ ngày cọc, Ký HĐDVTV" },
+                      { dot: "Đợt 2",      pct: "5%",                note: "30 ngày kể từ ngày đến hạn đợt 1" },
+                      { dot: "Đợt 3",      pct: "5%",                note: "30 ngày kể từ ngày đến hạn đợt 2" },
+                      { dot: "Đợt 4",      pct: "5%",                note: "30 ngày kể từ ngày đến hạn đợt 3" },
+                      { dot: "Đợt 5",      pct: "5%",                note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
+                      { dot: "Đợt 6–15",   pct: "3%/đợt (10 đợt)",  note: "Mỗi đợt cách nhau 30 ngày căn cứ thông báo ký HĐMB" },
+                      { dot: "Đợt 16",     pct: "5%",                note: "30 ngày kể từ ngày đến hạn đợt 15" },
+                      { dot: "Đợt 17",     pct: "25% + phí bảo trì 2%", note: "15 ngày kể từ ngày nhận thông báo bàn giao nhà" },
+                      { dot: "Đợt 18",     pct: "5%",                note: "15 ngày kể từ ngày nhận thông báo nhận giấy chứng nhận" },
+                    ]
+                  : [
+                      { dot: "Cọc",    pct: "30.000.000đ",   note: "Ngay khi ký Phiếu xác nhận cọc" },
+                      { dot: "Đợt 1",  pct: "15%",           note: "7 ngày kể từ ngày cọc, khách thanh toán đợt 1 và ký HĐDVTV" },
+                      { dot: "Đợt 2",  pct: "5%",            note: "30 ngày kể từ ngày đến hạn thanh toán đợt 1" },
+                      { dot: "Đợt 3",  pct: "5%",            note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
+                      { dot: "Đợt 4",  pct: "45%",           note: "Ngân hàng giải ngân" },
+                      { dot: "Đợt 5",  pct: "25% + phí BT",  note: "15 ngày kể từ thông báo BG nhà, NH giải ngân 25% GTHĐ, KH TT 100% phí bảo trì" },
+                      { dot: "Đợt 6",  pct: "5%",            note: "15 ngày kể từ ngày nhận thông báo nhận giấy chứng nhận" },
+                    ]
+                ).map((row, i) => (
+                  <div key={i} className={`grid grid-cols-3 px-4 py-2.5 border-b border-slate-50 ${i % 2 === 0 ? "bg-amber-50/40" : "bg-white"}`}>
+                    <span className="font-semibold text-slate-700">{row.dot}</span>
+                    <span className="text-center font-bold text-amber-700">{row.pct}</span>
+                    <span className="text-right text-slate-500 leading-snug">{row.note}</span>
                   </div>
-                  {projectCalcConfig[selectedCalcProject].schedule.map((row, i) => (
-                    <div key={i} className={`grid grid-cols-3 px-3 py-2 border-b border-slate-50 ${i % 2 === 0 ? "bg-amber-50/40" : "bg-white"}`}>
-                      <span className="font-semibold text-slate-700">{row.dot}</span>
-                      <span className="text-center font-bold text-amber-700">{row.pct}</span>
-                      <span className="text-right text-slate-500">{row.note}</span>
+                ))}
+              </div>
+
+              {/* Bước 5b: Nếu vay NH → chỉ 1 gói NH Chính sách */}
+              {paymentOption === "policy" && (
+                <div className="space-y-3 pt-2">
+                  <p className="text-sm font-semibold text-slate-700">Gói vay áp dụng:</p>
+                  <div className="p-5 rounded-2xl border-2 border-amber-500 bg-amber-50 shadow-sm">
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="text-white text-sm font-bold">✓</span>
+                      </div>
+                      <div>
+                        <span className="block text-base font-extrabold text-slate-800">NH Chính Sách Xã Hội</span>
+                        <span className="text-sm text-amber-600 font-bold block mt-0.5">
+                          {projectCalcConfig[selectedCalcProject].policyRate}%/năm · {projectCalcConfig[selectedCalcProject].loanYears} năm
+                        </span>
+                        <span className="text-xs text-slate-500 block mt-1">Gói vay ưu đãi dành riêng cho người mua Nhà Ở Xã Hội — Ngân hàng Chính sách xã hội tỉnh Đồng Nai</span>
+                      </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            )}
-
-            {/* Điều kiện + hotline */}
-            <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-slate-600 leading-relaxed space-y-1">
-              <p className="font-bold text-amber-700">📋 Điều kiện vay NH Chính sách xã hội Đồng Nai:</p>
-              <p>· Thu nhập dưới 25tr/tháng (độc thân) · Dưới 50tr/tháng (vợ chồng)</p>
-              <p>· Chưa có nhà ở tại Đồng Nai · Chưa từng mua NOXH ở Việt Nam</p>
-              <p className="text-amber-700 font-semibold pt-1">📞 Hotline hỗ trợ hồ sơ miễn phí: 0799.898.893</p>
+              )}
             </div>
-          </div>
+          )}
 
-          {/* Output - Right Side */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-orange-500 to-amber-600 rounded-3xl p-6 sm:p-8 text-white relative flex flex-col justify-between border border-amber-400/20 shadow-xl">
-            <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/5 rounded-tl-full" />
-            
-            <div className="space-y-5 relative z-10">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-yellow-100 bg-white/15 border border-white/10 px-3 py-1 rounded-full inline-block">
-                KẾT QUẢ DỰ TÍNH
-              </span>
-
-              {/* Trả trước */}
-              <div className="space-y-1">
-                <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                  <Coins className="w-3.5 h-3.5 text-yellow-200" /> Vốn tự có cần chuẩn bị ({100 - calcResults.loanPercent}%):
+          {/* ── KẾT QUẢ (chỉ hiện khi đã chọn đủ) ── */}
+          {paymentOption && (
+            <div className="relative z-10 pt-2 border-t border-slate-100">
+              <div className="bg-gradient-to-r from-orange-500 to-amber-600 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
+                <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/5 rounded-tl-full" />
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-yellow-100 bg-white/15 border border-white/10 px-3 py-1 rounded-full inline-block mb-5">
+                  KẾT QUẢ DỰ TÍNH — {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].label} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].area} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceLabel}
                 </span>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white font-display">
-                  {calcResults.downPayment} Tỷ VNĐ
-                </div>
-                <p className="text-[10px] text-amber-100/70">Đóng theo nhiều đợt — không phải 1 lần</p>
-              </div>
 
-              {/* Khoản vay */}
-              <div className="space-y-1 pt-2 border-t border-white/10">
-                <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                  <Percent className="w-3.5 h-3.5 text-yellow-200" /> Khoản vay ngân hàng ({calcResults.loanPercent}%):
-                </span>
-                <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                  {calcResults.loanAmount} Tỷ VNĐ
-                </div>
-                <p className="text-[10px] text-amber-100/70">
-                  {paymentOption === "policy"
-                    ? `${projectCalcConfig[selectedCalcProject].policyRate}%/năm · NH Chính sách · ${calcResults.loanYears} năm`
-                    : paymentOption === "commercial"
-                    ? `~8%/năm · NH Thương mại · ${calcResults.loanYears} năm`
-                    : "Không vay"}
-                </p>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
+                  {/* Vốn tự có */}
+                  <div className="space-y-1">
+                    <span className="text-xs text-amber-100 flex items-center gap-1.5">
+                      <Coins className="w-3.5 h-3.5 text-yellow-200" /> Vốn tự có ({100 - calcResults.loanPercent}%):
+                    </span>
+                    <div className="text-2xl font-extrabold text-white font-display">{calcResults.downPayment} Tỷ</div>
+                    <p className="text-[10px] text-amber-100/70">Đóng theo nhiều đợt</p>
+                  </div>
 
-              {/* Trả góp hàng tháng */}
-              <div className="space-y-1 pt-2 border-t border-white/10">
-                <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                  <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Trả góp hàng tháng:
-                </span>
-                {paymentOption === "cash" ? (
-                  <div className="text-2xl font-extrabold text-yellow-100 font-display">Thanh toán 1 lần</div>
-                ) : (
-                  <>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-yellow-100 font-display flex items-baseline gap-1">
-                      ~{calcResults.monthlyPayment} <span className="text-xs text-white/90 font-normal">triệu/tháng</span>
+                  {/* Khoản vay */}
+                  <div className="space-y-1">
+                    <span className="text-xs text-amber-100 flex items-center gap-1.5">
+                      <Percent className="w-3.5 h-3.5 text-yellow-200" /> Khoản vay ({calcResults.loanPercent}%):
+                    </span>
+                    <div className="text-2xl font-extrabold text-yellow-100 font-display">
+                      {paymentOption === "cash" ? "—" : `${calcResults.loanAmount} Tỷ`}
                     </div>
-                    <p className="text-[10px] text-amber-100/70">Trong {calcResults.loanYears} năm · Tổng lãi ~{Number(calcResults.totalInterest).toLocaleString("vi")} triệu</p>
-                  </>
-                )}
+                    <p className="text-[10px] text-amber-100/70">
+                      {paymentOption === "policy"
+                        ? `${projectCalcConfig[selectedCalcProject].policyRate}%/năm · ${calcResults.loanYears} năm`
+                        : "Không vay"}
+                    </p>
+                  </div>
+
+                  {/* Trả góp */}
+                  <div className="space-y-1">
+                    <span className="text-xs text-amber-100 flex items-center gap-1.5">
+                      <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Trả góp/tháng:
+                    </span>
+                    {paymentOption === "cash" ? (
+                      <div className="text-2xl font-extrabold text-yellow-100 font-display">Không vay</div>
+                    ) : (
+                      <>
+                        <div className="text-2xl font-extrabold text-yellow-100 font-display">
+                          ~{calcResults.monthlyPayment} <span className="text-xs font-normal text-white/80">triệu</span>
+                        </div>
+                        <p className="text-[10px] text-amber-100/70">
+                          {calcResults.loanYears} năm · Tổng lãi ~{Number(calcResults.totalInterest).toLocaleString("vi")} triệu
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/20 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                  <div className="space-y-2 text-xs text-amber-100/90">
+                    <p className="font-bold text-white text-sm">📋 Điều kiện mua Nhà Ở Xã Hội:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Thu nhập &lt; 25tr/tháng (độc thân)</span>
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Thu nhập &lt; 35tr/tháng (đơn thân nuôi con)</span>
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Thu nhập &lt; 50tr/tháng (vợ chồng)</span>
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Chưa có nhà ở tại Đồng Nai</span>
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Chưa từng mua NOXH ở Việt Nam</span>
+                      <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Có đất / nhà tỉnh khác vẫn được mua</span>
+                    </div>
+                    <p className="text-yellow-200 font-semibold pt-1">📞 Hỗ trợ hồ sơ miễn phí: 0933.354.093</p>
+                  </div>
+                  <button
+                    onClick={() => onNavigate("#contact")}
+                    className="shrink-0 bg-white hover:bg-amber-50 text-amber-800 font-bold py-3 px-6 rounded-xl text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center gap-2 shadow-lg"
+                  >
+                    Tư Vấn Miễn Phí <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
-
-              {/* Dự án phù hợp */}
             </div>
-
-            <div className="pt-5 relative z-10">
-              <button
-                onClick={() => onNavigate("/contact")}
-                className="w-full bg-white hover:bg-amber-50 text-amber-800 font-bold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-lg"
-              >
-                Tư Vấn Hồ Sơ Miễn Phí <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+          )}
 
         </div>
       </section>
@@ -1248,7 +1306,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             
             <div className="flex items-center gap-4">
               <button
-                onClick={() => onNavigate("/projects")}
+                onClick={() => onNavigate("#projects")}
                 className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
               >
                 Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
