@@ -5,8 +5,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   const { name, email, phone, projectSlug, projectName, message } = req.body ?? {};
-  if (!name || !email || !phone) {
-    return res.status(400).json({ error: "Vui lòng điền đầy đủ: Họ tên, Email, Số điện thoại." });
+  if (!name || !phone) {
+    return res.status(400).json({ error: "Vui lòng điền đầy đủ: Họ tên, Số điện thoại." });
   }
 
   const uri = process.env.MONGODB_URI!;

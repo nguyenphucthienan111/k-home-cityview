@@ -83,8 +83,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     e.preventDefault();
     setFormError("");
 
-    if (!formName.trim() || !formEmail.trim() || !formPhone.trim()) {
-      setFormError("Vui lòng điền đầy đủ: Họ tên, Email, Số điện thoại.");
+    if (!formName.trim() || !formPhone.trim()) {
+      setFormError("Vui lòng điền đầy đủ: Họ tên, Số điện thoại.");
       return;
     }
 
@@ -449,10 +449,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Địa chỉ Email *</label>
+                  <label className="text-xs font-semibold text-slate-600 block">Địa chỉ Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
                   <input
                     type="email"
-                    required
                     placeholder="VD: hainguyen@gmail.com"
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
