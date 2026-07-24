@@ -34,7 +34,9 @@ export default function App() {
   // Programmatic navigation using History API
   const navigateTo = (newPath: string) => {
     window.history.pushState(null, "", newPath);
-    setPath(newPath);
+    // Only store the pathname part (strip query string) for routing
+    const pathname = newPath.split("?")[0];
+    setPath(pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

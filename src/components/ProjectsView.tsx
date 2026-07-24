@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Search, MapPin, SlidersHorizontal, BedDouble, Bath, Sofa, ChevronRight } from "lucide-react";
 import { Project, UnitType } from "../types";
 import { imgUrl } from "../utils/imageUrl";
@@ -50,6 +50,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
   );
   const [selectedProject, setSelectedProject]   = useState(initialProject);
   const [selectedSort, setSelectedSort]         = useState("default");
+  const [openFilter, setOpenFilter]             = useState<"project" | "sort" | null>(null);
 
   useEffect(() => {
     document.title = "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn";
@@ -154,73 +155,149 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
       </div>
 
       {/* 2. Filter Panel */}
-      <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-5">
+      <div className="bg-white border border-slate-100 p-4 sm:p-6 rounded-2xl shadow-sm space-y-4">
 
-        {/* Row 1: Search + Sort */}
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-            <input
-              type="text"
-              placeholder="Tìm theo tên căn, dự án, vị trí..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
-            />
-          </div>
-
-          <select
-            value={selectedProject}
-            onChange={(e) => setSelectedProject(e.target.value)}
-            className="px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl text-sm outline-none appearance-none cursor-pointer min-w-52"
-          >
-            <option value="all">Tất cả dự án</option>
-            {projects.map((p) => (
-              <option key={p.id} value={p.slug}>{p.title}</option>
-            ))}
-          </select>
-
-          <select
-            value={selectedSort}
-            onChange={(e) => setSelectedSort(e.target.value)}
-            className="px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl text-sm outline-none appearance-none cursor-pointer min-w-44"
-          >
-            <option value="default">Sắp xếp mặc định</option>
-            <option value="price-asc">Giá: Thấp → Cao</option>
-            <option value="price-desc">Giá: Cao → Thấp</option>
-            <option value="area-asc">Diện tích: Nhỏ → Lớn</option>
-            <option value="area-desc">Diện tích: Lớn → Nhỏ</option>
-          </select>
+        {/* Search */}
+        <div className="relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
+          <input
+            type="text"
+            placeholder="Tìm theo tên căn, dự án, vị trí..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+          />
         </div>
 
-        {/* Row 2: Bedroom filter chips */}
-        <div className="flex flex-wrap gap-2 border-t border-slate-100 pt-4">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 mr-2">
-            <BedDouble className="w-3.5 h-3.5" /> Loại căn:
-          </span>
-          {BEDROOM_FILTERS.map(({ label, value }) => (
+        {/* Dự án + Sắp xếp — 2 cột trên mobile */}
+        <div className="grid grid-cols-2 sm:flex sm:flex-row gap-3">
+          {/* Custom dropdown: Dự án */}
+          <div className="relative">
             <button
-              key={label}
-              onClick={() => setSelectedBedrooms(value)}
-              className={`px-4 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
-                selectedBedrooms === value
-                  ? "bg-amber-600 text-white border-amber-600 shadow-sm"
-                  : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-amber-600"
+              type="button"
+              onClick={() => setOpenFilter(openFilter === "project" ? null : "project")}
+              className={`w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl text-sm border transition-all cursor-pointer ${
+                selectedProject !== "all"
+                  ? "bg-amber-50 border-amber-400 text-amber-700 font-semibold"
+                  : "bg-slate-50 border-slate-200 text-slate-700 hover:border-amber-300"
               }`}
             >
-              {label}
+              <span className="truncate">
+                {selectedProject === "all" ? "Tất cả dự án"
+                  : projects.find(p => p.slug === selectedProject)?.title ?? "Dự án"}
+              </span>
+              <svg className={`w-4 h-4 shrink-0 transition-transform ${openFilter === "project" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
             </button>
-          ))}
+            {openFilter === "project" && (
+              <div className="absolute top-full left-0 mt-2 w-[min(16rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden z-50">
+                {[{ id: "all", slug: "all", title: "Tất cả dự án" }, ...projects].map((p) => (
+                  <button
+                    key={p.slug}
+                    type="button"
+                    onClick={() => { setSelectedProject(p.slug); setOpenFilter(null); }}
+                    className={`w-full text-left px-4 py-3 text-sm flex items-center gap-3 transition-all ${
+                      selectedProject === p.slug
+                        ? "bg-amber-500 text-white font-semibold"
+                        : "text-slate-700 hover:bg-amber-50 hover:text-amber-700 hover:pl-6"
+                    }`}
+                  >
+                    {selectedProject === p.slug
+                      ? <span className="w-5 h-5 rounded-md bg-white/30 border-2 border-white flex items-center justify-center shrink-0"><svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                      : <span className="w-5 h-5 rounded-md border-2 border-slate-300 shrink-0" />
+                    }
+                    {p.title}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Custom dropdown: Sắp xếp */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setOpenFilter(openFilter === "sort" ? null : "sort")}
+              className={`w-full flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl text-sm border transition-all cursor-pointer ${
+                selectedSort !== "default"
+                  ? "bg-amber-50 border-amber-400 text-amber-700 font-semibold"
+                  : "bg-slate-50 border-slate-200 text-slate-700 hover:border-amber-300"
+              }`}
+            >
+              <span className="truncate">
+                {selectedSort === "default" ? "Sắp xếp"
+                  : selectedSort === "price-asc" ? "Giá: Thấp → Cao"
+                  : selectedSort === "price-desc" ? "Giá: Cao → Thấp"
+                  : selectedSort === "area-asc" ? "DT: Nhỏ → Lớn"
+                  : "DT: Lớn → Nhỏ"}
+              </span>
+              <svg className={`w-4 h-4 shrink-0 transition-transform ${openFilter === "sort" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            {openFilter === "sort" && (
+              <div className="absolute top-full right-0 mt-2 w-[min(13rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden z-50">
+                {[
+                  { value: "default", label: "Sắp xếp mặc định" },
+                  { value: "price-asc", label: "Giá: Thấp → Cao" },
+                  { value: "price-desc", label: "Giá: Cao → Thấp" },
+                  { value: "area-asc", label: "Diện tích: Nhỏ → Lớn" },
+                  { value: "area-desc", label: "Diện tích: Lớn → Nhỏ" },
+                ].map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => { setSelectedSort(opt.value); setOpenFilter(null); }}
+                    className={`w-full text-left px-4 py-3 text-sm flex items-center gap-3 transition-all ${
+                      selectedSort === opt.value
+                        ? "bg-amber-500 text-white font-semibold"
+                        : "text-slate-700 hover:bg-amber-50 hover:text-amber-700 hover:pl-6"
+                    }`}
+                  >
+                    {selectedSort === opt.value
+                      ? <span className="w-5 h-5 rounded-md bg-white/30 border-2 border-white flex items-center justify-center shrink-0"><svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                      : <span className="w-5 h-5 rounded-md border-2 border-slate-300 shrink-0" />
+                    }
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Bedroom chips — scroll ngang trên mobile */}
+        <div className="flex items-center gap-2 border-t border-slate-100 pt-3 overflow-x-auto pb-1 scrollbar-none">
+          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 shrink-0">
+            <BedDouble className="w-3.5 h-3.5" /> Loại căn:
+          </span>
+          <div className="flex gap-2 flex-nowrap">
+            {BEDROOM_FILTERS.map(({ label, value }) => (
+              <button
+                key={label}
+                onClick={() => setSelectedBedrooms(value)}
+                className={`px-4 py-2 rounded-xl text-xs font-semibold border transition-all cursor-pointer whitespace-nowrap ${
+                  selectedBedrooms === value
+                    ? "bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/20"
+                    : "bg-white text-slate-600 border-slate-200 hover:bg-amber-50 hover:text-amber-600 hover:border-amber-300"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
 
           {isFiltered && (
             <button
               onClick={resetFilters}
-              className="ml-auto px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-red-600 border border-slate-200 hover:border-red-200 transition-all cursor-pointer"
+              className="ml-auto shrink-0 px-3 py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-red-600 border border-slate-200 hover:border-red-200 transition-all cursor-pointer whitespace-nowrap"
             >
               Xóa bộ lọc
             </button>
           )}
         </div>
+
+        {/* Click outside to close */}
+        {openFilter && (
+          <div className="fixed inset-0 z-40" onClick={() => setOpenFilter(null)} />
+        )}
       </div>
 
       {/* 3. Result count */}

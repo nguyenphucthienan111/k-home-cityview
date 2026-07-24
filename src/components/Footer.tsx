@@ -17,11 +17,11 @@ export default function Footer() {
               <img src="/KOG_Web_RGB_01.svg" alt="K-Home Group Logo" className="h-10 w-auto" />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Nhà phát triển bất động sản uy tín hàng đầu Việt Nam, mang sứ mệnh kiến tạo những cộng đồng văn minh, sang trọng và nâng tầm trải nghiệm sống của giới tinh hoa.
+              Kim Oanh Group — Nhà phát triển bất động sản xã hội uy tín tại Đồng Nai, mang sứ mệnh kiến tạo nhà ở chất lượng cho người thu nhập trung bình với lãi suất ưu đãi 5,4%/năm.
             </p>
             <div className="flex items-center gap-2 text-xs text-amber-600 font-semibold bg-amber-100/40 px-3 py-1.5 rounded-lg w-fit">
               <Gem className="w-4 h-4 shrink-0 text-amber-500 animate-pulse" />
-              <span>Thành viên của tập đoàn K-Home Group</span>
+              <span>Thành viên của Tập đoàn Kim Oanh Group</span>
             </div>
           </div>
 
@@ -33,15 +33,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-500">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                <span>Tầng 10, Tòa nhà K-Home Tower, 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</span>
+                <span>Đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-                <a href="tel:0933354093" className="hover:text-amber-600 font-medium transition-colors">0933 354 093</a>
+                <a href="tel:0799898893" className="hover:text-amber-600 font-medium transition-colors">0799.898.893</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-                <a href="mailto:info@k-homecityview.vn" className="hover:text-amber-600 font-medium transition-colors">info@k-homecityview.vn</a>
+                <a href="mailto:info@kimoanh.com.vn" className="hover:text-amber-600 font-medium transition-colors">info@kimoanh.com.vn</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-amber-600 shrink-0" />
@@ -57,23 +57,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-500">
               <li>
-                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
-                  • Căn Hộ Chung Cư Cao Cấp
+                <a href="#projects/k-home-cityview-ho-nai" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                  • K-Home CityView Hố Nai
                 </a>
               </li>
               <li>
-                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
-                  • Biệt Thự Nghỉ Dưỡng Ven Biển
+                <a href="#projects/k-home-avenue-nhon-trach" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                  • K-Home Avenue Nhơn Trạch
                 </a>
               </li>
               <li>
-                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
-                  • Căn Hộ Penthouse Thượng Lưu
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="hover:text-amber-600 transition-colors flex items-center gap-1">
-                  • Shophouse Nhà Phố Thương Mại
+                <a href="#projects/k-home-midtown-trang-bom" className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                  • K-Home Midtown Trảng Bom
                 </a>
               </li>
             </ul>

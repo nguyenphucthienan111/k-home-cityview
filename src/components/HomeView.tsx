@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { 
   ArrowRight, 
   Star, 
@@ -69,6 +69,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Quick Hero Filter states
   const [heroProject, setHeroProject] = useState<string>("all");
   const [heroBedrooms, setHeroBedrooms] = useState<string>("all");
+  const [openDropdown, setOpenDropdown] = useState<"project" | "bedrooms" | null>(null);
 
   // Interactive Showroom Active Tab
   const [activeShowroomTab, setActiveShowroomTab] = useState<number>(0);
@@ -271,7 +272,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Definition of Sections for Floating Sidebar Dot Navigation
   const homeSections = [
     { id: "hero", label: "Tổng quan dự án" },
-    { id: "stats", label: "Chữ tín thương hiệu" },
     { id: "philosophy", label: "Mã gen K-Home" },
     { id: "amenities", label: "Tiện ích nội khu" },
     { id: "calculator", label: "Phân tích đầu tư" },
@@ -336,14 +336,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [allProjects]);
 
-  // Handle hero quick search — navigate sang #projects với filter params trong hash
+  // Handle hero quick search — navigate sang /projects với query params đúng
   const handleHeroSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const params: string[] = [];
-    if (heroProject !== "all") params.push(`project=${heroProject}`);
-    if (heroBedrooms !== "all") params.push(`bedrooms=${heroBedrooms}`);
-    const hash = params.length > 0 ? `#projects?${params.join("&")}` : "/projects";
-    onNavigate(hash);
+    const params = new URLSearchParams();
+    if (heroProject !== "all") params.set("project", heroProject);
+    if (heroBedrooms !== "all") params.set("bedrooms", heroBedrooms);
+    const query = params.toString();
+    onNavigate(query ? `/projects?${query}` : "/projects");
   };
 
   // Reset filters
@@ -517,17 +517,21 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           ========================================================= */}
       <section 
         id="hero" 
-        className="relative min-h-[720px] lg:min-h-[820px] w-full flex flex-col justify-center items-center overflow-hidden pt-24 pb-16 lg:py-0"
+        className="relative w-full flex flex-col justify-center items-center pt-24 pb-8 lg:py-24"
+        style={{ minHeight: "100svh" }}
       >
-        {/* Custom Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src="/hero-background.jpg"
-            alt="K-Home Premium Luxury Architecture"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
-        </div>
+        {/* Background — stretch theo content, không bị cắt */}
+        <div
+          className="absolute inset-0 -z-0"
+          style={{
+            backgroundImage: "url('/hero-background.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
 
         {/* Diagonal Wave Lines for Premium Texture */}
         <div className="absolute inset-0 opacity-15 pointer-events-none">
@@ -535,7 +539,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
 
         {/* Content Container (Grid Layout inspired by premium screenshot) */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col justify-center h-full gap-12 lg:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col justify-center h-full gap-6 sm:gap-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Side: Editorial Typography & Custom Spec Sheet Card */}
@@ -557,7 +561,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
 
               {/* Spec Sheet Table - Dynamic theo slide đang active */}
-              <div className="bg-white/20 backdrop-blur-md rounded-2xl p-5 border border-white/30 space-y-4 shadow-xl">
+              <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 sm:p-5 border border-white/30 space-y-2 sm:space-y-4 shadow-xl">
                 <div className="grid grid-cols-3 py-1.5 border-b border-white/20 text-xs items-center">
                   <span className="font-semibold text-amber-100 uppercase tracking-wide">Vị trí</span>
                   <span className="col-span-2 text-white font-medium text-right sm:text-left transition-all duration-500">{heroProjects[activeHeroSlide].location}</span>
@@ -603,10 +607,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
 
             {/* Right Side: Project Slideshow Carousel */}
-            <div className="lg:col-span-7 hidden lg:flex flex-col gap-3">
+            <div className="lg:col-span-7 flex flex-col gap-3">
               
               {/* Carousel Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/25 h-[340px] sm:h-[450px] w-full">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/25 h-[220px] sm:h-[300px] lg:h-[450px] w-full">
                 {/* Blur Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-white/5 rounded-3xl filter blur-xl opacity-30 pointer-events-none" />
                 
@@ -665,44 +669,107 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           {/* =========================================================
               QUICK FILTER SEARCH PANEL (INTEGRATED BRIGHT LUXURY STYLE)
               ========================================================= */}
-          <div className="w-full max-w-5xl mx-auto bg-white/95 backdrop-blur-xl border border-amber-100 rounded-3xl p-6 sm:p-8 shadow-2xl relative z-20">
+          <div className="w-full max-w-5xl mx-auto bg-white/95 backdrop-blur-xl border border-amber-100 rounded-3xl p-4 sm:p-8 shadow-2xl relative z-20 mb-4 sm:mb-0">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
             
-            <form onSubmit={handleHeroSearch} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
-              {/* Filter 1: Dự án */}
-              <div className="space-y-2">
-                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Chọn Dự Án</label>
-                <div className="relative">
-                  <select
-                    value={heroProject}
-                    onChange={(e) => setHeroProject(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 appearance-none cursor-pointer"
-                  >
-                    <option value="all">Tất cả dự án</option>
-                    <option value="k-home-cityview-ho-nai">K-Home CityView Biên Hòa</option>
-                    <option value="k-home-midtown-trang-bom">K-Home Midtown Trảng Bom</option>
-                    <option value="k-home-avenue-nhon-trach">K-Home Avenue Nhơn Trạch</option>
-                  </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">▼</div>
-                </div>
-              </div>
+            <form onSubmit={handleHeroSearch} className="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:items-end">
+              {/* 2 dropdowns cạnh nhau trên mobile */}
+              <div className="grid grid-cols-2 gap-3 sm:contents">
 
-              {/* Filter 2: Loại căn */}
-              <div className="space-y-2">
-                <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Loại Căn Hộ</label>
-                <div className="relative">
-                  <select
-                    value={heroBedrooms}
-                    onChange={(e) => setHeroBedrooms(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 appearance-none cursor-pointer"
-                  >
-                    <option value="all">Tất cả loại căn</option>
-                    <option value="studio">Studio</option>
-                    <option value="1pn">Căn 1 Phòng Ngủ</option>
-                    <option value="2pn">Căn 2 Phòng Ngủ</option>
-                    <option value="3pn">Căn 3 Phòng Ngủ</option>
-                  </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">▼</div>
+                {/* Filter 1: Chọn Dự Án — custom dropdown */}
+                <div className="space-y-1.5">
+                  <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Chọn Dự Án</label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setOpenDropdown(openDropdown === "project" ? null : "project")}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3 text-slate-800 text-xs sm:text-sm focus:outline-none focus:border-amber-500 flex items-center justify-between gap-2 cursor-pointer hover:border-amber-400 transition-colors"
+                    >
+                      <span className="truncate text-left">
+                        {heroProject === "all" ? "Tất cả dự án"
+                          : heroProject === "k-home-cityview-ho-nai" ? "K-Home CityView Biên Hòa"
+                          : heroProject === "k-home-midtown-trang-bom" ? "K-Home Midtown Trảng Bom"
+                          : "K-Home Avenue Nhơn Trạch"}
+                      </span>
+                      <svg className={`w-4 h-4 shrink-0 text-amber-500 transition-transform ${openDropdown === "project" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    {openDropdown === "project" && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden z-50">
+                        {[
+                          { value: "all", label: "Tất cả dự án" },
+                          { value: "k-home-cityview-ho-nai", label: "K-Home CityView Biên Hòa" },
+                          { value: "k-home-midtown-trang-bom", label: "K-Home Midtown Trảng Bom" },
+                          { value: "k-home-avenue-nhon-trach", label: "K-Home Avenue Nhơn Trạch" },
+                        ].map((opt) => (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            onClick={() => { setHeroProject(opt.value); setHeroBedrooms("all"); setOpenDropdown(null); }}
+                            className={`w-full text-left px-4 py-3 text-sm transition-all flex items-center gap-2.5 ${
+                              heroProject === opt.value
+                                ? "bg-amber-500 text-white font-semibold"
+                                : "text-slate-700 hover:bg-amber-50 hover:text-amber-700 hover:pl-6"
+                            }`}
+                          >
+                            {heroProject === opt.value
+                              ? <span className="w-5 h-5 rounded-md bg-amber-500 border-2 border-amber-500 flex items-center justify-center shrink-0"><svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                              : <span className="w-5 h-5 rounded-md border-2 border-slate-300 shrink-0" />
+                            }
+                            {opt.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Filter 2: Loại Căn Hộ — custom dropdown */}
+                <div className="space-y-1.5">
+                  <label className="block text-slate-600 text-xs font-bold uppercase tracking-wider">Loại Căn Hộ</label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setOpenDropdown(openDropdown === "bedrooms" ? null : "bedrooms")}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3 text-slate-800 text-xs sm:text-sm focus:outline-none focus:border-amber-500 flex items-center justify-between gap-2 cursor-pointer hover:border-amber-400 transition-colors"
+                    >
+                      <span className="truncate text-left">
+                        {heroBedrooms === "all" ? "Tất cả loại căn"
+                          : heroBedrooms === "studio" ? "Studio"
+                          : heroBedrooms === "1pn" ? "Căn 1 Phòng Ngủ"
+                          : heroBedrooms === "2pn" ? "Căn 2 Phòng Ngủ"
+                          : "Căn 3 Phòng Ngủ"}
+                      </span>
+                      <svg className={`w-4 h-4 shrink-0 text-amber-500 transition-transform ${openDropdown === "bedrooms" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    {openDropdown === "bedrooms" && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-amber-100 overflow-hidden z-50">
+                        {[
+                          { value: "all", label: "Tất cả loại căn", show: true },
+                          { value: "studio", label: "Studio", show: heroProject !== "k-home-cityview-ho-nai" },
+                          { value: "1pn", label: "Căn 1 Phòng Ngủ", show: true },
+                          { value: "2pn", label: "Căn 2 Phòng Ngủ", show: true },
+                          { value: "3pn", label: "Căn 3 Phòng Ngủ", show: heroProject === "all" || heroProject === "k-home-cityview-ho-nai" },
+                        ].filter(o => o.show).map((opt) => (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            onClick={() => { setHeroBedrooms(opt.value); setOpenDropdown(null); }}
+                            className={`w-full text-left px-4 py-3 text-sm transition-all flex items-center gap-2.5 ${
+                              heroBedrooms === opt.value
+                                ? "bg-amber-500 text-white font-semibold"
+                                : "text-slate-700 hover:bg-amber-50 hover:text-amber-700 hover:pl-6"
+                            }`}
+                          >
+                            {heroBedrooms === opt.value
+                              ? <span className="w-5 h-5 rounded-md bg-amber-500 border-2 border-amber-500 flex items-center justify-center shrink-0"><svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                              : <span className="w-5 h-5 rounded-md border-2 border-slate-300 shrink-0" />
+                            }
+                            {opt.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -710,7 +777,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div className="flex gap-3">
                 <button
                   type="submit"
-                  className="flex-grow bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3.5 px-6 rounded-xl text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20"
+                  onClick={() => setOpenDropdown(null)}
+                  className="flex-grow bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-3 sm:py-3.5 px-6 rounded-xl text-sm tracking-wide transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-amber-500/20"
                 >
                   <Search className="w-4 h-4 shrink-0" />
                   Xem Rổ Hàng
@@ -718,9 +786,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 {(heroProject !== "all" || heroBedrooms !== "all") && (
                   <button
                     type="button"
-                    onClick={resetFilters}
+                    onClick={() => { resetFilters(); setOpenDropdown(null); }}
                     className="bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-3 rounded-xl text-xs font-semibold transition-colors shrink-0"
-                    title="Xóa bộ lọc"
                   >
                     Đặt lại
                   </button>
@@ -728,68 +795,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </form>
 
+            {/* Đóng dropdown khi click ra ngoài */}
+            {openDropdown && (
+              <div className="fixed inset-0 z-40" onClick={() => setOpenDropdown(null)} />
+            )}
+
             <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-slate-500 text-center font-medium border-t border-slate-100 pt-4">
               <span className="flex items-center gap-1.5"><Award className="w-3.5 h-3.5 text-amber-500" /> Cam kết giá gốc chủ đầu tư</span>
               <span className="hidden sm:inline-block text-slate-200">|</span>
               <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-amber-500" /> Sổ hồng sở hữu lâu dài</span>
               <span className="hidden sm:inline-block text-slate-200">|</span>
               <span className="flex items-center gap-1.5"><TrendingUp className="w-3.5 h-3.5 text-amber-500" /> Lãi suất ưu đãi NOXH 5,4%/năm</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          2. INTERACTIVE PREMIUM BRAND STATISTICS CARD (WARM SUNSET GRADIENT)
-          ========================================================= */}
-      <section id="stats" ref={statsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-30">
-        <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-amber-400/20">
-          <div className="absolute -right-24 -top-24 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -left-24 -bottom-24 w-72 h-72 bg-white/15 rounded-full blur-3xl animate-pulse" />
-          
-          <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/20">
-            <div className="space-y-1">
-              <div className="flex justify-center mb-1">
-                <div className="p-3 bg-white/10 rounded-2xl border border-white/20 text-yellow-100">
-                  <Building className="w-6 h-6" />
-                </div>
-              </div>
-              <span className="block text-4xl md:text-5xl font-display font-extrabold text-white">{count15}+</span>
-              <span className="text-amber-50 text-xs font-bold tracking-wider uppercase block">Dự án bàn giao</span>
-              <p className="text-amber-100/80 text-[11px]">Vượt tiến độ cam kết</p>
-            </div>
-            
-            <div className="space-y-1 pt-6 lg:pt-0">
-              <div className="flex justify-center mb-1">
-                <div className="p-3 bg-white/10 rounded-2xl border border-white/20 text-yellow-100">
-                  <Star className="w-6 h-6" />
-                </div>
-              </div>
-              <span className="block text-4xl md:text-5xl font-display font-extrabold text-white">{count12k}K+</span>
-              <span className="text-amber-50 text-xs font-bold tracking-wider uppercase block">Cư dân tinh hoa</span>
-              <p className="text-amber-100/80 text-[11px]">Tin dùng thương hiệu</p>
-            </div>
-
-            <div className="space-y-1 pt-6 lg:pt-0">
-              <div className="flex justify-center mb-1">
-                <div className="p-3 bg-white/10 rounded-2xl border border-white/20 text-yellow-100">
-                  <Landmark className="w-6 h-6" />
-                </div>
-              </div>
-              <span className="block text-4xl md:text-5xl font-display font-extrabold text-white">{count10}+</span>
-              <span className="text-amber-50 text-xs font-bold tracking-wider uppercase block">Năm phát triển</span>
-              <p className="text-amber-100/80 text-[11px]">Bảo chứng chữ Tín vàng</p>
-            </div>
-
-            <div className="space-y-1 pt-6 lg:pt-0">
-              <div className="flex justify-center mb-1">
-                <div className="p-3 bg-white/10 rounded-2xl border border-white/20 text-yellow-100">
-                  <Sparkles className="w-6 h-6" />
-                </div>
-              </div>
-              <span className="block text-4xl md:text-5xl font-display font-extrabold text-white">{count98}%</span>
-              <span className="text-amber-50 text-xs font-bold tracking-wider uppercase block">Đánh giá 5 sao</span>
-              <p className="text-amber-100/80 text-[11px]">Hài lòng về chất lượng</p>
             </div>
           </div>
         </div>
@@ -1306,7 +1322,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             
             <div className="flex items-center gap-4">
               <button
-                onClick={() => onNavigate("#projects")}
+                onClick={() => onNavigate("/projects")}
                 className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
               >
                 Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
