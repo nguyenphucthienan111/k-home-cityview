@@ -64,7 +64,8 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
-        const foundProject = data.find((p) => p.slug === projectSlug);
+        const list = Array.isArray(data) ? data : [];
+        const foundProject = list.find((p) => p.slug === projectSlug);
         if (foundProject && foundProject.unitTypes) {
           const foundUnit = foundProject.unitTypes.find((u) => u.slug === unitSlug);
           setProject(foundProject);

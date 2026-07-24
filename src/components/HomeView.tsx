@@ -291,12 +291,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
-        setAllProjects(data);
-        setFilteredProjects(data);
+        const list = Array.isArray(data) ? data : [];
+        setAllProjects(list);
+        setFilteredProjects(list);
         setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to fetch projects on Home:", err);
+        setAllProjects([]);
+        setFilteredProjects([]);
         setLoading(false);
       });
   }, []);

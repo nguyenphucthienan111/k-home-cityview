@@ -25,7 +25,7 @@ export default function ContactView() {
 
     fetch("/api/projects")
       .then((res) => res.json())
-      .then((data) => setProjectsList(data))
+      .then((data) => setProjectsList(Array.isArray(data) ? data : []))
       .catch((err) => console.error("Error loading projects for contact select:", err));
   }, []);
 

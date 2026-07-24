@@ -59,7 +59,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
-        const found = data.find((p) => p.slug === slug);
+        const list = Array.isArray(data) ? data : [];
+        const found = list.find((p) => p.slug === slug);
         setProject(found || null);
         if (found) {
           document.title = `${found.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;

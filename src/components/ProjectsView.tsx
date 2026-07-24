@@ -60,8 +60,9 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
+        const list = Array.isArray(data) ? data : [];
         const units: UnitCardData[] = [];
-        data.forEach((project) => {
+        list.forEach((project) => {
           (project.unitTypes || []).forEach((unit) => {
             units.push({ project, unit });
           });

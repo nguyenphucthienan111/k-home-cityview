@@ -25,8 +25,9 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
     fetch("/api/news")
       .then((res) => res.json())
       .then((data) => {
-        setNews(data);
-        setFilteredNews(data);
+        const list = Array.isArray(data) ? data : [];
+        setNews(list);
+        setFilteredNews(list);
         setLoading(false);
       })
       .catch((err) => {

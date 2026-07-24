@@ -16,7 +16,8 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
     fetch("/api/news")
       .then((res) => res.json())
       .then((data: News[]) => {
-        const found = data.find((n) => n.slug === slug);
+        const list = Array.isArray(data) ? data : [];
+        const found = list.find((n) => n.slug === slug);
         setArticle(found || null);
         if (found) {
           document.title = `${found.title} | K-Home Cityview`;
