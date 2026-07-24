@@ -29,11 +29,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const contact = await ContactModel.findByIdAndUpdate(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const contact = await (ContactModel.findByIdAndUpdate as any)(
         id,
         { $set: update },
-        { new: true, runValidators: true }
-      ).lean<Record<string, unknown>>();
+        { new: true, runValidators: true, lean: true }
+      ) as Record<string, unknown> | null;
       if (!contact) return res.status(404).json({ error: "Không tìm thấy khách hàng." });
       const { _id, ...rest } = contact;
       return res.json({ success: true, contact: { id: String(_id), ...rest } });
@@ -45,7 +46,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === "DELETE") {
     try {
-      const contact = await ContactModel.findByIdAndDelete(id).lean();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const contact = await (ContactModel.findByIdAndDelete as any)(id) as Record<string, unknown> | null;
       if (!contact) return res.status(404).json({ error: "Không tìm thấy khách hàng." });
       return res.json({ success: true, message: "Đã xóa thành công." });
     } catch (err) {
