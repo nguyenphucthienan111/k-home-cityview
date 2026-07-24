@@ -76,7 +76,7 @@ export default function AdminDashboardView() {
           return;
         }
         const data = await res.json();
-        setContacts(data);
+        setContacts(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch((err) => {
