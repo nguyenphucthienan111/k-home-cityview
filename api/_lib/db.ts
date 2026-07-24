@@ -1,19 +1,21 @@
-import mongoose from "mongoose";
+import { MongoClient, Db } from "mongodb";
 
-let cached = (global as any).mongooseConn as mongoose.Connection | null;
+let client: MongoClient | null = null;
+let db: Db | null = null;
 
-export async function connectDB() {
-  if (cached && cached.readyState === 1) return cached;
+export async function connectDB(): Promise<Db> {
+  if (db) return db;
 
   const uri = process.env.MONGODB_URI;
   if (!uri) throw new Error("MONGODB_URI không được cấu hình");
 
-  const conn = await mongoose.connect(uri, {
+  client = new MongoClient(uri, {
     serverSelectionTimeoutMS: 10000,
     socketTimeoutMS: 20000,
-    maxPoolSize: 1, // Vercel serverless — chỉ cần 1 connection
+    maxPoolSize: 1,
   });
-  cached = conn.connection;
-  (global as any).mongooseConn = cached;
-  return cached;
+
+  await client.connect();
+  db = client.db(); // uses DB name from URI
+  return db;
 }
