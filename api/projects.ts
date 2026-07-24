@@ -1,21 +1,12 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { projects } from "./_lib/staticData";
 
-// Static projects data - không cần MongoDB cho public readonly data
-// Data được import từ staticData.ts (extracted từ server.ts)
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
-  // CORS headers  
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
-  if (_req.method === "OPTIONS") {
-    return res.status(200).end();
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { projects } = require("./_lib/staticData");
+    return res.json(projects);
+  } catch (err) {
+    console.error("api/projects error:", err);
+    return res.status(500).json({ error: String(err) });
   }
-
-  if (_req.method !== "GET") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  return res.json(projects);
 }
