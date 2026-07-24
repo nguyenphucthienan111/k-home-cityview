@@ -16,8 +16,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const contacts = await ContactModel.find().sort({ createdAt: -1 }).lean();
     const mapped = contacts.map(({ _id, ...rest }: any) => ({ id: _id.toString(), ...rest }));
     return res.json(mapped);
-  } catch (err) {
+  } catch (err: any) {
     console.error("GET /api/contacts error:", err);
-    return res.status(500).json({ error: "Lỗi máy chủ khi tải danh sách." });
+    return res.status(500).json({ 
+      error: "Lỗi máy chủ khi tải danh sách.",
+      detail: err?.message || String(err)
+    });
   }
 }
