@@ -1,5 +1,6 @@
-﻿// Auto-extracted static data from server.ts
+// Auto-extracted static data from server.ts
 // Dùng cho Vercel serverless functions
+// Tái tạo bằng: node scripts/extract-static-data.mjs
 
 export const projects = [
   {
@@ -283,6 +284,3 @@ export const newsList = [
     content: "Làn sóng hạ lãi suất cho vay đang diễn ra vô cùng mạnh mẽ.",
   },
 ];
-
-// ─── Public API Routes ────────────────────────────────────────────────────────
-
