@@ -76,6 +76,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Project Carousel (right panel of amenities section)
   const [activeProjectTab, setActiveProjectTab] = useState<number>(0);
+  const [isCarouselHovered, setIsCarouselHovered] = useState<boolean>(false);
 
   const projectCarousel = [
     {
@@ -205,13 +206,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const projectsSectionRef = useRef<HTMLDivElement>(null);
 
-  // Auto-rotate project carousel every 4 seconds
+  // Auto-rotate project carousel every 4 seconds — dừng khi hover
   useEffect(() => {
+    if (isCarouselHovered) return;
     const timer = setInterval(() => {
       setActiveProjectTab((prev) => (prev + 1) % 3);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isCarouselHovered]);
 
   // Stats counter: trigger once when section enters viewport, persist via sessionStorage
   useEffect(() => {
@@ -910,94 +912,115 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             {/* Right Column: Project Carousel */}
             <div className="lg:col-span-7 space-y-4">
-              {/* Main carousel image — clickable → navigate to project */}
+              {/* Main carousel */}
               <div
+                onMouseEnter={() => setIsCarouselHovered(true)}
+                onMouseLeave={() => setIsCarouselHovered(false)}
                 onClick={() => onNavigate(`/projects/${projectCarousel[activeProjectTab].slug}`)}
-                className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[360px] sm:h-[430px] group bg-slate-100 cursor-pointer"
+                className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[220px] sm:h-[300px] lg:h-[450px] bg-slate-100 cursor-pointer"
               >
-                {/* Images – stacked, fade transition via opacity — source from active amenity tab */}
+                {/* Images — crossfade với ease-in-out */}
                 {projectCarousel.map((project, idx) => (
-                  <img
+                  <div
                     key={project.slug}
-                    src={showroomGallery[activeShowroomTab].images[idx]}
-                    alt={project.name}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 scale-[1.02] group-hover:scale-105 transform ${
-                      activeProjectTab === idx ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-
-                {/* Badge */}
-                <div
-                  className="absolute top-5 left-5 text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md transition-all duration-300"
-                  style={{ backgroundColor: projectCarousel[activeProjectTab].badgeColor }}
-                >
-                  {projectCarousel[activeProjectTab].badge}
-                </div>
-
-                {/* "Xem dự án" hint on hover */}
-                <div className="absolute top-5 right-5 bg-white/20 backdrop-blur-sm border border-white/30 text-white text-[10px] font-bold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-1.5">
-                  Xem dự án <ArrowUpRight className="w-3 h-3" />
-                </div>
-
-                {/* Project info overlay */}
-                <div className="absolute bottom-6 left-6 right-6 space-y-2 text-white">
-                  <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider">
-                    {projectCarousel[activeProjectTab].tag}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-bold font-display text-white leading-tight">
-                    {projectCarousel[activeProjectTab].name}
-                  </h3>
-                  <p className="text-slate-300 text-xs flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    {projectCarousel[activeProjectTab].location}
-                  </p>
-                  <div className="flex items-center gap-3 pt-1">
-                    <div className="bg-white/15 border border-white/20 rounded-lg px-3 py-1.5 text-[11px] font-bold text-amber-200">
-                      {projectCarousel[activeProjectTab].price}
-                    </div>
-                    <div className="bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-[11px] text-slate-300">
-                      {projectCarousel[activeProjectTab].scale}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Thumbnail navigation — thumbnail cũng dùng ảnh theo tab tiện ích */}
-              <div className="flex items-center justify-center gap-3">
-                {projectCarousel.map((project, idx) => (
-                  <button
-                    key={project.slug}
-                    onClick={() => setActiveProjectTab(idx)}
-                    className={`relative rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${
-                      activeProjectTab === idx
-                        ? "border-amber-500 shadow-md shadow-amber-500/30 w-20 h-14 opacity-100"
-                        : "border-transparent w-16 h-12 opacity-50 hover:opacity-80 hover:border-amber-300"
-                    }`}
-                    aria-label={project.name}
+                    className="absolute inset-0"
+                    style={{
+                      opacity: activeProjectTab === idx ? 1 : 0,
+                      transition: "opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: activeProjectTab === idx ? 1 : 0,
+                    }}
                   >
                     <img
                       src={showroomGallery[activeShowroomTab].images[idx]}
                       alt={project.name}
                       className="w-full h-full object-cover"
+                      style={{
+                        transform: activeProjectTab === idx ? "scale(1.03)" : "scale(1)",
+                        transition: "transform 5s ease-out",
+                      }}
                     />
-                    {activeProjectTab === idx && (
-                      <div className="absolute inset-0 bg-amber-500/20" />
-                    )}
+                  </div>
+                ))}
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent z-10" />
+
+                {/* Badge */}
+                <div
+                  className="absolute top-4 left-4 z-20 text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md"
+                  style={{ backgroundColor: projectCarousel[activeProjectTab].badgeColor, transition: "background-color 0.4s ease" }}
+                >
+                  {projectCarousel[activeProjectTab].badge}
+                </div>
+
+                {/* Hover hint */}
+                <div
+                  className="absolute top-4 right-4 z-20 bg-white/20 backdrop-blur-sm border border-white/30 text-white text-[10px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5"
+                  style={{ opacity: isCarouselHovered ? 1 : 0, transition: "opacity 0.3s ease" }}
+                >
+                  Xem dự án <ArrowUpRight className="w-3 h-3" />
+                </div>
+
+                {/* Info overlay — fade khi đổi slide */}
+                {projectCarousel.map((project, idx) => (
+                  <div
+                    key={`info-${project.slug}`}
+                    className="absolute bottom-5 left-5 right-5 z-20 space-y-1.5"
+                    style={{
+                      opacity: activeProjectTab === idx ? 1 : 0,
+                      transform: activeProjectTab === idx ? "translateY(0)" : "translateY(8px)",
+                      transition: "opacity 0.5s ease, transform 0.5s ease",
+                    }}
+                  >
+                    <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider block">{project.tag}</span>
+                    <h3 className="text-lg sm:text-2xl font-bold font-display text-white leading-tight">{project.name}</h3>
+                    <p className="text-slate-300 text-xs flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      {project.location}
+                    </p>
+                    <div className="flex items-center gap-2 pt-0.5">
+                      <div className="bg-white/15 border border-white/20 rounded-lg px-2.5 py-1 text-[11px] font-bold text-amber-200">{project.price}</div>
+                      <div className="bg-white/10 border border-white/10 rounded-lg px-2.5 py-1 text-[11px] text-slate-300">{project.scale}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Thumbnails */}
+              <div className="flex items-center justify-center gap-3">
+                {projectCarousel.map((project, idx) => (
+                  <button
+                    key={project.slug}
+                    onClick={() => { setActiveProjectTab(idx); }}
+                    className="relative rounded-xl overflow-hidden cursor-pointer"
+                    style={{
+                      width: activeProjectTab === idx ? "5rem" : "4rem",
+                      height: activeProjectTab === idx ? "3.5rem" : "3rem",
+                      opacity: activeProjectTab === idx ? 1 : 0.5,
+                      border: activeProjectTab === idx ? "2px solid #f59e0b" : "2px solid transparent",
+                      boxShadow: activeProjectTab === idx ? "0 4px 12px rgba(245,158,11,0.3)" : "none",
+                      transition: "all 0.35s cubic-bezier(0.4,0,0.2,1)",
+                    }}
+                    aria-label={project.name}
+                  >
+                    <img src={showroomGallery[activeShowroomTab].images[idx]} alt={project.name} className="w-full h-full object-cover" />
+                    {activeProjectTab === idx && <div className="absolute inset-0 bg-amber-500/20" />}
                   </button>
                 ))}
               </div>
 
-              {/* Progress bar auto-rotate indicator */}
+              {/* Progress bar */}
               <div className="flex gap-2 px-1">
                 {projectCarousel.map((_, idx) => (
                   <div key={idx} className="flex-1 h-0.5 bg-slate-200 rounded-full overflow-hidden">
                     <div
-                      className={`h-full bg-amber-500 rounded-full transition-all ${
-                        activeProjectTab === idx ? "w-full duration-[4000ms]" : activeProjectTab > idx ? "w-full duration-0" : "w-0 duration-0"
-                      }`}
+                      className="h-full bg-amber-500 rounded-full"
+                      style={{
+                        width: activeProjectTab === idx ? "100%" : activeProjectTab > idx ? "100%" : "0%",
+                        transition: activeProjectTab === idx && !isCarouselHovered
+                          ? "width 4000ms linear"
+                          : "width 0ms",
+                      }}
                     />
                   </div>
                 ))}
@@ -1289,7 +1312,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Chưa từng mua NOXH ở Việt Nam</span>
                       <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-yellow-300 shrink-0" /> Có đất / nhà tỉnh khác vẫn được mua</span>
                     </div>
-                    <p className="text-yellow-200 font-semibold pt-1">📞 Hỗ trợ hồ sơ miễn phí: 0933.354.093</p>
+                    <p className="text-yellow-200 font-semibold pt-1">📞 Hỗ trợ hồ sơ miễn phí: 0937.587.438</p>
                   </div>
                   <button
                     onClick={() => onNavigate("#contact")}
@@ -1513,7 +1536,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           
           <div className="space-y-4 max-w-2xl text-center lg:text-left relative z-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-extrabold uppercase tracking-widest">
-              Hỗ trợ hồ sơ NOXH miễn phí — Hotline 0933.354.093
+              Hỗ trợ hồ sơ NOXH miễn phí — Hotline 0937.587.438
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-extrabold leading-tight">
               Tư Vấn Mua Nhà Ở Xã Hội <br />

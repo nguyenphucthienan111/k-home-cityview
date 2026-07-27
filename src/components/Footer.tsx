@@ -33,11 +33,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-slate-500">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                <span>Đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai</span>
+                <span>28 Đ. Đồng Khởi, Phường Tam Hiệp, Thành phố Biên Hòa, Tỉnh Đồng Nai</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-                <a href="tel:0799898893" className="hover:text-amber-600 font-medium transition-colors">0799.898.893</a>
+                <a href="tel:0799898893" className="hover:text-amber-600 font-medium transition-colors">0937.587.438</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 shrink-0" />
