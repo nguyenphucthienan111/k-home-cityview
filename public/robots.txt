@@ -1,4 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+﻿# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
@@ -6,4 +6,4 @@ Allow: /
 Disallow: /admin
 
 # Sitemaps
-Sitemap: https://k-home-dongnai.vercel.app/sitemap.xml
+Sitemap: https://k-homedongnai.com.vn/sitemap.xml

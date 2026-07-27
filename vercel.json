@@ -2,6 +2,14 @@
   "rewrites": [
     { "source": "/((?!api/|sitemap\\.xml|robots\\.txt|.*\\..*).*)", "destination": "/index.html" }
   ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "k-home-dongnai.vercel.app" }],
+      "destination": "https://k-homedongnai.com.vn/$1",
+      "permanent": true
+    }
+  ],
   "functions": {
     "api/contact.ts": { "maxDuration": 30 },
     "api/contacts.ts": { "maxDuration": 30 },
