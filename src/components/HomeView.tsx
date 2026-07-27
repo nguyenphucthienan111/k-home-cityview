@@ -177,8 +177,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     "k-home-midtown-trang-bom": {
       name: "K-Home Midtown Trảng Bom",
-      loanYears: 20,
-      loanPercent: 70,
+      loanYears: 25,
+      loanPercent: 75,
       policyRate: 5.4,
       units: [
         { label: "Studio", area: "~35m²",  price: 0.8,   priceMin: 0.80,  priceMax: 0.90,  priceLabel: "Từ ~800 triệu" },
@@ -191,7 +191,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
         { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
         { dot: "Đợt 3",    pct: "10%",                note: "30 ngày kể từ ngày đến hạn đợt 2" },
-        { dot: "Đợt 4",    pct: "70% (NH giải ngân)", note: "Ngân hàng giải ngân" },
+        { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
         { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
       ],
     },
