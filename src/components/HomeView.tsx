@@ -45,6 +45,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       product: "1.352 căn hộ NOXH và 30 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Global Vireon Studio, Kiến Trúc Việt, CDC Jsc, K-City",
+      status: "Đang bốc thăm",
+      statusColor: "#f59e0b",
     },
     {
       name: "K-Home Midtown Trảng Bom",
@@ -54,6 +56,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       product: "542 căn hộ NOXH và 20 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Global Vireon Studio, Kiến Trúc Việt, NAGECCO, K-City",
+      status: "Đã công bố",
+      statusColor: "#059669",
     },
     {
       name: "K-Home Avenue Nhơn Trạch",
@@ -63,6 +67,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       product: "1.022 căn hộ NOXH và 82 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Surbana Jurong, Global Vireon Studio, Handong, Coninco, K-City",
+      status: "Sắp công bố",
+      statusColor: "#2563eb",
     },
   ];
 
@@ -638,8 +644,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                           <span className="text-[8px] text-amber-300 font-extrabold uppercase tracking-widest block drop-shadow-lg">Dự án bàn giao chuẩn</span>
                           <span className="text-base font-extrabold text-white block mt-0.5 drop-shadow-lg">{project.name}</span>
                         </div>
-                        <div className="bg-white/20 backdrop-blur-md text-amber-100 py-1 px-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 border border-white/30 drop-shadow-lg mx-auto">
-                          <Activity className="w-3 h-3 text-amber-300 animate-pulse" /> Đang thi công
+                        <div className="bg-white/20 backdrop-blur-md text-amber-100 py-1 px-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 border border-white/30 drop-shadow-lg mx-auto"
+                          style={{ backgroundColor: project.statusColor + "33", borderColor: project.statusColor + "66" }}>
+                          <Activity className="w-3 h-3 animate-pulse" style={{ color: project.statusColor }} /> {project.status}
                         </div>
                       </div>
                     </div>

@@ -112,7 +112,7 @@ export default function App() {
           </a>
 
           <a
-            href="https://zalo.me/0933354093"
+            href="https://zalo.me/0937587438"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-[#0068FF] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
@@ -126,14 +126,14 @@ export default function App() {
           </a>
 
           <a
-            href="https://m.me/61592537155075"
+            href="https://m.me/61592212156463"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
-            title="Facebook Duy Ân"
+            title="Chat Messenger"
           >
             <span className="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-right pointer-events-none border border-slate-800">
-              Facebook Duy Ân
+              Chat Messenger
             </span>
             <img src="/messenger.png" alt="Facebook" className="w-6 h-6 object-contain" />
           </a>
