@@ -144,7 +144,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <h2 className="text-2xl font-bold text-slate-800">Không tìm thấy dự án</h2>
         <p className="text-slate-500 text-sm">Dự án bạn tìm kiếm không tồn tại hoặc đã được gỡ bỏ khỏi hệ thống.</p>
         <button
-          onClick={() => onNavigate("/projects")}
+          onClick={() => onNavigate("/san-pham")}
           className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium text-xs tracking-wider uppercase transition-colors cursor-pointer"
         >
           Quay lại danh sách
@@ -158,7 +158,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       
       {/* Back navigation button */}
       <button
-        onClick={() => onNavigate("/projects")}
+        onClick={() => onNavigate("/san-pham")}
         className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 text-sm font-medium transition-colors cursor-pointer group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -329,7 +329,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                       {project.unitTypes.map((unit, idx) => (
                         <tr
                           key={idx}
-                          onClick={() => onNavigate(`/projects/${project.slug}/${unit.slug}`)}
+                          onClick={() => onNavigate(`/${project.slug}/${unit.slug}`)}
                           className="hover:bg-amber-50/40 transition-colors cursor-pointer group"
                         >
                           <td className="px-5 py-4 font-semibold text-slate-800 group-hover:text-amber-700 flex items-center gap-2">

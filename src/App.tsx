@@ -41,16 +41,31 @@ export default function App() {
   };
 
   const renderContent = () => {
-    // /projects/:projectSlug/:unitSlug
-    const unitMatch = path.match(/^\/projects\/([^/]+)\/([^/]+)$/);
+    // /:projectSlug/:unitSlug — unit detail (new URL with can- prefix)
+    const unitMatch = path.match(/^\/([^/]+)\/(can-[^/]+)$/);
     if (unitMatch) {
       return <UnitDetailView projectSlug={unitMatch[1]} unitSlug={unitMatch[2]} onNavigate={navigateTo} />;
     }
 
-    // /projects/:projectSlug
-    const projectMatch = path.match(/^\/projects\/([^/]+)$/);
-    if (projectMatch) {
-      return <ProjectDetailView slug={projectMatch[1]} onNavigate={navigateTo} />;
+    // /projects/:projectSlug/:unitSlug — old URL redirect support
+    const unitMatchOld = path.match(/^\/projects\/([^/]+)\/([^/]+)$/);
+    if (unitMatchOld) {
+      const newUnitSlug = unitMatchOld[2].startsWith("can-") ? unitMatchOld[2] : `can-${unitMatchOld[2]}`;
+      navigateTo(`/${unitMatchOld[1]}/${newUnitSlug}`);
+      return null;
+    }
+
+    // /:projectSlug — project detail (direct slug at root)
+    const PROJECT_SLUGS = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"];
+    if (PROJECT_SLUGS.includes(path.slice(1))) {
+      return <ProjectDetailView slug={path.slice(1)} onNavigate={navigateTo} />;
+    }
+
+    // /projects/:projectSlug — old URL redirect support
+    const projectMatchOld = path.match(/^\/projects\/([^/]+)$/);
+    if (projectMatchOld) {
+      navigateTo(`/${projectMatchOld[1]}`);
+      return null;
     }
 
     // /news/:slug
@@ -63,6 +78,7 @@ export default function App() {
       case "/":
       case "/home":
         return <HomeView onNavigate={navigateTo} />;
+      case "/san-pham":
       case "/projects": {
         const params = new URLSearchParams(window.location.search);
         return <ProjectsView

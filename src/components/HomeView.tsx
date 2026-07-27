@@ -351,7 +351,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     if (heroProject !== "all") params.set("project", heroProject);
     if (heroBedrooms !== "all") params.set("bedrooms", heroBedrooms);
     const query = params.toString();
-    onNavigate(query ? `/projects?${query}` : "/projects");
+    onNavigate(query ? `/san-pham?${query}` : "/san-pham");
   };
 
   // Reset filters
@@ -923,7 +923,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div
                 onMouseEnter={() => setIsCarouselHovered(true)}
                 onMouseLeave={() => setIsCarouselHovered(false)}
-                onClick={() => onNavigate(`/projects/${projectCarousel[activeProjectTab].slug}`)}
+                onClick={() => onNavigate(`/${projectCarousel[activeProjectTab].slug}`)}
                 className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl h-[220px] sm:h-[300px] lg:h-[450px] bg-slate-100 cursor-pointer"
               >
                 {/* Images — crossfade với ease-in-out */}
@@ -1352,7 +1352,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             
             <div className="flex items-center gap-4">
               <button
-                onClick={() => onNavigate("/projects")}
+                onClick={() => onNavigate("/san-pham")}
                 className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
               >
                 Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
@@ -1394,7 +1394,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       <div
                         key={project.id}
                         className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-                        onClick={() => onNavigate(`/projects/${project.slug}`)}
+                        onClick={() => onNavigate(`/${project.slug}`)}
                       >
                         {/* Image */}
                         <div className="relative h-72 overflow-hidden bg-slate-100">

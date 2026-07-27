@@ -332,7 +332,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
           {filteredUnits.map(({ project, unit }) => (
             <div
               key={`${project.id}-${unit.slug}`}
-              onClick={() => onNavigate(`/projects/${project.slug}/${unit.slug}`)}
+              onClick={() => onNavigate(`/${project.slug}/${unit.slug}`)}
               className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer hover:-translate-y-0.5"
             >
               {/* Image */}
