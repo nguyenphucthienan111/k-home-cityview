@@ -37,8 +37,8 @@ const loginLimiter = rateLimit({
 
 // Rate limit cho form submit của khách
 const contactLimiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 phút
-  max: 5,
+  windowMs: 60 * 60 * 1000, // 1 giờ
+  max: 20, // 20 lần / giờ / IP — đủ thoải mái cho khách thật, vẫn chặn spam bot
   message: { error: "Bạn đã gửi quá nhiều yêu cầu. Vui lòng thử lại sau." },
 });
 
@@ -81,7 +81,7 @@ const SEED_CONTACTS = [
     status: "Đã liên hệ", notes: "Đã xếp lịch xem nhà mẫu vào 9h sáng thứ Bảy.",
   },
   {
-    name: "Lê Hoàng Yến", email: "yenlh@gmail.com", phone: "0933445566",
+    name: "Lê Hoàng Yến", email: "yenlh@gmail.com", phone: "0937587438",
     projectSlug: "k-home-cityview-ho-nai", projectName: "K-Home CityView Biên Hòa",
     message: "Muốn tham quan vị trí thực tế dự án CityView Hố Nai.",
     status: "Đã chốt", notes: "Đã ký văn bản đặt cọc căn hộ tầng 10.",
@@ -380,8 +380,8 @@ app.get("/api/news", (_req, res) => res.json(newsList));
 app.post("/api/contact", contactLimiter, async (req, res) => {
   const { name, email, phone, projectSlug, projectName, message } = req.body;
 
-  if (!name || !email || !phone) {
-    res.status(400).json({ error: "Vui lòng điền đầy đủ: Họ tên, Email, Số điện thoại." });
+  if (!name || !phone) {
+    res.status(400).json({ error: "Vui lòng điền đầy đủ: Họ tên, Số điện thoại." });
     return;
   }
 

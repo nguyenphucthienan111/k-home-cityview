@@ -17,10 +17,11 @@ const ContactSchema = new Schema<IContact>(
     name: { type: String, required: true, trim: true, maxlength: 200 },
     email: {
       type: String,
-      required: true,
+      required: false,
+      default: "",
       trim: true,
       lowercase: true,
-      match: [/^\S+@\S+\.\S+$/, "Email không hợp lệ"],
+      match: [/^$|^\S+@\S+\.\S+$/, "Email không hợp lệ"],
     },
     phone: {
       type: String,

@@ -19,7 +19,10 @@ import {
   CheckCircle2,
   Activity,
   ArrowUpRight,
-  Info
+  Info,
+  X,
+  Send,
+  CheckCircle
 } from "lucide-react";
 import { Project } from "../types";
 import { imgUrl } from "../utils/imageUrl";
@@ -57,7 +60,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Global Vireon Studio, Kiến Trúc Việt, NAGECCO, K-City",
       status: "Đã công bố",
-      statusColor: "#059669",
+      statusColor: "#6ee7b7",
     },
     {
       name: "K-Home Avenue Nhơn Trạch",
@@ -68,7 +71,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Surbana Jurong, Global Vireon Studio, Handong, Coninco, K-City",
       status: "Sắp công bố",
-      statusColor: "#2563eb",
+      statusColor: "#7dd3fc",
     },
   ];
 
@@ -83,6 +86,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Project Carousel (right panel of amenities section)
   const [activeProjectTab, setActiveProjectTab] = useState<number>(0);
   const [isCarouselHovered, setIsCarouselHovered] = useState<boolean>(false);
+
+  // Popup lead form state
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupDismissed, setPopupDismissed] = useState(false);
+  const [popupName, setPopupName] = useState("");
+  const [popupPhone, setPopupPhone] = useState("");
+  const [popupProject, setPopupProject] = useState("k-home-cityview-ho-nai");
+  const [popupSubmitting, setPopupSubmitting] = useState(false);
+  const [popupSuccess, setPopupSuccess] = useState(false);
+
+  // Inline consultation form state
+  const [ctaName, setCtaName] = useState("");
+  const [ctaPhone, setCtaPhone] = useState("");
+  const [ctaProject, setCtaProject] = useState("k-home-cityview-ho-nai");
+  const [ctaSubmitting, setCtaSubmitting] = useState(false);
+  const [ctaSuccess, setCtaSuccess] = useState(false);
+  const [ctaError, setCtaError] = useState("");
 
   const projectCarousel = [
     {
@@ -104,7 +124,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       price: "Từ 750 triệu",
       scale: "84 ha · 4 Block 12 tầng · 1.104 căn",
       badge: "Sắp công bố",
-      badgeColor: "#3b82f6",
+      badgeColor: "#7dd3fc",
       image: "/k-home avenue/PC01-TT-copy_2_2-min.jpg.webp"
     },
     {
@@ -115,7 +135,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       price: "Trả góp 3,5 – 4,5tr/tháng",
       scale: "13,97 ha · 15 tầng · 562 căn",
       badge: "Đã công bố",
-      badgeColor: "#16a34a",
+      badgeColor: "#6ee7b7",
       image: "/k-home midtown/Du-an-K-Home-Midtown-3d-ho-boi-view-2-2048x1150.webp"
     }
   ];
@@ -279,13 +299,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Definition of Sections for Floating Sidebar Dot Navigation
   const homeSections = [
-    { id: "hero", label: "Tổng quan dự án" },
-    { id: "philosophy", label: "Mã gen K-Home" },
-    { id: "amenities", label: "Tiện ích nội khu" },
-    { id: "calculator", label: "Phân tích đầu tư" },
-    { id: "featured-projects", label: "Danh mục kiệt tác" },
-    { id: "testimonials", label: "Chia sẻ cư dân" },
-    { id: "consultation", label: "Đăng ký tư vấn VIP" }
+    { id: "hero",             label: "Tổng quan dự án" },
+    { id: "featured-projects",label: "Danh mục kiệt tác" },
+    { id: "amenities",        label: "Tiện ích nội khu" },
+    { id: "calculator",       label: "Phân tích đầu tư" },
+    { id: "philosophy",       label: "Giá trị cốt lõi" },
+    { id: "testimonials",     label: "Chia sẻ cư dân" },
+    { id: "consultation",     label: "Đăng ký tư vấn VIP" }
   ];
 
   // Auto-advance hero slideshow every 5 seconds
@@ -295,6 +315,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     }, 10000);
     return () => clearInterval(timer);
   }, [heroProjects.length]);
+
+  // Popup timer — show after 8 seconds, only once per session
+  useEffect(() => {
+    const alreadySeen = sessionStorage.getItem("popupShown");
+    if (alreadySeen) return;
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      sessionStorage.setItem("popupShown", "1");
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
@@ -368,6 +399,64 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     setHeroBedrooms("all");
   };
 
+  // Submit inline CTA form
+  const handleCtaSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCtaError("");
+    if (!ctaName.trim() || !ctaPhone.trim()) {
+      setCtaError("Vui lòng điền Họ tên và Số điện thoại.");
+      return;
+    }
+    setCtaSubmitting(true);
+    const projectNameMap: Record<string, string> = {
+      "k-home-cityview-ho-nai":   "K-Home CityView Biên Hòa",
+      "k-home-midtown-trang-bom": "K-Home Midtown Trảng Bom",
+      "k-home-avenue-nhon-trach": "K-Home Avenue Nhơn Trạch",
+    };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: ctaName.trim(),
+        phone: ctaPhone.trim(),
+        email: "",
+        projectSlug: ctaProject,
+        projectName: projectNameMap[ctaProject] ?? ctaProject,
+        message: "Đăng ký tư vấn từ banner trang chủ."
+      })
+    })
+      .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+      .then(() => { setCtaSuccess(true); setCtaSubmitting(false); })
+      .catch(() => { setCtaError("Có lỗi xảy ra. Vui lòng thử lại."); setCtaSubmitting(false); });
+  };
+
+  // Submit popup form
+  const handlePopupSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!popupName.trim() || !popupPhone.trim()) return;
+    setPopupSubmitting(true);
+    const projectNameMap: Record<string, string> = {
+      "k-home-cityview-ho-nai":   "K-Home CityView Biên Hòa",
+      "k-home-midtown-trang-bom": "K-Home Midtown Trảng Bom",
+      "k-home-avenue-nhon-trach": "K-Home Avenue Nhơn Trạch",
+    };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: popupName.trim(),
+        phone: popupPhone.trim(),
+        email: "",
+        projectSlug: popupProject,
+        projectName: projectNameMap[popupProject] ?? popupProject,
+        message: "Đăng ký tư vấn từ popup tự động."
+      })
+    })
+      .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+      .then(() => { setPopupSuccess(true); setPopupSubmitting(false); })
+      .catch(() => { setPopupSubmitting(false); });
+  };
+
   // Calculate for NOXH — dùng config theo dự án được chọn
   const getCalculatorResults = () => {
     const cfg = projectCalcConfig[selectedCalcProject];
@@ -404,31 +493,31 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const calcResults = getCalculatorResults();
 
   const coreValues = [
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Vị Trí Độc Tôn",
-      subtitle: "Tâm Điểm Thịnh Vượng",
-      description: "Các dự án đều tọa lạc tại các vị trí đất vàng trung tâm, tâm điểm kết nối và đón đầu dòng chảy phát triển của các công trình hạ tầng trọng điểm quốc gia."
-    },
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Tiện Ích Đặc Quyền",
-      subtitle: "Xứng Tầm Tinh Hoa",
-      description: "Kiến tạo đặc quyền sống chuẩn nghỉ dưỡng 365 ngày với hồ bơi vô cực rộng lớn, câu lạc bộ bến du thuyền thượng lưu, sky bar sang trọng và công viên sinh thái."
-    },
-    {
-      icon: <ShieldCheck className="w-6 h-6" />,
-      title: "Pháp Lý Minh Bạch",
-      subtitle: "Tuyệt Đối An Tâm",
-      description: "Cam kết hồ sơ pháp lý hoàn chỉnh nhất, sở hữu lâu dài rõ ràng, liên kết bảo lãnh chặt chẽ với những ngân hàng thương mại quốc doanh lớn nhất Việt Nam."
-    },
-    {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Giá Trị Bền Vững",
-      subtitle: "Tăng Trưởng Dòng Tiền",
-      description: "Hệ sinh thái thương hiệu cao cấp K-Home mang lại bảo chứng thép cho tốc độ tăng giá trị tài sản bền vững cùng tính thanh khoản vượt trội trên thị trường."
-    }
-  ];
+  {
+    icon: <MapPin className="w-6 h-6" />,
+    title: "Vị Trí Thuận Tiện",
+    subtitle: "Gần Khu Công Nghiệp & Trung Tâm",
+    description: "Các dự án tọa lạc tại những vị trí kết nối thuận lợi với khu công nghiệp lớn, đường vành đai và trung tâm hành chính, giúp cư dân tiết kiệm thời gian di chuyển hàng ngày."
+  },
+  {
+    icon: <Sparkles className="w-6 h-6" />,
+    title: "Tiện Ích Đầy Đủ",
+    subtitle: "Sống Tiện Nghi Ngay Trong Khuôn Viên",
+    description: "Hồ bơi, sân chơi trẻ em, khu thể dục ngoài trời, vườn cảnh quan và nhà sinh hoạt cộng đồng được quy hoạch đồng bộ, phục vụ nhu cầu thiết thực của gia đình mỗi ngày."
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: "Pháp Lý Rõ Ràng",
+    subtitle: "An Tâm Sở Hữu Lâu Dài",
+    description: "Hồ sơ pháp lý đầy đủ, được bảo lãnh bởi ngân hàng, sở hữu lâu dài theo quy định nhà ở xã hội. Hỗ trợ hoàn thiện thủ tục từ A đến Z miễn phí."
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    title: "Giá Trị Ổn Định",
+    subtitle: "Tài Sản Thiết Thực Cho Tương Lai",
+    description: "Giá thành hợp lý theo khung nhà ở xã hội, chính sách vay ưu đãi 5,4%/năm giúp gia đình dễ dàng tiếp cận. Tài sản có thanh khoản tốt và giá trị gia tăng theo hạ tầng xung quanh."
+  }
+];
 
   const showroomGallery = [
     {
@@ -467,21 +556,21 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       author: "Chị Nguyễn Thị Lan",
       role: "Giáo viên THPT, Biên Hòa",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80"
+      avatar: "https://hthaostudio.com/wp-content/uploads/2020/07/%E1%BA%A2nh-%C3%A1o-d%C3%A0i-hoa-sen-22.jpg"
     },
     {
       quote: "Gia đình tôi chọn K-Home Avenue Nhơn Trạch vì vị trí thuận tiện và môi trường sống xanh. Đội ngũ Kim Oanh Land hỗ trợ hồ sơ miễn phí, rất chuyên nghiệp và nhiệt tình.",
       author: "Anh Trần Văn Hùng",
       role: "Kỹ sư, KCN Long Thành",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
+      avatar: "https://images.pexels.com/photos/35107772/pexels-photo-35107772/free-photo-of-chang-trai-tr-t-tin-trong-trang-ph-c-cong-s-trang-tr-ng.jpeg?cs=tinysrgb&dpr=1&w=500"
     },
     {
       quote: "K-Home Midtown Trảng Bom là lựa chọn đúng đắn của tôi. Tiêu chuẩn xanh EDGE tiết kiệm điện nước rõ rệt, tiến độ thi công đúng hẹn, pháp lý sở hữu lâu dài rất yên tâm.",
       author: "Chị Phạm Thị Hoa",
       role: "Nhân viên văn phòng, Trảng Bom",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe5bgvBMjwmB--wJxT-wGk3q5w9zjRToatkA8wfeCcNwR9QZXPY0pkyrA&s=10"
     }
   ];
 
@@ -652,8 +741,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                           <span className="text-[8px] text-amber-300 font-extrabold uppercase tracking-widest block drop-shadow-lg">Dự án bàn giao chuẩn</span>
                           <span className="text-base font-extrabold text-white block mt-0.5 drop-shadow-lg">{project.name}</span>
                         </div>
-                        <div className="bg-white/20 backdrop-blur-md text-amber-100 py-1 px-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 border border-white/30 drop-shadow-lg mx-auto"
-                          style={{ backgroundColor: project.statusColor + "33", borderColor: project.statusColor + "66" }}>
+                        <div className="bg-white/20 backdrop-blur-md py-1 px-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 border drop-shadow-lg mx-auto"
+                          style={{ backgroundColor: project.statusColor + "33", borderColor: project.statusColor + "99", color: project.statusColor }}>
                           <Activity className="w-3 h-3 animate-pulse" style={{ color: project.statusColor }} /> {project.status}
                         </div>
                       </div>
@@ -829,44 +918,133 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
-          3. CORE PHILOSOPHY REDESIGN
+          2. DANH MỤC KIỆT TÁC — FEATURED PROJECTS (moved after hero)
           ========================================================= */}
-      <section id="philosophy" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Mã gen K-Home</span>
-          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-            Triết Lý Kiến Tạo Nghệ Thuật
-          </h2>
-          <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full" />
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            Mỗi m2 tại các dự án K-Home không chỉ là bê tông cốt thép, mà là một tác phẩm kiến trúc độc bản được thổi hồn nghệ thuật để bảo chứng một chuẩn sống tôn quý nhất.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {coreValues.map((value, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-3xl border border-slate-100 p-8 hover:shadow-2xl hover:border-amber-500/30 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-amber-500/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-100 group-hover:text-amber-700 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
-                <div className="transition-transform duration-300 group-hover:scale-110">
-                  {value.icon}
-                </div>
-              </div>
-              <span className="text-xs font-semibold text-amber-600 uppercase tracking-widest block mb-1">
-                {value.subtitle}
-              </span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-700 transition-colors">
-                {value.title}
-              </h3>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                {value.description}
-              </p>
+      <section id="featured-projects" className="bg-slate-50 py-24 border-y border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">3 Dự án đang triển khai</span>
+              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
+                Dự Án Nổi Bật
+              </h2>
+              <div className="w-16 h-1 bg-amber-500 rounded-full" />
             </div>
-          ))}
+            
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => onNavigate("/san-pham")}
+                className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
+              >
+                Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="bg-white rounded-3xl h-[450px] animate-pulse border border-slate-100" />
+              ))}
+            </div>
+          ) : (
+            <div>
+              {filteredProjects.length === 0 ? (
+                <div className="text-center py-16 bg-white rounded-3xl border border-slate-100 space-y-4 max-w-xl mx-auto shadow-sm">
+                  <div className="text-slate-400 text-4xl">🔍</div>
+                  <h3 className="text-lg font-bold text-slate-800">Không tìm thấy dự án phù hợp</h3>
+                  <p className="text-slate-500 text-sm px-6">Vui lòng đặt lại bộ lọc để xem các dự án đang triển khai.</p>
+                  <button
+                    onClick={resetFilters}
+                    className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-5 rounded-full text-xs transition-colors cursor-pointer"
+                  >
+                    Xem Tất Cả Dự Án
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {filteredProjects.map((project) => {
+                    const progressMap: Record<string, { label: string; rate: string }> = {
+                      "k-home-cityview-ho-nai":    { label: "Tiến độ thi công", rate: "35%" },
+                      "k-home-avenue-nhon-trach":  { label: "Đã đăng ký giữ chỗ", rate: "60%" },
+                      "k-home-midtown-trang-bom":  { label: "Tiến độ thi công", rate: "20%" },
+                    };
+                    const progress = progressMap[project.slug] ?? { label: "Đã đăng ký", rate: "50%" };
+                    return (
+                      <div
+                        key={project.id}
+                        className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
+                        onClick={() => onNavigate(`/${project.slug}`)}
+                      >
+                        <div className="relative h-72 overflow-hidden bg-slate-100">
+                          <img
+                            src={imgUrl(project.image)}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
+                          <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider border border-white/10">
+                            {project.type}
+                          </div>
+                          <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
+                            project.status === "Đang bốc thăm"
+                              ? "bg-amber-400 text-slate-900"
+                              : project.status === "Sắp công bố"
+                              ? "bg-sky-300 text-slate-900"
+                              : project.status === "Đã công bố"
+                              ? "bg-emerald-300 text-slate-900"
+                              : "bg-white/90 text-slate-800"
+                          }`}>
+                            {project.status}
+                          </div>
+                        </div>
+                        <div className="p-8 flex flex-col flex-grow space-y-5">
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-1 text-amber-500">
+                              {[...Array(5)].map((_, i) => (
+                                <Star key={i} className={`w-3.5 h-3.5 ${i < Math.floor(project.rating) ? 'fill-amber-500' : 'opacity-30'}`} />
+                              ))}
+                              <span className="text-slate-500 text-[11px] font-semibold ml-1">({project.rating})</span>
+                            </div>
+                            <h3 className="text-2xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight line-clamp-1 font-display">
+                              {project.title}
+                            </h3>
+                            <div className="flex items-center gap-1.5 text-slate-400 text-xs font-light">
+                              <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                              <span className="line-clamp-1">{project.location.split(",").slice(-2).join(", ")}</span>
+                            </div>
+                          </div>
+                          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
+                            {project.description}
+                          </p>
+                          <div className="space-y-1.5">
+                            <div className="flex justify-between text-[11px]">
+                              <span className="text-slate-400 font-semibold">{progress.label}</span>
+                              <span className="text-amber-600 font-bold">{progress.rate}</span>
+                            </div>
+                            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                              <div className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full" style={{ width: progress.rate }} />
+                            </div>
+                          </div>
+                          <div className="pt-5 border-t border-slate-100 flex items-center justify-between text-sm mt-auto">
+                            <div>
+                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Quy mô diện tích</span>
+                              <span className="font-bold text-slate-700 block text-xs sm:text-sm mt-0.5">{project.area}</span>
+                            </div>
+                            <div className="text-right">
+                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Giá từ</span>
+                              <span className="block text-lg font-extrabold text-amber-600 mt-0.5">{project.price}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -962,7 +1140,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
                 {/* Badge */}
                 <div
-                  className="absolute top-4 left-4 z-20 text-white text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md"
+                  className="absolute top-4 left-4 z-20 text-slate-900 text-[10px] font-extrabold uppercase px-3 py-1.5 rounded-full tracking-wider shadow-md"
                   style={{ backgroundColor: projectCarousel[activeProjectTab].badgeColor, transition: "background-color 0.4s ease" }}
                 >
                   {projectCarousel[activeProjectTab].badge}
@@ -1344,149 +1522,43 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
-          6. FEATURED PROJECTS REDESIGN
+          6. CORE PHILOSOPHY REDESIGN (moved after calculator)
           ========================================================= */}
-      <section id="featured-projects" className="bg-slate-50 py-24 border-y border-slate-100 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
-            <div className="space-y-3">
-              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">3 Dự án đang triển khai</span>
-              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-                Dự Án Nổi Bật
-              </h2>
-              <div className="w-16 h-1 bg-amber-500 rounded-full" />
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => onNavigate("/san-pham")}
-                className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
-              >
-                Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+      <section id="philosophy" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Giá trị cốt lõi K-Home</span>
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
+            Cam Kết Đồng Hành Cùng Cư Dân
+          </h2>
+          <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full" />
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+            K-Home Đồng Nai được xây dựng với mục tiêu mang đến không gian sống chất lượng, pháp lý minh bạch và chi phí hợp lý, giúp người lao động có cơ hội sở hữu nhà ở ổn định lâu dài.
+          </p>
+        </div>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="bg-white rounded-3xl h-[450px] animate-pulse border border-slate-100" />
-              ))}
-            </div>
-          ) : (
-            <div>
-              {filteredProjects.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-3xl border border-slate-100 space-y-4 max-w-xl mx-auto shadow-sm">
-                  <div className="text-slate-400 text-4xl">🔍</div>
-                  <h3 className="text-lg font-bold text-slate-800">Không tìm thấy dự án phù hợp</h3>
-                  <p className="text-slate-500 text-sm px-6">Vui lòng đặt lại bộ lọc để xem các dự án đang triển khai.</p>
-                  <button
-                    onClick={resetFilters}
-                    className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-5 rounded-full text-xs transition-colors cursor-pointer"
-                  >
-                    Xem Tất Cả Dự Án
-                  </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {coreValues.map((value, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-3xl border border-slate-100 p-8 hover:shadow-2xl hover:border-amber-500/30 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-amber-500/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-100 group-hover:text-amber-700 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
+                <div className="transition-transform duration-300 group-hover:scale-110">
+                  {value.icon}
                 </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {filteredProjects.map((project) => {
-                    // Tiến độ thi công thực tế theo từng dự án
-                    const progressMap: Record<string, { label: string; rate: string }> = {
-                      "k-home-cityview-ho-nai":    { label: "Tiến độ thi công", rate: "35%" },
-                      "k-home-avenue-nhon-trach":  { label: "Đã đăng ký giữ chỗ", rate: "60%" },
-                      "k-home-midtown-trang-bom":  { label: "Tiến độ thi công", rate: "20%" },
-                    };
-                    const progress = progressMap[project.slug] ?? { label: "Đã đăng ký", rate: "50%" };
-                    return (
-                      <div
-                        key={project.id}
-                        className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-                        onClick={() => onNavigate(`/${project.slug}`)}
-                      >
-                        {/* Image */}
-                        <div className="relative h-72 overflow-hidden bg-slate-100">
-                          <img
-                            src={imgUrl(project.image)}
-                            alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-                          
-                          <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider border border-white/10">
-                            {project.type}
-                          </div>
-                          
-                          <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
-                            project.status === "Đang bốc thăm"
-                              ? "bg-amber-500 text-white"
-                              : project.status === "Sắp công bố"
-                              ? "bg-blue-600 text-white"
-                              : project.status === "Đã công bố"
-                              ? "bg-emerald-600 text-white"
-                              : "bg-slate-600 text-white"
-                          }`}>
-                            {project.status}
-                          </div>
-                        </div>
-
-                        {/* Card Body */}
-                        <div className="p-8 flex flex-col flex-grow space-y-5">
-                          <div className="space-y-2">
-                            <div className="flex items-center gap-1 text-amber-500">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`w-3.5 h-3.5 ${i < Math.floor(project.rating) ? 'fill-amber-500' : 'opacity-30'}`} />
-                              ))}
-                              <span className="text-slate-500 text-[11px] font-semibold ml-1">({project.rating})</span>
-                            </div>
-                            
-                            <h3 className="text-2xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight line-clamp-1 font-display">
-                              {project.title}
-                            </h3>
-                            
-                            <div className="flex items-center gap-1.5 text-slate-400 text-xs font-light">
-                              <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                              <span className="line-clamp-1">{project.location.split(",").slice(-2).join(", ")}</span>
-                            </div>
-                          </div>
-
-                          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
-                            {project.description}
-                          </p>
-
-                          {/* Progress bar — tiến độ thực tế */}
-                          <div className="space-y-1.5">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-slate-400 font-semibold">{progress.label}</span>
-                              <span className="text-amber-600 font-bold">{progress.rate}</span>
-                            </div>
-                            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                              <div 
-                                className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full" 
-                                style={{ width: progress.rate }}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Price & Area */}
-                          <div className="pt-5 border-t border-slate-100 flex items-center justify-between text-sm mt-auto">
-                            <div>
-                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Quy mô diện tích</span>
-                              <span className="font-bold text-slate-700 block text-xs sm:text-sm mt-0.5">{project.area}</span>
-                            </div>
-                            <div className="text-right">
-                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Giá từ</span>
-                              <span className="block text-lg font-extrabold text-amber-600 mt-0.5">{project.price}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
+              </div>
+              <span className="text-xs font-semibold text-amber-600 uppercase tracking-widest block mb-1">
+                {value.subtitle}
+              </span>
+              <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-700 transition-colors">
+                {value.title}
+              </h3>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                {value.description}
+              </p>
             </div>
-          )}
+          ))}
         </div>
       </section>
 
@@ -1495,13 +1567,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           ========================================================= */}
       <section id="testimonials" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Đại sứ niềm tin</span>
+          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Ý kiến cư dân</span>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-            Khách Hàng & Đối Tác Nói Gì?
+            Khách Hàng Nói Gì Về K-Home?
           </h2>
           <div className="w-16 h-1 bg-amber-500 mx-auto rounded-full" />
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            Sự hài lòng từ trải nghiệm sống thượng lưu của quý khách hàng là thành tựu vinh quang nhất của tập đoàn K-Home.
+            Những chia sẻ chân thực từ người đã và đang sở hữu căn hộ tại các dự án K-Home Đồng Nai.
           </p>
         </div>
 
@@ -1546,35 +1618,192 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           8. CONSULTATION BANNER CTA (COMPLETELY LIGHT / GOLDEN BASE STYLE)
           ========================================================= */}
       <section id="consultation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-3xl p-8 md:p-16 text-white flex flex-col lg:flex-row justify-between items-center gap-12 shadow-2xl relative overflow-hidden border border-amber-400/20">
+        <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-3xl p-8 md:p-16 text-white shadow-2xl relative overflow-hidden border border-amber-400/20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_40%)]" />
-          
-          <div className="space-y-4 max-w-2xl text-center lg:text-left relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-extrabold uppercase tracking-widest">
-              Hỗ trợ hồ sơ NOXH miễn phí — Hotline 0937.587.438
+
+          {/* Top row: title + button */}
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-12 relative z-10">
+            <div className="space-y-4 max-w-2xl text-center lg:text-left">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-extrabold uppercase tracking-widest">
+                Hỗ trợ hồ sơ NOXH miễn phí — Hotline 0937.587.438
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-extrabold leading-tight">
+                Tư Vấn Mua Nhà Ở Xã Hội <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-100">
+                  Lãi Suất Chỉ 5,4%/Năm
+                </span>
+              </h2>
+              <p className="text-amber-50 text-xs sm:text-sm font-light leading-relaxed">
+                Đội ngũ tư vấn Kim Oanh Land hỗ trợ toàn bộ hồ sơ miễn phí — từ kiểm tra điều kiện, chuẩn bị giấy tờ đến kết nối ngân hàng chính sách xã hội tỉnh Đồng Nai.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold leading-tight">
-              Tư Vấn Mua Nhà Ở Xã Hội <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-100">
-                Lãi Suất Chỉ 5,4%/Năm
-              </span>
-            </h2>
-            <p className="text-amber-50 text-xs sm:text-sm font-light leading-relaxed">
-              Đội ngũ tư vấn Kim Oanh Land hỗ trợ toàn bộ hồ sơ miễn phí — từ kiểm tra điều kiện, chuẩn bị giấy tờ đến kết nối ngân hàng chính sách xã hội tỉnh Đồng Nai.
-            </p>
+            <div className="shrink-0 w-full lg:w-auto text-center">
+              <button
+                onClick={() => onNavigate("/contact")}
+                className="w-full lg:w-auto bg-white hover:bg-amber-100 text-amber-800 px-10 py-5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-orange-500/20 hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
+              >
+                Đăng Ký Tư Vấn Miễn Phí <ArrowRight className="w-4 h-4" />
+              </button>
+              <p className="text-[10px] text-amber-100/90 mt-3 font-medium">Hotline Kim Oanh Land: 0799.898.893</p>
+            </div>
           </div>
-          
-          <div className="shrink-0 relative z-10 w-full lg:w-auto text-center">
-            <button
-              onClick={() => onNavigate("/contact")}
-              className="w-full lg:w-auto bg-white hover:bg-amber-100 text-amber-800 px-10 py-5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-orange-500/20 hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
-            >
-              Đăng Ký Tư Vấn Miễn Phí <ArrowRight className="w-4 h-4" />
-            </button>
-            <p className="text-[10px] text-amber-100/90 mt-3 font-medium">Hotline Kim Oanh Land: 0799.898.893</p>
+
+          {/* ── Inline CTA Form ── */}
+          <div className="mt-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 relative z-10">
+            {ctaSuccess ? (
+              <div className="text-center py-4 space-y-2">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <p className="text-white font-bold text-sm">Đã nhận thông tin!</p>
+                <p className="text-amber-100 text-xs">Chuyên viên sẽ liên hệ bạn trong vòng 15 phút.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleCtaSubmit} className="space-y-3">
+                <p className="text-white font-bold text-sm text-center mb-2">Để lại thông tin — nhận tư vấn ngay</p>
+                {ctaError && <p className="text-red-200 text-xs text-center">{ctaError}</p>}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Họ và tên *"
+                    value={ctaName}
+                    onChange={e => setCtaName(e.target.value)}
+                    className="px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 text-sm outline-none focus:bg-white/30 transition-all"
+                  />
+                  <input
+                    type="tel"
+                    required
+                    placeholder="Số điện thoại *"
+                    value={ctaPhone}
+                    onChange={e => setCtaPhone(e.target.value)}
+                    className="px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/60 text-sm outline-none focus:bg-white/30 transition-all"
+                  />
+                  <select
+                    value={ctaProject}
+                    onChange={e => setCtaProject(e.target.value)}
+                    className="px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white text-sm outline-none focus:bg-white/30 transition-all cursor-pointer"
+                  >
+                    <option value="k-home-cityview-ho-nai" className="text-slate-800">K-Home CityView Biên Hòa</option>
+                    <option value="k-home-midtown-trang-bom" className="text-slate-800">K-Home Midtown Trảng Bom</option>
+                    <option value="k-home-avenue-nhon-trach" className="text-slate-800">K-Home Avenue Nhơn Trạch</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  disabled={ctaSubmitting}
+                  className="w-full py-3 bg-white hover:bg-amber-50 text-amber-700 rounded-xl text-sm font-bold tracking-wide transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer disabled:opacity-60"
+                >
+                  {ctaSubmitting
+                    ? <div className="w-4 h-4 border-2 border-amber-600 border-t-transparent rounded-full animate-spin" />
+                    : <><Send className="w-4 h-4" /> Nhận Tư Vấn Miễn Phí Ngay</>
+                  }
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
+
+      {/* =========================================================
+          POPUP LEAD FORM — xuất hiện sau 8 giây
+          ========================================================= */}
+      {showPopup && !popupDismissed && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          style={{ backgroundColor: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)" }}
+        >
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-300">
+            {/* Top gradient bar */}
+            <div className="h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600" />
+
+            <button
+              onClick={() => setPopupDismissed(true)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="p-7 space-y-5">
+              {popupSuccess ? (
+                <div className="text-center py-6 space-y-4">
+                  <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle className="w-10 h-10 text-green-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800">Gửi Thành Công!</h3>
+                  <p className="text-slate-500 text-sm">Chuyên viên K-Home sẽ liên hệ bạn trong vòng 15 phút.</p>
+                  <button
+                    onClick={() => setPopupDismissed(true)}
+                    className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-semibold transition-colors cursor-pointer"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="text-center space-y-1.5">
+                    <span className="text-xs font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full">Ưu đãi đặc biệt</span>
+                    <h3 className="text-xl font-bold text-slate-900 mt-2">Nhận Tư Vấn K-Home<br/>Hoàn Toàn Miễn Phí</h3>
+                    <p className="text-slate-400 text-xs">Chuyên viên sẽ gọi lại trong 15 phút — hỗ trợ hồ sơ NOXH từ A→Z</p>
+                  </div>
+
+                  <form onSubmit={handlePopupSubmit} className="space-y-3">
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-600">Họ và tên *</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Nguyễn Văn A"
+                        value={popupName}
+                        onChange={e => setPopupName(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-600">Số điện thoại *</label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="0933 354 093"
+                        value={popupPhone}
+                        onChange={e => setPopupPhone(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-600">Dự án quan tâm</label>
+                      <select
+                        value={popupProject}
+                        onChange={e => setPopupProject(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all cursor-pointer"
+                      >
+                        <option value="k-home-cityview-ho-nai">K-Home CityView Biên Hòa</option>
+                        <option value="k-home-midtown-trang-bom">K-Home Midtown Trảng Bom</option>
+                        <option value="k-home-avenue-nhon-trach">K-Home Avenue Nhơn Trạch</option>
+                      </select>
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={popupSubmitting}
+                      className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl text-sm font-bold tracking-wide shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-60"
+                    >
+                      {popupSubmitting
+                        ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        : <><Send className="w-4 h-4" /> Nhận Tư Vấn Miễn Phí</>
+                      }
+                    </button>
+                    <p className="text-center text-[10px] text-slate-400">
+                      Thông tin của bạn được bảo mật tuyệt đối.{" "}
+                      <button type="button" onClick={() => setPopupDismissed(true)} className="underline hover:text-slate-600 cursor-pointer">
+                        Bỏ qua
+                      </button>
+                    </p>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
