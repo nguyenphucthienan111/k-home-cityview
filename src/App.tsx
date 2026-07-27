@@ -34,10 +34,23 @@ export default function App() {
   // Programmatic navigation using History API
   const navigateTo = (newPath: string) => {
     window.history.pushState(null, "", newPath);
-    // Only store the pathname part (strip query string) for routing
     const pathname = newPath.split("?")[0];
-    setPath(pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname);
+    const cleanPath = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
+    setPath(cleanPath);
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Reset title theo route — mỗi view sẽ override lại trong useEffect của nó
+    const PAGE_TITLES: Record<string, string> = {
+      "/":          "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+      "/home":      "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+      "/san-pham":  "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
+      "/news":      "Tin Tức Bất Động Sản | K-Home Đồng Nai",
+      "/about":     "Giới Thiệu | K-Home Đồng Nai",
+      "/contact":   "Liên Hệ Tư Vấn | K-Home Đồng Nai",
+    };
+    if (PAGE_TITLES[cleanPath]) {
+      document.title = PAGE_TITLES[cleanPath];
+    }
   };
 
   const renderContent = () => {

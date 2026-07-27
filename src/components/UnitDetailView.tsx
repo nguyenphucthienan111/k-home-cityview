@@ -85,6 +85,11 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
         console.error("Failed to fetch unit detail:", err);
         setLoading(false);
       });
+
+    // Cleanup: reset title khi unmount
+    return () => {
+      document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+    };
   }, [projectSlug, unitSlug]);
 
   const handleSubmit = (e: React.FormEvent) => {    e.preventDefault();

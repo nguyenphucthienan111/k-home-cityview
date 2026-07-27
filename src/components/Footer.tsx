@@ -41,7 +41,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-600 shrink-0" />
-                <a href="mailto:info@kimoanh.com.vn" className="hover:text-amber-600 font-medium transition-colors">info@kimoanh.com.vn</a>
+                <a href="mailto:k.homekog@gmail.com" className="hover:text-amber-600 font-medium transition-colors">k.homekog@gmail.com</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-amber-600 shrink-0" />
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Divider & Copyright */}
         <div className="border-t border-amber-200/60 pt-8 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} K-Home CityView. Tất cả quyền được bảo lưu. Bản quyền thuộc về K-Home Group.
+            © {new Date().getFullYear()} by Kim Oanh Land. Tất cả quyền được bảo lưu. Bản quyền thuộc về Kim Oanh Group.
           </div>
           <div className="flex items-center gap-6">
             <a href="/about" className="hover:text-amber-600 transition-colors">Điều khoản sử dụng</a>

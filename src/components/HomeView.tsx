@@ -297,6 +297,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, [heroProjects.length]);
 
   useEffect(() => {
+    document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Tổng hợp thông tin 3 dự án nhà ở xã hội K-Home tại Đồng Nai từ chủ đầu tư Kim Oanh Group: K-Home CityView (Hố Nai, Biên Hòa), K-Home Midtown (Trảng Bom), K-Home Avenue (Nhơn Trạch). Tư vấn bảng giá, chính sách chiết khấu và mặt bằng chi tiết.");
+    }
+  }, []);
+
+  useEffect(() => {
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
