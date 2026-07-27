@@ -133,7 +133,7 @@ export default function App() {
             title="Facebook Duy Ân"
           >
             <span className="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-right pointer-events-none border border-slate-800">
-              Facebook Kim Oanh
+              Facebook Duy Ân
             </span>
             <img src="/messenger.png" alt="Facebook" className="w-6 h-6 object-contain" />
           </a>
