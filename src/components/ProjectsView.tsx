@@ -339,7 +339,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
               <div className="relative h-52 overflow-hidden bg-slate-100">
                 <img
                   src={imgUrl(unit.images[0])}
-                  alt={unit.name}
+                  alt={`${unit.name} tại ${project.title} - Căn hộ nhà ở xã hội ${project.location.split(",").slice(-2).join(", ")}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Project badge top-left */}

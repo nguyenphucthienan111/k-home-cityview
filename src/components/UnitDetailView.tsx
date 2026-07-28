@@ -74,6 +74,46 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
 
           if (foundProject && foundUnit) {
             document.title = `${foundUnit.name} - ${foundProject.title} | K-Home Đồng Nai`;
+
+            // Schema Product cho loại căn hộ
+            const existingSchema = document.getElementById("schema-unit");
+            if (existingSchema) existingSchema.remove();
+            const schema = document.createElement("script");
+            schema.id = "schema-unit";
+            schema.type = "application/ld+json";
+            schema.text = JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": `${foundUnit.name} - ${foundProject.title}`,
+              "description": foundUnit.description || `${foundUnit.name} tại ${foundProject.title}. Diện tích ${foundUnit.constructionArea}, giá ${foundUnit.price}.`,
+              "image": foundUnit.images.map(img => `https://k-homedongnai.com.vn${img}`),
+              "brand": { "@type": "Brand", "name": "K-Home Group" },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "VND",
+                "price": foundUnit.priceNumber ? foundUnit.priceNumber * 1000000 : undefined,
+                "availability": "https://schema.org/InStock",
+                "url": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`
+              }
+            });
+            document.head.appendChild(schema);
+
+            // Breadcrumb
+            const existingBc = document.getElementById("schema-breadcrumb-unit");
+            if (existingBc) existingBc.remove();
+            const bc = document.createElement("script");
+            bc.id = "schema-breadcrumb-unit";
+            bc.type = "application/ld+json";
+            bc.text = JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+                { "@type": "ListItem", "position": 2, "name": foundProject.title, "item": `https://k-homedongnai.com.vn/${foundProject.slug}` },
+                { "@type": "ListItem", "position": 3, "name": foundUnit.name, "item": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}` }
+              ]
+            });
+            document.head.appendChild(bc);
           }
         } else {
           setProject(null);
@@ -89,6 +129,8 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
     // Cleanup: reset title khi unmount
     return () => {
       document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+      document.getElementById("schema-unit")?.remove();
+      document.getElementById("schema-breadcrumb-unit")?.remove();
     };
   }, [projectSlug, unitSlug]);
 
@@ -224,7 +266,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
             >
               <img
                 src={imgUrl(img)}
-                alt={`${unit.name} ${idx + 1}`}
+                alt={`${unit.name} tại ${project?.title} - Hình ${idx + 1}: Không gian nội thất căn hộ`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">

@@ -69,6 +69,62 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           if (metaDesc) {
             metaDesc.setAttribute("content", `${found.description} Cập nhật mặt bằng, chính sách chiết khấu đợt 1 từ chủ đầu tư Kim Oanh Group.`);
           }
+
+          // Schema RealEstateListing
+          const existingSchema = document.getElementById("schema-project");
+          if (existingSchema) existingSchema.remove();
+          const schema = document.createElement("script");
+          schema.id = "schema-project";
+          schema.type = "application/ld+json";
+          schema.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "RealEstateListing",
+            "name": found.title,
+            "description": found.description,
+            "url": `https://k-homedongnai.com.vn/${found.slug}`,
+            "image": `https://k-homedongnai.com.vn${found.image}`,
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": found.location,
+              "addressRegion": "Đồng Nai",
+              "addressCountry": "VN"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "VND",
+              "price": found.priceNumber ? found.priceNumber * 1000000000 : undefined,
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Kim Oanh Group",
+                "url": "https://k-homedongnai.com.vn"
+              }
+            },
+            "numberOfRooms": found.unitTypes?.length,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": found.area,
+              "unitCode": "MTK"
+            }
+          });
+          document.head.appendChild(schema);
+
+          // Schema BreadcrumbList
+          const existingBreadcrumb = document.getElementById("schema-breadcrumb-project");
+          if (existingBreadcrumb) existingBreadcrumb.remove();
+          const breadcrumb = document.createElement("script");
+          breadcrumb.id = "schema-breadcrumb-project";
+          breadcrumb.type = "application/ld+json";
+          breadcrumb.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+              { "@type": "ListItem", "position": 2, "name": "Dự án", "item": "https://k-homedongnai.com.vn/san-pham" },
+              { "@type": "ListItem", "position": 3, "name": found.title, "item": `https://k-homedongnai.com.vn/${found.slug}` }
+            ]
+          });
+          document.head.appendChild(breadcrumb);
         }
         setLoading(false);
       })
@@ -80,6 +136,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     // Cleanup: reset title khi unmount
     return () => {
       document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+      document.getElementById("schema-project")?.remove();
+      document.getElementById("schema-breadcrumb-project")?.remove();
     };
   }, [slug]);
 
@@ -236,7 +294,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               >
                 <img
                   src={imgUrl(img)}
-                  alt={`Gallery ${idx + 1}`}
+                  alt={`${project.title} - Hình ảnh dự án ${idx + 2}`}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">

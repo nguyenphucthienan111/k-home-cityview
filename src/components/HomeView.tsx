@@ -333,6 +333,65 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     if (metaDesc) {
       metaDesc.setAttribute("content", "Tổng hợp thông tin 3 dự án nhà ở xã hội K-Home tại Đồng Nai từ chủ đầu tư Kim Oanh Group: K-Home CityView (Hố Nai, Biên Hòa), K-Home Midtown (Trảng Bom), K-Home Avenue (Nhơn Trạch). Tư vấn bảng giá, chính sách chiết khấu và mặt bằng chi tiết.");
     }
+
+    // Schema FAQPage
+    const existingFAQ = document.getElementById("schema-faq");
+    if (existingFAQ) existingFAQ.remove();
+    const faq = document.createElement("script");
+    faq.id = "schema-faq";
+    faq.type = "application/ld+json";
+    faq.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "K-Home CityView Biên Hòa giá bao nhiêu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView Biên Hòa có giá từ 950 triệu đến 2 tỷ/căn tùy loại. Căn 1PN+A từ 950 triệu, căn 1PN+B từ 1,25 tỷ, căn 2PN từ 1,50 tỷ, căn 3PN từ 1,80 tỷ. Bàn giao full nội thất, pháp lý đầy đủ." }
+        },
+        {
+          "@type": "Question",
+          "name": "Điều kiện mua nhà ở xã hội K-Home Đồng Nai là gì?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Người mua cần đáp ứng điều kiện: chưa có nhà ở hoặc diện tích nhà ở dưới 10m²/người, có thu nhập thuộc đối tượng NOXH theo quy định Nhà nước, hộ khẩu hoặc tạm trú tại Đồng Nai. Vay được lãi suất ưu đãi 5,4%/năm từ ngân hàng chính sách." }
+        },
+        {
+          "@type": "Question",
+          "name": "K-Home Midtown Trảng Bom ở đâu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "K-Home Midtown tọa lạc tại trung tâm huyện Trảng Bom, giao giữa 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, Phường Trảng Bom, Đồng Nai. Giá từ 750 triệu/căn." }
+        },
+        {
+          "@type": "Question",
+          "name": "K-Home Avenue Nhơn Trạch có những loại căn hộ nào?",
+          "acceptedAnswer": { "@type": "Answer", "text": "K-Home Avenue Nhơn Trạch có 4 loại: Studio 37,7m² từ 750 triệu, 1 Phòng ngủ 46,6m² từ 990 triệu, 2 Phòng ngủ nhỏ 65,7m² từ 1,23 tỷ, 2 Phòng ngủ lớn 69,5m² từ 1,40 tỷ. Tất cả bàn giao full nội thất." }
+        },
+        {
+          "@type": "Question",
+          "name": "Lãi suất vay mua nhà ở xã hội K-Home là bao nhiêu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Người mua đủ điều kiện nhà ở xã hội được vay với lãi suất ưu đãi 5,4%/năm từ các ngân hàng quốc doanh như Vietinbank, BIDV, Vietcombank, Agribank theo chính sách hỗ trợ nhà ở xã hội quốc gia." }
+        }
+      ]
+    });
+    document.head.appendChild(faq);
+
+    // Schema BreadcrumbList trang chủ
+    const existingBC = document.getElementById("schema-breadcrumb-home");
+    if (existingBC) existingBC.remove();
+    const bc = document.createElement("script");
+    bc.id = "schema-breadcrumb-home";
+    bc.type = "application/ld+json";
+    bc.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" }
+      ]
+    });
+    document.head.appendChild(bc);
+
+    return () => {
+      document.getElementById("schema-faq")?.remove();
+      document.getElementById("schema-breadcrumb-home")?.remove();
+    };
   }, []);
 
   useEffect(() => {
@@ -729,10 +788,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   >
                     <img
                       src={imgUrl(project.image)}
-                      alt={project.name}
+                      alt={`${project.name} - ${project.location} | K-Home Đồng Nai`}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                     
                     {/* Floating Info Card - Bottom Left */}
                     <div className="absolute bottom-0 left-0 w-max">
@@ -980,7 +1038,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         <div className="relative h-72 overflow-hidden bg-slate-100">
                           <img
                             src={imgUrl(project.image)}
-                            alt={project.title}
+                            alt={`${project.title} - Phối cảnh dự án nhà ở xã hội K-Home tại Đồng Nai`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
@@ -1125,7 +1183,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   >
                     <img
                       src={showroomGallery[activeShowroomTab].images[idx]}
-                      alt={project.name}
+                      alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} | Tiện ích nội khu K-Home`}
                       className="w-full h-full object-cover"
                       style={{
                         transform: activeProjectTab === idx ? "scale(1.03)" : "scale(1)",
@@ -1196,7 +1254,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }}
                     aria-label={project.name}
                   >
-                    <img src={showroomGallery[activeShowroomTab].images[idx]} alt={project.name} className="w-full h-full object-cover" />
+                    <img src={showroomGallery[activeShowroomTab].images[idx]} alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} thumbnail`} className="w-full h-full object-cover" />
                     {activeProjectTab === idx && <div className="absolute inset-0 bg-amber-500/20" />}
                   </button>
                 ))}
