@@ -1,10 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", serif;
-  --font-tech: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-tech: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Giảm CLS từ font swap bằng size-adjust cho fallback fonts */
+@font-face {
+  font-family: "Inter-fallback";
+  size-adjust: 100%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Playfair-fallback";
+  size-adjust: 98%;
+  src: local("Georgia");
 }
 
 /* content-visibility đã bị bỏ — gây CLS cao */
