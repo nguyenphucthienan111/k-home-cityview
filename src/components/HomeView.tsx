@@ -408,7 +408,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   useEffect(() => {
     if (isCarouselHovered) return;
     const timer = setInterval(() => {
-      setActiveProjectTab((prev) => (prev + 1) % 3);
+      // startTransition: carousel rotation là non-urgent, không block user interaction
+      startTransition(() => {
+        setActiveProjectTab((prev) => (prev + 1) % 3);
+      });
     }, 4000);
     return () => clearInterval(timer);
   }, [isCarouselHovered]);
@@ -480,10 +483,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     { id: "consultation",     label: "Đăng ký tư vấn VIP" }
   ];
 
-  // Auto-advance hero slideshow every 5 seconds
+  // Auto-advance hero slideshow every 10 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveHeroSlide((prev) => (prev + 1) % heroProjects.length);
+      startTransition(() => {
+        setActiveHeroSlide((prev) => (prev + 1) % heroProjects.length);
+      });
     }, 10000);
     return () => clearInterval(timer);
   }, [heroProjects.length]);
@@ -621,13 +626,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         const scrollPosition = window.scrollY + window.innerHeight / 3;
 
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
-          setActiveSection("consultation");
+          startTransition(() => setActiveSection("consultation"));
           return;
         }
 
         for (const s of sectionCache) {
           if (scrollPosition >= s.top && scrollPosition < s.top + s.height) {
-            setActiveSection(s.id);
+            startTransition(() => setActiveSection(s.id));
             break;
           }
         }
