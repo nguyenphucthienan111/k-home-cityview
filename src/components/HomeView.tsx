@@ -845,15 +845,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         className="relative w-full flex flex-col justify-center items-center pt-24 pb-8 lg:py-24"
         style={{ minHeight: "100svh" }}
       >
-        {/* Background — stretch theo content, không bị cắt */}
-        <div
-          className="absolute inset-0 -z-0"
-          style={{
-            backgroundImage: "url('/hero-background.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat",
-          }}
+        {/* Background — dùng <img> thay CSS background để browser preload được LCP image */}
+        <img
+          src="/hero-background.jpg"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+          className="absolute inset-0 w-full h-full object-cover object-top -z-0 pointer-events-none"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />

@@ -7,15 +7,7 @@
   --font-tech: "Space Grotesk", sans-serif;
 }
 
-/* content-visibility: auto cho các section phía dưới fold — browser skip render cho đến khi gần viewport */
-#amenities,
-#calculator,
-#philosophy,
-#testimonials,
-#consultation {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 800px;
-}
+/* content-visibility đã bị bỏ — gây CLS cao */
 
 /* GPU-accelerated cho carousel slides — tránh layout recalc */
 .carousel-slide {
