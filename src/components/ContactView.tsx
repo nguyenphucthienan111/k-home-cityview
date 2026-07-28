@@ -218,9 +218,9 @@ export default function ContactView() {
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-800 text-sm">Trụ sở chính</h4>
+                <h4 className="font-bold text-slate-800 text-sm">Trụ sở Đồng Nai</h4>
                 <p className="text-slate-500 text-xs mt-1 leading-relaxed">
-                  Tầng 10, K-Home Tower, 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh
+                  268A, Đường Phan Trung, Phường Tam Hiệp, Tỉnh Đồng Nai, Việt Nam
                 </p>
               </div>
             </div>
@@ -244,8 +244,8 @@ export default function ContactView() {
               <div>
                 <h4 className="font-bold text-slate-800 text-sm">Hộp thư điện tử</h4>
                 <p className="text-slate-500 text-xs mt-1 leading-relaxed">
-                  Hợp tác đại lý: info@k-homecityview.vn <br />
-                  Chăm sóc cư dân: cskh@k-home.vn
+                  Hợp tác đại lý: k.homekog@gmail.com <br />
+                  Chăm sóc cư dân: k.homekog@gmail.com
                 </p>
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function ContactView() {
           {/* Map box */}
           <div className="w-full h-72 bg-slate-100 rounded-3xl border border-slate-200 overflow-hidden relative shadow-sm">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.509932242149!2d106.7007028!3d10.7753062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1e0a8fc7e1%3A0xe9e9836501d5eec4!2sDistrict%201%2C%20Ho%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.4132254249716!2d106.85123267488531!3d10.961808989198438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174dde43a851edd%3A0x4595de172283eab6!2zS2ltIE9hbmggR3JvdXAgLSBDaGkgTmjDoW5oIMSQ4buTbmcgTmFp!5e1!3m2!1sen!2s!4v1785211646614!5m2!1sen!2s"
               width="100%"
               height="100%"
               style={{ border: 0 }}
