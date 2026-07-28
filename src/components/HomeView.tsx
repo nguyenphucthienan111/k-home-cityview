@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo, useCallback, memo } from "react";
 import { 
   ArrowRight, 
   Star, 
@@ -27,6 +27,143 @@ import {
 import { Project } from "../types";
 import { imgUrl } from "../utils/imageUrl";
 
+// ─── Memoized sub-components để tránh re-render khi HomeView state thay đổi ───
+
+const ProjectCard = memo(function ProjectCard({
+  project,
+  onClick,
+}: {
+  project: Project;
+  onClick: (slug: string) => void;
+}) {
+  const progressMap: Record<string, { label: string; rate: string }> = {
+    "k-home-cityview-ho-nai":   { label: "Tiến độ thi công",    rate: "35%" },
+    "k-home-avenue-nhon-trach": { label: "Đã đăng ký giữ chỗ", rate: "60%" },
+    "k-home-midtown-trang-bom": { label: "Tiến độ thi công",    rate: "20%" },
+  };
+  const progress = progressMap[project.slug] ?? { label: "Đã đăng ký", rate: "50%" };
+
+  return (
+    <div
+      className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
+      onClick={() => onClick(project.slug)}
+    >
+      <div className="relative h-72 overflow-hidden bg-slate-200">
+        <img
+          src={imgUrl(project.image)}
+          alt={`${project.title} - Phối cảnh dự án nhà ở xã hội K-Home tại Đồng Nai`}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 transition-opacity duration-300"
+          loading="lazy"
+          style={{ backgroundColor: "#e2e8f0" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
+        <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider border border-white/10">
+          {project.type}
+        </div>
+        <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
+          project.status === "Đang bốc thăm" ? "bg-amber-400 text-slate-900"
+          : project.status === "Sắp công bố" ? "bg-sky-300 text-slate-900"
+          : project.status === "Đã công bố"  ? "bg-emerald-300 text-slate-900"
+          : "bg-white/90 text-slate-800"
+        }`}>
+          {project.status}
+        </div>
+      </div>
+      <div className="p-8 flex flex-col flex-grow space-y-5">
+        <div className="space-y-2">
+          <div className="flex items-center gap-1 text-amber-500">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className={`w-3.5 h-3.5 ${i < Math.floor(project.rating) ? "fill-amber-500" : "opacity-30"}`} />
+            ))}
+            <span className="text-slate-500 text-[11px] font-semibold ml-1">({project.rating})</span>
+          </div>
+          <h3 className="text-2xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight line-clamp-1 font-display">
+            {project.title}
+          </h3>
+          <div className="flex items-center gap-1.5 text-slate-400 text-xs font-light">
+            <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+            <span className="line-clamp-1">{project.location.split(",").slice(-2).join(", ")}</span>
+          </div>
+        </div>
+        <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">{project.description}</p>
+        <div className="space-y-1.5">
+          <div className="flex justify-between text-[11px]">
+            <span className="text-slate-400 font-semibold">{progress.label}</span>
+            <span className="text-amber-600 font-bold">{progress.rate}</span>
+          </div>
+          <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+            <div className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full" style={{ width: progress.rate }} />
+          </div>
+        </div>
+        <div className="pt-5 border-t border-slate-100 flex items-center justify-between text-sm mt-auto">
+          <div>
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Quy mô diện tích</span>
+            <span className="font-bold text-slate-700 block text-xs sm:text-sm mt-0.5">{project.area}</span>
+          </div>
+          <div className="text-right">
+            <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Giá từ</span>
+            <span className="block text-lg font-extrabold text-amber-600 mt-0.5">{project.price}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+const CoreValueCard = memo(function CoreValueCard({
+  icon, title, subtitle, description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  description: string;
+}) {
+  return (
+    <div className="bg-white rounded-3xl border border-slate-100 p-8 hover:shadow-2xl hover:border-amber-500/30 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-amber-500/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-100 group-hover:text-amber-700 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
+        <div className="transition-transform duration-300 group-hover:scale-110">{icon}</div>
+      </div>
+      <span className="text-xs font-semibold text-amber-600 uppercase tracking-widest block mb-1">{subtitle}</span>
+      <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-700 transition-colors">{title}</h3>
+      <p className="text-slate-500 text-xs leading-relaxed">{description}</p>
+    </div>
+  );
+});
+
+const TestimonialCard = memo(function TestimonialCard({
+  quote, author, role, rating, avatar,
+}: {
+  quote: string; author: string; role: string; rating: number; avatar: string;
+}) {
+  return (
+    <div className="bg-white rounded-3xl border border-slate-100/80 p-8 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-8 relative overflow-hidden">
+      <span className="absolute -top-4 -left-2 text-amber-100/50 font-serif text-[180px] leading-none pointer-events-none select-none opacity-40">"</span>
+      <div className="relative z-10 space-y-4">
+        <div className="flex items-center gap-1">
+          {[...Array(rating)].map((_, i) => (
+            <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
+          ))}
+        </div>
+        <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic">"{quote}"</p>
+      </div>
+      <div className="border-t border-slate-100 pt-6 relative z-10 flex items-center gap-4">
+        <img
+          src={avatar}
+          alt={author}
+          className="w-12 h-12 rounded-full object-cover border-2 border-amber-500/30 shadow-inner bg-slate-200"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+        <div>
+          <h4 className="font-extrabold text-slate-800 text-sm">{author}</h4>
+          <p className="text-slate-400 text-[11px] mt-0.5">{role}</p>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 interface HomeViewProps {
   onNavigate: (hash: string) => void;
 }
@@ -39,7 +176,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Hero Slideshow States
   const [activeHeroSlide, setActiveHeroSlide] = useState<number>(0);
 
-  const heroProjects = [
+  const heroProjects = useMemo(() => [
     {
       name: "K-Home CityView Biên Hòa",
       image: "/k-home cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2.webp",
@@ -73,7 +210,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       status: "Sắp công bố",
       statusColor: "#7dd3fc",
     },
-  ];
+  ], []);
 
   // Quick Hero Filter states
   const [heroProject, setHeroProject] = useState<string>("all");
@@ -104,7 +241,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [ctaSuccess, setCtaSuccess] = useState(false);
   const [ctaError, setCtaError] = useState("");
 
-  const projectCarousel = [
+  const projectCarousel = useMemo(() => [
     {
       slug: "k-home-cityview-ho-nai",
       name: "K-Home CityView Hố Nai",
@@ -138,7 +275,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       badgeColor: "#6ee7b7",
       image: "/k-home midtown/Du-an-K-Home-Midtown-3d-ho-boi-view-2-2048x1150.webp"
     }
-  ];
+  ], []);
 
   // Investment Calculator States
   const [investmentValue, setInvestmentValue] = useState<number>(1.0); // Tỷ VNĐ
@@ -452,20 +589,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, [allProjects]);
 
   // Handle hero quick search — navigate sang /projects với query params đúng
-  const handleHeroSearch = (e: React.FormEvent) => {
+  const handleHeroSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     const params = new URLSearchParams();
     if (heroProject !== "all") params.set("project", heroProject);
     if (heroBedrooms !== "all") params.set("bedrooms", heroBedrooms);
     const query = params.toString();
     onNavigate(query ? `/san-pham?${query}` : "/san-pham");
-  };
+  }, [heroProject, heroBedrooms, onNavigate]);
 
   // Reset filters
-  const resetFilters = () => {
+  const resetFilters = useCallback(() => {
     setHeroProject("all");
     setHeroBedrooms("all");
-  };
+  }, []);
 
   // Submit inline CTA form
   const handleCtaSubmit = (e: React.FormEvent) => {
@@ -558,9 +695,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     };
   };
 
-  const calcResults = getCalculatorResults();
+  const calcResults = useMemo(() => getCalculatorResults(), [investmentValue, paymentOption, selectedCalcProject, selectedUnitIndex]);
 
-  const coreValues = [
+  const coreValues = useMemo(() => [
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Vị Trí Thuận Tiện",
@@ -585,9 +722,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     subtitle: "Tài Sản Thiết Thực Cho Tương Lai",
     description: "Giá thành hợp lý theo khung nhà ở xã hội, chính sách vay ưu đãi 5,4%/năm giúp gia đình dễ dàng tiếp cận. Tài sản có thanh khoản tốt và giá trị gia tăng theo hạ tầng xung quanh."
   }
-];
+  ], []);
 
-  const showroomGallery = [
+  const showroomGallery = useMemo(() => [
     {
       title: "Hồ Bơi Người Lớn & Trẻ Em",
       tag: "Tiện ích nội khu",
@@ -616,9 +753,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       images: ["/cityview3.jpg", "/avenue3.jpg", "/midtown3.webp"],
       stats: "Có tại: Hố Nai · Nhơn Trạch · Trảng Bom"
     }
-  ];
+  ], []);
 
-  const testimonials = [
+  const testimonials = useMemo(() => [
     {
       quote: "Tôi mua căn 2PN tại K-Home CityView Hố Nai vì giá hợp lý và thủ tục hồ sơ NOXH được hỗ trợ tận tình từ đầu đến cuối. Lãi suất 5,4%/năm giúp tôi an tâm hơn rất nhiều về kế hoạch tài chính.",
       author: "Chị Nguyễn Thị Lan",
@@ -640,7 +777,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       rating: 5,
       avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe5bgvBMjwmB--wJxT-wGk3q5w9zjRToatkA8wfeCcNwR9QZXPY0pkyrA&s=10"
     }
-  ];
+  ], []);
 
   return (
     <div className="space-y-24 pb-24 bg-gradient-to-b from-amber-50/20 via-white to-slate-50 overflow-hidden relative">
@@ -1050,84 +1187,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {filteredProjects.map((project) => {
-                    const progressMap: Record<string, { label: string; rate: string }> = {
-                      "k-home-cityview-ho-nai":    { label: "Tiến độ thi công", rate: "35%" },
-                      "k-home-avenue-nhon-trach":  { label: "Đã đăng ký giữ chỗ", rate: "60%" },
-                      "k-home-midtown-trang-bom":  { label: "Tiến độ thi công", rate: "20%" },
-                    };
-                    const progress = progressMap[project.slug] ?? { label: "Đã đăng ký", rate: "50%" };
-                    return (
-                      <div
-                        key={project.id}
-                        className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-                        onClick={() => onNavigate(`/${project.slug}`)}
-                      >
-                        <div className="relative h-72 overflow-hidden bg-slate-100">
-                          <img
-                            src={imgUrl(project.image)}
-                            alt={`${project.title} - Phối cảnh dự án nhà ở xã hội K-Home tại Đồng Nai`}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-                          <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider border border-white/10">
-                            {project.type}
-                          </div>
-                          <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
-                            project.status === "Đang bốc thăm"
-                              ? "bg-amber-400 text-slate-900"
-                              : project.status === "Sắp công bố"
-                              ? "bg-sky-300 text-slate-900"
-                              : project.status === "Đã công bố"
-                              ? "bg-emerald-300 text-slate-900"
-                              : "bg-white/90 text-slate-800"
-                          }`}>
-                            {project.status}
-                          </div>
-                        </div>
-                        <div className="p-8 flex flex-col flex-grow space-y-5">
-                          <div className="space-y-2">
-                            <div className="flex items-center gap-1 text-amber-500">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={`w-3.5 h-3.5 ${i < Math.floor(project.rating) ? 'fill-amber-500' : 'opacity-30'}`} />
-                              ))}
-                              <span className="text-slate-500 text-[11px] font-semibold ml-1">({project.rating})</span>
-                            </div>
-                            <h3 className="text-2xl font-bold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight line-clamp-1 font-display">
-                              {project.title}
-                            </h3>
-                            <div className="flex items-center gap-1.5 text-slate-400 text-xs font-light">
-                              <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                              <span className="line-clamp-1">{project.location.split(",").slice(-2).join(", ")}</span>
-                            </div>
-                          </div>
-                          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
-                            {project.description}
-                          </p>
-                          <div className="space-y-1.5">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-slate-400 font-semibold">{progress.label}</span>
-                              <span className="text-amber-600 font-bold">{progress.rate}</span>
-                            </div>
-                            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                              <div className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full" style={{ width: progress.rate }} />
-                            </div>
-                          </div>
-                          <div className="pt-5 border-t border-slate-100 flex items-center justify-between text-sm mt-auto">
-                            <div>
-                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Quy mô diện tích</span>
-                              <span className="font-bold text-slate-700 block text-xs sm:text-sm mt-0.5">{project.area}</span>
-                            </div>
-                            <div className="text-right">
-                              <span className="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold">Giá từ</span>
-                              <span className="block text-lg font-extrabold text-amber-600 mt-0.5">{project.price}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                  {filteredProjects.map((project) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      onClick={onNavigate}
+                    />
+                  ))}
                 </div>
               )}
             </div>
@@ -1626,26 +1692,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {coreValues.map((value, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-3xl border border-slate-100 p-8 hover:shadow-2xl hover:border-amber-500/30 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-amber-500/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-100 group-hover:text-amber-700 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
-                <div className="transition-transform duration-300 group-hover:scale-110">
-                  {value.icon}
-                </div>
-              </div>
-              <span className="text-xs font-semibold text-amber-600 uppercase tracking-widest block mb-1">
-                {value.subtitle}
-              </span>
-              <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-700 transition-colors">
-                {value.title}
-              </h3>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                {value.description}
-              </p>
-            </div>
+            <CoreValueCard key={idx} {...value} />
           ))}
         </div>
       </section>
@@ -1667,37 +1714,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-3xl border border-slate-100/80 p-8 shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between space-y-8 relative overflow-hidden"
-            >
-              {/* Giant quote mark back decoration */}
-              <span className="absolute -top-4 -left-2 text-amber-100/50 font-serif text-[180px] leading-none pointer-events-none select-none opacity-40">“</span>
-              
-              <div className="relative z-10 space-y-4">
-                <div className="flex items-center gap-1">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-amber-500 fill-amber-500" />
-                  ))}
-                </div>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic relative z-10">
-                  "{t.quote}"
-                </p>
-              </div>
-
-              <div className="border-t border-slate-100 pt-6 relative z-10 flex items-center gap-4">
-                <img
-                  src={t.avatar}
-                  alt={t.author}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-amber-500/30 shadow-inner"
-                  referrerPolicy="no-referrer"
-                />
-                <div>
-                  <h4 className="font-extrabold text-slate-800 text-sm">{t.author}</h4>
-                  <p className="text-slate-400 text-[11px] mt-0.5">{t.role}</p>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard key={idx} {...t} />
           ))}
         </div>
       </section>

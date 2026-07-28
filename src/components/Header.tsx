@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X, Phone, ChevronDown, Building2 } from "lucide-react";
 
 interface HeaderProps {
@@ -6,10 +6,24 @@ interface HeaderProps {
 }
 
 const PROJECTS = [
-  { title: "K-Home CityView Biên Hòa",    slug: "k-home-cityview-ho-nai",       location: "Hố Nai, TP. Biên Hòa" },
-  { title: "K-Home Midtown Trảng Bom",    slug: "k-home-midtown-trang-bom",     location: "Trảng Bom, Đồng Nai" },
-  { title: "K-Home Avenue Nhơn Trạch",    slug: "k-home-avenue-nhon-trach",     location: "Nhơn Trạch, Đồng Nai" },
+  { title: "K-Home CityView Biên Hòa",  slug: "k-home-cityview-ho-nai",   location: "Hố Nai, TP. Biên Hòa" },
+  { title: "K-Home Midtown Trảng Bom",  slug: "k-home-midtown-trang-bom", location: "Trảng Bom, Đồng Nai" },
+  { title: "K-Home Avenue Nhơn Trạch",  slug: "k-home-avenue-nhon-trach", location: "Nhơn Trạch, Đồng Nai" },
 ];
+
+// Prefetch a lazy-loaded route chunk bằng cách trigger dynamic import sớm
+const prefetchedRoutes = new Set<string>();
+function prefetchRoute(route: string) {
+  if (prefetchedRoutes.has(route)) return;
+  prefetchedRoutes.add(route);
+  switch (route) {
+    case "project":    import("./ProjectDetailView"); break;
+    case "san-pham":   import("./ProjectsView");      break;
+    case "tin-tuc":    import("./NewsView");           break;
+    case "lien-he":    import("./ContactView");        break;
+    case "gioi-thieu": import("./AboutView");          break;
+  }
+}
 
 export default function Header({ currentHash }: HeaderProps) {
   const [isOpen, setIsOpen]           = useState(false);
@@ -109,6 +123,7 @@ export default function Header({ currentHash }: HeaderProps) {
                       key={p.slug}
                       href={`/${p.slug}`}
                       onClick={(e) => handleNav(e, `/${p.slug}`)}
+                      onMouseEnter={() => prefetchRoute("project")}
                       className={`flex items-start gap-3 px-4 py-3.5 hover:bg-amber-50 transition-colors group ${
                         currentHash.startsWith(`/${p.slug}`) ? "bg-amber-50" : ""
                       }`}
@@ -134,6 +149,7 @@ export default function Header({ currentHash }: HeaderProps) {
             <a
               href="/san-pham"
               onClick={(e) => handleNav(e, "/san-pham")}
+              onMouseEnter={() => prefetchRoute("san-pham")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
                 isSanPhamActive ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
@@ -146,6 +162,7 @@ export default function Header({ currentHash }: HeaderProps) {
             <a
               href="/tin-tuc"
               onClick={(e) => handleNav(e, "/tin-tuc")}
+              onMouseEnter={() => prefetchRoute("tin-tuc")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
                 activeSection === "/tin-tuc" || activeSection === "/news" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
@@ -158,6 +175,7 @@ export default function Header({ currentHash }: HeaderProps) {
             <a
               href="/gioi-thieu"
               onClick={(e) => handleNav(e, "/gioi-thieu")}
+              onMouseEnter={() => prefetchRoute("gioi-thieu")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
                 activeSection === "/gioi-thieu" || activeSection === "/about" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
@@ -170,6 +188,7 @@ export default function Header({ currentHash }: HeaderProps) {
             <a
               href="/lien-he"
               onClick={(e) => handleNav(e, "/lien-he")}
+              onMouseEnter={() => prefetchRoute("lien-he")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
                 activeSection === "/lien-he" || activeSection === "/contact" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}

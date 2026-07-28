@@ -1,20 +1,20 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Phone } from "lucide-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
 
 // Lazy load các view ít dùng hơn
-const ProjectsView      = lazy(() => import("./components/ProjectsView"));
-const ProjectDetailView = lazy(() => import("./components/ProjectDetailView"));
-const UnitDetailView    = lazy(() => import("./components/UnitDetailView"));
-const NewsView          = lazy(() => import("./components/NewsView"));
-const NewsDetailView    = lazy(() => import("./components/NewsDetailView"));
-const AboutView         = lazy(() => import("./components/AboutView"));
-const ContactView       = lazy(() => import("./components/ContactView"));
+const ProjectsView       = lazy(() => import("./components/ProjectsView"));
+const ProjectDetailView  = lazy(() => import("./components/ProjectDetailView"));
+const UnitDetailView     = lazy(() => import("./components/UnitDetailView"));
+const NewsView           = lazy(() => import("./components/NewsView"));
+const NewsDetailView     = lazy(() => import("./components/NewsDetailView"));
+const AboutView          = lazy(() => import("./components/AboutView"));
+const ContactView        = lazy(() => import("./components/ContactView"));
 const AdminDashboardView = lazy(() => import("./components/AdminDashboardView"));
-import { Phone } from "lucide-react";
 
 // Helper: normalize path from window.location
 const getPath = () => {
