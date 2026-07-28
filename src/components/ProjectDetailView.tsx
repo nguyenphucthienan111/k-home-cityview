@@ -12,10 +12,31 @@ const PROJECT_SEO: Record<string, {
   noxhConditions: { label: string; detail: string }[];
   paymentPolicy: { step: string; pct: string; note: string }[];
   faq: { q: string; a: string }[];
+  locationImages?: { src: string; alt: string; caption?: string }[];
+  floorPlanImages?: { src: string; alt: string; label: string }[];
+  amenityImages?: { src: string; alt: string; caption?: string }[];
+  developerImage?: string;
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "K-Home CityView Hố Nai | Nhà Ở Xã Hội Biên Hòa | Giá từ 950 triệu",
     metaDesc: "Dự án nhà ở xã hội K-Home CityView tại đường Điểu Xiển, Hố Nai, Biên Hòa. 1.352 căn hộ NOXH + shophouse, diện tích 47–84m², lãi suất 5,4%/năm, hỗ trợ hồ sơ miễn phí. Cập nhật bảng giá & tiến độ mới nhất.",
+    locationImages: [
+      { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
+      { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
+    ],
+    floorPlanImages: [
+      { src: "/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", alt: "Mặt bằng tầng điển hình 12A-22 NOXH K-Home CityView Hố Nai", label: "Tầng 12A–22 (Tầng điển hình)" },
+      { src: "/k-home cityview/mat-bang/k-home-cityview-mat-bang-tang-1.jpg.webp", alt: "Mặt bằng tầng 1 tiện ích K-Home CityView Hố Nai Kim Oanh", label: "Tầng 1 (Tiện ích)" },
+      { src: "/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", alt: "Thiết kế căn hộ layout 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land", label: "Layout các loại căn hộ" },
+    ],
+    amenityImages: [
+      { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-8.jpg.webp", alt: "Tiện ích nội khu NOXH K-Home CityView Hố Nai Biên Hòa" },
+      { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-6.jpg.webp", alt: "Hồ bơi ngoài trời K-Home CityView", caption: "Hồ bơi ngoài trời" },
+      { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-2.jpg.webp", alt: "Khu vui chơi trẻ em K-Home CityView Hố Nai", caption: "Khu vui chơi trẻ em & nhà trẻ" },
+      { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-3.jpg.webp", alt: "Vườn treo K-Home CityView Hố Nai", caption: "Vườn treo" },
+      { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-9.jpg.webp", alt: "Shophouse thương mại K-Home CityView", caption: "Shophouse & phố thương mại nội khu" },
+    ],
+    developerImage: "/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -33,12 +54,16 @@ const PROJECT_SEO: Record<string, {
     faq: [
       { q: "K-Home CityView Hố Nai giá bao nhiêu?", a: "K-Home CityView có giá từ 950 triệu đến 2 tỷ/căn tùy loại: 1PN+A từ 950 triệu, 1PN+B từ 1,25 tỷ, 2PN từ 1,50 tỷ, 3PN từ 1,80 tỷ. Tất cả bàn giao full nội thất, lãi suất NOXH 5,4%/năm." },
       { q: "Điều kiện mua K-Home CityView là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (cặp vợ chồng) hoặc dưới 25 triệu (độc thân), có hộ khẩu hoặc tạm trú tại Đồng Nai." },
-      { q: "K-Home CityView ở đâu?", a: "K-Home CityView tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Cách trung tâm Biên Hòa khoảng 3km, gần các KCN Biên Hòa 1, 2, Amata." },
+      { q: "K-Home CityView ở đâu?", a: "K-Home CityView tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Cách trung tâm Biên Hòa khoảng 3km, gần các KCN Biên Hòa 1, 2, Amata, Hố Nai và Long Bình." },
       { q: "K-Home CityView khi nào bàn giao nhà?", a: "Dự án đang trong giai đoạn bốc thăm và thi công. Dự kiến bàn giao theo tiến độ được cơ quan nhà nước phê duyệt. Liên hệ hotline 0937.587.438 để cập nhật tiến độ mới nhất." },
       { q: "Vay mua K-Home CityView được bao nhiêu?", a: "Người mua đủ điều kiện NOXH được vay tối đa 80% giá trị căn hộ từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định trong 25 năm. Trả góp chỉ từ khoảng 3,5–4,5 triệu/tháng." },
       { q: "K-Home CityView có được bán lại không?", a: "Theo quy định NOXH, người mua phải ở tối thiểu 5 năm sau khi nhận bàn giao mới được bán lại. Khi bán phải bán lại cho người đủ điều kiện mua NOXH hoặc trả lại cho chủ đầu tư." },
-      { q: "K-Home CityView có bao nhiêu căn?", a: "Dự án có tổng cộng 1.352 căn hộ NOXH và 30 căn shophouse thương mại, phân bổ trong 4 block cao tầng trên tổng diện tích 2,85 hecta tại Hố Nai, Biên Hòa." },
+      { q: "K-Home CityView có bao nhiêu căn?", a: "Dự án có tổng cộng khoảng 1.350 căn hộ NOXH và 30 căn shophouse thương mại, phân bổ trong 4 block cao 22 tầng trên tổng diện tích 2,85 hecta tại Hố Nai, Biên Hòa." },
       { q: "Hỗ trợ hồ sơ NOXH K-Home CityView như thế nào?", a: "Đội ngũ Kim Oanh Land hỗ trợ hoàn toàn miễn phí: kiểm tra điều kiện đủ tiêu chuẩn, chuẩn bị giấy tờ, nộp hồ sơ xét duyệt và kết nối Ngân hàng Chính sách Xã hội. Hotline: 0937.587.438." },
+      { q: "Mặt bằng K-Home CityView gồm những loại căn nào?", a: "K-Home CityView Hố Nai có 4 loại căn hộ: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2 phòng ngủ (70,4m²) và 3 phòng ngủ (84,4m²). Đây là dự án NOXH đầu tiên tại Đồng Nai có căn hộ 3 phòng ngủ." },
+      { q: "Tiện ích K-Home CityView Hố Nai có gì?", a: "K-Home CityView có đầy đủ tiện ích nội khu: hồ bơi người lớn và trẻ em, sân chơi trẻ em, khu thể dục ngoài trời, nhà sinh hoạt cộng đồng, vườn cảnh quan, khu BBQ, bãi đỗ xe và hệ thống shophouse khối đế." },
+      { q: "K-Home CityView có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Hồ sơ pháp lý minh bạch từ giai đoạn đặt cọc đến khi nhận nhà." },
+      { q: "Nhà ở xã hội K-Home CityView Biên Hòa khác gì với nhà thương mại?", a: "NOXH K-Home CityView được bán theo giá Nhà nước quy định (thấp hơn thị trường 20–40%), người mua được vay lãi suất 5,4%/năm từ Ngân hàng Chính sách. Tuy nhiên cần đáp ứng điều kiện thu nhập, chưa có nhà và chưa mua NOXH trước đó." },
     ],
   },
   "k-home-midtown-trang-bom": {
@@ -67,6 +92,10 @@ const PROJECT_SEO: Record<string, {
       { q: "K-Home Midtown tiện ích có gì?", a: "Dự án có đầy đủ tiện ích nội khu: hồ bơi người lớn và trẻ em, Sky Garden vườn cảnh quan, sân chơi trẻ em, khu thể dục ngoài trời, nhà sinh hoạt cộng đồng và 20 căn shophouse thương mại tại tầng đế." },
       { q: "K-Home Midtown có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài sau khi hoàn thành các thủ tục theo quy định." },
       { q: "Từ K-Home Midtown đến TP.HCM mất bao lâu?", a: "Từ K-Home Midtown đến TP.HCM khoảng 35–45 phút qua cao tốc TP.HCM – Long Thành – Dầu Giây (cách khoảng 40km). Thuận tiện cho người làm việc tại TP.HCM." },
+      { q: "Mặt bằng căn hộ K-Home Midtown có những loại gì?", a: "K-Home Midtown có 4 loại căn: Studio (36,1m²), 1 phòng ngủ+ loại A (47m²), 1 phòng ngủ+ loại B (55,1m²) và 2 phòng ngủ (68,8m²). Tất cả bàn giao hoàn thiện nội thất, thiết kế tối ưu công năng theo tiêu chuẩn Singapore." },
+      { q: "Nhà ở xã hội K-Home Midtown gần KCN nào?", a: "K-Home Midtown gần các KCN lớn tại Đồng Nai: KCN Bàu Xéo, KCN Hố Nai, KCN Biên Hòa. Từ dự án chỉ mất 10–20 phút đến các khu công nghiệp này, giúp công nhân tiết kiệm thời gian và chi phí đi lại." },
+      { q: "K-Home Midtown có nhà mẫu để tham quan không?", a: "Liên hệ hotline 0937.587.438 để đăng ký tham quan nhà mẫu và cập nhật lịch tham quan mới nhất từ chủ đầu tư Kim Oanh Land. Hỗ trợ tư vấn và đặt lịch hoàn toàn miễn phí." },
+      { q: "Hồ sơ mua nhà ở xã hội K-Home Midtown cần gì?", a: "Hồ sơ gồm: CMND/CCCD, hộ khẩu hoặc xác nhận tạm trú, giấy xác nhận thu nhập, giấy xác nhận chưa có nhà tại Đồng Nai. Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện toàn bộ miễn phí." },
     ],
   },
   "k-home-avenue-nhon-trach": {
@@ -95,6 +124,10 @@ const PROJECT_SEO: Record<string, {
       { q: "Vay mua K-Home Avenue lãi suất bao nhiêu?", a: "Người đủ điều kiện NOXH được vay tối đa 80% từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định 25 năm. Trả góp chỉ từ 3,5 triệu/tháng cho căn Studio." },
       { q: "K-Home Avenue khi nào mở bán chính thức?", a: "K-Home Avenue đang trong giai đoạn chuẩn bị ra hàng. Liên hệ hotline 0937.587.438 để đăng ký danh sách ưu tiên và nhận thông báo ngay khi mở bán chính thức." },
       { q: "Từ K-Home Avenue đến TP.HCM mất bao lâu?", a: "Từ K-Home Avenue đến TP.HCM khoảng 30–40 phút qua cầu Phước Khánh và các tuyến đường vành đai, cầu Nhơn Trạch đang thi công sẽ rút ngắn thêm thời gian di chuyển." },
+      { q: "Mặt bằng K-Home Avenue Nhơn Trạch có những loại căn nào?", a: "K-Home Avenue có 4 loại căn: Studio (37,7m²), 1 phòng ngủ+ (46,6m²), 2 phòng ngủ nhỏ (65,7m²) và 2 phòng ngủ lớn (69,5m²). 4 block cao 12 tầng, bàn giao hoàn thiện nội thất tiêu chuẩn Singapore." },
+      { q: "Tiện ích dự án K-Home Avenue có gì?", a: "K-Home Avenue có hệ thống tiện ích đầy đủ: hồ bơi, sân chơi trẻ em, khu thể dục ngoài trời, Sky Garden vườn cảnh quan, nhà sinh hoạt cộng đồng, trạm sạc xe điện và 82 căn shophouse khối đế." },
+      { q: "Nhà ở xã hội K-Home Avenue Nhơn Trạch có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Kim Oanh Land hỗ trợ hoàn thiện toàn bộ thủ tục pháp lý miễn phí cho người mua." },
+      { q: "K-Home Avenue gần KCN Nhơn Trạch không?", a: "Có. K-Home Avenue nằm trong khu vực huyện Nhơn Trạch, gần các KCN Nhơn Trạch 1–6 và KCN Long Thành. Thuận tiện cho công nhân và kỹ sư làm việc tại các khu công nghiệp này an cư tại chỗ." },
     ],
   },
 };
@@ -483,6 +516,50 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   {renderRichText(project.longDescription)}
                 </div>
               </div>
+
+              {/* Bảng giá tóm tắt ngay trong tab Tổng Quan — tránh bỏ lỡ */}
+              {project.unitTypes && project.unitTypes.length > 0 && (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-display font-semibold text-slate-800">Bảng Giá Các Loại Căn</h3>
+                    <button
+                      onClick={() => setActiveTab("units")}
+                      className="text-xs font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1 transition-colors cursor-pointer"
+                    >
+                      Xem chi tiết →
+                    </button>
+                  </div>
+                  <div className="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-amber-50 border-b border-amber-100">
+                          <th className="text-left px-4 py-3 text-xs font-bold text-amber-800 uppercase">Loại căn</th>
+                          <th className="text-center px-4 py-3 text-xs font-bold text-amber-800 uppercase">DT xây dựng</th>
+                          <th className="text-center px-4 py-3 text-xs font-bold text-amber-800 uppercase">DT sử dụng</th>
+                          <th className="text-right px-4 py-3 text-xs font-bold text-amber-800 uppercase">Giá bán</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-50 bg-white">
+                        {project.unitTypes.map((unit, idx) => (
+                          <tr
+                            key={idx}
+                            onClick={() => onNavigate(`/${project.slug}/${unit.slug}`)}
+                            className="hover:bg-amber-50/40 transition-colors cursor-pointer group"
+                          >
+                            <td className="px-4 py-3 font-semibold text-slate-800 group-hover:text-amber-700 text-sm">
+                              {unit.name}
+                            </td>
+                            <td className="px-4 py-3 text-center text-slate-600 text-sm">{unit.constructionArea}</td>
+                            <td className="px-4 py-3 text-center text-slate-600 text-sm">{unit.usableArea}</td>
+                            <td className="px-4 py-3 text-right font-bold text-amber-600 text-sm">{unit.price}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-slate-400">* Click vào từng loại căn để xem hình ảnh và mô tả chi tiết.</p>
+                </div>
+              )}
             </div>
           )}
 
@@ -685,6 +762,99 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </div>
 
       </div>
+
+      {/* ── Vị trí dự án ── */}
+      {seo?.locationImages && seo.locationImages.length > 0 && (
+        <section className="space-y-5">
+          <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí Dự Án</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">{project.location}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {seo.locationImages.map((img, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+                <img
+                  src={imgUrl(img.src, "full")}
+                  alt={img.alt}
+                  className="w-full h-56 object-cover"
+                  loading="lazy"
+                  style={{ backgroundColor: "#e2e8f0" }}
+                />
+                {img.caption && (
+                  <p className="text-xs text-slate-500 text-center py-2 bg-slate-50 border-t border-slate-100">{img.caption}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Mặt bằng tầng ── */}
+      {seo?.floorPlanImages && seo.floorPlanImages.length > 0 && (
+        <section className="space-y-5">
+          <h2 className="text-2xl font-display font-bold text-slate-800">Mặt Bằng & Layout Căn Hộ</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích "all-in-one", tầng 3 có vườn treo, tầng 4–22 là mặt bằng điển hình với các loại căn 1PN+, 2PN và 3PN.
+          </p>
+          <div className="space-y-4">
+            {seo.floorPlanImages.map((img, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+                <div className="bg-amber-50 border-b border-amber-100 px-4 py-2">
+                  <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">{img.label}</span>
+                </div>
+                <img
+                  src={imgUrl(img.src, "full")}
+                  alt={img.alt}
+                  className="w-full object-cover"
+                  loading="lazy"
+                  style={{ backgroundColor: "#e2e8f0" }}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Tiện ích chi tiết ── */}
+      {seo?.amenityImages && seo.amenityImages.length > 0 && (
+        <section className="space-y-5">
+          <h2 className="text-2xl font-display font-bold text-slate-800">Tiện Ích Nội Khu</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            Hệ thống tiện ích K-Home CityView được quy hoạch khép kín ngay trong khuôn viên dự án, đáp ứng nhu cầu sinh hoạt thiết thực của cư dân hàng ngày.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {seo.amenityImages.map((img, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+                <img
+                  src={imgUrl(img.src, "thumbnail")}
+                  alt={img.alt}
+                  className="w-full h-48 object-cover"
+                  loading="lazy"
+                  style={{ backgroundColor: "#e2e8f0" }}
+                />
+                {img.caption && (
+                  <p className="text-xs text-slate-600 font-medium text-center py-2 bg-slate-50 border-t border-slate-100">{img.caption}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Chủ đầu tư ── */}
+      {seo?.developerImage && (
+        <section className="bg-slate-50 rounded-3xl border border-slate-100 p-8 space-y-4">
+          <h2 className="text-2xl font-display font-bold text-slate-800">Chủ Đầu Tư – Kim Oanh Land</h2>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Kim Oanh Land đang khẳng định vai trò tiên phong trong phân khúc nhà ở xã hội nhờ lợi thế quỹ đất dồi dào và hệ sinh thái phát triển khép kín. Dự kiến đến năm 2028, Kim Oanh Land sẽ triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM.
+          </p>
+          <img
+            src={imgUrl(seo.developerImage, "full")}
+            alt="Top 10 Nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 – Kim Oanh Land"
+            className="w-full max-w-2xl mx-auto rounded-2xl object-cover"
+            loading="lazy"
+            style={{ backgroundColor: "#e2e8f0" }}
+          />
+        </section>
+      )}
 
       {/* ── Điều kiện mua NOXH ── */}
       {seo?.noxhConditions && (
