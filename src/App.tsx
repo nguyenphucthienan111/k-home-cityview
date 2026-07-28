@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
@@ -166,6 +167,7 @@ export default function App() {
       <Footer />
 
       <Analytics />
+      <SpeedInsights />
 
       {/* Floating Contact Widget — hidden on admin */}
       {!isAdmin && (
