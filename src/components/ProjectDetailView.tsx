@@ -16,6 +16,7 @@ const PROJECT_SEO: Record<string, {
   floorPlanImages?: { src: string; alt: string; label: string }[];
   amenityImages?: { src: string; alt: string; caption?: string }[];
   developerImage?: string;
+  sampleUnitImages?: { src: string; alt: string; label: string }[];
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "K-Home CityView Hố Nai | Nhà Ở Xã Hội Biên Hòa | Giá từ 950 triệu",
@@ -26,6 +27,9 @@ const PROJECT_SEO: Record<string, {
     ],
     floorPlanImages: [
       { src: "/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", alt: "Mặt bằng tầng điển hình 12A-22 NOXH K-Home CityView Hố Nai", label: "Tầng 12A–22 (Tầng điển hình)" },
+      { src: "/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-4-11.jpg.webp", alt: "Mặt bằng tầng 4-11 K-Home CityView Hố Nai Kim Oanh", label: "Tầng 4–11" },
+      { src: "/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-3.jpg.webp", alt: "Mặt bằng tầng 3 vườn treo NOXH K-Home CityView", label: "Tầng 3 (Vườn treo)" },
+      { src: "/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-2.jpg.webp", alt: "Mặt bằng tầng 2 NOXH K-Home CityView Hố Nai Kim Oanh", label: "Tầng 2" },
       { src: "/k-home cityview/mat-bang/k-home-cityview-mat-bang-tang-1.jpg.webp", alt: "Mặt bằng tầng 1 tiện ích K-Home CityView Hố Nai Kim Oanh", label: "Tầng 1 (Tiện ích)" },
       { src: "/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", alt: "Thiết kế căn hộ layout 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land", label: "Layout các loại căn hộ" },
     ],
@@ -37,6 +41,12 @@ const PROJECT_SEO: Record<string, {
       { src: "/k-home cityview/mat-bang/tien-ich-k-home-city-view-9.jpg.webp", alt: "Shophouse thương mại K-Home CityView", caption: "Shophouse & phố thương mại nội khu" },
     ],
     developerImage: "/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp",
+    sampleUnitImages: [
+      { src: "/k-home cityview/Can-1PN-A/khome-cityview-nha-mau-can-ho-1PN-1.jpg", alt: "Nhà mẫu căn 1 phòng ngủ A K-Home CityView Kim Oanh", label: "Căn 1PN + A (47,3m²)" },
+      { src: "/k-home cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg", alt: "Nhà mẫu căn 1 phòng ngủ B K-Home CityView Kim Oanh", label: "Căn 1PN + B (62,4m²)" },
+      { src: "/k-home cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg", alt: "Nhà mẫu căn 2 phòng ngủ K-Home City View Hố Nai Biên Hòa", label: "Căn 2PN (70,4m²)" },
+      { src: "/k-home cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg", alt: "Nhà mẫu căn 3 phòng ngủ NOXH K-Home CityView Biên Hòa", label: "Căn 3PN (84,4m²)" },
+    ],
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -169,7 +179,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     });
   };
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("overview"); // overview, amenities, map
+  const [activeTab, setActiveTab] = useState("overview");
+  const [activeFloorTab, setActiveFloorTab] = useState(0);
 
   // Lightbox State
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -789,26 +800,39 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Mặt bằng tầng ── */}
       {seo?.floorPlanImages && seo.floorPlanImages.length > 0 && (
-        <section className="space-y-5">
+        <section className="space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">Mặt Bằng & Layout Căn Hộ</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
             K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích "all-in-one", tầng 3 có vườn treo, tầng 4–22 là mặt bằng điển hình với các loại căn 1PN+, 2PN và 3PN.
           </p>
-          <div className="space-y-4">
+
+          {/* Tab buttons */}
+          <div className="flex flex-wrap gap-2 border-b border-slate-100 pb-1">
             {seo.floorPlanImages.map((img, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
-                <div className="bg-amber-50 border-b border-amber-100 px-4 py-2">
-                  <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">{img.label}</span>
-                </div>
-                <img
-                  src={imgUrl(img.src, "full")}
-                  alt={img.alt}
-                  className="w-full object-cover"
-                  loading="lazy"
-                  style={{ backgroundColor: "#e2e8f0" }}
-                />
-              </div>
+              <button
+                key={i}
+                onClick={() => setActiveFloorTab(i)}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                  activeFloorTab === i
+                    ? "bg-amber-500 text-white border-amber-500 shadow-sm"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-amber-400 hover:text-amber-600"
+                }`}
+              >
+                {img.label}
+              </button>
             ))}
+          </div>
+
+          {/* Active image */}
+          <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+            <img
+              key={activeFloorTab}
+              src={imgUrl(seo.floorPlanImages[activeFloorTab].src, "full")}
+              alt={seo.floorPlanImages[activeFloorTab].alt}
+              className="w-full object-cover"
+              loading="lazy"
+              style={{ backgroundColor: "#e2e8f0" }}
+            />
           </div>
         </section>
       )}
@@ -836,6 +860,42 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {/* ── Nhà mẫu ── */}
+      {seo?.sampleUnitImages && seo.sampleUnitImages.length > 0 && (
+        <section className="space-y-5">
+          <h2 className="text-2xl font-display font-bold text-slate-800">Nhà Mẫu Căn Hộ K-Home CityView</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            Căn hộ K-Home CityView bàn giao hoàn thiện full nội thất theo tiêu chuẩn dự án, bao gồm tủ bếp An Cường, sofa, bàn ăn, giường, tủ quần áo, chăn ga gối — chỉ trừ các thiết bị điện tử.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {seo.sampleUnitImages.map((img, i) => {
+              const unit = project.unitTypes?.[i];
+              return (
+                <div
+                  key={i}
+                  onClick={() => unit && onNavigate(`/${project.slug}/${unit.slug}`)}
+                  className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer hover:border-amber-400/50 hover:shadow-md transition-all"
+                >
+                  <img
+                    src={imgUrl(img.src, "thumbnail")}
+                    alt={img.alt}
+                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    style={{ backgroundColor: "#e2e8f0" }}
+                  />
+                  <div className="px-3 py-2.5 bg-white">
+                    <p className="text-xs font-bold text-slate-700 truncate">{img.label}</p>
+                    {unit && <p className="text-[10px] text-amber-600 font-semibold mt-0.5">{unit.price}</p>}
+                    <p className="text-[10px] text-slate-400 mt-0.5 group-hover:text-amber-500 transition-colors">Xem chi tiết →</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-xs text-slate-400">* Click vào từng loại căn để xem đầy đủ hình ảnh nhà mẫu, diện tích và thông tin chi tiết.</p>
         </section>
       )}
 
