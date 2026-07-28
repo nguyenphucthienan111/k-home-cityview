@@ -1,8 +1,103 @@
-﻿import React, { useEffect, useState } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid } from "lucide-react";
+﻿import React, { useEffect, useState, useMemo } from "react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck } from "lucide-react";
 import { Project } from "../types";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
+
+// ─── Per-project SEO data ────────────────────────────────────────────────────
+
+const PROJECT_SEO: Record<string, {
+  titleTag: string;
+  metaDesc: string;
+  noxhConditions: { label: string; detail: string }[];
+  paymentPolicy: { step: string; pct: string; note: string }[];
+  faq: { q: string; a: string }[];
+}> = {
+  "k-home-cityview-ho-nai": {
+    titleTag: "K-Home CityView Hố Nai | Nhà Ở Xã Hội Biên Hòa | Giá từ 950 triệu",
+    metaDesc: "Dự án nhà ở xã hội K-Home CityView tại đường Điểu Xiển, Hố Nai, Biên Hòa. 1.352 căn hộ NOXH + shophouse, diện tích 47–84m², lãi suất 5,4%/năm, hỗ trợ hồ sơ miễn phí. Cập nhật bảng giá & tiến độ mới nhất.",
+    noxhConditions: [
+      { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
+      { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
+      { label: "Thu nhập hộ gia đình", detail: "Vợ chồng: dưới 50 triệu/tháng • Đơn thân nuôi con: dưới 35 triệu/tháng • Độc thân: dưới 25 triệu/tháng" },
+      { label: "Hộ khẩu hoặc tạm trú", detail: "Có hộ khẩu hoặc đang tạm trú tại tỉnh Đồng Nai từ 1 năm trở lên" },
+      { label: "Đang làm việc tại Đồng Nai", detail: "Ưu tiên công nhân, người lao động tại các khu công nghiệp tỉnh Đồng Nai" },
+    ],
+    paymentPolicy: [
+      { step: "Đặt cọc", pct: "30.000.000 đ", note: "Khi ký Phiếu xác nhận cọc" },
+      { step: "Đợt 1", pct: "15%", note: "7 ngày từ ngày cọc – ký HĐDVTV" },
+      { step: "Đợt 2–3", pct: "5% / đợt", note: "Mỗi đợt cách 30 ngày" },
+      { step: "Ngân hàng giải ngân", pct: "75%", note: "NH giải ngân theo tiến độ" },
+      { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
+    ],
+    faq: [
+      { q: "K-Home CityView Hố Nai giá bao nhiêu?", a: "K-Home CityView có giá từ 950 triệu đến 2 tỷ/căn tùy loại: 1PN+A từ 950 triệu, 1PN+B từ 1,25 tỷ, 2PN từ 1,50 tỷ, 3PN từ 1,80 tỷ. Tất cả bàn giao full nội thất, lãi suất NOXH 5,4%/năm." },
+      { q: "Điều kiện mua K-Home CityView là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (cặp vợ chồng) hoặc dưới 25 triệu (độc thân), có hộ khẩu hoặc tạm trú tại Đồng Nai." },
+      { q: "K-Home CityView ở đâu?", a: "K-Home CityView tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Cách trung tâm Biên Hòa khoảng 3km, gần các KCN Biên Hòa 1, 2, Amata." },
+      { q: "K-Home CityView khi nào bàn giao nhà?", a: "Dự án đang trong giai đoạn bốc thăm và thi công. Dự kiến bàn giao theo tiến độ được cơ quan nhà nước phê duyệt. Liên hệ hotline 0937.587.438 để cập nhật tiến độ mới nhất." },
+      { q: "Vay mua K-Home CityView được bao nhiêu?", a: "Người mua đủ điều kiện NOXH được vay tối đa 80% giá trị căn hộ từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định trong 25 năm. Trả góp chỉ từ khoảng 3,5–4,5 triệu/tháng." },
+      { q: "K-Home CityView có được bán lại không?", a: "Theo quy định NOXH, người mua phải ở tối thiểu 5 năm sau khi nhận bàn giao mới được bán lại. Khi bán phải bán lại cho người đủ điều kiện mua NOXH hoặc trả lại cho chủ đầu tư." },
+      { q: "K-Home CityView có bao nhiêu căn?", a: "Dự án có tổng cộng 1.352 căn hộ NOXH và 30 căn shophouse thương mại, phân bổ trong 4 block cao tầng trên tổng diện tích 2,85 hecta tại Hố Nai, Biên Hòa." },
+      { q: "Hỗ trợ hồ sơ NOXH K-Home CityView như thế nào?", a: "Đội ngũ Kim Oanh Land hỗ trợ hoàn toàn miễn phí: kiểm tra điều kiện đủ tiêu chuẩn, chuẩn bị giấy tờ, nộp hồ sơ xét duyệt và kết nối Ngân hàng Chính sách Xã hội. Hotline: 0937.587.438." },
+    ],
+  },
+  "k-home-midtown-trang-bom": {
+    titleTag: "K-Home Midtown Trảng Bom | Nhà Ở Xã Hội | Giá từ 750 triệu | Cập nhật 2026",
+    metaDesc: "K-Home Midtown Trảng Bom – dự án NOXH quy mô 13,97 ha, 542 căn hộ. Vị trí trung tâm Trảng Bom, tiện ích đầy đủ, vay ưu đãi 5,4%/năm. Xem bảng giá, mặt bằng & tiến độ mới nhất.",
+    noxhConditions: [
+      { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
+      { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
+      { label: "Thu nhập hộ gia đình", detail: "Vợ chồng: dưới 50 triệu/tháng • Đơn thân nuôi con: dưới 35 triệu/tháng • Độc thân: dưới 25 triệu/tháng" },
+      { label: "Hộ khẩu hoặc tạm trú", detail: "Có hộ khẩu hoặc tạm trú tại tỉnh Đồng Nai từ 1 năm trở lên" },
+      { label: "Ưu tiên công nhân KCN", detail: "Ưu tiên người lao động tại các KCN Trảng Bom, Bàu Xéo và các KCN lân cận" },
+    ],
+    paymentPolicy: [
+      { step: "Đặt cọc", pct: "30.000.000 đ", note: "Khi ký Phiếu xác nhận cọc" },
+      { step: "Đợt 1", pct: "15%", note: "7 ngày từ ngày cọc – ký HĐDVTV" },
+      { step: "Đợt 2–3", pct: "5% / đợt", note: "Mỗi đợt cách 30 ngày" },
+      { step: "Ngân hàng giải ngân", pct: "75%", note: "NH giải ngân theo tiến độ" },
+      { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
+    ],
+    faq: [
+      { q: "K-Home Midtown Trảng Bom ở đâu?", a: "K-Home Midtown tọa lạc tại trung tâm huyện Trảng Bom, giao lộ 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, Phường Trảng Bom, Đồng Nai. Cách TP.HCM khoảng 40km qua cao tốc." },
+      { q: "K-Home Midtown Trảng Bom giá bao nhiêu?", a: "K-Home Midtown có giá từ 750 triệu đến 1,5 tỷ/căn: Studio từ 750 triệu, 1PN+A từ 990 triệu, 1PN+B từ 1,2 tỷ, 2PN từ 1,5 tỷ. Bàn giao full nội thất, trả góp từ 3,5–4,5 triệu/tháng." },
+      { q: "K-Home Midtown có bao nhiêu căn?", a: "Dự án có 542 căn hộ NOXH và 20 căn shophouse, trên quỹ đất 13,97 ha tại trung tâm huyện Trảng Bom – quy mô lớn nhất trong 3 dự án K-Home tại Đồng Nai." },
+      { q: "Điều kiện mua K-Home Midtown là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (hộ gia đình), có hộ khẩu hoặc tạm trú tại Đồng Nai. Ưu tiên công nhân, người lao động tại KCN Trảng Bom." },
+      { q: "K-Home Midtown vay được lãi suất bao nhiêu?", a: "Người đủ điều kiện NOXH được vay tối đa 80% từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định 25 năm. Trả góp chỉ từ 3,5 triệu/tháng, phù hợp thu nhập công nhân." },
+      { q: "K-Home Midtown tiện ích có gì?", a: "Dự án có đầy đủ tiện ích nội khu: hồ bơi người lớn và trẻ em, Sky Garden vườn cảnh quan, sân chơi trẻ em, khu thể dục ngoài trời, nhà sinh hoạt cộng đồng và 20 căn shophouse thương mại tại tầng đế." },
+      { q: "K-Home Midtown có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài sau khi hoàn thành các thủ tục theo quy định." },
+      { q: "Từ K-Home Midtown đến TP.HCM mất bao lâu?", a: "Từ K-Home Midtown đến TP.HCM khoảng 35–45 phút qua cao tốc TP.HCM – Long Thành – Dầu Giây (cách khoảng 40km). Thuận tiện cho người làm việc tại TP.HCM." },
+    ],
+  },
+  "k-home-avenue-nhon-trach": {
+    titleTag: "K-Home Avenue Nhơn Trạch | Nhà Ở Xã Hội gần Sân bay Long Thành | Giá từ 750 triệu",
+    metaDesc: "K-Home Avenue Nhơn Trạch – nhà ở xã hội quy mô lớn, gần đường 25C và sân bay Long Thành. Căn Studio, 1PN, 2PN giá từ 750 triệu. Hỗ trợ vay 5,4%/năm, pháp lý rõ ràng.",
+    noxhConditions: [
+      { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
+      { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
+      { label: "Thu nhập hộ gia đình", detail: "Vợ chồng: dưới 50 triệu/tháng • Đơn thân nuôi con: dưới 35 triệu/tháng • Độc thân: dưới 25 triệu/tháng" },
+      { label: "Hộ khẩu hoặc tạm trú", detail: "Có hộ khẩu hoặc tạm trú tại tỉnh Đồng Nai từ 1 năm trở lên" },
+      { label: "Ưu tiên công nhân KCN Nhơn Trạch", detail: "Ưu tiên người lao động tại các KCN Nhơn Trạch 1–6, Long Thành và vùng lân cận" },
+    ],
+    paymentPolicy: [
+      { step: "Đặt cọc", pct: "30.000.000 đ", note: "Khi ký Phiếu xác nhận cọc" },
+      { step: "Đợt 1", pct: "15%", note: "7 ngày từ ngày cọc – ký HĐDVTV" },
+      { step: "Đợt 2–3", pct: "5% / đợt", note: "Mỗi đợt cách 30 ngày" },
+      { step: "Ngân hàng giải ngân", pct: "75%", note: "NH giải ngân theo tiến độ" },
+      { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
+    ],
+    faq: [
+      { q: "K-Home Avenue Nhơn Trạch ở đâu?", a: "K-Home Avenue tọa lạc trên đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Nhơn Trạch, tỉnh Đồng Nai – trục đường kết nối trực tiếp đến Cảng Hàng không Quốc tế Long Thành đang xây dựng." },
+      { q: "K-Home Avenue Nhơn Trạch giá bao nhiêu?", a: "K-Home Avenue có giá từ 750 triệu: Studio 37,7m² từ 750 triệu, 1PN+ 46,6m² từ 990 triệu, 2PN nhỏ 65,7m² từ 1,23 tỷ, 2PN lớn 69,5m² từ 1,40 tỷ. Tất cả bàn giao full nội thất." },
+      { q: "Điều kiện mua K-Home Avenue là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (hộ gia đình), có hộ khẩu hoặc tạm trú tại Đồng Nai. Hỗ trợ hồ sơ hoàn toàn miễn phí." },
+      { q: "K-Home Avenue gần sân bay Long Thành không?", a: "Có. K-Home Avenue nằm trên trục đường 25C – tuyến đường kết nối trực tiếp đến Sân bay Quốc tế Long Thành, dự kiến hoạt động 2026. Đây là lợi thế lớn về tiềm năng tăng giá trị bất động sản." },
+      { q: "K-Home Avenue có bao nhiêu căn?", a: "Dự án có 1.022 căn hộ NOXH và 82 căn shophouse thương mại, trên quỹ đất 5,3 ha tại Nhơn Trạch – huyện đang phát triển mạnh nhờ hạ tầng sân bay Long Thành." },
+      { q: "Vay mua K-Home Avenue lãi suất bao nhiêu?", a: "Người đủ điều kiện NOXH được vay tối đa 80% từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định 25 năm. Trả góp chỉ từ 3,5 triệu/tháng cho căn Studio." },
+      { q: "K-Home Avenue khi nào mở bán chính thức?", a: "K-Home Avenue đang trong giai đoạn chuẩn bị ra hàng. Liên hệ hotline 0937.587.438 để đăng ký danh sách ưu tiên và nhận thông báo ngay khi mở bán chính thức." },
+      { q: "Từ K-Home Avenue đến TP.HCM mất bao lâu?", a: "Từ K-Home Avenue đến TP.HCM khoảng 30–40 phút qua cầu Phước Khánh và các tuyến đường vành đai, cầu Nhơn Trạch đang thi công sẽ rút ngắn thêm thời gian di chuyển." },
+    ],
+  },
+};
 
 interface ProjectDetailViewProps {
   slug: string;
@@ -11,6 +106,7 @@ interface ProjectDetailViewProps {
 
 export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailViewProps) {
   const [project, setProject] = useState<Project | null>(null);
+  const seo = PROJECT_SEO[slug];
 
   // Parse **bold** markers and \n\n paragraph breaks into JSX
   const renderRichText = (text: string) => {
@@ -64,10 +160,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         const found = list.find((p) => p.slug === slug);
         setProject(found || null);
         if (found) {
-          document.title = `${found.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;
+          // Dùng SEO title/meta từ PROJECT_SEO nếu có
+          document.title = seo?.titleTag ?? `${found.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;
           const metaDesc = document.querySelector('meta[name="description"]');
           if (metaDesc) {
-            metaDesc.setAttribute("content", `${found.description} Cập nhật mặt bằng, chính sách chiết khấu đợt 1 từ chủ đầu tư Kim Oanh Group.`);
+            metaDesc.setAttribute("content", seo?.metaDesc ?? `${found.description} Cập nhật mặt bằng, chính sách chiết khấu đợt 1 từ chủ đầu tư Kim Oanh Group.`);
           }
 
           // Schema RealEstateListing
@@ -125,6 +222,25 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ]
           });
           document.head.appendChild(breadcrumb);
+
+          // FAQ Schema — lợi thế SEO lớn nhất, 3 trang top 1 đều không có
+          const existingFaq = document.getElementById("schema-faq-project");
+          if (existingFaq) existingFaq.remove();
+          if (seo?.faq?.length) {
+            const faqSchema = document.createElement("script");
+            faqSchema.id = "schema-faq-project";
+            faqSchema.type = "application/ld+json";
+            faqSchema.text = JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": seo.faq.map(({ q, a }) => ({
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": { "@type": "Answer", "text": a },
+              })),
+            });
+            document.head.appendChild(faqSchema);
+          }
         }
         setLoading(false);
       })
@@ -138,6 +254,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
       document.getElementById("schema-project")?.remove();
       document.getElementById("schema-breadcrumb-project")?.remove();
+      document.getElementById("schema-faq-project")?.remove();
     };
   }, [slug]);
 
@@ -355,8 +472,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <span className="block font-bold text-slate-800 text-sm">{project.floorCount} tầng</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 text-xs uppercase font-tech">Bảo hành:</span>
-                  <span className="block font-bold text-slate-800 text-sm">Chuẩn 5 sao</span>
+                  <span className="text-slate-400 text-xs uppercase font-tech">Tiêu chuẩn:</span>
+                  <span className="block font-bold text-slate-800 text-sm">Thiết kế Singapore · Xanh EDGE</span>
                 </div>
               </div>
 
@@ -568,6 +685,101 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </div>
 
       </div>
+
+      {/* ── Điều kiện mua NOXH ── */}
+      {seo?.noxhConditions && (
+        <section className="bg-amber-50 border border-amber-100 rounded-3xl p-8 space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+              <BadgeCheck className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-xl font-display font-bold text-slate-800">Điều Kiện Mua Nhà Ở Xã Hội</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Kiểm tra ngay — hỗ trợ hồ sơ miễn phí nếu đủ điều kiện</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {seo.noxhConditions.map((c, i) => (
+              <div key={i} className="bg-white rounded-2xl p-4 border border-amber-100 flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-sm font-bold text-slate-800">{c.label}</span>
+                  <span className="block text-xs text-slate-500 mt-0.5 leading-relaxed">{c.detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white rounded-2xl p-4 border border-amber-200 flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p className="text-sm font-bold text-slate-800">Không chắc mình có đủ điều kiện không?</p>
+              <p className="text-xs text-slate-500 mt-0.5">Gọi ngay để được kiểm tra miễn phí trong 5 phút</p>
+            </div>
+            <a href="tel:0937587438" className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-colors flex items-center gap-2">
+              <Phone className="w-4 h-4" /> 0937 587 438
+            </a>
+          </div>
+        </section>
+      )}
+
+      {/* ── Chính sách thanh toán ── */}
+      {seo?.paymentPolicy && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-amber-400" />
+            </div>
+            <h2 className="text-xl font-display font-bold text-slate-800">Chính Sách Thanh Toán</h2>
+          </div>
+          <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
+            <div className="grid grid-cols-3 bg-amber-500 text-white text-xs font-bold px-5 py-3">
+              <span>Đợt</span>
+              <span className="text-center">Tỷ lệ</span>
+              <span className="text-right">Ghi chú</span>
+            </div>
+            {seo.paymentPolicy.map((row, i) => (
+              <div key={i} className={`grid grid-cols-3 px-5 py-3.5 border-b border-slate-50 text-sm ${i % 2 === 0 ? "bg-amber-50/30" : "bg-white"}`}>
+                <span className="font-semibold text-slate-700">{row.step}</span>
+                <span className="text-center font-bold text-amber-600">{row.pct}</span>
+                <span className="text-right text-slate-500 text-xs leading-snug">{row.note}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 flex items-start gap-1.5">
+            <span className="text-amber-500 font-bold shrink-0">* Lưu ý:</span>
+            Lịch thanh toán trên áp dụng cho phương thức vay ngân hàng chính sách. Tỷ lệ và tiến độ có thể thay đổi theo quyết định của chủ đầu tư.
+          </p>
+        </section>
+      )}
+
+      {/* ── FAQ ── */}
+      {seo?.faq && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+              <HelpCircle className="w-5 h-5 text-blue-600" />
+            </div>
+            <div>
+              <h2 className="text-xl font-display font-bold text-slate-800">Câu Hỏi Thường Gặp</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Giải đáp mọi thắc mắc về {project.title}</p>
+            </div>
+          </div>
+          <div className="space-y-3">
+            {seo.faq.map((item, i) => (
+              <details key={i} className="group bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none select-none hover:bg-amber-50/50 transition-colors">
+                  <span className="font-semibold text-slate-800 text-sm pr-4">{item.q}</span>
+                  <span className="shrink-0 w-6 h-6 rounded-full bg-slate-100 group-open:bg-amber-500 text-slate-500 group-open:text-white flex items-center justify-center text-xs font-bold transition-all">
+                    <svg className="w-3 h-3 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  </span>
+                </summary>
+                <div className="px-5 pb-4 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-50">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Fullscreen Lightbox Modal */}
       {lightboxOpen && (
