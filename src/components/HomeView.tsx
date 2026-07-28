@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback, memo } from "react";
+import React, { useEffect, useState, useRef, useMemo, useCallback, memo, startTransition } from "react";
 import { 
   ArrowRight, 
   Star, 
@@ -164,6 +164,115 @@ const TestimonialCard = memo(function TestimonialCard({
   );
 });
 
+// ─── Static config — đặt ngoài component để không recreate mỗi render ───
+
+type CalcUnit = { label: string; area: string; price: number; priceMin: number; priceMax: number; priceLabel: string };
+type CalcScheduleRow = { dot: string; pct: string; note: string };
+type CalcProjectConfig = {
+  name: string; loanYears: number; loanPercent: number; policyRate: number;
+  units: CalcUnit[]; schedule: CalcScheduleRow[];
+};
+
+const PROJECT_CALC_CONFIG: Record<string, CalcProjectConfig> = {
+  "k-home-cityview-ho-nai": {
+    name: "K-Home CityView Hố Nai",
+    loanYears: 25, loanPercent: 75, policyRate: 5.4,
+    units: [
+      { label: "1PN+A", area: "47,3m²",  price: 1.0,   priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950tr – 1,05 tỷ" },
+      { label: "1PN+B", area: "62,4m²",  price: 1.325, priceMin: 1.25,  priceMax: 1.40,  priceLabel: "1,25 – 1,40 tỷ" },
+      { label: "2PN",   area: "70,4m²",  price: 1.55,  priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,50 – 1,60 tỷ" },
+      { label: "3PN",   area: "84,4m²",  price: 1.9,   priceMin: 1.80,  priceMax: 2.00,  priceLabel: "1,80 – 2,00 tỷ" },
+    ],
+    schedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, Ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 2" },
+      { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
+      { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
+    ],
+  },
+  "k-home-avenue-nhon-trach": {
+    name: "K-Home Avenue Nhơn Trạch",
+    loanYears: 25, loanPercent: 75, policyRate: 5.4,
+    units: [
+      { label: "Studio", area: "38m²",   price: 0.75, priceMin: 0.75,  priceMax: 0.85,  priceLabel: "Từ 750 triệu" },
+      { label: "1PN+",   area: "47m²",   price: 0.95, priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950 triệu" },
+      { label: "2PN-S",  area: "65m²",   price: 1.4,  priceMin: 1.40,  priceMax: 1.50,  priceLabel: "Từ 1,4 tỷ" },
+      { label: "2PN-L",  area: "69,5m²", price: 1.5,  priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,5 tỷ" },
+    ],
+    schedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, khách TT đợt 1 và ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn TT đợt 1" },
+      { dot: "Đợt 3",    pct: "5%",                 note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
+      { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
+      { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
+    ],
+  },
+  "k-home-midtown-trang-bom": {
+    name: "K-Home Midtown Trảng Bom",
+    loanYears: 25, loanPercent: 75, policyRate: 5.4,
+    units: [
+      { label: "Studio", area: "~35m²", price: 0.8, priceMin: 0.80, priceMax: 0.90, priceLabel: "Từ ~800 triệu" },
+      { label: "1PN+A",  area: "~47m²", price: 1.0, priceMin: 1.00, priceMax: 1.15, priceLabel: "Từ ~1,0 tỷ" },
+      { label: "1PN+B",  area: "~55m²", price: 1.2, priceMin: 1.20, priceMax: 1.35, priceLabel: "Từ ~1,2 tỷ" },
+      { label: "2PN",    area: "~65m²", price: 1.4, priceMin: 1.40, priceMax: 1.55, priceLabel: "Từ ~1,4 tỷ" },
+    ],
+    schedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3",    pct: "10%",                note: "30 ngày kể từ ngày đến hạn đợt 2" },
+      { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
+      { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
+    ],
+  },
+};
+
+// Pure function — tính toán kết quả calculator, không phụ thuộc component state
+function calcResults(
+  investmentValue: number,
+  paymentOption: string,
+  selectedCalcProject: string,
+) {
+  const cfg = PROJECT_CALC_CONFIG[selectedCalcProject];
+  const loanPercent = paymentOption === "cash" ? 0 : cfg.loanPercent;
+  const interestRate = cfg.policyRate;
+  const loanYears = paymentOption === "cash" ? 0 : cfg.loanYears;
+  const downPayment = investmentValue * (100 - loanPercent) / 100;
+  const loanAmount  = investmentValue * loanPercent / 100;
+  let monthlyPayment = 0;
+  if (loanAmount > 0 && loanYears > 0) {
+    const monthlyRate  = interestRate / 100 / 12;
+    const numPayments  = loanYears * 12;
+    monthlyPayment = (loanAmount * 1000 * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
+                     (Math.pow(1 + monthlyRate, numPayments) - 1);
+  }
+  const totalInterest = monthlyPayment > 0
+    ? (monthlyPayment * loanYears * 12) - loanAmount * 1000
+    : 0;
+  return {
+    unitPrice: investmentValue.toFixed(2),
+    downPayment: downPayment.toFixed(2),
+    loanAmount: loanAmount.toFixed(2),
+    monthlyPayment: monthlyPayment.toFixed(1),
+    totalInterest: totalInterest.toFixed(0),
+    loanYears,
+    loanPercent,
+  };
+}
+
+// Page titles constant — ra ngoài để không rebuild mỗi navigation
+const PAGE_TITLES: Record<string, string> = {
+  "/":            "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+  "/home":        "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+  "/san-pham":    "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
+  "/tin-tuc":     "Tin Tức Bất Động Sản | K-Home Đồng Nai",
+  "/gioi-thieu":  "Giới Thiệu | K-Home Đồng Nai",
+  "/lien-he":     "Liên Hệ Tư Vấn | K-Home Đồng Nai",
+};
+
 interface HomeViewProps {
   onNavigate: (hash: string) => void;
 }
@@ -278,81 +387,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   ], []);
 
   // Investment Calculator States
-  const [investmentValue, setInvestmentValue] = useState<number>(1.0); // Tỷ VNĐ
+  const [investmentValue, setInvestmentValue] = useState<number>(1.0);
   const [paymentOption, setPaymentOption] = useState<string>("policy");
   const [selectedCalcProject, setSelectedCalcProject] = useState<string>("k-home-cityview-ho-nai");
   const [selectedUnitIndex, setSelectedUnitIndex] = useState<number>(0);
-
-  // Config theo từng dự án
-  const projectCalcConfig: Record<string, {
-    name: string;
-    loanYears: number;
-    loanPercent: number;
-    policyRate: number;
-    units: { label: string; area: string; price: number; priceMin: number; priceMax: number; priceLabel: string }[];
-    schedule: { dot: string; pct: string; note: string }[];
-  }> = {
-    "k-home-cityview-ho-nai": {
-      name: "K-Home CityView Hố Nai",
-      loanYears: 25,
-      loanPercent: 75,
-      policyRate: 5.4,
-      units: [
-        { label: "1PN+A", area: "47,3m²",  price: 1.0,   priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950tr – 1,05 tỷ" },
-        { label: "1PN+B", area: "62,4m²",  price: 1.325, priceMin: 1.25,  priceMax: 1.40,  priceLabel: "1,25 – 1,40 tỷ" },
-        { label: "2PN",   area: "70,4m²",  price: 1.55,  priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,50 – 1,60 tỷ" },
-        { label: "3PN",   area: "84,4m²",  price: 1.9,   priceMin: 1.80,  priceMax: 2.00,  priceLabel: "1,80 – 2,00 tỷ" },
-      ],
-      schedule: [
-        { dot: "Cọc",        pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
-        { dot: "Đợt 1",      pct: "15%",                note: "7 ngày kể từ ngày cọc, Ký HĐDVTV" },
-        { dot: "Đợt 2",      pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
-        { dot: "Đợt 3",      pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 2" },
-        { dot: "Đợt 4",      pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao",   pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
-      ],
-    },
-    "k-home-avenue-nhon-trach": {
-      name: "K-Home Avenue Nhơn Trạch",
-      loanYears: 25,
-      loanPercent: 75,
-      policyRate: 5.4,
-      units: [
-        { label: "Studio", area: "38m²",   price: 0.75,  priceMin: 0.75,  priceMax: 0.85,  priceLabel: "Từ 750 triệu" },
-        { label: "1PN+",   area: "47m²",   price: 0.95,  priceMin: 0.95,  priceMax: 1.05,  priceLabel: "950 triệu" },
-        { label: "2PN-S",  area: "65m²",   price: 1.4,   priceMin: 1.40,  priceMax: 1.50,  priceLabel: "Từ 1,4 tỷ" },
-        { label: "2PN-L",  area: "69,5m²", price: 1.5,   priceMin: 1.50,  priceMax: 1.60,  priceLabel: "1,5 tỷ" },
-      ],
-      schedule: [
-        { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
-        { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, khách TT đợt 1 và ký HĐDVTV" },
-        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn TT đợt 1" },
-        { dot: "Đợt 3",    pct: "5%",                 note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
-        { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
-      ],
-    },
-    "k-home-midtown-trang-bom": {
-      name: "K-Home Midtown Trảng Bom",
-      loanYears: 25,
-      loanPercent: 75,
-      policyRate: 5.4,
-      units: [
-        { label: "Studio", area: "~35m²",  price: 0.8,   priceMin: 0.80,  priceMax: 0.90,  priceLabel: "Từ ~800 triệu" },
-        { label: "1PN+A",  area: "~47m²",  price: 1.0,   priceMin: 1.00,  priceMax: 1.15,  priceLabel: "Từ ~1,0 tỷ" },
-        { label: "1PN+B",  area: "~55m²",  price: 1.2,   priceMin: 1.20,  priceMax: 1.35,  priceLabel: "Từ ~1,2 tỷ" },
-        { label: "2PN",    area: "~65m²",  price: 1.4,   priceMin: 1.40,  priceMax: 1.55,  priceLabel: "Từ ~1,4 tỷ" },
-      ],
-      schedule: [
-        { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
-        { dot: "Đợt 1",    pct: "15%",                note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
-        { dot: "Đợt 2",    pct: "5%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
-        { dot: "Đợt 3",    pct: "10%",                note: "30 ngày kể từ ngày đến hạn đợt 2" },
-        { dot: "Đợt 4",    pct: "75% (NH giải ngân)", note: "Ngân hàng giải ngân" },
-        { dot: "Bàn giao", pct: "Phí bảo trì 2%",    note: "15 ngày kể từ ngày nhận thông báo BG" },
-      ],
-    },
-  };
 
   // Scroll Tracking State
   const [activeSection, setActiveSection] = useState<string>("hero");
@@ -361,11 +399,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [statsDone, setStatsDone] = useState<boolean>(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  // Counter values (animated)
-  const [count15, setCount15] = useState(0);
-  const [count12k, setCount12k] = useState(0);
-  const [count10, setCount10] = useState(0);
-  const [count98, setCount98] = useState(0);
+  // Counter values (animated) — gộp thành 1 state object để chỉ trigger 1 re-render/tick
+  const [counts, setCounts] = useState({ v15: 0, v12: 0, v10: 0, v98: 0 });
 
   const projectsSectionRef = useRef<HTMLDivElement>(null);
 
@@ -382,8 +417,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   useEffect(() => {
     const alreadyRan = sessionStorage.getItem("statsAnimated");
     if (alreadyRan) {
-      // Already ran this session — show final values immediately
-      setCount15(15); setCount12k(12); setCount10(10); setCount98(98);
+      setCounts({ v15: 15, v12: 12, v10: 10, v98: 98 });
       setStatsDone(true);
       return;
     }
@@ -407,25 +441,26 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   useEffect(() => {
     if (!statsVisible || statsDone) return;
 
-    const duration = 1800; // ms
+    const duration = 1800;
     const steps = 60;
     const interval = duration / steps;
-
-    // Easing function: easeOutExpo
     const ease = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
     let step = 0;
     const timer = setInterval(() => {
       step++;
       const progress = ease(step / steps);
-      setCount15(Math.round(progress * 15));
-      setCount12k(Math.round(progress * 12));
-      setCount10(Math.round(progress * 10));
-      setCount98(Math.round(progress * 98));
+      // 1 setState = 1 re-render thay vì 4
+      setCounts({
+        v15: Math.round(progress * 15),
+        v12: Math.round(progress * 12),
+        v10: Math.round(progress * 10),
+        v98: Math.round(progress * 98),
+      });
 
       if (step >= steps) {
         clearInterval(timer);
-        setCount15(15); setCount12k(12); setCount10(10); setCount98(98);
+        setCounts({ v15: 15, v12: 12, v10: 10, v98: 98 });
         setStatsDone(true);
         sessionStorage.setItem("statsAnimated", "1");
       }
@@ -552,28 +587,36 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   useEffect(() => {
     let rafId: number | null = null;
 
+    // Cache offsetTop mỗi khi layout thay đổi — tránh forced reflow trong rAF
+    const sectionCache: { id: string; top: number; height: number }[] = [];
+    const rebuildCache = () => {
+      sectionCache.length = 0;
+      for (const section of homeSections) {
+        const el = document.getElementById(section.id);
+        if (el) sectionCache.push({ id: section.id, top: el.offsetTop, height: el.offsetHeight });
+      }
+    };
+    rebuildCache();
+
+    // Rebuild khi resize (layout có thể thay đổi)
+    const resizeObserver = new ResizeObserver(rebuildCache);
+    resizeObserver.observe(document.documentElement);
+
     const handleScroll = () => {
-      // Throttle via requestAnimationFrame — chỉ chạy 1 lần/frame (~60fps)
       if (rafId !== null) return;
       rafId = requestAnimationFrame(() => {
         rafId = null;
         const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-        // Bottom edge detection to force light up the last section
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
           setActiveSection("consultation");
           return;
         }
 
-        for (const section of homeSections) {
-          const element = document.getElementById(section.id);
-          if (element) {
-            const top = element.offsetTop;
-            const height = element.offsetHeight;
-            if (scrollPosition >= top && scrollPosition < top + height) {
-              setActiveSection(section.id);
-              break;
-            }
+        for (const s of sectionCache) {
+          if (scrollPosition >= s.top && scrollPosition < s.top + s.height) {
+            setActiveSection(s.id);
+            break;
           }
         }
       });
@@ -584,6 +627,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      resizeObserver.disconnect();
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, [allProjects]);
@@ -662,40 +706,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       .catch(() => { setPopupSubmitting(false); });
   };
 
-  // Calculate for NOXH — dùng config theo dự án được chọn
-  const getCalculatorResults = () => {
-    const cfg = projectCalcConfig[selectedCalcProject];
-    const loanPercent = paymentOption === "cash" ? 0 : cfg.loanPercent;
-    const interestRate = cfg.policyRate;
-    const loanYears = paymentOption === "cash" ? 0 : cfg.loanYears;
-
-    const downPayment = investmentValue * (100 - loanPercent) / 100;
-    const loanAmount = investmentValue * loanPercent / 100;
-
-    let monthlyPayment = 0;
-    if (loanAmount > 0 && loanYears > 0) {
-      const monthlyRate = interestRate / 100 / 12;
-      const numPayments = loanYears * 12;
-      monthlyPayment = (loanAmount * 1000 * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
-                       (Math.pow(1 + monthlyRate, numPayments) - 1);
-    }
-
-    const totalInterest = monthlyPayment > 0
-      ? (monthlyPayment * loanYears * 12) - loanAmount * 1000
-      : 0;
-
-    return {
-      unitPrice: investmentValue.toFixed(2),
-      downPayment: downPayment.toFixed(2),
-      loanAmount: loanAmount.toFixed(2),
-      monthlyPayment: monthlyPayment.toFixed(1),
-      totalInterest: totalInterest.toFixed(0),
-      loanYears,
-      loanPercent,
-    };
-  };
-
-  const calcResults = useMemo(() => getCalculatorResults(), [investmentValue, paymentOption, selectedCalcProject, selectedUnitIndex]);
+  // Calculate for NOXH — dùng pure function ngoài component
+  const calcResult = useMemo(
+    () => calcResults(investmentValue, paymentOption, selectedCalcProject),
+    [investmentValue, paymentOption, selectedCalcProject]
+  );
 
   const coreValues = useMemo(() => [
   {
@@ -1403,7 +1418,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               Chọn dự án bạn quan tâm:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {Object.entries(projectCalcConfig).map(([slug, cfg]) => (
+              {Object.entries(PROJECT_CALC_CONFIG).map(([slug, cfg]) => (
                 <button
                   key={slug}
                   type="button"
@@ -1432,7 +1447,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 Chọn loại căn hộ:
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {projectCalcConfig[selectedCalcProject].units.map((unit, idx) => (
+                {PROJECT_CALC_CONFIG[selectedCalcProject].units.map((unit, idx) => (
                   <button
                     key={idx}
                     type="button"
@@ -1462,7 +1477,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </p>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-slate-500">
-                  {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].label} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].area}
+                  {PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].label} · {PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].area}
                 </span>
                 <span className="text-xl font-extrabold text-amber-600 bg-amber-50 px-4 py-1.5 rounded-xl">
                   {investmentValue} Tỷ VNĐ
@@ -1470,16 +1485,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
               <input
                 type="range"
-                min={projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMin}
-                max={projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMax}
+                min={PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].priceMin}
+                max={PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].priceMax}
                 step={0.01}
                 value={investmentValue}
-                onChange={(e) => setInvestmentValue(parseFloat(e.target.value))}
+                onChange={(e) => {
+                  const val = parseFloat(e.target.value);
+                  startTransition(() => setInvestmentValue(val));
+                }}
                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-500"
               />
               <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-                <span>{(projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMin * 1000).toFixed(0)} triệu (giá thấp nhất)</span>
-                <span>{(projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceMax * 1000).toFixed(0)} triệu (giá cao nhất)</span>
+                <span>{(PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].priceMin * 1000).toFixed(0)} triệu (giá thấp nhất)</span>
+                <span>{(PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].priceMax * 1000).toFixed(0)} triệu (giá cao nhất)</span>
               </div>
             </div>
           )}
@@ -1504,7 +1522,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     {paymentOption === "cash" && <span className="text-[10px] font-bold">✓</span>}
                   </div>
                   <span className="block text-base font-extrabold text-slate-800">Bằng vốn tự có</span>
-                  <span className="text-xs text-slate-500 block mt-1">Thanh toán theo {projectCalcConfig[selectedCalcProject].schedule.length} đợt, không cần vay NH</span>
+                  <span className="text-xs text-slate-500 block mt-1">Thanh toán theo {PROJECT_CALC_CONFIG[selectedCalcProject].schedule.length} đợt, không cần vay NH</span>
                 </button>
 
                 {/* Vay ngân hàng */}
@@ -1519,7 +1537,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     {paymentOption === "policy" && <span className="text-[10px] font-bold">✓</span>}
                   </div>
                   <span className="block text-base font-extrabold text-slate-800">Bằng vốn vay ngân hàng</span>
-                  <span className="text-xs text-slate-500 block mt-1">Vay tối đa {projectCalcConfig[selectedCalcProject].loanPercent}% · 25% trả dần theo đợt</span>
+                  <span className="text-xs text-slate-500 block mt-1">Vay tối đa {PROJECT_CALC_CONFIG[selectedCalcProject].loanPercent}% · 25% trả dần theo đợt</span>
                 </button>
               </div>
             </div>
@@ -1583,7 +1601,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       <div>
                         <span className="block text-base font-extrabold text-slate-800">NH Chính Sách Xã Hội</span>
                         <span className="text-sm text-amber-600 font-bold block mt-0.5">
-                          {projectCalcConfig[selectedCalcProject].policyRate}%/năm · {projectCalcConfig[selectedCalcProject].loanYears} năm
+                          {PROJECT_CALC_CONFIG[selectedCalcProject].policyRate}%/năm · {PROJECT_CALC_CONFIG[selectedCalcProject].loanYears} năm
                         </span>
                         <span className="text-xs text-slate-500 block mt-1">Gói vay ưu đãi dành riêng cho người mua Nhà Ở Xã Hội — Ngân hàng Chính sách xã hội tỉnh Đồng Nai</span>
                       </div>
@@ -1600,30 +1618,30 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div className="bg-gradient-to-r from-orange-500 to-amber-600 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
                 <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/5 rounded-tl-full" />
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-yellow-100 bg-white/15 border border-white/10 px-3 py-1 rounded-full inline-block mb-5">
-                  KẾT QUẢ DỰ TÍNH — {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].label} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].area} · {projectCalcConfig[selectedCalcProject].units[selectedUnitIndex].priceLabel}
+                  KẾT QUẢ DỰ TÍNH — {PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].label} · {PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].area} · {PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].priceLabel}
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
                   {/* Vốn tự có */}
                   <div className="space-y-1">
                     <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                      <Coins className="w-3.5 h-3.5 text-yellow-200" /> Vốn tự có ({100 - calcResults.loanPercent}%):
+                      <Coins className="w-3.5 h-3.5 text-yellow-200" /> Vốn tự có ({100 - calcResult.loanPercent}%):
                     </span>
-                    <div className="text-2xl font-extrabold text-white font-display">{calcResults.downPayment} Tỷ</div>
+                    <div className="text-2xl font-extrabold text-white font-display">{calcResult.downPayment} Tỷ</div>
                     <p className="text-[10px] text-amber-100/70">Đóng theo nhiều đợt</p>
                   </div>
 
                   {/* Khoản vay */}
                   <div className="space-y-1">
                     <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                      <Percent className="w-3.5 h-3.5 text-yellow-200" /> Khoản vay ({calcResults.loanPercent}%):
+                      <Percent className="w-3.5 h-3.5 text-yellow-200" /> Khoản vay ({calcResult.loanPercent}%):
                     </span>
                     <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                      {paymentOption === "cash" ? "—" : `${calcResults.loanAmount} Tỷ`}
+                      {paymentOption === "cash" ? "—" : `${calcResult.loanAmount} Tỷ`}
                     </div>
                     <p className="text-[10px] text-amber-100/70">
                       {paymentOption === "policy"
-                        ? `${projectCalcConfig[selectedCalcProject].policyRate}%/năm · ${calcResults.loanYears} năm`
+                        ? `${PROJECT_CALC_CONFIG[selectedCalcProject].policyRate}%/năm · ${calcResult.loanYears} năm`
                         : "Không vay"}
                     </p>
                   </div>
@@ -1638,10 +1656,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     ) : (
                       <>
                         <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                          ~{calcResults.monthlyPayment} <span className="text-xs font-normal text-white/80">triệu</span>
+                          ~{calcResult.monthlyPayment} <span className="text-xs font-normal text-white/80">triệu</span>
                         </div>
                         <p className="text-[10px] text-amber-100/70">
-                          {calcResults.loanYears} năm · Tổng lãi ~{Number(calcResults.totalInterest).toLocaleString("vi")} triệu
+                          {calcResult.loanYears} năm · Tổng lãi ~{Number(calcResult.totalInterest).toLocaleString("vi")} triệu
                         </p>
                       </>
                     )}

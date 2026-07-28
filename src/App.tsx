@@ -16,6 +16,16 @@ const AboutView          = lazy(() => import("./components/AboutView"));
 const ContactView        = lazy(() => import("./components/ContactView"));
 const AdminDashboardView = lazy(() => import("./components/AdminDashboardView"));
 
+// Module-level constant — không rebuild mỗi lần navigateTo chạy
+const PAGE_TITLES: Record<string, string> = {
+  "/":            "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+  "/home":        "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+  "/san-pham":    "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
+  "/tin-tuc":     "Tin Tức Bất Động Sản | K-Home Đồng Nai",
+  "/gioi-thieu":  "Giới Thiệu | K-Home Đồng Nai",
+  "/lien-he":     "Liên Hệ Tư Vấn | K-Home Đồng Nai",
+};
+
 // Helper: normalize path from window.location
 const getPath = () => {
   const path = window.location.pathname;
@@ -42,16 +52,6 @@ export default function App() {
     const cleanPath = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
     setPath(cleanPath);
     window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Reset title theo route — mỗi view sẽ override lại trong useEffect của nó
-    const PAGE_TITLES: Record<string, string> = {
-      "/":            "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-      "/home":        "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-      "/san-pham":    "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
-      "/tin-tuc":     "Tin Tức Bất Động Sản | K-Home Đồng Nai",
-      "/gioi-thieu":  "Giới Thiệu | K-Home Đồng Nai",
-      "/lien-he":     "Liên Hệ Tư Vấn | K-Home Đồng Nai",
-    };
     if (PAGE_TITLES[cleanPath]) {
       document.title = PAGE_TITLES[cleanPath];
     }

@@ -52,10 +52,10 @@ export default function Header({ currentHash }: HeaderProps) {
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     window.history.pushState(null, "", href);
+    // Dispatch PopStateEvent để App.tsx nhận và cập nhật path
     window.dispatchEvent(new PopStateEvent("popstate"));
     setIsOpen(false);
     setDuAnOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const activeSection = "/" + (currentHash.split("/")[1] || "");
