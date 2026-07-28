@@ -567,18 +567,30 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, []);
 
   useEffect(() => {
+    // Stale-while-revalidate — hiện cache ngay, fetch mới ngầm
+    const CACHE_KEY = "khome_projects_v2";
+    const cached = sessionStorage.getItem(CACHE_KEY);
+    if (cached) {
+      try {
+        const list = JSON.parse(cached);
+        setAllProjects(list);
+        setFilteredProjects(list);
+        setLoading(false);
+      } catch {}
+    }
+
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
         const list = Array.isArray(data) ? data : [];
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
         setAllProjects(list);
         setFilteredProjects(list);
         setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to fetch projects on Home:", err);
-        setAllProjects([]);
-        setFilteredProjects([]);
+        if (!cached) { setAllProjects([]); setFilteredProjects([]); }
         setLoading(false);
       });
   }, []);

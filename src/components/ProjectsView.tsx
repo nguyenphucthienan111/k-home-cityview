@@ -59,15 +59,29 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
       metaDesc.setAttribute("content", "Xem chi tiết từng loại căn hộ của 3 dự án K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Bảng giá, diện tích và hình ảnh thực tế từng loại căn.");
     }
 
+    // Stale-while-revalidate: hiện cache ngay, fetch mới ngầm
+    const CACHE_KEY = "khome_projects_v2";
+    const cached = sessionStorage.getItem(CACHE_KEY);
+    if (cached) {
+      try {
+        const list: Project[] = JSON.parse(cached);
+        const units: UnitCardData[] = [];
+        list.forEach((project) => {
+          (project.unitTypes || []).forEach((unit) => units.push({ project, unit }));
+        });
+        setAllUnits(units);
+        setLoading(false);
+      } catch {}
+    }
+
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
         const list = Array.isArray(data) ? data : [];
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
         const units: UnitCardData[] = [];
         list.forEach((project) => {
-          (project.unitTypes || []).forEach((unit) => {
-            units.push({ project, unit });
-          });
+          (project.unitTypes || []).forEach((unit) => units.push({ project, unit }));
         });
         setAllUnits(units);
         setLoading(false);
@@ -312,7 +326,21 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, n) => (
-            <div key={n} className="bg-white rounded-2xl h-[360px] animate-pulse border border-slate-200" />
+            <div key={n} className="bg-white rounded-2xl border border-slate-200 overflow-hidden animate-pulse">
+              <div className="h-52 bg-slate-200" />
+              <div className="p-5 space-y-3">
+                <div className="h-5 bg-slate-200 rounded w-3/4" />
+                <div className="h-3 bg-slate-100 rounded w-1/2" />
+                <div className="flex gap-3">
+                  <div className="flex-1 h-12 bg-slate-100 rounded-lg" />
+                  <div className="flex-1 h-12 bg-slate-100 rounded-lg" />
+                </div>
+                <div className="flex justify-between pt-2 border-t border-slate-100">
+                  <div className="h-5 bg-amber-100 rounded w-1/3" />
+                  <div className="h-4 bg-slate-100 rounded w-1/4" />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       ) : filteredUnits.length === 0 ? (
@@ -336,11 +364,14 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
               className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer hover:-translate-y-0.5"
             >
               {/* Image */}
-              <div className="relative h-52 overflow-hidden bg-slate-100">
+              <div className="relative h-52 overflow-hidden bg-slate-200">
                 <img
                   src={imgUrl(unit.images[0])}
                   alt={`${unit.name} tại ${project.title} - Căn hộ nhà ở xã hội ${project.location.split(",").slice(-2).join(", ")}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  style={{ backgroundColor: "#e2e8f0" }}
                 />
                 {/* Project badge top-left */}
                 <div
