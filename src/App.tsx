@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
@@ -163,6 +164,8 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <Analytics />
 
       {/* Floating Contact Widget — hidden on admin */}
       {!isAdmin && (
