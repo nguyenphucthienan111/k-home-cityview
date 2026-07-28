@@ -52,10 +52,7 @@ export default function Header({ currentHash }: HeaderProps) {
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     window.history.pushState(null, "", href);
-    // setTimeout(0) release main thread trước khi dispatch — giảm INP
-    setTimeout(() => {
-      window.dispatchEvent(new PopStateEvent("popstate"));
-    }, 0);
+    window.dispatchEvent(new PopStateEvent("popstate"));
     setIsOpen(false);
     setDuAnOpen(false);
   };

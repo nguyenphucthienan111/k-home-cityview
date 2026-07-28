@@ -4,9 +4,9 @@ const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 // Map local path → Cloudinary public_id (mirror logic của upload script)
 function localPathToPublicId(path: string): string {
   return path
-    .replace(/^\//, "")                      // bỏ leading slash
-    .replace(/\.(jpg|jpeg|png|webp)$/i, "")  // bỏ extension
-    .replace(/ /g, "-");                     // space → dash
+    .replace(/^\//, "")                           // bỏ leading slash
+    .replace(/(\.(jpg|jpeg|png|webp))+$/i, "")    // bỏ extension kép như .jpg.webp
+    .replace(/ /g, "-");                          // space → dash
 }
 
 /**
