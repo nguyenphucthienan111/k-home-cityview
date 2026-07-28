@@ -370,6 +370,78 @@ const newsList = [
     category: "Tài chính",
     content: "Làn sóng hạ lãi suất cho vay đang diễn ra vô cùng mạnh mẽ.",
   },
+  {
+    id: "4",
+    slug: "dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",
+    title: "Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026: Nới Lỏng Thu Nhập, Bỏ Sổ Hộ Khẩu",
+    date: "2026-07-27",
+    excerpt: "Quy định năm 2026 đã nới lỏng thu nhập và bãi bỏ yêu cầu sổ hộ khẩu — cơ hội lớn cho người lao động tại Biên Hòa, Nhơn Trạch, Trảng Bom sở hữu nhà ở xã hội.",
+    image: "/news/news 1.webp",
+    category: "Chính sách",
+    content: `Bạn đang làm việc tại các khu công nghiệp Biên Hòa, Nhơn Trạch, Trảng Bom với mức lương vừa phải và muốn sở hữu nhà ở xã hội (NOXH)? Quy định năm 2026 đã có nhiều thay đổi có lợi cho người lao động. Bài viết dưới đây tổng hợp chính xác, minh bạch các điều kiện theo Luật Nhà ở 2023 và các nghị định mới nhất, kèm thông tin về chuỗi dự án K-Home đang triển khai tại Đồng Nai.
+
+![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](/news/news 1.webp)
+
+## 1. Điều kiện về nhà ở (bắt buộc)
+
+Người đứng tên mua NOXH tại Đồng Nai phải thuộc một trong các trường hợp sau (theo Điều 29 Nghị định 100/2024/NĐ-CP được sửa đổi):
+
+- Chưa có nhà ở thuộc sở hữu của bản thân và vợ/chồng (không có tên trong Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở tại tỉnh Đồng Nai).
+- Đã có nhà ở nhưng diện tích nhà ở bình quân đầu người trong hộ gia đình thấp hơn 15m² sàn/người.
+- Chưa được mua, thuê mua nhà ở xã hội hoặc hưởng chính sách hỗ trợ nhà ở, đất ở dưới mọi hình thức tại Đồng Nai.
+
+![Điều kiện về nhà ở khi mua nhà ở xã hội Đồng Nai – diện tích dưới 15m2 sàn mỗi người](/news/news 2.jpg)
+
+## 2. Điều kiện về thu nhập (đã được nới lỏng mạnh từ 07/4/2026)
+
+Theo Nghị định 136/2026/NĐ-CP (có hiệu lực từ ngày 07/4/2026), mức thu nhập bình quân hàng tháng thực nhận được nâng lên như sau:
+
+| Đối tượng | Mức thu nhập tối đa |
+|---|---|
+| Người độc thân / chưa kết hôn | ≤ 25 triệu đồng/tháng |
+| Người độc thân đang nuôi con dưới tuổi thành niên | ≤ 35 triệu đồng/tháng |
+| Người đã kết hôn (tổng 2 vợ chồng) | ≤ 50 triệu đồng/tháng |
+
+**Lưu ý quan trọng:**
+- Thu nhập tính theo bảng lương, tiền công do cơ quan/đơn vị/doanh nghiệp xác nhận.
+- Thời gian xác định: 12 tháng liền kề trước thời điểm cơ quan có thẩm quyền xác nhận.
+- UBND tỉnh được phép điều chỉnh hệ số theo điều kiện địa phương.
+
+![Mức thu nhập mua nhà ở xã hội Đồng Nai 2026 theo Nghị định 136 – độc thân 25 triệu, vợ chồng 50 triệu](/news/news 3.jpg)
+
+## 3. Điều kiện về cư trú (đã bỏ sổ hộ khẩu)
+
+Theo Luật Nhà ở 2023, điều kiện về sổ hộ khẩu hoặc tạm trú KT3 dài hạn đã được bãi bỏ. Hiện nay chỉ cần:
+
+- Có hợp đồng lao động có thời hạn từ 01 năm trở lên.
+- Đang tham gia đóng Bảo hiểm xã hội (BHXH) tại tỉnh Đồng Nai.
+
+![Điều kiện cư trú mua nhà ở xã hội Đồng Nai 2026 – chỉ cần hợp đồng lao động và BHXH](/news/news 4.jpg)
+
+## Chuỗi dự án K-Home tại Đồng Nai
+
+Nếu bạn đáp ứng đủ 3 điều kiện trên, chuỗi dự án K-Home do Kim Oanh Group phát triển là lựa chọn đáng cân nhắc. Các dự án theo tiêu chuẩn Singapore, hướng tới chứng chỉ công trình xanh EDGE.
+
+![Chuỗi dự án nhà ở xã hội K-Home Kim Oanh Group tại Đồng Nai chuẩn Singapore và EDGE](/news/news 5.jpg)
+
+**K-Home CityView (P. Hố Nai, Biên Hòa):** Đường Điểu Xiển, 2,85 ha, 4 tòa 22 tầng, ~1.800 căn. Đã khởi công 20/5/2026.
+
+![Dự án K-Home Cityview phường Hố Nai Biên Hòa – nhà ở xã hội 2026](/news/news 6.jpg)
+
+**K-Home Avenue (Nhơn Trạch):** Mặt tiền đường 25C, ~1.100–1.200 căn (4 tòa 12 tầng). Sales Gallery khai trương 12/4/2026. Kết nối sân bay Long Thành và Vành đai 3.
+
+![K-Home Avenue Nhơn Trạch mặt tiền đường 25C – căn hộ mẫu chuẩn Singapore](/news/news 7.jpg)
+
+**K-Home Midtown (Trảng Bom):** Trung tâm Trảng Bom, 1 block 15 tầng, ~500–560 căn. Phục vụ lao động các cụm công nghiệp khu vực.
+
+![K-Home Midtown Trảng Bom – nhà ở xã hội cho lao động khu công nghiệp](/news/news 8.webp)
+
+Người mua được hỗ trợ vay vốn ưu đãi từ Ngân hàng Chính sách xã hội (lãi suất ~5,4%/năm, tối đa 75–80% giá trị hợp đồng, thời hạn đến 25 năm).
+
+
+
+Bạn có đủ điều kiện? Hãy liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, chính sách và cập nhật tiến độ mở bán mới nhất.`,
+  },
 ];
 
 // ─── Public API Routes ────────────────────────────────────────────────────────

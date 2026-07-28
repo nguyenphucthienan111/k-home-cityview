@@ -115,17 +115,128 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       </div>
 
       {/* Content Area */}
-      <article className="prose prose-slate max-w-none text-slate-700 leading-relaxed text-sm space-y-6">
-        <p className="font-semibold text-slate-900 text-base border-l-4 border-amber-600 pl-4 py-1 bg-slate-50/50 rounded-r-lg">
+      <article className="max-w-none text-slate-700 leading-relaxed space-y-0">
+        <p className="font-semibold text-slate-900 text-base border-l-4 border-amber-600 pl-4 py-2 bg-amber-50/60 rounded-r-xl mb-8">
           {article.excerpt}
         </p>
 
-        {/* Display paragraphs from rich formatted text */}
-        {article.content.split("\n\n").map((para, idx) => (
-          <p key={idx} className="whitespace-pre-line text-slate-650">
-            {para}
-          </p>
-        ))}
+        {(() => {
+          const lines = article.content.split("\n");
+          const elements: React.ReactNode[] = [];
+          let i = 0;
+
+          while (i < lines.length) {
+            const line = lines[i];
+
+            // Image: ![alt](url)
+            const imgMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
+            if (imgMatch) {
+              elements.push(
+                <figure key={i} className="my-6">
+                  <img
+                    src={imgMatch[2]}
+                    alt={imgMatch[1]}
+                    className="w-full rounded-2xl shadow-md"
+                    style={{ display: "block", height: "auto" }}
+                  />
+                  <figcaption className="text-center text-xs text-slate-400 mt-2 italic">{imgMatch[1]}</figcaption>
+                </figure>
+              );
+              i++; continue;
+            }
+
+            // H2
+            if (line.startsWith("## ")) {
+              elements.push(
+                <h2 key={i} className="text-xl font-bold text-slate-900 mt-10 mb-3 pb-2 border-b-2 border-amber-200 flex items-center gap-2">
+                  <span className="w-1 h-5 bg-amber-500 rounded-full inline-block shrink-0" />
+                  {line.slice(3)}
+                </h2>
+              );
+              i++; continue;
+            }
+
+            // Table: collect all table rows
+            if (line.startsWith("|") && line.includes("|", 1)) {
+              const tableLines: string[] = [];
+              while (i < lines.length && lines[i].startsWith("|")) {
+                tableLines.push(lines[i]);
+                i++;
+              }
+              // Filter out separator rows (|---|)
+              const dataRows = tableLines.filter(l => !l.replace(/[\s|:-]/g, ""));
+              const allRows = tableLines.filter(l => !/^\|[\s|:-]+\|$/.test(l));
+              const parseCells = (l: string) => l.split("|").map(c => c.trim()).filter(Boolean);
+
+              if (allRows.length > 0) {
+                const headerCells = parseCells(allRows[0]);
+                const bodyRows = allRows.slice(1);
+                elements.push(
+                  <div key={i} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                    <table className="w-full border-collapse text-sm">
+                      <thead>
+                        <tr className="bg-amber-500 text-white">
+                          {headerCells.map((cell, ci) => (
+                            <th key={ci} className="px-5 py-3 text-left font-bold tracking-wide">{cell}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {bodyRows.map((row, ri) => (
+                          <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-amber-50/40"}>
+                            {parseCells(row).map((cell, ci) => (
+                              <td key={ci} className="px-5 py-3 text-slate-700 border-b border-slate-100">{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              }
+              continue;
+            }
+
+            // Bullet list — collect consecutive items
+            if (line.startsWith("- ")) {
+              const items: string[] = [];
+              while (i < lines.length && lines[i].startsWith("- ")) {
+                items.push(lines[i].slice(2));
+                i++;
+              }
+              elements.push(
+                <ul key={i} className="my-3 space-y-2">
+                  {items.map((item, ii) => {
+                    const html = item.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900">$1</strong>');
+                    return (
+                      <li key={ii} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
+                        <span dangerouslySetInnerHTML={{ __html: html }} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              );
+              continue;
+            }
+
+            // Empty line
+            if (line.trim() === "") {
+              elements.push(<div key={i} className="h-2" />);
+              i++; continue;
+            }
+
+            // Normal paragraph with **bold** support
+            const html = line.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>');
+            elements.push(
+              <p key={i} className="text-sm text-slate-700 leading-7 mb-1"
+                dangerouslySetInnerHTML={{ __html: html }} />
+            );
+            i++;
+          }
+
+          return elements;
+        })()}
       </article>
 
       {/* Sidebar Consultation Call to Action inside page */}
