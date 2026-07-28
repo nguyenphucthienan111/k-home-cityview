@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
-import ProjectsView from "./components/ProjectsView";
-import ProjectDetailView from "./components/ProjectDetailView";
-import UnitDetailView from "./components/UnitDetailView";
-import NewsView from "./components/NewsView";
-import NewsDetailView from "./components/NewsDetailView";
-import AboutView from "./components/AboutView";
-import ContactView from "./components/ContactView";
-import AdminDashboardView from "./components/AdminDashboardView";
+
+// Lazy load các view ít dùng hơn
+const ProjectsView      = lazy(() => import("./components/ProjectsView"));
+const ProjectDetailView = lazy(() => import("./components/ProjectDetailView"));
+const UnitDetailView    = lazy(() => import("./components/UnitDetailView"));
+const NewsView          = lazy(() => import("./components/NewsView"));
+const NewsDetailView    = lazy(() => import("./components/NewsDetailView"));
+const AboutView         = lazy(() => import("./components/AboutView"));
+const ContactView       = lazy(() => import("./components/ContactView"));
+const AdminDashboardView = lazy(() => import("./components/AdminDashboardView"));
 import { Phone } from "lucide-react";
 
 // Helper: normalize path from window.location
@@ -161,7 +163,13 @@ export default function App() {
       <Header currentHash={path} />
 
       <main className="flex-grow">
-        {renderContent()}
+        <Suspense fallback={
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="w-10 h-10 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          {renderContent()}
+        </Suspense>
       </main>
 
       <Footer />

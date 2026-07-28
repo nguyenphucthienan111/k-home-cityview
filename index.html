@@ -14,6 +14,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Preconnect Google Fonts để giảm latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload ảnh hero — LCP quan trọng nhất -->
+    <link rel="preload" as="image" href="/hero-background.jpg" fetchpriority="high" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://k-homedongnai.com.vn/" />

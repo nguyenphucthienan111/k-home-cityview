@@ -413,33 +413,42 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // IntersectionObserver & Custom Scroll spying to highlight dots
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      // Bottom edge detection to force light up the last section
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
-        setActiveSection("consultation");
-        return;
-      }
+    let rafId: number | null = null;
 
-      for (const section of homeSections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section.id);
-            break;
+    const handleScroll = () => {
+      // Throttle via requestAnimationFrame — chỉ chạy 1 lần/frame (~60fps)
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+        // Bottom edge detection to force light up the last section
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+          setActiveSection("consultation");
+          return;
+        }
+
+        for (const section of homeSections) {
+          const element = document.getElementById(section.id);
+          if (element) {
+            const top = element.offsetTop;
+            const height = element.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < top + height) {
+              setActiveSection(section.id);
+              break;
+            }
           }
         }
-      }
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Trigger check immediately
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [allProjects]);
 
   // Handle hero quick search — navigate sang /projects với query params đúng
@@ -790,6 +799,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       src={imgUrl(project.image)}
                       alt={`${project.name} - ${project.location} | K-Home Đồng Nai`}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                     
                     {/* Floating Info Card - Bottom Left */}
@@ -1003,7 +1013,25 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((n) => (
-                <div key={n} className="bg-white rounded-3xl h-[450px] animate-pulse border border-slate-100" />
+                <div key={n} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm animate-pulse">
+                  {/* Image placeholder */}
+                  <div className="h-72 bg-slate-200" />
+                  {/* Content placeholder */}
+                  <div className="p-8 space-y-4">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => <div key={i} className="w-3.5 h-3.5 rounded-full bg-slate-200" />)}
+                    </div>
+                    <div className="h-6 bg-slate-200 rounded-lg w-3/4" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-1/2" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-full" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-5/6" />
+                    <div className="h-1.5 bg-slate-100 rounded-full w-full mt-4" />
+                    <div className="flex justify-between pt-4 border-t border-slate-100">
+                      <div className="h-4 bg-slate-200 rounded w-1/3" />
+                      <div className="h-6 bg-amber-100 rounded w-1/4" />
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
@@ -1040,6 +1068,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                             src={imgUrl(project.image)}
                             alt={`${project.title} - Phối cảnh dự án nhà ở xã hội K-Home tại Đồng Nai`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            loading="lazy"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
                           <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider border border-white/10">
@@ -1185,6 +1214,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       src={showroomGallery[activeShowroomTab].images[idx]}
                       alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} | Tiện ích nội khu K-Home`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                       style={{
                         transform: activeProjectTab === idx ? "scale(1.03)" : "scale(1)",
                         transition: "transform 5s ease-out",
