@@ -56,7 +56,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
     setFilteredNews(result);
   }, [searchQuery, selectedCategory, news]);
 
-  const categories = ["Tất cả", "Tin tức dự án", "Thị trường", "Tài chính"];
+  const categories = ["Tất cả", "Tin tức dự án", "Thị trường", "Tài chính", "Chính sách", "Đánh giá dự án"];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">

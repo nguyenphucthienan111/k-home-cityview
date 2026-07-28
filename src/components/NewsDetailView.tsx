@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from "react";
-import { ArrowLeft, Calendar, User, Eye, Bookmark, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight } from "lucide-react";
 import { News } from "../types";
 
 interface NewsDetailViewProps {
@@ -9,7 +9,9 @@ interface NewsDetailViewProps {
 
 export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps) {
   const [article, setArticle] = useState<News | null>(null);
+  const [allNews, setAllNews] = useState<News[]>([]);
   const [loading, setLoading] = useState(true);
+  const [galleryIndexes, setGalleryIndexes] = useState<Record<string, number>>({});
 
   useEffect(() => {
     setLoading(true);
@@ -17,13 +19,14 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       .then((res) => res.json())
       .then((data: News[]) => {
         const list = Array.isArray(data) ? data : [];
+        setAllNews(list);
         const found = list.find((n) => n.slug === slug);
         setArticle(found || null);
         if (found) {
-          document.title = `${found.title} | K-Home Cityview`;
+          document.title = `${found.title} | K-Home`;
           const metaDesc = document.querySelector('meta[name="description"]');
           if (metaDesc) {
-            metaDesc.setAttribute("content", `${found.excerpt} Cập nhật tin tức và tiến độ dự án K-Home Cityview Biên Hòa mới nhất.`);
+            metaDesc.setAttribute("content", found.excerpt);
           }
         }
         setLoading(false);
@@ -121,12 +124,97 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         </p>
 
         {(() => {
-          const lines = article.content.split("\n");
+          const lines = article.content.split("\n").filter(l => !l.startsWith("---RELATED---"));
           const elements: React.ReactNode[] = [];
           let i = 0;
 
           while (i < lines.length) {
             const line = lines[i];
+
+            // Gallery carousel: ---GALLERY--- url1 | url2 | url3 | caption
+            if (line.startsWith("---GALLERY---")) {
+              const parts = line.replace("---GALLERY---", "").trim().split("|").map(s => s.trim());
+              const caption = parts[parts.length - 1].includes("://") ? "" : parts.pop() || "";
+              const urls = parts;
+              const gKey = `gallery-${i}`;
+              const activeIdx = galleryIndexes[gKey] ?? 0;
+              elements.push(
+                <figure key={gKey} className="my-8">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "auto" }}>
+                    {/* All images stacked — crossfade */}
+                    {urls.map((url, di) => (
+                      <img
+                        key={url}
+                        src={url}
+                        alt={caption || `Ảnh ${di + 1}`}
+                        className="w-full block"
+                        style={{
+                          position: di === activeIdx ? "relative" : "absolute",
+                          inset: 0,
+                          opacity: di === activeIdx ? 1 : 0,
+                          transition: "opacity 0.5s cubic-bezier(0.4,0,0.2,1)",
+                          zIndex: di === activeIdx ? 1 : 0,
+                          height: di === activeIdx ? "auto" : "100%",
+                          objectFit: di === activeIdx ? "contain" : "cover",
+                        }}
+                      />
+                    ))}
+
+                    {/* Gradient overlays for buttons */}
+                    <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black/20 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black/20 to-transparent z-10 pointer-events-none" />
+
+                    {/* Prev / Next */}
+                    {urls.length > 1 && (
+                      <>
+                        <button
+                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx - 1 + urls.length) % urls.length }))}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer hover:scale-110 active:scale-95"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button
+                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx + 1) % urls.length }))}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer hover:scale-110 active:scale-95"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                      </>
+                    )}
+
+                    {/* Counter pill */}
+                    <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                      {activeIdx + 1} / {urls.length}
+                    </div>
+
+                    {/* Dots */}
+                    {urls.length > 1 && (
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                        {urls.map((_, di) => (
+                          <button
+                            key={di}
+                            onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: di }))}
+                            className="cursor-pointer transition-all duration-300"
+                            style={{
+                              width: di === activeIdx ? "24px" : "8px",
+                              height: "8px",
+                              borderRadius: "999px",
+                              backgroundColor: di === activeIdx ? "white" : "rgba(255,255,255,0.5)",
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  {caption && (
+                    <figcaption className="text-center text-xs text-slate-400 mt-3 italic">
+                      {caption}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+              i++; continue;
+            }
 
             // Image: ![alt](url)
             const imgMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
@@ -239,21 +327,84 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         })()}
       </article>
 
-      {/* Sidebar Consultation Call to Action inside page */}
-      <div className="bg-slate-50 border border-slate-100 p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 mt-16 shadow-sm">
+      {/* Related Articles */}
+      {(() => {
+        // Parse ---RELATED--- marker từ content
+        const relatedMarker = "---RELATED---";
+        const relatedLine = article.content.split("\n").find(l => l.startsWith(relatedMarker));
+        
+        // Lấy bài liên quan: từ marker hoặc tự động (cùng category, khác slug)
+        let relatedSlugs: { slug: string; label: string }[] = [];
+        if (relatedLine) {
+          relatedSlugs = relatedLine.replace(relatedMarker, "").split(";").map(item => {
+            const [s, l] = item.split("|");
+            return { slug: s.trim(), label: l?.trim() || s.trim() };
+          });
+        }
+
+        // Lấy bài tự động (cùng category, khác slug hiện tại)
+        const autoRelated = allNews
+          .filter(n => n.slug !== article.slug && (n.category === article.category || relatedSlugs.some(r => r.slug === n.slug)))
+          .slice(0, 3);
+
+        if (autoRelated.length === 0) return null;
+
+        return (
+          <div className="mt-12 pt-8 border-t border-slate-100">
+            <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <span className="w-1 h-5 bg-amber-500 rounded-full inline-block" />
+              Bài viết liên quan
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {autoRelated.map((n) => (
+                <div
+                  key={n.id}
+                  onClick={() => { onNavigate(`/news/${n.slug}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  className="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-0.5"
+                >
+                  <div className="relative h-40 overflow-hidden bg-slate-100">
+                    <img
+                      src={n.image}
+                      alt={n.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                      {n.category}
+                    </div>
+                  </div>
+                  <div className="p-4 space-y-2">
+                    <p className="text-xs text-slate-400">{n.date}</p>
+                    <h4 className="text-sm font-bold text-slate-800 line-clamp-2 group-hover:text-amber-600 transition-colors leading-snug">
+                      {n.title}
+                    </h4>
+                    <p className="text-xs text-slate-500 line-clamp-2">{n.excerpt}</p>
+                    <div className="flex items-center gap-1 text-amber-600 text-xs font-semibold pt-1">
+                      Đọc tiếp <ChevronRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* CTA */}
+      <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 mt-8 shadow-lg">
         <div className="space-y-2 text-center md:text-left">
-          <h3 className="text-lg font-display font-semibold text-slate-800">
-            Cơ hội đầu tư đón đầu chính sách mới
+          <h3 className="text-lg font-bold text-white">
+            Bạn đủ điều kiện mua NOXH K-Home?
           </h3>
-          <p className="text-slate-500 text-xs max-w-lg">
-            Đừng bỏ lỡ rổ hàng chuyển nhượng và hàng chủ đầu tư đợt cuối với chính sách cam kết thuê lại sinh lời cực kỳ an toàn.
+          <p className="text-amber-50 text-xs max-w-lg">
+            Liên hệ ngay để được tư vấn miễn phí về hồ sơ, chính sách vay và tiến độ mở bán mới nhất từ Kim Oanh Land.
           </p>
+          <p className="text-white font-bold text-sm">📞 0937.587.438</p>
         </div>
         <button
-          onClick={() => onNavigate("/lien-he")}
-          className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase shadow-md shadow-amber-600/10 transition-colors shrink-0 cursor-pointer"
+          onClick={() => onNavigate("/contact")}
+          className="bg-white hover:bg-amber-50 text-amber-700 px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase shadow-md transition-colors shrink-0 cursor-pointer"
         >
-          Nhận Tư Vấn Đầu Tư
+          Tư Vấn Miễn Phí
         </button>
       </div>
 
