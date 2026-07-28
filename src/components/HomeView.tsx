@@ -762,7 +762,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   Tìm hiểu thêm <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => onNavigate("/contact")}
+                  onClick={() => onNavigate("/lien-he")}
                   className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
                 >
                   Nhận Báo Giá Đợt 1
@@ -1697,7 +1697,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </div>
             <div className="shrink-0 w-full lg:w-auto text-center">
               <button
-                onClick={() => onNavigate("/contact")}
+                onClick={() => onNavigate("/lien-he")}
                 className="w-full lg:w-auto bg-white hover:bg-amber-100 text-amber-800 px-10 py-5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-orange-500/20 hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
               >
                 Đăng Ký Tư Vấn Miễn Phí <ArrowRight className="w-4 h-4" />

@@ -41,12 +41,12 @@ export default function App() {
 
     // Reset title theo route — mỗi view sẽ override lại trong useEffect của nó
     const PAGE_TITLES: Record<string, string> = {
-      "/":          "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-      "/home":      "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-      "/san-pham":  "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
-      "/news":      "Tin Tức Bất Động Sản | K-Home Đồng Nai",
-      "/about":     "Giới Thiệu | K-Home Đồng Nai",
-      "/contact":   "Liên Hệ Tư Vấn | K-Home Đồng Nai",
+      "/":            "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+      "/home":        "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
+      "/san-pham":    "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
+      "/tin-tuc":     "Tin Tức Bất Động Sản | K-Home Đồng Nai",
+      "/gioi-thieu":  "Giới Thiệu | K-Home Đồng Nai",
+      "/lien-he":     "Liên Hệ Tư Vấn | K-Home Đồng Nai",
     };
     if (PAGE_TITLES[cleanPath]) {
       document.title = PAGE_TITLES[cleanPath];
@@ -54,17 +54,46 @@ export default function App() {
   };
 
   const renderContent = () => {
-    // /:projectSlug/:unitSlug — unit detail (new URL with can- prefix)
-    const unitMatch = path.match(/^\/([^/]+)\/(can-[^/]+)$/);
+    // /:projectSlug/:unitSlug — unit detail
+    const unitMatch = path.match(/^\/([^/]+)\/(can-ho-[^/]+|can-ho[^/]*)$/);
     if (unitMatch) {
       return <UnitDetailView projectSlug={unitMatch[1]} unitSlug={unitMatch[2]} onNavigate={navigateTo} />;
+    }
+
+    // Redirect old can- slugs → can-ho- slugs
+    const unitMatchOldCan = path.match(/^\/([^/]+)\/(can-(?!ho-)[^/]+)$/);
+    if (unitMatchOldCan) {
+      const oldSlug = unitMatchOldCan[2];
+      const slugMap: Record<string, string> = {
+        "can-1pn-a": "can-ho-1-phong-ngu-a",
+        "can-1pn-b": "can-ho-1-phong-ngu-b",
+        "can-2pn":   "can-ho-2-phong-ngu",
+        "can-3pn":   "can-ho-3-phong-ngu",
+        "can-studio":"can-ho-studio",
+        "can-1pn":   "can-ho-1-phong-ngu",
+        "can-2pn-nho":"can-ho-2-phong-ngu-nho",
+        "can-2pn-lon":"can-ho-2-phong-ngu-lon",
+      };
+      const newSlug = slugMap[oldSlug] || oldSlug;
+      navigateTo(`/${unitMatchOldCan[1]}/${newSlug}`);
+      return null;
     }
 
     // /projects/:projectSlug/:unitSlug — old URL redirect support
     const unitMatchOld = path.match(/^\/projects\/([^/]+)\/([^/]+)$/);
     if (unitMatchOld) {
-      const newUnitSlug = unitMatchOld[2].startsWith("can-") ? unitMatchOld[2] : `can-${unitMatchOld[2]}`;
-      navigateTo(`/${unitMatchOld[1]}/${newUnitSlug}`);
+      const slugMap: Record<string, string> = {
+        "1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-a": "can-ho-1-phong-ngu-a",
+        "1pn-b": "can-ho-1-phong-ngu-b", "can-1pn-b": "can-ho-1-phong-ngu-b",
+        "2pn":   "can-ho-2-phong-ngu",   "can-2pn":   "can-ho-2-phong-ngu",
+        "3pn":   "can-ho-3-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
+        "studio":"can-ho-studio",         "can-studio":"can-ho-studio",
+        "1pn":   "can-ho-1-phong-ngu",   "can-1pn":   "can-ho-1-phong-ngu",
+        "2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-nho":"can-ho-2-phong-ngu-nho",
+        "2pn-lon":"can-ho-2-phong-ngu-lon","can-2pn-lon":"can-ho-2-phong-ngu-lon",
+      };
+      const newSlug = slugMap[unitMatchOld[2]] || `can-ho-${unitMatchOld[2]}`;
+      navigateTo(`/${unitMatchOld[1]}/${newSlug}`);
       return null;
     }
 
@@ -81,10 +110,17 @@ export default function App() {
       return null;
     }
 
-    // /news/:slug
-    const newsMatch = path.match(/^\/news\/([^/]+)$/);
+    // /tin-tuc/:slug — news detail
+    const newsMatch = path.match(/^\/tin-tuc\/([^/]+)$/);
     if (newsMatch) {
       return <NewsDetailView slug={newsMatch[1]} onNavigate={navigateTo} />;
+    }
+
+    // /news/:slug — old URL redirect
+    const newsMatchOld = path.match(/^\/news\/([^/]+)$/);
+    if (newsMatchOld) {
+      navigateTo(`/tin-tuc/${newsMatchOld[1]}`);
+      return null;
     }
 
     switch (path) {
@@ -100,10 +136,13 @@ export default function App() {
           initialBedrooms={params.get("bedrooms") || "all"}
         />;
       }
+      case "/tin-tuc":
       case "/news":
         return <NewsView onNavigate={navigateTo} />;
+      case "/gioi-thieu":
       case "/about":
         return <AboutView />;
+      case "/lien-he":
       case "/contact":
         return <ContactView />;
       case "/admin":

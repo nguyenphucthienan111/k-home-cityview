@@ -144,38 +144,38 @@ export default function Header({ currentHash }: HeaderProps) {
 
             {/* Tin Tức */}
             <a
-              href="/news"
-              onClick={(e) => handleNav(e, "/news")}
+              href="/tin-tuc"
+              onClick={(e) => handleNav(e, "/tin-tuc")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
-                activeSection === "/news" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+                activeSection === "/tin-tuc" || activeSection === "/news" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
             >
               Tin Tức
-              {activeSection === "/news" && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+              {(activeSection === "/tin-tuc" || activeSection === "/news") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
             </a>
 
             {/* Giới Thiệu */}
             <a
-              href="/about"
-              onClick={(e) => handleNav(e, "/about")}
+              href="/gioi-thieu"
+              onClick={(e) => handleNav(e, "/gioi-thieu")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
-                activeSection === "/about" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+                activeSection === "/gioi-thieu" || activeSection === "/about" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
             >
               Giới Thiệu
-              {activeSection === "/about" && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+              {(activeSection === "/gioi-thieu" || activeSection === "/about") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
             </a>
 
             {/* Liên Hệ */}
             <a
-              href="/contact"
-              onClick={(e) => handleNav(e, "/contact")}
+              href="/lien-he"
+              onClick={(e) => handleNav(e, "/lien-he")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
-                activeSection === "/contact" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+                activeSection === "/lien-he" || activeSection === "/contact" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
             >
               Liên Hệ
-              {activeSection === "/contact" && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+              {(activeSection === "/lien-he" || activeSection === "/contact") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
             </a>
           </nav>
 
@@ -251,9 +251,9 @@ export default function Header({ currentHash }: HeaderProps) {
           </a>
 
           {[
-            { title: "Tin Tức",    href: "/news" },
-            { title: "Giới Thiệu", href: "/about" },
-            { title: "Liên Hệ",   href: "/contact" },
+            { title: "Tin Tức",    href: "/tin-tuc" },
+            { title: "Giới Thiệu", href: "/gioi-thieu" },
+            { title: "Liên Hệ",   href: "/lien-he" },
           ].map((item) => (
             <a
               key={item.href}

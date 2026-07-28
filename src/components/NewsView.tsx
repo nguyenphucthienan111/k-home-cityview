@@ -122,7 +122,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
           {filteredNews.map((article) => (
             <div
               key={article.id}
-              onClick={() => onNavigate(`/news/${article.slug}`)}
+              onClick={() => onNavigate(`/tin-tuc/${article.slug}`)}
               className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col md:flex-row cursor-pointer"
             >
               <div className="relative w-full md:w-56 h-48 md:h-auto overflow-hidden shrink-0">

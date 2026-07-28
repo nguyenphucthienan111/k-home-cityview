@@ -165,8 +165,8 @@ export default function Footer() {
             <div className="space-y-4">
               <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Khách Hàng & Đối Tác</h4>
               <ul className="space-y-2 text-sm text-slate-500">
-                <li><a href="/about" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Câu chuyện thương hiệu</a></li>
-                <li><a href="/contact" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Đăng ký tham quan thực tế</a></li>
+                <li><a href="/gioi-thieu" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Câu chuyện thương hiệu</a></li>
+                <li><a href="/lien-he" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Đăng ký tham quan thực tế</a></li>
               </ul>
             </div>
           </div>

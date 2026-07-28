@@ -49,7 +49,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         <h2 className="text-2xl font-bold text-slate-800">Không tìm thấy bài viết</h2>
         <p className="text-slate-500 text-sm">Bài viết bạn yêu cầu không khả dụng hoặc đã bị gỡ bỏ.</p>
         <button
-          onClick={() => onNavigate("/news")}
+          onClick={() => onNavigate("/tin-tuc")}
           className="px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
         >
           Quay lại tin tức
@@ -63,7 +63,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       
       {/* Back Button */}
       <button
-        onClick={() => onNavigate("/news")}
+        onClick={() => onNavigate("/tin-tuc")}
         className="inline-flex items-center gap-2 text-slate-600 hover:text-amber-600 text-sm font-medium transition-colors cursor-pointer group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -139,7 +139,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           </p>
         </div>
         <button
-          onClick={() => onNavigate("/contact")}
+          onClick={() => onNavigate("/lien-he")}
           className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase shadow-md shadow-amber-600/10 transition-colors shrink-0 cursor-pointer"
         >
           Nhận Tư Vấn Đầu Tư
