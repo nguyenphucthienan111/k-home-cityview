@@ -129,7 +129,7 @@ export default function Lightbox({ images, initialIndex, caption, onClose }: Lig
       <div className="absolute inset-0 flex items-center justify-center px-20 pt-16 pb-24 pointer-events-none z-10">
         <img
           ref={imgRef}
-          src={imgUrl(images[index])}
+          src={imgUrl(images[index], "full")}
           alt={`Ảnh ${index + 1}`}
           draggable={false}
           onDoubleClick={handleImgDoubleClick}

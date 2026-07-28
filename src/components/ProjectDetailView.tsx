@@ -274,7 +274,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             className="md:col-span-2 relative h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-slate-100"
           >
             <img
-              src={imgUrl(project.image)}
+              src={imgUrl(project.image, "full")}
               alt={project.title}
               className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
             />
@@ -293,7 +293,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 className="relative rounded-2xl overflow-hidden shadow-sm group cursor-pointer border border-slate-100 h-full"
               >
                 <img
-                  src={imgUrl(img)}
+                  src={imgUrl(img, "full")}
                   alt={`${project.title} - Hình ảnh dự án ${idx + 2}`}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                 />

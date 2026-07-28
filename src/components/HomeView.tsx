@@ -965,7 +965,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }`}
                   >
                     <img
-                      src={imgUrl(project.image)}
+                      src={imgUrl(project.image, "full")}
                       alt={`${project.name} - ${project.location} | K-Home Đồng Nai`}
                       className="w-full h-full object-cover"
                       loading="eager"
@@ -1309,7 +1309,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }}
                   >
                     <img
-                      src={showroomGallery[activeShowroomTab].images[idx]}
+                      src={imgUrl(showroomGallery[activeShowroomTab].images[idx], "full")}
                       alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} | Tiện ích nội khu K-Home`}
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1382,7 +1382,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }}
                     aria-label={project.name}
                   >
-                    <img src={showroomGallery[activeShowroomTab].images[idx]} alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} thumbnail`} className="w-full h-full object-cover" />
+                    <img src={imgUrl(showroomGallery[activeShowroomTab].images[idx], "thumbnail")} alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} thumbnail`} className="w-full h-full object-cover" />
                     {activeProjectTab === idx && <div className="absolute inset-0 bg-amber-500/20" />}
                   </button>
                 ))}

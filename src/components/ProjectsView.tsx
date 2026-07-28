@@ -71,6 +71,16 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
         });
         setAllUnits(units);
         setLoading(false);
+        // Preload ảnh 6 card đầu ngay khi có cache
+        units.slice(0, 6).forEach(({ unit }) => {
+          if (unit.images[0]) {
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = unit.images[0].split("/").map(s => s.replace(/ /g, "%20")).join("/");
+            document.head.appendChild(link);
+          }
+        });
       } catch {}
     }
 
@@ -85,6 +95,13 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
         });
         setAllUnits(units);
         setLoading(false);
+        // Preload ảnh 6 card đầu
+        units.slice(0, 6).forEach(({ unit }) => {
+          if (unit.images[0]) {
+            const img = new Image();
+            img.src = unit.images[0].split("/").map((s: string) => s.replace(/ /g, "%20")).join("/");
+          }
+        });
       })
       .catch((err) => {
         console.error("Failed to fetch projects:", err);
@@ -357,7 +374,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredUnits.map(({ project, unit }) => (
+          {filteredUnits.map(({ project, unit }, index) => (
             <div
               key={`${project.id}-${unit.slug}`}
               onClick={() => onNavigate(`/${project.slug}/${unit.slug}`)}
@@ -369,8 +386,9 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
                   src={imgUrl(unit.images[0])}
                   alt={`${unit.name} tại ${project.title} - Căn hộ nhà ở xã hội ${project.location.split(",").slice(-2).join(", ")}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  loading={index < 6 ? "eager" : "lazy"}
                   decoding="async"
+                  fetchPriority={index < 3 ? "high" : "auto"}
                   style={{ backgroundColor: "#e2e8f0" }}
                 />
                 {/* Project badge top-left */}
