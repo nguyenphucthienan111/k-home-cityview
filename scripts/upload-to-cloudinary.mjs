@@ -36,10 +36,10 @@ function getAllImages(dir, base = PUBLIC_DIR) {
 // Ví dụ: /public/k-home cityview/Can-1PN-A/img.jpg → k-home-cityview/Can-1PN-A/img
 function toPublicId(filePath) {
   const rel = path.relative(PUBLIC_DIR, filePath);
-  // Bỏ extension, replace backslash, normalize spaces
+  // Bỏ extension kép như .jpg.webp, replace backslash, normalize spaces
   return rel
     .replace(/\\/g, "/")
-    .replace(/\.(jpg|jpeg|png|webp)$/i, "")
+    .replace(/(\.(jpg|jpeg|png|webp))+$/i, "")
     .replace(/ /g, "-");
 }
 
@@ -49,17 +49,14 @@ async function uploadFile(filePath, retries = 2) {
   try {
     const result = await cloudinary.uploader.upload(filePath, {
       public_id: publicId,
-      overwrite: false,        // bỏ qua nếu đã tồn tại
-      invalidate: false,
+      overwrite: true,         // overwrite để fix các file đã upload sai public_id
+      invalidate: true,
       resource_type: "image",
       quality: "auto:good",    // auto quality
       fetch_format: "auto",    // auto WebP/AVIF
     });
     return { ok: true, publicId, url: result.secure_url };
   } catch (err) {
-    if (err.error?.http_code === 400 && err.error?.message?.includes("already exists")) {
-      return { ok: true, publicId, skipped: true };
-    }
     if (retries > 0) {
       await new Promise(r => setTimeout(r, 1000));
       return uploadFile(filePath, retries - 1);
