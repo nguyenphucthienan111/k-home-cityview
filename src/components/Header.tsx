@@ -52,8 +52,10 @@ export default function Header({ currentHash }: HeaderProps) {
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     window.history.pushState(null, "", href);
-    // Dispatch PopStateEvent để App.tsx nhận và cập nhật path
-    window.dispatchEvent(new PopStateEvent("popstate"));
+    // setTimeout(0) release main thread trước khi dispatch — giảm INP
+    setTimeout(() => {
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }, 0);
     setIsOpen(false);
     setDuAnOpen(false);
   };

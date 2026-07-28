@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense, useCallback, useMemo } from "react";
+import React, { useState, useEffect, lazy, Suspense, useCallback, useMemo, startTransition, useTransition } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Phone } from "lucide-react";
@@ -35,27 +35,32 @@ const getPath = () => {
 
 export default function App() {
   const [path, setPath] = useState<string>(getPath());
+  const [isPending, startNav] = useTransition();
 
   useEffect(() => {
     const handlePop = () => {
-      setPath(getPath());
+      startNav(() => {
+        setPath(getPath());
+      });
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
     window.addEventListener("popstate", handlePop);
     return () => window.removeEventListener("popstate", handlePop);
-  }, []);
+  }, [startNav]);
 
   // Memoize navigateTo để không tạo function mới mỗi render
   const navigateTo = useCallback((newPath: string) => {
     window.history.pushState(null, "", newPath);
     const pathname = newPath.split("?")[0];
     const cleanPath = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
-    setPath(cleanPath);
+    startNav(() => {
+      setPath(cleanPath);
+    });
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (PAGE_TITLES[cleanPath]) {
       document.title = PAGE_TITLES[cleanPath];
     }
-  }, []);
+  }, [startNav]);
 
   // Memoize renderContent để tránh re-run 8 regex khi App re-render vì lý do khác
   const content = useMemo(() => {
@@ -133,7 +138,11 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 font-sans antialiased text-slate-800 flex flex-col justify-between selection:bg-amber-500 selection:text-white">
       <Header currentHash={path} />
 
-      <main className="flex-grow">
+      <main className="flex-grow relative">
+        {/* Progress bar — hiện khi đang transition sang trang mới */}
+        {isPending && (
+          <div className="fixed top-0 left-0 right-0 z-[9999] h-0.5 bg-amber-500 animate-pulse" />
+        )}
         <Suspense fallback={
           <div className="flex items-center justify-center min-h-[60vh]">
             <div className="w-10 h-10 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
