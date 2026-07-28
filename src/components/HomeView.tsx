@@ -34,7 +34,7 @@ const ProjectCard = memo(function ProjectCard({
   onClick,
 }: {
   project: Project;
-  onClick: (slug: string) => void;
+  onClick: (path: string) => void;
 }) {
   const progressMap: Record<string, { label: string; rate: string }> = {
     "k-home-cityview-ho-nai":   { label: "Tiến độ thi công",    rate: "35%" },
@@ -46,7 +46,7 @@ const ProjectCard = memo(function ProjectCard({
   return (
     <div
       className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-      onClick={() => onClick(project.slug)}
+      onClick={() => onClick(`/${project.slug}`)}
     >
       <div className="relative h-72 overflow-hidden bg-slate-200">
         <img
