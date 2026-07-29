@@ -7,13 +7,15 @@ interface LightboxProps {
   initialIndex: number;
   caption?: string;
   onClose: () => void;
+  /** If true, images are already full URLs — skip imgUrl() transform */
+  rawUrls?: boolean;
 }
 
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 4;
 const ZOOM_STEP = 0.5;
 
-export default function Lightbox({ images, initialIndex, caption, onClose }: LightboxProps) {
+export default function Lightbox({ images, initialIndex, caption, onClose, rawUrls = false }: LightboxProps) {
   const [index, setIndex] = useState(initialIndex);
   const [zoom, setZoom] = useState(1);
   const [dragging, setDragging] = useState(false);
@@ -129,7 +131,7 @@ export default function Lightbox({ images, initialIndex, caption, onClose }: Lig
       <div className="absolute inset-0 flex items-center justify-center px-20 pt-16 pb-24 pointer-events-none z-10">
         <img
           ref={imgRef}
-          src={imgUrl(images[index], "full")}
+          src={rawUrls ? images[index] : imgUrl(images[index], "full")}
           alt={`Ảnh ${index + 1}`}
           draggable={false}
           onDoubleClick={handleImgDoubleClick}

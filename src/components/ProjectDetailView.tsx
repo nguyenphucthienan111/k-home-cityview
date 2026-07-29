@@ -1,5 +1,5 @@
-﻿import React, { useEffect, useState, useMemo } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck } from "lucide-react";
+﻿import React, { useEffect, useState, useMemo, useRef } from "react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Gift, Building2, Handshake, Newspaper } from "lucide-react";
 import { Project } from "../types";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
@@ -17,6 +17,16 @@ const PROJECT_SEO: Record<string, {
   amenityImages?: { src: string; alt: string; caption?: string }[];
   developerImage?: string;
   sampleUnitImages?: { src: string; alt: string; label: string }[];
+  // CityView extended sections từ slide
+  dongNaiOverview?: { stats: { label: string; value: string; icon?: string }[]; hubText: string; zones: string[]; transportText: string };
+  constructionProgress?: { timeline: { date: string; event: string; done?: boolean }[]; siteImages: string[] };
+  legalInfo?: { items: { title: string; desc: string }[] };
+  singaporeFactors?: { factors: { num: string; title: string; desc: string }[] };
+  edgeCert?: { savings: { label: string; pct: string }[]; desc: string };
+  buyVsRent?: { tableRows: { label: string; buy: string; rent: string }[]; conclusion: string };
+  awards?: { items: { title: string; org: string; year: string; imgSlide?: number }[] };
+  promotion?: { title: string; items: string[]; note: string };
+  partners?: { items: { name: string; role: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "K-Home CityView Hố Nai | Nhà Ở Xã Hội Biên Hòa | Giá từ 950 triệu",
@@ -47,6 +57,103 @@ const PROJECT_SEO: Record<string, {
       { src: "/k-home cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg", alt: "Nhà mẫu căn 2 phòng ngủ K-Home City View Hố Nai Biên Hòa", label: "Căn 2PN (70,4m²)" },
       { src: "/k-home cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg", alt: "Nhà mẫu căn 3 phòng ngủ NOXH K-Home CityView Biên Hòa", label: "Căn 3PN (84,4m²)" },
     ],
+    dongNaiOverview: {
+      stats: [
+        { label: "Dân số Đồng Nai", value: "3,3 triệu người" },
+        { label: "Lao động KCN", value: "500.000+ công nhân" },
+        { label: "Diện tích tỉnh", value: "5.907 km²" },
+        { label: "Tốc độ tăng trưởng", value: "Top 5 cả nước" },
+      ],
+      hubText: "Biên Hòa – TP. Đồng Nai đang được quy hoạch trở thành đô thị loại I, là trung tâm kinh tế – công nghiệp quan trọng nhất vùng Đông Nam Bộ. Tỉnh Đồng Nai quy hoạch 5 vùng phát triển chiến lược với hơn 30 khu công nghiệp hoạt động, thu hút hàng chục tỷ USD vốn FDI.",
+      zones: [
+        "Vùng 1: Trung tâm TP. Biên Hòa – đô thị hiện đại",
+        "Vùng 2: Long Thành – Nhơn Trạch – cửa ngõ sân bay",
+        "Vùng 3: Trảng Bom – Thống Nhất – công nghiệp phía Bắc",
+        "Vùng 4: Long Khánh – Xuân Lộc – nông nghiệp công nghệ cao",
+        "Vùng 5: Định Quán – Tân Phú – lâm nghiệp & du lịch sinh thái",
+      ],
+      transportText: "Đồng Nai kết nối giao thông quốc gia qua: Cao tốc TP.HCM – Long Thành – Dầu Giây, Quốc lộ 1A, Quốc lộ 51, Tỉnh lộ 25C, tuyến Metro số 1, tuyến đường sắt Bắc – Nam và Sân bay Quốc tế Long Thành đang xây dựng.",
+    },
+    constructionProgress: {
+      timeline: [
+        { date: "08/2026", event: "Khởi công xây dựng – Lễ động thổ chính thức", done: true },
+        { date: "Q4/2026", event: "Hoàn thành móng cọc & đài móng 4 block", done: false },
+        { date: "Q2/2027", event: "Thi công thô đến tầng 10", done: false },
+        { date: "Q4/2027", event: "Hoàn thành kết cấu thô toàn bộ 22 tầng", done: false },
+        { date: "Q1/2028", event: "Hoàn thiện nội thất & bàn giao nhà mẫu", done: false },
+        { date: "01/2028", event: "Dự kiến bàn giao đợt đầu cho cư dân", done: false },
+      ],
+      siteImages: [
+        "slide-k-home-cityview/slide-28",
+        "slide-k-home-cityview/slide-29",
+      ],
+    },
+    legalInfo: {
+      items: [
+        { title: "Giấy chứng nhận đăng ký đầu tư", desc: "Dự án được cấp Giấy CNĐT số 362/CNĐT ngày 09/10/2023 bởi Ban Quản lý các Khu công nghiệp Đồng Nai. Chủ đầu tư: Kim Oanh Land JSC." },
+        { title: "Phê duyệt quy hoạch 1/500", desc: "Quy hoạch chi tiết tỷ lệ 1/500 được UBND tỉnh Đồng Nai phê duyệt, đảm bảo pháp lý đầy đủ trước khi triển khai xây dựng." },
+        { title: "Chuyển đổi mục đích sử dụng đất", desc: "Đất đã hoàn tất thủ tục chuyển đổi mục đích sử dụng đất sang đất ở, đảm bảo cấp sổ hồng sở hữu lâu dài cho người mua." },
+        { title: "Giấy phép xây dựng", desc: "Giấy phép xây dựng đã được cấp đầy đủ theo quy định, dự án đang trong giai đoạn triển khai xây dựng hợp pháp." },
+      ],
+    },
+    singaporeFactors: {
+      factors: [
+        { num: "01", title: "Quy hoạch đô thị theo chuẩn HDB Singapore", desc: "Áp dụng mô hình New Town Planning của Singapore với đầy đủ tiện ích trong bán kính đi bộ 500m." },
+        { num: "02", title: "Thiết kế không gian xanh", desc: "30% diện tích dành cho cây xanh, vườn treo tầng 3, Sky Garden và hành lang sinh thái." },
+        { num: "03", title: "Hệ thống quản lý thông minh", desc: "Ứng dụng công nghệ quản lý tòa nhà BMS, camera AI 24/7, kiểm soát ra vào bằng thẻ từ." },
+        { num: "04", title: "Tối ưu ánh sáng & thông gió tự nhiên", desc: "100% căn hộ có cửa sổ, thiết kế hành lang và ban công đón gió Đông Nam tự nhiên." },
+        { num: "05", title: "Tiêu chuẩn bàn giao hoàn thiện", desc: "Bàn giao full nội thất tiêu chuẩn Singapore — cư dân chỉ cần mang đồ cá nhân là ở được ngay." },
+        { num: "06", title: "Hạ tầng giao thông nội khu an toàn", desc: "Phân tách hoàn toàn luồng xe và người đi bộ, bãi xe ngầm, khu vực vui chơi trẻ em tách biệt giao thông." },
+        { num: "07", title: "Cộng đồng cư dân văn minh", desc: "Quy chế quản lý cư dân và ban quản trị tòa nhà theo mô hình quản lý chuyên nghiệp Singapore." },
+        { num: "08", title: "Công trình xanh chuẩn EDGE", desc: "Thiết kế đạt tiêu chuẩn EDGE (Excellence in Design for Greater Efficiencies), tiết kiệm ít nhất 20% năng lượng, nước và năng lượng vật liệu." },
+      ],
+    },
+    edgeCert: {
+      savings: [
+        { label: "Tiết kiệm năng lượng", pct: "≥ 20%" },
+        { label: "Tiết kiệm nước", pct: "≥ 20%" },
+        { label: "Năng lượng vật liệu xây dựng", pct: "≥ 20%" },
+      ],
+      desc: "Chứng chỉ EDGE (Excellence in Design for Greater Efficiencies) do IFC – World Bank Group cấp cho các công trình tiết kiệm tài nguyên. K-Home CityView là một trong số ít dự án NOXH tại Việt Nam hướng đến chuẩn EDGE, giúp cư dân giảm chi phí điện nước hàng tháng ít nhất 20% so với căn hộ thông thường.",
+    },
+    buyVsRent: {
+      tableRows: [
+        { label: "Chi phí hàng tháng", buy: "Trả góp ~4,5 triệu/tháng", rent: "Thuê ~5-7 triệu/tháng" },
+        { label: "Sau 25 năm", buy: "Sở hữu tài sản 2–4 tỷ", rent: "Mất trắng ~2,1 tỷ tiền thuê" },
+        { label: "Ổn định chỗ ở", buy: "Không lo giá thuê tăng, không bị đuổi", rent: "Phụ thuộc chủ nhà" },
+        { label: "Tích lũy tài sản", buy: "Bất động sản tăng giá theo thời gian", rent: "Không tích lũy được gì" },
+        { label: "Lãi suất", buy: "5,4%/năm – thấp nhất thị trường", rent: "Không áp dụng" },
+        { label: "Điều kiện", buy: "Cần đủ điều kiện NOXH", rent: "Chỉ cần có tiền cọc" },
+      ],
+      conclusion: "Với mức trả góp chỉ từ 3,5–4,5 triệu/tháng — tương đương hoặc thấp hơn tiền thuê nhà — người mua K-Home CityView vừa có chỗ ở ổn định, vừa tích lũy tài sản lâu dài. Đây là lý do tại sao nhiều gia đình công nhân chọn mua thay vì tiếp tục thuê trọ.",
+    },
+    awards: {
+      items: [
+        { title: "PropertyGuru Vietnam Property Awards", org: "PropertyGuru – Best Affordable Housing Development 2025", year: "2025", imgSlide: 14 },
+        { title: "Top 10 Nhà phát triển NOXH hàng đầu Việt Nam", org: "Bộ Xây dựng & Hiệp hội Bất động sản Việt Nam", year: "2024", imgSlide: 17  },
+        { title: "Giải thưởng Kiến trúc xanh bền vững", org: "Hội Kiến trúc sư Việt Nam", year: "2024", imgSlide: 12 },
+      ],
+    },
+    promotion: {
+      title: "Chương Trình Tri Ân Khách Hàng – Tổng Giá Trị 6 Tỷ Đồng",
+      items: [
+        "Chiết khấu lên đến 3% giá trị căn hộ khi thanh toán sớm",
+        "Gói nội thất bổ sung trị giá 30 triệu đồng cho 100 khách đầu tiên",
+        "Hỗ trợ phí làm hồ sơ vay ngân hàng hoàn toàn miễn phí",
+        "Tặng 1 năm phí quản lý chung cư cho khách hàng đặt cọc sớm",
+        "Ưu tiên chọn tầng và hướng căn hộ theo thứ tự đặt cọc",
+      ],
+      note: "* Chương trình áp dụng trong giai đoạn mở bán đầu. Điều kiện chi tiết vui lòng liên hệ hotline 0937.587.438 để được tư vấn cụ thể.",
+    },
+    partners: {
+      items: [
+        { name: "Global Vireon Studio", role: "Đơn vị tư vấn thiết kế kiến trúc tổng thể" },
+        { name: "Kiến Trúc Việt", role: "Tư vấn thiết kế nội thất & cảnh quan" },
+        { name: "CDC Jsc (CDCs)", role: "Đơn vị tư vấn giám sát thi công" },
+        { name: "Phước Thành", role: "Nhà thầu xây dựng chính" },
+        { name: "K-City", role: "Đơn vị quản lý & vận hành tòa nhà" },
+      ],
+    },
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -181,10 +288,6 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
   const [activeFloorTab, setActiveFloorTab] = useState(0);
-
-  // Lightbox State
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   // Form State
   const [formName, setFormName] = useState("");
@@ -358,6 +461,29 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  // Helper: Cloudinary URL cho slide (full resolution để zoom đọc được chữ)
+  const slideImg = (num: number, mode: "thumbnail" | "full" = "full") => {
+    const transform = mode === "thumbnail"
+      ? "w_900,q_auto:good,f_auto"
+      : "w_1600,q_auto:best,f_auto";
+    return `https://res.cloudinary.com/dthv0nsq/image/upload/${transform}/slide-k-home-cityview/slide-${num}`;
+  };
+
+  // Lightbox State
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  // Slide lightbox state — dùng riêng cho ảnh slide Cloudinary
+  const [slideLightboxOpen, setSlideLightboxOpen] = useState(false);
+  const [slideLightboxImages, setSlideLightboxImages] = useState<string[]>([]);
+  const [slideLightboxIndex, setSlideLightboxIndex] = useState(0);
+
+  const openSlide = (nums: number[], startIdx = 0) => {
+    setSlideLightboxImages(nums.map(n => slideImg(n)));
+    setSlideLightboxIndex(startIdx);
+    setSlideLightboxOpen(true);
   };
 
   if (loading) {
@@ -907,9 +1033,365 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Tổng quan Biên Hòa / Đồng Nai ── */}
+      {seo?.dongNaiOverview && (
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+              <Building2 className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Tiềm Năng Phát Triển Đồng Nai – TP. Biên Hòa</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Khu vực đang được đầu tư hạ tầng mạnh nhất Đông Nam Bộ</p>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {seo.dongNaiOverview.stats.map((s, i) => (
+              <div key={i} className="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center space-y-1">
+                <span className="block text-2xl font-bold text-blue-700">{s.value}</span>
+                <span className="block text-xs text-slate-500 font-medium">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Slide ảnh tổng quan Biên Hòa — click to zoom */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[2, 3, 4, 6 , 7, 8, 9, 10].map((num, i) => (
+              <button key={i} onClick={() => openSlide([2, 3, 4, 6 , 7, 8, 9, 10], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={i === 0 ? "Tổng quan TP Biên Hòa Đồng Nai quy hoạch đô thị loại I" : "5 vùng phát triển chiến lược tỉnh Đồng Nai"} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <p className="text-slate-600 text-sm leading-relaxed">{seo.dongNaiOverview.hubText}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+            {seo.dongNaiOverview.zones.map((z, i) => (
+              <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-3 text-xs text-slate-600 leading-relaxed">
+                <span className="block font-bold text-amber-600 mb-1">Vùng {i + 1}</span>
+                {z.replace(`Vùng ${i + 1}: `, "")}
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-slate-800 text-white rounded-2xl p-5">
+            <p className="text-sm leading-relaxed text-slate-200">
+              <span className="font-bold text-amber-400">Kết nối giao thông: </span>
+              {seo.dongNaiOverview.transportText}
+            </p>
+          </div>
+
+          {/* Slide giao thông quốc gia — click to zoom */}
+          <button onClick={() => openSlide([5])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+        </section>
+      )}
+
+      {/* ── Tiến độ xây dựng ── */}
+      {seo?.constructionProgress && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
+              <TrendingUp className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Tiến Độ Triển Khai Dự Án</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Cập nhật tiến độ xây dựng K-Home CityView Hố Nai</p>
+            </div>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative pl-6 space-y-0 border-l-2 border-amber-200">
+            {seo.constructionProgress.timeline.map((t, i) => (
+              <div key={i} className="relative pb-6 last:pb-0">
+                <div className={`absolute -left-[25px] top-0 w-5 h-5 rounded-full border-2 flex items-center justify-center ${t.done ? "bg-amber-500 border-amber-500" : "bg-white border-slate-300"}`}>
+                  {t.done && <span className="w-2 h-2 bg-white rounded-full block" />}
+                </div>
+                <div className={`ml-4 p-3 rounded-xl border ${t.done ? "bg-amber-50 border-amber-100" : "bg-white border-slate-100"}`}>
+                  <span className={`text-xs font-bold block mb-0.5 ${t.done ? "text-amber-600" : "text-slate-400"}`}>{t.date}</span>
+                  <span className="text-sm font-semibold text-slate-700">{t.event}</span>
+                  {t.done && <span className="ml-2 text-[10px] bg-amber-500 text-white px-2 py-0.5 rounded-full font-bold">✓ Hoàn thành</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Ảnh công trường — click to zoom */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[39, 40].map((num, i) => (
+              <button key={i} onClick={() => openSlide([39, 40], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={`Tiến độ thi công K-Home CityView Hố Nai Biên Hòa 2026 - ảnh ${i + 1}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Pháp lý ── */}
+      {seo?.legalInfo && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Pháp Lý Dự Án – Minh Bạch & Đầy Đủ</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Hồ sơ pháp lý được kiểm tra và công bố công khai</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {seo.legalInfo.items.map((item, i) => (
+              <div key={i} className="bg-green-50 border border-green-100 rounded-2xl p-5 flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block font-bold text-slate-800 text-sm mb-1">{item.title}</span>
+                  <span className="block text-xs text-slate-600 leading-relaxed">{item.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Slide pháp lý — click to zoom */}
+          {[19, 20].map((num, i) => (
+              <button key={i} onClick={() => openSlide([19, 20], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - ảnh ${i + 1}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                </div>
+              </button>
+            ))}
+        </section>
+      )}
+
+      {/* ── 8 Yếu tố Singapore ── */}
+      {seo?.singaporeFactors && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
+              <Star className="w-5 h-5 text-white fill-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">8 Yếu Tố Singapore Trong Thiết Kế K-Home CityView</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Tiêu chuẩn nhà ở xã hội Singapore – HDB – được ứng dụng vào dự án NOXH đầu tiên tại Đồng Nai</p>
+            </div>
+          </div>
+
+          {/* Slide HDB Singapore — click to zoom */}
+          <button onClick={() => openSlide([41])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(41, "thumbnail")} alt="Mô hình nhà ở xã hội Singapore HDB áp dụng tại K-Home CityView Kim Oanh" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {seo.singaporeFactors.factors.map((f, i) => (
+              <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-amber-300 hover:bg-amber-50/30 transition-all">
+                <span className="shrink-0 w-10 h-10 bg-amber-500 text-white text-sm font-bold rounded-xl flex items-center justify-center">{f.num}</span>
+                <div>
+                  <span className="block font-bold text-slate-800 text-sm mb-1">{f.title}</span>
+                  <span className="block text-xs text-slate-500 leading-relaxed">{f.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Chứng chỉ EDGE ── */}
+      {seo?.edgeCert && (
+        <section className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
+              <Award className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Chứng Chỉ Công Trình Xanh EDGE</h2>
+              <p className="text-xs text-green-700 font-semibold mt-0.5">Excellence in Design for Greater Efficiencies – IFC / World Bank Group</p>
+            </div>
+          </div>
+
+          {/* Slide EDGE — click to zoom */}
+          <button onClick={() => openSlide([23])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+            <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ EDGE công trình xanh K-Home CityView giảm 20% điện nước" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <div className="grid grid-cols-3 gap-4">
+            {seo.edgeCert.savings.map((s, i) => (
+              <div key={i} className="bg-white rounded-2xl p-4 text-center border border-green-100 shadow-sm">
+                <span className="block text-3xl font-bold text-green-600">{s.pct}</span>
+                <span className="block text-xs text-slate-500 mt-1 font-medium">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-slate-600 text-sm leading-relaxed">{seo.edgeCert.desc}</p>
+        </section>
+      )}
+
+      {/* ── Mua vs Thuê ── */}
+      {seo?.buyVsRent && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center shrink-0">
+              <TrendingUp className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Mua Nhà vs Thuê Trọ – Đâu Là Lựa Chọn Thông Minh?</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Bài toán tài chính thực tế dành cho người lao động tại Đồng Nai</p>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-slate-100 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-slate-800 text-white">
+                  <th className="text-left px-5 py-3.5 text-xs font-bold uppercase">Tiêu chí</th>
+                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-amber-300">Mua K-Home CityView</th>
+                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-slate-300">Tiếp tục thuê trọ</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 bg-white">
+                {seo.buyVsRent.tableRows.map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-amber-50/20" : "bg-white"}>
+                    <td className="px-5 py-3.5 font-semibold text-slate-700 text-sm">{row.label}</td>
+                    <td className="px-5 py-3.5 text-center text-green-700 font-bold text-sm">{row.buy}</td>
+                    <td className="px-5 py-3.5 text-center text-slate-400 text-sm">{row.rent}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">💡 {seo.buyVsRent.conclusion}</p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Giải thưởng ── */}
+      {seo?.awards && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-yellow-500 rounded-xl flex items-center justify-center shrink-0">
+              <Award className="w-5 h-5 text-white" />
+            </div>
+            <h2 className="text-2xl font-display font-bold text-slate-800">Giải Thưởng & Công Nhận Uy Tín</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {seo.awards.items.map((a, i) => (
+              <div key={i} className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100 rounded-2xl p-5 space-y-3 text-center">
+                {a.imgSlide !== undefined ? (
+                  <button
+                    onClick={() => openSlide(seo.awards!.items.filter(x => x.imgSlide !== undefined).map(x => x.imgSlide!), seo.awards!.items.filter(x => x.imgSlide !== undefined).findIndex(x => x.imgSlide === a.imgSlide))}
+                    className="w-full cursor-zoom-in relative group rounded-xl overflow-hidden"
+                  >
+                    <img src={slideImg(a.imgSlide, "thumbnail")} alt={`${a.title} ${a.year} Kim Oanh Land`} className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
+                    </div>
+                  </button>
+                ) : (
+                  <div className="w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center mx-auto">
+                    <Award className="w-7 h-7 text-white" />
+                  </div>
+                )}
+                <div>
+                  <span className="block text-xs font-bold text-amber-600 mb-1">{a.year}</span>
+                  <span className="block font-bold text-slate-800 text-sm leading-snug">{a.title}</span>
+                  <span className="block text-xs text-slate-500 mt-1 leading-relaxed">{a.org}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Slide giải thưởng — click to zoom, hiện cả 2 ảnh */}
+          <button onClick={() => openSlide([15, 16])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(13, "thumbnail")} alt="PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+        </section>
+      )}
+
+      {/* ── Khuyến mãi / Tri ân ── */}
+      {seo?.promotion && (
+        <section className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-3xl p-8 space-y-5 text-white">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+              <Gift className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-white">{seo.promotion.title}</h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {seo.promotion.items.map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white/15 backdrop-blur-sm rounded-xl p-3.5">
+                <span className="shrink-0 w-6 h-6 bg-white text-amber-600 rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</span>
+                <span className="text-sm text-white leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs text-white/70 leading-relaxed">{seo.promotion.note}</p>
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <a href="tel:0937587438" className="flex-1 bg-white text-amber-600 font-bold py-3 px-5 rounded-xl text-sm text-center hover:bg-amber-50 transition-colors flex items-center justify-center gap-2">
+              <Phone className="w-4 h-4" /> Đăng Ký Nhận Ưu Đãi: 0937 587 438
+            </a>
+          </div>
+        </section>
+      )}
+
+      {/* ── Các đối tác ── */}
+      {seo?.partners && (
+        <section className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-slate-700 rounded-xl flex items-center justify-center shrink-0">
+              <Handshake className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Đối Tác Đồng Hành</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Các đơn vị tư vấn và thi công uy tín tham gia dự án K-Home CityView</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {seo.partners.items.map((p, i) => (
+              <div key={i} className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center space-y-2 hover:border-amber-300 hover:bg-amber-50/30 transition-all">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
+                  <Building className="w-5 h-5 text-amber-600" />
+                </div>
+                <span className="block text-sm font-bold text-slate-800 leading-tight">{p.name}</span>
+                <span className="block text-[10px] text-slate-500 leading-relaxed">{p.role}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* ── Chủ đầu tư ── */}
-      {seo?.developerImage && (
-        <section className="bg-slate-50 rounded-3xl border border-slate-100 p-8 space-y-4">
+      {seo?.developerImage && (        <section className="bg-slate-50 rounded-3xl border border-slate-100 p-8 space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">Chủ Đầu Tư – Kim Oanh Land</h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             Kim Oanh Land đang khẳng định vai trò tiên phong trong phân khúc nhà ở xã hội nhờ lợi thế quỹ đất dồi dào và hệ sinh thái phát triển khép kín. Dự kiến đến năm 2028, Kim Oanh Land sẽ triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM.
@@ -1017,6 +1499,17 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ))}
           </div>
         </section>
+      )}
+
+      {/* Slide Lightbox Modal */}
+      {slideLightboxOpen && slideLightboxImages.length > 0 && (
+        <Lightbox
+          images={slideLightboxImages}
+          initialIndex={slideLightboxIndex}
+          caption="Click vào ảnh để zoom • Cuộn chuột để phóng to/thu nhỏ"
+          rawUrls={true}
+          onClose={() => setSlideLightboxOpen(false)}
+        />
       )}
 
       {/* Fullscreen Lightbox Modal */}
