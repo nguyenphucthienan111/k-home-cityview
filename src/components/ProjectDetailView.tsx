@@ -204,6 +204,13 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         const found = list.find((p) => p.slug === slug);
         setProject(found || null);
         if (found) {
+          // Preload ảnh mặt bằng để tránh lag khi click tab
+          if (seo?.floorPlanImages) {
+            seo.floorPlanImages.forEach((img) => {
+              const preloadImg = new Image();
+              preloadImg.src = imgUrl(img.src, "full");
+            });
+          }
           // Dùng SEO title/meta từ PROJECT_SEO nếu có
           document.title = seo?.titleTag ?? `${found.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;
           const metaDesc = document.querySelector('meta[name="description"]');
@@ -823,15 +830,16 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ))}
           </div>
 
-          {/* Active image */}
-          <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+          {/* Active image — fixed height container để tránh layout shift */}
+          <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-200" style={{ minHeight: "400px" }}>
             <img
               key={activeFloorTab}
               src={imgUrl(seo.floorPlanImages[activeFloorTab].src, "full")}
               alt={seo.floorPlanImages[activeFloorTab].alt}
               className="w-full object-cover"
-              loading="lazy"
-              style={{ backgroundColor: "#e2e8f0" }}
+              loading="eager"
+              decoding="async"
+              style={{ backgroundColor: "#e2e8f0", display: "block" }}
             />
           </div>
         </section>
