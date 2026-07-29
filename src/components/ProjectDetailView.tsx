@@ -1615,7 +1615,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <thead>
                 <tr className="bg-slate-800 text-white">
                   <th className="text-left px-5 py-3.5 text-xs font-bold uppercase">Tiêu chí</th>
-                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-amber-300">Mua K-Home Avenue</th>
+                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-amber-300">Mua {project.title}</th>
                   <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-slate-300">Tiếp tục thuê trọ</th>
                 </tr>
               </thead>
