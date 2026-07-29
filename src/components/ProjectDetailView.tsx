@@ -98,21 +98,21 @@ const PROJECT_SEO: Record<string, {
     },
     singaporeFactors: {
       factors: [
-        { num: "01", title: "Quy hoạch đô thị theo chuẩn HDB Singapore", desc: "Áp dụng mô hình New Town Planning của Singapore với đầy đủ tiện ích trong bán kính đi bộ 500m." },
-        { num: "02", title: "Thiết kế không gian xanh", desc: "30% diện tích dành cho cây xanh, vườn treo tầng 3, Sky Garden và hành lang sinh thái." },
-        { num: "03", title: "Hệ thống quản lý thông minh", desc: "Ứng dụng công nghệ quản lý tòa nhà BMS, camera AI 24/7, kiểm soát ra vào bằng thẻ từ." },
-        { num: "04", title: "Tối ưu ánh sáng & thông gió tự nhiên", desc: "100% căn hộ có cửa sổ, thiết kế hành lang và ban công đón gió Đông Nam tự nhiên." },
-        { num: "05", title: "Tiêu chuẩn bàn giao hoàn thiện", desc: "Bàn giao full nội thất tiêu chuẩn Singapore — cư dân chỉ cần mang đồ cá nhân là ở được ngay." },
-        { num: "06", title: "Hạ tầng giao thông nội khu an toàn", desc: "Phân tách hoàn toàn luồng xe và người đi bộ, bãi xe ngầm, khu vực vui chơi trẻ em tách biệt giao thông." },
-        { num: "07", title: "Cộng đồng cư dân văn minh", desc: "Quy chế quản lý cư dân và ban quản trị tòa nhà theo mô hình quản lý chuyên nghiệp Singapore." },
-        { num: "08", title: "Công trình xanh chuẩn EDGE", desc: "Thiết kế đạt tiêu chuẩn EDGE (Excellence in Design for Greater Efficiencies), tiết kiệm ít nhất 20% năng lượng, nước và năng lượng vật liệu." },
+        { num: "01", title: "Vị trí trung tâm đô thị Biên Hòa", desc: "Tọa lạc ngay mặt tiền đường Điểu Xiển, Hố Nai – trung tâm TP. Biên Hòa, gần các KCN lớn, trường học, bệnh viện và siêu thị." },
+        { num: "02", title: "Tiện ích nội khu phong phú", desc: "Hồ bơi, sân chơi trẻ em, khu thể dục ngoài trời, vườn treo, nhà sinh hoạt cộng đồng và shophouse thương mại ngay trong khuôn viên dự án." },
+        { num: "03", title: "Đa dạng tiện ích quanh nhà", desc: "Trong bán kính 5km có đầy đủ: trường học các cấp, bệnh viện, siêu thị, chợ, ngân hàng và trung tâm thương mại phục vụ nhu cầu hàng ngày." },
+        { num: "04", title: "Phát triển theo tiêu chuẩn công trình xanh EDGE", desc: "Dự án hướng đến chứng chỉ EDGE (IFC/World Bank), tiết kiệm ít nhất 20% năng lượng, nước và năng lượng vật liệu so với công trình thông thường." },
+        { num: "05", title: "Tầm view rộng thoáng", desc: "4 block cao 22 tầng thiết kế so le, đảm bảo tầm nhìn thông thoáng, không bị che khuất. Các căn tầng cao có view toàn cảnh TP. Biên Hòa." },
+        { num: "06", title: "Thiết kế thông minh, tối ưu không gian", desc: "100% căn hộ có cửa sổ đón sáng tự nhiên. Bố cục tối ưu từng m², không có hành lang tối hay không gian chết theo tiêu chuẩn thiết kế Singapore." },
+        { num: "07", title: "Bàn giao hoàn thiện nội thất chất lượng cao", desc: "Bàn giao full nội thất theo tiêu chuẩn dự án — tủ bếp, sofa, giường, tủ quần áo, sàn gỗ. Cư dân chỉ cần mang đồ cá nhân là ở được ngay." },
+        { num: "08", title: "Quản lý vận hành thông minh", desc: "Hệ thống BMS quản lý tòa nhà, camera AI 24/7, kiểm soát ra vào bằng thẻ từ, ứng dụng quản lý cư dân theo mô hình chuyên nghiệp Singapore." },
       ],
     },
     edgeCert: {
       savings: [
-        { label: "Tiết kiệm năng lượng", pct: "≥ 20%" },
+        { label: "Tiết kiệm điện năng", pct: "≥ 20%" },
         { label: "Tiết kiệm nước", pct: "≥ 20%" },
-        { label: "Năng lượng vật liệu xây dựng", pct: "≥ 20%" },
+        { label: "Lượng phát thải carbon", pct: "≥ 20%" },
       ],
       desc: "Chứng chỉ EDGE (Excellence in Design for Greater Efficiencies) do IFC – World Bank Group cấp cho các công trình tiết kiệm tài nguyên. K-Home CityView là một trong số ít dự án NOXH tại Việt Nam hướng đến chuẩn EDGE, giúp cư dân giảm chi phí điện nước hàng tháng ít nhất 20% so với căn hộ thông thường.",
     },
@@ -478,10 +478,12 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   // Slide lightbox state — dùng riêng cho ảnh slide Cloudinary
   const [slideLightboxOpen, setSlideLightboxOpen] = useState(false);
   const [slideLightboxImages, setSlideLightboxImages] = useState<string[]>([]);
+  const [slideLightboxAlts, setSlideLightboxAlts] = useState<string[]>([]);
   const [slideLightboxIndex, setSlideLightboxIndex] = useState(0);
 
-  const openSlide = (nums: number[], startIdx = 0) => {
+  const openSlide = (nums: number[], startIdx = 0, alts?: string[]) => {
     setSlideLightboxImages(nums.map(n => slideImg(n)));
+    setSlideLightboxAlts(alts || nums.map(n => `K-Home CityView – slide ${n}`));
     setSlideLightboxIndex(startIdx);
     setSlideLightboxOpen(true);
   };
@@ -1057,12 +1059,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Slide ảnh tổng quan Biên Hòa — click to zoom */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[2, 3, 4, 6 , 7, 8, 9, 10].map((num, i) => (
-              <button key={i} onClick={() => openSlide([2, 3, 4, 6 , 7, 8, 9, 10], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={i === 0 ? "Tổng quan TP Biên Hòa Đồng Nai quy hoạch đô thị loại I" : "5 vùng phát triển chiến lược tỉnh Đồng Nai"} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[2, 3, 4, 6, 7, 8, 9, 10].map((num, i) => (
+              <button key={i} onClick={() => openSlide([2, 3, 4, 6, 7, 8, 9, 10], i, [
+                  "Tổng quan về thành phố Đồng Nai – quy hoạch đô thị trực thuộc trung ương",
+                  "Biên Hòa – trung tâm kinh tế công nghiệp phía Nam Đồng Nai",
+                  "KCN Đồng Nai – 44 khu công nghiệp đang hoạt động 15.000 ha",
+                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 6",
+                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 7",
+                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 8",
+                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 9",
+                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 10",
+                ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={`Tổng quan phát triển Biên Hòa Đồng Nai - slide ${num}`} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                  <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
                 </div>
               </button>
             ))}
@@ -1087,8 +1098,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Slide giao thông quốc gia — click to zoom */}
-          <button onClick={() => openSlide([5])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+          <button onClick={() => openSlide([5], 0, ["Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa – cao tốc sân bay Long Thành"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa cao tốc sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -1128,8 +1139,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Ảnh công trường — click to zoom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[39, 40].map((num, i) => (
-              <button key={i} onClick={() => openSlide([39, 40], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Tiến độ thi công K-Home CityView Hố Nai Biên Hòa 2026 - ảnh ${i + 1}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <button key={i} onClick={() => openSlide([39, 40], i, [
+                "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
+                "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
+              ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
                 </div>
@@ -1166,8 +1180,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Slide pháp lý — click to zoom */}
           {[19, 20].map((num, i) => (
-              <button key={i} onClick={() => openSlide([19, 20], i)} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - ảnh ${i + 1}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <button key={i} onClick={() => openSlide([19, 20], i, [
+                "Giấy chứng nhận đăng ký đầu tư dự án NOXH K-Home CityView Kim Oanh Land",
+                "Phê duyệt quy hoạch 1/500 và pháp lý dự án K-Home CityView Biên Hòa",
+              ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
                 </div>
@@ -1184,14 +1201,14 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <Star className="w-5 h-5 text-white fill-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-slate-800">8 Yếu Tố Singapore Trong Thiết Kế K-Home CityView</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Tiêu chuẩn nhà ở xã hội Singapore – HDB – được ứng dụng vào dự án NOXH đầu tiên tại Đồng Nai</p>
+              <h2 className="text-2xl font-display font-bold text-slate-800">8 Yếu Tố Định Hình Chất Sống Singapore</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Sống là tận hưởng – K-Home CityView áp dụng 8 tiêu chuẩn Singapore vào dự án NOXH đầu tiên tại Đồng Nai</p>
             </div>
           </div>
 
           {/* Slide HDB Singapore — click to zoom */}
-          <button onClick={() => openSlide([41])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(41, "thumbnail")} alt="Mô hình nhà ở xã hội Singapore HDB áp dụng tại K-Home CityView Kim Oanh" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+          <button onClick={() => openSlide([41], 0, ["8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(41, "thumbnail")} alt="8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -1225,8 +1242,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Slide EDGE — click to zoom */}
-          <button onClick={() => openSlide([23])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-            <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ EDGE công trình xanh K-Home CityView giảm 20% điện nước" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+          <button onClick={() => openSlide([23], 0, ["Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa – tiết kiệm 20% điện nước Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+            <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa tiết kiệm điện nước Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -1323,8 +1340,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Slide giải thưởng — click to zoom, hiện cả 2 ảnh */}
-          <button onClick={() => openSlide([15, 16])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(13, "thumbnail")} alt="PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+          <button onClick={() => openSlide([15, 16], 0, [
+              "Giải thưởng PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
+              "Top 10 doanh nghiệp bất động sản triển vọng nhất Việt Nam 2024 Kim Oanh Land",
+            ])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideImg(15, "thumbnail")} alt="Giải thưởng Kim Oanh Land PropertyGuru Vietnam Property Awards Best Affordable Housing Development 2025" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -1508,6 +1528,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           initialIndex={slideLightboxIndex}
           caption="Click vào ảnh để zoom • Cuộn chuột để phóng to/thu nhỏ"
           rawUrls={true}
+          alts={slideLightboxAlts}
           onClose={() => setSlideLightboxOpen(false)}
         />
       )}
