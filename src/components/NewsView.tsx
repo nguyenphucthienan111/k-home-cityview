@@ -128,7 +128,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
               <div className="relative w-full md:w-56 h-48 md:h-auto overflow-hidden shrink-0">
                 <img
                   src={article.image}
-                  alt={article.title}
+                  alt={`${article.title} – Tin tức nhà ở xã hội K-Home Đồng Nai`}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                 />
                 <span className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-sm text-amber-400 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">

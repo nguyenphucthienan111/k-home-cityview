@@ -112,7 +112,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       <div className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden shadow-sm border border-slate-100">
         <img
           src={article.image}
-          alt={article.title}
+          alt={`${article.title} – K-Home Đồng Nai`}
           className="w-full h-full object-cover"
         />
       </div>
