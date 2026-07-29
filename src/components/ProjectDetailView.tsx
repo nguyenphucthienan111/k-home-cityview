@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState, useMemo, useRef } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Gift, Building2, Handshake, Newspaper } from "lucide-react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper } from "lucide-react";
 import { Project } from "../types";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
@@ -25,8 +25,11 @@ const PROJECT_SEO: Record<string, {
   edgeCert?: { savings: { label: string; pct: string }[]; desc: string };
   buyVsRent?: { tableRows: { label: string; buy: string; rent: string }[]; conclusion: string };
   awards?: { items: { title: string; org: string; year: string; imgSlide?: number }[] };
-  promotion?: { title: string; items: string[]; note: string };
   partners?: { items: { name: string; role: string }[] };
+  // Midtown extended sections
+  midtownHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
+  midtownEdge?: { heroImage: string; savings: { label: string; pct: string }[]; desc: string };
+  avenueHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "K-Home CityView Hố Nai | Nhà Ở Xã Hội Biên Hòa | Giá từ 950 triệu",
@@ -134,17 +137,7 @@ const PROJECT_SEO: Record<string, {
         { title: "Giải thưởng Kiến trúc xanh bền vững", org: "Hội Kiến trúc sư Việt Nam", year: "2024", imgSlide: 12 },
       ],
     },
-    promotion: {
-      title: "Chương Trình Tri Ân Khách Hàng – Tổng Giá Trị 6 Tỷ Đồng",
-      items: [
-        "Chiết khấu lên đến 3% giá trị căn hộ khi thanh toán sớm",
-        "Gói nội thất bổ sung trị giá 30 triệu đồng cho 100 khách đầu tiên",
-        "Hỗ trợ phí làm hồ sơ vay ngân hàng hoàn toàn miễn phí",
-        "Tặng 1 năm phí quản lý chung cư cho khách hàng đặt cọc sớm",
-        "Ưu tiên chọn tầng và hướng căn hộ theo thứ tự đặt cọc",
-      ],
-      note: "* Chương trình áp dụng trong giai đoạn mở bán đầu. Điều kiện chi tiết vui lòng liên hệ hotline 0937.587.438 để được tư vấn cụ thể.",
-    },
+
     partners: {
       items: [
         { name: "Global Vireon Studio", role: "Đơn vị tư vấn thiết kế kiến trúc tổng thể" },
@@ -214,6 +207,121 @@ const PROJECT_SEO: Record<string, {
       { q: "K-Home Midtown có nhà mẫu để tham quan không?", a: "Liên hệ hotline 0937.587.438 để đăng ký tham quan nhà mẫu và cập nhật lịch tham quan mới nhất từ chủ đầu tư Kim Oanh Land. Hỗ trợ tư vấn và đặt lịch hoàn toàn miễn phí." },
       { q: "Hồ sơ mua nhà ở xã hội K-Home Midtown cần gì?", a: "Hồ sơ gồm: CMND/CCCD, hộ khẩu hoặc xác nhận tạm trú, giấy xác nhận thu nhập, giấy xác nhận chưa có nhà tại Đồng Nai. Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện toàn bộ miễn phí." },
     ],
+    locationImages: [
+      { src: "slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo", alt: "Bản đồ vị trí dự án K-Home Midtown tại trung tâm Trảng Bom – kết nối các tuyến đường và KCN Đồng Nai", caption: "Vị trí K-Home Midtown – Trung tâm của trung tâm Trảng Bom" },
+    ],
+    floorPlanImages: [
+      { src: "slide-k-home-midtown/mat-bang-can-ho-dien-hinh-k-home-midtown-studio-1-phong-ngu-a-1-phong-ngu-b-va-2", alt: "Mặt bằng căn hộ điển hình K-Home Midtown Studio 1PN A 1PN B 2PN", label: "Layout căn hộ điển hình" },
+      { src: "slide-k-home-midtown/mat-bang-tang-1-k-home-midtown-trang-bom-ho-boi-san-choi-tre-em-khu-the-duc-va-c", alt: "Mặt bằng tầng 1 K-Home Midtown Trảng Bom tiện ích hồ bơi sân chơi khu thể dục", label: "Tầng 1 (Tiện ích)" },
+      { src: "slide-k-home-midtown/mat-bang-tang-2-k-home-midtown-khu-vuc-nha-xe-sinh-hoat-cong-dong-va-sanh-thang-", alt: "Mặt bằng tầng 2 K-Home Midtown nhà xe sinh hoạt cộng đồng sảnh thang máy", label: "Tầng 2" },
+      { src: "slide-k-home-midtown/mat-bang-tang-3-k-home-midtown-bo-tri-can-ho-va-san-vuon-noi-khu", alt: "Mặt bằng tầng 3 K-Home Midtown sân vườn nội khu Trảng Bom", label: "Tầng 3 (Sân vườn)" },
+      { src: "slide-k-home-midtown/mat-bang-tang-dien-hinh-4-5-8-11-14-15-k-home-midtown-layout-can-ho-studio-1pn-v", alt: "Mặt bằng tầng điển hình 4 5 8 11 14 15 K-Home Midtown layout studio 1PN 2PN", label: "Tầng 4,5,8,11,14,15" },
+      { src: "slide-k-home-midtown/mat-bang-tang-6-du-an-k-home-midtown-layout-can-ho-va-tien-ich-noi-khu", alt: "Mặt bằng tầng 6 K-Home Midtown layout căn hộ tiện ích nội khu", label: "Tầng 6" },
+      { src: "slide-k-home-midtown/mat-bang-tang-7-du-an-k-home-midtown-trang-bom-so-do-phan-bo-can-ho-thap-a-va-th", alt: "Mặt bằng tầng 7 K-Home Midtown Trảng Bom tháp A tháp B", label: "Tầng 7" },
+      { src: "slide-k-home-midtown/mat-bang-tang-12a-du-an-k-home-midtown-trang-bom-so-do-can-ho-va-sanh-thang-may", alt: "Mặt bằng tầng 12A K-Home Midtown Trảng Bom sơ đồ căn hộ sảnh thang máy", label: "Tầng 12A" },
+      { src: "slide-k-home-midtown/mat-bang-tang-12b-du-an-k-home-midtown-trang-bom-bo-tri-can-ho-thap-a-va-thap-b", alt: "Mặt bằng tầng 12B K-Home Midtown Trảng Bom bố trí căn hộ tháp A tháp B", label: "Tầng 12B" },
+    ],
+    amenityImages: [
+      { src: "slide-k-home-midtown/ho-boi-ngoai-troi-tai-k-home-midtown-trang-bom-khong-gian-thu-gian-va-tien-ich-n", alt: "Hồ bơi ngoài trời K-Home Midtown Trảng Bom không gian thư giãn tiện ích nội khu chuẩn Singapore", caption: "Hồ bơi ngoài trời" },
+      { src: "slide-k-home-midtown/khong-gian-song-tai-k-home-midtown-trang-bom-view-huong-cong-vien-va-tien-ich-no", alt: "Không gian sống K-Home Midtown Trảng Bom view hướng công viên tiện ích nội khu", caption: "View hướng công viên nội khu" },
+    ],
+    developerImage: "slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi",
+    sampleUnitImages: [
+      { src: "/k-home midtown/Can-Studio/k-home-midtown-studio-1.jpg", alt: "Nhà mẫu căn Studio K-Home Midtown Trảng Bom Kim Oanh Land", label: "Căn Studio (36,1m²)" },
+      { src: "/k-home midtown/Can-1PN-A/k-home-midtown-1PNA.jpg", alt: "Nhà mẫu căn 1 phòng ngủ A K-Home Midtown Trảng Bom Kim Oanh", label: "Căn 1PN + A (47,0m²)" },
+      { src: "/k-home midtown/Can-1PN-B/k-home-midtown-1PNB.jpg", alt: "Nhà mẫu căn 1 phòng ngủ B K-Home Midtown Trảng Bom Kim Oanh", label: "Căn 1PN + B (55,1m²)" },
+      { src: "/k-home midtown/Can-2PN/k-home-midtown-2pn.jpg", alt: "Nhà mẫu căn 2 phòng ngủ K-Home Midtown Trảng Bom Đồng Nai Kim Oanh", label: "Căn 2PN (68,8m²)" },
+    ],
+    midtownHighlights: {
+      heroImage: "slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor",
+      locationText: "Nằm tại tâm điểm kết nối của các tuyến giao thông huyết mạch liên vùng, K-Home Midtown khẳng định vị thế trung tâm của trung tâm đô thị Trảng Bom với nền tảng kinh tế – xã hội và phát triển công nghiệp sôi động bậc nhất của Đồng Nai. Từ đây, mọi hành trình kết nối của cư dân K-Home Midtown đều trở nên dễ dàng, mỗi bước chân luôn bắt nhịp cùng dòng chảy phát triển mạnh mẽ của cả khu vực.",
+      points: [
+        { num: "01", title: "Vị trí trung tâm – Giao thông kết nối", desc: "Giữa 4 tuyến đường: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành. Trung tâm hành chính, kinh tế huyện Trảng Bom." },
+        { num: "02", title: "Phát triển theo chuẩn công trình xanh EDGE", desc: "Tiêu chuẩn EDGE quốc tế (IFC/World Bank): giảm 20% điện năng, 20% lượng nước, 20% khí phát thải carbon." },
+        { num: "03", title: "Thiết kế thông minh – Tối ưu công năng", desc: "100% căn hộ có cửa sổ đón sáng và thông gió tự nhiên. Bố cục tối ưu từng m² theo tiêu chuẩn Singapore." },
+        { num: "04", title: "Tiện ích phong phú – Đa dạng trải nghiệm", desc: "Hồ bơi người lớn và trẻ em, sân chơi, khu thể dục, Sky Garden, BBQ, shophouse 20 căn khối đế." },
+        { num: "05", title: "Cộng đồng văn minh", desc: "Quy chế quản lý cư dân văn minh, ban quản trị chuyên nghiệp theo mô hình Singapore." },
+        { num: "06", title: "Vận hành thông minh", desc: "Hệ thống BMS quản lý tòa nhà, camera AI 24/7, kiểm soát ra vào bằng thẻ từ, ứng dụng quản lý cư dân." },
+        { num: "07", title: "Pháp lý chuẩn chỉnh", desc: "Pháp lý đầy đủ theo quy định NOXH, sổ hồng sở hữu lâu dài, hỗ trợ thủ tục hoàn toàn miễn phí." },
+        { num: "08", title: "Đơn vị phát triển uy tín", desc: "Kim Oanh Land – Top 10 nhà phát triển NOXH hàng đầu Việt Nam, giải thưởng PropertyGuru 2025." },
+        { num: "09", title: "Hệ thống đối tác chuyên nghiệp", desc: "Global Vireon Studio, Kiến Trúc Việt, Decofi, Nagecco – các đơn vị tư vấn thiết kế và thi công uy tín." },
+        { num: "10", title: "Chính sách ưu đãi vượt trội", desc: "Vay NOXH lãi suất 5,4%/năm – 25 năm. Trả góp từ 3,5 triệu/tháng. Hỗ trợ hồ sơ vay ngân hàng miễn phí." },
+      ],
+    },
+    midtownEdge: {
+      heroImage: "slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh",
+      savings: [
+        { label: "Giảm điện năng tiêu thụ", pct: "20%" },
+        { label: "Giảm lượng nước sử dụng", pct: "20%" },
+        { label: "Giảm khí phát thải carbon", pct: "20%" },
+      ],
+      desc: "Phong cách sống chuẩn Singapore hiện diện tại K-Home Midtown trong từng chi tiết. Thiết kế tinh gọn, thông minh đón trọn ánh sáng và gió tự nhiên, kết hợp cùng tiêu chuẩn xanh quốc tế EDGE, mở ra một không gian sống vừa tinh tế, vừa bền vững.",
+    },
+    constructionProgress: {
+      timeline: [
+        { date: "2024", event: "Phê duyệt quy hoạch 1/500 và hoàn tất pháp lý dự án", done: true },
+        { date: "21/08/2025", event: "Động thổ dự án", done: true },
+        { date: "20/01/2026", event: "Khởi công xây dựng chính thức", done: true },
+        { date: "Q2–Q3/2026", event: "Thi công phần thô các tầng", done: false },
+        { date: "2027", event: "Hoàn thiện nội thất & bàn giao", done: false },
+      ],
+      siteImages: [],
+    },
+    legalInfo: {
+      items: [
+        { title: "Giấy chứng nhận đăng ký đầu tư", desc: "Dự án được cấp Giấy CNĐT hợp lệ bởi cơ quan có thẩm quyền tỉnh Đồng Nai. Chủ đầu tư: Kim Oanh Land JSC." },
+        { title: "Phê duyệt quy hoạch 1/500", desc: "Quy hoạch chi tiết tỷ lệ 1/500 được UBND tỉnh Đồng Nai phê duyệt, đảm bảo pháp lý đầy đủ trước khi triển khai xây dựng." },
+        { title: "Chuyển đổi mục đích sử dụng đất", desc: "Đất đã hoàn tất thủ tục chuyển đổi sang đất ở, đảm bảo cấp sổ hồng sở hữu lâu dài cho người mua." },
+        { title: "Giấy phép xây dựng", desc: "Giấy phép xây dựng đã được cấp đầy đủ, dự án đang trong giai đoạn triển khai xây dựng hợp pháp tại trung tâm Trảng Bom." },
+      ],
+    },
+    buyVsRent: {
+      tableRows: [
+        { label: "Chi phí hàng tháng", buy: "Trả góp ~3,5 triệu/tháng", rent: "Thuê ~4-6 triệu/tháng" },
+        { label: "Sau 25 năm", buy: "Sở hữu tài sản 1,5–3 tỷ", rent: "Mất trắng ~1,8 tỷ tiền thuê" },
+        { label: "Ổn định chỗ ở", buy: "Không lo giá thuê tăng, không bị đuổi", rent: "Phụ thuộc chủ nhà" },
+        { label: "Tích lũy tài sản", buy: "Bất động sản tăng giá theo thời gian", rent: "Không tích lũy được gì" },
+        { label: "Lãi suất", buy: "5,4%/năm – thấp nhất thị trường", rent: "Không áp dụng" },
+        { label: "Điều kiện", buy: "Cần đủ điều kiện NOXH", rent: "Chỉ cần có tiền cọc" },
+      ],
+      conclusion: "Với mức trả góp chỉ từ 3,5 triệu/tháng — thấp hơn tiền thuê trọ tại Trảng Bom — người mua K-Home Midtown vừa có chỗ ở ổn định ngay trung tâm huyện, vừa tích lũy tài sản lâu dài. Đây là lý do tại sao nhiều công nhân KCN Trảng Bom chọn mua thay vì tiếp tục thuê.",
+    },
+    awards: {
+      items: [
+        { title: "PropertyGuru Vietnam Property Awards", org: "Best Affordable Housing Development 2025 – Kim Oanh Land", year: "2025" },
+        { title: "Top 10 Nhà phát triển NOXH hàng đầu Việt Nam", org: "Bộ Xây dựng & Hiệp hội Bất động sản Việt Nam", year: "2024" },
+        { title: "Giải thưởng Kiến trúc xanh bền vững", org: "Hội Kiến trúc sư Việt Nam công nhận", year: "2024" },
+      ],
+    },
+    partners: {
+      items: [
+        { name: "Global Vireon Studio", role: "Tư vấn thiết kế kiến trúc tổng thể" },
+        { name: "Kiến Trúc Việt", role: "Tư vấn thiết kế nội thất & cảnh quan" },
+        { name: "Decofi", role: "Tư vấn & thi công nội thất" },
+        { name: "Nagecco", role: "Đơn vị giám sát thi công" },
+        { name: "K-City", role: "Đơn vị quản lý & vận hành tòa nhà" },
+      ],
+    },
+    singaporeFactors: {
+      factors: [
+        { num: "01", title: "Vị trí trung tâm – Giao thông kết nối", desc: "Giữa 4 tuyến đường: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành. Trung tâm hành chính, kinh tế huyện Trảng Bom, dễ dàng kết nối toàn vùng." },
+        { num: "02", title: "Phát triển theo chuẩn công trình xanh EDGE", desc: "Tiêu chuẩn EDGE quốc tế (IFC/World Bank): giảm 20% điện năng, 20% lượng nước, 20% khí phát thải carbon." },
+        { num: "03", title: "Thiết kế thông minh – Tối ưu công năng", desc: "100% căn hộ có cửa sổ đón sáng và thông gió tự nhiên. Bố cục tối ưu từng m² theo tiêu chuẩn Singapore." },
+        { num: "04", title: "Tiện ích phong phú – Đa dạng trải nghiệm", desc: "Hồ bơi người lớn và trẻ em, sân chơi, khu thể dục, Sky Garden, BBQ, 20 căn shophouse khối đế." },
+        { num: "05", title: "Cộng đồng văn minh", desc: "Quy chế quản lý cư dân văn minh, ban quản trị chuyên nghiệp theo mô hình Singapore." },
+        { num: "06", title: "Vận hành thông minh", desc: "Hệ thống BMS quản lý tòa nhà, camera AI 24/7, kiểm soát ra vào bằng thẻ từ, ứng dụng quản lý cư dân." },
+        { num: "07", title: "Pháp lý chuẩn chỉnh", desc: "Pháp lý đầy đủ theo quy định NOXH, sổ hồng sở hữu lâu dài, hỗ trợ thủ tục hoàn toàn miễn phí." },
+        { num: "08", title: "Bàn giao hoàn thiện nội thất chất lượng cao", desc: "Bàn giao full nội thất theo tiêu chuẩn dự án — tủ bếp, sofa, giường, tủ quần áo, sàn gỗ. Chỉ cần mang đồ cá nhân là ở được ngay." },
+      ],
+    },
+    edgeCert: {
+      savings: [
+        { label: "Giảm điện năng tiêu thụ", pct: "≥ 20%" },
+        { label: "Giảm lượng nước sử dụng", pct: "≥ 20%" },
+        { label: "Giảm khí phát thải carbon", pct: "≥ 20%" },
+      ],
+      desc: "Phong cách sống chuẩn Singapore hiện diện tại K-Home Midtown trong từng chi tiết. Thiết kế tinh gọn, thông minh đón trọn ánh sáng và gió tự nhiên, kết hợp cùng tiêu chuẩn xanh quốc tế EDGE, mở ra không gian sống vừa tinh tế vừa bền vững – nơi giá trị gia đình Việt được gìn giữ, vun đầy và tiếp nối theo năm tháng.",
+    },
   },
   "k-home-avenue-nhon-trach": {
     titleTag: "K-Home Avenue Nhơn Trạch | Nhà Ở Xã Hội gần Sân bay Long Thành | Giá từ 750 triệu",
@@ -246,6 +354,111 @@ const PROJECT_SEO: Record<string, {
       { q: "Nhà ở xã hội K-Home Avenue Nhơn Trạch có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Kim Oanh Land hỗ trợ hoàn thiện toàn bộ thủ tục pháp lý miễn phí cho người mua." },
       { q: "K-Home Avenue gần KCN Nhơn Trạch không?", a: "Có. K-Home Avenue nằm trong khu vực huyện Nhơn Trạch, gần các KCN Nhơn Trạch 1–6 và KCN Long Thành. Thuận tiện cho công nhân và kỹ sư làm việc tại các khu công nghiệp này an cư tại chỗ." },
     ],
+    locationImages: [
+      { src: "slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", alt: "Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch – cửa ngõ khu Đông TP.HCM kết nối sân bay Long Thành", caption: "K-Home Avenue – Cửa ngõ khu Đông TP.HCM, 10 phút đến sân bay Long Thành" },
+      { src: "slide-k-home-avenue/tiem-nang-vuot-troi-cua-khu-vuc-nhon-trach-va-du-an-k-home-avenue", alt: "Tiềm năng vượt trội khu vực Nhơn Trạch và dự án K-Home Avenue Đồng Nai", caption: "Tiềm năng phát triển Nhơn Trạch – Long Thành" },
+    ],
+    floorPlanImages: [
+      { src: "slide-k-home-avenue/mat-bang-can-ho-dien-hinh-k-home-avenue-studio-1pn-2pn-a-va-2pn-b-kem-hinh-anh-n", alt: "Mặt bằng căn hộ điển hình K-Home Avenue Studio 1PN 2PN A 2PN B Nhơn Trạch", label: "Layout căn hộ điển hình" },
+      { src: "slide-k-home-avenue/mat-bang-tang-1-du-an-k-home-avenue-voi-day-du-tien-ich-noi-khu", alt: "Mặt bằng tầng 1 K-Home Avenue Nhơn Trạch tiện ích nội khu hồ bơi sân chơi", label: "Tầng 1 (Tiện ích)" },
+      { src: "slide-k-home-avenue/mat-bang-tang-2-du-an-k-home-avenue", alt: "Mặt bằng tầng 2 dự án K-Home Avenue Nhơn Trạch Đồng Nai", label: "Tầng 2" },
+      { src: "slide-k-home-avenue/mat-bang-tang-3-du-an-k-home-avenue", alt: "Mặt bằng tầng 3 dự án K-Home Avenue Nhơn Trạch", label: "Tầng 3" },
+      { src: "slide-k-home-avenue/mat-bang-tang-dien-hinh-4-12-du-an-k-home-avenue", alt: "Mặt bằng tầng điển hình 4-12 K-Home Avenue Nhơn Trạch layout căn hộ studio 1PN 2PN", label: "Tầng 4–12 (Điển hình)" },
+    ],
+    amenityImages: [
+      { src: "slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-", alt: "Hệ tiện ích đa lớp K-Home Avenue Nhơn Trạch hồ bơi sân chơi trẻ em và tiện ích ngoại khu", caption: "Hệ tiện ích đa lớp – nội khu & ngoại khu" },
+      { src: "slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra", alt: "Phối cảnh tổng thể nhà ở xã hội K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai", caption: "Phối cảnh tổng thể K-Home Avenue" },
+      { src: "slide-k-home-avenue/tong-quan-du-an-k-home-avenue-nang-tam-chuan-song-xanh-voi-4-block-cao-12-tang-t", alt: "Tổng quan K-Home Avenue Nhơn Trạch 4 block 12 tầng nâng tầm chuẩn sống xanh", caption: "4 block cao 12 tầng – 1.022 căn hộ NOXH" },
+    ],
+    developerImage: "slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong",
+    sampleUnitImages: [
+      { src: "/k-home avenue/Can-Studio/layout-can-ho-khome-avenue-studio.jpg", alt: "Nhà mẫu căn Studio K-Home Avenue Nhơn Trạch Kim Oanh Land 37,7m²", label: "Căn Studio (37,7m²)" },
+      { src: "/k-home avenue/Can-1PN/layout-can-ho-khome-avenue-1pn.jpg", alt: "Nhà mẫu căn 1 phòng ngủ K-Home Avenue Nhơn Trạch Kim Oanh Land 46,6m²", label: "Căn 1PN+ (46,6m²)" },
+      { src: "/k-home avenue/Can-2PN-nho/layout-can-ho-khome-avenue-2PNA.jpg", alt: "Nhà mẫu căn 2 phòng ngủ nhỏ A K-Home Avenue Nhơn Trạch 65,7m²", label: "Căn 2PN-A (65,7m²)" },
+      { src: "/k-home avenue/Can-2PN-lon/layout-can-ho-khome-avenue-2PNB.jpg", alt: "Nhà mẫu căn 2 phòng ngủ lớn B K-Home Avenue Nhơn Trạch 69,5m²", label: "Căn 2PN-B (69,5m²)" },
+    ],
+    avenueHighlights: {
+      heroImage: "slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra",
+      locationText: "Tọa lạc tại trung tâm đô thị Nhơn Trạch, chỉ khoảng 10 phút kết nối sân bay quốc tế Long Thành. K-Home Avenue sở hữu vị trí chiến lược khi liền kề khu thương mại tự do 1.000ha và thừa hưởng mạng lưới hạ tầng đa phương thức: đại lộ Nguyễn Ái Quốc, Tôn Đức Thắng, Vành đai 3, cao tốc Bến Lức – Long Thành, TP.HCM – Long Thành – Dầu Giây, metro Thủ Thiêm – Long Thành.",
+      points: [
+        { num: "01", title: "Vị trí trung tâm, giao thông kết nối", desc: "Tọa lạc đường Nguyễn Ái Quốc (25C), 10 phút đến sân bay Long Thành. Kết nối cao tốc TP.HCM – Long Thành – Dầu Giây, Vành đai 3, metro Thủ Thiêm – Long Thành." },
+        { num: "02", title: "Phát triển theo chuẩn công trình xanh EDGE", desc: "Tiêu chuẩn EDGE quốc tế (IFC/World Bank): giảm ≥20% điện năng, ≥20% nước, ≥20% khí phát thải carbon so với công trình thông thường." },
+        { num: "03", title: "Thiết kế thông minh, tối ưu không gian", desc: "100% căn hộ có cửa sổ đón sáng tự nhiên. Bố cục tối ưu từng m², không gian thông thoáng theo tiêu chuẩn Singapore." },
+        { num: "04", title: "Tiện ích phong phú, đa dạng", desc: "Hồ bơi, sân chơi trẻ em, minimart, khu thể dục, BBQ, bãi cỏ cộng đồng, trạm sạc xe điện và 82 căn shophouse khối đế." },
+        { num: "05", title: "Cộng đồng văn minh", desc: "Quy chế quản lý cư dân văn minh, ban quản trị chuyên nghiệp theo mô hình quản lý Singapore hiện đại." },
+        { num: "06", title: "Chủ đầu tư uy tín, giàu kinh nghiệm", desc: "Kim Oanh Land – Top 10 nhà phát triển NOXH hàng đầu Việt Nam, giải thưởng PropertyGuru 2025, kinh nghiệm 20+ năm." },
+        { num: "07", title: "Hệ thống đối tác chuyên nghiệp", desc: "Global Vireon Studio, Cubic, Phan Vũ, Handong Engineering, K-City Property Management, Coninco – các đơn vị tư vấn và thi công uy tín." },
+        { num: "08", title: "Quản lý, vận hành khoa học", desc: "Hệ thống BMS quản lý tòa nhà thông minh, camera AI 24/7, ứng dụng quản lý cư dân, kiểm soát ra vào bằng thẻ từ." },
+        { num: "09", title: "Pháp lý chuẩn chỉnh", desc: "Pháp lý đầy đủ theo quy định NOXH, sổ hồng sở hữu lâu dài. Kim Oanh Land hỗ trợ hoàn thiện toàn bộ thủ tục miễn phí." },
+        { num: "10", title: "Chính sách ưu đãi vượt trội", desc: "Vay NOXH lãi suất 5,4%/năm – 25 năm. Trả góp từ 3 triệu/tháng. Hỗ trợ hồ sơ vay ngân hàng hoàn toàn miễn phí." },
+      ],
+    },
+    constructionProgress: {
+      timeline: [
+        { date: "2024 – đầu 2025", event: "Phê duyệt quy hoạch 1/500 và hoàn tất pháp lý dự án", done: true },
+        { date: "21/08/2025", event: "Động thổ dự án – cùng 3 dự án K-Home Đồng Nai", done: true },
+        { date: "Q1/2026", event: "Khởi công xây dựng chính thức", done: true },
+        { date: "2026 – 2027", event: "Thi công phần thô và hoàn thiện các block", done: false },
+        { date: "Cuối 2027", event: "Hoàn thiện nội thất & bàn giao căn hộ cho cư dân", done: false },
+      ],
+      siteImages: [],
+    },
+    legalInfo: {
+      items: [
+        { title: "Giấy chứng nhận đăng ký đầu tư", desc: "Dự án được cấp Giấy CNĐT hợp lệ bởi cơ quan có thẩm quyền tỉnh Đồng Nai. Chủ đầu tư: Kim Oanh Land (thành viên Kim Oanh Group)." },
+        { title: "Phê duyệt quy hoạch chi tiết 1/500", desc: "Quy hoạch chi tiết tỷ lệ 1/500 được UBND tỉnh Đồng Nai phê duyệt, đảm bảo pháp lý đầy đủ trước khi triển khai xây dựng." },
+        { title: "Chuyển đổi mục đích sử dụng đất", desc: "Đất đã hoàn tất thủ tục chuyển đổi sang đất ở, đảm bảo cấp sổ hồng sở hữu lâu dài cho người mua." },
+        { title: "Giấy phép xây dựng", desc: "Giấy phép xây dựng đã được cấp đầy đủ, dự án đang trong giai đoạn triển khai xây dựng hợp pháp tại Nhơn Trạch, Đồng Nai." },
+      ],
+    },
+    singaporeFactors: {
+      factors: [
+        { num: "01", title: "Vị trí cửa ngõ khu Đông TP.HCM", desc: "Đường Nguyễn Ái Quốc (25C), 10 phút đến sân bay Long Thành. Liền kề khu thương mại tự do 1.000ha, kết nối metro và cao tốc." },
+        { num: "02", title: "Phát triển theo chuẩn EDGE xanh bền vững", desc: "Giảm ≥20% điện năng, ≥20% nước, ≥20% khí thải carbon. Là một trong số ít NOXH Việt Nam hướng đến chứng chỉ EDGE." },
+        { num: "03", title: "Thiết kế thông minh, tối ưu không gian", desc: "100% căn hộ có cửa sổ đón sáng và thông gió tự nhiên, bố cục tối ưu theo tiêu chuẩn thiết kế Singapore." },
+        { num: "04", title: "Hệ tiện ích đa lớp – nội khu & ngoại khu", desc: "Hồ bơi, minimart, sân chơi, BBQ, trạm sạc xe điện trong khu. Ngoài khu: TTTM, bệnh viện, trường liên cấp, công viên." },
+        { num: "05", title: "Cộng đồng văn minh, an toàn", desc: "Ban quản trị chuyên nghiệp, camera AI 24/7, kiểm soát ra vào bằng thẻ từ, ứng dụng quản lý cư dân thông minh." },
+        { num: "06", title: "Tầm view sân bay & đô thị Long Thành", desc: "Các căn tầng cao có tầm nhìn thông thoáng hướng sân bay Long Thành và đô thị mới Nhơn Trạch đang phát triển mạnh." },
+        { num: "07", title: "Bàn giao hoàn thiện nội thất", desc: "Bàn giao full nội thất cơ bản: tủ bếp, sofa, giường, tủ quần áo, sàn gỗ. Cư dân chỉ cần mang đồ cá nhân là ở được ngay." },
+        { num: "08", title: "Quản lý vận hành theo chuẩn Singapore", desc: "K-City Property Management vận hành theo mô hình quản lý chuyên nghiệp, minh bạch phí dịch vụ và bảo trì." },
+      ],
+    },
+    edgeCert: {
+      savings: [
+        { label: "Giảm điện năng tiêu thụ", pct: "≥ 20%" },
+        { label: "Giảm lượng nước sử dụng", pct: "≥ 20%" },
+        { label: "Giảm khí phát thải carbon", pct: "≥ 20%" },
+      ],
+      desc: "Phong cách sống chuẩn Singapore hiện diện tại K-Home Avenue trong từng chi tiết: thiết kế tinh gọn, thông minh, đón trọn ánh sáng và gió tự nhiên, kết hợp tiêu chuẩn xanh quốc tế EDGE – mở ra không gian sống vừa tinh tế vừa bền vững.",
+    },
+    buyVsRent: {
+      tableRows: [
+        { label: "Chi phí hàng tháng", buy: "Trả góp khoảng 3–4 triệu/tháng", rent: "Thuê 4–6 triệu/tháng" },
+        { label: "Sau 25 năm", buy: "Sở hữu tài sản 1,2–2 tỷ", rent: "Mất trắng tiền thuê" },
+        { label: "Ổn định chỗ ở", buy: "Không lo giá thuê tăng, không bị đuổi", rent: "Phụ thuộc chủ nhà" },
+        { label: "Tích lũy tài sản", buy: "Bất động sản tăng giá theo thời gian", rent: "Không tích lũy được gì" },
+        { label: "Lãi suất", buy: "5,4%/năm – thấp nhất thị trường", rent: "Không áp dụng" },
+        { label: "Điều kiện", buy: "Cần đủ điều kiện NOXH", rent: "Chỉ cần có tiền cọc" },
+      ],
+      conclusion: "Với mức trả góp thấp hơn tiền thuê trọ tại khu vực Nhơn Trạch – Long Thành, người mua K-Home Avenue vừa có chỗ ở ổn định gần sân bay Long Thành, vừa tích lũy tài sản lâu dài trong khu vực có tốc độ tăng trưởng cao nhất tỉnh Đồng Nai.",
+    },
+    awards: {
+      items: [
+        { title: "PropertyGuru Vietnam Property Awards", org: "Best Affordable Housing Development 2025 – Kim Oanh Land", year: "2025" },
+        { title: "Top 10 Nhà phát triển NOXH hàng đầu Việt Nam", org: "Bộ Xây dựng & Hiệp hội Bất động sản Việt Nam", year: "2024" },
+        { title: "Giải thưởng Kiến trúc xanh bền vững", org: "Hội Kiến trúc sư Việt Nam công nhận", year: "2024" },
+      ],
+    },
+    partners: {
+      items: [
+        { name: "Global Vireon Studio", role: "Tư vấn thiết kế kiến trúc tổng thể" },
+        { name: "Cubic", role: "Tư vấn thiết kế nội thất" },
+        { name: "Phan Vũ", role: "Nhà thầu xây dựng chính" },
+        { name: "Handong Engineering", role: "Tư vấn kết cấu & M&E" },
+        { name: "K-City Property", role: "Quản lý & vận hành tòa nhà" },
+        { name: "Coninco", role: "Đơn vị giám sát thi công" },
+      ],
+    },
   },
 };
 
@@ -463,12 +676,28 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     setLightboxOpen(true);
   };
 
-  // Helper: Cloudinary URL cho slide (full resolution để zoom đọc được chữ)
+  // Helper: Cloudinary URL cho slide CityView
   const slideImg = (num: number, mode: "thumbnail" | "full" = "full") => {
     const transform = mode === "thumbnail"
       ? "w_900,q_auto:good,f_auto"
       : "w_1600,q_auto:best,f_auto";
     return `https://res.cloudinary.com/dthv0nsq/image/upload/${transform}/slide-k-home-cityview/slide-${num}`;
+  };
+
+  // Helper: Cloudinary URL cho slide Midtown (dùng public_id slug)
+  const slideMidtownImg = (publicId: string, mode: "thumbnail" | "full" = "full") => {
+    const transform = mode === "thumbnail"
+      ? "w_900,q_auto:good,f_auto"
+      : "w_1600,q_auto:best,f_auto";
+    return `https://res.cloudinary.com/dthv0nsq/image/upload/${transform}/${publicId}`;
+  };
+
+  // Helper: Cloudinary URL cho slide Avenue — dùng chung hàm, tách tên để rõ ràng
+  const slideAvenueImg = (publicId: string, mode: "thumbnail" | "full" = "full") => {
+    const transform = mode === "thumbnail"
+      ? "w_900,q_auto:good,f_auto"
+      : "w_1600,q_auto:best,f_auto";
+    return `https://res.cloudinary.com/dthv0nsq/image/upload/${transform}/${publicId}`;
   };
 
   // Lightbox State
@@ -484,6 +713,14 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const openSlide = (nums: number[], startIdx = 0, alts?: string[]) => {
     setSlideLightboxImages(nums.map(n => slideImg(n)));
     setSlideLightboxAlts(alts || nums.map(n => `K-Home CityView – slide ${n}`));
+    setSlideLightboxIndex(startIdx);
+    setSlideLightboxOpen(true);
+  };
+
+  // Midtown slide lightbox — dùng public_id slug thay vì số
+  const openMidtownSlide = (ids: string[], startIdx = 0, alts?: string[]) => {
+    setSlideLightboxImages(ids.map(id => slideMidtownImg(id)));
+    setSlideLightboxAlts(alts || ids.map(id => `K-Home Midtown – ${id.split("/").pop()}`));
     setSlideLightboxIndex(startIdx);
     setSlideLightboxOpen(true);
   };
@@ -916,18 +1153,32 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           <p className="text-slate-500 text-sm leading-relaxed">{project.location}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {seo.locationImages.map((img, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+              <button
+                key={i}
+                onClick={() => {
+                  const urls = seo.locationImages!.map(x => imgUrl(x.src, "full"));
+                  const alts = seo.locationImages!.map(x => x.alt);
+                  setSlideLightboxImages(urls);
+                  setSlideLightboxAlts(alts);
+                  setSlideLightboxIndex(i);
+                  setSlideLightboxOpen(true);
+                }}
+                className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm cursor-zoom-in relative group w-full text-left"
+              >
                 <img
                   src={imgUrl(img.src, "full")}
                   alt={img.alt}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   style={{ backgroundColor: "#e2e8f0" }}
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-2 opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
+                </div>
                 {img.caption && (
                   <p className="text-xs text-slate-500 text-center py-2 bg-slate-50 border-t border-slate-100">{img.caption}</p>
                 )}
-              </div>
+              </button>
             ))}
           </div>
         </section>
@@ -938,7 +1189,12 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <section className="space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">Mặt Bằng & Layout Căn Hộ</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích "all-in-one", tầng 3 có vườn treo, tầng 4–22 là mặt bằng điển hình với các loại căn 1PN+, 2PN và 3PN.
+            {slug === "k-home-midtown-trang-bom"
+              ? "K-Home Midtown có 1 block cao 15 tầng, 2 tháp A và B. Tầng 1 tập trung toàn bộ tiện ích nội khu, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn, tầng 4–15 là mặt bằng căn hộ điển hình với Studio, 1PN+, và 2PN."
+              : slug === "k-home-avenue-nhon-trach"
+              ? "K-Home Avenue có 4 block cao 12 tầng. Tầng 1 tập trung tiện ích nội khu đầy đủ, tầng 2–3 bổ sung tiện ích, tầng 4–12 là mặt bằng căn hộ điển hình với Studio, 1PN+, 2PN-A và 2PN-B."
+              : "K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích \"all-in-one\", tầng 3 có vườn treo, tầng 4–22 là mặt bằng điển hình với các loại căn 1PN+, 2PN và 3PN."
+            }
           </p>
 
           {/* Tab buttons */}
@@ -964,12 +1220,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               key={activeFloorTab}
               src={imgUrl(seo.floorPlanImages[activeFloorTab].src, "full")}
               alt={seo.floorPlanImages[activeFloorTab].alt}
-              className="w-full object-cover"
+              className="w-full object-contain"
               loading="eager"
               decoding="async"
-              style={{ backgroundColor: "#e2e8f0", display: "block" }}
+              style={{ backgroundColor: "#e2e8f0", display: "block", cursor: "zoom-in" }}
+              onClick={() => {
+                const urls = seo.floorPlanImages!.map(img => imgUrl(img.src, "full"));
+                const alts = seo.floorPlanImages!.map(img => img.alt);
+                setSlideLightboxImages(urls);
+                setSlideLightboxAlts(alts);
+                setSlideLightboxIndex(activeFloorTab);
+                setSlideLightboxOpen(true);
+              }}
             />
           </div>
+          <p className="text-xs text-slate-400">* Click vào ảnh để xem toàn màn hình và phóng to chi tiết.</p>
         </section>
       )}
 
@@ -978,22 +1243,41 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <section className="space-y-5">
           <h2 className="text-2xl font-display font-bold text-slate-800">Tiện Ích Nội Khu</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Hệ thống tiện ích K-Home CityView được quy hoạch khép kín ngay trong khuôn viên dự án, đáp ứng nhu cầu sinh hoạt thiết thực của cư dân hàng ngày.
+            {slug === "k-home-midtown-trang-bom"
+              ? "Hệ thống tiện ích K-Home Midtown được quy hoạch trên quỹ đất 13,97 ha, đáp ứng nhu cầu sinh hoạt hàng ngày của cư dân ngay trong khuôn viên dự án."
+              : slug === "k-home-avenue-nhon-trach"
+              ? "Hệ tiện ích đa lớp K-Home Avenue – từ hồ bơi, sân chơi, minimart, BBQ bên trong đến TTTM, bệnh viện, trường liên cấp, sân bay Long Thành ngay bên ngoài."
+              : "Hệ thống tiện ích K-Home CityView được quy hoạch khép kín ngay trong khuôn viên dự án, đáp ứng nhu cầu sinh hoạt thiết thực của cư dân hàng ngày."
+            }
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {seo.amenityImages.map((img, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+              <button
+                key={i}
+                onClick={() => {
+                  const urls = seo.amenityImages!.map(x => imgUrl(x.src, "full"));
+                  const alts = seo.amenityImages!.map(x => x.alt);
+                  setSlideLightboxImages(urls);
+                  setSlideLightboxAlts(alts);
+                  setSlideLightboxIndex(i);
+                  setSlideLightboxOpen(true);
+                }}
+                className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm cursor-zoom-in relative group w-full text-left"
+              >
                 <img
                   src={imgUrl(img.src, "thumbnail")}
                   alt={img.alt}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   style={{ backgroundColor: "#e2e8f0" }}
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-2 opacity-0 group-hover:opacity-100">
+                  <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
+                </div>
                 {img.caption && (
                   <p className="text-xs text-slate-600 font-medium text-center py-2 bg-slate-50 border-t border-slate-100">{img.caption}</p>
                 )}
-              </div>
+              </button>
             ))}
           </div>
         </section>
@@ -1002,9 +1286,16 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {/* ── Nhà mẫu ── */}
       {seo?.sampleUnitImages && seo.sampleUnitImages.length > 0 && (
         <section className="space-y-5">
-          <h2 className="text-2xl font-display font-bold text-slate-800">Nhà Mẫu Căn Hộ K-Home CityView</h2>
+          <h2 className="text-2xl font-display font-bold text-slate-800">
+            Nhà Mẫu Căn Hộ {slug === "k-home-midtown-trang-bom" ? "K-Home Midtown" : slug === "k-home-avenue-nhon-trach" ? "K-Home Avenue" : "K-Home CityView"}
+          </h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Căn hộ K-Home CityView bàn giao hoàn thiện full nội thất theo tiêu chuẩn dự án, bao gồm tủ bếp An Cường, sofa, bàn ăn, giường, tủ quần áo, chăn ga gối — chỉ trừ các thiết bị điện tử.
+            {slug === "k-home-midtown-trang-bom"
+              ? "Căn hộ K-Home Midtown bàn giao hoàn thiện full nội thất theo tiêu chuẩn dự án, bao gồm tủ bếp, sofa, bàn ăn, giường, tủ quần áo, chăn ga gối — chỉ trừ các thiết bị điện tử."
+              : slug === "k-home-avenue-nhon-trach"
+              ? "Căn hộ K-Home Avenue bàn giao hoàn thiện nội thất cơ bản theo tiêu chuẩn dự án, bao gồm tủ bếp, sofa, giường, tủ quần áo, sàn gỗ — chỉ trừ các thiết bị điện tử."
+              : "Căn hộ K-Home CityView bàn giao hoàn thiện full nội thất theo tiêu chuẩn dự án, bao gồm tủ bếp An Cường, sofa, bàn ăn, giường, tủ quần áo, chăn ga gối — chỉ trừ các thiết bị điện tử."
+            }
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {seo.sampleUnitImages.map((img, i) => {
@@ -1116,7 +1407,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             </div>
             <div>
               <h2 className="text-2xl font-display font-bold text-slate-800">Tiến Độ Triển Khai Dự Án</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Cập nhật tiến độ xây dựng K-Home CityView Hố Nai</p>
+              <p className="text-xs text-slate-500 mt-0.5">Cập nhật tiến độ xây dựng K-Home Avenue Nhơn Trạch</p>
             </div>
           </div>
 
@@ -1137,19 +1428,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Ảnh công trường — click to zoom */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[39, 40].map((num, i) => (
-              <button key={i} onClick={() => openSlide([39, 40], i, [
-                "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
-                "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
-              ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-                </div>
-              </button>
-            ))}
-          </div>
+          {seo.constructionProgress.siteImages.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[39, 40].map((num, i) => (
+                <button key={i} onClick={() => openSlide([39, 40], i, [
+                  "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
+                  "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
+                ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                  <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
         </section>
       )}
 
@@ -1178,18 +1471,22 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ))}
           </div>
 
-          {/* Slide pháp lý — click to zoom */}
-          {[19, 20].map((num, i) => (
-              <button key={i} onClick={() => openSlide([19, 20], i, [
-                "Giấy chứng nhận đăng ký đầu tư dự án NOXH K-Home CityView Kim Oanh Land",
-                "Phê duyệt quy hoạch 1/500 và pháp lý dự án K-Home CityView Biên Hòa",
-              ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-                </div>
-              </button>
-            ))}
+          {/* Slide pháp lý — chỉ CityView có ảnh slide */}
+          {slug === "k-home-cityview-ho-nai" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[19, 20].map((num, i) => (
+                <button key={i} onClick={() => openSlide([19, 20], i, [
+                  "Giấy chứng nhận đăng ký đầu tư dự án NOXH K-Home CityView Kim Oanh Land",
+                  "Phê duyệt quy hoạch 1/500 và pháp lý dự án K-Home CityView Biên Hòa",
+                ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                  <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
         </section>
       )}
 
@@ -1202,17 +1499,39 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             </div>
             <div>
               <h2 className="text-2xl font-display font-bold text-slate-800">8 Yếu Tố Định Hình Chất Sống Singapore</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Sống là tận hưởng – K-Home CityView áp dụng 8 tiêu chuẩn Singapore vào dự án NOXH đầu tiên tại Đồng Nai</p>
+              <p className="text-xs text-slate-500 mt-0.5">
+                {slug === "k-home-midtown-trang-bom"
+                  ? "Sống là tận hưởng – K-Home Midtown áp dụng 8 tiêu chuẩn Singapore vào dự án NOXH tại trung tâm Trảng Bom"
+                  : slug === "k-home-avenue-nhon-trach"
+                  ? "Sống là tận hưởng – K-Home Avenue áp dụng 8 tiêu chuẩn Singapore vào dự án NOXH cửa ngõ sân bay Long Thành"
+                  : "Sống là tận hưởng – K-Home CityView áp dụng 8 tiêu chuẩn Singapore vào dự án NOXH đầu tiên tại Đồng Nai"}
+              </p>
             </div>
           </div>
 
-          {/* Slide HDB Singapore — click to zoom */}
-          <button onClick={() => openSlide([41], 0, ["8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(41, "thumbnail")} alt="8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-            </div>
-          </button>
+          {/* Slide Singapore — theo từng dự án */}
+          {slug === "k-home-midtown-trang-bom" ? (
+            <button onClick={() => openMidtownSlide(["slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor"], 0, ["Phong cách sống chuẩn Singapore – K-Home Midtown Trảng Bom Kim Oanh Land EDGE"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideMidtownImg("slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          ) : slug === "k-home-avenue-nhon-trach" ? (
+            <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra")]); setSlideLightboxAlts(["Phong cách sống chuẩn Singapore K-Home Avenue Nhơn Trạch Kim Oanh Land EDGE"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideAvenueImg("slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Avenue Nhơn Trạch Kim Oanh Land EDGE" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          ) : (
+            <button onClick={() => openSlide([41], 0, ["8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideImg(41, "thumbnail")} alt="8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {seo.singaporeFactors.factors.map((f, i) => (
@@ -1241,13 +1560,29 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             </div>
           </div>
 
-          {/* Slide EDGE — click to zoom */}
-          <button onClick={() => openSlide([23], 0, ["Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa – tiết kiệm 20% điện nước Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-            <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa tiết kiệm điện nước Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-            </div>
-          </button>
+          {/* Slide EDGE — CityView slide-23, Midtown & Avenue dùng slide riêng */}
+          {slug === "k-home-midtown-trang-bom" ? (
+            <button onClick={() => openMidtownSlide(["slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh"], 0, ["Tiện ích và công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước carbon"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+              <img src={slideMidtownImg("slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh", "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước khí thải carbon" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          ) : slug === "k-home-avenue-nhon-trach" ? (
+            <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-")]); setSlideLightboxAlts(["Hệ tiện ích đa lớp K-Home Avenue EDGE – giảm 20% điện nước khí thải carbon Nhơn Trạch"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+              <img src={slideAvenueImg("slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-", "thumbnail")} alt="Hệ tiện ích đa lớp K-Home Avenue Nhơn Trạch EDGE giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          ) : (
+            <button onClick={() => openSlide([23], 0, ["Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa – tiết kiệm 20% điện nước Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+              <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa tiết kiệm điện nước Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          )}
 
           <div className="grid grid-cols-3 gap-4">
             {seo.edgeCert.savings.map((s, i) => (
@@ -1280,7 +1615,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <thead>
                 <tr className="bg-slate-800 text-white">
                   <th className="text-left px-5 py-3.5 text-xs font-bold uppercase">Tiêu chí</th>
-                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-amber-300">Mua K-Home CityView</th>
+                  <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-amber-300">Mua K-Home Avenue</th>
                   <th className="text-center px-5 py-3.5 text-xs font-bold uppercase text-slate-300">Tiếp tục thuê trọ</th>
                 </tr>
               </thead>
@@ -1339,47 +1674,18 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ))}
           </div>
 
-          {/* Slide giải thưởng — click to zoom, hiện cả 2 ảnh */}
-          <button onClick={() => openSlide([15, 16], 0, [
-              "Giải thưởng PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
-              "Top 10 doanh nghiệp bất động sản triển vọng nhất Việt Nam 2024 Kim Oanh Land",
-            ])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(15, "thumbnail")} alt="Giải thưởng Kim Oanh Land PropertyGuru Vietnam Property Awards Best Affordable Housing Development 2025" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-            </div>
-          </button>
-        </section>
-      )}
-
-      {/* ── Khuyến mãi / Tri ân ── */}
-      {seo?.promotion && (
-        <section className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-3xl p-8 space-y-5 text-white">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
-              <Gift className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-display font-bold text-white">{seo.promotion.title}</h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {seo.promotion.items.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white/15 backdrop-blur-sm rounded-xl p-3.5">
-                <span className="shrink-0 w-6 h-6 bg-white text-amber-600 rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</span>
-                <span className="text-sm text-white leading-relaxed">{item}</span>
+          {/* Slide giải thưởng banner — chỉ CityView */}
+          {slug === "k-home-cityview-ho-nai" && (
+            <button onClick={() => openSlide([15, 16], 0, [
+                "Giải thưởng PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
+                "Top 10 doanh nghiệp bất động sản triển vọng nhất Việt Nam 2024 Kim Oanh Land",
+              ])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideImg(15, "thumbnail")} alt="Giải thưởng Kim Oanh Land PropertyGuru Vietnam Property Awards Best Affordable Housing Development 2025" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
-            ))}
-          </div>
-
-          <p className="text-xs text-white/70 leading-relaxed">{seo.promotion.note}</p>
-
-          <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <a href="tel:0937587438" className="flex-1 bg-white text-amber-600 font-bold py-3 px-5 rounded-xl text-sm text-center hover:bg-amber-50 transition-colors flex items-center justify-center gap-2">
-              <Phone className="w-4 h-4" /> Đăng Ký Nhận Ưu Đãi: 0937 587 438
-            </a>
-          </div>
+            </button>
+          )}
         </section>
       )}
 
@@ -1391,10 +1697,40 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <Handshake className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-slate-800">Đối Tác Đồng Hành</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Các đơn vị tư vấn và thi công uy tín tham gia dự án K-Home CityView</p>
+              <h2 className="text-2xl font-display font-bold text-slate-800">
+                {slug === "k-home-midtown-trang-bom" ? "Vươn Mình Cùng Đô Thị – Đội Ngũ Kiến Tạo"
+                  : slug === "k-home-avenue-nhon-trach" ? "Đối Tác Đồng Hành K-Home Avenue"
+                  : "Đối Tác Đồng Hành"}
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                {slug === "k-home-midtown-trang-bom"
+                  ? "Từ tầm nhìn kiến tạo đến từng chi tiết hoàn thiện"
+                  : slug === "k-home-avenue-nhon-trach"
+                  ? "Các đơn vị tư vấn và thi công uy tín tham gia dự án K-Home Avenue"
+                  : "Các đơn vị tư vấn và thi công uy tín tham gia dự án K-Home CityView"}
+              </p>
             </div>
           </div>
+
+          {/* Ảnh đội ngũ Midtown */}
+          {slug === "k-home-midtown-trang-bom" && (
+            <button onClick={() => openMidtownSlide(["slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi"], 0, ["Đội ngũ kiến tạo K-Home Midtown – Kim Oanh Land cùng Global Vireon Studio, Kiến Trúc Việt, Decofi, Nagecco"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideMidtownImg("slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi", "thumbnail")} alt="Đội ngũ phát triển K-Home Midtown Kim Oanh Land Global Vireon Studio Kiến Trúc Việt Decofi Nagecco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          )}
+
+          {/* Ảnh đội ngũ Avenue */}
+          {slug === "k-home-avenue-nhon-trach" && (
+            <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong")]); setSlideLightboxAlts(["Đối tác đồng hành K-Home Avenue – Global Vireon Studio, Cubic, Phan Vũ, Handong, K-City, Coninco"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideAvenueImg("slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong", "thumbnail")} alt="Đối tác đồng hành K-Home Avenue Global Vireon Studio Cubic Phan Vũ Handong K-City Coninco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          )}
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {seo.partners.items.map((p, i) => (
@@ -1414,15 +1750,186 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {seo?.developerImage && (        <section className="bg-slate-50 rounded-3xl border border-slate-100 p-8 space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">Chủ Đầu Tư – Kim Oanh Land</h2>
           <p className="text-slate-600 text-sm leading-relaxed">
-            Kim Oanh Land đang khẳng định vai trò tiên phong trong phân khúc nhà ở xã hội nhờ lợi thế quỹ đất dồi dào và hệ sinh thái phát triển khép kín. Dự kiến đến năm 2028, Kim Oanh Land sẽ triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM.
+            {slug === "k-home-midtown-trang-bom"
+              ? "Kim Oanh Land kiến tạo K-Home Midtown từ khát vọng mang phong cách sống chuẩn Singapore hòa vào nhịp phát triển mạnh mẽ của khu vực. Dự kiến đến năm 2028, Kim Oanh Land sẽ triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM."
+              : slug === "k-home-avenue-nhon-trach"
+              ? "Kim Oanh Land kiến tạo K-Home Avenue từ khát vọng mang phong cách sống chuẩn Singapore hòa vào nhịp phát triển mạnh mẽ của khu Đông TP.HCM và vùng ven sân bay Long Thành. Đến năm 2028, Kim Oanh Land dự kiến triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM."
+              : "Kim Oanh Land đang khẳng định vai trò tiên phong trong phân khúc nhà ở xã hội nhờ lợi thế quỹ đất dồi dào và hệ sinh thái phát triển khép kín. Dự kiến đến năm 2028, Kim Oanh Land sẽ triển khai khoảng 40.000 căn nhà ở xã hội tại Đồng Nai và TP.HCM."
+            }
           </p>
           <img
             src={imgUrl(seo.developerImage, "full")}
             alt="Top 10 Nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 – Kim Oanh Land"
-            className="w-full max-w-2xl mx-auto rounded-2xl object-cover"
+            className="w-full max-w-2xl mx-auto rounded-2xl object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
             loading="lazy"
             style={{ backgroundColor: "#e2e8f0" }}
-          />
+            onClick={() => {
+              setSlideLightboxImages([imgUrl(seo.developerImage!, "full")]);
+              setSlideLightboxAlts(["Top 10 Nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 – Kim Oanh Land"]);
+              setSlideLightboxIndex(0);
+              setSlideLightboxOpen(true);
+            }}
+          />        </section>
+      )}
+
+      {/* ── Midtown: Vị trí & 10 điểm nhấn ── */}
+      {seo?.midtownHighlights && (
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Tọa Độ Phong Cách – Trung Tâm Của Trung Tâm</h2>
+              <p className="text-xs text-slate-500 mt-0.5">K-Home Midtown tại trung tâm hành chính huyện Trảng Bom, Đồng Nai</p>
+            </div>
+          </div>
+
+          {/* Location map slide */}
+          <button onClick={() => openMidtownSlide(["slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo"], 0, ["Bản đồ vị trí dự án K-Home Midtown tại trung tâm Trảng Bom – kết nối các tuyến đường và KCN Đồng Nai"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideMidtownImg("slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo", "thumbnail")} alt="Bản đồ vị trí dự án K-Home Midtown Trảng Bom Đồng Nai kết nối KCN giao thông" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <p className="text-slate-600 text-sm leading-relaxed">{seo.midtownHighlights.locationText}</p>
+
+          {/* Hero phối cảnh */}
+          <button onClick={() => openMidtownSlide([seo.midtownHighlights!.heroImage], 0, ["Phối cảnh tổng thể dự án K-Home Midtown Trảng Bom – phong cách sống chuẩn Singapore"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideMidtownImg(seo.midtownHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể K-Home Midtown Trảng Bom Đồng Nai phong cách sống chuẩn Singapore" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          {/* 10 điểm nhấn */}
+          <div className="flex items-center gap-3 pt-2">
+            <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
+              <Star className="w-5 h-5 text-white fill-white" />
+            </div>
+            <div>
+              <h3 className="text-xl font-display font-bold text-slate-800">10 Điểm Nhấn Của K-Home Midtown</h3>
+            </div>
+          </div>
+
+          <button onClick={() => openMidtownSlide(["slide-k-home-midtown/10-diem-nhan-noi-bat-cua-du-an-nha-o-xa-hoi-k-home-midtown-trang-bom"], 0, ["10 điểm nhấn nổi bật của dự án nhà ở xã hội K-Home Midtown Trảng Bom Đồng Nai"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideMidtownImg("slide-k-home-midtown/10-diem-nhan-noi-bat-cua-du-an-nha-o-xa-hoi-k-home-midtown-trang-bom", "thumbnail")} alt="10 điểm nhấn nổi bật dự án nhà ở xã hội K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {seo.midtownHighlights.points.map((p, i) => (
+              <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-teal-300 hover:bg-teal-50/20 transition-all">
+                <span className="shrink-0 w-10 h-10 bg-teal-600 text-white text-sm font-bold rounded-xl flex items-center justify-center">{p.num}</span>
+                <div>
+                  <span className="block font-bold text-slate-800 text-sm mb-1">{p.title}</span>
+                  <span className="block text-xs text-slate-500 leading-relaxed">{p.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Midtown: EDGE & Tiện ích ── */}
+      {seo?.midtownEdge && (
+        <section className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
+              <Award className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Nâng Niu Nhịp Sống – Từ Chuẩn Mực Quốc Tế EDGE</h2>
+              <p className="text-xs text-green-700 font-semibold mt-0.5">Excellence in Design for Greater Efficiencies – IFC / World Bank Group</p>
+            </div>
+          </div>
+
+          <button onClick={() => openMidtownSlide([seo.midtownEdge!.heroImage], 0, ["Tiện ích và công trình xanh EDGE tại K-Home Midtown Trảng Bom – giảm 20% điện nước khí thải"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
+            <img src={slideMidtownImg(seo.midtownEdge.heroImage, "thumbnail")} alt="Tiện ích công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <div className="grid grid-cols-3 gap-4">
+            {seo.midtownEdge.savings.map((s, i) => (
+              <div key={i} className="bg-white rounded-2xl p-4 text-center border border-green-100 shadow-sm">
+                <span className="block text-3xl font-bold text-green-600">-{s.pct}</span>
+                <span className="block text-xs text-slate-500 mt-1 font-medium">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-slate-600 text-sm leading-relaxed">{seo.midtownEdge.desc}</p>
+        </section>
+      )}
+
+      {/* ── Midtown: Đội ngũ & Đối tác — dùng section partners chung bên dưới ── */}
+
+      {/* ── Avenue: Vị trí & 10 giá trị cốt lõi ── */}
+      {seo?.avenueHighlights && (
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Tọa Độ Phong Cách – Cửa Ngõ Khu Đông TP.HCM</h2>
+              <p className="text-xs text-slate-500 mt-0.5">K-Home Avenue – 10 phút đến sân bay Long Thành, kết nối metro & cao tốc</p>
+            </div>
+          </div>
+
+          {/* Bản đồ vị trí */}
+          <button onClick={() => {
+            setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l"), slideAvenueImg("slide-k-home-avenue/tiem-nang-vuot-troi-cua-khu-vuc-nhon-trach-va-du-an-k-home-avenue")]);
+            setSlideLightboxAlts(["Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch – cửa ngõ khu Đông TP.HCM sân bay Long Thành", "Tiềm năng vượt trội khu vực Nhơn Trạch và dự án K-Home Avenue Đồng Nai"]);
+            setSlideLightboxIndex(0); setSlideLightboxOpen(true);
+          }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideAvenueImg("slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", "thumbnail")} alt="Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch cửa ngõ khu Đông TP.HCM sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <p className="text-slate-600 text-sm leading-relaxed">{seo.avenueHighlights.locationText}</p>
+
+          {/* Phối cảnh tổng thể */}
+          <button onClick={() => { setSlideLightboxImages([slideAvenueImg(seo.avenueHighlights!.heroImage)]); setSlideLightboxAlts(["Phối cảnh tổng thể K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideAvenueImg(seo.avenueHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể nhà ở xã hội K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          {/* 10 giá trị cốt lõi */}
+          <div className="flex items-center gap-3 pt-2">
+            <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
+              <Star className="w-5 h-5 text-white fill-white" />
+            </div>
+            <h3 className="text-xl font-display font-bold text-slate-800">10 Giá Trị Cốt Lõi K-Home Avenue</h3>
+          </div>
+
+          <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/10-gia-tri-cot-loi-cua-du-an-nha-o-xa-hoi-k-home-avenue")]); setSlideLightboxAlts(["10 giá trị cốt lõi dự án nhà ở xã hội K-Home Avenue Nhơn Trạch Kim Oanh Land"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+            <img src={slideAvenueImg("slide-k-home-avenue/10-gia-tri-cot-loi-cua-du-an-nha-o-xa-hoi-k-home-avenue", "thumbnail")} alt="10 giá trị cốt lõi dự án nhà ở xã hội K-Home Avenue Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+            </div>
+          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {seo.avenueHighlights.points.map((p, i) => (
+              <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-emerald-300 hover:bg-emerald-50/20 transition-all">
+                <span className="shrink-0 w-10 h-10 bg-emerald-600 text-white text-sm font-bold rounded-xl flex items-center justify-center">{p.num}</span>
+                <div>
+                  <span className="block font-bold text-slate-800 text-sm mb-1">{p.title}</span>
+                  <span className="block text-xs text-slate-500 leading-relaxed">{p.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 
