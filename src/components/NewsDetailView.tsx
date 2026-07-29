@@ -216,6 +216,22 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
+            // Project link: ---PROJECT-LINK---slug|label
+            if (line.startsWith("---PROJECT-LINK---")) {
+              const [slug, label] = line.replace("---PROJECT-LINK---", "").split("|");
+              elements.push(
+                <div
+                  key={i}
+                  onClick={() => onNavigate(`/projects/${slug.trim()}`)}
+                  className="flex items-center justify-between px-5 py-3.5 bg-amber-50 border border-amber-200 rounded-xl cursor-pointer hover:bg-amber-100 hover:border-amber-400 transition-all group mb-2"
+                >
+                  <span className="text-sm font-bold text-amber-800 group-hover:text-amber-900">{label?.trim() || slug.trim()}</span>
+                  <ChevronRight className="w-4 h-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
+                </div>
+              );
+              i++; continue;
+            }
+
             // Image: ![alt](url)
             const imgMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
             if (imgMatch) {
