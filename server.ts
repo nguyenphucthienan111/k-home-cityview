@@ -9,6 +9,7 @@ import rateLimit from "express-rate-limit";
 import { createServer as createViteServer } from "vite";
 import ContactModel from "./src/models/Contact.js";
 import { requireAuth } from "./src/middleware/auth.js";
+import { sendContactNotification, verifyMailer } from "./src/lib/mailer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -905,6 +906,17 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
       projectName: projectName ? String(projectName).trim() : "Tư vấn chung",
       message: message ? String(message).trim().slice(0, 2000) : "",
     });
+
+    // Gửi email thông báo — chạy nền, không block response
+    sendContactNotification({
+      name: contact.name,
+      email: contact.email,
+      phone: contact.phone,
+      projectName: contact.projectName,
+      message: contact.message,
+      createdAt: contact.createdAt,
+    }).catch((err) => console.error("⚠️ Gửi email thất bại (không ảnh hưởng lưu DB):", err.message));
+
     res.status(201).json({ success: true, contact });
   } catch (err: any) {
     if (err.name === "ValidationError") {
@@ -1009,6 +1021,7 @@ app.delete("/api/contacts/:id", requireAuth, async (req, res) => {
 // ─── Start Server ─────────────────────────────────────────────────────────────
 async function startServer() {
   await connectDB();
+  await verifyMailer(); // kiểm tra SMTP ngay khi khởi động
 
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
