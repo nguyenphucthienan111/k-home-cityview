@@ -882,6 +882,84 @@ Hoặc liên hệ **0937.587.438** để được tư vấn miễn phí về đi
 
 ---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026`,
   },
+  {
+    id: "4",
+    slug: "gia-ban-k-home-cityview-2026-can-bao-nhieu-tien",
+    title: "Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền Để Sở Hữu Căn Hộ?",
+    date: "2026-07-30",
+    excerpt: "Cập nhật giá bán K-Home CityView 2026 mới nhất. Giá bình quân bao nhiêu/m²? Cần chuẩn bị bao nhiêu vốn ban đầu để sở hữu căn hộ nhà ở xã hội tại Hố Nai – Biên Hòa?",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1",
+    category: "Đánh giá dự án",
+    content: `Một trong những câu hỏi được tìm kiếm nhiều nhất về dự án K-Home CityView chính là: "Giá bán bao nhiêu?" và "Cần bao nhiêu tiền để sở hữu?". Dưới đây là thông tin tổng hợp dựa trên các số liệu công bố đến giữa năm 2026.
+
+![Phối cảnh dự án K-Home CityView Biên Hòa 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1)
+
+## 1. Giá bán chính thức theo công bố
+
+Theo Quyết định số 27/2026/QĐ-MĐC ngày 04/6/2026 của chủ đầu tư, giá bán bình quân nhà ở xã hội tại dự án được phê duyệt là:
+
+**25.605.000 đồng/m² diện tích sử dụng (thông thủy)**, đã bao gồm thuế VAT.
+
+Đây là mức giá bình quân. Giá thực tế của từng căn sẽ được điều chỉnh theo hệ số tầng, hướng, vị trí căn theo quy định.
+
+![Giá bán bình quân K-Home CityView 25.6 triệu đồng/m2](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/2)
+
+## 2. Ước tính giá theo loại căn hộ (tham khảo)
+
+Diện tích căn hộ tại K-Home CityView từ khoảng 47 m², 62 m², 70 m² và 84 m² (thông thủy).
+
+Mức giá tham khảo thường được nêu trên thị trường:
+
+- Căn hộ 1 phòng ngủ (~47 m²): từ khoảng **1 – 1,1 tỷ đồng**
+- Căn hộ 1PN+ (~62 m²): từ khoảng **1,3 – 1,5 tỷ đồng**
+- Căn hộ 2 phòng ngủ (~70 m²): từ khoảng **1,5 – 1,7 tỷ đồng**
+- Căn hộ 3 phòng ngủ (~84 m²): từ khoảng **1,8 – 2,1 tỷ đồng**
+
+![Bảng giá tham khảo căn hộ K-Home CityView 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/3)
+
+## 3. Cần bao nhiêu tiền để sở hữu? (Vốn ban đầu)
+
+Với chính sách hỗ trợ vay từ Ngân hàng Chính sách xã hội:
+
+- Lãi suất ưu đãi hiện nay khoảng **5,4%/năm**
+- Thời hạn vay lên đến **25 năm**
+- Hạn mức vay thường lên đến **75–80%** giá trị căn hộ
+
+Vốn tự có ban đầu cần chuẩn bị khoảng **20–25% giá trị căn hộ**, tương đương từ khoảng **200 triệu đồng** trở lên tùy loại căn.
+
+**Ví dụ minh họa:**
+- Căn khoảng 1,1 tỷ → vốn ban đầu khoảng 220–275 triệu
+- Căn khoảng 1,5 tỷ → vốn ban đầu khoảng 300–375 triệu
+
+![Vốn ban đầu sở hữu căn hộ K-Home CityView từ 200 triệu](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/4)
+
+## 4. Các khoản chi phí cần lưu ý thêm
+
+Ngoài giá căn hộ, người mua cần dự trù:
+
+- Phí bảo trì (thường 2%)
+- Chi phí làm sổ hồng
+- Phí quản lý vận hành sau bàn giao
+- Chi phí nội thất phát sinh (nếu muốn nâng cấp thêm)
+
+## 5. Lời khuyên trước khi quyết định
+
+Giá nhà ở xã hội được cơ quan nhà nước phê duyệt và kiểm soát, nên tính minh bạch cao hơn so với nhà ở thương mại. Tuy nhiên, giá cuối cùng vẫn phụ thuộc vào diện tích thông thủy thực tế, tầng và hướng căn, thời điểm mở bán chính thức.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-4|Căn hộ mẫu K-Home CityView sẵn sàng tư vấn giá
+
+## Kết luận
+
+Với mức giá bình quân khoảng 25,6 triệu đồng/m² và chính sách vay ưu đãi, K-Home CityView là một trong những lựa chọn nhà ở xã hội có khả năng tiếp cận tốt tại khu vực Hố Nai – Biên Hòa năm 2026.
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem giá & sản phẩm chi tiết
+
+Liên hệ **0937.587.438** để nhận bảng giá chi tiết và được tư vấn phương án tài chính phù hợp.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
+  },
 ];
 
 // ─── Public API Routes ────────────────────────────────────────────────────────
