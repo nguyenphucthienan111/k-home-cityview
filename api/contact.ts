@@ -83,9 +83,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     };
     const result = await client.db().collection("contacts").insertOne(contact);
 
-    // Gửi email thông báo — không block response nếu lỗi
-    sendMail({ ...contact, createdAt: contact.createdAt })
-      .catch((err) => console.error("⚠️ Gửi email thất bại:", err.message));
+    // Gửi email thông báo — await để đảm bảo gửi xong trước khi Vercel function kết thúc
+    try {
+      await sendMail({ ...contact, createdAt: contact.createdAt });
+    } catch (mailErr: any) {
+      console.error("⚠️ Gửi email thất bại:", mailErr.message);
+    }
 
     return res.status(201).json({ success: true, id: result.insertedId.toString() });
   } catch (err: any) {
