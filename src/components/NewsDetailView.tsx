@@ -1,5 +1,6 @@
-﻿import React, { useEffect, useState } from "react";
-import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight } from "lucide-react";
+﻿import React, { useEffect, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
+import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight, X, ZoomIn, ChevronLeft } from "lucide-react";
 import { News } from "../types";
 
 interface NewsDetailViewProps {
@@ -7,11 +8,134 @@ interface NewsDetailViewProps {
   onNavigate: (hash: string) => void;
 }
 
+// ─── Lightbox Component ────────────────────────────────────────────────────────
+interface LightboxState {
+  images: { src: string; alt: string }[];
+  index: number;
+}
+
+function Lightbox({ state, onClose, onPrev, onNext }: {
+  state: LightboxState;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  const { images, index } = state;
+  const current = images[index];
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [onClose, onPrev, onNext]);
+
+  return createPortal(
+    <div
+      className="fixed inset-0 flex items-center justify-center"
+      style={{ backgroundColor: "rgba(0,0,0,0.92)", zIndex: 99999 }}
+      onClick={onClose}
+    >
+      {/* Close */}
+      <button
+        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
+        onClick={onClose}
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      {/* Counter */}
+      {images.length > 1 && (
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 rounded-full">
+          {index + 1} / {images.length}
+        </div>
+      )}
+
+      {/* Prev */}
+      {images.length > 1 && (
+        <button
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
+          onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+      )}
+
+      {/* Next */}
+      {images.length > 1 && (
+        <button
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
+          onClick={(e) => { e.stopPropagation(); onNext(); }}
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      )}
+
+      {/* Image */}
+      <div
+        className="relative max-w-[92vw] max-h-[90vh] flex flex-col items-center gap-3"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={current.src}
+          alt={current.alt}
+          className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
+          style={{ display: "block" }}
+        />
+        {current.alt && (
+          <p className="text-white/70 text-xs text-center max-w-xl italic px-4">{current.alt}</p>
+        )}
+      </div>
+
+      {/* Dot strip */}
+      {images.length > 1 && (
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, di) => (
+            <button
+              key={di}
+              onClick={(e) => { e.stopPropagation(); }}
+              className="cursor-pointer transition-all duration-300 rounded-full"
+              style={{
+                width: di === index ? "24px" : "8px",
+                height: "8px",
+                backgroundColor: di === index ? "white" : "rgba(255,255,255,0.4)",
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>,
+    document.body
+  );
+}
+
 export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps) {
   const [article, setArticle] = useState<News | null>(null);
   const [allNews, setAllNews] = useState<News[]>([]);
   const [loading, setLoading] = useState(true);
   const [galleryIndexes, setGalleryIndexes] = useState<Record<string, number>>({});
+  const [lightbox, setLightbox] = useState<LightboxState | null>(null);
+
+  const openLightbox = useCallback((images: { src: string; alt: string }[], index: number) => {
+    setLightbox({ images, index });
+  }, []);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+
+  const prevLightbox = useCallback(() => {
+    setLightbox(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null);
+  }, []);
+
+  const nextLightbox = useCallback(() => {
+    setLightbox(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null);
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -64,6 +188,16 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-8">
       
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          state={lightbox}
+          onClose={closeLightbox}
+          onPrev={prevLightbox}
+          onNext={nextLightbox}
+        />
+      )}
+      
       {/* Back Button */}
       <button
         onClick={() => onNavigate("/tin-tuc")}
@@ -109,12 +243,20 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       </div>
 
       {/* Featured Image */}
-      <div className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+      <div
+        className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden shadow-sm border border-slate-100 cursor-zoom-in group"
+        onClick={() => openLightbox([{ src: article.image, alt: article.title }], 0)}
+      >
         <img
           src={article.image}
           alt={`${article.title} – K-Home Đồng Nai`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-full p-3">
+            <ZoomIn className="w-6 h-6 text-white" />
+          </div>
+        </div>
       </div>
 
       {/* Content Area */}
@@ -138,6 +280,8 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               const urls = parts;
               const gKey = `gallery-${i}`;
               const activeIdx = galleryIndexes[gKey] ?? 0;
+              // Prep lightbox images for this gallery
+              const galleryLightboxImages = urls.map(url => ({ src: url, alt: caption || "" }));
               elements.push(
                 <figure key={gKey} className="my-8">
                   <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "auto" }}>
@@ -147,7 +291,8 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                         key={url}
                         src={url}
                         alt={caption || `Ảnh ${di + 1}`}
-                        className="w-full block"
+                        className="w-full block cursor-zoom-in"
+                        onClick={() => openLightbox(galleryLightboxImages, di)}
                         style={{
                           position: di === activeIdx ? "relative" : "absolute",
                           inset: 0,
@@ -163,6 +308,11 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                     {/* Gradient overlays for buttons */}
                     <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black/20 to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black/20 to-transparent z-10 pointer-events-none" />
+
+                    {/* Zoom hint */}
+                    <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-sm text-white rounded-full p-1.5 pointer-events-none">
+                      <ZoomIn className="w-3.5 h-3.5" />
+                    </div>
 
                     {/* Prev / Next */}
                     {urls.length > 1 && (
@@ -235,15 +385,27 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             // Image: ![alt](url)
             const imgMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
             if (imgMatch) {
+              const imgAlt = imgMatch[1];
+              const imgSrc = imgMatch[2];
               elements.push(
                 <figure key={i} className="my-6">
-                  <img
-                    src={imgMatch[2]}
-                    alt={imgMatch[1]}
-                    className="w-full rounded-2xl shadow-md"
-                    style={{ display: "block", height: "auto" }}
-                  />
-                  <figcaption className="text-center text-xs text-slate-400 mt-2 italic">{imgMatch[1]}</figcaption>
+                  <div
+                    className="relative cursor-zoom-in group rounded-2xl overflow-hidden shadow-md"
+                    onClick={() => openLightbox([{ src: imgSrc, alt: imgAlt }], 0)}
+                  >
+                    <img
+                      src={imgSrc}
+                      alt={imgAlt}
+                      className="w-full block group-hover:scale-[1.02] transition-transform duration-500"
+                      style={{ height: "auto" }}
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-full p-2.5">
+                        <ZoomIn className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <figcaption className="text-center text-xs text-slate-400 mt-2 italic">{imgAlt}</figcaption>
                 </figure>
               );
               i++; continue;
