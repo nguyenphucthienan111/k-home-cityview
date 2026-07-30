@@ -53,7 +53,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
   const [openFilter, setOpenFilter]             = useState<"project" | "sort" | null>(null);
 
   useEffect(() => {
-    document.title = "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn";
+    document.title = "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute("content", "Xem chi tiết từng loại căn hộ của 3 dự án K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Bảng giá, diện tích và hình ảnh thực tế từng loại căn.");

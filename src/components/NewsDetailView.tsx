@@ -23,7 +23,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         const found = list.find((n) => n.slug === slug);
         setArticle(found || null);
         if (found) {
-          document.title = `${found.title} | K-Home`;
+          document.title = `${found.title} | Tin Tức NOXH K-Home Đồng Nai`;
           const metaDesc = document.querySelector('meta[name="description"]');
           if (metaDesc) {
             metaDesc.setAttribute("content", found.excerpt);

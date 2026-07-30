@@ -23,7 +23,7 @@ export default function ContactView() {
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    document.title = "Liên hệ tư vấn | Nhà ở xã hội K-Home Đồng Nai | Hotline 0937.587.438";
+    document.title = "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute("content", "Liên hệ tư vấn miễn phí các dự án nhà ở xã hội K-Home tại Đồng Nai: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch. Hỗ trợ kiểm tra điều kiện, chính sách vay và đặt lịch tham quan.");

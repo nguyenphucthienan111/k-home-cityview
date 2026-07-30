@@ -1,9 +1,8 @@
-﻿# https://www.robotstxt.org/robotstxt.html
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Không cho crawl trang admin
 Disallow: /admin
 
-# Sitemaps
+# Sitemap
 Sitemap: https://k-homedongnai.com.vn/sitemap.xml

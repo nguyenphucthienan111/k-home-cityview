@@ -44,9 +44,10 @@ const ProjectCard = memo(function ProjectCard({
   const progress = progressMap[project.slug] ?? { label: "Đã đăng ký", rate: "50%" };
 
   return (
-    <div
-      className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative"
-      onClick={() => onClick(`/${project.slug}`)}
+    <a
+      href={`/${project.slug}`}
+      onClick={(e) => { e.preventDefault(); onClick(`/${project.slug}`); }}
+      className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative no-underline"
     >
       <div className="relative h-72 overflow-hidden bg-slate-200">
         <img
@@ -106,7 +107,7 @@ const ProjectCard = memo(function ProjectCard({
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 });
 
@@ -262,16 +263,6 @@ function calcResults(
     loanPercent,
   };
 }
-
-// Page titles constant — ra ngoài để không rebuild mỗi navigation
-const PAGE_TITLES: Record<string, string> = {
-  "/":            "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-  "/home":        "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group",
-  "/san-pham":    "Danh Sách Căn Hộ K-Home Đồng Nai | Bảng Giá Chi Tiết Từng Loại Căn",
-  "/tin-tuc":     "Tin Tức Bất Động Sản | K-Home Đồng Nai",
-  "/gioi-thieu":  "Giới Thiệu | K-Home Đồng Nai",
-  "/lien-he":     "Liên Hệ Tư Vấn | K-Home Đồng Nai",
-};
 
 interface HomeViewProps {
   onNavigate: (hash: string) => void;
@@ -505,10 +496,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, []);
 
   useEffect(() => {
-    document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+    document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Tổng hợp thông tin 3 dự án nhà ở xã hội K-Home tại Đồng Nai từ chủ đầu tư Kim Oanh Group: K-Home CityView (Hố Nai, Biên Hòa), K-Home Midtown (Trảng Bom), K-Home Avenue (Nhơn Trạch). Tư vấn bảng giá, chính sách chiết khấu và mặt bằng chi tiết.");
+      metaDesc.setAttribute("content", "K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.352 căn hộ từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch.");
     }
 
     // Schema FAQPage

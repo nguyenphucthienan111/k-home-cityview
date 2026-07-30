@@ -16,7 +16,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
 
   useEffect(() => {
-    document.title = "Tin Tức & Tiến Độ Mới Nhất | Dự Án K-Home Cityview";
+    document.title = "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute("content", "Cập nhật các thông tin tin tức mới nhất, tiến độ xây dựng hạ tầng, lễ ký kết, bàn giao căn hộ và sự kiện mở bán dự án K-Home Cityview Biên Hòa.");

@@ -64,7 +64,7 @@ export default function AboutView() {
   }, []);
 
   useEffect(() => {
-    document.title = "Giới thiệu Kim Oanh Group | Thương hiệu nhà ở xã hội K-Home";
+    document.title = "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute("content", "Tìm hiểu về Kim Oanh Group và thương hiệu K-Home – đơn vị phát triển các dự án nhà ở xã hội tại Đồng Nai: CityView (Biên Hòa), Midtown (Trảng Bom), Avenue (Nhơn Trạch). Pháp lý rõ ràng, lãi suất ưu đãi 5,4%/năm.");

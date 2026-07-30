@@ -618,7 +618,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
     // Cleanup: reset title khi unmount
     return () => {
-      document.title = "K-Home Đồng Nai | CityView – Midtown – Avenue | Nhà Ở Xã Hội Kim Oanh Group";
+      document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
       document.getElementById("schema-project")?.remove();
       document.getElementById("schema-breadcrumb-project")?.remove();
       document.getElementById("schema-faq-project")?.remove();
