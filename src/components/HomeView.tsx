@@ -468,20 +468,25 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Definition of Sections for Floating Sidebar Dot Navigation
   const homeSections = [
-    { id: "hero",              label: "Tổng quan dự án" },
-    { id: "featured-projects", label: "Danh mục dự án" },
-    { id: "vi-tri",            label: "Vị trí kết nối" },
-    { id: "mat-bang",          label: "Mặt bằng căn hộ" },
-    { id: "nha-mau",           label: "Nhà mẫu thực tế" },
-    { id: "amenities",         label: "Tiện ích nội khu" },
-    { id: "calculator",        label: "Kế hoạch tài chính" },
-    { id: "dieu-kien-noxh",    label: "Điều kiện NOXH" },
-    { id: "phap-ly",           label: "Pháp lý dự án" },
-    { id: "chu-dau-tu",        label: "Chủ đầu tư" },
-    { id: "philosophy",        label: "Giá trị cốt lõi" },
-    { id: "testimonials",      label: "Chia sẻ cư dân" },
-    { id: "seo-content",       label: "Thông tin chi tiết" },
-    { id: "consultation",      label: "Đăng ký tư vấn" }
+    // Nhóm 1: Dự án
+    { id: "hero",              label: "Tổng quan dự án",    group: "Dự Án" },
+    { id: "featured-projects", label: "Danh mục dự án",     group: "Dự Án" },
+    { id: "vi-tri",            label: "Vị trí kết nối",     group: "Dự Án" },
+    { id: "mat-bang",          label: "Mặt bằng căn hộ",    group: "Dự Án" },
+    { id: "nha-mau",           label: "Nhà mẫu thực tế",    group: "Dự Án" },
+    { id: "amenities",         label: "Tiện ích nội khu",   group: "Dự Án" },
+    { id: "calculator",        label: "Kế hoạch tài chính", group: "Dự Án" },
+    // Nhóm 2: Thông tin
+    { id: "dieu-kien-noxh",    label: "Điều kiện NOXH",     group: "Thông Tin" },
+    { id: "phap-ly",           label: "Pháp lý dự án",      group: "Thông Tin" },
+    { id: "chu-dau-tu",        label: "Chủ đầu tư",         group: "Thông Tin" },
+    { id: "giai-thuong",       label: "Giải thưởng",        group: "Thông Tin" },
+    { id: "lai-suat-noxh",     label: "Lãi suất NOXH",      group: "Thông Tin" },
+    { id: "tin-tuc",           label: "Tin tức & Bài viết", group: "Thông Tin" },
+    { id: "philosophy",        label: "Giá trị cốt lõi",    group: "Thông Tin" },
+    { id: "testimonials",      label: "Chia sẻ cư dân",     group: "Thông Tin" },
+    { id: "seo-content",       label: "Thông tin chi tiết", group: "Thông Tin" },
+    { id: "consultation",      label: "Đăng ký tư vấn",     group: "Thông Tin" },
   ];
 
   // Auto-advance hero slideshow every 10 seconds
@@ -816,39 +821,49 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     <div className="space-y-24 pb-24 bg-gradient-to-b from-amber-50/20 via-white to-slate-50 overflow-hidden relative">
       
       {/* =========================================================
-          FLOATING DOT NAVIGATION (LEFT SIDEBAR)
+          FLOATING DOT NAVIGATION (LEFT SIDEBAR) — 2 nhóm
           ========================================================= */}
-      <div className="fixed left-3 lg:left-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-4.5 bg-white/90 backdrop-blur-md px-3 py-6 rounded-full shadow-2xl border border-amber-100/60 transition-all">
-        {/* Connection Vertical Line */}
-        <div className="absolute top-6 bottom-6 w-[2px] bg-amber-100 rounded-full" />
-        
-        {homeSections.map((section) => {
+      <div className="fixed left-3 lg:left-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-1 bg-white/90 backdrop-blur-md px-2.5 py-4 rounded-2xl shadow-2xl border border-amber-100/60 transition-all">
+        {/* Nhóm 1: Dự Án */}
+        <span className="text-[8px] font-black text-amber-500 uppercase tracking-widest mb-1">Dự Án</span>
+        {homeSections.filter(s => s.group === "Dự Án").map((section) => {
           const isActive = activeSection === section.id;
           return (
             <button
               key={section.id}
-              onClick={() => {
-                const element = document.getElementById(section.id);
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="relative group flex items-center justify-center w-5.5 h-5.5 focus:outline-none cursor-pointer"
+              onClick={() => { const el = document.getElementById(section.id); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
+              className="relative group flex items-center justify-center w-5 h-5 focus:outline-none cursor-pointer"
             >
-              {/* Highlight Dot Indicator */}
-              <div 
-                className={`w-3 h-3 rounded-full border-2 transition-all duration-300 z-10 ${
-                  isActive 
-                    ? "bg-amber-500 border-amber-500 scale-135 shadow-lg shadow-amber-500/50" 
-                    : "bg-white border-amber-300 group-hover:border-amber-500 group-hover:scale-110"
-                }`}
-              />
-              
-              {/* Hover Tooltip - Reveals section name */}
-              <div className="absolute left-8 px-3.5 py-1.5 rounded-xl bg-slate-900/95 text-white text-[11px] font-bold whitespace-nowrap opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none shadow-xl flex items-center gap-1.5 border border-slate-800">
-                <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping" />
-                {section.label}
-                <div className="absolute right-full top-1/2 -translate-y-1/2 border-[5px] border-transparent border-r-slate-900" />
+              <div className={`w-2.5 h-2.5 rounded-full border-2 transition-all duration-300 z-10 ${
+                isActive ? "bg-amber-500 border-amber-500 scale-125 shadow-md shadow-amber-500/40" : "bg-white border-amber-300 group-hover:border-amber-500 group-hover:scale-110"
+              }`} />
+              <div className="absolute left-7 px-3 py-1.5 rounded-xl bg-slate-900/95 text-white text-[10px] font-bold whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none shadow-xl border border-slate-800">
+                <span className="w-1.5 h-1.5 bg-amber-400 rounded-full inline-block mr-1" />{section.label}
+                <div className="absolute right-full top-1/2 -translate-y-1/2 border-[4px] border-transparent border-r-slate-900" />
+              </div>
+            </button>
+          );
+        })}
+
+        {/* Divider */}
+        <div className="w-4 h-px bg-amber-200 my-1.5 rounded-full" />
+
+        {/* Nhóm 2: Thông Tin */}
+        <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest mb-1">Thông Tin</span>
+        {homeSections.filter(s => s.group === "Thông Tin").map((section) => {
+          const isActive = activeSection === section.id;
+          return (
+            <button
+              key={section.id}
+              onClick={() => { const el = document.getElementById(section.id); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
+              className="relative group flex items-center justify-center w-5 h-5 focus:outline-none cursor-pointer"
+            >
+              <div className={`w-2 h-2 rounded-full border-2 transition-all duration-300 z-10 ${
+                isActive ? "bg-slate-600 border-slate-600 scale-125 shadow-md shadow-slate-400/40" : "bg-white border-slate-300 group-hover:border-slate-500 group-hover:scale-110"
+              }`} />
+              <div className="absolute left-7 px-3 py-1.5 rounded-xl bg-slate-900/95 text-white text-[10px] font-bold whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none shadow-xl border border-slate-800">
+                <span className="w-1.5 h-1.5 bg-slate-400 rounded-full inline-block mr-1" />{section.label}
+                <div className="absolute right-full top-1/2 -translate-y-1/2 border-[4px] border-transparent border-r-slate-900" />
               </div>
             </button>
           );
@@ -2012,6 +2027,227 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          GIẢI THƯỞNG & CÔNG NHẬN
+          ========================================================= */}
+      <section id="giai-thuong" className="py-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Uy tín được công nhận</span>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">Giải Thưởng & Công Nhận Uy Tín Của Kim Oanh Land</h2>
+          </div>
+
+          {/* Layout: ảnh lớn bên trái + 2 ảnh nhỏ bên phải */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            {/* Ảnh lớn — PropertyGuru */}
+            <button
+              onClick={() => setHomeLightbox({
+                imgs: [
+                  "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-15",
+                  imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full"),
+                  "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-16",
+                ],
+                alts: [
+                  "PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
+                  "Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land",
+                  "Giải thưởng kiến trúc xanh bền vững EDGE 2024 Kim Oanh Land K-Home Đồng Nai",
+                ],
+                idx: 0
+              })}
+              className="relative group rounded-2xl overflow-hidden cursor-zoom-in border border-amber-100 shadow-sm hover:shadow-lg transition-all w-full bg-amber-50"
+            >
+              <img
+                src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-15"
+                alt="PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development"
+                className="w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                style={{ minHeight: "280px", backgroundColor: "#fffbeb" }}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-3 opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem chi tiết</span>
+              </div>
+              <div className="p-4 text-left">
+                <span className="text-xs font-bold text-amber-600 bg-amber-100 px-2.5 py-1 rounded-full">2025</span>
+                <h3 className="font-bold text-slate-800 text-sm mt-2">PropertyGuru Vietnam Property Awards – Best Affordable Housing Development</h3>
+              </div>
+            </button>
+
+            {/* 2 ảnh nhỏ xếp dọc */}
+            <div className="grid grid-rows-2 gap-6">
+              {[
+                {
+                  img: imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full"),
+                  alt: "Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land Đồng Nai",
+                  year: "2024", title: "Top 10 Nhà Phát Triển NOXH Hàng Đầu Việt Nam", idx: 1,
+                },
+                {
+                  img: "https://res.cloudinary.com/dthv0nsq/image/upload/w_800,q_auto:good,f_auto/slide-k-home-cityview/slide-16",
+                  alt: "Giải thưởng kiến trúc xanh bền vững EDGE 2024 Kim Oanh Land K-Home CityView Đồng Nai",
+                  year: "2024", title: "Giải Thưởng Kiến Trúc Xanh Bền Vững – Hội KTS Việt Nam", idx: 2,
+                },
+              ].map((a, i) => (
+                <button
+                  key={i}
+                  onClick={() => setHomeLightbox({
+                    imgs: [
+                      "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-15",
+                      imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full"),
+                      "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-16",
+                    ],
+                    alts: [
+                      "PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
+                      "Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land",
+                      "Giải thưởng kiến trúc xanh bền vững EDGE 2024 Kim Oanh Land K-Home Đồng Nai",
+                    ],
+                    idx: a.idx
+                  })}
+                  className="relative group rounded-2xl overflow-hidden cursor-zoom-in border border-slate-100 shadow-sm hover:shadow-lg transition-all w-full flex items-center gap-4 bg-white p-3 text-left"
+                >
+                  <img
+                    src={a.img}
+                    alt={a.alt}
+                    className="w-28 h-24 object-contain rounded-xl shrink-0 group-hover:scale-105 transition-transform duration-300"
+                    style={{ backgroundColor: "#f8fafc" }}
+                    loading="lazy"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <span className="text-xs font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded-full">{a.year}</span>
+                    <h3 className="font-bold text-slate-800 text-sm mt-1.5 leading-snug">{a.title}</h3>
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors rounded-2xl" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* =========================================================
+          LÃI SUẤT NOXH & CHÍNH SÁCH VAY
+          ========================================================= */}
+      <section id="lai-suat-noxh" className="bg-slate-50 py-14 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-5">
+              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Chính sách tài chính</span>
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">Lãi Suất Vay Mua Nhà Ở Xã Hội K-Home Đồng Nai</h2>
+              <p className="text-slate-600 text-sm leading-relaxed">Người mua đủ điều kiện NOXH được vay từ <strong>Ngân hàng Chính sách Xã hội</strong> với lãi suất ưu đãi <strong>5,4%/năm cố định trong 25 năm</strong> — thấp hơn nhiều so với lãi suất thị trường thông thường (9-12%/năm).</p>
+              <div className="space-y-3">
+                {[
+                  { label: "Lãi suất NOXH", value: "5,4%/năm", note: "Cố định suốt 25 năm" },
+                  { label: "Mức vay tối đa", value: "75–80%", note: "Giá trị căn hộ" },
+                  { label: "Kỳ hạn vay", value: "25 năm", note: "Trả góp đều hàng tháng" },
+                  { label: "Trả góp từ", value: "3,5 tr/tháng", note: "Căn Studio từ 750 triệu" },
+                ].map((row, i) => (
+                  <div key={i} className="flex items-center justify-between p-3.5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                    <span className="text-sm text-slate-600 font-medium">{row.label}</span>
+                    <div className="text-right">
+                      <span className="text-base font-bold text-amber-600 block">{row.value}</span>
+                      <span className="text-[10px] text-slate-400">{row.note}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                <p className="text-xs text-slate-600 leading-relaxed"><strong className="text-amber-700">Ví dụ tính toán:</strong> Mua căn 1PN+A giá 950 triệu, vay 75% = 712,5 triệu trong 25 năm với lãi suất 5,4%/năm → trả góp khoảng <strong>4,3 triệu/tháng</strong>.</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="font-bold text-slate-800 text-base">So Sánh: Mua K-Home vs Thuê Trọ</h3>
+              <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="bg-slate-800 text-white">
+                      <th className="text-left px-4 py-3 font-bold">Tiêu chí</th>
+                      <th className="text-center px-4 py-3 font-bold text-amber-300">Mua K-Home</th>
+                      <th className="text-center px-4 py-3 font-bold text-slate-300">Thuê trọ</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-slate-50">
+                    {[
+                      ["Chi phí/tháng", "3,5–4,5 tr", "4–7 tr"],
+                      ["Sau 25 năm", "Sở hữu tài sản", "Mất trắng"],
+                      ["Ổn định", "Không lo bị đuổi", "Phụ thuộc chủ nhà"],
+                      ["Lãi suất", "5,4%/năm", "Không áp dụng"],
+                    ].map(([label, buy, rent], i) => (
+                      <tr key={i} className={i % 2 === 0 ? "bg-amber-50/20" : ""}>
+                        <td className="px-4 py-2.5 font-semibold text-slate-700">{label}</td>
+                        <td className="px-4 py-2.5 text-center text-green-700 font-bold">{buy}</td>
+                        <td className="px-4 py-2.5 text-center text-slate-400">{rent}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <a href="/lien-he" onClick={(e) => { e.preventDefault(); onNavigate("/lien-he"); }} className="block w-full text-center bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm py-3 px-5 rounded-xl transition-colors no-underline">
+                Tính Toán Ngay – Tư Vấn Miễn Phí
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          TIN TỨC & BÀI VIẾT LIÊN QUAN
+          ========================================================= */}
+      <section id="tin-tuc" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+          <div className="space-y-2">
+            <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Cập nhật mới nhất</span>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai</h2>
+          </div>
+          <a href="/tin-tuc" onClick={(e) => { e.preventDefault(); onNavigate("/tin-tuc"); }} className="text-amber-600 font-semibold text-sm hover:text-amber-700 flex items-center gap-1.5 no-underline shrink-0">
+            Xem tất cả bài viết →
+          </a>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              slug: "/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",
+              img: "https://res.cloudinary.com/dthv0nsq/image/upload/w_600,h_400,c_fill,q_auto:good,f_auto/news/news-1",
+              cat: "Chính sách",
+              title: "Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026: Nới Lỏng Thu Nhập, Bỏ Sổ Hộ Khẩu",
+              date: "27/07/2026",
+              excerpt: "Quy định 2026 đã nới lỏng thu nhập và bãi bỏ yêu cầu sổ hộ khẩu — cơ hội lớn cho người lao động tại Biên Hòa, Nhơn Trạch, Trảng Bom.",
+            },
+            {
+              slug: "/tin-tuc/danh-gia-du-an-k-home-cityview-bien-hoa-2026",
+              img: "https://res.cloudinary.com/dthv0nsq/image/upload/w_600,h_400,c_fill,q_auto:good,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2",
+              cat: "Đánh giá dự án",
+              title: "Đánh Giá Chi Tiết Dự Án K-Home CityView Biên Hòa: Vị Trí, Thiết Kế & Giá Bán",
+              date: "28/07/2026",
+              excerpt: "Tìm hiểu chi tiết dự án NOXH K-Home CityView Biên Hòa: vị trí Hố Nai, quy mô 1.816 căn, tiện ích chuẩn xanh EDGE và giá bán mới nhất.",
+            },
+            {
+              slug: "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac",
+              img: "https://res.cloudinary.com/dthv0nsq/image/upload/w_600,h_400,c_fill,q_auto:good,f_auto/slide-k-home-cityview/slide-25",
+              cat: "Đánh giá dự án",
+              title: "Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật So Với Các Dự Án NOXH Khác?",
+              date: "31/07/2026",
+              excerpt: "Khám phá vị trí K-Home CityView Biên Hòa, lợi thế kết nối KCN, tiện ích xung quanh và lý do dự án nổi bật giữa các NOXH tại Đồng Nai.",
+            },
+          ].map((article, i) => (
+            <a
+              key={i}
+              href={article.slug}
+              onClick={(e) => { e.preventDefault(); onNavigate(article.slug); }}
+              className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group hover:shadow-lg transition-all no-underline cursor-pointer"
+            >
+              <div className="relative h-44 overflow-hidden">
+                <img src={article.img} alt={`${article.title} – tin tức nhà ở xã hội K-Home Đồng Nai`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <span className="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">{article.cat}</span>
+              </div>
+              <div className="p-4 space-y-2">
+                <p className="text-[10px] text-slate-400">{article.date}</p>
+                <h3 className="font-bold text-slate-800 text-sm leading-snug group-hover:text-amber-600 transition-colors line-clamp-2">{article.title}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{article.excerpt}</p>
+                <span className="text-[11px] text-amber-500 font-semibold group-hover:text-amber-600">Đọc tiếp →</span>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
