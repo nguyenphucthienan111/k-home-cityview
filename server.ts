@@ -576,7 +576,7 @@ K-Home CityView đặc biệt phù hợp với:
 - Người muốn con cái có điều kiện học tập, sinh hoạt thuận tiện
 - Khách hàng ưu tiên ở thật hơn là đầu tư ngắn hạn
 
----GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785255559/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1|Khu vui chơi trẻ em và ban công view thoáng tại K-Home CityView Hố Nai Biên Hòa
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785255559/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230269/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1.jpg|Khu vui chơi trẻ em và ban công view thoáng tại K-Home CityView Hố Nai Biên Hòa
 
 ## Kết luận
 
