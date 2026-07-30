@@ -326,6 +326,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Popup lead form state
   const [showPopup, setShowPopup] = useState(false);
+
+  // Lightbox for homepage images
+  const [homeLightbox, setHomeLightbox] = useState<{ imgs: string[]; alts: string[]; idx: number } | null>(null);
   const [popupDismissed, setPopupDismissed] = useState(false);
   const [popupName, setPopupName] = useState("");
   const [popupPhone, setPopupPhone] = useState("");
@@ -465,13 +468,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Definition of Sections for Floating Sidebar Dot Navigation
   const homeSections = [
-    { id: "hero",             label: "Tổng quan dự án" },
-    { id: "featured-projects",label: "Danh mục kiệt tác" },
-    { id: "amenities",        label: "Tiện ích nội khu" },
-    { id: "calculator",       label: "Phân tích đầu tư" },
-    { id: "philosophy",       label: "Giá trị cốt lõi" },
-    { id: "testimonials",     label: "Chia sẻ cư dân" },
-    { id: "consultation",     label: "Đăng ký tư vấn VIP" }
+    { id: "hero",              label: "Tổng quan dự án" },
+    { id: "featured-projects", label: "Danh mục dự án" },
+    { id: "vi-tri",            label: "Vị trí kết nối" },
+    { id: "mat-bang",          label: "Mặt bằng căn hộ" },
+    { id: "nha-mau",           label: "Nhà mẫu thực tế" },
+    { id: "amenities",         label: "Tiện ích nội khu" },
+    { id: "calculator",        label: "Kế hoạch tài chính" },
+    { id: "dieu-kien-noxh",    label: "Điều kiện NOXH" },
+    { id: "phap-ly",           label: "Pháp lý dự án" },
+    { id: "chu-dau-tu",        label: "Chủ đầu tư" },
+    { id: "philosophy",        label: "Giá trị cốt lõi" },
+    { id: "testimonials",      label: "Chia sẻ cư dân" },
+    { id: "seo-content",       label: "Thông tin chi tiết" },
+    { id: "consultation",      label: "Đăng ký tư vấn" }
   ];
 
   // Auto-advance hero slideshow every 10 seconds
@@ -1225,9 +1235,152 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
+          VỊ TRÍ KẾT NỐI — 3 DỰ ÁN
+          ========================================================= */}
+      <section id="vi-tri" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Vị trí chiến lược</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Vị Trí Kết Nối – 3 Dự Án K-Home Đồng Nai</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">Cả 3 dự án nhà ở xã hội K-Home đều tọa lạc tại các vị trí chiến lược, gần khu công nghiệp lớn và thuận tiện kết nối giao thông liên vùng tại tỉnh Đồng Nai.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
+            <div className="relative h-52 overflow-hidden">
+              <img
+                src={imgUrl("/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", "full")}
+                alt="Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai – gần KCN Amata Biên Hòa 2"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home CityView – Hố Nai, Biên Hòa</span>
+            </div>
+            <div className="p-5 bg-white space-y-2">
+              <h3 className="font-bold text-slate-800 text-sm">K-Home CityView – Đường Điểu Xiển, Hố Nai</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Cách trung tâm TP. Biên Hòa 3km. Gần KCN Amata, KCN Biên Hòa 2, KCN Hố Nai và Long Bình. Kết nối Quốc lộ 1A và cao tốc TP.HCM – Long Thành – Dầu Giây.</p>
+              <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:underline">Xem chi tiết vị trí →</a>
+            </div>
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
+            <div className="relative h-52 overflow-hidden">
+              <img
+                src={imgUrl("/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", "full")}
+                alt="Vị trí dự án K-Home Midtown Trảng Bom Đồng Nai – trung tâm huyện Trảng Bom giao 4 tuyến đường lớn"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home Midtown – Trảng Bom, Đồng Nai</span>
+            </div>
+            <div className="p-5 bg-white space-y-2">
+              <h3 className="font-bold text-slate-800 text-sm">K-Home Midtown – Trung tâm huyện Trảng Bom</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Giao điểm 4 tuyến đường: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành. Gần KCN Bàu Xéo, KCN Hố Nai. Cách TP.HCM 40km qua cao tốc.</p>
+              <a href="/k-home-midtown-trang-bom" className="text-teal-600 text-xs font-semibold hover:underline">Xem chi tiết vị trí →</a>
+            </div>
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
+            <div className="relative h-52 overflow-hidden">
+              <img
+                src={imgUrl("/k-home avenue/PC02-TT-10K_2-min.jpg.webp", "full")}
+                alt="Vị trí dự án K-Home Avenue Nhơn Trạch Đồng Nai – gần sân bay Long Thành đường 25C"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home Avenue – Nhơn Trạch, Đồng Nai</span>
+            </div>
+            <div className="p-5 bg-white space-y-2">
+              <h3 className="font-bold text-slate-800 text-sm">K-Home Avenue – Đường 25C, Nhơn Trạch</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Mặt tiền đường Nguyễn Ái Quốc (25C). Cách sân bay Long Thành 10 phút. Kết nối Vành đai 3, cao tốc Bến Lức – Long Thành và metro Thủ Thiêm.</p>
+              <a href="/k-home-avenue-nhon-trach" className="text-emerald-600 text-xs font-semibold hover:underline">Xem chi tiết vị trí →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          MẶT BẰNG CĂN HỘ ĐIỂN HÌNH
+          ========================================================= */}
+      <section id="mat-bang" className="bg-slate-50 py-16 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Thiết kế căn hộ</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Mặt Bằng Căn Hộ Điển Hình K-Home</h2>
+            <p className="text-slate-500 text-sm leading-relaxed">Các loại căn hộ nhà ở xã hội K-Home được thiết kế tối ưu không gian theo tiêu chuẩn Singapore, đảm bảo 100% căn hộ có cửa sổ đón sáng và thông gió tự nhiên.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home CityView Hố Nai</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
+                  <img src={imgUrl("/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", "full")} alt="Mặt bằng tầng điển hình 12A-22 căn hộ NOXH K-Home CityView Hố Nai Biên Hòa" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Tầng 12A–22</p>
+                </div>
+                <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
+                  <img src={imgUrl("/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", "full")} alt="Layout thiết kế căn hộ 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout căn hộ</p>
+                </div>
+              </div>
+              <p className="text-slate-500 text-xs leading-relaxed">K-Home CityView có 4 loại căn: <strong>1PN+A (47,3m²)</strong> từ 950 triệu, <strong>1PN+B (62,4m²)</strong> từ 1,25 tỷ, <strong>2PN (70,4m²)</strong> từ 1,50 tỷ và <strong>3PN (84,4m²)</strong> từ 1,80 tỷ.</p>
+              <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:underline inline-flex items-center gap-1">Xem mặt bằng chi tiết K-Home CityView →</a>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home Avenue & Midtown</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-avenue-nhon-trach")}>
+                  <img src={imgUrl("/k-home avenue/layout-can-ho-khome-avenue-nhon-trach.jpg", "full")} alt="Mặt bằng layout căn hộ K-Home Avenue Nhơn Trạch Studio 1PN 2PN nhà ở xã hội Kim Oanh" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Avenue</p>
+                </div>
+                <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-midtown-trang-bom")}>
+                  <img src={imgUrl("/k-home midtown/k-home-midtown-mat-bang-can-ho-tang-dien-hinh.jpg.webp", "full")} alt="Mặt bằng tầng điển hình K-Home Midtown Trảng Bom Studio 1PN 2PN nhà ở xã hội Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Midtown</p>
+                </div>
+              </div>
+              <p className="text-slate-500 text-xs leading-relaxed">K-Home Avenue có Studio từ 37,7m², 1PN từ 46,6m², 2PN từ 65,7m². K-Home Midtown có Studio 36,1m², 1PN từ 47m², 2PN 68,8m². Tất cả bàn giao full nội thất.</p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                <a href="/k-home-avenue-nhon-trach" onClick={(e) => { e.preventDefault(); onNavigate("/k-home-avenue-nhon-trach"); }} className="flex-1 text-center bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold py-2.5 px-4 rounded-xl hover:bg-emerald-100 transition-colors no-underline">
+                  Mặt bằng K-Home Avenue →
+                </a>
+                <a href="/k-home-midtown-trang-bom" onClick={(e) => { e.preventDefault(); onNavigate("/k-home-midtown-trang-bom"); }} className="flex-1 text-center bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold py-2.5 px-4 rounded-xl hover:bg-teal-100 transition-colors no-underline">
+                  Mặt bằng K-Home Midtown →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          NHÀ MẪU THỰC TẾ
+          ========================================================= */}
+      <section id="nha-mau" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Nội thất thực tế</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Nhà Mẫu Căn Hộ K-Home – Bàn Giao Full Nội Thất</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">Căn hộ nhà ở xã hội K-Home được bàn giao hoàn thiện full nội thất gồm tủ bếp, sofa, bàn ăn, giường ngủ, tủ quần áo và sàn gỗ theo tiêu chuẩn Singapore. Cư dân chỉ cần mang đồ cá nhân là có thể dọn vào ở ngay.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { src: "/k-home cityview/Can-1PN-A/khome-cityview-nha-mau-can-ho-1PN-1.jpg", alt: "Nhà mẫu căn hộ 1 phòng ngủ A NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land", label: "1PN+A – CityView", slug: "/k-home-cityview-ho-nai/can-ho-1-phong-ngu-a" },
+            { src: "/k-home cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg", alt: "Nhà mẫu căn hộ 2 phòng ngủ NOXH K-Home CityView Hố Nai Biên Hòa full nội thất", label: "2PN – CityView", slug: "/k-home-cityview-ho-nai/can-ho-2-phong-ngu" },
+            { src: "/k-home midtown/Can-Studio/k-home-midtown-studio-1.jpg", alt: "Nhà mẫu căn Studio K-Home Midtown Trảng Bom nhà ở xã hội full nội thất Kim Oanh", label: "Studio – Midtown", slug: "/k-home-midtown-trang-bom/can-ho-studio" },
+            { src: "/k-home avenue/Can-Studio/layout-can-ho-khome-avenue-studio.jpg", alt: "Nhà mẫu căn Studio K-Home Avenue Nhơn Trạch nhà ở xã hội full nội thất Kim Oanh Land", label: "Studio – Avenue", slug: "/k-home-avenue-nhon-trach/can-ho-studio" },
+          ].map((item, i) => (
+            <a key={i} href={item.slug} onClick={(e) => { e.preventDefault(); onNavigate(item.slug); }} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer hover:shadow-lg transition-all no-underline">
+              <img src={imgUrl(item.src, "thumbnail")} alt={item.alt} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <div className="p-3 bg-white">
+                <p className="text-xs font-bold text-slate-700">{item.label}</p>
+                <p className="text-[10px] text-amber-500 font-semibold mt-0.5 group-hover:text-amber-600">Xem chi tiết →</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* =========================================================
           4. LUXURY VIRTUAL SHOWROOM (BRIGHT THEMED CAROUSEL)
           ========================================================= */}
-      <section 
+      <section
         id="amenities" 
         className="bg-gradient-to-b from-amber-50/50 via-white to-amber-50/50 text-slate-800 py-24 relative overflow-hidden border-y border-amber-100/50"
       >
@@ -1702,7 +1855,168 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
-          6. CORE PHILOSOPHY REDESIGN (moved after calculator)
+          ĐIỀU KIỆN MUA NHÀ Ở XÃ HỘI
+          ========================================================= */}
+      <section id="dieu-kien-noxh" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-5">
+            <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Đối tượng thụ hưởng</span>
+            <h2 className="text-3xl font-display font-bold text-slate-900">Điều Kiện Mua Nhà Ở Xã Hội K-Home Đồng Nai</h2>
+            <p className="text-slate-500 text-sm leading-relaxed">Để đăng ký mua nhà ở xã hội K-Home tại Đồng Nai, người mua cần đáp ứng các tiêu chí theo <strong>Luật Nhà ở 2023</strong> và quy định của UBND tỉnh Đồng Nai.</p>
+            <div className="space-y-3">
+              {[
+                { title: "Chưa có nhà ở", desc: "Chưa đứng tên sổ hồng nhà ở tại tỉnh Đồng Nai hoặc diện tích bình quân dưới 10m²/người" },
+                { title: "Thu nhập đáp ứng quy định", desc: "Vợ chồng dưới 50 triệu/tháng · Đơn thân nuôi con dưới 35 triệu · Cá nhân độc thân dưới 25 triệu/tháng" },
+                { title: "Hộ khẩu hoặc tạm trú", desc: "Có hộ khẩu hoặc đang tạm trú tại Đồng Nai từ 1 năm trở lên theo quy định" },
+                { title: "Chưa từng mua NOXH", desc: "Chưa từng mua hoặc thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào trên cả nước" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-3.5 bg-amber-50/60 rounded-xl border border-amber-100">
+                  <div className="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-800">{item.title}</p>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-amber-500 text-white rounded-2xl p-4 flex items-center justify-between gap-4">
+              <div>
+                <p className="font-bold text-sm">Không chắc mình đủ điều kiện?</p>
+                <p className="text-amber-100 text-xs mt-0.5">Gọi ngay để được kiểm tra miễn phí trong 5 phút</p>
+              </div>
+              <a href="tel:0937587438" className="shrink-0 bg-white text-amber-600 font-bold text-xs px-4 py-2 rounded-xl hover:bg-amber-50 transition-colors">0937 587 438</a>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <img
+              src={imgUrl("/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", "full")}
+              alt="Dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai Kim Oanh Land phối cảnh tổng thể"
+              className="w-full rounded-2xl object-cover h-64 shadow-md"
+              loading="lazy"
+            />
+            <div className="grid grid-cols-3 gap-3 text-center">
+              {[
+                { value: "5,4%", label: "Lãi suất NOXH/năm" },
+                { value: "25 năm", label: "Kỳ hạn vay tối đa" },
+                { value: "3,5tr", label: "Trả góp từ/tháng" },
+              ].map((s, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                  <p className="text-lg font-bold text-amber-600">{s.value}</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          PHÁP LÝ DỰ ÁN
+          ========================================================= */}
+      <section id="phap-ly" className="bg-slate-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-5">
+              <span className="text-xs font-bold text-amber-400 tracking-widest uppercase bg-amber-400/10 px-3.5 py-1.5 rounded-full inline-block border border-amber-400/20">Pháp lý minh bạch</span>
+              <h2 className="text-3xl font-display font-bold text-white">Pháp Lý Dự Án K-Home – Đầy Đủ & Công Khai</h2>
+              <p className="text-slate-400 text-sm leading-relaxed">Chuỗi dự án K-Home Đồng Nai được triển khai với đầy đủ hồ sơ pháp lý theo quy định nhà ở xã hội, đảm bảo người mua được cấp <strong className="text-white">sổ hồng sở hữu lâu dài</strong>.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Giấy chứng nhận đăng ký đầu tư",
+                  "Phê duyệt quy hoạch chi tiết 1/500",
+                  "Chuyển đổi mục đích sử dụng đất",
+                  "Giấy phép xây dựng đầy đủ",
+                  "Sổ hồng sở hữu lâu dài",
+                  "Hỗ trợ pháp lý hoàn toàn miễn phí",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-slate-300 text-xs">
+                    <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                onClick={() => setHomeLightbox({
+                  imgs: [
+                    "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-19",
+                    "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-20",
+                  ],
+                  alts: [
+                    "Hồ sơ pháp lý dự án NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land",
+                    "Giấy chứng nhận đầu tư phê duyệt quy hoạch 1/500 K-Home CityView Kim Oanh",
+                  ],
+                  idx: 0
+                })}
+                className="relative group rounded-2xl overflow-hidden cursor-zoom-in w-full"
+              >
+                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-19" alt="Hồ sơ pháp lý dự án NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-2xl">
+                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
+                    <Eye className="w-3.5 h-3.5" /> Xem chi tiết
+                  </span>
+                </div>
+              </button>
+              <button
+                onClick={() => setHomeLightbox({
+                  imgs: [
+                    "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-19",
+                    "https://res.cloudinary.com/dthv0nsq/image/upload/w_1600,q_auto:best,f_auto/slide-k-home-cityview/slide-20",
+                  ],
+                  alts: [
+                    "Hồ sơ pháp lý dự án NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land",
+                    "Giấy chứng nhận đầu tư phê duyệt quy hoạch 1/500 K-Home CityView Kim Oanh",
+                  ],
+                  idx: 1
+                })}
+                className="relative group rounded-2xl overflow-hidden cursor-zoom-in w-full"
+              >
+                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-20" alt="Giấy chứng nhận đầu tư phê duyệt quy hoạch 1/500 K-Home CityView Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-2xl">
+                  <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
+                    <Eye className="w-3.5 h-3.5" /> Xem chi tiết
+                  </span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          CHỦ ĐẦU TƯ KIM OANH LAND
+          ========================================================= */}
+      <section id="chu-dau-tu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-5 order-2 lg:order-1">
+            <img src={imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full")} alt="Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land giải thưởng PropertyGuru" className="w-full rounded-2xl object-cover shadow-md" loading="lazy" />
+          </div>
+          <div className="space-y-5 order-1 lg:order-2">
+            <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Chủ đầu tư uy tín</span>
+            <h2 className="text-3xl font-display font-bold text-slate-900">Kim Oanh Land – Tiên Phong Nhà Ở Xã Hội Đồng Nai</h2>
+            <p className="text-slate-600 text-sm leading-relaxed"><strong>Kim Oanh Land</strong> (thành viên Tập đoàn Kim Oanh Group) là đơn vị tiên phong trong phát triển nhà ở xã hội tại Đồng Nai với hơn 20 năm kinh nghiệm. Công ty đã được vinh danh <strong>Top 10 nhà phát triển NOXH hàng đầu Việt Nam</strong> và nhận giải thưởng <strong>PropertyGuru Vietnam Property Awards 2025 – Best Affordable Housing Development</strong>.</p>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { value: "40.000+", label: "Căn NOXH dự kiến 2028" },
+                { value: "3 dự án", label: "Tại Đồng Nai đang triển khai" },
+                { value: "20+ năm", label: "Kinh nghiệm phát triển BĐS" },
+                { value: "Top 10", label: "NOXH hàng đầu Việt Nam 2024" },
+              ].map((s, i) => (
+                <div key={i} className="bg-amber-50 rounded-xl p-3 border border-amber-100 text-center">
+                  <p className="text-base font-bold text-amber-600">{s.value}</p>
+                  <p className="text-[10px] text-slate-500 mt-0.5">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          6. CORE PHILOSOPHY
           ========================================================= */}
       <section id="philosophy" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -1742,6 +2056,83 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           {testimonials.map((t, idx) => (
             <TestimonialCard key={idx} {...t} />
           ))}
+        </div>
+      </section>
+
+      {/* =========================================================
+          SEO TEXT SECTION — Nội dung text dài cho Googlebot
+          ========================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="seo-content">
+        <div className="bg-white rounded-3xl border border-slate-100 p-8 md:p-12 space-y-8">
+
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-800">
+              K-Home Đồng Nai – Chuỗi Dự Án Nhà Ở Xã Hội Uy Tín Của Kim Oanh Land
+            </h2>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              <strong>K-Home Đồng Nai</strong> là chuỗi dự án <strong>nhà ở xã hội (NOXH)</strong> do <strong>Kim Oanh Land</strong> – thành viên của Tập đoàn Kim Oanh Group – phát triển tại tỉnh Đồng Nai. Gồm 3 dự án trọng điểm: <strong>K-Home CityView Hố Nai (Biên Hòa)</strong>, <strong>K-Home Midtown Trảng Bom</strong> và <strong>K-Home Avenue Nhơn Trạch</strong>, chuỗi dự án này hướng đến giải pháp an cư bền vững cho người lao động, công nhân viên chức và gia đình trẻ tại Đồng Nai với mức giá phù hợp và chính sách vay ưu đãi lãi suất <strong>5,4%/năm</strong> từ Ngân hàng Chính sách Xã hội.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            {/* CityView */}
+            <div className="space-y-3">
+              <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                <span className="w-2 h-2 bg-amber-500 rounded-full shrink-0" />
+                <a href="/k-home-cityview-ho-nai" className="hover:text-amber-600 transition-colors">
+                  Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa
+                </a>
+              </h3>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                <strong>K-Home CityView</strong> tọa lạc tại đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa. Quy mô 2,85 ha với 4 block cao 22 tầng, cung cấp khoảng <strong>1.352 căn hộ NOXH</strong> và 30 căn shophouse. Các loại căn hộ gồm: <strong>1 phòng ngủ từ 47m²</strong>, 2 phòng ngủ từ 62m² đến 70m² và <strong>3 phòng ngủ 84m²</strong> – loại căn hộ 3PN hiếm có trong phân khúc NOXH tại Đồng Nai. Giá bán từ <strong>950 triệu đồng</strong>, bàn giao full nội thất, pháp lý sổ hồng sở hữu lâu dài. Dự án đạt tiêu chuẩn công trình xanh <strong>EDGE</strong>, thiết kế theo chuẩn Singapore do Global Vireon Studio và Kiến Trúc Việt đảm nhận.
+              </p>
+              <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:text-amber-700 flex items-center gap-1">
+                Xem bảng giá K-Home CityView →
+              </a>
+            </div>
+
+            {/* Midtown */}
+            <div className="space-y-3">
+              <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                <span className="w-2 h-2 bg-teal-500 rounded-full shrink-0" />
+                <a href="/k-home-midtown-trang-bom" className="hover:text-teal-600 transition-colors">
+                  Nhà Ở Xã Hội K-Home Midtown Trảng Bom
+                </a>
+              </h3>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                <strong>K-Home Midtown</strong> tọa lạc tại trung tâm huyện Trảng Bom, giao điểm 4 tuyến đường lớn: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành. Quy mô 13,97 ha với 1 block cao 15 tầng, cung cấp <strong>542 căn hộ NOXH</strong> và 20 căn shophouse. Các loại căn: <strong>Studio từ 36m²</strong>, 1 phòng ngủ từ 47m², 2 phòng ngủ 68m². Giá từ <strong>750 triệu đồng</strong>, trả góp chỉ từ 3,5 triệu/tháng. Vị trí thuận tiện kết nối đến KCN Bàu Xéo, KCN Hố Nai và TP. Biên Hòa, phù hợp cho công nhân và người lao động khu vực Trảng Bom.
+              </p>
+              <a href="/k-home-midtown-trang-bom" className="text-teal-600 text-xs font-semibold hover:text-teal-700 flex items-center gap-1">
+                Xem bảng giá K-Home Midtown →
+              </a>
+            </div>
+
+            {/* Avenue */}
+            <div className="space-y-3">
+              <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
+                <a href="/k-home-avenue-nhon-trach" className="hover:text-emerald-600 transition-colors">
+                  Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch
+                </a>
+              </h3>
+              <p className="text-slate-500 text-xs leading-relaxed">
+                <strong>K-Home Avenue</strong> tọa lạc tại đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Nhơn Trạch – tuyến đường kết nối trực tiếp đến <strong>Sân bay Quốc tế Long Thành</strong>. Quy mô 5,3 ha với 4 block cao 12 tầng, cung cấp <strong>1.022 căn hộ NOXH</strong> và 82 căn shophouse. Các loại căn: <strong>Studio từ 37,7m²</strong>, 1 phòng ngủ 46,6m², 2 phòng ngủ từ 65,7m² đến 69,5m². Giá từ <strong>750 triệu đồng</strong>. Khu vực Nhơn Trạch đang phát triển mạnh nhờ hạ tầng sân bay Long Thành, Vành đai 3 và cầu Nhơn Trạch đang thi công.
+              </p>
+              <a href="/k-home-avenue-nhon-trach" className="text-emerald-600 text-xs font-semibold hover:text-emerald-700 flex items-center gap-1">
+                Xem bảng giá K-Home Avenue →
+              </a>
+            </div>
+
+          </div>
+
+          <div className="border-t border-slate-100 pt-6 space-y-3">
+            <h3 className="text-base font-bold text-slate-800">Điều Kiện Mua Nhà Ở Xã Hội K-Home Đồng Nai</h3>
+            <p className="text-slate-500 text-xs leading-relaxed">
+              Để mua <strong>nhà ở xã hội K-Home tại Đồng Nai</strong>, người mua cần đáp ứng các điều kiện theo quy định của Nhà nước: (1) Chưa có nhà ở hoặc diện tích nhà ở bình quân dưới 10m²/người tại tỉnh Đồng Nai; (2) Thu nhập đáp ứng quy định – hộ gia đình vợ chồng dưới 50 triệu/tháng, đơn thân nuôi con dưới 35 triệu/tháng, cá nhân độc thân dưới 25 triệu/tháng; (3) Có hộ khẩu hoặc đang tạm trú tại tỉnh Đồng Nai từ 1 năm trở lên. Người đủ điều kiện được hỗ trợ vay từ <strong>Ngân hàng Chính sách Xã hội</strong> với lãi suất ưu đãi <strong>5,4%/năm</strong> cố định trong 25 năm. Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện toàn bộ hồ sơ miễn phí. Liên hệ hotline <strong>0937 587 438</strong> để được tư vấn chi tiết.
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -1835,6 +2226,42 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
         </div>
       </section>
+
+      {/* ── Homepage Lightbox ── */}
+      {homeLightbox && (
+        <div
+          className="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center select-none"
+          onClick={() => setHomeLightbox(null)}
+        >
+          <button onClick={(e) => { e.stopPropagation(); setHomeLightbox(null); }} className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 cursor-pointer bg-white/5 hover:bg-white/10 rounded-full z-20">
+            <X className="w-5 h-5" />
+          </button>
+          {homeLightbox.imgs.length > 1 && (
+            <>
+              <button onClick={(e) => { e.stopPropagation(); setHomeLightbox(p => p ? { ...p, idx: (p.idx - 1 + p.imgs.length) % p.imgs.length } : null); }} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 cursor-pointer text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full z-20">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button onClick={(e) => { e.stopPropagation(); setHomeLightbox(p => p ? { ...p, idx: (p.idx + 1) % p.imgs.length } : null); }} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 cursor-pointer text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full z-20">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </>
+          )}
+          <div className="absolute inset-0 flex items-center justify-center px-20 pt-16 pb-16 pointer-events-none z-10">
+            <img
+              src={homeLightbox.imgs[homeLightbox.idx]}
+              alt={homeLightbox.alts[homeLightbox.idx]}
+              onClick={(e) => e.stopPropagation()}
+              className="max-h-full max-w-full object-contain rounded-lg shadow-2xl pointer-events-auto"
+              style={{ cursor: "default" }}
+            />
+          </div>
+          <div className="absolute bottom-4 left-0 right-0 text-center z-20" onClick={(e) => e.stopPropagation()}>
+            <p className="text-sm font-semibold text-white">Hình {homeLightbox.idx + 1} / {homeLightbox.imgs.length}</p>
+            <p className="text-xs text-slate-400 mt-1">{homeLightbox.alts[homeLightbox.idx]}</p>
+            <p className="text-[10px] text-slate-600 mt-1">Click ngoài ảnh để đóng</p>
+          </div>
+        </div>
+      )}
 
       {/* =========================================================
           POPUP LEAD FORM — xuất hiện sau 8 giây
