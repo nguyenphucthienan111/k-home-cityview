@@ -1109,6 +1109,126 @@ Bạn muốn tìm hiểu thêm về cách thiết kế EDGE ảnh hưởng đế
 
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong|Lý do nên chọn K-Home thay vì NOXH thông thường`,
   },
+  {
+    id: "7",
+    slug: "vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon",
+    title: "Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn Từ Khách Hàng?",
+    date: "2026-07-31",
+    excerpt: "Vì sao dự án K-Home CityView tại Hố Nai – Biên Hòa thu hút đông đảo khách hàng quan tâm? Phân tích các lý do thực tế về vị trí, thiết kế, tiện ích, giá và chính sách tài chính năm 2026.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1",
+    category: "Đánh giá dự án",
+    content: `Dự án nhà ở xã hội K-Home CityView từ khi xuất hiện thông tin đã nhận được sự quan tâm đáng kể từ người mua nhà, đặc biệt là công nhân, người lao động và gia đình trẻ tại Đồng Nai. Vậy điều gì tạo nên sức hút này?
+
+![Vì sao K-Home CityView thu hút đông khách hàng quan tâm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1)
+
+## 1. Vị trí gần nhiều khu công nghiệp lớn
+
+K-Home CityView nằm tại khu vực Hố Nai – nơi tập trung nhiều khu công nghiệp quan trọng như Amata, Biên Hòa 2, Long Bình. Đây là lợi thế lớn với người lao động đang làm việc tại các KCN, giúp giảm thời gian và chi phí đi lại hàng ngày.
+
+![Vị trí K-Home CityView gần khu công nghiệp Amata Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/2)
+
+## 2. Thiết kế chuẩn Singapore và tiêu chuẩn xanh EDGE
+
+Dự án được tư vấn thiết kế bởi Surbana Jurong (Singapore) và phát triển theo tiêu chuẩn công trình xanh EDGE. Khác với nhiều dự án NOXH chỉ đáp ứng tiêu chuẩn tối thiểu, K-Home CityView chú trọng tối ưu ánh sáng, thông gió và tiết kiệm điện nước.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-3|Thiết kế chuẩn Singapore và EDGE tại K-Home CityView
+
+## 3. Hệ tiện ích đầy đủ hơn mức trung bình
+
+Dự án tích hợp nhiều tiện ích nội khu: hồ bơi (người lớn và trẻ em), trường mầm non, công viên, khu vui chơi trẻ em, khu thể thao, BBQ, trạm sạc xe điện, minimart, nhà sinh hoạt cộng đồng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-3|Hệ tiện ích đầy đủ tại dự án K-Home CityView
+
+## 4. Giá bán và chính sách tài chính dễ tiếp cận
+
+Giá bán bình quân được phê duyệt khoảng **25,6 triệu đồng/m²** (thông thủy, đã gồm VAT). Kết hợp với chính sách vay từ Ngân hàng Chính sách xã hội:
+
+- Lãi suất ưu đãi khoảng **5,4%/năm**
+- Thời hạn lên đến **25 năm**
+- Vay đến **75–80%** giá trị căn hộ
+- Vốn ban đầu chỉ từ khoảng **200 triệu đồng** trở lên
+
+![Chính sách vay ưu đãi giúp K-Home CityView dễ tiếp cận](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/5)
+
+## 5. Thương hiệu và quy mô dự án
+
+K-Home CityView thuộc chuỗi thương hiệu K-Home do Kim Oanh Land phát triển với quy mô gần 1.800 căn, tạo sự tin tưởng hơn so với các dự án nhỏ lẻ.
+
+## Kết luận
+
+Sức hút của K-Home CityView đến từ sự kết hợp giữa vị trí thuận tiện, tiêu chuẩn thiết kế cao hơn, tiện ích đầy đủ và chính sách tài chính hỗ trợ người mua nhà ở thật.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-3|Căn hộ mẫu K-Home CityView sẵn sàng đón khách tham quan
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem toàn bộ thông tin dự án
+
+Liên hệ **0937.587.438** để được tư vấn và xem nhà mẫu.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;k-home-cityview-tieu-chuan-song-xanh-edge|K-Home CityView & Tiêu Chuẩn Xanh EDGE`,
+  },
+  {
+    id: "8",
+    slug: "tien-do-k-home-cityview-2026-cap-nhat-moi-nhat",
+    title: "Tiến Độ K-Home CityView 2026: Cập Nhật Mới Nhất Cho Khách Hàng Quan Tâm",
+    date: "2026-08-01",
+    excerpt: "Cập nhật tiến độ K-Home CityView 2026 mới nhất. Dự án đã khởi công khi nào? Hiện đang thi công đến đâu? Dự kiến bàn giao vào thời điểm nào?",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1",
+    category: "Tin tức dự án",
+    content: `Tiến độ thi công là một trong những yếu tố quan trọng nhất khi khách hàng quyết định mua nhà ở xã hội. Dưới đây là thông tin cập nhật về tiến độ dự án K-Home CityView tính đến năm 2026.
+
+![Tiến độ K-Home CityView 2026 cập nhật mới nhất](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1)
+
+## 1. Các mốc tiến độ đã thực hiện
+
+- **Lễ động thổ:** Ngày 23/9/2025, Kim Oanh Land tổ chức lễ động thổ dự án K-Home CityView.
+- **Khởi công xây dựng:** Dự án chính thức khởi công vào khoảng tháng 5/2026 (ngày 20/5/2026).
+- **Tổng thầu thi công:** Công ty Phước Thành, áp dụng các giải pháp quản lý BIM, ERP để kiểm soát tiến độ và chất lượng.
+
+![Lễ động thổ khởi công dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/2)
+
+## 2. Tình hình thi công hiện tại (cập nhật 2026)
+
+Tính đến giữa và cuối năm 2026, dự án đang trong giai đoạn triển khai thi công. Chủ đầu tư cho biết sẽ đẩy nhanh tiến độ nhằm đảm bảo đúng kế hoạch.
+
+Chi tiết cụ thể (đang thi công móng, tầng bao nhiêu, % hoàn thành...) được cập nhật định kỳ qua Sales Gallery hoặc thông báo chính thức từ chủ đầu tư.
+
+![Tiến độ thi công thực tế K-Home CityView năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/3)
+
+## 3. Dự kiến thời gian bàn giao
+
+Theo các thông tin công bố:
+
+- Dự kiến hoàn thành và bàn giao căn hộ vào năm **2027** (một số nguồn nêu cụ thể hơn là cuối 2027 – đầu 2028).
+- Thời gian bàn giao chính thức phụ thuộc vào tiến độ thi công thực tế và các thủ tục nghiệm thu.
+
+![Timeline tiến độ và dự kiến bàn giao K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/4)
+
+## 4. Sales Gallery và nhà mẫu
+
+Kim Oanh Land dự kiến khai trương Sales Gallery và căn hộ mẫu vào khoảng đầu tháng 6/2026 để khách hàng có thể đến tham quan trực tiếp, trải nghiệm thiết kế và chất lượng bàn giao.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-0|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-4|Sales Gallery và căn hộ mẫu K-Home CityView
+
+---PROJECT-CENTER---k-home-cityview-ho-nai|K-Home CityView Hố Nai
+
+## 5. Lời khuyên cho khách hàng quan tâm tiến độ
+
+- Theo dõi thông tin chính thức từ chủ đầu tư Kim Oanh Land hoặc đơn vị phân phối được ủy quyền.
+- Nên đến trực tiếp công trường hoặc Sales Gallery (khi đã mở) để kiểm tra tiến độ thực tế.
+- Tiến độ nhà ở xã hội có thể điều chỉnh theo điều kiện thi công, thời tiết và thủ tục pháp lý.
+
+## Kết luận
+
+Tính đến năm 2026, K-Home CityView đã hoàn thành các bước quan trọng: động thổ, khởi công và đang đẩy mạnh thi công. Dự kiến bàn giao trong năm 2027.
+
+![Cập nhật tiến độ mới nhất dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/6)
+
+Bạn muốn nhận thông tin tiến độ mới nhất hoặc đặt lịch tham quan? Liên hệ **0937.587.438** để được hỗ trợ.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon|Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn`,
+  },
 ];
 
 // ─── Public API Routes ────────────────────────────────────────────────────────

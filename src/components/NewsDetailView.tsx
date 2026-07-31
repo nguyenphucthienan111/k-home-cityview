@@ -366,6 +366,27 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
+            // Project link center: ---PROJECT-CENTER---slug|label
+            if (line.startsWith("---PROJECT-CENTER---")) {
+              const [slug, label] = line.replace("---PROJECT-CENTER---", "").split("|");
+              elements.push(
+                <div key={i} className="my-8 flex justify-center">
+                  <div
+                    onClick={() => onNavigate(`/projects/${slug.trim()}`)}
+                    className="cursor-pointer group inline-flex flex-col items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-5 rounded-2xl shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105 max-w-sm w-full text-center"
+                  >
+                    <span className="text-xs font-bold uppercase tracking-widest text-amber-100">Xem chi tiết dự án</span>
+                    <span className="text-lg font-extrabold leading-tight">{label?.trim() || slug.trim()}</span>
+                    <div className="flex items-center gap-2 text-xs text-amber-100 font-semibold">
+                      <span>Giá · Tiện ích · Tiến độ</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              );
+              i++; continue;
+            }
+
             // Project link: ---PROJECT-LINK---slug|label
             if (line.startsWith("---PROJECT-LINK---")) {
               const [slug, label] = line.replace("---PROJECT-LINK---", "").split("|");
