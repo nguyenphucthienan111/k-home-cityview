@@ -345,13 +345,14 @@ const projects = [
 
 const newsList = [
   {
-    id: "1",
+    id: "n1",
     slug: "dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",
     title: "Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026: Nới Lỏng Thu Nhập, Bỏ Sổ Hộ Khẩu",
     date: "2026-07-27",
     excerpt: "Quy định năm 2026 đã nới lỏng thu nhập và bãi bỏ yêu cầu sổ hộ khẩu — cơ hội lớn cho người lao động tại Biên Hòa, Nhơn Trạch, Trảng Bom sở hữu nhà ở xã hội.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-1",
     category: "Chính sách",
+    project: "chung",
     content: `Bạn đang làm việc tại các khu công nghiệp Biên Hòa, Nhơn Trạch, Trảng Bom với mức lương vừa phải và muốn sở hữu nhà ở xã hội (NOXH)? Quy định năm 2026 đã có nhiều thay đổi có lợi cho người lao động. Bài viết dưới đây tổng hợp chính xác, minh bạch các điều kiện theo Luật Nhà ở 2023 và các nghị định mới nhất, kèm thông tin về chuỗi dự án K-Home đang triển khai tại Đồng Nai.
 
 ![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](/news/news 1.webp)
@@ -419,13 +420,14 @@ Bạn có đủ điều kiện? Hãy liên hệ **0937.587.438** để được 
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;lai-suat-mua-nha-giam-sau-co-hoi-vang|Lãi suất vay mua nhà giảm sâu 2026`,
   },
   {
-    id: "2",
+    id: "n2",
     slug: "danh-gia-du-an-k-home-cityview-bien-hoa-2026",
     title: "Đánh Giá Chi Tiết Dự Án K-Home CityView Biên Hòa: Vị Trí, Thiết Kế & Giá Bán Mới Nhất 2026",
     date: "2026-07-28",
     excerpt: "Tìm hiểu chi tiết dự án NOXH K-Home CityView Biên Hòa: vị trí Hố Nai, quy mô 1.816 căn, tiện ích chuẩn xanh EDGE, giá ~20,5 triệu/m² và tiến độ thi công mới nhất tháng 7/2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Thành phố Biên Hòa đang chứng kiến bước ngoặt lớn về nguồn cung nhà ở xã hội (NOXH) với sự xuất hiện của K-Home CityView. Được phát triển bởi Kim Oanh Group, dự án không chỉ giải quyết nhu cầu an cư cho hàng ngàn người lao động mà còn thiết lập tiêu chuẩn sống mới tại khu vực trung tâm.
 
 ![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Hố Nai Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)
@@ -495,13 +497,14 @@ Nếu bạn đang tìm kiếm căn hộ NOXH tại Hố Nai – Biên Hòa, đâ
 ---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "6",
+    id: "n6",
     slug: "mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat",
     title: "Mặt Bằng K-Home CityView: Quy Mô, Loại Căn Và Tiện Ích Nội Khu Mới Nhất",
     date: "2026-08-01",
     excerpt: "Cập nhật mặt bằng K-Home CityView Biên Hòa, quy mô dự án, loại căn hộ, tiện ích nội khu và lý do dự án thu hút người mua ở thật năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Mặt bằng K-Home CityView là một trong những yếu tố được người mua quan tâm nhất khi tìm hiểu dự án, bởi nó quyết định trực tiếp đến cảm giác sống, sự riêng tư, khả năng khai thác công năng của căn hộ và mức độ phù hợp với từng nhóm khách hàng.
 
 ![Mặt bằng tổng thể và layout các loại căn hộ tại dự án K-Home CityView Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
@@ -604,13 +607,14 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về các loạ
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac|Vị trí K-Home CityView nổi bật so với các NOXH khác`,
   },
   {
-    id: "5",
+    id: "n5",
     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac",
     title: "Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật So Với Các Dự Án NOXH Khác?",
     date: "2026-07-31",
     excerpt: "Khám phá vị trí K-Home CityView Biên Hòa, lợi thế kết nối, tiện ích xung quanh, tiềm năng an cư và lý do dự án nổi bật giữa các NOXH tại Đồng Nai.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323498/slide-k-home-cityview/slide-25.jpg",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Khi chọn mua nhà ở xã hội (NOXH), vị trí thường là yếu tố được cân nhắc đầu tiên — vì nó ảnh hưởng trực tiếp đến mọi khía cạnh của cuộc sống hằng ngày. Bài viết này phân tích cụ thể vị trí K-Home CityView và lý do nó được đánh giá nổi bật so với nhiều dự án NOXH khác tại Biên Hòa.
 
 ![Ảnh aerial nhìn từ trên cao toàn khu dự án K-Home CityView Hố Nai Biên Hòa Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1)
@@ -697,13 +701,14 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, 
 ---RELATED---k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong|K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026`,
   },
   {
-    id: "4",
+    id: "n4",
     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong",
     title: "K-Home CityView Là Gì? Có Nên Mua Ở Thật Tại Biên Hòa Năm 2026 Không?",
     date: "2026-07-30",
     excerpt: "Tìm hiểu K-Home CityView là gì, vị trí ở đâu, quy mô ra sao, giá bán, tiện ích và lý do dự án được quan tâm tại Biên Hòa năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-21",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Nếu bạn đang tìm kiếm nhà ở tại Biên Hòa và gặp tên K-Home CityView, rất có thể bạn đang muốn biết đây là dự án gì, phù hợp với ai và có đáng để cân nhắc mua ở thật hay không. Bài viết này tổng hợp những thông tin thiết yếu nhất để bạn có cái nhìn rõ ràng trước khi quyết định.
 
 ![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Đồng Nai 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-18)
@@ -792,13 +797,14 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ v
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "3",
+    id: "n3",
     slug: "ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong",
     title: "Lý Do Nên Chọn K-Home Thay Vì Nhà Ở Xã Hội Thông Thường",
     date: "2026-07-29",
     excerpt: "So sánh thực tế chuỗi dự án K-Home (CityView, Avenue, Midtown) với nhà ở xã hội thông thường: thiết kế Singapore, chứng chỉ xanh EDGE, tiện ích khép kín và vị trí chiến lược gần KCN Đồng Nai.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/1",
     category: "So sánh & Tư vấn",
+    project: "chung",
     content: `Nhà ở xã hội (NOXH) ngày càng phổ biến tại Đồng Nai, giúp nhiều công nhân và người thu nhập thấp có cơ hội an cư. Tuy nhiên, không phải dự án NOXH nào cũng giống nhau. Chuỗi dự án K-Home do Kim Oanh Land phát triển đang được nhiều người quan tâm vì mang đến tiêu chuẩn cao hơn so với phần lớn nhà ở xã hội thông thường hiện nay.
 
 ![Phối cảnh tổng thể dự án nhà ở xã hội K-Home chuẩn Singapore Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/1)
@@ -883,13 +889,14 @@ Hoặc liên hệ **0937.587.438** để được tư vấn miễn phí về đi
 ---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026`,
   },
   {
-    id: "4",
+    id: "n4",
     slug: "gia-ban-k-home-cityview-2026-can-bao-nhieu-tien",
     title: "Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền Để Sở Hữu Căn Hộ?",
     date: "2026-07-30",
     excerpt: "Cập nhật giá bán K-Home CityView 2026 mới nhất. Giá bình quân bao nhiêu/m²? Cần chuẩn bị bao nhiêu vốn ban đầu để sở hữu căn hộ nhà ở xã hội tại Hố Nai – Biên Hòa?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Một trong những câu hỏi được tìm kiếm nhiều nhất về dự án K-Home CityView chính là: "Giá bán bao nhiêu?" và "Cần bao nhiêu tiền để sở hữu?". Dưới đây là thông tin tổng hợp dựa trên các số liệu công bố đến giữa năm 2026.
 
 ![Phối cảnh dự án K-Home CityView Biên Hòa 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1)
@@ -961,13 +968,14 @@ Liên hệ **0937.587.438** để nhận bảng giá chi tiết và được tư
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "5",
+    id: "n5",
     slug: "k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong",
     title: "K-Home CityView Có Phù Hợp Với Gia Đình Trẻ Đang Tìm Nhà Ở Thật Không?",
     date: "2026-07-30",
     excerpt: "Đánh giá khách quan về diện tích, tiện ích, vị trí, tài chính và chất lượng sống tại K-Home CityView — dự án nhà ở xã hội Hố Nai – Biên Hòa có phù hợp với gia đình trẻ tìm nhà ở thật không?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/1",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Nhiều gia đình trẻ hiện nay đang tìm kiếm một căn hộ để ở thật, không phải để đầu cơ. Họ cần không gian vừa đủ, tiện ích phục vụ cuộc sống hàng ngày, vị trí thuận tiện đi làm và mức giá có thể tiếp cận được bằng lương.
 
 Vậy dự án nhà ở xã hội K-Home CityView (đường Điểu Xiển, phường Hố Nai, Biên Hòa) có đáp ứng được nhu cầu này không?
@@ -1037,13 +1045,14 @@ Bạn đang là gia đình trẻ và quan tâm dự án này? Liên hệ **0937.
 ---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá bán K-Home CityView 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa`,
   },
   {
-    id: "6",
+    id: "n6",
     slug: "k-home-cityview-tieu-chuan-song-xanh-edge",
     title: "K-Home CityView Và Tiêu Chuẩn Sống Xanh EDGE Có Gì Khác Biệt?",
     date: "2026-07-31",
     excerpt: "K-Home CityView áp dụng tiêu chuẩn sống xanh EDGE như thế nào? Tìm hiểu EDGE là gì, lợi ích thực tế về tiết kiệm điện, nước và sự khác biệt so với nhà ở xã hội thông thường.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/1",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Nhiều người khi tìm hiểu dự án K-Home CityView thường nghe đến cụm từ "tiêu chuẩn xanh EDGE" hoặc "công trình xanh EDGE". Vậy EDGE là gì? Và việc áp dụng tiêu chuẩn này mang lại sự khác biệt như thế nào so với các dự án nhà ở xã hội thông thường?
 
 ![K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/1)
@@ -1110,13 +1119,14 @@ Bạn muốn tìm hiểu thêm về cách thiết kế EDGE ảnh hưởng đế
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong|Lý do nên chọn K-Home thay vì NOXH thông thường`,
   },
   {
-    id: "7",
+    id: "n7",
     slug: "vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon",
     title: "Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn Từ Khách Hàng?",
     date: "2026-07-31",
     excerpt: "Vì sao dự án K-Home CityView tại Hố Nai – Biên Hòa thu hút đông đảo khách hàng quan tâm? Phân tích các lý do thực tế về vị trí, thiết kế, tiện ích, giá và chính sách tài chính năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1",
     category: "Đánh giá dự án",
+    project: "cityview",
     content: `Dự án nhà ở xã hội K-Home CityView từ khi xuất hiện thông tin đã nhận được sự quan tâm đáng kể từ người mua nhà, đặc biệt là công nhân, người lao động và gia đình trẻ tại Đồng Nai. Vậy điều gì tạo nên sức hút này?
 
 ![Vì sao K-Home CityView thu hút đông khách hàng quan tâm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1)
@@ -1169,13 +1179,14 @@ Liên hệ **0937.587.438** để được tư vấn và xem nhà mẫu.
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;k-home-cityview-tieu-chuan-song-xanh-edge|K-Home CityView & Tiêu Chuẩn Xanh EDGE`,
   },
   {
-    id: "8",
+    id: "n8",
     slug: "tien-do-k-home-cityview-2026-cap-nhat-moi-nhat",
     title: "Tiến Độ K-Home CityView 2026: Cập Nhật Mới Nhất Cho Khách Hàng Quan Tâm",
     date: "2026-08-01",
     excerpt: "Cập nhật tiến độ K-Home CityView 2026 mới nhất. Dự án đã khởi công khi nào? Hiện đang thi công đến đâu? Dự kiến bàn giao vào thời điểm nào?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1",
     category: "Tin tức dự án",
+    project: "cityview",
     content: `Tiến độ thi công là một trong những yếu tố quan trọng nhất khi khách hàng quyết định mua nhà ở xã hội. Dưới đây là thông tin cập nhật về tiến độ dự án K-Home CityView tính đến năm 2026.
 
 ![Tiến độ K-Home CityView 2026 cập nhật mới nhất](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1)

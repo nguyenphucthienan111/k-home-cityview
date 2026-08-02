@@ -1,115 +1,903 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+﻿import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-// AUTO-GENERATED — run: node scripts/generate-api-functions.mjs
+// AUTO-GENERATED — synced from server.ts
 // Data inlined from server.ts — no external imports needed
-const DATA = [
+const DATA  = [
   {
-    id: "1", slug: "dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",
+    id: "n1",
+    slug: "dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",
     title: "Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026: Nới Lỏng Thu Nhập, Bỏ Sổ Hộ Khẩu",
     date: "2026-07-27",
     excerpt: "Quy định năm 2026 đã nới lỏng thu nhập và bãi bỏ yêu cầu sổ hộ khẩu — cơ hội lớn cho người lao động tại Biên Hòa, Nhơn Trạch, Trảng Bom sở hữu nhà ở xã hội.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-1",
     category: "Chính sách",
-    content: "Bạn đang làm việc tại các khu công nghiệp Biên Hòa, Nhơn Trạch, Trảng Bom với mức lương vừa phải và muốn sở hữu nhà ở xã hội (NOXH)? Quy định năm 2026 đã có nhiều thay đổi có lợi cho người lao động. Bài viết dưới đây tổng hợp chính xác, minh bạch các điều kiện theo Luật Nhà ở 2023 và các nghị định mới nhất, kèm thông tin về chuỗi dự án K-Home đang triển khai tại Đồng Nai.\n\n![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-1)\n\n## 1. Điều kiện về nhà ở (bắt buộc)\n\nNgười đứng tên mua NOXH tại Đồng Nai phải thuộc một trong các trường hợp sau (theo Điều 29 Nghị định 100/2024/NĐ-CP được sửa đổi):\n\n- Chưa có nhà ở thuộc sở hữu của bản thân và vợ/chồng (không có tên trong Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở tại tỉnh Đồng Nai).\n- Đã có nhà ở nhưng diện tích nhà ở bình quân đầu người trong hộ gia đình thấp hơn 15m² sàn/người.\n- Chưa được mua, thuê mua nhà ở xã hội hoặc hưởng chính sách hỗ trợ nhà ở, đất ở dưới mọi hình thức tại Đồng Nai.\n\n![Điều kiện về nhà ở khi mua nhà ở xã hội Đồng Nai – diện tích dưới 15m2 sàn mỗi người](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-2)\n\n## 2. Điều kiện về thu nhập (đã được nới lỏng mạnh từ 07/4/2026)\n\nTheo Nghị định 136/2026/NĐ-CP (có hiệu lực từ ngày 07/4/2026), mức thu nhập bình quân hàng tháng thực nhận được nâng lên như sau:\n\n| Đối tượng | Mức thu nhập tối đa |\n|---|---|\n| Người độc thân / chưa kết hôn | ≤ 25 triệu đồng/tháng |\n| Người độc thân đang nuôi con dưới tuổi thành niên | ≤ 35 triệu đồng/tháng |\n| Người đã kết hôn (tổng 2 vợ chồng) | ≤ 50 triệu đồng/tháng |\n\n**Lưu ý quan trọng:**\n- Thu nhập tính theo bảng lương, tiền công do cơ quan/đơn vị/doanh nghiệp xác nhận.\n- Thời gian xác định: 12 tháng liền kề trước thời điểm cơ quan có thẩm quyền xác nhận.\n- UBND tỉnh được phép điều chỉnh hệ số theo điều kiện địa phương.\n\n![Mức thu nhập mua nhà ở xã hội Đồng Nai 2026 – độc thân 25 triệu, vợ chồng 50 triệu](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-3)\n\n## 3. Điều kiện về cư trú (đã bỏ sổ hộ khẩu)\n\nTheo Luật Nhà ở 2023, điều kiện về sổ hộ khẩu hoặc tạm trú KT3 dài hạn đã được bãi bỏ. Hiện nay chỉ cần:\n\n- Có hợp đồng lao động có thời hạn từ 01 năm trở lên.\n- Đang tham gia đóng Bảo hiểm xã hội (BHXH) tại tỉnh Đồng Nai.\n\n![Điều kiện cư trú mua nhà ở xã hội Đồng Nai 2026 – chỉ cần hợp đồng lao động và BHXH](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-4)\n\n## Chuỗi dự án K-Home tại Đồng Nai\n\nNếu bạn đáp ứng đủ 3 điều kiện trên, chuỗi dự án K-Home do Kim Oanh Group phát triển là lựa chọn đáng cân nhắc.\n\n![Chuỗi dự án nhà ở xã hội K-Home Kim Oanh Group tại Đồng Nai chuẩn Singapore và EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-5)\n\n**K-Home CityView (P. Hố Nai, Biên Hòa):** Đường Điểu Xiển, 2,85 ha, 4 tòa 22 tầng, ~1.350 căn. Đã khởi công 20/5/2026.\n\n![Dự án K-Home Cityview phường Hố Nai Biên Hòa – nhà ở xã hội 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-6)\n\n**K-Home Avenue (Nhơn Trạch):** Mặt tiền đường 25C, ~1.022 căn (4 tòa 12 tầng). Kết nối sân bay Long Thành và Vành đai 3.\n\n![K-Home Avenue Nhơn Trạch mặt tiền đường 25C – căn hộ mẫu chuẩn Singapore](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-7)\n\n**K-Home Midtown (Trảng Bom):** Trung tâm Trảng Bom, 1 block 15 tầng, 542 căn. Phục vụ lao động các cụm công nghiệp khu vực.\n\n![K-Home Midtown Trảng Bom – nhà ở xã hội cho lao động khu công nghiệp](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-8)\n\nNgười mua được hỗ trợ vay vốn ưu đãi từ Ngân hàng Chính sách xã hội (lãi suất ~5,4%/năm, tối đa 75–80% giá trị hợp đồng, thời hạn đến 25 năm).\n\nBạn có đủ điều kiện? Hãy liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, chính sách và cập nhật tiến độ mở bán mới nhất.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;lai-suat-mua-nha-giam-sau-co-hoi-vang|Lãi suất vay mua nhà giảm sâu 2026",
+    project: "chung",
+    content: `Bạn đang làm việc tại các khu công nghiệp Biên Hòa, Nhơn Trạch, Trảng Bom với mức lương vừa phải và muốn sở hữu nhà ở xã hội (NOXH)? Quy định năm 2026 đã có nhiều thay đổi có lợi cho người lao động. Bài viết dưới đây tổng hợp chính xác, minh bạch các điều kiện theo Luật Nhà ở 2023 và các nghị định mới nhất, kèm thông tin về chuỗi dự án K-Home đang triển khai tại Đồng Nai.
+
+![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](/news/news 1.webp)
+
+## 1. Điều kiện về nhà ở (bắt buộc)
+
+Người đứng tên mua NOXH tại Đồng Nai phải thuộc một trong các trường hợp sau (theo Điều 29 Nghị định 100/2024/NĐ-CP được sửa đổi):
+
+- Chưa có nhà ở thuộc sở hữu của bản thân và vợ/chồng (không có tên trong Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở tại tỉnh Đồng Nai).
+- Đã có nhà ở nhưng diện tích nhà ở bình quân đầu người trong hộ gia đình thấp hơn 15m² sàn/người.
+- Chưa được mua, thuê mua nhà ở xã hội hoặc hưởng chính sách hỗ trợ nhà ở, đất ở dưới mọi hình thức tại Đồng Nai.
+
+![Điều kiện về nhà ở khi mua nhà ở xã hội Đồng Nai – diện tích dưới 15m2 sàn mỗi người](/news/news 2.jpg)
+
+## 2. Điều kiện về thu nhập (đã được nới lỏng mạnh từ 07/4/2026)
+
+Theo Nghị định 136/2026/NĐ-CP (có hiệu lực từ ngày 07/4/2026), mức thu nhập bình quân hàng tháng thực nhận được nâng lên như sau:
+
+| Đối tượng | Mức thu nhập tối đa |
+|---|---|
+| Người độc thân / chưa kết hôn | ≤ 25 triệu đồng/tháng |
+| Người độc thân đang nuôi con dưới tuổi thành niên | ≤ 35 triệu đồng/tháng |
+| Người đã kết hôn (tổng 2 vợ chồng) | ≤ 50 triệu đồng/tháng |
+
+**Lưu ý quan trọng:**
+- Thu nhập tính theo bảng lương, tiền công do cơ quan/đơn vị/doanh nghiệp xác nhận.
+- Thời gian xác định: 12 tháng liền kề trước thời điểm cơ quan có thẩm quyền xác nhận.
+- UBND tỉnh được phép điều chỉnh hệ số theo điều kiện địa phương.
+
+![Mức thu nhập mua nhà ở xã hội Đồng Nai 2026 theo Nghị định 136 – độc thân 25 triệu, vợ chồng 50 triệu](/news/news 3.jpg)
+
+## 3. Điều kiện về cư trú (đã bỏ sổ hộ khẩu)
+
+Theo Luật Nhà ở 2023, điều kiện về sổ hộ khẩu hoặc tạm trú KT3 dài hạn đã được bãi bỏ. Hiện nay chỉ cần:
+
+- Có hợp đồng lao động có thời hạn từ 01 năm trở lên.
+- Đang tham gia đóng Bảo hiểm xã hội (BHXH) tại tỉnh Đồng Nai.
+
+![Điều kiện cư trú mua nhà ở xã hội Đồng Nai 2026 – chỉ cần hợp đồng lao động và BHXH](/news/news 4.jpg)
+
+## Chuỗi dự án K-Home tại Đồng Nai
+
+Nếu bạn đáp ứng đủ 3 điều kiện trên, chuỗi dự án K-Home do Kim Oanh Group phát triển là lựa chọn đáng cân nhắc. Các dự án theo tiêu chuẩn Singapore, hướng tới chứng chỉ công trình xanh EDGE.
+
+![Chuỗi dự án nhà ở xã hội K-Home Kim Oanh Group tại Đồng Nai chuẩn Singapore và EDGE](/news/news 5.jpg)
+
+**K-Home CityView (P. Hố Nai, Biên Hòa):** Đường Điểu Xiển, 2,85 ha, 4 tòa 22 tầng, ~1.800 căn. Đã khởi công 20/5/2026.
+
+![Dự án K-Home Cityview phường Hố Nai Biên Hòa – nhà ở xã hội 2026](/news/news 6.jpg)
+
+**K-Home Avenue (Nhơn Trạch):** Mặt tiền đường 25C, ~1.100–1.200 căn (4 tòa 12 tầng). Sales Gallery khai trương 12/4/2026. Kết nối sân bay Long Thành và Vành đai 3.
+
+![K-Home Avenue Nhơn Trạch mặt tiền đường 25C – căn hộ mẫu chuẩn Singapore](/news/news 7.jpg)
+
+**K-Home Midtown (Trảng Bom):** Trung tâm Trảng Bom, 1 block 15 tầng, ~500–560 căn. Phục vụ lao động các cụm công nghiệp khu vực.
+
+![K-Home Midtown Trảng Bom – nhà ở xã hội cho lao động khu công nghiệp](/news/news 8.webp)
+
+Người mua được hỗ trợ vay vốn ưu đãi từ Ngân hàng Chính sách xã hội (lãi suất ~5,4%/năm, tối đa 75–80% giá trị hợp đồng, thời hạn đến 25 năm).
+
+
+
+Bạn có đủ điều kiện? Hãy liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, chính sách và cập nhật tiến độ mở bán mới nhất.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;lai-suat-mua-nha-giam-sau-co-hoi-vang|Lãi suất vay mua nhà giảm sâu 2026`,
   },
   {
-    id: "2", slug: "danh-gia-du-an-k-home-cityview-bien-hoa-2026",
+    id: "n2",
+    slug: "danh-gia-du-an-k-home-cityview-bien-hoa-2026",
     title: "Đánh Giá Chi Tiết Dự Án K-Home CityView Biên Hòa: Vị Trí, Thiết Kế & Giá Bán Mới Nhất 2026",
     date: "2026-07-28",
     excerpt: "Tìm hiểu chi tiết dự án NOXH K-Home CityView Biên Hòa: vị trí Hố Nai, quy mô 1.816 căn, tiện ích chuẩn xanh EDGE, giá ~20,5 triệu/m² và tiến độ thi công mới nhất tháng 7/2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2",
     category: "Đánh giá dự án",
-    content: "Thành phố Biên Hòa đang chứng kiến bước ngoặt lớn về nguồn cung nhà ở xã hội (NOXH) với sự xuất hiện của K-Home CityView. Được phát triển bởi Kim Oanh Group, dự án không chỉ giải quyết nhu cầu an cư cho hàng ngàn người lao động mà còn thiết lập tiêu chuẩn sống mới tại khu vực trung tâm.\n\n![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Hố Nai Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)\n\n## 1. Tổng quan thông tin dự án K-Home CityView\n\n- **Tên thương mại:** K-Home CityView (thuộc chuỗi thương hiệu K-Home)\n- **Chủ đầu tư:** Công ty CP Đầu tư & Phát triển BĐS Miền Đông (thành viên Kim Oanh Group)\n- **Vị trí:** Đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai\n- **Đơn vị thiết kế:** Tập đoàn Surbana Jurong (Singapore)\n- **Quy mô quỹ đất:** 2,85 ha\n- **Số lượng sản phẩm:** 1.382 căn (1.352 NOXH + 30 shophouse)\n- **Quy mô xây dựng:** 4 tòa tháp cao 22 tầng\n- **Pháp lý:** Sổ hồng riêng từng căn\n\n![Bản đồ vị trí K-Home CityView đường Điểu Xiển phường Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/maps)\n\n## 2. Vị trí \"vàng\" giải tỏa cơn khát nhà ở tại TP. Biên Hòa\n\nNằm trên mặt tiền đường Điểu Xiển, phường Hố Nai, dự án hưởng lợi trọn vẹn từ hạ tầng giao thông đồng bộ:\n\n- **Kết nối vùng:** Dễ dàng di chuyển ra Quốc lộ 1A hướng về TP.HCM.\n- **Kết nối việc làm:** Gần các KCN trọng điểm: KCN Amata, KCN Hố Nai, KCN Biên Hòa 2.\n- **Tiện ích ngoại khu:** Chợ truyền thống, trường học, bệnh viện, Lotte Mart, GO!\n\n![Vị trí vàng K-Home CityView gần KCN Amata và trung tâm Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/golden-map)\n\n## 3. Thiết kế chuẩn xanh EDGE và hệ tiện ích \"All-in-one\"\n\nK-Home CityView xóa bỏ định kiến \"nhà ở xã hội thiếu tiện ích\" với đầu tư bài bản từ Surbana Jurong:\n\n- **Chứng chỉ xanh EDGE:** Tiết kiệm tối thiểu 20% điện, nước sinh hoạt và lượng phát thải carbon hàng tháng.\n- **Tiện ích khép kín:** Công viên, hồ bơi (người lớn & trẻ em), trường mầm non, khu BBQ, trạm sạc xe điện, shophouse nội khu.\n- **Diện tích căn hộ:** 47,3 m² – 85 m², đáp ứng 1–3 phòng ngủ.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230283/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2.jpg|Tiện ích hồ bơi và công viên xanh chuẩn Singapore tại K-Home CityView Biên Hòa\n\n![Mặt bằng căn hộ diện tích 47.3m2 đến 84.4m2 dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)\n\n## 4. K-Home CityView giá bao nhiêu? (Cập nhật chính thức)\n\n- **Giá bán chính thức:** Dao động từ 20,5 – 22,5 triệu đồng/m² (thông thủy, đã bao gồm VAT).\n- **Mức giá tham khảo:** Chỉ từ 950 triệu (căn 1PN); từ 1,5 tỷ (căn 2PN) và từ 1,8 tỷ (căn 3PN).\n- **Nội thất bàn giao:** Hoàn thiện cơ bản với vật liệu thương hiệu An Cường.\n- **Chính sách vay:** NH Chính sách xã hội — lãi suất 5,4%/năm, thời hạn đến 25 năm.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-4-2048x1209.jpg|Nội thất bàn giao chuẩn An Cường tại căn hộ K-Home CityView Biên Hòa\n\n## 5. Tiến độ dự án mới nhất (tháng 7/2026)\n\n- Lễ khởi công chính thức: **20/05/2026**\n- Hiện tại: Đang thi công phần móng cọc và hạ tầng cơ sở.\n- Dự kiến bàn giao: Cuối 2027 – đầu 2028.\n\n![Tiến độ thi công móng cọc dự án K-Home CityView Hố Nai tháng 7 năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/progress)\n\n![Lễ khởi công dự án nhà ở xã hội K-Home CityView Biên Hòa ngày 20 tháng 5 năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/start-city-view)\n\n## Kết luận\n\nK-Home CityView Biên Hòa đang trở thành một trong những dự án NOXH được quan tâm lớn nhất tại Đồng Nai nhờ vị trí trung tâm, thiết kế chuẩn Singapore, chứng chỉ xanh EDGE và giá được nhà nước phê duyệt minh bạch.\n\nNếu bạn đang tìm kiếm căn hộ NOXH tại Hố Nai – Biên Hòa, đây là thời điểm phù hợp để theo dõi sát tiến độ và chuẩn bị hồ sơ. Liên hệ **0937.587.438** để được tư vấn miễn phí.\n\n---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026",
+    project: "cityview",
+    content: `Thành phố Biên Hòa đang chứng kiến bước ngoặt lớn về nguồn cung nhà ở xã hội (NOXH) với sự xuất hiện của K-Home CityView. Được phát triển bởi Kim Oanh Group, dự án không chỉ giải quyết nhu cầu an cư cho hàng ngàn người lao động mà còn thiết lập tiêu chuẩn sống mới tại khu vực trung tâm.
+
+![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Hố Nai Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)
+
+## 1. Tổng quan thông tin dự án K-Home CityView
+
+- **Tên thương mại:** K-Home CityView (thuộc chuỗi thương hiệu K-Home)
+- **Chủ đầu tư:** Công ty CP Đầu tư & Phát triển BĐS Miền Đông (thành viên Kim Oanh Group)
+- **Vị trí:** Đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai
+- **Đơn vị thiết kế:** Tập đoàn Surbana Jurong (Singapore)
+- **Quy mô quỹ đất:** 2,85 ha
+- **Số lượng sản phẩm:** 1.382 căn (1.352 NOXH + 30 shophouse)
+- **Quy mô xây dựng:** 4 tòa tháp cao 22 tầng
+- **Pháp lý:** Sổ hồng riêng từng căn
+
+![Bản đồ vị trí K-Home CityView đường Điểu Xiển phường Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/maps)
+
+## 2. Vị trí "vàng" giải tỏa cơn khát nhà ở tại TP. Biên Hòa
+
+Nằm trên mặt tiền đường Điểu Xiển, phường Hố Nai, dự án hưởng lợi trọn vẹn từ hạ tầng giao thông đồng bộ:
+
+- **Kết nối vùng:** Dễ dàng di chuyển ra Quốc lộ 1A hướng về TP.HCM.
+- **Kết nối việc làm:** Gần các KCN trọng điểm: KCN Amata, KCN Hố Nai, KCN Biên Hòa 2.
+- **Tiện ích ngoại khu:** Chợ truyền thống, trường học, bệnh viện, Lotte Mart, GO!
+
+![Vị trí vàng K-Home CityView gần KCN Amata và trung tâm Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/golden-map)
+
+## 3. Thiết kế chuẩn xanh EDGE và hệ tiện ích "All-in-one"
+
+K-Home CityView xóa bỏ định kiến "nhà ở xã hội thiếu tiện ích" với đầu tư bài bản từ Surbana Jurong:
+
+- **Chứng chỉ xanh EDGE:** Tiết kiệm tối thiểu 20% điện, nước sinh hoạt và lượng phát thải carbon hàng tháng.
+- **Tiện ích khép kín:** Công viên, hồ bơi (người lớn & trẻ em), trường mầm non, khu BBQ, trạm sạc xe điện, shophouse nội khu.
+- **Diện tích căn hộ:** 47,3 m² – 85 m², đáp ứng 1–3 phòng ngủ.
+
+
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230283/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2.jpg|Tiện ích hồ bơi và công viên xanh chuẩn Singapore tại K-Home CityView Biên Hòa
+
+![Mặt bằng căn hộ diện tích 47.3m2 đến 84.4m2 dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
+
+## 4. K-Home CityView giá bao nhiêu? (Cập nhật chính thức)
+
+- **Giá bán chính thức:** Dao động từ 20,5 – 22,5 triệu đồng/m²  (thông thủy, đã bao gồm VAT).
+- **Mức giá tham khảo:** Chỉ từ 950 triệu (đối với căn 1PN); từ 1,5 tỷ đồng/căn (đối với căn 2PN) và từ 1,8 tỷ đồng/căn (đối với 3 PN).
+- **Nội thất bàn giao:** Hoàn thiện cơ bản với vật liệu thương hiệu An Cường.
+- **Chính sách vay:** NH Chính sách xã hội — lãi suất 5,4%/năm, thời hạn đến 25 năm.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-4-2048x1209.jpg|Nội thất bàn giao chuẩn An Cường tại căn hộ K-Home CityView Biên Hòa
+
+## 5. Tiến độ dự án mới nhất (tháng 7/2026)
+
+- Lễ khởi công chính thức: **20/05/2026**
+- Hiện tại: Đang thi công phần móng cọc và hạ tầng cơ sở.
+- Dự kiến bàn giao: Cuối 2027 – đầu 2028.
+
+![Tiến độ thi công móng cọc dự án K-Home CityView Hố Nai tháng 7 năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/progress)
+
+![Lễ khởi công dự án nhà ở xã hội K-Home CityView Biên Hòa ngày 20 tháng 5 năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/start-city-view)
+
+## Kết luận
+
+K-Home CityView Biên Hòa đang trở thành một trong những dự án NOXH được quan tâm lớn nhất tại Đồng Nai nhờ vị trí trung tâm, thiết kế chuẩn Singapore, chứng chỉ xanh EDGE và giá được nhà nước phê duyệt minh bạch.
+
+Nếu bạn đang tìm kiếm căn hộ NOXH tại Hố Nai – Biên Hòa, đây là thời điểm phù hợp để theo dõi sát tiến độ và chuẩn bị hồ sơ. Liên hệ **0937.587.438** để được tư vấn miễn phí.
+
+---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "6",
+    id: "n6",
     slug: "mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat",
     title: "Mặt Bằng K-Home CityView: Quy Mô, Loại Căn Và Tiện Ích Nội Khu Mới Nhất",
     date: "2026-08-01",
     excerpt: "Cập nhật mặt bằng K-Home CityView Biên Hòa, quy mô dự án, loại căn hộ, tiện ích nội khu và lý do dự án thu hút người mua ở thật năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764",
     category: "Đánh giá dự án",
-    content: "Mặt bằng K-Home CityView là một trong những yếu tố được người mua quan tâm nhất khi tìm hiểu dự án, bởi nó quyết định trực tiếp đến cảm giác sống, sự riêng tư, khả năng khai thác công năng của căn hộ và mức độ phù hợp với từng nhóm khách hàng.\n\n![Mặt bằng tổng thể và layout các loại căn hộ tại dự án K-Home CityView Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)\n\n## Mặt bằng K-Home CityView có gì đáng chú ý?\n\nVới quy mô khoảng 2,85 ha, dự án được quy hoạch thành 4 block cao 22 tầng, tạo nên một quần thể nhà ở xã hội có tổ chức tương đối bài bản tại Biên Hòa.\n\nĐiểm đáng chú ý là K-Home CityView không đi theo mô hình nhà ở xã hội nhỏ lẻ, mà được phát triển theo hướng một khu căn hộ khép kín, có hệ thống cảnh quan và tiện ích đồng bộ. Điều này giúp dự án có lợi thế về cảm nhận không gian sống, chứ không chỉ dừng ở việc cung cấp chỗ ở với mức giá dễ tiếp cận.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/k-home-cityview-ho-nai-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785329651/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-h%C3%ACnh-%E1%BA%A3nh-31.jpg|Mặt bằng tổng thể và sơ đồ tầng 1 dự án K-Home CityView Hố Nai Biên Hòa\n\n## Quy mô dự án K-Home CityView\n\nTheo thông tin công bố từ chủ đầu tư, K-Home CityView được xây dựng trên diện tích khoảng **28.459,4 m²** (gần 2,85 ha). Dự án gồm:\n\n- **4 block** cao **22 tầng**\n- **1.382 căn hộ** (1.352 NOXH + 30 shophouse thương mại)\n- **Pháp lý:** Sổ hồng riêng từng căn\n\nQuy mô lớn thường đem lại lợi thế về tiện ích, bố trí cảnh quan và khả năng hình thành cộng đồng cư dân đông, ổn định — phù hợp cho những người mua để ở lâu dài.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785329651/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-h%C3%ACnh-%E1%BA%A3nh-31.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-4-11.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg|Mặt bằng tầng điển hình các block dự án K-Home CityView Hố Nai\n\n## Loại căn hộ tại K-Home CityView\n\nK-Home CityView được định hướng phục vụ nhiều nhóm khách hàng khác nhau, vì vậy loại căn hộ cũng được phát triển linh hoạt. Diện tích dao động từ **47 m² đến 84 m²**, phù hợp với người độc thân, gia đình trẻ, hoặc gia đình có 2–3 thế hệ.\n\n| Loại căn | Diện tích | Phù hợp |\n|---|---|---|\n| 1 phòng ngủ (A) | ~47–50 m² | Người độc thân, cặp đôi |\n| 1 phòng ngủ (B) | ~52–55 m² | Cặp vợ chồng trẻ |\n| 2 phòng ngủ | ~62–70 m² | Gia đình nhỏ 3–4 người |\n| 3 phòng ngủ | ~78–84 m² | Gia đình 4–5 người |\n\nSự đa dạng này là điểm cộng vì người mua có thể chọn diện tích phù hợp với nhu cầu thực tế và khả năng tài chính.\n\n---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết căn hộ K-Home CityView →\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-B/2pns-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg|Layout căn hộ 1PN, 2PN và 3PN tại K-Home CityView Biên Hòa\n\n## Mặt bằng căn hộ có hợp lý không?\n\nTrong phân khúc NOXH, điều quan trọng nhất của mặt bằng không chỉ là diện tích lớn hay nhỏ, mà là cách bố trí công năng có hợp lý hay không. Với K-Home CityView, thiết kế được chú trọng theo tiêu chí tối ưu sinh hoạt gia đình: khu sinh hoạt chung, khu riêng tư và khả năng đón sáng, đón gió tự nhiên.\n\nĐối với gia đình trẻ, mặt bằng hợp lý giúp:\n- Tối ưu diện tích sử dụng, giảm cảm giác chật chội\n- Dễ bố trí nội thất theo nhu cầu\n- Tạo không gian sinh hoạt thoải mái lâu dài\n- Tăng giá trị khai thác thực tế của căn hộ\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-4-2048x1209.jpg|Căn hộ mẫu 1PN bàn giao hoàn thiện cơ bản chuẩn An Cường tại K-Home CityView\n\n## Tiện ích nội khu K-Home CityView gồm những gì?\n\nMột trong những điểm làm K-Home CityView khác biệt so với nhiều dự án NOXH truyền thống là hệ thống tiện ích nội khu được quy hoạch khá đầy đủ. Dự án được phát triển theo hướng \"mọi nhu cầu trong vài bước chân\" — cư dân có thể tiếp cận nhiều dịch vụ sinh hoạt, vui chơi và thư giãn ngay trong khuôn viên.\n\n**Tiện ích nổi bật:**\n- Hồ bơi người lớn và trẻ em\n- Công viên và hồ cảnh quan trung tâm\n- Vườn dạo bộ, khu nghỉ chân ngoài trời\n- Khu vui chơi trẻ em\n- Khu thể thao đa năng ngoài trời\n- Khu BBQ ngoài trời\n- Trường mầm non nội khu\n- Shophouse và minimart phục vụ nhu cầu hằng ngày\n- Trạm sạc xe điện\n- Hệ thống an ninh 24/7 và camera giám sát\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-6.jpg|Sơ đồ và hình ảnh tiện ích nội khu dự án K-Home CityView Hố Nai\n\n## Tiện ích xanh có gì nổi bật?\n\nK-Home CityView còn được phát triển theo định hướng công trình xanh **EDGE** và chất sống Singapore. Ngoài tiện ích sử dụng thông thường, dự án hướng đến tiết kiệm năng lượng, tiết kiệm nước và tăng hiệu quả vận hành không gian sống:\n\n- Tiết kiệm tối thiểu **20% điện năng** tiêu thụ\n- Tiết kiệm tối thiểu **20% nước sinh hoạt**\n- Nhiều mảng xanh, cảnh quan mở và lối đi bộ thư giãn\n- Tổ chức ánh sáng, gió và mặt thoáng tốt hơn\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-8.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|Tiện ích cảnh quan xanh và không gian cộng đồng nội khu K-Home CityView\n\n## Mặt bằng này phù hợp ai?\n\nK-Home CityView phù hợp với:\n\n- Người lao động đang làm việc tại Biên Hòa và các KCN lân cận\n- Gia đình trẻ cần căn hộ vừa túi tiền nhưng vẫn có tiện ích đầy đủ\n- Người muốn mua nhà để ở lâu dài, không phải đầu tư lướt sóng\n- Người có nhu cầu sống trong môi trường an ninh, cộng đồng cư dân rõ ràng\n\n![Phối cảnh tổng thể khu dự án nhà ở xã hội K-Home CityView Biên Hòa từ trên cao](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)\n\n## Kết luận\n\nMặt bằng K-Home CityView cho thấy dự án đang đi theo hướng một khu căn hộ NOXH quy mô lớn, quy hoạch tốt, loại căn đa dạng và tiện ích nội khu tương đối đầy đủ. Đây là điểm khác biệt quan trọng so với nhiều dự án nhà ở xã hội truyền thống vốn chỉ tập trung vào chức năng ở mà chưa chú trọng đến trải nghiệm sống.\n\nLiên hệ **0937.587.438** để được tư vấn miễn phí về các loại căn, chính sách vay và tiến độ mở bán mới nhất.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac|Vị trí K-Home CityView nổi bật so với các NOXH khác",
+    project: "cityview",
+    content: `Mặt bằng K-Home CityView là một trong những yếu tố được người mua quan tâm nhất khi tìm hiểu dự án, bởi nó quyết định trực tiếp đến cảm giác sống, sự riêng tư, khả năng khai thác công năng của căn hộ và mức độ phù hợp với từng nhóm khách hàng.
+
+![Mặt bằng tổng thể và layout các loại căn hộ tại dự án K-Home CityView Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
+
+## Mặt bằng K-Home CityView có gì đáng chú ý?
+
+Với quy mô khoảng 2,85 ha, dự án được quy hoạch thành 4 block cao 22 tầng, tạo nên một quần thể nhà ở xã hội có tổ chức tương đối bài bản tại Biên Hòa.
+
+Điểm đáng chú ý là K-Home CityView không đi theo mô hình nhà ở xã hội nhỏ lẻ, mà được phát triển theo hướng một khu căn hộ khép kín, có hệ thống cảnh quan và tiện ích đồng bộ. Điều này giúp dự án có lợi thế về cảm nhận không gian sống, chứ không chỉ dừng ở việc cung cấp chỗ ở với mức giá dễ tiếp cận.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/k-home-cityview-ho-nai-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785329651/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-h%C3%ACnh-%E1%BA%A3nh-31.jpg|Mặt bằng tổng thể và sơ đồ tầng 1 dự án K-Home CityView Hố Nai Biên Hòa
+
+## Quy mô dự án K-Home CityView
+
+Theo thông tin công bố từ chủ đầu tư, K-Home CityView được xây dựng trên diện tích khoảng **28.459,4 m²** (gần 2,85 ha). Dự án gồm:
+
+- **4 block** cao **22 tầng**
+- **1.382 căn hộ** (1.352 NOXH + 30 shophouse thương mại)
+- **Pháp lý:** Sổ hồng riêng từng căn
+
+Quy mô lớn thường đem lại lợi thế về tiện ích, bố trí cảnh quan và khả năng hình thành cộng đồng cư dân đông, ổn định — phù hợp cho những người mua để ở lâu dài.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785329651/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-h%C3%ACnh-%E1%BA%A3nh-31.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-4-11.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg|Mặt bằng tầng điển hình các block dự án K-Home CityView Hố Nai
+
+## Loại căn hộ tại K-Home CityView
+
+K-Home CityView được định hướng phục vụ nhiều nhóm khách hàng khác nhau, vì vậy loại căn hộ cũng được phát triển linh hoạt. Diện tích dao động từ **47 m² đến 84 m²**, phù hợp với người độc thân, gia đình trẻ, hoặc gia đình có 2–3 thế hệ.
+
+| Loại căn | Diện tích | Phù hợp |
+|---|---|---|
+| 1 phòng ngủ (A) | ~47–50 m² | Người độc thân, cặp đôi |
+| 1 phòng ngủ (B) | ~52–55 m² | Cặp vợ chồng trẻ |
+| 2 phòng ngủ | ~62–70 m² | Gia đình nhỏ 3–4 người |
+| 3 phòng ngủ | ~78–84 m² | Gia đình 4–5 người |
+
+Sự đa dạng này là điểm cộng vì người mua có thể chọn diện tích phù hợp với nhu cầu thực tế và khả năng tài chính.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết căn hộ K-Home CityView →
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-B/2pns-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg|Layout căn hộ 1PN, 2PN và 3PN tại K-Home CityView Biên Hòa
+
+## Mặt bằng căn hộ có hợp lý không?
+
+Trong phân khúc NOXH, điều quan trọng nhất của mặt bằng không chỉ là diện tích lớn hay nhỏ, mà là cách bố trí công năng có hợp lý hay không. Với K-Home CityView, thiết kế được chú trọng theo tiêu chí tối ưu sinh hoạt gia đình: khu sinh hoạt chung, khu riêng tư và khả năng đón sáng, đón gió tự nhiên.
+
+Đối với gia đình trẻ, mặt bằng hợp lý giúp:
+- Tối ưu diện tích sử dụng, giảm cảm giác chật chội
+- Dễ bố trí nội thất theo nhu cầu
+- Tạo không gian sinh hoạt thoải mái lâu dài
+- Tăng giá trị khai thác thực tế của căn hộ
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-4-2048x1209.jpg|Căn hộ mẫu 1PN bàn giao hoàn thiện cơ bản chuẩn An Cường tại K-Home CityView
+
+## Tiện ích nội khu K-Home CityView gồm những gì?
+
+Một trong những điểm làm K-Home CityView khác biệt so với nhiều dự án NOXH truyền thống là hệ thống tiện ích nội khu được quy hoạch khá đầy đủ. Dự án được phát triển theo hướng "mọi nhu cầu trong vài bước chân" — cư dân có thể tiếp cận nhiều dịch vụ sinh hoạt, vui chơi và thư giãn ngay trong khuôn viên.
+
+**Tiện ích nổi bật:**
+- Hồ bơi người lớn và trẻ em
+- Công viên và hồ cảnh quan trung tâm
+- Vườn dạo bộ, khu nghỉ chân ngoài trời
+- Khu vui chơi trẻ em
+- Khu thể thao đa năng ngoài trời
+- Khu BBQ ngoài trời
+- Trường mầm non nội khu
+- Shophouse và minimart phục vụ nhu cầu hằng ngày
+- Trạm sạc xe điện
+- Hệ thống an ninh 24/7 và camera giám sát
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-6.jpg|Sơ đồ và hình ảnh tiện ích nội khu dự án K-Home CityView Hố Nai
+
+## Tiện ích xanh có gì nổi bật?
+
+K-Home CityView còn được phát triển theo định hướng công trình xanh **EDGE** và chất sống Singapore. Ngoài tiện ích sử dụng thông thường, dự án hướng đến tiết kiệm năng lượng, tiết kiệm nước và tăng hiệu quả vận hành không gian sống:
+
+- Tiết kiệm tối thiểu **20% điện năng** tiêu thụ
+- Tiết kiệm tối thiểu **20% nước sinh hoạt**
+- Nhiều mảng xanh, cảnh quan mở và lối đi bộ thư giãn
+- Tổ chức ánh sáng, gió và mặt thoáng tốt hơn
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-8.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|Tiện ích cảnh quan xanh và không gian cộng đồng nội khu K-Home CityView
+
+## Mặt bằng này phù hợp ai?
+
+K-Home CityView phù hợp với:
+
+- Người lao động đang làm việc tại Biên Hòa và các KCN lân cận
+- Gia đình trẻ cần căn hộ vừa túi tiền nhưng vẫn có tiện ích đầy đủ
+- Người muốn mua nhà để ở lâu dài, không phải đầu tư lướt sóng
+- Người có nhu cầu sống trong môi trường an ninh, cộng đồng cư dân rõ ràng
+
+![Phối cảnh tổng thể khu dự án nhà ở xã hội K-Home CityView Biên Hòa từ trên cao](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)
+
+## Kết luận
+
+Mặt bằng K-Home CityView cho thấy dự án đang đi theo hướng một khu căn hộ NOXH quy mô lớn, quy hoạch tốt, loại căn đa dạng và tiện ích nội khu tương đối đầy đủ. Đây là điểm khác biệt quan trọng so với nhiều dự án nhà ở xã hội truyền thống vốn chỉ tập trung vào chức năng ở mà chưa chú trọng đến trải nghiệm sống.
+
+Liên hệ **0937.587.438** để được tư vấn miễn phí về các loại căn, chính sách vay và tiến độ mở bán mới nhất.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac|Vị trí K-Home CityView nổi bật so với các NOXH khác`,
   },
   {
-    id: "5",
+    id: "n5",
     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac",
     title: "Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật So Với Các Dự Án NOXH Khác?",
     date: "2026-07-31",
     excerpt: "Khám phá vị trí K-Home CityView Biên Hòa, lợi thế kết nối, tiện ích xung quanh, tiềm năng an cư và lý do dự án nổi bật giữa các NOXH tại Đồng Nai.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323498/slide-k-home-cityview/slide-25.jpg",
     category: "Đánh giá dự án",
-    content: "Khi chọn mua nhà ở xã hội (NOXH), vị trí thường là yếu tố được cân nhắc đầu tiên — vì nó ảnh hưởng trực tiếp đến mọi khía cạnh của cuộc sống hằng ngày. Bài viết này phân tích cụ thể vị trí K-Home CityView và lý do nó được đánh giá nổi bật so với nhiều dự án NOXH khác tại Biên Hòa.\n\n![Ảnh aerial nhìn từ trên cao toàn khu dự án K-Home CityView Hố Nai Biên Hòa Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1)\n\n## Vị trí K-Home CityView ở đâu?\n\nK-Home CityView tọa lạc trên đường Điểu Xiển, thuộc phường Hố Nai, TP. Biên Hòa, Đồng Nai. Đây là một vị trí được đánh giá khá đặc biệt trong phân khúc NOXH vì nằm ngay khu vực đô thị đang phát triển, có mật độ dân cư cao và tiếp giáp nhiều tuyến đường quan trọng của thành phố.\n\nSo với nhiều dự án NOXH thường nằm xa trung tâm hoặc ở khu vực hạ tầng chưa hoàn chỉnh, K-Home CityView có lợi thế lớn khi nằm trong vùng đã hình thành cộng đồng dân cư, gần khu công nghiệp, gần tiện ích sẵn có và kết nối thuận lợi đến các trục giao thông chính. Đây là yếu tố quan trọng với người mua ở thật vì nó ảnh hưởng trực tiếp đến thời gian di chuyển, sinh hoạt hằng ngày và giá trị sống lâu dài.\n\n![Phối cảnh mặt tiền đường Điểu Xiển nhìn vào dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2)\n\n## Vị trí này kết nối những khu vực nào?\n\nTừ K-Home CityView, cư dân có thể di chuyển nhanh đến trung tâm Biên Hòa, tiếp cận các tuyến huyết mạch như Quốc lộ 1A, Nguyễn Ái Quốc, Võ Nguyên Giáp và các trục liên vùng khác của Đồng Nai.\n\nKhông chỉ dừng ở kết nối nội đô, vị trí còn thuận tiện cho việc đi làm tại các khu công nghiệp lớn xung quanh:\n\n- **KCN Amata** — một trong những KCN lớn nhất Biên Hòa\n- **KCN Hố Nai** — ngay khu vực lân cận dự án\n- **KCN Long Bình & Biên Hòa 2** — kết nối nhanh qua các trục chính\n\nĐây là điểm cộng rất lớn với nhóm khách hàng mục tiêu của NOXH: công nhân, kỹ sư, chuyên gia và nhân sự văn phòng đang làm việc tại khu vực Biên Hòa.\n\n![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa nhìn từ trên cao](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)\n\n## Điểm mạnh nhất của vị trí K-Home CityView là gì?\n\nĐiểm mạnh lớn nhất không chỉ là \"gần trung tâm\" mà là gần **đúng nơi người mua cần ở**. Với nhà ở xã hội, một vị trí tốt không nhất thiết phải nằm ở khu đất đắt đỏ nhất — mà phải giúp cư dân giảm chi phí đi lại, tiếp cận nơi làm việc nhanh và có đầy đủ dịch vụ thiết yếu xung quanh.\n\nK-Home CityView đáp ứng khá rõ tiêu chí đó:\n\n- Gần các khu công nghiệp lớn, thuận tiện cho người đi làm hằng ngày\n- Gần chợ, siêu thị, trường học, bệnh viện và hệ thống dịch vụ dân sinh\n- Nằm trong khu vực có nhu cầu ở thật cao, không phụ thuộc vào bài toán đầu tư ngắn hạn\n- Có tiềm năng gia tăng giá trị theo quá trình đô thị hóa của Biên Hòa\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|Phối cảnh mặt tiền và khối đế dự án K-Home CityView Biên Hòa\n\n## So với các dự án NOXH khác tại Biên Hòa, K-Home CityView khác gì?\n\nNhiều dự án NOXH khác tại Biên Hòa thường có lợi thế về giá nhưng lại nằm xa trung tâm hơn, hoặc kết nối chưa thật sự thuận tiện với khu công nghiệp và các dịch vụ hiện hữu. K-Home CityView lại nằm trong vùng có sẵn hạ tầng, cộng đồng cư dân đông và hệ thống tiện ích đã hoạt động ổn định — nên người mua có thể \"vào ở nhanh\" hơn về mặt nhịp sống.\n\nNgoài ra, dự án được phát triển theo tiêu chuẩn sống hiện đại, quy mô **2,85 ha** với **4 block cao 22 tầng** và **1.382 căn hộ**, cho thấy đây không phải dự án NOXH nhỏ lẻ, mà là một khu căn hộ có quy hoạch bài bản hơn nhiều mô hình NOXH truyền thống.\n\n![Không gian sân vườn cây xanh chuẩn Singapore tại dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2)\n\n## Tiện ích xung quanh K-Home CityView có gì?\n\nTừ dự án có thể tiếp cận nhanh các tiện ích thiết yếu đang hoạt động tại Biên Hòa:\n\n- Trung tâm mua sắm: **Lotte Mart, GO! Đồng Nai**\n- Bệnh viện: Bệnh viện Đồng Nai, các phòng khám khu vực Hố Nai\n- Trường học: Nhiều trường tiểu học, THCS, THPT trong bán kính gần\n- Chợ truyền thống và hệ thống dịch vụ dân sinh khu Hố Nai\n\nĐối với người mua ở thật, điều này quan trọng hơn rất nhiều so với quảng bá hình ảnh đơn thuần. Một căn hộ NOXH tốt không chỉ là nơi \"có chỗ ở\", mà phải đảm bảo tiện cho con đi học, thuận cho cha mẹ đi làm và đủ hạ tầng để sinh sống lâu dài.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V36_TAN-HOA_EXT_NOXH_PARK_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V08_TH_EXT_NOTM_SAN-VUON_FINAL_2|Công viên và sân vườn xanh nội khu tại K-Home CityView Biên Hòa\n\n## Vị trí ảnh hưởng thế nào đến khả năng ở thật?\n\nKhi mua để ở thật, vị trí là yếu tố quyết định gần như đầu tiên. Một dự án ở xa nơi làm việc quá nhiều sẽ khiến chi phí xăng xe, thời gian di chuyển và áp lực sinh hoạt tăng lên mỗi ngày. Ngược lại, dự án gần khu công nghiệp và trung tâm dân cư như K-Home CityView giúp gia đình tiết kiệm đáng kể thời gian và chi phí dài hạn.\n\nVới những gia đình trẻ hoặc người lao động đang sống thuê trọ, đây là lợi thế rất thực tế. Thay vì tiếp tục trả tiền thuê hằng tháng mà không tích lũy được tài sản, họ có thể chuyển sang phương án sở hữu căn hộ với lịch thanh toán phù hợp hơn, trong khi vẫn giữ được sự thuận tiện trong cuộc sống.\n\n## Ai sẽ phù hợp nhất với vị trí này?\n\nK-Home CityView đặc biệt phù hợp với:\n\n- Người làm việc tại các KCN Amata, Hố Nai, Long Bình, Biên Hòa 2\n- Gia đình trẻ cần nhà gần trung tâm để ổn định cuộc sống\n- Người muốn con cái có điều kiện học tập, sinh hoạt thuận tiện\n- Khách hàng ưu tiên ở thật hơn là đầu tư ngắn hạn\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785255559/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230269/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1.jpg|Khu vui chơi trẻ em và ban công view thoáng tại K-Home CityView Hố Nai Biên Hòa\n\n## Kết luận\n\nĐiểm nổi bật lớn nhất của K-Home CityView so với nhiều dự án NOXH khác tại Biên Hòa là vị trí nằm gần trung tâm, gần khu công nghiệp, gần tiện ích hiện hữu và phù hợp nhu cầu ở thật. Trong bối cảnh Biên Hòa tiếp tục phát triển mạnh về công nghiệp và đô thị, những dự án có vị trí như K-Home CityView thường được ưu tiên bởi người mua có nhu cầu sinh sống lâu dài.\n\nLiên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, tiến độ và chính sách mua nhà tại K-Home CityView.\n\n---RELATED---k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong|K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026",
+    project: "cityview",
+    content: `Khi chọn mua nhà ở xã hội (NOXH), vị trí thường là yếu tố được cân nhắc đầu tiên — vì nó ảnh hưởng trực tiếp đến mọi khía cạnh của cuộc sống hằng ngày. Bài viết này phân tích cụ thể vị trí K-Home CityView và lý do nó được đánh giá nổi bật so với nhiều dự án NOXH khác tại Biên Hòa.
+
+![Ảnh aerial nhìn từ trên cao toàn khu dự án K-Home CityView Hố Nai Biên Hòa Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1)
+
+## Vị trí K-Home CityView ở đâu?
+
+K-Home CityView tọa lạc trên đường Điểu Xiển, thuộc phường Hố Nai, TP. Biên Hòa, Đồng Nai. Đây là một vị trí được đánh giá khá đặc biệt trong phân khúc NOXH vì nằm ngay khu vực đô thị đang phát triển, có mật độ dân cư cao và tiếp giáp nhiều tuyến đường quan trọng của thành phố.
+
+So với nhiều dự án NOXH thường nằm xa trung tâm hoặc ở khu vực hạ tầng chưa hoàn chỉnh, K-Home CityView có lợi thế lớn khi nằm trong vùng đã hình thành cộng đồng dân cư, gần khu công nghiệp, gần tiện ích sẵn có và kết nối thuận lợi đến các trục giao thông chính. Đây là yếu tố quan trọng với người mua ở thật vì nó ảnh hưởng trực tiếp đến thời gian di chuyển, sinh hoạt hằng ngày và giá trị sống lâu dài.
+
+![Phối cảnh mặt tiền đường Điểu Xiển nhìn vào dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2)
+
+## Vị trí này kết nối những khu vực nào?
+
+Từ K-Home CityView, cư dân có thể di chuyển nhanh đến trung tâm Biên Hòa, tiếp cận các tuyến huyết mạch như Quốc lộ 1A, Nguyễn Ái Quốc, Võ Nguyên Giáp và các trục liên vùng khác của Đồng Nai.
+
+Không chỉ dừng ở kết nối nội đô, vị trí còn thuận tiện cho việc đi làm tại các khu công nghiệp lớn xung quanh:
+
+- **KCN Amata** — một trong những KCN lớn nhất Biên Hòa
+- **KCN Hố Nai** — ngay khu vực lân cận dự án
+- **KCN Long Bình & Biên Hòa 2** — kết nối nhanh qua các trục chính
+
+Đây là điểm cộng rất lớn với nhóm khách hàng mục tiêu của NOXH: công nhân, kỹ sư, chuyên gia và nhân sự văn phòng đang làm việc tại khu vực Biên Hòa.
+
+![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa nhìn từ trên cao](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2)
+
+## Điểm mạnh nhất của vị trí K-Home CityView là gì?
+
+Điểm mạnh lớn nhất không chỉ là "gần trung tâm" mà là gần **đúng nơi người mua cần ở**. Với nhà ở xã hội, một vị trí tốt không nhất thiết phải nằm ở khu đất đắt đỏ nhất — mà phải giúp cư dân giảm chi phí đi lại, tiếp cận nơi làm việc nhanh và có đầy đủ dịch vụ thiết yếu xung quanh.
+
+K-Home CityView đáp ứng khá rõ tiêu chí đó:
+
+- Gần các khu công nghiệp lớn, thuận tiện cho người đi làm hằng ngày
+- Gần chợ, siêu thị, trường học, bệnh viện và hệ thống dịch vụ dân sinh
+- Nằm trong khu vực có nhu cầu ở thật cao, không phụ thuộc vào bài toán đầu tư ngắn hạn
+- Có tiềm năng gia tăng giá trị theo quá trình đô thị hóa của Biên Hòa
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|Phối cảnh mặt tiền và khối đế dự án K-Home CityView Biên Hòa
+
+## So với các dự án NOXH khác tại Biên Hòa, K-Home CityView khác gì?
+
+Nhiều dự án NOXH khác tại Biên Hòa thường có lợi thế về giá nhưng lại nằm xa trung tâm hơn, hoặc kết nối chưa thật sự thuận tiện với khu công nghiệp và các dịch vụ hiện hữu. K-Home CityView lại nằm trong vùng có sẵn hạ tầng, cộng đồng cư dân đông và hệ thống tiện ích đã hoạt động ổn định — nên người mua có thể "vào ở nhanh" hơn về mặt nhịp sống.
+
+Ngoài ra, dự án được phát triển theo tiêu chuẩn sống hiện đại, quy mô **2,85 ha** với **4 block cao 22 tầng** và **1.382 căn hộ**, cho thấy đây không phải dự án NOXH nhỏ lẻ, mà là một khu căn hộ có quy hoạch bài bản hơn nhiều mô hình NOXH truyền thống.
+
+![Không gian sân vườn cây xanh chuẩn Singapore tại dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2)
+
+## Tiện ích xung quanh K-Home CityView có gì?
+
+Từ dự án có thể tiếp cận nhanh các tiện ích thiết yếu đang hoạt động tại Biên Hòa:
+
+- Trung tâm mua sắm: **Lotte Mart, GO! Đồng Nai**
+- Bệnh viện: Bệnh viện Đồng Nai, các phòng khám khu vực Hố Nai
+- Trường học: Nhiều trường tiểu học, THCS, THPT trong bán kính gần
+- Chợ truyền thống và hệ thống dịch vụ dân sinh khu Hố Nai
+
+Đối với người mua ở thật, điều này quan trọng hơn rất nhiều so với quảng bá hình ảnh đơn thuần. Một căn hộ NOXH tốt không chỉ là nơi "có chỗ ở", mà phải đảm bảo tiện cho con đi học, thuận cho cha mẹ đi làm và đủ hạ tầng để sinh sống lâu dài.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V36_TAN-HOA_EXT_NOXH_PARK_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V08_TH_EXT_NOTM_SAN-VUON_FINAL_2|Công viên và sân vườn xanh nội khu tại K-Home CityView Biên Hòa
+
+## Vị trí ảnh hưởng thế nào đến khả năng ở thật?
+
+Khi mua để ở thật, vị trí là yếu tố quyết định gần như đầu tiên. Một dự án ở xa nơi làm việc quá nhiều sẽ khiến chi phí xăng xe, thời gian di chuyển và áp lực sinh hoạt tăng lên mỗi ngày. Ngược lại, dự án gần khu công nghiệp và trung tâm dân cư như K-Home CityView giúp gia đình tiết kiệm đáng kể thời gian và chi phí dài hạn.
+
+Với những gia đình trẻ hoặc người lao động đang sống thuê trọ, đây là lợi thế rất thực tế. Thay vì tiếp tục trả tiền thuê hằng tháng mà không tích lũy được tài sản, họ có thể chuyển sang phương án sở hữu căn hộ với lịch thanh toán phù hợp hơn, trong khi vẫn giữ được sự thuận tiện trong cuộc sống.
+
+## Ai sẽ phù hợp nhất với vị trí này?
+
+K-Home CityView đặc biệt phù hợp với:
+
+- Người làm việc tại các KCN Amata, Hố Nai, Long Bình, Biên Hòa 2
+- Gia đình trẻ cần nhà gần trung tâm để ổn định cuộc sống
+- Người muốn con cái có điều kiện học tập, sinh hoạt thuận tiện
+- Khách hàng ưu tiên ở thật hơn là đầu tư ngắn hạn
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785255559/k-home-cityview/mat-bang/tien-ich-k-home-city-view-9.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230269/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1.jpg|Khu vui chơi trẻ em và ban công view thoáng tại K-Home CityView Hố Nai Biên Hòa
+
+## Kết luận
+
+Điểm nổi bật lớn nhất của K-Home CityView so với nhiều dự án NOXH khác tại Biên Hòa là vị trí nằm gần trung tâm, gần khu công nghiệp, gần tiện ích hiện hữu và phù hợp nhu cầu ở thật. Trong bối cảnh Biên Hòa tiếp tục phát triển mạnh về công nghiệp và đô thị, những dự án có vị trí như K-Home CityView thường được ưu tiên bởi người mua có nhu cầu sinh sống lâu dài.
+
+Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, tiến độ và chính sách mua nhà tại K-Home CityView.
+
+---RELATED---k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong|K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026`,
   },
   {
-    id: "4",
+    id: "n4",
     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong",
     title: "K-Home CityView Là Gì? Có Nên Mua Ở Thật Tại Biên Hòa Năm 2026 Không?",
     date: "2026-07-30",
     excerpt: "Tìm hiểu K-Home CityView là gì, vị trí ở đâu, quy mô ra sao, giá bán, tiện ích và lý do dự án được quan tâm tại Biên Hòa năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-21",
     category: "Đánh giá dự án",
-    content: "Nếu bạn đang tìm kiếm nhà ở tại Biên Hòa và gặp tên K-Home CityView, rất có thể bạn đang muốn biết đây là dự án gì, phù hợp với ai và có đáng để cân nhắc mua ở thật hay không. Bài viết này tổng hợp những thông tin thiết yếu nhất để bạn có cái nhìn rõ ràng trước khi quyết định.\n\n![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Đồng Nai 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-18)\n\n## K-Home CityView là gì?\n\nK-Home CityView là dự án nhà ở xã hội theo định hướng tiêu chuẩn sống hiện đại do Kim Oanh Land phát triển tại trung tâm Biên Hòa, Đồng Nai. Dự án tọa lạc trên đường Điểu Xiển, thuộc khu vực Hố Nai — một vị trí khá thuận lợi khi kết nối đến các trục giao thông quan trọng, khu công nghiệp, tiện ích dân sinh và trung tâm thành phố.\n\nĐiểm đáng chú ý của K-Home CityView nằm ở cách phát triển khác biệt so với hình dung truyền thống về nhà ở xã hội. Dự án không chỉ hướng đến nhu cầu an cư với mức chi phí dễ tiếp cận, mà còn được triển khai theo định hướng không gian sống xanh, tiện ích đồng bộ và tiêu chuẩn xây dựng hiện đại — trong đó có tiêu chuẩn xanh EDGE giúp tiết kiệm năng lượng, nước và giảm phát thải vật liệu.\n\n**Thông tin tổng quan:**\n- **Chủ đầu tư:** Công ty CP Đầu tư & Phát triển BĐS Miền Đông (thành viên Kim Oanh Group)\n- **Đơn vị thiết kế:** Tập đoàn Surbana Jurong (Singapore)\n- **Vị trí:** Đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai\n- **Quy mô:** 2,85 ha — 4 tòa tháp 22 tầng — 1.382 căn (1.352 NOXH + 30 shophouse)\n- **Pháp lý:** Sổ hồng riêng từng căn\n\n![Phối cảnh mặt tiền 4 tòa tháp dự án K-Home CityView Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1785315453/news/news-6.jpg)\n\n## Vì sao K-Home CityView được quan tâm?\n\nSự quan tâm dành cho K-Home CityView đến từ nhiều yếu tố cùng lúc. Trước hết, dự án nằm ngay Biên Hòa — khu vực có mật độ dân cư cao, nhu cầu nhà ở thật lớn, đặc biệt là nhóm người lao động, gia đình trẻ, kỹ sư và chuyên gia đang làm việc tại các khu công nghiệp lân cận.\n\nSự kiện giới thiệu dự án vào ngày **21/06/2026** đã thu hút hơn **1.200 khách hàng** tham dự, cho thấy mức độ quan tâm thực tế của thị trường. Ngoài ra, mức vốn ban đầu từ khoảng **200 triệu đồng**, cộng với khả năng vay ưu đãi qua Ngân hàng Chính sách Xã hội (lãi suất 5,4%/năm, đến 25 năm), giúp giảm áp lực tài chính đáng kể cho người mua ở thật.\n\n![Không gian sân vườn và khu BBQ ngoài trời tại dự án K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1)\n\n## Vị trí K-Home CityView có gì đặc biệt?\n\nK-Home CityView nằm trên trục đường Điểu Xiển, thuộc khu đô thị đang phát triển của Biên Hòa. Từ dự án, cư dân kết nối thuận tiện đến Quốc lộ 1A, Nguyễn Ái Quốc, Võ Nguyên Giáp và các khu vực lân cận của TP. Biên Hòa.\n\nLợi thế lớn của vị trí này là:\n- Gần khu dân cư đông, tiện ích xã hội (chợ, trường, bệnh viện, Lotte Mart, GO!)\n- Gần các KCN trọng điểm: **KCN Amata, KCN Hố Nai, KCN Biên Hòa 2**\n- Nhu cầu nhà ở thật rất cao — giúp tiết kiệm thời gian di chuyển và ổn định nhịp sống\n\n![Phối cảnh góc nhìn từ đường Điểu Xiển vào dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2)\n\n## Thiết kế và tiêu chuẩn sống tại dự án\n\nK-Home CityView được phát triển theo tiêu chuẩn sống xanh **EDGE** (Excellence in Design for Greater Efficiencies), đồng thời hướng đến giải pháp tiết kiệm năng lượng và tối ưu vật liệu thân thiện với môi trường. Cụ thể:\n\n- Tiết kiệm tối thiểu **20% điện năng** tiêu thụ\n- Tiết kiệm tối thiểu **20% nước sinh hoạt**\n- Giảm **20% khí thải carbon** trong vật liệu xây dựng\n\nDự án có đa dạng loại căn từ **1 đến 3 phòng ngủ** (47,3 m² – 85 m²), phù hợp với người độc thân, cặp vợ chồng trẻ hoặc gia đình nhiều thế hệ.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V11_TH_EXT_NOTM_POOL_2|Hồ bơi người lớn và khu thư giãn ngoài trời tại K-Home CityView Biên Hòa\n\n![Khu vui chơi trẻ em ngoài trời tại dự án nhà ở xã hội K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1)\n\n## Có nên mua ở thật tại Biên Hòa năm 2026 không?\n\nNếu bạn đang tìm một nơi an cư lâu dài, K-Home CityView là dự án đáng cân nhắc — đặc biệt khi tiêu chí của bạn là vị trí trung tâm, nhu cầu ở thật, tài chính vừa tầm và mong muốn sống trong môi trường có quy hoạch rõ ràng.\n\nTuy nhiên, việc có nên mua hay không còn phụ thuộc vào 3 yếu tố:\n\n1. **Nhu cầu ở thật hay đầu tư** — NOXH có hạn chế giao dịch trong 5 năm đầu, không phù hợp nếu mục đích là lướt sóng.\n2. **Khả năng đáp ứng điều kiện hồ sơ** — cần kiểm tra thu nhập, tình trạng nhà ở hiện tại và hợp đồng lao động.\n3. **Kế hoạch tài chính dài hạn 5–25 năm** — trả góp ổn định là yếu tố quan trọng.\n\nNếu bạn mua để ở thật, dự án này phù hợp hơn so với các sản phẩm đầu tư thuần túy vì điểm mạnh nằm ở công năng sử dụng, sự tiện lợi trong sinh hoạt hằng ngày và chi phí sở hữu tương đối dễ tiếp cận.\n\n![Mặt bằng tổng thể các loại căn hộ 1PN 2PN 3PN tại dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)\n\n## Ai nên mua K-Home CityView?\n\nK-Home CityView phù hợp với các nhóm sau:\n\n- Người lao động đang làm việc tại Biên Hòa, Hố Nai, KCN Amata, Long Bình.\n- Gia đình trẻ muốn có chỗ ở ổn định với chi phí ban đầu vừa phải.\n- Người muốn mua nhà ở xã hội nhưng vẫn ưu tiên môi trường sống xanh và tiện ích đầy đủ.\n- Những người muốn an cư lâu dài thay vì tiếp tục thuê nhà nhiều năm.\n\nNếu bạn mua để lướt sóng hoặc kỳ vọng lợi nhuận ngắn hạn, NOXH thường không phải lựa chọn tối ưu. Nhưng nếu mục tiêu là ổn định cuộc sống và tích lũy tài sản, dự án này khá phù hợp.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V05_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V06_FINAL_2-1|Phối cảnh khu vườn cây xanh và không gian cộng đồng tại K-Home CityView Biên Hòa\n\n## Kết luận\n\nK-Home CityView là một trong những dự án nhà ở xã hội đáng chú ý nhất tại Biên Hòa năm 2026, nhờ vị trí trung tâm, quy mô lớn, mức vốn ban đầu dễ tiếp cận và định hướng phát triển theo tiêu chuẩn sống xanh. Với những ai đang tìm nhà để ở thật, đây là dự án rất nên theo dõi kỹ về điều kiện hồ sơ, tiến độ và chính sách bán hàng.\n\nLiên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ và chính sách mua nhà.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026",
+    project: "cityview",
+    content: `Nếu bạn đang tìm kiếm nhà ở tại Biên Hòa và gặp tên K-Home CityView, rất có thể bạn đang muốn biết đây là dự án gì, phù hợp với ai và có đáng để cân nhắc mua ở thật hay không. Bài viết này tổng hợp những thông tin thiết yếu nhất để bạn có cái nhìn rõ ràng trước khi quyết định.
+
+![Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Biên Hòa Đồng Nai 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-18)
+
+## K-Home CityView là gì?
+
+K-Home CityView là dự án nhà ở xã hội theo định hướng tiêu chuẩn sống hiện đại do Kim Oanh Land phát triển tại trung tâm Biên Hòa, Đồng Nai. Dự án tọa lạc trên đường Điểu Xiển, thuộc khu vực Hố Nai — một vị trí khá thuận lợi khi kết nối đến các trục giao thông quan trọng, khu công nghiệp, tiện ích dân sinh và trung tâm thành phố.
+
+Điểm đáng chú ý của K-Home CityView nằm ở cách phát triển khác biệt so với hình dung truyền thống về nhà ở xã hội. Dự án không chỉ hướng đến nhu cầu an cư với mức chi phí dễ tiếp cận, mà còn được triển khai theo định hướng không gian sống xanh, tiện ích đồng bộ và tiêu chuẩn xây dựng hiện đại — trong đó có tiêu chuẩn xanh EDGE giúp tiết kiệm năng lượng, nước và giảm phát thải vật liệu.
+
+**Thông tin tổng quan:**
+- **Chủ đầu tư:** Công ty CP Đầu tư & Phát triển BĐS Miền Đông (thành viên Kim Oanh Group)
+- **Đơn vị thiết kế:** Tập đoàn Surbana Jurong (Singapore)
+- **Vị trí:** Đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai
+- **Quy mô:** 2,85 ha — 4 tòa tháp 22 tầng — 1.382 căn (1.352 NOXH + 30 shophouse)
+- **Pháp lý:** Sổ hồng riêng từng căn
+
+![Phối cảnh mặt tiền 4 tòa tháp dự án K-Home CityView Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1785315453/news/news-6.jpg)
+
+## Vì sao K-Home CityView được quan tâm?
+
+Sự quan tâm dành cho K-Home CityView đến từ nhiều yếu tố cùng lúc. Trước hết, dự án nằm ngay Biên Hòa — khu vực có mật độ dân cư cao, nhu cầu nhà ở thật lớn, đặc biệt là nhóm người lao động, gia đình trẻ, kỹ sư và chuyên gia đang làm việc tại các khu công nghiệp lân cận.
+
+Sự kiện giới thiệu dự án vào ngày **21/06/2026** đã thu hút hơn **1.200 khách hàng** tham dự, cho thấy mức độ quan tâm thực tế của thị trường. Ngoài ra, mức vốn ban đầu từ khoảng **200 triệu đồng**, cộng với khả năng vay ưu đãi qua Ngân hàng Chính sách Xã hội (lãi suất 5,4%/năm, đến 25 năm), giúp giảm áp lực tài chính đáng kể cho người mua ở thật.
+
+![Không gian sân vườn và khu BBQ ngoài trời tại dự án K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1)
+
+## Vị trí K-Home CityView có gì đặc biệt?
+
+K-Home CityView nằm trên trục đường Điểu Xiển, thuộc khu đô thị đang phát triển của Biên Hòa. Từ dự án, cư dân kết nối thuận tiện đến Quốc lộ 1A, Nguyễn Ái Quốc, Võ Nguyên Giáp và các khu vực lân cận của TP. Biên Hòa.
+
+Lợi thế lớn của vị trí này là:
+- Gần khu dân cư đông, tiện ích xã hội (chợ, trường, bệnh viện, Lotte Mart, GO!)
+- Gần các KCN trọng điểm: **KCN Amata, KCN Hố Nai, KCN Biên Hòa 2**
+- Nhu cầu nhà ở thật rất cao — giúp tiết kiệm thời gian di chuyển và ổn định nhịp sống
+
+![Phối cảnh góc nhìn từ đường Điểu Xiển vào dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2)
+
+## Thiết kế và tiêu chuẩn sống tại dự án
+
+K-Home CityView được phát triển theo tiêu chuẩn sống xanh **EDGE** (Excellence in Design for Greater Efficiencies), đồng thời hướng đến giải pháp tiết kiệm năng lượng và tối ưu vật liệu thân thiện với môi trường. Cụ thể:
+
+- Tiết kiệm tối thiểu **20% điện năng** tiêu thụ
+- Tiết kiệm tối thiểu **20% nước sinh hoạt**
+- Giảm **20% khí thải carbon** trong vật liệu xây dựng
+
+Dự án có đa dạng loại căn từ **1 đến 3 phòng ngủ** (47,3 m² – 85 m²), phù hợp với người độc thân, cặp vợ chồng trẻ hoặc gia đình nhiều thế hệ.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V11_TH_EXT_NOTM_POOL_2|Hồ bơi người lớn và khu thư giãn ngoài trời tại K-Home CityView Biên Hòa
+
+![Khu vui chơi trẻ em ngoài trời tại dự án nhà ở xã hội K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1)
+
+## Có nên mua ở thật tại Biên Hòa năm 2026 không?
+
+Nếu bạn đang tìm một nơi an cư lâu dài, K-Home CityView là dự án đáng cân nhắc — đặc biệt khi tiêu chí của bạn là vị trí trung tâm, nhu cầu ở thật, tài chính vừa tầm và mong muốn sống trong môi trường có quy hoạch rõ ràng.
+
+Tuy nhiên, việc có nên mua hay không còn phụ thuộc vào 3 yếu tố:
+
+1. **Nhu cầu ở thật hay đầu tư** — NOXH có hạn chế giao dịch trong 5 năm đầu, không phù hợp nếu mục đích là lướt sóng.
+2. **Khả năng đáp ứng điều kiện hồ sơ** — cần kiểm tra thu nhập, tình trạng nhà ở hiện tại và hợp đồng lao động.
+3. **Kế hoạch tài chính dài hạn 5–25 năm** — trả góp ổn định là yếu tố quan trọng.
+
+Nếu bạn mua để ở thật, dự án này phù hợp hơn so với các sản phẩm đầu tư thuần túy vì điểm mạnh nằm ở công năng sử dụng, sự tiện lợi trong sinh hoạt hằng ngày và chi phí sở hữu tương đối dễ tiếp cận.
+
+![Mặt bằng tổng thể các loại căn hộ 1PN 2PN 3PN tại dự án K-Home CityView Hố Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
+
+## Ai nên mua K-Home CityView?
+
+K-Home CityView phù hợp với các nhóm sau:
+
+- Người lao động đang làm việc tại Biên Hòa, Hố Nai, KCN Amata, Long Bình.
+- Gia đình trẻ muốn có chỗ ở ổn định với chi phí ban đầu vừa phải.
+- Người muốn mua nhà ở xã hội nhưng vẫn ưu tiên môi trường sống xanh và tiện ích đầy đủ.
+- Những người muốn an cư lâu dài thay vì tiếp tục thuê nhà nhiều năm.
+
+Nếu bạn mua để lướt sóng hoặc kỳ vọng lợi nhuận ngắn hạn, NOXH thường không phải lựa chọn tối ưu. Nhưng nếu mục tiêu là ổn định cuộc sống và tích lũy tài sản, dự án này khá phù hợp.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V05_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V06_FINAL_2-1|Phối cảnh khu vườn cây xanh và không gian cộng đồng tại K-Home CityView Biên Hòa
+
+## Kết luận
+
+K-Home CityView là một trong những dự án nhà ở xã hội đáng chú ý nhất tại Biên Hòa năm 2026, nhờ vị trí trung tâm, quy mô lớn, mức vốn ban đầu dễ tiếp cận và định hướng phát triển theo tiêu chuẩn sống xanh. Với những ai đang tìm nhà để ở thật, đây là dự án rất nên theo dõi kỹ về điều kiện hồ sơ, tiến độ và chính sách bán hàng.
+
+Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ và chính sách mua nhà.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "3",
+    id: "n3",
     slug: "ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong",
     title: "Lý Do Nên Chọn K-Home Thay Vì Nhà Ở Xã Hội Thông Thường",
     date: "2026-07-29",
     excerpt: "So sánh thực tế chuỗi dự án K-Home (CityView, Avenue, Midtown) với nhà ở xã hội thông thường: thiết kế Singapore, chứng chỉ xanh EDGE, tiện ích khép kín và vị trí chiến lược gần KCN Đồng Nai.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/1",
     category: "So sánh & Tư vấn",
-    content: "Nhà ở xã hội (NOXH) ngày càng phổ biến tại Đồng Nai, giúp nhiều công nhân và người thu nhập thấp có cơ hội an cư. Tuy nhiên, không phải dự án NOXH nào cũng giống nhau. Chuỗi dự án K-Home do Kim Oanh Land phát triển đang được nhiều người quan tâm vì mang đến tiêu chuẩn cao hơn so với phần lớn nhà ở xã hội thông thường hiện nay.\n\n![Phối cảnh tổng thể dự án nhà ở xã hội K-Home chuẩn Singapore Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/1)\n\n## 1. Thiết kế bởi đơn vị Singapore – Không gian sống tối ưu hơn\n\nHầu hết dự án NOXH thông thường được thiết kế theo tiêu chuẩn tối thiểu của Việt Nam. Trong khi đó, các dự án K-Home được tư vấn thiết kế bởi **Tập đoàn Surbana Jurong (Singapore)** – đơn vị có kinh nghiệm phát triển nhà ở xã hội và đô thị tại nhiều quốc gia.\n\nĐiều này thể hiện rõ ở:\n\n- Bố trí căn hộ thông minh, tận dụng tối đa ánh sáng và gió tự nhiên.\n- Diện tích sử dụng hợp lý, hạn chế lãng phí không gian.\n- Ban công và cửa sổ lớn giúp căn hộ luôn thông thoáng.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/2-2|Thiết kế căn hộ K-Home chuẩn Singapore tối ưu ánh sáng và thông gió tự nhiên\n\n## 2. Áp dụng chứng chỉ công trình xanh EDGE – Tiết kiệm điện nước thực tế\n\nĐây là điểm khác biệt lớn nhất. Nhiều dự án NOXH thông thường chưa đạt chứng chỉ xanh quốc tế. Các dự án K-Home được phát triển theo tiêu chuẩn công trình xanh EDGE.\n\nTheo công bố, thiết kế đạt chuẩn EDGE giúp:\n\n- Tiết kiệm tối thiểu **20% điện năng**\n- Tiết kiệm tối thiểu **20% lượng nước sinh hoạt**\n- Giảm **20% khí thải carbon** trong vật liệu xây dựng\n\nLợi ích lâu dài: chi phí sinh hoạt hàng tháng thấp hơn so với căn hộ thông thường cùng diện tích.\n\n![Công trình xanh EDGE tại chuỗi dự án nhà ở xã hội K-Home Đồng Nai tiết kiệm điện nước](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/3)\n\n## 3. Hệ tiện ích \"All-in-one\" đầy đủ hơn nhiều dự án NOXH cơ bản\n\nNhà ở xã hội thông thường thường chỉ đáp ứng nhu cầu ở tối thiểu. Chuỗi K-Home đầu tư hệ tiện ích nội khu khá hoàn chỉnh:\n\n- Hồ bơi (khu người lớn và trẻ em)\n- Trường mầm non nội khu\n- Công viên cây xanh, khu vui chơi trẻ em\n- Khu BBQ, sân thể thao đa năng\n- Trạm sạc xe điện ô tô và xe máy\n- Minimart, quán café, nhà sinh hoạt cộng đồng\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/4-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/4-2|Hệ tiện ích hồ bơi công viên tại dự án K-Home Đồng Nai\n\n## 4. Vị trí chiến lược gần các khu công nghiệp lớn\n\nCác dự án K-Home được đặt tại những vị trí có nhu cầu nhà ở thực cao:\n\n- **K-Home CityView:** Đường Điểu Xiển, phường Hố Nai – gần KCN Amata, Biên Hòa 2, Long Bình\n- **K-Home Avenue:** Nhơn Trạch – kết nối thuận tiện với sân bay Long Thành và các KCN khu vực\n- **K-Home Midtown:** Trung tâm Trảng Bom – gần KCN Bàu Xéo và tiện ích hiện hữu\n\n![Vị trí các dự án K-Home gần khu công nghiệp Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/5)\n\n## 5. Chính sách tài chính rõ ràng và hỗ trợ vay ưu đãi\n\nNgười mua K-Home được tiếp cận chính sách vay từ **Ngân hàng Chính sách xã hội** với lãi suất ưu đãi **5,4%/năm**, thời hạn lên đến 25 năm, vay tối đa khoảng 75% giá trị căn hộ.\n\nKết hợp với mức giá được cơ quan nhà nước phê duyệt, số vốn ban đầu cần chuẩn bị thường chỉ từ khoảng **200 triệu đồng trở lên** tùy căn, giúp nhiều người lao động tiếp cận được.\n\n![Chính sách vay ưu đãi lãi suất 5,4% tại dự án K-Home từ Ngân hàng Chính sách xã hội](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/7)\n\n## 6. Thương hiệu và cam kết chất lượng từ chủ đầu tư\n\nKim Oanh Land đang phát triển chuỗi K-Home theo định hướng dài hạn (mục tiêu hàng chục nghìn căn đến năm 2028). Việc duy trì thương hiệu giúp khách hàng yên tâm hơn về tiến độ, chất lượng bàn giao và vận hành sau này.\n\n![Cam kết chất lượng từ chủ đầu tư Kim Oanh Land phát triển chuỗi dự án K-Home](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/8)\n\n## Kết luận\n\nNhà ở xã hội thông thường giải quyết được nhu cầu \"có chỗ ở\". Chuỗi K-Home hướng đến việc mang lại không gian sống có chất lượng cao hơn trong phân khúc giá NOXH: thiết kế chuẩn Singapore, tiết kiệm điện nước nhờ EDGE, tiện ích đầy đủ và vị trí thuận tiện.\n\n![Căn hộ mẫu K-Home sẵn sàng đón khách tham quan](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/6)\n\n**Xem chi tiết từng dự án:**\n\n---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai\n---PROJECT-LINK---k-home-avenue-nhon-trach|K-Home Avenue Nhơn Trạch\n---PROJECT-LINK---k-home-midtown-trang-bom|K-Home Midtown Trảng Bom\n\nHoặc liên hệ **0937.587.438** để được tư vấn miễn phí về điều kiện và hồ sơ mua NOXH.\n\n---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026",
+    project: "chung",
+    content: `Nhà ở xã hội (NOXH) ngày càng phổ biến tại Đồng Nai, giúp nhiều công nhân và người thu nhập thấp có cơ hội an cư. Tuy nhiên, không phải dự án NOXH nào cũng giống nhau. Chuỗi dự án K-Home do Kim Oanh Land phát triển đang được nhiều người quan tâm vì mang đến tiêu chuẩn cao hơn so với phần lớn nhà ở xã hội thông thường hiện nay.
+
+![Phối cảnh tổng thể dự án nhà ở xã hội K-Home chuẩn Singapore Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/1)
+
+## 1. Thiết kế bởi đơn vị Singapore – Không gian sống tối ưu hơn
+
+Hầu hết dự án NOXH thông thường được thiết kế theo tiêu chuẩn tối thiểu của Việt Nam. Trong khi đó, các dự án K-Home được tư vấn thiết kế bởi **Tập đoàn Surbana Jurong (Singapore)** – đơn vị có kinh nghiệm phát triển nhà ở xã hội và đô thị tại nhiều quốc gia.
+
+Điều này thể hiện rõ ở:
+
+- Bố trí căn hộ thông minh, tận dụng tối đa ánh sáng và gió tự nhiên.
+- Diện tích sử dụng hợp lý, hạn chế lãng phí không gian.
+- Ban công và cửa sổ lớn giúp căn hộ luôn thông thoáng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/2-2|Thiết kế căn hộ K-Home chuẩn Singapore tối ưu ánh sáng và thông gió tự nhiên
+
+## 2. Áp dụng chứng chỉ công trình xanh EDGE – Tiết kiệm điện nước thực tế
+
+Đây là điểm khác biệt lớn nhất. Nhiều dự án NOXH thông thường chưa đạt chứng chỉ xanh quốc tế. Các dự án K-Home được phát triển theo tiêu chuẩn công trình xanh EDGE.
+
+Theo công bố, thiết kế đạt chuẩn EDGE giúp:
+
+- Tiết kiệm tối thiểu **20% điện năng**
+- Tiết kiệm tối thiểu **20% lượng nước sinh hoạt**
+- Giảm **20% khí thải carbon** trong vật liệu xây dựng
+
+Lợi ích lâu dài: chi phí sinh hoạt hàng tháng thấp hơn so với căn hộ thông thường cùng diện tích.
+
+![Công trình xanh EDGE tại chuỗi dự án nhà ở xã hội K-Home Đồng Nai tiết kiệm điện nước](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/3)
+
+## 3. Hệ tiện ích "All-in-one" đầy đủ hơn nhiều dự án NOXH cơ bản
+
+Nhà ở xã hội thông thường thường chỉ đáp ứng nhu cầu ở tối thiểu. Chuỗi K-Home đầu tư hệ tiện ích nội khu khá hoàn chỉnh:
+
+- Hồ bơi (khu người lớn và trẻ em)
+- Trường mầm non nội khu
+- Công viên cây xanh, khu vui chơi trẻ em
+- Khu BBQ, sân thể thao đa năng
+- Trạm sạc xe điện ô tô và xe máy
+- Minimart, quán café, nhà sinh hoạt cộng đồng
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/4-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/4-2|Hệ tiện ích hồ bơi công viên trường mầm non tại dự án K-Home Đồng Nai
+
+## 4. Vị trí chiến lược gần các khu công nghiệp lớn
+
+Các dự án K-Home được đặt tại những vị trí có nhu cầu nhà ở thực cao:
+
+- **K-Home CityView:** Đường Điểu Xiển, phường Hố Nai – gần KCN Amata, Biên Hòa 2, Long Bình
+- **K-Home Avenue:** Nhơn Trạch – kết nối thuận tiện với sân bay Long Thành và các KCN khu vực
+- **K-Home Midtown:** Trung tâm Trảng Bom – gần KCN Bàu Xéo và tiện ích hiện hữu
+
+![Vị trí các dự án K-Home gần khu công nghiệp Đồng Nai](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/5)
+
+## 5. Chính sách tài chính rõ ràng và hỗ trợ vay ưu đãi
+
+Người mua K-Home được tiếp cận chính sách vay từ **Ngân hàng Chính sách xã hội** với lãi suất ưu đãi **5,4%/năm**, thời hạn lên đến 25 năm, vay tối đa khoảng 75–80% giá trị căn hộ.
+
+Kết hợp với mức giá được cơ quan nhà nước phê duyệt, số vốn ban đầu cần chuẩn bị thường chỉ từ khoảng **200 triệu đồng trở lên** tùy căn, giúp nhiều người lao động tiếp cận được.
+
+![Chính sách vay ưu đãi lãi suất 5,4% tại dự án K-Home từ Ngân hàng Chính sách xã hội](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/7)
+
+## 6. Thương hiệu và cam kết chất lượng từ chủ đầu tư
+
+Kim Oanh Land đang phát triển chuỗi K-Home theo định hướng dài hạn (mục tiêu hàng chục nghìn căn đến năm 2028). Việc duy trì thương hiệu giúp khách hàng yên tâm hơn về tiến độ, chất lượng bàn giao và vận hành sau này.
+
+![Cam kết chất lượng từ chủ đầu tư Kim Oanh Land phát triển chuỗi dự án K-Home](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/8)
+
+## Kết luận
+
+Nhà ở xã hội thông thường giải quyết được nhu cầu "có chỗ ở". Chuỗi K-Home hướng đến việc mang lại không gian sống có chất lượng cao hơn trong phân khúc giá NOXH: thiết kế chuẩn Singapore, tiết kiệm điện nước nhờ EDGE, tiện ích đầy đủ và vị trí thuận tiện.
+
+![Căn hộ mẫu K-Home sẵn sàng đón khách tham quan](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news3/6)
+
+**Xem chi tiết từng dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai
+---PROJECT-LINK---k-home-avenue-nhon-trach|K-Home Avenue Nhơn Trạch
+---PROJECT-LINK---k-home-midtown-trang-bom|K-Home Midtown Trảng Bom
+
+Hoặc liên hệ **0937.587.438** để được tư vấn miễn phí về điều kiện và hồ sơ mua NOXH.
+
+---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026`,
   },
   {
-    id: "4",
+    id: "n4",
     slug: "gia-ban-k-home-cityview-2026-can-bao-nhieu-tien",
     title: "Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền Để Sở Hữu Căn Hộ?",
     date: "2026-07-30",
     excerpt: "Cập nhật giá bán K-Home CityView 2026 mới nhất. Giá bình quân bao nhiêu/m²? Cần chuẩn bị bao nhiêu vốn ban đầu để sở hữu căn hộ nhà ở xã hội tại Hố Nai – Biên Hòa?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1",
     category: "Đánh giá dự án",
-    content: "Một trong những câu hỏi được tìm kiếm nhiều nhất về dự án K-Home CityView chính là: \"Giá bán bao nhiêu?\" và \"Cần bao nhiêu tiền để sở hữu?\". Dưới đây là thông tin tổng hợp dựa trên các số liệu công bố đến giữa năm 2026.\n\n![Phối cảnh dự án K-Home CityView Biên Hòa 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1)\n\n## 1. Giá bán chính thức theo công bố\n\nTheo Quyết định số 27/2026/QĐ-MĐC ngày 04/6/2026 của chủ đầu tư, giá bán bình quân nhà ở xã hội tại dự án được phê duyệt là:\n\n**25.605.000 đồng/m² diện tích sử dụng (thông thủy)**, đã bao gồm thuế VAT.\n\n![Giá bán bình quân K-Home CityView 25.6 triệu đồng/m2](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/2)\n\n## 2. Ước tính giá theo loại căn hộ (tham khảo)\n\nDiện tích căn hộ tại K-Home CityView từ khoảng 47 m², 62 m², 70 m² và 84 m² (thông thủy).\n\nMức giá tham khảo:\n\n- Căn hộ 1 phòng ngủ (~47 m²): từ khoảng **1 – 1,1 tỷ đồng**\n- Căn hộ 1PN+ (~62 m²): từ khoảng **1,3 – 1,5 tỷ đồng**\n- Căn hộ 2 phòng ngủ (~70 m²): từ khoảng **1,5 – 1,7 tỷ đồng**\n- Căn hộ 3 phòng ngủ (~84 m²): từ khoảng **1,8 – 2,1 tỷ đồng**\n\n![Bảng giá tham khảo căn hộ K-Home CityView 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/3)\n\n## 3. Cần bao nhiêu tiền để sở hữu? (Vốn ban đầu)\n\nVới chính sách hỗ trợ vay từ Ngân hàng Chính sách xã hội:\n\n- Lãi suất ưu đãi hiện nay khoảng **5,4%/năm**\n- Thời hạn vay lên đến **25 năm**\n- Hạn mức vay thường lên đến **75–80%** giá trị căn hộ\n\nVốn tự có ban đầu khoảng **20–25% giá trị căn hộ**, tương đương từ khoảng **200 triệu đồng** trở lên.\n\n**Ví dụ minh họa:**\n- Căn khoảng 1,1 tỷ → vốn ban đầu khoảng 220–275 triệu\n- Căn khoảng 1,5 tỷ → vốn ban đầu khoảng 300–375 triệu\n\n![Vốn ban đầu sở hữu căn hộ K-Home CityView từ 200 triệu](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/4)\n\n## 4. Các khoản chi phí cần lưu ý thêm\n\nNgoài giá căn hộ, người mua cần dự trù:\n\n- Phí bảo trì (thường 2%)\n- Chi phí làm sổ hồng\n- Phí quản lý vận hành sau bàn giao\n- Chi phí nội thất phát sinh\n\n## 5. Lời khuyên trước khi quyết định\n\nGiá nhà ở xã hội được cơ quan nhà nước phê duyệt và kiểm soát. Tuy nhiên, giá cuối cùng vẫn phụ thuộc vào diện tích thông thủy thực tế, tầng và hướng căn, thời điểm mở bán chính thức.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-4|Căn hộ mẫu K-Home CityView sẵn sàng tư vấn giá\n\n## Kết luận\n\nVới mức giá bình quân khoảng 20 triệu đồng/m² và chính sách vay ưu đãi, K-Home CityView là một trong những lựa chọn nhà ở xã hội có khả năng tiếp cận tốt tại khu vực Hố Nai – Biên Hòa năm 2026.\n\n**Xem chi tiết dự án:**\n\n---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem giá & sản phẩm chi tiết\n\nLiên hệ **0937.587.438** để nhận bảng giá chi tiết và được tư vấn phương án tài chính phù hợp.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026",
+    project: "cityview",
+    content: `Một trong những câu hỏi được tìm kiếm nhiều nhất về dự án K-Home CityView chính là: "Giá bán bao nhiêu?" và "Cần bao nhiêu tiền để sở hữu?". Dưới đây là thông tin tổng hợp dựa trên các số liệu công bố đến giữa năm 2026.
+
+![Phối cảnh dự án K-Home CityView Biên Hòa 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/1)
+
+## 1. Giá bán chính thức theo công bố
+
+Theo Quyết định số 27/2026/QĐ-MĐC ngày 04/6/2026 của chủ đầu tư, giá bán bình quân nhà ở xã hội tại dự án được phê duyệt là:
+
+**25.605.000 đồng/m² diện tích sử dụng (thông thủy)**, đã bao gồm thuế VAT.
+
+Đây là mức giá bình quân. Giá thực tế của từng căn sẽ được điều chỉnh theo hệ số tầng, hướng, vị trí căn theo quy định.
+
+![Giá bán bình quân K-Home CityView 25.6 triệu đồng/m2](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/2)
+
+## 2. Ước tính giá theo loại căn hộ (tham khảo)
+
+Diện tích căn hộ tại K-Home CityView từ khoảng 47 m², 62 m², 70 m² và 84 m² (thông thủy).
+
+Mức giá tham khảo thường được nêu trên thị trường:
+
+- Căn hộ 1 phòng ngủ (~47 m²): từ khoảng **1 – 1,1 tỷ đồng**
+- Căn hộ 1PN+ (~62 m²): từ khoảng **1,3 – 1,5 tỷ đồng**
+- Căn hộ 2 phòng ngủ (~70 m²): từ khoảng **1,5 – 1,7 tỷ đồng**
+- Căn hộ 3 phòng ngủ (~84 m²): từ khoảng **1,8 – 2,1 tỷ đồng**
+
+![Bảng giá tham khảo căn hộ K-Home CityView 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/3)
+
+## 3. Cần bao nhiêu tiền để sở hữu? (Vốn ban đầu)
+
+Với chính sách hỗ trợ vay từ Ngân hàng Chính sách xã hội:
+
+- Lãi suất ưu đãi hiện nay khoảng **5,4%/năm**
+- Thời hạn vay lên đến **25 năm**
+- Hạn mức vay thường lên đến **75–80%** giá trị căn hộ
+
+Vốn tự có ban đầu cần chuẩn bị khoảng **20–25% giá trị căn hộ**, tương đương từ khoảng **200 triệu đồng** trở lên tùy loại căn.
+
+**Ví dụ minh họa:**
+- Căn khoảng 1,1 tỷ → vốn ban đầu khoảng 220–275 triệu
+- Căn khoảng 1,5 tỷ → vốn ban đầu khoảng 300–375 triệu
+
+![Vốn ban đầu sở hữu căn hộ K-Home CityView từ 200 triệu](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/4)
+
+## 4. Các khoản chi phí cần lưu ý thêm
+
+Ngoài giá căn hộ, người mua cần dự trù:
+
+- Phí bảo trì (thường 2%)
+- Chi phí làm sổ hồng
+- Phí quản lý vận hành sau bàn giao
+- Chi phí nội thất phát sinh (nếu muốn nâng cấp thêm)
+
+## 5. Lời khuyên trước khi quyết định
+
+Giá nhà ở xã hội được cơ quan nhà nước phê duyệt và kiểm soát, nên tính minh bạch cao hơn so với nhà ở thương mại. Tuy nhiên, giá cuối cùng vẫn phụ thuộc vào diện tích thông thủy thực tế, tầng và hướng căn, thời điểm mở bán chính thức.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news7/5-4|Căn hộ mẫu K-Home CityView sẵn sàng tư vấn giá
+
+## Kết luận
+
+Với mức giá bình quân khoảng 25,6 triệu đồng/m² và chính sách vay ưu đãi, K-Home CityView là một trong những lựa chọn nhà ở xã hội có khả năng tiếp cận tốt tại khu vực Hố Nai – Biên Hòa năm 2026.
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem giá & sản phẩm chi tiết
+
+Liên hệ **0937.587.438** để nhận bảng giá chi tiết và được tư vấn phương án tài chính phù hợp.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
   {
-    id: "5",
+    id: "n5",
     slug: "k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong",
     title: "K-Home CityView Có Phù Hợp Với Gia Đình Trẻ Đang Tìm Nhà Ở Thật Không?",
     date: "2026-07-30",
     excerpt: "Đánh giá khách quan về diện tích, tiện ích, vị trí, tài chính và chất lượng sống tại K-Home CityView — dự án nhà ở xã hội Hố Nai – Biên Hòa có phù hợp với gia đình trẻ tìm nhà ở thật không?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/1",
     category: "Đánh giá dự án",
-    content: "Nhiều gia đình trẻ hiện nay đang tìm kiếm một căn hộ để ở thật, không phải để đầu cơ. Họ cần không gian vừa đủ, tiện ích phục vụ cuộc sống hàng ngày, vị trí thuận tiện đi làm và mức giá có thể tiếp cận được bằng lương.\n\nVậy dự án nhà ở xã hội K-Home CityView (đường Điểu Xiển, phường Hố Nai, Biên Hòa) có đáp ứng được nhu cầu này không?\n\n![K-Home CityView có phù hợp với gia đình trẻ không](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/1)\n\n## 1. Diện tích và thiết kế phù hợp với gia đình trẻ\n\nK-Home CityView cung cấp các loại căn hộ từ 1 đến 3 phòng ngủ, diện tích thông thủy khoảng 47 m², 62 m², 70 m² và 84 m²:\n\n- **Căn 1PN hoặc 1PN+:** Phù hợp vợ chồng mới cưới hoặc gia đình có 1 con nhỏ.\n- **Căn 2PN:** Phù hợp gia đình 3–4 người.\n- **Căn 3PN:** Dành cho gia đình đông thành viên hơn.\n\nThiết kế được tư vấn bởi Surbana Jurong (Singapore), chú trọng tối ưu ánh sáng tự nhiên và thông gió.\n\n![Layout căn hộ 2 phòng ngủ K-Home CityView phù hợp gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/2)\n\n## 2. Tiện ích hỗ trợ cuộc sống gia đình có con nhỏ\n\nĐây là điểm cộng rõ rệt nếu bạn là gia đình trẻ:\n\n- Hồ bơi phân khu người lớn và trẻ em\n- Trường mầm non nội khu\n- Công viên, khu vui chơi trẻ em\n- Khu thể thao, BBQ\n- Trạm sạc xe điện\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3|Tiện ích trường mầm non hồ bơi khu vui chơi tại K-Home CityView\n\n## 3. Vị trí thuận tiện cho người đi làm\n\nDự án nằm tại phường Hố Nai, gần nhiều khu công nghiệp lớn như Amata, Biên Hòa 2, Long Bình. Đây là lợi thế với các gia đình trẻ đang làm việc tại các khu công nghiệp Đồng Nai.\n\n![Vị trí K-Home CityView gần khu công nghiệp thuận tiện đi làm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/4)\n\n## 4. Khả năng tài chính phù hợp với người có thu nhập trung bình\n\nLà dự án nhà ở xã hội, giá bán được cơ quan nhà nước phê duyệt (mức bình quân khoảng **25,6 triệu đồng/m²** thông thủy). Kết hợp với chính sách vay ưu đãi từ Ngân hàng Chính sách xã hội:\n\n- Lãi suất khoảng **5,4%/năm**, thời hạn đến **25 năm**\n- Vay đến **75–80%** giá trị căn hộ\n- Vốn ban đầu chỉ từ khoảng **200 triệu đồng** trở lên tùy loại căn\n\n![Vốn ban đầu sở hữu căn hộ K-Home CityView phù hợp gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/5)\n\n## 5. Những điểm cần cân nhắc\n\nDù có nhiều ưu điểm, gia đình trẻ vẫn nên lưu ý:\n\n- Có quy định về đối tượng, điều kiện thu nhập và hạn chế chuyển nhượng theo luật NOXH.\n- Tiến độ bàn giao dự kiến cuối 2027 – đầu 2028, chưa phù hợp nếu cần nhà ở ngay.\n- Nội thất bàn giao ở mức cơ bản, có thể cần đầu tư thêm nếu muốn nâng cấp.\n\n## Kết luận\n\nK-Home CityView phù hợp với nhiều gia đình trẻ đang tìm nhà ở thật, đặc biệt là những gia đình có thu nhập thuộc diện mua NOXH, đang làm việc gần khu công nghiệp khu vực Hố Nai – Biên Hòa, cần tiện ích cho con nhỏ và muốn sở hữu nhà với vốn ban đầu không quá lớn.\n\n![Căn hộ mẫu K-Home CityView dành cho gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/6)\n\n**Xem chi tiết dự án:**\n\n---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem căn hộ phù hợp gia đình\n\nBạn đang là gia đình trẻ và quan tâm dự án này? Liên hệ **0937.587.438** để được tư vấn cụ thể về loại căn và điều kiện hồ sơ.\n\n---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá bán K-Home CityView 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa",
+    project: "cityview",
+    content: `Nhiều gia đình trẻ hiện nay đang tìm kiếm một căn hộ để ở thật, không phải để đầu cơ. Họ cần không gian vừa đủ, tiện ích phục vụ cuộc sống hàng ngày, vị trí thuận tiện đi làm và mức giá có thể tiếp cận được bằng lương.
+
+Vậy dự án nhà ở xã hội K-Home CityView (đường Điểu Xiển, phường Hố Nai, Biên Hòa) có đáp ứng được nhu cầu này không?
+
+![K-Home CityView có phù hợp với gia đình trẻ không](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/1)
+
+## 1. Diện tích và thiết kế phù hợp với gia đình trẻ
+
+K-Home CityView cung cấp các loại căn hộ từ 1 đến 3 phòng ngủ, diện tích thông thủy khoảng 47 m², 62 m², 70 m² và 84 m²:
+
+- **Căn 1PN hoặc 1PN+:** Phù hợp vợ chồng mới cưới hoặc gia đình có 1 con nhỏ.
+- **Căn 2PN:** Phù hợp gia đình 3–4 người.
+- **Căn 3PN:** Dành cho gia đình đông thành viên hơn.
+
+Thiết kế được tư vấn bởi Surbana Jurong (Singapore), chú trọng tối ưu ánh sáng tự nhiên và thông gió.
+
+![Layout căn hộ 2 phòng ngủ K-Home CityView phù hợp gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/2)
+
+## 2. Tiện ích hỗ trợ cuộc sống gia đình có con nhỏ
+
+Đây là điểm cộng rõ rệt nếu bạn là gia đình trẻ:
+
+- Hồ bơi phân khu người lớn và trẻ em
+- Trường mầm non nội khu
+- Công viên, khu vui chơi trẻ em
+- Khu thể thao, BBQ
+- Trạm sạc xe điện
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/3|Tiện ích trường mầm non hồ bơi khu vui chơi tại K-Home CityView
+
+## 3. Vị trí thuận tiện cho người đi làm
+
+Dự án nằm tại phường Hố Nai, gần nhiều khu công nghiệp lớn như Amata, Biên Hòa 2, Long Bình. Đây là lợi thế với các gia đình trẻ đang làm việc tại các khu công nghiệp Đồng Nai.
+
+![Vị trí K-Home CityView gần khu công nghiệp thuận tiện đi làm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/4)
+
+## 4. Khả năng tài chính phù hợp với người có thu nhập trung bình
+
+Là dự án nhà ở xã hội, giá bán được cơ quan nhà nước phê duyệt (mức bình quân khoảng **25,6 triệu đồng/m²** thông thủy). Kết hợp với chính sách vay ưu đãi từ Ngân hàng Chính sách xã hội:
+
+- Lãi suất khoảng **5,4%/năm**, thời hạn đến **25 năm**
+- Vay đến **75–80%** giá trị căn hộ
+- Vốn ban đầu chỉ từ khoảng **200 triệu đồng** trở lên tùy loại căn
+
+![Vốn ban đầu sở hữu căn hộ K-Home CityView phù hợp gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/5)
+
+## 5. Những điểm cần cân nhắc
+
+Dù có nhiều ưu điểm, gia đình trẻ vẫn nên lưu ý:
+
+- Có quy định về đối tượng, điều kiện thu nhập và hạn chế chuyển nhượng theo luật NOXH.
+- Tiến độ bàn giao dự kiến cuối 2027 – đầu 2028, chưa phù hợp nếu cần nhà ở ngay.
+- Nội thất bàn giao ở mức cơ bản, có thể cần đầu tư thêm nếu muốn nâng cấp.
+
+## Kết luận
+
+K-Home CityView phù hợp với nhiều gia đình trẻ đang tìm nhà ở thật, đặc biệt là những gia đình có thu nhập thuộc diện mua NOXH, đang làm việc gần khu công nghiệp khu vực Hố Nai – Biên Hòa, cần tiện ích cho con nhỏ và muốn sở hữu nhà với vốn ban đầu không quá lớn.
+
+![Căn hộ mẫu K-Home CityView dành cho gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news8/6)
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem căn hộ phù hợp gia đình
+
+Bạn đang là gia đình trẻ và quan tâm dự án này? Liên hệ **0937.587.438** để được tư vấn cụ thể về loại căn và điều kiện hồ sơ.
+
+---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá bán K-Home CityView 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa`,
   },
   {
-    id: "6",
+    id: "n6",
     slug: "k-home-cityview-tieu-chuan-song-xanh-edge",
     title: "K-Home CityView Và Tiêu Chuẩn Sống Xanh EDGE Có Gì Khác Biệt?",
     date: "2026-07-31",
     excerpt: "K-Home CityView áp dụng tiêu chuẩn sống xanh EDGE như thế nào? Tìm hiểu EDGE là gì, lợi ích thực tế về tiết kiệm điện, nước và sự khác biệt so với nhà ở xã hội thông thường.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/1",
     category: "Đánh giá dự án",
-    content: "Nhiều người khi tìm hiểu dự án K-Home CityView thường nghe đến cụm từ \"tiêu chuẩn xanh EDGE\". Vậy EDGE là gì? Và việc áp dụng tiêu chuẩn này mang lại sự khác biệt như thế nào?\n\n![K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/1)\n\n## 1. EDGE là gì?\n\nEDGE (Excellence in Design for Greater Efficiencies) là hệ thống chứng nhận công trình xanh do **International Finance Corporation (IFC)** – thành viên của Nhóm Ngân hàng Thế giới – phát triển.\n\nEDGE tập trung vào ba yếu tố cốt lõi:\n\n- Tiết kiệm năng lượng (điện)\n- Tiết kiệm nước\n- Giảm năng lượng hàm chứa trong vật liệu xây dựng\n\nMức tối thiểu để đạt EDGE Certified là tiết kiệm ít nhất **20%** ở cả ba hạng mục.\n\n![Chứng nhận công trình xanh EDGE là gì tiết kiệm 20% điện nước](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/2)\n\n## 2. K-Home CityView áp dụng EDGE như thế nào?\n\nTheo công bố của Kim Oanh Land, dự án K-Home CityView được phát triển theo tiêu chuẩn công trình xanh EDGE, kết hợp với đơn vị tư vấn Surbana Jurong (Singapore).\n\nCác giải pháp được áp dụng:\n\n- Thiết kế tối ưu hướng nắng, hướng gió để tận dụng ánh sáng và thông gió tự nhiên\n- Sử dụng vật liệu và thiết bị tiết kiệm điện, nước\n- Giảm lãng phí tài nguyên trong quá trình xây dựng và vận hành\n\n![Thiết kế K-Home CityView theo tiêu chuẩn xanh EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/3)\n\n## 3. Sự khác biệt so với nhà ở xã hội thông thường\n\n| Tiêu chí | NOXH thông thường | K-Home CityView (chuẩn EDGE) |\n|---|---|---|\n| Tiết kiệm điện | Thiết kế cơ bản | Hướng tới ≥ 20% |\n| Tiết kiệm nước | Thiết kế cơ bản | Hướng tới ≥ 20% |\n| Vật liệu xây dựng | Tiêu chuẩn thông thường | Giảm năng lượng hàm chứa ≥ 20% |\n| Thiết kế không gian | Tối ưu công năng cơ bản | Tối ưu ánh sáng + gió tự nhiên |\n| Chi phí vận hành | Trung bình | Thấp hơn nhờ tiết kiệm điện nước |\n\n![So sánh nhà ở xã hội thông thường và K-Home CityView chuẩn EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/4)\n\n## 4. Lợi ích thực tế đối với cư dân K-Home CityView\n\n- **Tiết kiệm chi phí hàng tháng:** Hóa đơn điện và nước thấp hơn giúp gia đình cân đối tài chính tốt hơn.\n- **Không gian sống thoáng đãng hơn:** Ít phải dùng đèn và máy lạnh vào ban ngày.\n- **Môi trường sống bền vững hơn:** Giảm tác động đến môi trường ngay từ giai đoạn xây dựng.\n- **Giá trị dài hạn:** Công trình xanh ngày càng được thị trường đánh giá cao hơn.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-3|Lợi ích tiết kiệm điện nước khi sống tại K-Home CityView chuẩn EDGE\n\n## Kết luận\n\nViệc K-Home CityView áp dụng tiêu chuẩn sống xanh EDGE tạo ra sự khác biệt rõ rệt so với nhiều dự án nhà ở xã hội chỉ đáp ứng tiêu chuẩn kỹ thuật tối thiểu.\n\n![Không gian sống xanh tại dự án K-Home CityView đạt chuẩn EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/6)\n\n**Xem chi tiết dự án:**\n\n---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Trải nghiệm tiêu chuẩn xanh EDGE\n\nBạn muốn tìm hiểu thêm? Liên hệ **0937.587.438** để được tư vấn chi tiết.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong|Lý do nên chọn K-Home thay vì NOXH thông thường",
+    project: "cityview",
+    content: `Nhiều người khi tìm hiểu dự án K-Home CityView thường nghe đến cụm từ "tiêu chuẩn xanh EDGE" hoặc "công trình xanh EDGE". Vậy EDGE là gì? Và việc áp dụng tiêu chuẩn này mang lại sự khác biệt như thế nào so với các dự án nhà ở xã hội thông thường?
+
+![K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/1)
+
+## 1. EDGE là gì?
+
+EDGE (Excellence in Design for Greater Efficiencies) là hệ thống chứng nhận công trình xanh do **International Finance Corporation (IFC)** – thành viên của Nhóm Ngân hàng Thế giới – phát triển.
+
+EDGE tập trung vào ba yếu tố cốt lõi:
+
+- Tiết kiệm năng lượng (điện)
+- Tiết kiệm nước
+- Giảm năng lượng hàm chứa trong vật liệu xây dựng
+
+Mức tối thiểu để đạt EDGE Certified là tiết kiệm ít nhất **20%** ở cả ba hạng mục so với mức tiêu thụ thông thường.
+
+![Chứng nhận công trình xanh EDGE là gì tiết kiệm 20% điện nước](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/2)
+
+## 2. K-Home CityView áp dụng EDGE như thế nào?
+
+Theo công bố của chủ đầu tư Kim Oanh Land, dự án K-Home CityView được phát triển theo tiêu chuẩn công trình xanh EDGE, kết hợp với đơn vị tư vấn thiết kế Surbana Jurong (Singapore).
+
+Các giải pháp được áp dụng:
+
+- Thiết kế tối ưu hướng nắng, hướng gió để tận dụng ánh sáng và thông gió tự nhiên
+- Sử dụng vật liệu và thiết bị tiết kiệm điện, nước
+- Giảm lãng phí tài nguyên trong quá trình xây dựng và vận hành
+
+![Thiết kế K-Home CityView theo tiêu chuẩn xanh EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/3)
+
+## 3. Sự khác biệt so với nhà ở xã hội thông thường
+
+| Tiêu chí | NOXH thông thường | K-Home CityView (chuẩn EDGE) |
+|---|---|---|
+| Tiết kiệm điện | Thiết kế cơ bản | Hướng tới ≥ 20% |
+| Tiết kiệm nước | Thiết kế cơ bản | Hướng tới ≥ 20% |
+| Vật liệu xây dựng | Tiêu chuẩn thông thường | Giảm năng lượng hàm chứa ≥ 20% |
+| Thiết kế không gian | Tối ưu công năng cơ bản | Tối ưu ánh sáng + gió tự nhiên |
+| Chi phí vận hành | Trung bình | Thấp hơn nhờ tiết kiệm điện nước |
+
+![So sánh nhà ở xã hội thông thường và K-Home CityView chuẩn EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/4)
+
+## 4. Lợi ích thực tế đối với cư dân K-Home CityView
+
+- **Tiết kiệm chi phí hàng tháng:** Hóa đơn điện và nước thấp hơn giúp gia đình cân đối tài chính tốt hơn.
+- **Không gian sống thoáng đãng hơn:** Thiết kế tận dụng ánh sáng và gió tự nhiên giúp ít phải dùng đèn và máy lạnh vào ban ngày.
+- **Môi trường sống bền vững hơn:** Giảm tác động đến môi trường ngay từ giai đoạn xây dựng.
+- **Giá trị dài hạn:** Công trình xanh ngày càng được thị trường đánh giá cao hơn.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/5-3|Lợi ích tiết kiệm điện nước khi sống tại K-Home CityView chuẩn EDGE
+
+## Kết luận
+
+Việc K-Home CityView áp dụng tiêu chuẩn sống xanh EDGE tạo ra sự khác biệt rõ rệt so với nhiều dự án nhà ở xã hội chỉ đáp ứng tiêu chuẩn kỹ thuật tối thiểu. Điểm mạnh không chỉ nằm ở thiết kế đẹp hơn, mà còn ở khả năng tiết kiệm chi phí vận hành và mang lại không gian sống thoáng đãng, bền vững hơn.
+
+![Không gian sống xanh tại dự án K-Home CityView đạt chuẩn EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news9/6)
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Trải nghiệm tiêu chuẩn xanh EDGE
+
+Bạn muốn tìm hiểu thêm về cách thiết kế EDGE ảnh hưởng đến từng loại căn hộ cụ thể? Liên hệ **0937.587.438** để được tư vấn chi tiết.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong|Lý do nên chọn K-Home thay vì NOXH thông thường`,
   },
   {
-    id: "7",
+    id: "n7",
     slug: "vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon",
     title: "Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn Từ Khách Hàng?",
     date: "2026-07-31",
     excerpt: "Vì sao dự án K-Home CityView tại Hố Nai – Biên Hòa thu hút đông đảo khách hàng quan tâm? Phân tích các lý do thực tế về vị trí, thiết kế, tiện ích, giá và chính sách tài chính năm 2026.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1",
     category: "Đánh giá dự án",
-    content: "Dự án nhà ở xã hội K-Home CityView từ khi xuất hiện thông tin đã nhận được sự quan tâm đáng kể từ người mua nhà. Vậy điều gì tạo nên sức hút này?\n\n![Vì sao K-Home CityView thu hút đông khách hàng quan tâm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1)\n\n## 1. Vị trí gần nhiều khu công nghiệp lớn\n\nK-Home CityView nằm tại khu vực Hố Nai – nơi tập trung nhiều khu công nghiệp quan trọng như Amata, Biên Hòa 2, Long Bình. Đây là lợi thế lớn với người lao động đang làm việc tại các KCN.\n\n![Vị trí K-Home CityView gần khu công nghiệp Amata Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/2)\n\n## 2. Thiết kế chuẩn Singapore và tiêu chuẩn xanh EDGE\n\nDự án được tư vấn thiết kế bởi Surbana Jurong (Singapore) và phát triển theo tiêu chuẩn công trình xanh EDGE. Khác với nhiều dự án NOXH chỉ đáp ứng tiêu chuẩn tối thiểu, K-Home CityView chú trọng tối ưu ánh sáng, thông gió và tiết kiệm điện nước.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-3|Thiết kế chuẩn Singapore và EDGE tại K-Home CityView\n\n## 3. Hệ tiện ích đầy đủ hơn mức trung bình\n\nDự án tích hợp nhiều tiện ích nội khu: hồ bơi (người lớn và trẻ em), trường mầm non, công viên, khu vui chơi trẻ em, khu thể thao, BBQ, trạm sạc xe điện, minimart, nhà sinh hoạt cộng đồng.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-3|Hệ tiện ích đầy đủ tại dự án K-Home CityView\n\n## 4. Giá bán và chính sách tài chính dễ tiếp cận\n\nGiá bán bình quân được phê duyệt khoảng **25,6 triệu đồng/m²** (thông thủy, đã gồm VAT). Kết hợp với chính sách vay từ Ngân hàng Chính sách xã hội:\n\n- Lãi suất ưu đãi khoảng **5,4%/năm**\n- Thời hạn lên đến **25 năm**\n- Vay đến **75–80%** giá trị căn hộ\n- Vốn ban đầu chỉ từ khoảng **200 triệu đồng** trở lên\n\n![Chính sách vay ưu đãi giúp K-Home CityView dễ tiếp cận](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/5)\n\n## 5. Thương hiệu và quy mô dự án\n\nK-Home CityView thuộc chuỗi thương hiệu K-Home do Kim Oanh Land phát triển với quy mô gần 1.800 căn, tạo sự tin tưởng hơn so với các dự án nhỏ lẻ.\n\n## Kết luận\n\nSức hút của K-Home CityView đến từ sự kết hợp giữa vị trí thuận tiện, tiêu chuẩn thiết kế cao hơn, tiện ích đầy đủ và chính sách tài chính hỗ trợ người mua nhà ở thật.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-3|Căn hộ mẫu K-Home CityView sẵn sàng đón khách tham quan\n\n**Xem chi tiết dự án:**\n\n---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem toàn bộ thông tin dự án\n\nLiên hệ **0937.587.438** để được tư vấn và xem nhà mẫu.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;k-home-cityview-tieu-chuan-song-xanh-edge|K-Home CityView & Tiêu Chuẩn Xanh EDGE",
+    project: "cityview",
+    content: `Dự án nhà ở xã hội K-Home CityView từ khi xuất hiện thông tin đã nhận được sự quan tâm đáng kể từ người mua nhà, đặc biệt là công nhân, người lao động và gia đình trẻ tại Đồng Nai. Vậy điều gì tạo nên sức hút này?
+
+![Vì sao K-Home CityView thu hút đông khách hàng quan tâm](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/1)
+
+## 1. Vị trí gần nhiều khu công nghiệp lớn
+
+K-Home CityView nằm tại khu vực Hố Nai – nơi tập trung nhiều khu công nghiệp quan trọng như Amata, Biên Hòa 2, Long Bình. Đây là lợi thế lớn với người lao động đang làm việc tại các KCN, giúp giảm thời gian và chi phí đi lại hàng ngày.
+
+![Vị trí K-Home CityView gần khu công nghiệp Amata Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/2)
+
+## 2. Thiết kế chuẩn Singapore và tiêu chuẩn xanh EDGE
+
+Dự án được tư vấn thiết kế bởi Surbana Jurong (Singapore) và phát triển theo tiêu chuẩn công trình xanh EDGE. Khác với nhiều dự án NOXH chỉ đáp ứng tiêu chuẩn tối thiểu, K-Home CityView chú trọng tối ưu ánh sáng, thông gió và tiết kiệm điện nước.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/3-3|Thiết kế chuẩn Singapore và EDGE tại K-Home CityView
+
+## 3. Hệ tiện ích đầy đủ hơn mức trung bình
+
+Dự án tích hợp nhiều tiện ích nội khu: hồ bơi (người lớn và trẻ em), trường mầm non, công viên, khu vui chơi trẻ em, khu thể thao, BBQ, trạm sạc xe điện, minimart, nhà sinh hoạt cộng đồng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/4-3|Hệ tiện ích đầy đủ tại dự án K-Home CityView
+
+## 4. Giá bán và chính sách tài chính dễ tiếp cận
+
+Giá bán bình quân được phê duyệt khoảng **25,6 triệu đồng/m²** (thông thủy, đã gồm VAT). Kết hợp với chính sách vay từ Ngân hàng Chính sách xã hội:
+
+- Lãi suất ưu đãi khoảng **5,4%/năm**
+- Thời hạn lên đến **25 năm**
+- Vay đến **75–80%** giá trị căn hộ
+- Vốn ban đầu chỉ từ khoảng **200 triệu đồng** trở lên
+
+![Chính sách vay ưu đãi giúp K-Home CityView dễ tiếp cận](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/5)
+
+## 5. Thương hiệu và quy mô dự án
+
+K-Home CityView thuộc chuỗi thương hiệu K-Home do Kim Oanh Land phát triển với quy mô gần 1.800 căn, tạo sự tin tưởng hơn so với các dự án nhỏ lẻ.
+
+## Kết luận
+
+Sức hút của K-Home CityView đến từ sự kết hợp giữa vị trí thuận tiện, tiêu chuẩn thiết kế cao hơn, tiện ích đầy đủ và chính sách tài chính hỗ trợ người mua nhà ở thật.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news10/6-3|Căn hộ mẫu K-Home CityView sẵn sàng đón khách tham quan
+
+**Xem chi tiết dự án:**
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem toàn bộ thông tin dự án
+
+Liên hệ **0937.587.438** để được tư vấn và xem nhà mẫu.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;k-home-cityview-tieu-chuan-song-xanh-edge|K-Home CityView & Tiêu Chuẩn Xanh EDGE`,
   },
   {
-    id: "8",
+    id: "n8",
     slug: "tien-do-k-home-cityview-2026-cap-nhat-moi-nhat",
     title: "Tiến Độ K-Home CityView 2026: Cập Nhật Mới Nhất Cho Khách Hàng Quan Tâm",
     date: "2026-08-01",
     excerpt: "Cập nhật tiến độ K-Home CityView 2026 mới nhất. Dự án đã khởi công khi nào? Hiện đang thi công đến đâu? Dự kiến bàn giao vào thời điểm nào?",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1",
     category: "Tin tức dự án",
-    content: "Tiến độ thi công là một trong những yếu tố quan trọng nhất khi khách hàng quyết định mua nhà ở xã hội. Dưới đây là thông tin cập nhật về tiến độ dự án K-Home CityView tính đến năm 2026.\n\n![Tiến độ K-Home CityView 2026 cập nhật mới nhất](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1)\n\n## 1. Các mốc tiến độ đã thực hiện\n\n- **Lễ động thổ:** Ngày 23/9/2025, Kim Oanh Land tổ chức lễ động thổ dự án K-Home CityView.\n- **Khởi công xây dựng:** Dự án chính thức khởi công vào khoảng tháng 5/2026 (ngày 20/5/2026).\n- **Tổng thầu thi công:** Công ty Phước Thành, áp dụng các giải pháp quản lý BIM, ERP để kiểm soát tiến độ và chất lượng.\n\n![Lễ động thổ khởi công dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/2)\n\n## 2. Tình hình thi công hiện tại (cập nhật 2026)\n\nTính đến giữa và cuối năm 2026, dự án đang trong giai đoạn triển khai thi công. Chủ đầu tư cho biết sẽ đẩy nhanh tiến độ nhằm đảm bảo đúng kế hoạch.\n\nChi tiết cụ thể được cập nhật định kỳ qua Sales Gallery hoặc thông báo chính thức từ chủ đầu tư.\n\n![Tiến độ thi công thực tế K-Home CityView năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/3)\n\n## 3. Dự kiến thời gian bàn giao\n\nTheo các thông tin công bố:\n\n- Dự kiến hoàn thành và bàn giao căn hộ vào năm **2027** (một số nguồn nêu cụ thể hơn là cuối 2027 – đầu 2028).\n- Thời gian bàn giao chính thức phụ thuộc vào tiến độ thi công thực tế và các thủ tục nghiệm thu.\n\n![Timeline tiến độ và dự kiến bàn giao K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/4)\n\n## 4. Sales Gallery và nhà mẫu\n\nKim Oanh Land dự kiến khai trương Sales Gallery và căn hộ mẫu vào khoảng đầu tháng 6/2026 để khách hàng có thể đến tham quan trực tiếp.\n\n---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-0|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-4|Sales Gallery và căn hộ mẫu K-Home CityView\n\n---PROJECT-CENTER---k-home-cityview-ho-nai|K-Home CityView Hố Nai\n\n## 5. Lời khuyên cho khách hàng quan tâm tiến độ\n\n- Theo dõi thông tin chính thức từ chủ đầu tư Kim Oanh Land hoặc đơn vị phân phối được ủy quyền.\n- Nên đến trực tiếp công trường hoặc Sales Gallery (khi đã mở) để kiểm tra tiến độ thực tế.\n- Tiến độ nhà ở xã hội có thể điều chỉnh theo điều kiện thi công, thời tiết và thủ tục pháp lý.\n\n## Kết luận\n\nTính đến năm 2026, K-Home CityView đã hoàn thành các bước quan trọng: động thổ, khởi công và đang đẩy mạnh thi công. Dự kiến bàn giao trong năm 2027.\n\n![Cập nhật tiến độ mới nhất dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/6)\n\nBạn muốn nhận thông tin tiến độ mới nhất hoặc đặt lịch tham quan? Liên hệ **0937.587.438** để được hỗ trợ.\n\n---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon|Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn",
+    project: "cityview",
+    content: `Tiến độ thi công là một trong những yếu tố quan trọng nhất khi khách hàng quyết định mua nhà ở xã hội. Dưới đây là thông tin cập nhật về tiến độ dự án K-Home CityView tính đến năm 2026.
+
+![Tiến độ K-Home CityView 2026 cập nhật mới nhất](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/1)
+
+## 1. Các mốc tiến độ đã thực hiện
+
+- **Lễ động thổ:** Ngày 23/9/2025, Kim Oanh Land tổ chức lễ động thổ dự án K-Home CityView.
+- **Khởi công xây dựng:** Dự án chính thức khởi công vào khoảng tháng 5/2026 (ngày 20/5/2026).
+- **Tổng thầu thi công:** Công ty Phước Thành, áp dụng các giải pháp quản lý BIM, ERP để kiểm soát tiến độ và chất lượng.
+
+![Lễ động thổ khởi công dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/2)
+
+## 2. Tình hình thi công hiện tại (cập nhật 2026)
+
+Tính đến giữa và cuối năm 2026, dự án đang trong giai đoạn triển khai thi công. Chủ đầu tư cho biết sẽ đẩy nhanh tiến độ nhằm đảm bảo đúng kế hoạch.
+
+Chi tiết cụ thể (đang thi công móng, tầng bao nhiêu, % hoàn thành...) được cập nhật định kỳ qua Sales Gallery hoặc thông báo chính thức từ chủ đầu tư.
+
+![Tiến độ thi công thực tế K-Home CityView năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/3)
+
+## 3. Dự kiến thời gian bàn giao
+
+Theo các thông tin công bố:
+
+- Dự kiến hoàn thành và bàn giao căn hộ vào năm **2027** (một số nguồn nêu cụ thể hơn là cuối 2027 – đầu 2028).
+- Thời gian bàn giao chính thức phụ thuộc vào tiến độ thi công thực tế và các thủ tục nghiệm thu.
+
+![Timeline tiến độ và dự kiến bàn giao K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/4)
+
+## 4. Sales Gallery và nhà mẫu
+
+Kim Oanh Land dự kiến khai trương Sales Gallery và căn hộ mẫu vào khoảng đầu tháng 6/2026 để khách hàng có thể đến tham quan trực tiếp, trải nghiệm thiết kế và chất lượng bàn giao.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-0|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/5-4|Sales Gallery và căn hộ mẫu K-Home CityView
+
+---PROJECT-CENTER---k-home-cityview-ho-nai|K-Home CityView Hố Nai
+
+## 5. Lời khuyên cho khách hàng quan tâm tiến độ
+
+- Theo dõi thông tin chính thức từ chủ đầu tư Kim Oanh Land hoặc đơn vị phân phối được ủy quyền.
+- Nên đến trực tiếp công trường hoặc Sales Gallery (khi đã mở) để kiểm tra tiến độ thực tế.
+- Tiến độ nhà ở xã hội có thể điều chỉnh theo điều kiện thi công, thời tiết và thủ tục pháp lý.
+
+## Kết luận
+
+Tính đến năm 2026, K-Home CityView đã hoàn thành các bước quan trọng: động thổ, khởi công và đang đẩy mạnh thi công. Dự kiến bàn giao trong năm 2027.
+
+![Cập nhật tiến độ mới nhất dự án K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news11/6)
+
+Bạn muốn nhận thông tin tiến độ mới nhất hoặc đặt lịch tham quan? Liên hệ **0937.587.438** để được hỗ trợ.
+
+---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon|Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn`,
   },
 ];
 

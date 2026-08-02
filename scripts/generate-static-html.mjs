@@ -87,6 +87,10 @@ function generateHtml(template, route) {
       `<meta property="og:url" content="${route.canonical}" />`
     )
     .replace(
+      /<meta name="twitter:url"[^>]*>/,
+      `<meta name="twitter:url" content="${route.canonical}" />`
+    )
+    .replace(
       /<meta name="twitter:title"[^>]*>/,
       `<meta name="twitter:title" content="${route.title}" />`
     )

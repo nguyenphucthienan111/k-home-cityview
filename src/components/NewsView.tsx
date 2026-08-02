@@ -1,163 +1,301 @@
 ﻿import React, { useEffect, useState } from "react";
-import { Search, Calendar, ChevronRight, SlidersHorizontal } from "lucide-react";
 import { News } from "../types";
 
 interface NewsViewProps {
   onNavigate: (hash: string) => void;
 }
 
-export default function NewsView({ onNavigate }: NewsViewProps) {
-  const [news, setNews] = useState<News[]>([]);
-  const [filteredNews, setFilteredNews] = useState<News[]>([]);
-  const [loading, setLoading] = useState(true);
+const CATEGORIES = ["Tất cả", "Tin tức dự án", "Chính sách", "Đánh giá dự án", "So sánh & Tư vấn", "Hỏi đáp / FAQ"];
 
-  // States
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+const PROJECTS = [
+  { key: "tat-ca",   label: "Tất cả" },
+  { key: "cityview", label: "CityView" },
+  { key: "avenue",   label: "Avenue" },
+  { key: "midtown",  label: "Midtown" },
+];
+
+const PROJECT_ACCENT: Record<string, string> = {
+  cityview: "#d97706",
+  avenue:   "#059669",
+  midtown:  "#0284c7",
+  chung:    "#7c3aed",
+};
+
+export default function NewsView({ onNavigate }: NewsViewProps) {
+  const [news, setNews]               = useState<News[]>([]);
+  const [filtered, setFiltered]       = useState<News[]>([]);
+  const [loading, setLoading]         = useState(true);
+  const [search, setSearch]           = useState("");
+  const [category, setCategory]       = useState("Tất cả");
+  const [project, setProject]         = useState("tat-ca");
 
   useEffect(() => {
     document.title = "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Cập nhật các thông tin tin tức mới nhất, tiến độ xây dựng hạ tầng, lễ ký kết, bàn giao căn hộ và sự kiện mở bán dự án K-Home Cityview Biên Hòa.");
-    }
-
-    fetch("/api/news")
-      .then((res) => res.json())
-      .then((data) => {
+    fetch("/api/news?v=" + Date.now())
+      .then(r => r.json())
+      .then(data => {
         const list = Array.isArray(data) ? data : [];
-        setNews(list);
-        setFilteredNews(list);
+        // Dedup by slug to prevent duplicates
+        const seen = new Set<string>();
+        const unique = list.filter(n => {
+          if (seen.has(n.slug)) return false;
+          seen.add(n.slug);
+          return true;
+        });
+        setNews(unique);
+        setFiltered(unique);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("Failed to fetch news list:", err);
-        setLoading(false);
-      });
+      .catch(() => setLoading(false));
   }, []);
 
   useEffect(() => {
-    let result = [...news];
-
-    if (searchQuery.trim() !== "") {
-      const q = searchQuery.toLowerCase();
-      result = result.filter(
-        (n) =>
-          n.title.toLowerCase().includes(q) ||
-          n.excerpt.toLowerCase().includes(q) ||
-          n.content.toLowerCase().includes(q)
-      );
+    let r = [...news];
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      r = r.filter(n => n.title.toLowerCase().includes(q) || n.excerpt.toLowerCase().includes(q));
     }
+    if (category !== "Tất cả") r = r.filter(n => n.category === category);
+    if (project  !== "tat-ca")  r = r.filter(n => (n.project ?? "chung") === project);
+    setFiltered(r);
+  }, [search, category, project, news]);
 
-    if (selectedCategory !== "Tất cả") {
-      result = result.filter((n) => n.category === selectedCategory);
-    }
+  const countFor = (key: string) =>
+    key === "tat-ca" ? news.length : news.filter(n => (n.project ?? "chung") === key).length;
 
-    setFilteredNews(result);
-  }, [searchQuery, selectedCategory, news]);
-
-  const categories = ["Tất cả", "Tin tức dự án", "Thị trường", "Tài chính", "Chính sách", "Đánh giá dự án", "So sánh & Tư vấn"];
+  const featured = filtered[0] ?? null;
+  const rest     = filtered.slice(1);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
-      
-      {/* Page Header */}
-      <div className="border-b border-slate-100 pb-8 space-y-3">
-        <span className="text-xs font-bold text-amber-600 tracking-widest uppercase font-tech">K-Home News & Media</span>
-        <h1 className="text-3xl md:text-4xl font-display font-bold text-slate-800">
-          Tin Tức & Sự Kiện Thị Trường
-        </h1>
-        <p className="text-slate-500 text-sm max-w-3xl">
-          Cập nhật thông tin nhanh nhất về tiến độ thi công các dự án, xu hướng thiết kế nội thất, biến động lãi suất và nhận định thị trường từ các chuyên gia hàng đầu.
-        </p>
+    <div className="min-h-screen bg-white">
+
+      {/* ── Hero header ─────────────────────────────────────────── */}
+      <div className="border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10">
+          <p className="text-xs font-bold tracking-[0.2em] uppercase text-amber-600 mb-3">
+            K-Home · Tin tức & Thị trường
+          </p>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-950 leading-tight max-w-2xl">
+            Cập nhật mới nhất về dự án K-Home Đồng Nai
+          </h1>
+        </div>
       </div>
 
-      {/* Filters Area */}
-      <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* Categories Tab list */}
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
+      {/* ── Filter bar ──────────────────────────────────────────── */}
+      <div className="sticky top-0 z-30 bg-white border-b border-slate-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+          {/* Row 1 — Project tabs */}
+          <div className="flex items-center gap-0 border-b border-slate-100 overflow-x-auto scrollbar-hide">
+            <span className="flex-shrink-0 text-[11px] font-semibold text-slate-400 uppercase tracking-widest pr-4 border-r border-slate-100 mr-2 py-3.5 whitespace-nowrap">
+              Dự án
+            </span>
+            {PROJECTS.map(p => {
+              const active = project === p.key;
+              const count  = countFor(p.key);
+              return (
+                <button
+                  key={p.key}
+                  onClick={() => setProject(p.key)}
+                  className={`relative flex-shrink-0 px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-colors cursor-pointer whitespace-nowrap ${
+                    active ? "text-amber-600" : "text-slate-400 hover:text-slate-700"
+                  }`}
+                >
+                  {p.label}
+                  {count > 0 && (
+                    <span className={`ml-1.5 text-[10px] font-semibold ${active ? "text-amber-500" : "text-slate-300"}`}>
+                      {count}
+                    </span>
+                  )}
+                  {active && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500 rounded-full" />
+                  )}
+                </button>
+              );
+            })}
+
+            {/* Spacer + Search */}
+            <div className="ml-auto flex-shrink-0 py-2 pl-4">
+              <input
+                type="text"
+                placeholder="Tìm kiếm..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="w-44 md:w-56 px-3.5 py-1.5 text-xs border border-slate-200 rounded-lg bg-slate-50 focus:bg-white focus:border-amber-400 outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Row 2 — Category pills */}
+          <div className="flex items-center gap-2 py-2.5 overflow-x-auto scrollbar-hide">
+            {CATEGORIES.map(c => (
+              <button
+                key={c}
+                onClick={() => setCategory(c)}
+                className={`flex-shrink-0 px-3.5 py-1 rounded-full text-[11px] font-semibold border transition-all cursor-pointer ${
+                  category === c
+                    ? "bg-slate-900 text-white border-slate-900"
+                    : "bg-white text-slate-500 border-slate-200 hover:border-slate-400 hover:text-slate-700"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+
+            {/* Clear */}
+            {(project !== "tat-ca" || category !== "Tất cả" || search) && (
+              <button
+                onClick={() => { setProject("tat-ca"); setCategory("Tất cả"); setSearch(""); }}
+                className="flex-shrink-0 ml-auto text-[11px] font-semibold text-amber-600 hover:underline cursor-pointer whitespace-nowrap"
+              >
+                Xóa bộ lọc
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Content ─────────────────────────────────────────────── */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+        {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1,2,3,4,5,6].map(i => (
+              <div key={i} className="rounded-2xl bg-slate-100 animate-pulse h-64" />
+            ))}
+          </div>
+        ) : filtered.length === 0 ? (
+          <div className="py-32 text-center">
+            <p className="text-4xl font-bold text-slate-100 mb-4">0</p>
+            <p className="text-slate-400 text-sm">Không tìm thấy bài viết phù hợp.</p>
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide border transition-all cursor-pointer ${
-                selectedCategory === cat
-                  ? "bg-amber-600 text-white border-amber-600 shadow-sm shadow-amber-600/10"
-                  : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-amber-600"
-              }`}
+              onClick={() => { setProject("tat-ca"); setCategory("Tất cả"); setSearch(""); }}
+              className="mt-6 px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl cursor-pointer transition-colors"
             >
-              {cat}
+              Xem tất cả
             </button>
-          ))}
-        </div>
+          </div>
+        ) : (
+          <div className="space-y-14">
 
-        {/* Search input */}
-        <div className="relative w-full md:w-80">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-          <input
-            type="text"
-            placeholder="Tìm kiếm bài viết..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 hover:bg-slate-100/70 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-xs outline-none transition-all"
-          />
-        </div>
-      </div>
-
-      {/* News list result */}
-      {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6">
-          {[1, 2].map((n) => (
-            <div key={n} className="bg-white rounded-2xl h-[300px] animate-pulse border border-slate-200" />
-          ))}
-        </div>
-      ) : filteredNews.length === 0 ? (
-        <div className="text-center py-20 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
-          <SlidersHorizontal className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-slate-700">Không tìm thấy bài viết</h3>
-          <p className="text-slate-400 text-sm mt-1">Hãy thử tìm kiếm với các từ khóa khác.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredNews.map((article) => (
-            <div
-              key={article.id}
-              onClick={() => onNavigate(`/tin-tuc/${article.slug}`)}
-              className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col md:flex-row cursor-pointer"
-            >
-              <div className="relative w-full md:w-56 h-48 md:h-auto overflow-hidden shrink-0">
-                <img
-                  src={article.image}
-                  alt={`${article.title} – Tin tức nhà ở xã hội K-Home Đồng Nai`}
-                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
-                />
-                <span className="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-sm text-amber-400 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                  {article.category}
-                </span>
-              </div>
-
-              <div className="p-6 flex flex-col justify-between space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-1 text-slate-400 text-xs font-tech">
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{article.date}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-800 group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
-                    {article.excerpt}
-                  </p>
+            {/* ── Featured (first article) ── */}
+            {featured && (
+              <div
+                onClick={() => onNavigate(`/tin-tuc/${featured.slug}`)}
+                className="group cursor-pointer grid grid-cols-1 md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                {/* Image */}
+                <div className="relative h-72 md:h-auto overflow-hidden bg-slate-200">
+                  <img
+                    src={featured.image}
+                    alt={featured.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-950/10" />
+                  {featured.project && featured.project !== "chung" && (
+                    <span
+                      className="absolute top-5 left-5 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest"
+                      style={{ backgroundColor: PROJECT_ACCENT[featured.project] ?? "#d97706" }}
+                    >
+                      {featured.project === "cityview" ? "CityView" : featured.project === "avenue" ? "Avenue" : "Midtown"}
+                    </span>
+                  )}
                 </div>
 
-                <span className="text-amber-600 font-bold text-xs tracking-wide flex items-center gap-1 group-hover:text-amber-700 transition-colors">
-                  ĐỌC BÀI VIẾT <ChevronRight className="w-3.5 h-3.5" />
-                </span>
+                {/* Text */}
+                <div className="bg-white p-8 md:p-10 flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-bold tracking-widest uppercase text-amber-600 border border-amber-200 px-2.5 py-1 rounded-full">
+                        {featured.category}
+                      </span>
+                      <span className="text-xs text-slate-400">{featured.date}</span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-950 leading-tight group-hover:text-amber-700 transition-colors">
+                      {featured.title}
+                    </h2>
+                    <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">
+                      {featured.excerpt}
+                    </p>
+                  </div>
+                  <div className="mt-8 flex items-center gap-2 text-xs font-bold text-amber-600 group-hover:text-amber-700 transition-colors">
+                    Đọc bài viết
+                    <span className="w-5 h-0.5 bg-amber-600 group-hover:w-8 transition-all duration-300 inline-block" />
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            )}
+
+            {/* ── Rest: 3-column grid ── */}
+            {rest.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rest.map(article => {
+                  const accent = article.project ? (PROJECT_ACCENT[article.project] ?? "#94a3b8") : "#94a3b8";
+                  return (
+                    <div
+                      key={article.id}
+                      onClick={() => onNavigate(`/tin-tuc/${article.slug}`)}
+                      className="group cursor-pointer flex flex-col bg-white rounded-2xl border border-slate-100 hover:border-amber-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      {/* Image */}
+                      <div className="relative h-52 overflow-hidden bg-slate-100 shrink-0">
+                        <img
+                          src={article.image}
+                          alt={article.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Category pill */}
+                        <span className="absolute top-3 left-3 bg-slate-950/70 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                          {article.category}
+                        </span>
+                        {/* Project dot */}
+                        {article.project && article.project !== "chung" && (
+                          <span
+                            className="absolute top-3 right-3 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
+                            style={{ backgroundColor: accent }}
+                          >
+                            {article.project === "cityview" ? "CityView" : article.project === "avenue" ? "Avenue" : "Midtown"}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Body */}
+                      <div className="p-5 flex flex-col flex-1 justify-between gap-4">
+                        <div className="space-y-2">
+                          <p className="text-[11px] text-slate-400 font-medium">{article.date}</p>
+                          <h3 className="text-sm font-bold text-slate-900 group-hover:text-amber-700 transition-colors leading-snug line-clamp-2">
+                            {article.title}
+                          </h3>
+                          <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                            {article.excerpt}
+                          </p>
+                        </div>
+
+                        {/* Accent line CTA */}
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="h-0.5 w-4 group-hover:w-7 transition-all duration-300 rounded-full"
+                            style={{ backgroundColor: accent }}
+                          />
+                          <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: accent }}>
+                            Đọc tiếp
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Count summary */}
+            <p className="text-center text-xs text-slate-300 font-medium pt-4 border-t border-slate-50">
+              Hiển thị {filtered.length} / {news.length} bài viết
+            </p>
+
+          </div>
+        )}
+      </div>
     </div>
   );
 }
