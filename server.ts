@@ -1310,6 +1310,80 @@ Bạn đang quan tâm loại căn nào? Liên hệ **0937.587.438** để đư�
 
 ---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026;tien-do-k-home-cityview-2026-cap-nhat-moi-nhat|Tiến Độ K-Home CityView 2026`,
   },
+  {
+    id: "10",
+    slug: "chinh-sach-thanh-toan-k-home-cityview-2026",
+    title: "Chính Sách Thanh Toán K-Home CityView 2026: Trả Góp Theo Tiến Độ, Ân Hạn Nợ Gốc & Hỗ Trợ Lãi Suất",
+    date: "2026-08-02",
+    excerpt: "Chính sách thanh toán K-Home CityView 2026: trả góp theo tiến độ, hỗ trợ vay lãi suất ưu đãi, ân hạn nợ gốc. Minh họa lịch thanh toán và so sánh trả sớm vs trả theo tiến độ.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/1",
+    category: "Chính sách",
+    content: `Khi mua nhà ở xã hội tại K-Home CityView, ngoài giá bán, khách hàng rất quan tâm đến chính sách thanh toán. Đây là yếu tố quyết định khả năng tiếp cận và áp lực tài chính trong suốt quá trình sở hữu nhà.
+
+![Chính sách thanh toán K-Home CityView 2026 trả góp theo tiến độ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/1)
+
+## 1. Hình thức thanh toán chính
+
+Khách hàng thường có 2 lựa chọn:
+
+**A. Thanh toán bằng vốn tự có:** Trả theo nhiều đợt, gắn với tiến độ xây dựng thực tế của dự án.
+
+**B. Thanh toán kết hợp vay ngân hàng:** Vay từ Ngân hàng Chính sách xã hội với lãi suất ưu đãi khoảng **5,4%/năm**, thời hạn lên đến **25 năm**, hạn mức vay thường đến **75–80%** giá trị căn hộ. Vốn tự có ban đầu thường chỉ cần khoảng **20%** giá trị căn hộ để ký hợp đồng.
+
+![Hình thức thanh toán vốn tự có và vay ngân hàng K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/2)
+
+## 2. Minh họa lịch thanh toán theo tiến độ (tham khảo)
+
+| Đợt | Mốc thanh toán | Tỷ lệ tham khảo | Ghi chú |
+|---|---|---|---|
+| 1 | Ký Hợp đồng mua bán | 20% | Vốn tự có |
+| 2–5 | Theo tiến độ xây dựng | 40–50% | Chia nhỏ theo các giai đoạn thi công |
+| 6 | Bàn giao căn hộ | 20–25% | Khi nhận nhà |
+| 7 | Nhận sổ hồng | 5–10% | Thanh toán cuối |
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/3-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/3-2|Lịch thanh toán theo tiến độ K-Home CityView 2026
+
+## 3. So sánh "Trả sớm" vs "Trả theo tiến độ"
+
+| Tiêu chí | Trả theo tiến độ | Trả sớm |
+|---|---|---|
+| Áp lực tài chính ngắn hạn | Thấp hơn | Cao hơn ở giai đoạn đầu |
+| Lãi suất vay | Phải trả lãi trên dư nợ | Giảm tổng lãi |
+| Linh hoạt dòng tiền | Cao | Thấp hơn |
+| Phù hợp với ai | Phần lớn khách NOXH | Người có sẵn dòng tiền lớn |
+
+**Khuyến nghị:** Với đa số khách hàng mua NOXH, trả theo tiến độ kết hợp vay ngân hàng chính sách thường là lựa chọn tối ưu.
+
+![So sánh trả sớm và trả theo tiến độ tại K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/4)
+
+## 4. Ưu điểm nổi bật của chính sách thanh toán tại K-Home CityView
+
+- Vốn ban đầu thấp (khoảng 20%).
+- Được hỗ trợ vay lãi suất ưu đãi dài hạn.
+- Thanh toán gắn với tiến độ thực tế, giảm rủi ro.
+- Có thể kết hợp ân hạn nợ gốc ở một số gói vay ngân hàng thương mại.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/5-2|Ưu điểm chính sách thanh toán K-Home CityView
+
+## 5. Lưu ý khi chọn phương án thanh toán
+
+- Đọc kỹ điều khoản thanh toán trong hợp đồng.
+- Tính toán khả năng trả nợ hàng tháng nếu vay ngân hàng.
+- Hỏi rõ về chính sách ân hạn nợ gốc, phí phạt trả nợ trước hạn.
+- Giữ biên bản và chứng từ thanh toán đầy đủ.
+
+## Kết luận
+
+Chính sách thanh toán tại K-Home CityView năm 2026 được thiết kế theo hướng hỗ trợ người mua nhà ở thật: vốn ban đầu thấp, trả góp theo tiến độ và được tiếp cận lãi suất ưu đãi từ Ngân hàng Chính sách xã hội.
+
+![Nhận tư vấn lịch thanh toán chi tiết K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news13/6)
+
+Bạn muốn được tư vấn cụ thể lịch thanh toán theo loại căn (1PN, 2PN, 3PN)? Liên hệ **0937.587.438** để được hỗ trợ.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem chính sách & lịch thanh toán
+
+---RELATED---bang-gia-k-home-cityview-2026-theo-tung-loai-can|Bảng Giá K-Home CityView 2026;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Cần Bao Nhiêu Tiền Để Sở Hữu Căn Hộ`,
+  },
 ];
 
 // ─── Public API Routes ────────────────────────────────────────────────────────
