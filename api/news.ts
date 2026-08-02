@@ -899,6 +899,69 @@ Bạn muốn nhận thông tin tiến độ mới nhất hoặc đặt lịch th
 
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa;vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon|Vì Sao K-Home CityView Thu Hút Sự Quan Tâm Lớn`,
   },
+  {
+    id: "n9",
+    slug: "bang-gia-k-home-cityview-2026-theo-tung-loai-can",
+    title: "Bảng Giá K-Home CityView 2026 Theo Từng Loại Căn: 1PN, 2PN, 3PN Cập Nhật Mới Nhất",
+    date: "2026-08-02",
+    excerpt: "Bảng giá K-Home CityView 2026 theo từng loại căn 1PN, 2PN, 3PN. Cập nhật giá bình quân khoảng 20 triệu/m², ước tính theo diện tích, tầng, view và các yếu tố ảnh hưởng giá bán.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/1",
+    category: "Đánh giá dự án",
+    content: `Khi tìm hiểu dự án K-Home CityView, câu hỏi được quan tâm nhiều nhất chính là bảng giá chi tiết theo từng loại căn. Dưới đây là thông tin tổng hợp mới nhất năm 2026.
+
+![Bảng giá K-Home CityView 2026 theo từng loại căn 1PN 2PN 3PN](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/1)
+
+## 1. Giá bán bình quân tham khảo
+
+Theo các thông tin hiện có, giá bán bình quân của nhà ở xã hội tại K-Home CityView đang dao động ở mức khoảng **20 triệu đồng/m²** diện tích sử dụng (thông thủy).
+
+![Giá bán bình quân K-Home CityView khoảng 20 triệu đồng/m2](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/2)
+
+## 2. Bảng giá ước tính theo loại căn hộ
+
+| Loại căn | Diện tích tham khảo | Giá ước tính (đã gồm VAT) | Ghi chú |
+|---|---|---|---|
+| 1PN / 1PN+ | ~47 m² | Khoảng 940 triệu – 1,1 tỷ | Phù hợp độc thân, vợ chồng trẻ |
+| 2PN nhỏ | ~62 m² | Khoảng 1,24 – 1,4 tỷ | Gia đình 2–3 người |
+| 2PN lớn | ~70 m² | Khoảng 1,4 – 1,6 tỷ | Gia đình 3–4 người |
+| 3PN | ~84 m² | Khoảng 1,68 – 1,9 tỷ | Gia đình đông thành viên |
+
+![Bảng giá tham khảo căn hộ 1PN 2PN 3PN K-Home CityView 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/3)
+
+## 3. Các yếu tố ảnh hưởng đến giá từng căn
+
+Giá nhà ở xã hội không cố định cho mọi căn mà phụ thuộc vào:
+
+- **Tầng cao:** Tầng trung và tầng cao thường có hệ số cao hơn.
+- **Hướng và view:** Căn view đẹp, thoáng, hướng mát thường có giá cao hơn.
+- **Vị trí căn trong mặt bằng:** Căn góc thường có lợi thế về ánh sáng và view.
+- **Diện tích thông thủy thực tế:** Giá được tính theo m² thông thủy.
+
+![Các yếu tố ảnh hưởng giá căn hộ K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/4)
+
+## 4. Vốn ban đầu cần chuẩn bị
+
+Với chính sách vay ưu đãi từ Ngân hàng Chính sách xã hội (lãi suất khoảng **5,4%/năm**, vay đến **75–80%**, thời hạn đến **25 năm**):
+
+- Căn khoảng 1 tỷ → vốn ban đầu khoảng **200–250 triệu**
+- Căn khoảng 1,5 tỷ → vốn ban đầu khoảng **300–375 triệu**
+
+## 5. Lời khuyên khi xem bảng giá
+
+- Luôn yêu cầu bảng giá chính thức từ chủ đầu tư hoặc đơn vị được ủy quyền.
+- So sánh tổng giá + giá/m², đồng thời xem xét tầng và hướng.
+- Tính thêm phí bảo trì 2% và các chi phí phát sinh.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/5-0|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/5-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/5-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news12/5-4|Nhận bảng giá chi tiết K-Home CityView 2026
+
+## Kết luận
+
+Giá bán K-Home CityView năm 2026 đang ở mức bình quân khoảng **20 triệu đồng/m²**. Bạn đang quan tâm loại căn nào? Liên hệ **0937.587.438** để được hỗ trợ tư vấn chi tiết.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem bảng giá & chọn căn
+
+---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026;tien-do-k-home-cityview-2026-cap-nhat-moi-nhat|Tiến Độ K-Home CityView 2026`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
