@@ -99,6 +99,9 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
   const [showModal, setShowModal]       = useState(false);
   const [modalPage, setModalPage]       = useState(0);
   const [modalStartYear, setModalStartYear] = useState(2026);
+  const [modalStartMonth, setModalStartMonth] = useState(1);
+  const [openMonthDrop, setOpenMonthDrop] = useState(false);
+  const [openYearDrop, setOpenYearDrop]   = useState(false);
   const modalScrollRef = useRef<HTMLDivElement>(null);
 
   const unit = cfg.units[unitIdx];
@@ -110,7 +113,9 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
   // ── Trả góp — mô hình giải ngân 3 đợt (giống HomeView disbCalcResult) ───────
   const disbResult = useMemo(() => {
     if (method !== "policy") return { firstMonthly: 0, totalInterest: 0 };
-    const contractValue = price * 1000; // triệu
+    // Dùng cùng contractValue như modal: loanMil / lp — giống HomeView
+    const loanMilExact = Math.round(price * cfg.loanPercent / 100 * 1000 * 10) / 10;
+    const contractValue = loanMilExact / (cfg.loanPercent / 100);
     const rYear = cfg.policyRate / 100;
     const n = cfg.loanYears * 12;
     const sy = 2026;
@@ -332,16 +337,16 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                 </div>
                 <div className="space-y-1">
                   <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                    <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Trả góp/tháng:
+                    <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Tổng lãi phải trả:
                   </span>
                   {method === "cash"
                     ? <div className="text-2xl font-extrabold text-yellow-100">Không vay</div>
                     : <>
                         <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                          ~{disbResult.firstMonthly.toFixed(1)} <span className="text-xs font-normal text-white/80">triệu</span>
+                          ~{Math.round(disbResult.totalInterest).toLocaleString("vi")} <span className="text-xs font-normal text-white/80">triệu</span>
                         </div>
                         <p className="text-[10px] text-amber-100/70">
-                          {cfg.loanYears} năm · Tổng lãi ~{Math.round(disbResult.totalInterest).toLocaleString("vi")} triệu
+                          Trong {cfg.loanYears} năm · lãi {cfg.policyRate}%/năm
                         </p>
                       </>
                   }
@@ -421,14 +426,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                   <label className="text-[9px] font-bold text-slate-400 uppercase block mb-1">Tỷ lệ vay (%)</label>
                   <div className="border-2 border-slate-100 bg-slate-50 rounded-xl px-2 py-2 text-sm font-extrabold text-slate-500 text-center">{cfg.loanPercent}</div>
                 </div>
-                <div>
-                  <label className="text-[9px] font-bold text-slate-400 uppercase block mb-1">Năm bắt đầu</label>
-                  <input type="text" inputMode="numeric" value={modalStartYear}
-                    onChange={e => { const n = parseInt(e.target.value.replace(/\D/g,"")); if (!isNaN(n)) setModalStartYear(n); }}
-                    onBlur={e => { const n = parseInt(e.target.value); if (isNaN(n)||n<2024) setModalStartYear(2024); else if (n>2035) setModalStartYear(2035); }}
-                    className="w-full border-2 border-slate-200 focus:border-amber-400 bg-white rounded-xl px-2 py-2 text-sm font-extrabold text-slate-800 outline-none text-center" />
-                </div>
-                <div>
+                  <div>
                   <label className="text-[9px] font-bold text-amber-500 uppercase block mb-1">Giá căn (triệu)</label>
                   <div className="border-2 border-amber-200 bg-amber-50 rounded-xl px-2 py-2 text-sm font-extrabold text-amber-700 text-center">{Math.round(price * 1000)}</div>
                 </div>
@@ -437,16 +435,23 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
 
             {/* Summary + bảng */}
             {(() => {
-              const loanMil = loanAmount * 1000;
+              const loanMil = Math.round(price * cfg.loanPercent / 100 * 1000 * 10) / 10; // giữ 1 chữ số thập phân, giống HomeView
               const lp = cfg.loanPercent / 100;
               const contractVal = loanMil / lp;
               const rYear = cfg.policyRate / 100;
               const n = cfg.loanYears * 12;
               const sy = modalStartYear;
+              const startOffset = modalStartMonth - 1; // 0-indexed offset trong năm sy
               const disbEvts = [{atMonth:1,pct:0.45,label:"Đợt 4 – Giải ngân 45%"},{atMonth:13,pct:0.25,label:"Đợt 5 – Giải ngân 25%"},{atMonth:25,pct:0.05,label:"Đợt 6 – Giải ngân 5%"}];
-              const getDays = (m: number) => { const idx=m-1,yr=sy+Math.floor(idx/12),mo=idx%12,isL=(yr%4===0&&yr%100!==0)||yr%400===0; return {days:mo===1?(isL?29:28):[31,28,31,30,31,30,31,31,30,31,30,31][mo],year:yr,mo,isLeap:isL}; };
+              const getDays = (m: number) => {
+                const totalMonthIdx = startOffset + (m - 1);
+                const yr = sy + Math.floor(totalMonthIdx / 12);
+                const mo = totalMonthIdx % 12;
+                const isL = (yr%4===0&&yr%100!==0)||yr%400===0;
+                return {days:mo===1?(isL?29:28):[31,28,31,30,31,30,31,31,30,31,30,31][mo],year:yr,mo,isLeap:isL};
+              };
               let bal=0,firstTotal=0,lastTotal=0,firstDays=0,totalInt=0;
-              type DRow={seq:number;date:string;balance:number;principal:number;interest:number;total:number;isEvent?:boolean;eventLabel?:string;eventAmt?:number;disbMonth?:number};
+              type DRow={seq:number;date:string;balance:number;principal:number;interest:number;total:number;isEvent?:boolean;eventLabel?:string;eventAmt?:number;disbMonth?:number;isFinal?:boolean};
               const rows:DRow[]=[];
               for(let m=1;m<=n;m++){
                 const d=disbEvts.find(e=>e.atMonth===m);
@@ -457,10 +462,17 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                 totalInt+=interest;rows.push({seq:m,date:`01/${String(mo+1).padStart(2,"0")}/${year}`,balance:bal,principal:prin,interest,total});
                 bal-=prin;if(bal<0.001)bal=0;
               }
-              const PAGE=24,payRows=rows.filter(r=>!r.isEvent),totalP=Math.ceil(payRows.length/PAGE);
+              // Dòng tất toán
+              {const {year,mo}=getDays(n+1);rows.push({seq:n+1,date:`01/${String(mo+1).padStart(2,"0")}/${year}`,balance:0,principal:0,interest:0,total:0,isFinal:true});}
+              const PAGE=24,payRows=rows.filter(r=>!r.isEvent&&!r.isFinal),totalP=Math.ceil(payRows.length/PAGE);
               const ps=modalPage*PAGE,pe=Math.min(ps+PAGE,payRows.length);
               const seqS=payRows[ps]?.seq??1,seqE=payRows[pe-1]?.seq??n;
-              const paged=rows.filter(r=>r.isEvent?((r.disbMonth??0)>=seqS&&(r.disbMonth??0)<=seqE):(r.seq>=seqS&&r.seq<=seqE));
+              const isLastPage=modalPage===totalP-1;
+              const paged=rows.filter(r=>{
+                if(r.isFinal)return isLastPage;
+                if(r.isEvent)return((r.disbMonth??0)>=seqS&&(r.disbMonth??0)<=seqE);
+                return r.seq>=seqS&&r.seq<=seqE;
+              });
               return (<>
                 <div className="px-4 sm:px-6 py-3 grid grid-cols-2 sm:grid-cols-4 gap-2 border-b border-slate-100 shrink-0">
                   {[{label:"Kỳ 1 trả",val:firstTotal.toFixed(2),sub:`${firstDays} ngày`,bg:"bg-amber-50 border-amber-200",tx:"text-amber-700"},
@@ -471,7 +483,50 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                 </div>
                 <div className="px-6 pt-3 pb-2 flex items-center gap-2 shrink-0">
                   <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white">🏦 Giải ngân theo đợt</span>
-                  <span className="ml-auto text-[10px] text-slate-400 hidden sm:block">💡 Lãi = Dư nợ × {cfg.policyRate}% × ngày / 365 · Bắt đầu {modalStartYear}</span>
+                  {/* Dropdown Tháng + Năm */}
+                  <div className="flex items-center gap-2 ml-auto flex-wrap">
+                    <span className="text-[10px] text-slate-500 font-semibold shrink-0">📅 Bắt đầu:</span>
+                    {/* Tháng */}
+                    <div className="relative">
+                      <button onClick={e=>{e.stopPropagation();setOpenMonthDrop(v=>!v);setOpenYearDrop(false);}}
+                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between">
+                        <span>Tháng {modalStartMonth}</span>
+                        <span className="text-slate-400 text-[10px]">{openMonthDrop?"▴":"▾"}</span>
+                      </button>
+                      {openMonthDrop&&(
+                        <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden w-32">
+                          <div className="grid grid-cols-3 gap-0.5 p-1.5">
+                            {Array.from({length:12},(_,i)=>i+1).map(m=>(
+                              <button key={m} onClick={()=>{setModalStartMonth(m);setModalPage(0);setOpenMonthDrop(false);}}
+                                className={`py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${m===modalStartMonth?"bg-amber-500 text-white shadow-sm":"text-slate-600 hover:bg-amber-50 hover:text-amber-600"}`}>
+                                T.{m}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    {/* Năm */}
+                    <div className="relative">
+                      <button onClick={e=>{e.stopPropagation();setOpenYearDrop(v=>!v);setOpenMonthDrop(false);}}
+                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[64px] justify-between">
+                        <span>{modalStartYear}</span>
+                        <span className="text-slate-400 text-[10px]">{openYearDrop?"▴":"▾"}</span>
+                      </button>
+                      {openYearDrop&&(
+                        <div className="absolute top-full mt-1 right-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-28 max-h-48 overflow-y-auto">
+                          <div className="py-1">
+                            {Array.from({length:12},(_,i)=>2024+i).map(y=>(
+                              <button key={y} onClick={()=>{setModalStartYear(y);setModalPage(0);setOpenYearDrop(false);}}
+                                className={`w-full text-left px-4 py-2 text-xs font-bold transition-all cursor-pointer ${y===modalStartYear?"bg-amber-500 text-white":"text-slate-600 hover:bg-amber-50 hover:text-amber-600"}`}>
+                                {y}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
                 <div ref={modalScrollRef} className="overflow-y-auto flex-1 px-6 pb-4">
                   <div className="space-y-3">
@@ -493,6 +548,12 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                             <td colSpan={2} className="py-2 px-1 font-extrabold text-rose-700 text-[10px]">🏦 {r.eventLabel} +{r.eventAmt?.toFixed(1)} tr</td>
                             <td className="py-2 text-right font-extrabold text-rose-700 hidden sm:table-cell">→ {r.balance.toFixed(1)} tr</td>
                             <td colSpan={3} className="py-2 text-right font-extrabold text-rose-700">→ {r.balance.toFixed(1)} tr</td>
+                          </tr>
+                        ):r.isFinal?(
+                          <tr key="final" className="bg-emerald-50 border-t-2 border-emerald-400">
+                            <td className="py-2 font-extrabold text-emerald-700 text-[10px]">✅ Tất toán</td>
+                            <td className="py-2 text-emerald-600 text-[10px]">{r.date}</td>
+                            <td colSpan={4} className="py-2 text-right font-extrabold text-emerald-700">Dư nợ: 0</td>
                           </tr>
                         ):(
                           <tr key={r.seq} className={`${r.seq%2===0?"bg-slate-50/40":""} hover:bg-amber-50 transition-colors`}>
