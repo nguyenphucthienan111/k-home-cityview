@@ -60,7 +60,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
     }
 
     // Stale-while-revalidate: hiện cache ngay, fetch mới ngầm
-    const CACHE_KEY = "khome_projects_v2";
+    const CACHE_KEY = "khome_projects_v3";
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
       try {

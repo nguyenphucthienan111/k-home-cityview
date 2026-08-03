@@ -25,6 +25,7 @@ export interface Project {
   description: string;
   longDescription: string;
   gallery: string[];
+  galleryAlts?: string[];  // alt text SEO cho từng ảnh gallery
   amenities: string[];
   unitTypes?: UnitType[];
   mapEmbedUrl?: string;
