@@ -431,7 +431,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [modalYears, setModalYears] = useState<number>(25);
   const [modalActiveTab, setModalActiveTab] = useState<"year"|"month"|"disbursement">("disbursement");
   const [modalMonthPage, setModalMonthPage] = useState<number>(0);
+  const [modalStartMonth, setModalStartMonth] = useState<number>(1);
   const [modalStartYear, setModalStartYear] = useState<number>(2026);
+  const [openMonthDrop, setOpenMonthDrop] = useState(false);
+  const [openYearDrop, setOpenYearDrop] = useState(false);
   const modalScrollRef = useRef<HTMLDivElement>(null);
   const [priceInputMode, setPriceInputMode] = useState<"slider"|"input">("slider");
   const [priceInputRaw, setPriceInputRaw] = useState<string>("");
@@ -550,6 +553,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, [heroProjects.length]);
 
   // Popup timer — show after 8 seconds, only once per session
+  // Click outside to close month/year dropdowns in modal
+  useEffect(() => {
+    if (!openMonthDrop && !openYearDrop) return;
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-modal-drop]")) {
+        setOpenMonthDrop(false);
+        setOpenYearDrop(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [openMonthDrop, openYearDrop]);
   useEffect(() => {
     const alreadySeen = sessionStorage.getItem("popupShown");
     if (alreadySeen) return;
@@ -949,28 +965,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     {modalLoanPct}
                   </div>
                 </div>
-                {/* Năm bắt đầu vay — editable */}
-                <div>
-                  <label className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Năm bắt đầu vay</label>
-                  <input
-                    type="text"
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    value={modalStartYear}
-                    onChange={e => {
-                      const raw = e.target.value.replace(/\D/g, "");
-                      if (raw === "") return;
-                      const num = parseInt(raw);
-                      if (!isNaN(num)) setModalStartYear(num);
-                    }}
-                    onBlur={e => {
-                      const num = parseInt(e.target.value);
-                      if (isNaN(num) || num < 2024) setModalStartYear(2024);
-                      else if (num > 2035) setModalStartYear(2035);
-                    }}
-                    className="w-full border-2 border-slate-200 focus:border-amber-400 bg-white rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 text-sm font-extrabold text-slate-800 outline-none transition-all text-center shadow-sm"
-                  />
-                </div>
                 {/* Giá căn tính toán */}
                 <div>
                   <label className="text-[9px] sm:text-[10px] font-bold text-amber-500 uppercase tracking-wider block mb-1">Giá căn (triệu)</label>
@@ -985,30 +979,31 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               // pct giải ngân tính trên GIÁ CĂN (contractValue), không phải khoản vay
               const rYear2 = modalRate / 100;
               const n2 = Math.max(1, modalYears) * 12;
-              const L2 = Math.max(1, modalLoan); // khoản vay
-              const lp2 = Math.max(1, Math.min(100, modalLoanPct)) / 100; // tỷ lệ vay
-              const contractValue2 = L2 / lp2; // giá căn = khoản vay / tỷ lệ vay
-              const sy2 = modalStartYear;
-              const disbEvts2 = [
-                { atMonth: 1,  pct: 0.45 }, // 45% giá căn
-                { atMonth: 13, pct: 0.25 }, // 25% giá căn
-                { atMonth: 25, pct: 0.05 }, // 5% giá căn
-              ];
+              const L2 = Math.max(1, modalLoan);
+              const lp2 = Math.max(1, Math.min(100, modalLoanPct)) / 100;
+              const contractValue2 = L2 / lp2;
+              // Tính tháng thực tế: kỳ m bắt đầu từ offset = (modalStartMonth - 1) + (m - 1)
+              const startOffset2 = modalStartMonth - 1; // 0-indexed offset trong năm modalStartYear
               const calcDays2 = (kyCur: number) => {
-                const monthIdx = kyCur - 1;
-                const year = sy2 + Math.floor(monthIdx / 12);
-                const mo = monthIdx % 12;
+                const totalMonthIdx = startOffset2 + (kyCur - 1); // 0-indexed tổng tháng từ Jan/modalStartYear
+                const year = modalStartYear + Math.floor(totalMonthIdx / 12);
+                const mo = totalMonthIdx % 12; // 0=Jan
                 const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
                 const days = mo === 1 ? (isLeap ? 29 : 28) : [31,28,31,30,31,30,31,31,30,31,30,31][mo];
-                return { days, isLeap };
+                return { days, isLeap, mo, year };
               };
+              const disbEvts2 = [
+                { atMonth: 1,  pct: 0.45 },
+                { atMonth: 13, pct: 0.25 },
+                { atMonth: 25, pct: 0.05 },
+              ];
               let bal2 = 0;
               let firstKy = { total: 0, days: 0 };
               let lastKy = { total: 0, days: 0 };
               let totalInt2 = 0;
               for (let m = 1; m <= n2; m++) {
                 const d2 = disbEvts2.find(e => e.atMonth === m);
-                if (d2) bal2 += contractValue2 * d2.pct; // % trên giá căn
+                if (d2) bal2 += contractValue2 * d2.pct;
                 if (bal2 <= 0) continue;
                 const rem2 = n2 - m + 1;
                 const prin2 = bal2 / rem2;
@@ -1039,13 +1034,74 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     ))}
                   </div>
                   <div className="px-6 pt-3 pb-2 flex items-center gap-2 shrink-0 flex-wrap">
-                    {(["disbursement"] as const).map(tab => (
-                      <button key={tab} onClick={() => { setModalActiveTab(tab); setModalMonthPage(0); }}
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white shadow-md shadow-amber-500/25 cursor-pointer">
-                        🏦 Giải ngân theo đợt
-                      </button>
-                    ))}
-                    <span className="ml-auto text-[10px] text-slate-400 hidden sm:block">💡 Lãi = Dư nợ × {modalRate}% × ngày / 365(6) · Bắt đầu {modalStartYear}</span>
+                    <button onClick={() => { setModalActiveTab("disbursement"); setModalMonthPage(0); }}
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white shadow-md shadow-amber-500/25 cursor-pointer">
+                      🏦 Giải ngân theo đợt
+                    </button>
+                    {/* Tháng + Năm bắt đầu vay — custom dropdown */}
+                    <div className="flex items-center gap-2 ml-auto flex-wrap">
+                      <span className="text-[10px] text-slate-500 font-semibold shrink-0">📅 Bắt đầu:</span>
+
+                      {/* Dropdown Tháng */}
+                      <div className="relative" data-modal-drop>
+                        <button
+                          onClick={e => { e.stopPropagation(); setOpenMonthDrop(v => !v); setOpenYearDrop(false); }}
+                          className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between"
+                        >
+                          <span>Tháng {modalStartMonth}</span>
+                          <span className="text-slate-400 text-[10px]">{openMonthDrop ? "▴" : "▾"}</span>
+                        </button>
+                        {openMonthDrop && (
+                          <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden w-32">
+                            <div className="grid grid-cols-3 gap-0.5 p-1.5">
+                              {Array.from({length:12},(_,i)=>i+1).map(m => (
+                                <button
+                                  key={m}
+                                  onClick={() => { setModalStartMonth(m); setModalMonthPage(0); setOpenMonthDrop(false); }}
+                                  className={`py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                                    m === modalStartMonth
+                                      ? "bg-amber-500 text-white shadow-sm"
+                                      : "text-slate-600 hover:bg-amber-50 hover:text-amber-600"
+                                  }`}
+                                >
+                                  T.{m}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Dropdown Năm */}
+                      <div className="relative" data-modal-drop>
+                        <button
+                          onClick={e => { e.stopPropagation(); setOpenYearDrop(v => !v); setOpenMonthDrop(false); }}
+                          className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between"
+                        >
+                          <span>{modalStartYear}</span>
+                          <span className="text-slate-400 text-[10px]">{openYearDrop ? "▴" : "▾"}</span>
+                        </button>
+                        {openYearDrop && (
+                          <div className="absolute top-full mt-1 right-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-28 max-h-48 overflow-y-auto">
+                            <div className="py-1">
+                              {Array.from({length:12},(_,i)=>2024+i).map(y => (
+                                <button
+                                  key={y}
+                                  onClick={() => { setModalStartYear(y); setModalMonthPage(0); setOpenYearDrop(false); }}
+                                  className={`w-full text-left px-4 py-2 text-xs font-bold transition-all cursor-pointer ${
+                                    y === modalStartYear
+                                      ? "bg-amber-500 text-white"
+                                      : "text-slate-600 hover:bg-amber-50 hover:text-amber-600"
+                                  }`}
+                                >
+                                  {y}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                   <div ref={modalScrollRef} className="overflow-y-auto flex-1 px-6 pb-4">
                     {modalActiveTab === "disbursement" && (
@@ -1056,34 +1112,29 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         {(() => {
                           const L = Math.max(1, modalLoan); // khoản vay
                           const loanPctFrac = Math.max(0.01, Math.min(1, modalLoanPct / 100));
-                          const contractValue = L / loanPctFrac; // giá căn = khoản vay / tỷ lệ vay
+                          const contractValue = L / loanPctFrac;
                           const rYear = modalRate / 100;
-                          const n = Math.max(1, modalYears) * 12; // tổng số kỳ trả = 300 nếu 25 năm
-                          const sy = modalStartYear;
+                          const n = Math.max(1, modalYears) * 12;
+                          const startOffset = modalStartMonth - 1; // 0-indexed offset trong năm modalStartYear
 
-                          // 3 đợt giải ngân:
-                          // - Đợt 4: giải ngân trước kỳ 1  (tháng 1/sy)   → atMonth: 1
-                          // - Đợt 5: giải ngân trước kỳ 13 (tháng 1/sy+1) → atMonth: 13
-                          // - Đợt 6: giải ngân trước kỳ 25 (tháng 1/sy+2) → atMonth: 25
-                          // pct là % trên GIÁ CĂN (contractValue), không phải % khoản vay
-                          // Loop m = 1..n (n vòng = n kỳ trả đúng)
                           const disbEvents: { atMonth: number; pct: number; label: string }[] = [
                             { atMonth: 1,  pct: 0.45, label: "Đợt 4 – Giải ngân 45%" },
                             { atMonth: 13, pct: 0.25, label: "Đợt 5 – Giải ngân 25%" },
                             { atMonth: 25, pct: 0.05, label: "Đợt 6 – Giải ngân 5%" },
                           ];
 
-                          type DRow = { seq: number; date: string; balance: number; principal: number; interest: number; total: number; isEvent?: boolean; eventLabel?: string; eventAmt?: number; disbMonth?: number };
+                          type DRow = { seq: number; date: string; balance: number; principal: number; interest: number; total: number; isEvent?: boolean; eventLabel?: string; eventAmt?: number; disbMonth?: number; isFinal?: boolean };
                           const rows: DRow[] = [];
                           let balance = 0;
-                          let paidCount = 0; // số kỳ đã trả
+                          let paidCount = 0;
                           const calcDays = (kyCur: number) => {
-                            // kyCur là kỳ 1-indexed, tháng thanh toán = sy + floor((kyCur-1)/12), tháng = (kyCur-1)%12
-                            const monthIdx = kyCur - 1; // 0-indexed
-                            const year = sy + Math.floor(monthIdx / 12);
-                            const mo = monthIdx % 12;
-                            if (mo === 1) { const isLeap=(year%4===0&&year%100!==0)||year%400===0; return { days: isLeap?29:28, year, mo, isLeap }; }
-                            return { days: [31,28,31,30,31,30,31,31,30,31,30,31][mo], year, mo, isLeap: (year%4===0&&year%100!==0)||year%400===0 };
+                            // kyCur 1-indexed; tháng thực = startOffset + (kyCur-1) tính từ Jan/modalStartYear
+                            const totalMonthIdx = startOffset + (kyCur - 1);
+                            const year = modalStartYear + Math.floor(totalMonthIdx / 12);
+                            const mo = totalMonthIdx % 12; // 0=Jan
+                            const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+                            const days = mo === 1 ? (isLeap ? 29 : 28) : [31,28,31,30,31,30,31,31,30,31,30,31][mo];
+                            return { days, year, mo, isLeap };
                           };
 
                           // Loop m = 1..n (đúng n kỳ)
@@ -1101,7 +1152,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
                             if (balance <= 0) continue;
                             paidCount++;
-                            const remaining = n - m + 1; // số kỳ còn lại (kể cả kỳ này)
+                            const remaining = n - m + 1;
                             const principal = balance / remaining;
                             const { days, year, mo, isLeap } = calcDays(m);
                             const calMonth = mo + 1;
@@ -1112,16 +1163,25 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                             if (balance < 0.001) balance = 0;
                           }
 
+                          // Dòng tất toán: kỳ n+1, dư nợ = 0
+                          {
+                            const { year, mo } = calcDays(n + 1);
+                            rows.push({ seq: n + 1, date: `01/${String(mo + 1).padStart(2,"0")}/${year}`, balance: 0, principal: 0, interest: 0, total: 0, isFinal: true });
+                          }
+
                           const PAGE = 24;
-                          const payRows = rows.filter(r => !r.isEvent);
+                          const payRows = rows.filter(r => !r.isEvent && !r.isFinal);
                           const totalP = Math.ceil(payRows.length / PAGE);
                           const ps = modalMonthPage * PAGE;
                           const pe = Math.min(ps + PAGE, payRows.length);
                           const seqStart = payRows[ps]?.seq ?? 1;
                           const seqEnd = payRows[pe-1]?.seq ?? n;
+                          const isLastPage = modalMonthPage === totalP - 1;
 
-                          // Hiển thị: lấy rows trong khoảng trang hiện tại + event rows liền kề
+                          // Hiển thị: rows trong trang hiện tại + event rows liền kề + dòng tất toán ở trang cuối
                           const paged = rows.filter(r => {
+                            if (r.isFinal) return isLastPage;
+                            if (r.isEvent) return (r.disbMonth ?? 0) >= seqStart && (r.disbMonth ?? 0) <= seqEnd;
                             if (r.isEvent) return (r.disbMonth ?? 0) >= seqStart && (r.disbMonth ?? 0) <= seqEnd;
                             return r.seq >= seqStart && r.seq <= seqEnd;
                           });
@@ -1145,6 +1205,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                                       </td>
                                       <td className="py-2 text-right font-extrabold text-rose-700 hidden sm:table-cell">→ {r.balance.toFixed(1)} tr</td>
                                       <td colSpan={3} className="py-2 text-right font-extrabold text-rose-700">→ {r.balance.toFixed(1)} tr</td>
+                                    </tr>
+                                  ) : r.isFinal ? (
+                                    <tr key="final" className="bg-emerald-50 border-t-2 border-emerald-400">
+                                      <td className="py-2 font-extrabold text-emerald-700">{r.seq}</td>
+                                      <td className="py-2 text-emerald-600 text-[10px] font-bold">{r.date}</td>
+                                      <td className="py-2 text-right font-extrabold text-emerald-700 hidden sm:table-cell">0.00</td>
+                                      <td className="py-2 text-right text-emerald-600 font-semibold">—</td>
+                                      <td className="py-2 text-right text-emerald-600">—</td>
+                                      <td className="py-2 text-right font-extrabold text-emerald-700">✅ Tất toán</td>
                                     </tr>
                                   ) : (
                                     <tr key={`r${r.seq}`} className={`${r.seq%2===0?"bg-slate-50/40":""} hover:bg-amber-50 transition-colors`}>
@@ -2353,20 +2422,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     </p>
                   </div>
 
-                  {/* Trả góp */}
+                  {/* Tổng lãi */}
                   <div className="space-y-1">
                     <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                      <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Trả góp/tháng:
+                      <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Tổng lãi phải trả:
                     </span>
                     {paymentOption === "cash" ? (
                       <div className="text-2xl font-extrabold text-yellow-100 font-display">Không vay</div>
                     ) : (
                       <>
                         <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                          ~{disbCalcResult.firstMonthly.toFixed(1)} <span className="text-xs font-normal text-white/80">triệu</span>
+                          ~{Math.round(disbCalcResult.totalInterest).toLocaleString("vi")} <span className="text-xs font-normal text-white/80">triệu</span>
                         </div>
                         <p className="text-[10px] text-amber-100/70">
-                          {calcResult.loanYears} năm · Tổng lãi ~{Math.round(disbCalcResult.totalInterest).toLocaleString("vi")} triệu
+                          Trong {calcResult.loanYears} năm · lãi {PROJECT_CALC_CONFIG[selectedCalcProject].policyRate}%/năm
                         </p>
                       </>
                     )}
