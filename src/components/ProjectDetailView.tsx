@@ -166,7 +166,7 @@ const PROJECT_SEO: Record<string, {
       { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
     ],
     faq: [
-      { q: "K-Home CityView Hố Nai giá bao nhiêu?", a: "K-Home CityView có giá từ 950 triệu đến 2 tỷ/căn tùy loại: 1PN+A từ 950 triệu, 1PN+B từ 1,25 tỷ, 2PN từ 1,50 tỷ, 3PN từ 1,80 tỷ. Tất cả bàn giao full nội thất, lãi suất NOXH 5,4%/năm." },
+      { q: "K-Home CityView Hố Nai giá bao nhiêu?", a: "K-Home CityView có giá từ 950 triệu đến 2 tỷ/căn tùy loại: 1PN+A từ 950 triệu, 1PN+B từ 1,20 tỷ, 2PN từ 1,50 tỷ, 3PN từ 1,80 tỷ. Tất cả bàn giao full nội thất, lãi suất NOXH 5,4%/năm." },
       { q: "Điều kiện mua K-Home CityView là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (cặp vợ chồng) hoặc dưới 25 triệu (độc thân), có hộ khẩu hoặc tạm trú tại Đồng Nai." },
       { q: "K-Home CityView ở đâu?", a: "K-Home CityView tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Cách trung tâm Biên Hòa khoảng 3km, gần các KCN Biên Hòa 1, 2, Amata, Hố Nai và Long Bình." },
       { q: "K-Home CityView khi nào bàn giao nhà?", a: "Dự án đã khởi công và đang thi công. Tiến độ dự kiến: hoàn thành móng tháng 8–10/2026, cất nóc tháng 6/2027, hoàn thiện nội thất tháng 12/2027 và bàn giao đợt đầu cho cư dân vào tháng 1/2028. Liên hệ hotline 0937.587.438 để cập nhật tiến độ mới nhất." },
@@ -488,9 +488,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         return (
           <div key={pIdx}>
             {pIdx > 0 && <hr className="border-slate-200 my-5" />}
-            <h4 className="text-base font-bold text-slate-800 mb-2">
+            <h3 className="text-base font-bold text-slate-800 mb-2">
               {headingMatch[1]}
-            </h4>
+            </h3>
           </div>
         );
       }
@@ -1209,7 +1209,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="font-bold text-slate-800 text-base">Gửi Yêu Cầu Thành Công!</h4>
+                  <h3 className="font-bold text-slate-800 text-base">Gửi Yêu Cầu Thành Công!</h3>
                   <p className="text-slate-500 text-xs px-2">
                     Cảm ơn bạn đã đăng ký. Chuyên viên kinh doanh cao cấp của K-Home sẽ liên hệ tư vấn trong vòng 15 phút.
                   </p>
@@ -1230,8 +1230,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 )}
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Họ và tên của bạn *</label>
+                  <label htmlFor="sidebar-name" className="text-xs font-semibold text-slate-600 block">Họ và tên của bạn *</label>
                   <input
+                    id="sidebar-name"
                     type="text"
                     required
                     placeholder="VD: Nguyễn Văn Hải"
@@ -1242,8 +1243,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Địa chỉ Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
+                  <label htmlFor="sidebar-email" className="text-xs font-semibold text-slate-600 block">Địa chỉ Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
                   <input
+                    id="sidebar-email"
                     type="email"
                     placeholder="VD: hainguyen@gmail.com"
                     value={formEmail}
@@ -1253,8 +1255,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Số điện thoại liên lạc *</label>
+                  <label htmlFor="sidebar-phone" className="text-xs font-semibold text-slate-600 block">Số điện thoại liên lạc *</label>
                   <input
+                    id="sidebar-phone"
                     type="tel"
                     required
                     placeholder="VD: 0937587438"
@@ -1265,8 +1268,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Lời nhắn yêu cầu tư vấn</label>
+                  <label htmlFor="sidebar-message" className="text-xs font-semibold text-slate-600 block">Lời nhắn yêu cầu tư vấn</label>
                   <textarea
+                    id="sidebar-message"
                     rows={3}
                     placeholder={`Tôi muốn đặt lịch xem thực tế dự án ${project.title}.`}
                     value={formMessage}
@@ -1327,6 +1331,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   alt={img.alt}
                   className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="800"
+                  height="224"
                   style={{ backgroundColor: "#e2e8f0" }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-2 opacity-0 group-hover:opacity-100">
@@ -1585,6 +1591,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   alt={img.alt}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="400"
+                  height="192"
                   style={{ backgroundColor: "#e2e8f0" }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-2 opacity-0 group-hover:opacity-100">
@@ -1627,6 +1635,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                     alt={img.alt}
                     className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
+                    width="400"
+                    height="160"
                     style={{ backgroundColor: "#e2e8f0" }}
                   />
                   <div className="px-3 py-2.5 bg-white">
@@ -1678,7 +1688,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   "Tổng quan phát triển Đồng Nai Biên Hòa – slide 9",
                   "Tổng quan phát triển Đồng Nai Biên Hòa – slide 10",
                 ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Tổng quan phát triển Biên Hòa Đồng Nai - slide ${num}`} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                <img src={slideImg(num, "thumbnail")} alt={`Tổng quan phát triển Biên Hòa Đồng Nai - slide ${num}`} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" style={{ backgroundColor: "#e2e8f0" }} />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
                 </div>
@@ -1706,7 +1716,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Slide giao thông quốc gia — click to zoom */}
           <button onClick={() => openSlide([5], 0, ["Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa – cao tốc sân bay Long Thành"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa cao tốc sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa cao tốc sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="320" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -1757,7 +1767,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
                   "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
                 ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                  <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                  <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="224" style={{ backgroundColor: "#e2e8f0" }} />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
                   </div>
@@ -1801,7 +1811,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   "Giấy chứng nhận đăng ký đầu tư dự án NOXH K-Home CityView Kim Oanh Land",
                   "Phê duyệt quy hoạch 1/500 và pháp lý dự án K-Home CityView Biên Hòa",
                 ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                  <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                  <img src={slideImg(num, "thumbnail")} alt={`Hồ sơ pháp lý dự án NOXH K-Home CityView Biên Hòa Kim Oanh Land - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="224" style={{ backgroundColor: "#e2e8f0" }} />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
                   </div>
@@ -1834,21 +1844,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Slide Singapore — theo từng dự án */}
           {slug === "k-home-midtown-trang-bom" ? (
             <button onClick={() => openMidtownSlide(["slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor"], 0, ["Phong cách sống chuẩn Singapore – K-Home Midtown Trảng Bom Kim Oanh Land EDGE"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideMidtownImg("slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideMidtownImg("slide-k-home-midtown/phoi-canh-tong-the-du-an-k-home-midtown-trang-bom-phong-cach-song-chuan-singapor", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
             </button>
           ) : slug === "k-home-avenue-nhon-trach" ? (
             <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra")]); setSlideLightboxAlts(["Phong cách sống chuẩn Singapore K-Home Avenue Nhơn Trạch Kim Oanh Land EDGE"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideAvenueImg("slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Avenue Nhơn Trạch Kim Oanh Land EDGE" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideAvenueImg("slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra", "thumbnail")} alt="Phong cách sống chuẩn Singapore K-Home Avenue Nhơn Trạch Kim Oanh Land EDGE" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
             </button>
           ) : (
             <button onClick={() => openSlide([41], 0, ["8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideImg(41, "thumbnail")} alt="8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideImg(41, "thumbnail")} alt="8 yếu tố định hình chất sống Singapore tại K-Home CityView Biên Hòa Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
@@ -1885,21 +1895,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Slide EDGE — CityView slide-23, Midtown & Avenue dùng slide riêng */}
           {slug === "k-home-midtown-trang-bom" ? (
             <button onClick={() => openMidtownSlide(["slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh"], 0, ["Tiện ích và công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước carbon"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-              <img src={slideMidtownImg("slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh", "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước khí thải carbon" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideMidtownImg("slide-k-home-midtown/tien-ich-va-cong-trinh-xanh-edge-tai-k-home-midtown-giam-20-dien-nang-nuoc-va-kh", "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước khí thải carbon" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
             </button>
           ) : slug === "k-home-avenue-nhon-trach" ? (
             <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-")]); setSlideLightboxAlts(["Hệ tiện ích đa lớp K-Home Avenue EDGE – giảm 20% điện nước khí thải carbon Nhơn Trạch"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-              <img src={slideAvenueImg("slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-", "thumbnail")} alt="Hệ tiện ích đa lớp K-Home Avenue Nhơn Trạch EDGE giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideAvenueImg("slide-k-home-avenue/he-tien-ich-da-lop-tai-k-home-avenue-ho-boi-san-choi-va-tien-ich-ngoai-khu-xung-", "thumbnail")} alt="Hệ tiện ích đa lớp K-Home Avenue Nhơn Trạch EDGE giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
             </button>
           ) : (
             <button onClick={() => openSlide([23], 0, ["Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa – tiết kiệm 20% điện nước Kim Oanh Land"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-              <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa tiết kiệm điện nước Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideImg(23, "thumbnail")} alt="Chứng chỉ công trình xanh EDGE K-Home CityView Biên Hòa tiết kiệm điện nước Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
@@ -1977,7 +1987,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                     onClick={() => openSlide(seo.awards!.items.filter(x => x.imgSlide !== undefined).map(x => x.imgSlide!), seo.awards!.items.filter(x => x.imgSlide !== undefined).findIndex(x => x.imgSlide === a.imgSlide))}
                     className="w-full cursor-zoom-in relative group rounded-xl overflow-hidden"
                   >
-                    <img src={slideImg(a.imgSlide, "thumbnail")} alt={`${a.title} ${a.year} Kim Oanh Land`} className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+                    <img src={slideImg(a.imgSlide, "thumbnail")} alt={`${a.title} ${a.year} Kim Oanh Land`} className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" style={{ backgroundColor: "#e2e8f0" }} />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                       <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
                     </div>
@@ -2002,7 +2012,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 "Giải thưởng PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development",
                 "Top 10 doanh nghiệp bất động sản triển vọng nhất Việt Nam 2024 Kim Oanh Land",
               ])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideImg(15, "thumbnail")} alt="Giải thưởng Kim Oanh Land PropertyGuru Vietnam Property Awards Best Affordable Housing Development 2025" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideImg(15, "thumbnail")} alt="Giải thưởng Kim Oanh Land PropertyGuru Vietnam Property Awards Best Affordable Housing Development 2025" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
@@ -2037,7 +2047,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Ảnh đội ngũ Midtown */}
           {slug === "k-home-midtown-trang-bom" && (
             <button onClick={() => openMidtownSlide(["slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi"], 0, ["Đội ngũ kiến tạo K-Home Midtown – Kim Oanh Land cùng Global Vireon Studio, Kiến Trúc Việt, Decofi, Nagecco"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideMidtownImg("slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi", "thumbnail")} alt="Đội ngũ phát triển K-Home Midtown Kim Oanh Land Global Vireon Studio Kiến Trúc Việt Decofi Nagecco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideMidtownImg("slide-k-home-midtown/doi-ngu-phat-trien-du-an-k-home-midtown-kim-oanh-land-cung-cac-doi-tac-global-vi", "thumbnail")} alt="Đội ngũ phát triển K-Home Midtown Kim Oanh Land Global Vireon Studio Kiến Trúc Việt Decofi Nagecco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="224" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
@@ -2047,7 +2057,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Ảnh đội ngũ Avenue */}
           {slug === "k-home-avenue-nhon-trach" && (
             <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong")]); setSlideLightboxAlts(["Đối tác đồng hành K-Home Avenue – Global Vireon Studio, Cubic, Phan Vũ, Handong, K-City, Coninco"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-              <img src={slideAvenueImg("slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong", "thumbnail")} alt="Đối tác đồng hành K-Home Avenue Global Vireon Studio Cubic Phan Vũ Handong K-City Coninco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+              <img src={slideAvenueImg("slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong", "thumbnail")} alt="Đối tác đồng hành K-Home Avenue Global Vireon Studio Cubic Phan Vũ Handong K-City Coninco" className="w-full object-cover max-h-56 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="224" style={{ backgroundColor: "#e2e8f0" }} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                 <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
               </div>
@@ -2085,6 +2095,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             alt="Top 10 Nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 – Kim Oanh Land"
             className="w-full max-w-2xl mx-auto rounded-2xl object-cover cursor-zoom-in hover:opacity-90 transition-opacity"
             loading="lazy"
+            width="800"
+            height="450"
             style={{ backgroundColor: "#e2e8f0" }}
             onClick={() => {
               setSlideLightboxImages([imgUrl(seo.developerImage!, "full")]);
@@ -2111,7 +2123,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Location map slide */}
           <button onClick={() => openMidtownSlide(["slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo"], 0, ["Bản đồ vị trí dự án K-Home Midtown tại trung tâm Trảng Bom – kết nối các tuyến đường và KCN Đồng Nai"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideMidtownImg("slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo", "thumbnail")} alt="Bản đồ vị trí dự án K-Home Midtown Trảng Bom Đồng Nai kết nối KCN giao thông" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideMidtownImg("slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo", "thumbnail")} alt="Bản đồ vị trí dự án K-Home Midtown Trảng Bom Đồng Nai kết nối KCN giao thông" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="320" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2121,7 +2133,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Hero phối cảnh */}
           <button onClick={() => openMidtownSlide([seo.midtownHighlights!.heroImage], 0, ["Phối cảnh tổng thể dự án K-Home Midtown Trảng Bom – phong cách sống chuẩn Singapore"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideMidtownImg(seo.midtownHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể K-Home Midtown Trảng Bom Đồng Nai phong cách sống chuẩn Singapore" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideMidtownImg(seo.midtownHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể K-Home Midtown Trảng Bom Đồng Nai phong cách sống chuẩn Singapore" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2138,7 +2150,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           <button onClick={() => openMidtownSlide(["slide-k-home-midtown/10-diem-nhan-noi-bat-cua-du-an-nha-o-xa-hoi-k-home-midtown-trang-bom"], 0, ["10 điểm nhấn nổi bật của dự án nhà ở xã hội K-Home Midtown Trảng Bom Đồng Nai"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideMidtownImg("slide-k-home-midtown/10-diem-nhan-noi-bat-cua-du-an-nha-o-xa-hoi-k-home-midtown-trang-bom", "thumbnail")} alt="10 điểm nhấn nổi bật dự án nhà ở xã hội K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideMidtownImg("slide-k-home-midtown/10-diem-nhan-noi-bat-cua-du-an-nha-o-xa-hoi-k-home-midtown-trang-bom", "thumbnail")} alt="10 điểm nhấn nổi bật dự án nhà ở xã hội K-Home Midtown Trảng Bom Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2172,7 +2184,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           <button onClick={() => openMidtownSlide([seo.midtownEdge!.heroImage], 0, ["Tiện ích và công trình xanh EDGE tại K-Home Midtown Trảng Bom – giảm 20% điện nước khí thải"])} className="relative group w-full rounded-2xl overflow-hidden border border-green-200 cursor-zoom-in block">
-            <img src={slideMidtownImg(seo.midtownEdge.heroImage, "thumbnail")} alt="Tiện ích công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideMidtownImg(seo.midtownEdge.heroImage, "thumbnail")} alt="Tiện ích công trình xanh EDGE K-Home Midtown Trảng Bom giảm 20% điện nước carbon Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2212,7 +2224,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             setSlideLightboxAlts(["Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch – cửa ngõ khu Đông TP.HCM sân bay Long Thành", "Tiềm năng vượt trội khu vực Nhơn Trạch và dự án K-Home Avenue Đồng Nai"]);
             setSlideLightboxIndex(0); setSlideLightboxOpen(true);
           }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideAvenueImg("slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", "thumbnail")} alt="Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch cửa ngõ khu Đông TP.HCM sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideAvenueImg("slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", "thumbnail")} alt="Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch cửa ngõ khu Đông TP.HCM sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="320" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2222,7 +2234,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Phối cảnh tổng thể */}
           <button onClick={() => { setSlideLightboxImages([slideAvenueImg(seo.avenueHighlights!.heroImage)]); setSlideLightboxAlts(["Phối cảnh tổng thể K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideAvenueImg(seo.avenueHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể nhà ở xã hội K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideAvenueImg(seo.avenueHighlights.heroImage, "thumbnail")} alt="Phối cảnh tổng thể nhà ở xã hội K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-72 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="288" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2237,7 +2249,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           <button onClick={() => { setSlideLightboxImages([slideAvenueImg("slide-k-home-avenue/10-gia-tri-cot-loi-cua-du-an-nha-o-xa-hoi-k-home-avenue")]); setSlideLightboxAlts(["10 giá trị cốt lõi dự án nhà ở xã hội K-Home Avenue Nhơn Trạch Kim Oanh Land"]); setSlideLightboxIndex(0); setSlideLightboxOpen(true); }} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideAvenueImg("slide-k-home-avenue/10-gia-tri-cot-loi-cua-du-an-nha-o-xa-hoi-k-home-avenue", "thumbnail")} alt="10 giá trị cốt lõi dự án nhà ở xã hội K-Home Avenue Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" style={{ backgroundColor: "#e2e8f0" }} />
+            <img src={slideAvenueImg("slide-k-home-avenue/10-gia-tri-cot-loi-cua-du-an-nha-o-xa-hoi-k-home-avenue", "thumbnail")} alt="10 giá trị cốt lõi dự án nhà ở xã hội K-Home Avenue Nhơn Trạch Đồng Nai Kim Oanh Land" className="w-full object-cover max-h-64 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="256" style={{ backgroundColor: "#e2e8f0" }} />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
               <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
             </div>
@@ -2344,8 +2356,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <form onSubmit={handleSubmit} className="space-y-3 max-w-lg mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-600 block">Họ và tên *</label>
+              <label htmlFor="bottom-name" className="text-xs font-semibold text-slate-600 block">Họ và tên *</label>
               <input
+                id="bottom-name"
                 type="text"
                 required
                 placeholder="VD: Nguyễn Văn An"
@@ -2355,8 +2368,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-600 block">Số điện thoại *</label>
+              <label htmlFor="bottom-phone" className="text-xs font-semibold text-slate-600 block">Số điện thoại *</label>
               <input
+                id="bottom-phone"
                 type="tel"
                 required
                 placeholder="VD: 0937 587 438"
@@ -2368,8 +2382,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-slate-600 block">Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
+            <label htmlFor="bottom-email" className="text-xs font-semibold text-slate-600 block">Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
             <input
+              id="bottom-email"
               type="email"
               placeholder="VD: email@gmail.com"
               value={formEmail}
@@ -2379,8 +2394,9 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-slate-600 block">Loại căn quan tâm</label>
+            <label htmlFor="bottom-unit" className="text-xs font-semibold text-slate-600 block">Loại căn quan tâm</label>
             <select
+              id="bottom-unit"
               value={formMessage}
               onChange={(e) => setFormMessage(e.target.value)}
               className="w-full px-3.5 py-2.5 bg-white border border-amber-200 focus:border-amber-500 text-slate-800 rounded-xl text-sm outline-none transition-all shadow-sm"

@@ -39,25 +39,84 @@ export default function ContactView() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "K-Home Đồng Nai – Kim Oanh Land",
+      "alternateName": "K-Home CityView Hố Nai | Nhà Ở Xã Hội Kim Oanh",
+      "description": "Đơn vị tư vấn và phân phối nhà ở xã hội K-Home tại Đồng Nai. Hỗ trợ hồ sơ NOXH miễn phí, vay lãi suất 5,4%/năm.",
       "url": "https://k-homedongnai.com.vn",
-      "telephone": "0937587438",
+      "telephone": "+84937587438",
       "email": "k.homekog@gmail.com",
+      "image": "https://k-homedongnai.com.vn/hero-background.jpg",
+      "logo": "https://k-homedongnai.com.vn/android-chrome-512x512.png",
+      "priceRange": "950.000.000₫ – 2.000.000.000₫",
+      "currenciesAccepted": "VND",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "268A Đường Phan Trung, Phường Tam Hiệp",
-        "addressLocality": "Đồng Nai",
+        "streetAddress": "Đường Điểu Xiển, Phường Hố Nai",
+        "addressLocality": "TP. Biên Hòa",
+        "addressRegion": "Đồng Nai",
+        "postalCode": "810000",
         "addressCountry": "VN",
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.9592617",
+        "longitude": "106.9022019",
+      },
+      "hasMap": "https://www.google.com/maps?q=10.9592617,106.9022019",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61592416756280",
+        "https://k-homecityview.vn/",
+        "https://kimoanhgroup.vn/du-an/k-home-cityview/"
+      ],
       "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "20:00" },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "0937587438",
-        "contactType": "customer service",
+        "telephone": "+84937587438",
+        "contactType": "sales",
+        "areaServed": "VN",
         "availableLanguage": "Vietnamese",
-        "hoursAvailable": { "@type": "OpeningHoursSpecification", "opens": "08:00", "closes": "20:00" },
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
       },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Nhà ở xã hội K-Home CityView Hố Nai",
+          "url": "https://k-homedongnai.com.vn/k-home-cityview-ho-nai",
+          "priceCurrency": "VND",
+          "price": "950000000",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "950000000",
+            "maxPrice": "2000000000",
+            "priceCurrency": "VND"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Nhà ở xã hội K-Home Midtown Trảng Bom",
+          "url": "https://k-homedongnai.com.vn/k-home-midtown-trang-bom",
+          "priceCurrency": "VND",
+          "price": "750000000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Nhà ở xã hội K-Home Avenue Nhơn Trạch",
+          "url": "https://k-homedongnai.com.vn/k-home-avenue-nhon-trach",
+          "priceCurrency": "VND",
+          "price": "750000000"
+        }
+      ],
     });
     document.head.appendChild(schema);
 
@@ -118,7 +177,7 @@ export default function ContactView() {
         <div className="bg-white border border-slate-100 p-6 sm:p-8 rounded-3xl shadow-sm space-y-6">
           <div className="space-y-1">
             <h2 className="text-xl font-display font-semibold text-slate-800">Gửi Yêu Cầu Tư Vấn</h2>
-            <p className="text-slate-400 text-xs">Chúng tôi sẽ liên hệ lại trong vòng 15–30 phút vào giờ làm việc.</p>
+            <p className="text-slate-500 text-xs">Chúng tôi sẽ liên hệ lại trong vòng 15–30 phút vào giờ làm việc.</p>
           </div>
 
           {success ? (
@@ -142,26 +201,26 @@ export default function ContactView() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Họ và tên *</label>
-                  <input type="text" required placeholder="VD: Nguyễn Văn Hải" value={name} onChange={(e) => setName(e.target.value)}
+                  <label htmlFor="contact-name" className="text-xs font-semibold text-slate-600 block">Họ và tên *</label>
+                  <input id="contact-name" type="text" required placeholder="VD: Nguyễn Văn Hải" value={name} onChange={(e) => setName(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-lg text-sm outline-none transition-all" />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 block">Số điện thoại *</label>
-                  <input type="tel" required placeholder="VD: 0937587438" value={phone} onChange={(e) => setPhone(e.target.value)}
+                  <label htmlFor="contact-phone" className="text-xs font-semibold text-slate-600 block">Số điện thoại *</label>
+                  <input id="contact-phone" type="tel" required placeholder="VD: 0937587438" value={phone} onChange={(e) => setPhone(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-lg text-sm outline-none transition-all" />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-slate-600 block">Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
-                <input type="email" placeholder="VD: hainguyen@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)}
+                <label htmlFor="contact-email" className="text-xs font-semibold text-slate-600 block">Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
+                <input id="contact-email" type="email" placeholder="VD: hainguyen@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-lg text-sm outline-none transition-all" />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-slate-600 block">Dự án quan tâm *</label>
-                <select value={projectSlug} onChange={(e) => setProjectSlug(e.target.value)}
+                <label htmlFor="contact-project" className="text-xs font-semibold text-slate-600 block">Dự án quan tâm *</label>
+                <select id="contact-project" value={projectSlug} onChange={(e) => setProjectSlug(e.target.value)}
                   className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-lg text-sm outline-none transition-all cursor-pointer">
                   <option value="general">Chưa xác định / Tư vấn chung</option>
                   <option value="k-home-cityview-ho-nai">K-Home CityView (Hố Nai, Biên Hòa)</option>
@@ -171,8 +230,8 @@ export default function ContactView() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-slate-600 block">Nội dung yêu cầu</label>
-                <textarea rows={4} placeholder="VD: Tôi muốn kiểm tra điều kiện mua NOXH và đặt lịch tham quan..." value={message} onChange={(e) => setMessage(e.target.value)}
+                <label htmlFor="contact-message" className="text-xs font-semibold text-slate-600 block">Nội dung yêu cầu</label>
+                <textarea id="contact-message" rows={4} placeholder="VD: Tôi muốn kiểm tra điều kiện mua NOXH và đặt lịch tham quan..." value={message} onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-lg text-sm outline-none transition-all resize-none" />
               </div>
 
@@ -183,7 +242,7 @@ export default function ContactView() {
                   : <><Send className="w-4 h-4" /> Gửi Yêu Cầu Tư Vấn</>
                 }
               </button>
-              <p className="text-[11px] text-slate-400 text-center">
+              <p className="text-xs text-slate-500 text-center">
                 Chúng tôi sẽ liên hệ lại trong vòng 15–30 phút vào giờ làm việc. Thông tin của bạn được bảo mật tuyệt đối.
               </p>
             </form>
@@ -216,8 +275,8 @@ export default function ContactView() {
                   Hỗ trợ từ 8:00 – 20:00 hàng ngày
                 </p>
                 <div className="flex gap-2 mt-2">
-                  <a href="tel:0937587438" className="text-[10px] font-bold bg-emerald-500 text-white px-2.5 py-1 rounded-full hover:bg-emerald-600 transition-colors">Gọi ngay</a>
-                  <a href="https://zalo.me/0937587438" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold bg-[#0068FF] text-white px-2.5 py-1 rounded-full hover:opacity-90 transition-opacity">Zalo</a>
+                  <a href="tel:0937587438" className="text-xs font-bold bg-emerald-500 text-white px-3.5 py-2 rounded-full hover:bg-emerald-600 transition-colors min-h-[36px] flex items-center">Gọi ngay</a>
+                  <a href="https://zalo.me/0937587438" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-[#0068FF] text-white px-3.5 py-2 rounded-full hover:opacity-90 transition-opacity min-h-[36px] flex items-center">Zalo</a>
                 </div>
               </div>
             </div>
