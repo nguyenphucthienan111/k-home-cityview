@@ -1329,6 +1329,103 @@ Bạn đang lo lắng về giấy tờ cư trú? Hãy liên hệ để được 
 
 ---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì`,
   },
+  {
+    id: "n17",
+    slug: "quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z",
+    title: "Quy Trình Đăng Ký Mua K-Home CityView Từ A Đến Z",
+    date: "2026-08-04",
+    excerpt: "Quy trình đăng ký mua K-Home CityView từ A đến Z. Hướng dẫn chi tiết các bước: kiểm tra điều kiện, chuẩn bị hồ sơ, nộp đơn, xét duyệt, thông báo kết quả, ký hợp đồng và nhận nhà.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Nhiều khách hàng muốn mua nhà ở xã hội tại K-Home CityView nhưng chưa rõ phải làm những bước nào. Dưới đây là quy trình tổng quát từ A đến Z, giúp bạn nắm rõ từng giai đoạn.
+
+![Quy trình đăng ký mua K-Home CityView từ A đến Z – hướng dẫn đầy đủ các bước mua nhà ở xã hội](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/1)
+
+## Bước 1: Kiểm tra điều kiện đủ tư cách mua
+
+Trước hết, bạn cần tự kiểm tra xem mình có thuộc đối tượng được mua nhà ở xã hội và đáp ứng các điều kiện về:
+
+- Đối tượng (công nhân, người thu nhập thấp, cán bộ công chức…)
+- Thu nhập
+- Tình trạng nhà ở
+- Cư trú / làm việc tại Đồng Nai
+
+Nếu chưa chắc chắn, nên liên hệ tư vấn để được hỗ trợ kiểm tra miễn phí.
+
+![Sơ đồ quy trình mua nhà ở xã hội K-Home CityView – các bước từ đăng ký đến nhận nhà](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/2)
+
+## Bước 2: Chuẩn bị hồ sơ đầy đủ
+
+Chuẩn bị các giấy tờ theo quy định hiện hành, bao gồm:
+
+- Đơn đăng ký mua nhà ở xã hội theo mẫu
+- CCCD và giấy tờ cư trú
+- Giấy xác nhận tình trạng nhà ở
+- Giấy tờ chứng minh thu nhập
+- Các giấy tờ chứng minh đối tượng (nếu có)
+
+Nên chuẩn bị bản chính và bản sao có chứng thực.
+
+## Bước 3: Nộp hồ sơ đăng ký
+
+Nộp hồ sơ tại:
+
+- Văn phòng chủ đầu tư, hoặc
+- Quầy giao dịch / Sales Gallery của dự án K-Home CityView
+
+Thời gian tiếp nhận hồ sơ theo thông báo từng đợt mở bán của chủ đầu tư. Nên nộp sớm để tránh hết suất.
+
+![Nộp hồ sơ đăng ký mua K-Home CityView – nơi tiếp nhận hồ sơ đăng ký](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/3)
+
+## Bước 4: Xét duyệt hồ sơ
+
+Chủ đầu tư tiếp nhận và chuyển hồ sơ đến cơ quan có thẩm quyền thẩm định. Quá trình này nhằm kiểm tra tính đầy đủ, hợp lệ của hồ sơ và đối chiếu với các điều kiện theo quy định.
+
+## Bước 5: Thông báo kết quả xét duyệt
+
+Sau khi hoàn tất thẩm định, kết quả sẽ được thông báo chính thức đến khách hàng (qua điện thoại, Zalo, email hoặc văn bản).
+
+- **Nếu đạt:** Bạn được đưa vào danh sách đủ điều kiện mua và chuyển sang bước chọn căn.
+- **Nếu chưa đạt:** Sẽ được hướng dẫn bổ sung hồ sơ hoặc giải thích lý do.
+
+![Thông báo kết quả xét duyệt hồ sơ K-Home CityView – bước nhận kết quả đạt hay chưa đạt](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/4)
+
+## Bước 6: Chọn căn và ký hợp đồng mua bán
+
+Khi được duyệt, khách hàng:
+
+- Chọn căn hộ phù hợp (diện tích, tầng, hướng)
+- Ký hợp đồng mua bán
+- Thanh toán đợt đầu theo tiến độ quy định (thường khoảng 20% giá trị căn)
+
+![Ký hợp đồng mua bán K-Home CityView – giai đoạn chọn căn và ký kết](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/5)
+
+## Bước 7: Thanh toán theo tiến độ – Nhận nhà – Làm sổ
+
+- Thanh toán các đợt tiếp theo theo tiến độ xây dựng
+- Nhận bàn giao căn hộ khi dự án hoàn thành
+- Hoàn tất thủ tục cấp sổ hồng theo quy định
+
+## Lưu ý quan trọng
+
+- Quy trình có thể có sự điều chỉnh nhỏ tùy từng đợt mở bán.
+- Nên giữ lại toàn bộ biên nhận và bản sao hồ sơ đã nộp.
+- Theo dõi thông báo kết quả đúng hạn để không bỏ lỡ quyền chọn căn.
+- Liên hệ trực tiếp chủ đầu tư hoặc đơn vị được ủy quyền để được hướng dẫn chi tiết nhất tại thời điểm đăng ký.
+
+## Kết luận
+
+Quy trình mua K-Home CityView gồm các bước chính: kiểm tra điều kiện → chuẩn bị hồ sơ → nộp đơn → xét duyệt → thông báo kết quả → ký hợp đồng → nhận nhà. Nếu chuẩn bị tốt ngay từ đầu, quá trình sẽ diễn ra suôn sẻ hơn.
+
+Bạn đang ở bước nào? Để lại thông tin để được hỗ trợ cụ thể hoặc liên hệ **0937.587.438** để được hỗ trợ.
+
+![Hỗ trợ quy trình mua K-Home CityView – liên hệ hướng dẫn từng bước](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news18/6)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
