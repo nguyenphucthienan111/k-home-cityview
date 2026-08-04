@@ -310,4 +310,25 @@
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/thu-nhap-bao-nhieu-thi-duoc-mua-nha-o-xa-hoi-k-home-cityview</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/thu-nhap-bao-nhieu-thi-duoc-mua-nha-o-xa-hoi-k-home-cityview"/>
+  </url>
 </urlset>
