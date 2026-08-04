@@ -57,6 +57,18 @@ export default function App() {
     if (PAGE_TITLES[cleanPath]) {
       document.title = PAGE_TITLES[cleanPath];
     }
+    // Cập nhật canonical URL động theo route
+    const BASE = "https://k-homedongnai.com.vn";
+    let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
+    // Cập nhật og:url
+    const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
+    if (ogUrl) ogUrl.content = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
   }, []);
 
   // Memoize renderContent để tránh re-run 8 regex khi App re-render vì lý do khác

@@ -151,22 +151,97 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Projects */}
+            {/* Column 3: Projects — Anchor text tối ưu SEO */}
             <div className="space-y-4">
-              <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Danh Mục Dự Án</h4>
+              <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Danh Mục Dự Án NOXH</h4>
               <ul className="space-y-2 text-sm text-slate-500">
-                <li><a href="/k-home-cityview-ho-nai" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> K-Home CityView Hố Nai</a></li>
-                <li><a href="/k-home-avenue-nhon-trach" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> K-Home Avenue Nhơn Trạch</a></li>
-                <li><a href="/k-home-midtown-trang-bom" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> K-Home Midtown Trảng Bom</a></li>
+                <li>
+                  <a href="/k-home-cityview-ho-nai"
+                    title="Nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Nhà ở xã hội K-Home CityView Hố Nai</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/k-home-avenue-nhon-trach"
+                    title="K-Home Avenue Nhơn Trạch – NOXH gần sân bay Long Thành"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>K-Home Avenue Nhơn Trạch – Gần sân bay Long Thành</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/k-home-midtown-trang-bom"
+                    title="K-Home Midtown Trảng Bom – Nhà ở xã hội trung tâm Trảng Bom"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>K-Home Midtown Trảng Bom – Trung tâm Trảng Bom</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/san-pham"
+                    title="Danh sách toàn bộ căn hộ NOXH K-Home Đồng Nai – Bảng giá"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Xem bảng giá tất cả loại căn hộ K-Home</span>
+                  </a>
+                </li>
               </ul>
             </div>
 
-            {/* Column 4: Links */}
+            {/* Column 4: Links — Anchor text tối ưu SEO */}
             <div className="space-y-4">
-              <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Khách Hàng & Đối Tác</h4>
+              <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Hỗ Trợ Khách Hàng</h4>
               <ul className="space-y-2 text-sm text-slate-500">
-                <li><a href="/gioi-thieu" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Câu chuyện thương hiệu</a></li>
-                <li><a href="/lien-he" className="hover:text-amber-600 transition-colors flex items-center gap-1"><ChevronRight className="w-3 h-3" /> Đăng ký tham quan thực tế</a></li>
+                <li>
+                  <a href="/k-home-cityview-ho-nai#gia-ban"
+                    title="Bảng giá K-Home CityView Biên Hòa – Cập nhật mới nhất"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Bảng giá K-Home CityView Biên Hòa</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/k-home-cityview-ho-nai#mat-bang"
+                    title="Mặt bằng căn hộ K-Home CityView – Layout 1PN 2PN 3PN"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Mặt bằng thiết kế căn hộ K-Home CityView</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/k-home-cityview-ho-nai#phap-ly"
+                    title="Điều kiện mua nhà ở xã hội K-Home Đồng Nai – Hồ sơ NOXH"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Điều kiện mua NOXH K-Home Đồng Nai</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/k-home-cityview-ho-nai#tien-ich"
+                    title="Tiến độ xây dựng K-Home CityView – Dự kiến bàn giao 2028"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Tiến độ K-Home CityView – Bàn giao 2028</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/lien-he"
+                    title="Liên hệ tư vấn nhà ở xã hội K-Home – Hỗ trợ hồ sơ miễn phí"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Tư vấn hồ sơ NOXH miễn phí</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/gioi-thieu"
+                    title="Giới thiệu Kim Oanh Land – Chủ đầu tư nhà ở xã hội Đồng Nai"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Kim Oanh Land – Chủ đầu tư K-Home</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

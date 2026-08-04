@@ -1,8 +1,6 @@
-﻿User-agent: *
+# robots.txt — k-homedongnai.com.vn
+User-agent: *
 Allow: /
-
-# Không cho crawl trang admin
 Disallow: /admin
-
-# Sitemap
-Sitemap: https://k-homedongnai.com.vn/sitemap.xml
+Disallow: /api/
+Sitemap: https://k-homedongnai.com.vn/sitemap_index.xml

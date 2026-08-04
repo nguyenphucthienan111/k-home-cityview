@@ -76,6 +76,10 @@ Người mua được hỗ trợ vay vốn ưu đãi từ Ngân hàng Chính sá
 
 Bạn có đủ điều kiện? Hãy liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, chính sách và cập nhật tiến độ mở bán mới nhất.
 
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem giá & hồ sơ NOXH
+---PROJECT-LINK---k-home-avenue-nhon-trach|K-Home Avenue Nhơn Trạch – NOXH gần sân bay Long Thành
+---PROJECT-LINK---k-home-midtown-trang-bom|K-Home Midtown Trảng Bom – NOXH trung tâm Trảng Bom
+
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá dự án K-Home CityView Biên Hòa 2026;lai-suat-mua-nha-giam-sau-co-hoi-vang|Lãi suất vay mua nhà giảm sâu 2026`,
   },
   {
@@ -152,6 +156,8 @@ K-Home CityView xóa bỏ định kiến "nhà ở xã hội thiếu tiện ích
 K-Home CityView Biên Hòa đang trở thành một trong những dự án NOXH được quan tâm lớn nhất tại Đồng Nai nhờ vị trí trung tâm, thiết kế chuẩn Singapore, chứng chỉ xanh EDGE và giá được nhà nước phê duyệt minh bạch.
 
 Nếu bạn đang tìm kiếm căn hộ NOXH tại Hố Nai – Biên Hòa, đây là thời điểm phù hợp để theo dõi sát tiến độ và chuẩn bị hồ sơ. Liên hệ **0937.587.438** để được tư vấn miễn phí.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem giá, mặt bằng & chính sách
 
 ---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },
@@ -357,6 +363,8 @@ K-Home CityView đặc biệt phù hợp với:
 
 Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, tiến độ và chính sách mua nhà tại K-Home CityView.
 
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Xem vị trí, giá bán & đặt chỗ
+
 ---RELATED---k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong|K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026`,
   },
   {
@@ -452,6 +460,8 @@ Nếu bạn mua để lướt sóng hoặc kỳ vọng lợi nhuận ngắn hạ
 K-Home CityView là một trong những dự án nhà ở xã hội đáng chú ý nhất tại Biên Hòa năm 2026, nhờ vị trí trung tâm, quy mô lớn, mức vốn ban đầu dễ tiếp cận và định hướng phát triển theo tiêu chuẩn sống xanh. Với những ai đang tìm nhà để ở thật, đây là dự án rất nên theo dõi kỹ về điều kiện hồ sơ, tiến độ và chính sách bán hàng.
 
 Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ và chính sách mua nhà.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|K-Home CityView Hố Nai – Tìm hiểu dự án & đặt lịch xem nhà mẫu
 
 ---RELATED---danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh giá chi tiết K-Home CityView Biên Hòa 2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều kiện mua nhà ở xã hội Đồng Nai 2026`,
   },

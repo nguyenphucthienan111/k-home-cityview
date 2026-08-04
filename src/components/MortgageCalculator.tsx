@@ -1,4 +1,4 @@
-import React, { useState, useMemo, startTransition, useRef } from "react";
+﻿import React, { useState, useMemo, startTransition, useRef } from "react";
 import ReactDOM from "react-dom";
 import { Calculator, Coins, Percent, ArrowRight, Phone } from "lucide-react";
 
@@ -185,7 +185,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
               >
                 <div className={`w-4 h-4 rounded-full border-2 mb-2 ${unitIdx === i ? "bg-amber-500 border-amber-500" : "border-slate-300"}`} />
                 <span className="block text-base font-extrabold text-slate-800">{u.label}</span>
-                <span className="text-xs text-slate-400 block">{u.area}</span>
+                <span className="text-xs text-slate-500 block">{u.area}</span>
                 <span className="text-xs font-bold text-amber-600 block mt-1">{u.priceLabel}</span>
               </button>
             ))}
@@ -217,7 +217,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
               <input type="range" min={unit.priceMin} max={unit.priceMax} step={0.01} value={price}
                 onChange={e => { startTransition(() => setPrice(parseFloat(e.target.value))); }}
                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-500" />
-              <div className="flex justify-between text-[11px] text-slate-400 font-mono">
+              <div className="flex justify-between text-xs text-slate-500 font-mono">
                 <span>{formatVND(unit.priceMin)} (thấp nhất)</span>
                 <span>{formatVND(unit.priceMax)} (cao nhất)</span>
               </div>
@@ -402,7 +402,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
             <div className="px-5 py-3.5 flex items-start justify-between shrink-0 border-b border-slate-100">
               <div className="pr-4">
                 <h3 className="text-slate-900 font-extrabold text-base flex items-center gap-2"><span className="text-lg">📊</span> Lịch Trả Nợ Chi Tiết</h3>
-                <p className="text-slate-400 text-[11px] mt-0.5">Lãi tính theo số ngày thực tế / 365 — chuẩn ngân hàng VN</p>
+                <p className="text-slate-500 text-xs mt-0.5">Lãi tính theo số ngày thực tế / 365 — chuẩn ngân hàng VN</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 w-8 h-8 flex items-center justify-center rounded-full transition-all cursor-pointer text-lg shrink-0 mt-0.5">✕</button>
             </div>
@@ -416,14 +416,14 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                   { label: "Thời hạn (năm)", val: cfg.loanYears },
                 ].map(f => (
                   <div key={f.label}>
-                    <label className="text-[9px] font-bold text-slate-400 uppercase block mb-1">{f.label}</label>
+                    <label className="text-[9px] font-bold text-slate-500 uppercase block mb-1">{f.label}</label>
                     <div className="border-2 border-slate-100 bg-slate-50 rounded-xl px-2 py-2 text-sm font-extrabold text-slate-500 text-center">{f.val}</div>
                   </div>
                 ))}
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div>
-                  <label className="text-[9px] font-bold text-slate-400 uppercase block mb-1">Tỷ lệ vay (%)</label>
+                  <label className="text-[9px] font-bold text-slate-500 uppercase block mb-1">Tỷ lệ vay (%)</label>
                   <div className="border-2 border-slate-100 bg-slate-50 rounded-xl px-2 py-2 text-sm font-extrabold text-slate-500 text-center">{cfg.loanPercent}</div>
                 </div>
                   <div>
@@ -479,7 +479,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                     {label:"Kỳ cuối",val:lastTotal.toFixed(2),sub:"kỳ cuối",bg:"bg-emerald-50 border-emerald-200",tx:"text-emerald-700"},
                     {label:"Tổng lãi",val:totalInt.toFixed(1),sub:"phải trả",bg:"bg-rose-50 border-rose-200",tx:"text-rose-600"},
                     {label:"Tổng gốc+lãi",val:(loanMil+totalInt).toFixed(1),sub:"toàn bộ",bg:"bg-slate-50 border-slate-200",tx:"text-slate-700"},
-                  ].map(c=>(<div key={c.label} className={`${c.bg} border rounded-2xl px-3 py-2 text-center`}><p className="text-[10px] font-semibold text-slate-500 mb-1">{c.label}</p><p className={`text-base font-extrabold ${c.tx}`}>{c.val} <span className="text-xs font-normal">tr</span></p><p className="text-[9px] text-slate-400">{c.sub}</p></div>))}
+                  ].map(c=>(<div key={c.label} className={`${c.bg} border rounded-2xl px-3 py-2 text-center`}><p className="text-[10px] font-semibold text-slate-500 mb-1">{c.label}</p><p className={`text-base font-extrabold ${c.tx}`}>{c.val} <span className="text-xs font-normal">tr</span></p><p className="text-xs text-slate-500">{c.sub}</p></div>))}
                 </div>
                 <div className="px-6 pt-3 pb-2 flex items-center gap-2 shrink-0">
                   <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white">🏦 Giải ngân theo đợt</span>
@@ -491,7 +491,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                       <button onClick={e=>{e.stopPropagation();setOpenMonthDrop(v=>!v);setOpenYearDrop(false);}}
                         className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between">
                         <span>Tháng {modalStartMonth}</span>
-                        <span className="text-slate-400 text-[10px]">{openMonthDrop?"▴":"▾"}</span>
+                        <span className="text-slate-500 text-[10px]">{openMonthDrop?"▴":"▾"}</span>
                       </button>
                       {openMonthDrop&&(
                         <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden w-32">
@@ -511,7 +511,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                       <button onClick={e=>{e.stopPropagation();setOpenYearDrop(v=>!v);setOpenMonthDrop(false);}}
                         className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[64px] justify-between">
                         <span>{modalStartYear}</span>
-                        <span className="text-slate-400 text-[10px]">{openYearDrop?"▴":"▾"}</span>
+                        <span className="text-slate-500 text-[10px]">{openYearDrop?"▴":"▾"}</span>
                       </button>
                       {openYearDrop&&(
                         <div className="absolute top-full mt-1 right-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-28 max-h-48 overflow-y-auto">
@@ -535,9 +535,9 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                     </div>
                     <table className="w-full text-[11px]">
                       <thead><tr className="border-b-2 border-slate-200">
-                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-400 uppercase">Kỳ</th>
-                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-400 uppercase">Ngày</th>
-                        <th className="pb-1.5 text-right text-[10px] font-bold text-slate-400 uppercase hidden sm:table-cell">Dư nợ (tr)</th>
+                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Kỳ</th>
+                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Ngày</th>
+                        <th className="pb-1.5 text-right text-[10px] font-bold text-slate-500 uppercase hidden sm:table-cell">Dư nợ (tr)</th>
                         <th className="pb-1.5 text-right text-[10px] font-bold text-emerald-600 uppercase">Gốc</th>
                         <th className="pb-1.5 text-right text-[10px] font-bold text-rose-500 uppercase">Lãi</th>
                         <th className="pb-1.5 text-right text-[10px] font-bold text-amber-600 uppercase">Tổng</th>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai</title>
-    <meta name="description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.352 căn hộ từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
+    <meta name="description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.328 căn NOXH từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
     <meta name="keywords" content="k-home cityview, k-home cityview hố nai, k-home cityview biên hòa, nhà ở xã hội k-home cityview, k-home đồng nai, k-home midtown, k-home midtown trảng bom, k-home avenue, k-home avenue nhơn trạch, nhà ở xã hội đồng nai, noxh kim oanh group, căn hộ hố nai biên hòa, bảng giá k-home cityview, mặt bằng k-home cityview, điều kiện mua nhà ở xã hội, kim oanh land đồng nai, vay noxh 5.4% năm" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://k-homedongnai.com.vn/" />
@@ -18,8 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Fonts với display=swap — font load xong mới swap, không bị lỗi ký tự -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <!-- Google Fonts — load async (non-blocking) để không chặn LCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
 
     <!-- Preload ảnh hero — LCP quan trọng nhất -->
     <link rel="preload" as="image" href="/hero-background.jpg" fetchpriority="high" />
@@ -28,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://k-homedongnai.com.vn/" />
     <meta property="og:title" content="K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai" />
-    <meta property="og:description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.352 căn hộ từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
+    <meta property="og:description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.328 căn NOXH từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
     <meta property="og:image" content="https://k-homedongnai.com.vn/hero-background.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -39,10 +40,157 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://k-homedongnai.com.vn/" />
     <meta name="twitter:title" content="K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai" />
-    <meta name="twitter:description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.352 căn hộ từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
+    <meta name="twitter:description" content="K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.328 căn NOXH từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá, mặt bằng K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch." />
     <meta name="twitter:image" content="https://k-homedongnai.com.vn/hero-background.jpg" />
 
-    <!-- Structured Data (Schema.org JSON-LD) -->
+    <!-- Schema Organization — Kim Oanh Land -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kim Oanh Land",
+      "alternateName": "K-Home Đồng Nai",
+      "legalName": "Công ty Cổ phần Đầu tư và Phát triển Bất động sản Miền Đông",
+      "url": "https://k-homedongnai.com.vn/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://k-homedongnai.com.vn/hero-background.jpg",
+      "description": "Kim Oanh Land là đơn vị phát triển nhà ở xã hội chuẩn Singapore tại Đồng Nai, thuộc Tập đoàn Kim Oanh Group. Chủ đầu tư chuỗi dự án K-Home: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch.",
+      "telephone": "+840937587438",
+      "email": "k.homekog@gmail.com",
+      "taxID": "3604007236",
+      "foundingDate": "2005",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "268A Phan Trung, Phường Tân Mai",
+        "addressLocality": "TP. Biên Hòa",
+        "addressRegion": "Tỉnh Đồng Nai",
+        "postalCode": "810000",
+        "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.9592617",
+        "longitude": "106.9022019"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+840937587438",
+          "contactType": "sales",
+          "areaServed": "VN",
+          "availableLanguage": "Vietnamese",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Tỉnh Đồng Nai, Việt Nam"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 100
+      },
+      "knowsAbout": [
+        "Nhà ở xã hội Đồng Nai",
+        "K-Home CityView Hố Nai",
+        "K-Home Midtown Trảng Bom",
+        "K-Home Avenue Nhơn Trạch",
+        "Căn hộ nhà ở xã hội Biên Hòa",
+        "Vay NOXH 5.4% năm ngân hàng chính sách"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61592416756280",
+        "https://kimoanhgroup.vn/du-an/k-home-cityview/",
+        "https://k-homecityview.vn/"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Tập đoàn Kim Oanh Group",
+        "url": "https://kimoanhgroup.vn/"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Chuỗi Dự Án Nhà Ở Xã Hội K-Home Đồng Nai",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "K-Home CityView Hố Nai Biên Hòa",
+            "description": "Nhà ở xã hội 1.328 căn hộ tại đường Điểu Xiển, Hố Nai, Biên Hòa. Giá từ 950 triệu, bàn giao 2028.",
+            "url": "https://k-homedongnai.com.vn/k-home-cityview-ho-nai",
+            "priceCurrency": "VND",
+            "price": "950000000",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "950000000",
+              "maxPrice": "2000000000",
+              "priceCurrency": "VND"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "Kim Oanh Land" }
+          },
+          {
+            "@type": "Offer",
+            "name": "K-Home Midtown Trảng Bom",
+            "description": "Nhà ở xã hội 542 căn hộ tại trung tâm huyện Trảng Bom, Đồng Nai. Giá từ 750 triệu.",
+            "url": "https://k-homedongnai.com.vn/k-home-midtown-trang-bom",
+            "priceCurrency": "VND",
+            "price": "750000000",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "Kim Oanh Land" }
+          },
+          {
+            "@type": "Offer",
+            "name": "K-Home Avenue Nhơn Trạch",
+            "description": "Nhà ở xã hội 1.022 căn hộ tại đường Nguyễn Ái Quốc (25C), Nhơn Trạch, Đồng Nai. Giá từ 750 triệu.",
+            "url": "https://k-homedongnai.com.vn/k-home-avenue-nhon-trach",
+            "priceCurrency": "VND",
+            "price": "750000000",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "Kim Oanh Land" }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema WebSite với SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "K-Home Đồng Nai",
+      "url": "https://k-homedongnai.com.vn/",
+      "description": "Trang thông tin chính thức các dự án nhà ở xã hội K-Home tại Đồng Nai do Kim Oanh Land phát triển",
+      "inLanguage": "vi-VN",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kim Oanh Land",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://k-homedongnai.com.vn/san-pham?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -77,8 +225,9 @@
         "Nhơn Trạch, Đồng Nai"
       ],
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61592212156463#",
-        "https://kimoanhgroup.vn/du-an/k-home-cityview/"
+        "https://www.facebook.com/profile.php?id=61592416756280",
+        "https://kimoanhgroup.vn/du-an/k-home-cityview/",
+        "https://k-homecityview.vn/"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -126,7 +275,7 @@
             "@type": "Residence",
             "name": "K-Home CityView Hố Nai Biên Hòa",
             "url": "https://k-homedongnai.com.vn/k-home-cityview-ho-nai",
-            "description": "Dự án nhà ở xã hội K-Home CityView, 1.352 căn hộ NOXH, đường Điểu Xiển, Hố Nai, TP. Biên Hòa, Đồng Nai. Giá từ 950 triệu.",
+            "description": "Dự án nhà ở xã hội K-Home CityView, 1.328 căn NOXH, đường Điểu Xiển, Hố Nai, TP. Biên Hòa, Đồng Nai. Giá từ 950 triệu.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Đường Điểu Xiển, Phường Hố Nai",

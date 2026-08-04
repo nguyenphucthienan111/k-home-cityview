@@ -321,7 +321,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       image: "/k-home cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2.webp",
       location: "Đường Điều Xiển, P. Hố Nai, TP. Biên Hòa, Đồng Nai",
       scale: "2,85 hecta",
-      product: "1.352 căn hộ NOXH và 30 căn shophouse",
+      product: "1.328 căn hộ NOXH và 39 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Global Vireon Studio, Kiến Trúc Việt, CDC Jsc, K-City",
       status: "Đang bốc thăm",
@@ -580,7 +580,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.352 căn hộ từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch.");
+      metaDesc.setAttribute("content", "K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.328 căn NOXH từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch.");
     }
 
     // Schema FAQPage
@@ -596,7 +596,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         {
           "@type": "Question",
           "name": "K-Home CityView Biên Hòa giá bao nhiêu?",
-          "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView Biên Hòa có giá từ 950 triệu đến 2 tỷ/căn tùy loại. Căn 1PN+A từ 950 triệu, căn 1PN+B từ 1,25 tỷ, căn 2PN từ 1,50 tỷ, căn 3PN từ 1,80 tỷ. Bàn giao full nội thất, pháp lý đầy đủ." }
+          "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView Biên Hòa có giá từ 950 triệu đến 2 tỷ/căn tùy loại. Căn 1PN+A từ 950 triệu, căn 1PN+B từ 1,20 tỷ, căn 2PN từ 1,50 tỷ, căn 3PN từ 1,80 tỷ. Bàn giao full nội thất, pháp lý đầy đủ." }
         },
         {
           "@type": "Question",
@@ -645,7 +645,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   useEffect(() => {
     // Stale-while-revalidate — hiện cache ngay, fetch mới ngầm
-    const CACHE_KEY = "khome_projects_v2";
+    const CACHE_KEY = "khome_projects_v3";
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
       try {
@@ -949,7 +949,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   { label: "Thời hạn (năm)", value: modalYears },
                 ] as const).map(f => (
                   <div key={f.label}>
-                    <label className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">{f.label}</label>
+                    <label className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">{f.label}</label>
                     <div className="w-full border-2 border-slate-100 bg-slate-50 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 text-sm font-extrabold text-slate-500 text-center select-none">
                       {f.value}
                     </div>
@@ -960,7 +960,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div className="grid grid-cols-3 gap-2 sm:gap-3 items-end">
                 {/* Tỷ lệ vay — readonly */}
                 <div>
-                  <label className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Tỷ lệ vay (%)</label>
+                  <label className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Tỷ lệ vay (%)</label>
                   <div className="w-full border-2 border-slate-100 bg-slate-50 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 text-sm font-extrabold text-slate-500 text-center select-none">
                     {modalLoanPct}
                   </div>
@@ -1049,7 +1049,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                           className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between"
                         >
                           <span>Tháng {modalStartMonth}</span>
-                          <span className="text-slate-400 text-[10px]">{openMonthDrop ? "▴" : "▾"}</span>
+                          <span className="text-slate-500 text-[10px]">{openMonthDrop ? "▴" : "▾"}</span>
                         </button>
                         {openMonthDrop && (
                           <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden w-32">
@@ -1079,7 +1079,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                           className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between"
                         >
                           <span>{modalStartYear}</span>
-                          <span className="text-slate-400 text-[10px]">{openYearDrop ? "▴" : "▾"}</span>
+                          <span className="text-slate-500 text-[10px]">{openYearDrop ? "▴" : "▾"}</span>
                         </button>
                         {openYearDrop && (
                           <div className="absolute top-full mt-1 right-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-28 max-h-48 overflow-y-auto">
@@ -1190,9 +1190,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                             <>
                               <table className="w-full text-[11px]">
                                 <thead><tr className="border-b-2 border-slate-200">
-                                  <th className="pb-1.5 text-left text-[10px] font-bold text-slate-400 uppercase">Kỳ</th>
-                                  <th className="pb-1.5 text-left text-[10px] font-bold text-slate-400 uppercase">Ngày trả</th>
-                                  <th className="pb-1.5 text-right text-[10px] font-bold text-slate-400 uppercase hidden sm:table-cell">Dư nợ (tr)</th>
+                                  <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Kỳ</th>
+                                  <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Ngày trả</th>
+                                  <th className="pb-1.5 text-right text-[10px] font-bold text-slate-500 uppercase hidden sm:table-cell">Dư nợ (tr)</th>
                                   <th className="pb-1.5 text-right text-[10px] font-bold text-emerald-600 uppercase">Gốc (tr)</th>
                                   <th className="pb-1.5 text-right text-[10px] font-bold text-rose-500 uppercase">Lãi (tr)</th>
                                   <th className="pb-1.5 text-right text-[10px] font-bold text-amber-600 uppercase">Tổng (tr)</th>
@@ -1218,7 +1218,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                                   ) : (
                                     <tr key={`r${r.seq}`} className={`${r.seq%2===0?"bg-slate-50/40":""} hover:bg-amber-50 transition-colors`}>
                                       <td className="py-1.5 font-bold text-slate-700 tabular-nums">{r.seq}</td>
-                                      <td className="py-1.5 text-slate-400 text-[10px]">{r.date}</td>
+                                      <td className="py-1.5 text-slate-500 text-[10px]">{r.date}</td>
                                       <td className="py-1.5 text-right text-slate-500 tabular-nums hidden sm:table-cell">{r.balance.toFixed(2)}</td>
                                       <td className="py-1.5 text-right text-emerald-600 font-semibold tabular-nums">{r.principal.toFixed(2)}</td>
                                       <td className="py-1.5 text-right text-rose-500 tabular-nums">{r.interest.toFixed(2)}</td>
@@ -1317,6 +1317,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           fetchPriority="high"
           loading="eager"
           decoding="sync"
+          width="1920"
+          height="1080"
           className="absolute inset-0 w-full h-full object-cover object-top -z-0 pointer-events-none"
         />
         {/* Dark Overlay */}
@@ -1759,26 +1761,26 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home CityView Hố Nai</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
-                  <img src={imgUrl("/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", "full")} alt="Mặt bằng tầng điển hình 12A-22 căn hộ NOXH K-Home CityView Hố Nai Biên Hòa" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <img src={imgUrl("/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", "full")} alt="Mặt bằng tầng điển hình 12A-22 căn hộ NOXH K-Home CityView Hố Nai Biên Hòa" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Tầng 12A–22</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
-                  <img src={imgUrl("/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", "full")} alt="Layout thiết kế căn hộ 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <img src={imgUrl("/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", "full")} alt="Layout thiết kế căn hộ 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout căn hộ</p>
                 </div>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">K-Home CityView có 4 loại căn: <strong>1PN+A (47,3m²)</strong> từ 950 triệu, <strong>1PN+B (62,4m²)</strong> từ 1,25 tỷ, <strong>2PN (70,4m²)</strong> từ 1,50 tỷ và <strong>3PN (84,4m²)</strong> từ 1,80 tỷ.</p>
+              <p className="text-slate-500 text-xs leading-relaxed">K-Home CityView có 4 loại căn: <strong>1PN+A (47,3m²)</strong> từ 950 triệu, <strong>1PN+B (62,4m²)</strong> từ 1,20 tỷ, <strong>2PN (70,4m²)</strong> từ 1,50 tỷ và <strong>3PN (84,4m²)</strong> từ 1,80 tỷ.</p>
               <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:underline inline-flex items-center gap-1">Xem mặt bằng chi tiết K-Home CityView →</a>
             </div>
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home Avenue & Midtown</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-avenue-nhon-trach")}>
-                  <img src={imgUrl("/k-home avenue/layout-can-ho-khome-avenue-nhon-trach.jpg", "full")} alt="Mặt bằng layout căn hộ K-Home Avenue Nhơn Trạch Studio 1PN 2PN nhà ở xã hội Kim Oanh" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <img src={imgUrl("/k-home avenue/layout-can-ho-khome-avenue-nhon-trach.jpg", "full")} alt="Mặt bằng layout căn hộ K-Home Avenue Nhơn Trạch Studio 1PN 2PN nhà ở xã hội Kim Oanh" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Avenue</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-midtown-trang-bom")}>
-                  <img src={imgUrl("/k-home midtown/k-home-midtown-mat-bang-can-ho-tang-dien-hinh.jpg.webp", "full")} alt="Mặt bằng tầng điển hình K-Home Midtown Trảng Bom Studio 1PN 2PN nhà ở xã hội Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <img src={imgUrl("/k-home midtown/k-home-midtown-mat-bang-can-ho-tang-dien-hinh.jpg.webp", "full")} alt="Mặt bằng tầng điển hình K-Home Midtown Trảng Bom Studio 1PN 2PN nhà ở xã hội Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Midtown</p>
                 </div>
               </div>
@@ -1813,7 +1815,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             { src: "/k-home avenue/Can-Studio/layout-can-ho-khome-avenue-studio.jpg", alt: "Nhà mẫu căn Studio K-Home Avenue Nhơn Trạch nhà ở xã hội full nội thất Kim Oanh Land", label: "Studio – Avenue", slug: "/k-home-avenue-nhon-trach/can-ho-studio" },
           ].map((item, i) => (
             <a key={i} href={item.slug} onClick={(e) => { e.preventDefault(); onNavigate(item.slug); }} className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer hover:shadow-lg transition-all no-underline">
-              <img src={imgUrl(item.src, "thumbnail")} alt={item.alt} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <img src={imgUrl(item.src, "thumbnail")} alt={item.alt} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" />
               <div className="p-3 bg-white">
                 <p className="text-xs font-bold text-slate-700">{item.label}</p>
                 <p className="text-[10px] text-amber-500 font-semibold mt-0.5 group-hover:text-amber-600">Xem chi tiết →</p>
@@ -2586,7 +2588,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 })}
                 className="relative group rounded-2xl overflow-hidden cursor-zoom-in w-full"
               >
-                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-19" alt="Hồ sơ pháp lý dự án NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-19" alt="Hồ sơ pháp lý dự án NOXH K-Home CityView Hố Nai Biên Hòa Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" width="900" height="192" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-2xl">
                   <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5" /> Xem chi tiết
@@ -2607,7 +2609,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 })}
                 className="relative group rounded-2xl overflow-hidden cursor-zoom-in w-full"
               >
-                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-20" alt="Giấy chứng nhận đầu tư phê duyệt quy hoạch 1/500 K-Home CityView Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <img src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-20" alt="Giấy chứng nhận đầu tư phê duyệt quy hoạch 1/500 K-Home CityView Kim Oanh Land" className="rounded-2xl object-cover h-48 w-full shadow-md group-hover:scale-105 transition-transform duration-300" loading="lazy" width="900" height="192" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 rounded-2xl">
                   <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5" /> Xem chi tiết
@@ -2625,7 +2627,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       <section id="chu-dau-tu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-5 order-2 lg:order-1">
-            <img src={imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full")} alt="Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land giải thưởng PropertyGuru" className="w-full rounded-2xl object-cover shadow-md" loading="lazy" />
+            <img src={imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full")} alt="Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land giải thưởng PropertyGuru" className="w-full rounded-2xl object-cover shadow-md" loading="lazy" width="800" height="450" />
           </div>
           <div className="space-y-5 order-1 lg:order-2">
             <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Chủ đầu tư uy tín</span>
@@ -2855,11 +2857,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group hover:shadow-lg transition-all no-underline cursor-pointer"
             >
               <div className="relative h-44 overflow-hidden">
-                <img src={article.img} alt={`${article.title} – tin tức nhà ở xã hội K-Home Đồng Nai`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <img src={article.img} alt={`${article.title} – tin tức nhà ở xã hội K-Home Đồng Nai`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="176" />
                 <span className="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">{article.cat}</span>
               </div>
               <div className="p-4 space-y-2">
-                <p className="text-[10px] text-slate-400">{article.date}</p>
+                <p className="text-xs text-slate-500">{article.date}</p>
                 <h3 className="font-bold text-slate-800 text-sm leading-snug group-hover:text-amber-600 transition-colors line-clamp-2">{article.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{article.excerpt}</p>
                 <span className="text-[11px] text-amber-500 font-semibold group-hover:text-amber-600">Đọc tiếp →</span>
@@ -2939,7 +2941,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </a>
               </h3>
               <p className="text-slate-500 text-xs leading-relaxed">
-                <strong>K-Home CityView</strong> tọa lạc tại đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa. Quy mô 2,85 ha với 4 block cao 22 tầng, cung cấp khoảng <strong>1.352 căn hộ NOXH</strong> và 30 căn shophouse. Các loại căn hộ gồm: <strong>1 phòng ngủ từ 47m²</strong>, 2 phòng ngủ từ 62m² đến 70m² và <strong>3 phòng ngủ 84m²</strong> – loại căn hộ 3PN hiếm có trong phân khúc NOXH tại Đồng Nai. Giá bán từ <strong>950 triệu đồng</strong>, bàn giao full nội thất, pháp lý sổ hồng sở hữu lâu dài. Dự án đạt tiêu chuẩn công trình xanh <strong>EDGE</strong>, thiết kế theo chuẩn Singapore do Global Vireon Studio và Kiến Trúc Việt đảm nhận.
+                <strong>K-Home CityView</strong> tọa lạc tại đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa. Quy mô 2,85 ha với 4 block cao 22 tầng, cung cấp <strong>1.328 căn hộ NOXH</strong> và 39 căn shophouse. Các loại căn hộ gồm: <strong>1 phòng ngủ từ 47m²</strong>, 2 phòng ngủ từ 62m² đến 70m² và <strong>3 phòng ngủ 84m²</strong> – loại căn hộ 3PN hiếm có trong phân khúc NOXH tại Đồng Nai. Giá bán từ <strong>950 triệu đồng</strong>, bàn giao full nội thất, pháp lý sổ hồng sở hữu lâu dài. Dự án đạt tiêu chuẩn công trình xanh <strong>EDGE</strong>, thiết kế theo chuẩn Singapore do Global Vireon Studio và Kiến Trúc Việt đảm nhận.
               </p>
               <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:text-amber-700 flex items-center gap-1">
                 Xem bảng giá K-Home CityView →
@@ -3160,8 +3162,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
                   <form onSubmit={handlePopupSubmit} className="space-y-3">
                     <div className="space-y-1">
-                      <label className="text-xs font-semibold text-slate-600">Họ và tên *</label>
+                      <label htmlFor="popup-name" className="text-xs font-semibold text-slate-600">Họ và tên *</label>
                       <input
+                        id="popup-name"
                         type="text"
                         required
                         placeholder="Nguyễn Văn A"
@@ -3171,8 +3174,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-xs font-semibold text-slate-600">Số điện thoại *</label>
+                      <label htmlFor="popup-phone" className="text-xs font-semibold text-slate-600">Số điện thoại *</label>
                       <input
+                        id="popup-phone"
                         type="tel"
                         required
                         placeholder="0933 354 093"
@@ -3182,8 +3186,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-xs font-semibold text-slate-600">Dự án quan tâm</label>
+                      <label htmlFor="popup-project" className="text-xs font-semibold text-slate-600">Dự án quan tâm</label>
                       <select
+                        id="popup-project"
                         value={popupProject}
                         onChange={e => setPopupProject(e.target.value)}
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all cursor-pointer"
@@ -3203,7 +3208,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                         : <><Send className="w-4 h-4" /> Nhận Tư Vấn Miễn Phí</>
                       }
                     </button>
-                    <p className="text-center text-[10px] text-slate-400">
+                    <p className="text-center text-xs text-slate-500">
                       Thông tin của bạn được bảo mật tuyệt đối.{" "}
                       <button type="button" onClick={() => setPopupDismissed(true)} className="underline hover:text-slate-600 cursor-pointer">
                         Bỏ qua
