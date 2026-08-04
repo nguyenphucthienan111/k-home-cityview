@@ -1112,6 +1112,90 @@ Bạn đang phân vân mình có thuộc đối tượng không? Hãy để lạ
 
 ---RELATED---chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh Giá Chi Tiết Dự Án K-Home CityView Biên Hòa`,
   },
+  {
+    id: "n14",
+    slug: "ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi",
+    title: "Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì?",
+    date: "2026-08-04",
+    excerpt: "Hồ sơ mua K-Home CityView gồm những giấy tờ gì? Danh sách đầy đủ đơn đăng ký, giấy xác nhận thu nhập, tình trạng nhà ở và các giấy tờ cần chuẩn bị để đăng ký mua nhà ở xã hội năm 2026.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Chuẩn bị hồ sơ đúng và đủ là bước quan trọng nhất khi đăng ký mua nhà ở xã hội tại K-Home CityView. Thiếu giấy tờ sẽ khiến hồ sơ bị trả lại hoặc chậm xét duyệt. Dưới đây là danh mục hồ sơ thường yêu cầu năm 2026.
+
+![Hồ sơ mua K-Home CityView gồm những giấy tờ gì](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/1)
+
+## 1. Các giấy tờ bắt buộc trong hồ sơ
+
+**Nhóm 1: Đơn đăng ký**
+
+- Đơn đăng ký mua nhà ở xã hội theo mẫu quy định mới nhất (thường là Mẫu số 01 theo Nghị định liên quan năm 2026).
+
+**Nhóm 2: Giấy tờ nhân thân**
+
+- Bản sao Căn cước công dân (CCCD) còn hạn, có công chứng/chứng thực.
+- Giấy xác nhận cư trú (thường trú hoặc tạm trú).
+- Giấy đăng ký kết hôn hoặc Giấy xác nhận tình trạng hôn nhân (độc thân) nếu có.
+
+**Nhóm 3: Giấy tờ chứng minh đối tượng**
+
+- Giấy tờ chứng minh thuộc đối tượng được mua NOXH (tùy nhóm: giấy người có công, giấy hộ nghèo/cận nghèo, xác nhận lao động tại doanh nghiệp…).
+
+**Nhóm 4: Giấy tờ chứng minh điều kiện về nhà ở**
+
+- Giấy xác nhận tình trạng nhà ở do UBND cấp xã/phường nơi cư trú cấp (xác nhận chưa có nhà hoặc diện tích dưới chuẩn).
+
+**Nhóm 5: Giấy tờ chứng minh thu nhập**
+
+- Hợp đồng lao động (bản sao có xác nhận).
+- Bảng lương hoặc sao kê lương các tháng gần nhất.
+- Giấy xác nhận thu nhập do cơ quan/doanh nghiệp cấp theo mẫu quy định.
+
+![Checklist hồ sơ đăng ký mua nhà ở xã hội K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/2)
+
+## 2. Hướng dẫn chuẩn bị nhanh
+
+- Tải mẫu đơn mới nhất từ chủ đầu tư hoặc theo quy định hiện hành.
+- **Xin giấy xác nhận tình trạng nhà ở sớm** — đây thường là giấy tờ mất nhiều thời gian nhất.
+- Liên hệ phòng nhân sự/kế toán công ty để lấy xác nhận thu nhập.
+- Công chứng CCCD và các giấy tờ liên quan một lần cho đủ số lượng.
+- Kiểm tra lại toàn bộ thông tin cho khớp nhau trước khi nộp.
+
+![Mẫu đơn và giấy xác nhận mua NOXH – cách chuẩn bị hồ sơ đúng và nhanh](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/3)
+
+## 3. Nộp hồ sơ ở đâu?
+
+Hồ sơ thường được nộp trực tiếp tại:
+
+- Văn phòng chủ đầu tư, hoặc
+- Quầy giao dịch / Sales Gallery của dự án K-Home CityView.
+
+Thời gian tiếp nhận hồ sơ theo thông báo từng đợt mở bán của chủ đầu tư.
+
+![Nộp hồ sơ mua nhà ở xã hội K-Home CityView – nơi tiếp nhận hồ sơ đăng ký](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/4)
+
+## 4. Những lỗi thường gặp
+
+| Lỗi | Cách khắc phục |
+|---|---|
+| Dùng mẫu đơn cũ | Tải mẫu mới nhất từ chủ đầu tư |
+| Giấy xác nhận nhà ở không đúng mẫu hoặc hết hạn | Liên hệ UBND phường xin lại |
+| Thiếu công chứng bản sao | Công chứng toàn bộ một lần cho đủ |
+| Thông tin không khớp (họ tên, địa chỉ, thu nhập) | Kiểm tra kỹ trước khi nộp |
+| Không đủ số lượng bản sao | Hỏi rõ số lượng yêu cầu từng loại |
+
+## Kết luận
+
+Hồ sơ mua K-Home CityView tập trung vào 3 nhóm chính: **nhân thân – tình trạng nhà ở – thu nhập**. Chuẩn bị đúng và đủ ngay từ đầu sẽ giúp quá trình xét duyệt diễn ra nhanh chóng hơn.
+
+Bạn cần hỗ trợ kiểm tra hồ sơ hiện tại đã đủ chưa? Liên hệ để được tư vấn và nhận mẫu hồ sơ miễn phí.
+
+![Hỗ trợ chuẩn bị hồ sơ mua K-Home CityView – liên hệ nhận mẫu và kiểm tra hồ sơ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news15/5)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
