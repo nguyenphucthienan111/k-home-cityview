@@ -1256,6 +1256,69 @@ Bạn đang thắc mắc mức lương hiện tại của mình có đủ điề
 
 ---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì`,
   },
+  {
+    id: "n16",
+    slug: "bo-so-ho-khau-anh-huong-the-nao-den-viec-mua-k-home-cityview",
+    title: "Bỏ Sổ Hộ Khẩu Ảnh Hưởng Thế Nào Đến Việc Mua K-Home CityView?",
+    date: "2026-08-04",
+    excerpt: "Bỏ sổ hộ khẩu ảnh hưởng thế nào đến việc mua K-Home CityView? Cập nhật quy định mới về cư trú khi đăng ký nhà ở xã hội năm 2026 – không còn bắt buộc sổ hộ khẩu giấy.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Từ khi sổ hộ khẩu giấy chính thức bị bãi bỏ, nhiều người lo lắng về thủ tục mua nhà ở xã hội. Câu hỏi thường gặp nhất là: Không có sổ hộ khẩu còn được mua K-Home CityView không?
+
+**Câu trả lời ngắn gọn: Vẫn được mua, nhưng cần đáp ứng điều kiện về đăng ký cư trú hợp pháp.**
+
+![Bỏ sổ hộ khẩu ảnh hưởng thế nào đến mua K-Home CityView – quy định cư trú mới 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/1)
+
+## 1. Sổ hộ khẩu giấy không còn là giấy tờ bắt buộc
+
+Theo quy định hiện hành, sổ hộ khẩu giấy đã được thay thế bằng dữ liệu cư trú trên Căn cước công dân (CCCD) gắn chip và Cơ sở dữ liệu quốc gia về dân cư.
+
+Khi đăng ký mua nhà ở xã hội tại K-Home CityView, người mua **không bắt buộc phải xuất trình sổ hộ khẩu giấy**.
+
+![Mua nhà ở xã hội không cần sổ hộ khẩu 2026 – thay đổi lớn trong thủ tục đăng ký](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/2)
+
+## 2. Điều kiện cư trú thay thế như thế nào?
+
+Thay vì sổ hộ khẩu, người đăng ký cần có:
+
+- Thông tin đăng ký **thường trú hoặc tạm trú hợp pháp** tại tỉnh Đồng Nai (hoặc nơi có dự án).
+- Thông tin này được thể hiện trên CCCD hoặc được xác nhận từ hệ thống dữ liệu dân cư.
+
+Mục đích là để chứng minh người mua đang thực sự sinh sống hoặc làm việc tại địa phương có dự án nhà ở xã hội.
+
+![Điều kiện cư trú thay thế sổ hộ khẩu – dùng CCCD và dữ liệu dân cư để chứng minh](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/3)
+
+## 3. Những thay đổi tích cực khi bỏ sổ hộ khẩu
+
+- Giảm thủ tục giấy tờ, không còn phải xin chuyển hộ khẩu phức tạp.
+- Người lao động từ tỉnh khác đến Đồng Nai làm việc dễ đăng ký mua NOXH hơn nếu đã có tạm trú hợp pháp.
+- Hồ sơ gắn với dữ liệu điện tử, giảm tình trạng sai lệch thông tin.
+
+## 4. Lưu ý khi chuẩn bị hồ sơ
+
+- Đảm bảo thông tin trên CCCD đã được cập nhật đầy đủ và chính xác.
+- Nếu mới chuyển đến, cần hoàn tất thủ tục **đăng ký tạm trú trước khi nộp hồ sơ**.
+- Một số trường hợp vẫn cần giấy xác nhận cư trú do công an cấp xã/phường cấp (khi hệ thống chưa đồng bộ hoàn toàn).
+- Luôn kiểm tra yêu cầu cụ thể của chủ đầu tư tại thời điểm mở hồ sơ.
+
+![Lưu ý khi chuẩn bị hồ sơ mua K-Home CityView – cập nhật thông tin cư trú trước khi nộp](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/4)
+
+## Kết luận
+
+Việc bỏ sổ hộ khẩu không làm mất quyền mua nhà ở xã hội tại K-Home CityView. Ngược lại, thủ tục trở nên đơn giản và minh bạch hơn nhờ dữ liệu cư trú điện tử.
+
+Điều quan trọng nhất vẫn là: thuộc đúng đối tượng, đáp ứng điều kiện thu nhập và tình trạng nhà ở theo quy định.
+
+Bạn đang lo lắng về giấy tờ cư trú? Hãy liên hệ để được hướng dẫn cách xác nhận cư trú khi làm hồ sơ mua nhà ở xã hội.
+
+![Hỗ trợ thủ tục cư trú mua nhà ở xã hội – liên hệ hướng dẫn xác nhận cư trú](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news17/5)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
