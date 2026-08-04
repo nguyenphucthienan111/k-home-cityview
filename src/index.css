@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Inter-fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", "Playfair-fallback", Georgia, "Times New Roman", serif;
   --font-tech: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Giảm CLS từ font swap bằng size-adjust cho fallback fonts */
 @font-face {
   font-family: "Inter-fallback";
-  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
   src: local("Arial");
 }
 
 @font-face {
   font-family: "Playfair-fallback";
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
   size-adjust: 98%;
   src: local("Georgia");
 }

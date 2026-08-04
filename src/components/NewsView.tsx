@@ -201,9 +201,15 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                 {/* Image */}
                 <div className="relative h-72 md:h-auto overflow-hidden bg-slate-200">
                   <img
-                    src={featured.image}
+                    src={featured.image.includes("cloudinary")
+                      ? featured.image.replace("/upload/", "/upload/w_800,q_auto:good,f_auto/")
+                      : featured.image}
                     alt={featured.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="eager"
+                    fetchPriority="high"
+                    width="800"
+                    height="288"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-950/10" />
                   {featured.project && featured.project !== "chung" && (
@@ -254,9 +260,14 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                       {/* Image */}
                       <div className="relative h-52 overflow-hidden bg-slate-100 shrink-0">
                         <img
-                          src={article.image}
+                          src={article.image.includes("cloudinary")
+                            ? article.image.replace("/upload/", "/upload/w_400,q_auto:good,f_auto/")
+                            : article.image}
                           alt={article.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          width="400"
+                          height="208"
                         />
                         {/* Category pill */}
                         <span className="absolute top-3 left-3 bg-slate-950/70 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">

@@ -248,9 +248,15 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         onClick={() => openLightbox([{ src: article.image, alt: article.title }], 0)}
       >
         <img
-          src={article.image}
+          src={article.image.includes("cloudinary")
+            ? article.image.replace("/upload/", "/upload/w_900,q_auto:good,f_auto/")
+            : article.image}
           alt={`${article.title} – K-Home Đồng Nai`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="eager"
+          fetchPriority="high"
+          width="900"
+          height="420"
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-full p-3">
@@ -563,9 +569,14 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 >
                   <div className="relative h-40 overflow-hidden bg-slate-100">
                     <img
-                      src={n.image}
+                      src={n.image.includes("cloudinary")
+                        ? n.image.replace("/upload/", "/upload/w_400,q_auto:good,f_auto/")
+                        : n.image}
                       alt={n.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width="400"
+                      height="160"
                     />
                     <div className="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
                       {n.category}
