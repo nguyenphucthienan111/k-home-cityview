@@ -1403,6 +1403,82 @@ Bạn muốn được tư vấn cụ thể lịch thanh toán theo loại căn (
 
 ---RELATED---bang-gia-k-home-cityview-2026-theo-tung-loai-can|Bảng Giá K-Home CityView 2026;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Cần Bao Nhiêu Tiền Để Sở Hữu Căn Hộ`,
   },
+  {
+    id: "13",
+    slug: "ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026",
+    title: "Ai Được Mua K-Home CityView Theo Quy Định NOXH Năm 2026?",
+    date: "2026-08-04",
+    excerpt: "Ai được mua K-Home CityView theo quy định nhà ở xã hội năm 2026? Danh sách đối tượng, điều kiện thu nhập, nhà ở và cư trú mới nhất để đăng ký mua căn hộ NOXH tại Hố Nai – Biên Hòa.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news14/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Không phải ai cũng được mua nhà ở xã hội. Để sở hữu căn hộ tại dự án K-Home CityView, người mua phải thuộc đúng đối tượng và đáp ứng các điều kiện theo quy định pháp luật hiện hành. Dưới đây là thông tin tổng hợp mới nhất năm 2026.
+
+![Ai được mua K-Home CityView theo quy định NOXH 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news14/1)
+
+## 1. Các đối tượng được mua nhà ở xã hội năm 2026
+
+Theo Luật Nhà ở 2023 (được sửa đổi, bổ sung bởi Luật Dân số 2025), các đối tượng được mua nhà ở xã hội bao gồm:
+
+- Người có công với cách mạng, thân nhân liệt sĩ thuộc trường hợp được hỗ trợ cải thiện nhà ở.
+- Hộ gia đình nghèo, cận nghèo tại khu vực đô thị.
+- Người thu nhập thấp tại khu vực đô thị.
+- Công nhân, người lao động đang làm việc tại doanh nghiệp, hợp tác xã, liên hiệp hợp tác xã trong và ngoài khu công nghiệp.
+- Cán bộ, công chức, viên chức.
+- Đối tượng đã trả lại nhà ở công vụ (trừ trường hợp bị thu hồi do vi phạm).
+- Hộ gia đình, cá nhân bị thu hồi đất, giải tỏa nhà ở mà chưa được bồi thường bằng nhà ở, đất ở.
+- Sĩ quan, quân nhân chuyên nghiệp, công an, người làm công tác cơ yếu hưởng lương từ ngân sách nhà nước.
+- **Người có từ 02 con đẻ trở lên (áp dụng từ ngày 01/7/2026).**
+
+Ngoài ra, tùy điều kiện địa phương, UBND cấp tỉnh có thể quy định thêm một số đối tượng khác (như hộ nghèo, cận nghèo khu vực nông thôn).
+
+![Đối tượng được mua nhà ở xã hội K-Home CityView – công nhân gia đình trẻ cán bộ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news14/2)
+
+## 2. Điều kiện về thu nhập (cập nhật 2026)
+
+Đối với các nhóm người lao động, người thu nhập thấp, cán bộ công chức, mức thu nhập tối đa được điều chỉnh tăng so với trước:
+
+| Đối tượng | Mức thu nhập tối đa |
+|---|---|
+| Người độc thân | Không quá khoảng 25 triệu đồng/tháng |
+| Người độc thân đang nuôi con dưới tuổi thành niên | Không quá khoảng 35 triệu đồng/tháng |
+| Vợ chồng (tổng 2 người) | Không quá khoảng 50 triệu đồng/tháng |
+
+Thu nhập được tính theo bảng lương/tiền công thực nhận do cơ quan, doanh nghiệp xác nhận trong 12 tháng liền kề trước thời điểm xác nhận. UBND tỉnh được phép điều chỉnh hệ số theo điều kiện địa phương.
+
+![Điều kiện thu nhập mua NOXH 2026 – mức trần thu nhập được phép mua nhà](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news14/3)
+
+## 3. Điều kiện về nhà ở
+
+Người mua phải thuộc một trong các trường hợp:
+
+- Chưa có nhà ở thuộc sở hữu của bản thân và vợ/chồng tại tỉnh Đồng Nai.
+- Có nhà ở nhưng diện tích bình quân đầu người thấp hơn **15 m² sàn/người**.
+- Có nhà ở nhưng cách xa nơi làm việc theo quy định.
+- Chưa từng được hỗ trợ nhà ở xã hội dưới mọi hình thức tại địa phương đó.
+
+## 4. Điều kiện cư trú / làm việc
+
+Thường yêu cầu có đăng ký thường trú hoặc tạm trú tại Đồng Nai, hoặc đang làm việc tại các doanh nghiệp/khu công nghiệp trên địa bàn tỉnh với hợp đồng lao động từ **01 năm trở lên** và đang đóng BHXH tại Đồng Nai.
+
+## 5. Lưu ý quan trọng
+
+- Việc xét duyệt do chủ đầu tư tiếp nhận hồ sơ và cơ quan nhà nước thẩm định.
+- Ưu tiên một số đối tượng đặc biệt: người có công, hộ nghèo, phụ nữ đơn thân, người có từ 2 con trở lên.
+- Quy định có thể được điều chỉnh theo văn bản mới — nên kiểm tra lại tại thời điểm nộp hồ sơ.
+
+![Kiểm tra điều kiện mua K-Home CityView – liên hệ hỗ trợ kiểm tra đối tượng NOXH](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news14/4)
+
+## Kết luận
+
+Nếu bạn là công nhân, người lao động tại các khu công nghiệp, cán bộ công chức, người thu nhập thấp hoặc thuộc các nhóm đối tượng nêu trên và đáp ứng điều kiện về thu nhập + nhà ở, bạn hoàn toàn có cơ hội đăng ký mua K-Home CityView.
+
+Bạn đang phân vân mình có thuộc đối tượng không? Hãy để lại thông tin để được hỗ trợ kiểm tra điều kiện miễn phí.
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh Giá Chi Tiết Dự Án K-Home CityView Biên Hòa`,
+  },
 ];
 
 // ─── Public API Routes ────────────────────────────────────────────────────────
