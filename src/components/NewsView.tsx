@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import { News } from "../types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface NewsViewProps {
   onNavigate: (hash: string) => void;
@@ -21,6 +22,8 @@ const PROJECT_ACCENT: Record<string, string> = {
   chung:    "#7c3aed",
 };
 
+const PAGE_SIZE = 10;
+
 export default function NewsView({ onNavigate }: NewsViewProps) {
   const [news, setNews]               = useState<News[]>([]);
   const [filtered, setFiltered]       = useState<News[]>([]);
@@ -28,6 +31,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
   const [search, setSearch]           = useState("");
   const [category, setCategory]       = useState("Tất cả");
   const [project, setProject]         = useState("tat-ca");
+  const [page, setPage]               = useState(1);
 
   useEffect(() => {
     document.title = "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất";
@@ -58,13 +62,23 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
     if (category !== "Tất cả") r = r.filter(n => n.category === category);
     if (project  !== "tat-ca")  r = r.filter(n => (n.project ?? "chung") === project);
     setFiltered(r);
+    setPage(1); // reset về trang 1 khi filter thay đổi
   }, [search, category, project, news]);
 
   const countFor = (key: string) =>
     key === "tat-ca" ? news.length : news.filter(n => (n.project ?? "chung") === key).length;
 
-  const featured = filtered[0] ?? null;
-  const rest     = filtered.slice(1);
+  // Pagination
+  const totalPages  = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pageStart   = (page - 1) * PAGE_SIZE;
+  const pageItems   = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+  const featured    = pageItems[0] ?? null;
+  const rest        = pageItems.slice(1);
+
+  const goToPage = (p: number) => {
+    setPage(p);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -288,10 +302,57 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
               </div>
             )}
 
-            {/* Count summary */}
-            <p className="text-center text-xs text-slate-300 font-medium pt-4 border-t border-slate-50">
-              Hiển thị {filtered.length} / {news.length} bài viết
-            </p>
+            {/* ── Pagination ── */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 pt-6 border-t border-slate-100">
+                {/* Prev */}
+                <button
+                  onClick={() => goToPage(page - 1)}
+                  disabled={page === 1}
+                  className="w-9 h-9 flex items-center justify-center rounded-xl border border-slate-200 text-slate-500 hover:border-amber-400 hover:text-amber-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                {/* Page numbers */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => {
+                  // Hiển thị: trang đầu, cuối, xung quanh trang hiện tại, dấu ...
+                  const show = p === 1 || p === totalPages || Math.abs(p - page) <= 1;
+                  const isEllipsisBefore = p === 2 && page > 4;
+                  const isEllipsisAfter  = p === totalPages - 1 && page < totalPages - 3;
+                  if (!show && !isEllipsisBefore && !isEllipsisAfter) return null;
+                  if (isEllipsisBefore || isEllipsisAfter) {
+                    return (
+                      <span key={p} className="w-9 h-9 flex items-center justify-center text-slate-400 text-xs font-medium">
+                        …
+                      </span>
+                    );
+                  }
+                  return (
+                    <button
+                      key={p}
+                      onClick={() => goToPage(p)}
+                      className={`w-9 h-9 flex items-center justify-center rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        p === page
+                          ? "bg-amber-500 text-white shadow-md shadow-amber-200"
+                          : "border border-slate-200 text-slate-600 hover:border-amber-400 hover:text-amber-600"
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  );
+                })}
+
+                {/* Next */}
+                <button
+                  onClick={() => goToPage(page + 1)}
+                  disabled={page === totalPages}
+                  className="w-9 h-9 flex items-center justify-center rounded-xl border border-slate-200 text-slate-500 hover:border-amber-400 hover:text-amber-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
 
           </div>
         )}
