@@ -56,6 +56,8 @@ const ProjectCard = memo(function ProjectCard({
           alt={`${project.title} - Phối cảnh dự án nhà ở xã hội K-Home tại Đồng Nai`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 transition-opacity duration-300"
           loading="lazy"
+          width="600"
+          height="288"
           style={{ backgroundColor: "#e2e8f0" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
@@ -155,6 +157,8 @@ const TestimonialCard = memo(function TestimonialCard({
           alt={author}
           className="w-12 h-12 rounded-full object-cover border-2 border-amber-500/30 shadow-inner bg-slate-200"
           loading="lazy"
+          width="48"
+          height="48"
           referrerPolicy="no-referrer"
         />
         <div>
@@ -1418,6 +1422,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       alt={`${project.name} - ${project.location} | K-Home Đồng Nai`}
                       className="w-full h-full object-cover"
                       loading="eager"
+                      width="900"
+                      height="450"
                     />
                     
                     {/* Floating Info Card - Bottom Left */}
@@ -1699,6 +1705,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 alt="Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai – gần KCN Amata Biên Hòa 2"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="600"
+                height="208"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
               <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home CityView – Hố Nai, Biên Hòa</span>
@@ -1716,6 +1724,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 alt="Vị trí dự án K-Home Midtown Trảng Bom Đồng Nai – trung tâm huyện Trảng Bom giao 4 tuyến đường lớn"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="600"
+                height="208"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
               <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home Midtown – Trảng Bom, Đồng Nai</span>
@@ -1733,6 +1743,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 alt="Vị trí dự án K-Home Avenue Nhơn Trạch Đồng Nai – gần sân bay Long Thành đường 25C"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width="600"
+                height="208"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
               <span className="absolute bottom-3 left-4 text-white text-xs font-bold">K-Home Avenue – Nhơn Trạch, Đồng Nai</span>
@@ -1905,6 +1917,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} | Tiện ích nội khu K-Home`}
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      width="900"
+                      height="450"
                       style={{
                         transform: activeProjectTab === idx ? "scale(1.03)" : "scale(1)",
                         transition: "transform 5s ease-out",
@@ -2530,6 +2544,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               alt="Dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai Kim Oanh Land phối cảnh tổng thể"
               className="w-full rounded-2xl object-cover h-64 shadow-md"
               loading="lazy"
+              width="800"
+              height="256"
             />
             <div className="grid grid-cols-3 gap-3 text-center">
               {[
@@ -2684,7 +2700,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 src="https://res.cloudinary.com/dthv0nsq/image/upload/w_900,q_auto:good,f_auto/slide-k-home-cityview/slide-15"
                 alt="PropertyGuru Vietnam Property Awards 2025 Kim Oanh Land Best Affordable Housing Development"
                 className="w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                style={{ minHeight: "280px", backgroundColor: "#fffbeb" }}
+                width="900"
+                height="560"
+                style={{ height: "280px", backgroundColor: "#fffbeb" }}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end justify-end p-3 opacity-0 group-hover:opacity-100">
@@ -2731,6 +2749,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     src={a.img}
                     alt={a.alt}
                     className="w-28 h-24 object-contain rounded-xl shrink-0 group-hover:scale-105 transition-transform duration-300"
+                    width="112"
+                    height="96"
                     style={{ backgroundColor: "#f8fafc" }}
                     loading="lazy"
                   />

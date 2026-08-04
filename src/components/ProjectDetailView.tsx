@@ -1537,13 +1537,15 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Active image — fixed height container để tránh layout shift */}
-          <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-200" style={{ minHeight: "400px" }}>
+          <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-200" style={{ height: "400px" }}>
             <img
               key={activeFloorTab}
               src={imgUrl(seo.floorPlanImages[activeFloorTab].src, "full")}
               alt={seo.floorPlanImages[activeFloorTab].alt}
-              className="w-full object-contain"
+              className="w-full h-full object-contain"
               loading="eager"
+              width="800"
+              height="400"
               decoding="async"
               style={{ backgroundColor: "#e2e8f0", display: "block", cursor: "zoom-in" }}
               onClick={() => {
