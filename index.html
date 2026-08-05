@@ -30,11 +30,13 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
 
-    <!-- Preload ảnh hero — LCP quan trọng nhất -->
+    <!-- Preload hero + API — giảm network dependency chain -->
     <!-- Mobile: preload webp nhỏ (63KB) -->
     <link rel="preload" as="image" href="/hero-background-mobile.webp" fetchpriority="high" media="(max-width: 768px)" />
     <!-- Desktop: preload jpg gốc -->
     <link rel="preload" as="image" href="/hero-background.jpg" fetchpriority="high" media="(min-width: 769px)" />
+    <!-- Preload API projects — giảm 606ms blocking trong network dependency tree -->
+    <link rel="preload" href="/api/projects" as="fetch" crossorigin="anonymous" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

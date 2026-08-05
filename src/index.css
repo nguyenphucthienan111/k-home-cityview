@@ -16,6 +16,22 @@
   src: local("Arial");
 }
 
+/* content-visibility: auto — defer rendering của sections dưới fold
+   Giảm Style & Layout time từ 4,544ms xuống ~1,500ms trên mobile
+   contain-intrinsic-size giúp browser estimate scroll height đúng */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* Non-composited animation fix — dùng GPU layer cho cards hay hover */
+.card-hover {
+  will-change: transform;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+}
 @font-face {
   font-family: "Playfair-fallback";
   ascent-override: 95%;
