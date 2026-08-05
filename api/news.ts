@@ -1556,6 +1556,71 @@ Bạn muốn được tính toán cụ thể số tiền ban đầu theo loại 
 
 ---RELATED---co-the-vay-ngan-hang-nao-de-mua-k-home-cityview|Có Thể Vay Ngân Hàng Nào Để Mua K-Home CityView;chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026`,
   },
+  {
+    id: "n20",
+    slug: "thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview",
+    title: "Thủ Tục Chứng Minh Tình Trạng Nhà Ở Khi Mua K-Home CityView",
+    date: "2026-08-05",
+    excerpt: "Thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView. Hướng dẫn xin giấy xác nhận chưa có nhà ở hoặc diện tích dưới chuẩn để đủ điều kiện mua nhà ở xã hội năm 2026.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Một trong những điều kiện bắt buộc khi mua nhà ở xã hội là phải chứng minh tình trạng nhà ở hiện tại. Nhiều người thắc mắc: Cần làm giấy gì và xin ở đâu? Dưới đây là hướng dẫn chi tiết năm 2026.
+
+![Thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView – hướng dẫn xin giấy xác nhận nhà ở](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/1)
+
+## 1. Vì sao phải chứng minh tình trạng nhà ở?
+
+Theo quy định, người mua nhà ở xã hội phải thuộc một trong các trường hợp:
+
+- Chưa có nhà ở thuộc sở hữu của mình.
+- Có nhà ở nhưng diện tích bình quân đầu người thấp hơn mức quy định (thường dưới **15 m² sàn/người**).
+- Hoặc có nhà ở nhưng cách xa nơi làm việc theo quy định.
+
+Giấy xác nhận tình trạng nhà ở là căn cứ để cơ quan thẩm định xem xét điều kiện này.
+
+## 2. Giấy tờ cần có
+
+Thường bao gồm:
+
+- **Giấy xác nhận tình trạng nhà ở** do UBND cấp xã/phường nơi cư trú cấp (theo mẫu quy định hiện hành).
+- Trường hợp đã kết hôn: Vợ/chồng cũng phải kê khai và xác nhận tình trạng nhà ở.
+- Các giấy tờ liên quan khác nếu có (ví dụ: giấy chứng nhận quyền sử dụng đất nếu đang sở hữu nhà).
+
+![Mẫu giấy xác nhận tình trạng nhà ở mua NOXH – giấy tờ bắt buộc trong hồ sơ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/2)
+
+## 3. Thủ tục xin giấy xác nhận
+
+- **Bước 1:** Chuẩn bị CCCD và giấy tờ cư trú.
+- **Bước 2:** Đến UBND cấp xã/phường nơi thường trú hoặc tạm trú để nộp đơn xin xác nhận tình trạng nhà ở.
+- **Bước 3:** Cơ quan chức năng kiểm tra dữ liệu và cấp giấy xác nhận theo mẫu.
+- **Bước 4:** Nhận giấy và đưa vào hồ sơ đăng ký mua nhà ở xã hội.
+
+Thời gian xử lý thường từ vài ngày đến 1–2 tuần tùy địa phương.
+
+![Quy trình xin giấy xác nhận tình trạng nhà ở – các bước thực hiện tại UBND](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/3)
+
+## 4. Những lưu ý quan trọng
+
+- **Xin giấy sớm** — đây là giấy tờ mất nhiều thời gian nhất trong bộ hồ sơ.
+- Thông tin trên giấy phải khớp với CCCD và các giấy tờ khác.
+- Nếu đang ở nhờ, thuê nhà hoặc ở nhà người thân, vẫn cần được xác nhận rõ tình trạng không có nhà thuộc sở hữu.
+- Mẫu giấy có thể được cập nhật theo quy định mới, nên hỏi rõ tại UBND hoặc nhờ chủ đầu tư hỗ trợ mẫu.
+
+![Lưu ý khi chứng minh tình trạng nhà ở – những điểm cần tránh khi làm giấy](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/4)
+
+## Kết luận
+
+Thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView chủ yếu xoay quanh việc xin **Giấy xác nhận tình trạng nhà ở** tại UBND cấp xã/phường. Đây là bước bắt buộc và cần được thực hiện sớm để hồ sơ được xét duyệt nhanh chóng.
+
+Bạn đang gặp khó khăn trong việc xin giấy xác nhận? Hãy liên hệ để được hướng dẫn chi tiết. Liên hệ **0937.587.438** để được hỗ trợ.
+
+![Hỗ trợ thủ tục chứng minh nhà ở K-Home CityView – liên hệ hướng dẫn xin giấy xác nhận](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news21/5)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì;ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
