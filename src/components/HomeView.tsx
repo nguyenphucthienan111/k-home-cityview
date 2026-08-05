@@ -1710,7 +1710,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", "card")}
+                src={imgUrl("/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", "thumbnail")}
                 alt="Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai – gần KCN Amata Biên Hòa 2"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -1729,7 +1729,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", "card")}
+                src={imgUrl("/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", "thumbnail")}
                 alt="Vị trí dự án K-Home Midtown Trảng Bom Đồng Nai – trung tâm huyện Trảng Bom giao 4 tuyến đường lớn"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -1748,7 +1748,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home avenue/PC02-TT-10K_2-min.jpg.webp", "card")}
+                src={imgUrl("/k-home avenue/PC02-TT-10K_2-min.jpg.webp", "thumbnail")}
                 alt="Vị trí dự án K-Home Avenue Nhơn Trạch Đồng Nai – gần sân bay Long Thành đường 25C"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -2549,7 +2549,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
           <div className="space-y-4">
             <img
-              src={imgUrl("/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", "card")}
+              src={imgUrl("/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", "thumbnail")}
               alt="Dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai Kim Oanh Land phối cảnh tổng thể"
               className="w-full rounded-2xl object-cover h-64 shadow-md"
               loading="lazy"
