@@ -1426,6 +1426,73 @@ Bạn đang ở bước nào? Để lại thông tin để được hỗ trợ c
 
 ---RELATED---ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì`,
   },
+  {
+    id: "n18",
+    slug: "co-the-vay-ngan-hang-nao-de-mua-k-home-cityview",
+    title: "Có Thể Vay Ngân Hàng Nào Để Mua K-Home CityView?",
+    date: "2026-08-05",
+    excerpt: "Có thể vay ngân hàng nào để mua K-Home CityView? Cập nhật gói vay Ngân hàng Chính sách xã hội, lãi suất ưu đãi 5,4%/năm và điều kiện vay nhà ở xã hội năm 2026.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Một trong những lợi thế lớn khi mua nhà ở xã hội là được tiếp cận nguồn vốn vay ưu đãi từ Nhà nước. Khi mua K-Home CityView, kênh vay chính và ưu đãi nhất dành cho khách hàng là **Ngân hàng Chính sách xã hội (NHCSXH)**.
+
+![Có thể vay ngân hàng nào để mua K-Home CityView – vay Ngân hàng Chính sách xã hội mua nhà ở xã hội](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/1)
+
+## 1. Ngân hàng Chính sách xã hội – Kênh vay chính cho nhà ở xã hội
+
+Đây là ngân hàng được Nhà nước giao nhiệm vụ cho vay ưu đãi đối với người mua nhà ở xã hội. Thông tin gói vay phổ biến năm 2026:
+
+| Thông tin | Chi tiết |
+|---|---|
+| Lãi suất | Khoảng 5,4%/năm (ưu đãi theo quy định nhà nước) |
+| Thời hạn vay | Lên đến 25 năm |
+| Hạn mức vay | Thường đến 75–80% giá trị căn hộ |
+| Vốn tự có tối thiểu | Khoảng 20–25% giá trị căn |
+
+Đây là gói vay được nhiều khách hàng lựa chọn nhất vì lãi suất thấp, ổn định và thời hạn dài, giúp giảm áp lực trả nợ hàng tháng.
+
+![Gói vay NHCSXH mua K-Home CityView lãi suất 5,4% – thông tin lãi suất và hạn mức vay ưu đãi](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/2)
+
+## 2. Điều kiện vay tại Ngân hàng Chính sách xã hội
+
+Để được vay mua nhà ở xã hội tại K-Home CityView, khách hàng cần đáp ứng:
+
+- Thuộc đối tượng được mua nhà ở xã hội theo quy định.
+- Có khả năng trả nợ (thu nhập ổn định, chứng minh được nguồn thu).
+- Hồ sơ vay đầy đủ theo yêu cầu của NHCSXH.
+- Đáp ứng các điều kiện về tuổi, lịch sử tín dụng và các quy định khác của ngân hàng tại thời điểm vay.
+
+![Điều kiện vay NHCSXH mua nhà ở xã hội – các điều kiện cơ bản để được vay](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/3)
+
+## 3. Hồ sơ vay thường cần chuẩn bị
+
+- Hồ sơ mua nhà ở xã hội đã được duyệt.
+- CCCD và giấy tờ cư trú.
+- Giấy tờ chứng minh thu nhập (hợp đồng lao động, bảng lương, xác nhận thu nhập…).
+- Các giấy tờ khác theo yêu cầu cụ thể của chi nhánh NHCSXH nơi tiếp nhận hồ sơ.
+
+![Hồ sơ vay Ngân hàng Chính sách xã hội – giấy tờ cần chuẩn bị khi vay mua NOXH](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/4)
+
+## 4. Lưu ý khi vay mua nhà ở xã hội
+
+- Ưu tiên vay qua Ngân hàng Chính sách xã hội để hưởng mức lãi suất thấp nhất.
+- Tính toán kỹ khả năng trả nợ hàng tháng trước khi ký hợp đồng vay.
+- Hỏi rõ về phí, điều kiện trả nợ trước hạn và các quy định liên quan.
+- Lãi suất và hạn mức có thể được điều chỉnh theo từng giai đoạn — nên xác nhận lại thông tin mới nhất tại thời điểm làm hồ sơ.
+
+## Kết luận
+
+Khi mua K-Home CityView, khách hàng được hỗ trợ vay chủ yếu từ Ngân hàng Chính sách xã hội với lãi suất ưu đãi khoảng **5,4%/năm**, thời hạn lên đến **25 năm** và hạn mức vay cao. Đây là giải pháp tài chính phù hợp giúp nhiều người lao động tiếp cận nhà ở xã hội dễ dàng hơn.
+
+Bạn muốn được tư vấn cụ thể về khả năng vay và số tiền trả hàng tháng? Hãy để lại thông tin để được hỗ trợ. Liên hệ **0937.587.438** để được hỗ trợ.
+
+![Tư vấn gói vay mua K-Home CityView – liên hệ hỗ trợ tính toán khả năng vay](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news19/5)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026;ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
