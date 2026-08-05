@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback, memo, startTransition } from "react";
+﻿import React, { useEffect, useState, useRef, useMemo, useCallback, memo, startTransition } from "react";
 import ReactDOM from "react-dom";
 import { 
   ArrowRight, 
@@ -48,7 +48,7 @@ const ProjectCard = memo(function ProjectCard({
     <a
       href={`/${project.slug}`}
       onClick={(e) => { e.preventDefault(); onClick(`/${project.slug}`); }}
-      className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-all duration-500 group flex flex-col h-full cursor-pointer relative no-underline"
+      className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl hover:border-amber-500/20 transition-[transform,box-shadow,border-color] duration-500 group flex flex-col h-full cursor-pointer relative no-underline"
     >
       <div className="relative h-72 overflow-hidden bg-slate-200">
         <img
@@ -1427,7 +1427,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }`}
                   >
                     <img
-                      src={imgUrl(project.image, "full")}
+                      src={imgUrl(project.image, "card")}
                       alt={`${project.name} - ${project.location} | K-Home Đồng Nai`}
                       className="w-full h-full object-cover"
                       loading="eager"
@@ -1700,7 +1700,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* =========================================================
           VỊ TRÍ KẾT NỐI — 3 DỰ ÁN
           ========================================================= */}
-      <section id="vi-tri" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section id="vi-tri" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 cv-auto">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Vị trí chiến lược</span>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Vị Trí Kết Nối – 3 Dự Án K-Home Đồng Nai</h2>
@@ -1710,7 +1710,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", "full")}
+                src={imgUrl("/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", "thumbnail")}
                 alt="Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai – gần KCN Amata Biên Hòa 2"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -1729,7 +1729,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", "full")}
+                src={imgUrl("/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", "thumbnail")}
                 alt="Vị trí dự án K-Home Midtown Trảng Bom Đồng Nai – trung tâm huyện Trảng Bom giao 4 tuyến đường lớn"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -1748,7 +1748,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
             <div className="relative h-52 overflow-hidden">
               <img
-                src={imgUrl("/k-home avenue/PC02-TT-10K_2-min.jpg.webp", "full")}
+                src={imgUrl("/k-home avenue/PC02-TT-10K_2-min.jpg.webp", "thumbnail")}
                 alt="Vị trí dự án K-Home Avenue Nhơn Trạch Đồng Nai – gần sân bay Long Thành đường 25C"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -1782,11 +1782,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home CityView Hố Nai</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
-                  <img src={imgUrl("/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", "full")} alt="Mặt bằng tầng điển hình 12A-22 căn hộ NOXH K-Home CityView Hố Nai Biên Hòa" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
+                  <img src={imgUrl("/k-home cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg.webp", "thumbnail")} alt="Mặt bằng tầng điển hình 12A-22 căn hộ NOXH K-Home CityView Hố Nai Biên Hòa" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Tầng 12A–22</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-cityview-ho-nai")}>
-                  <img src={imgUrl("/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", "full")} alt="Layout thiết kế căn hộ 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
+                  <img src={imgUrl("/k-home cityview/mat-bang/thiet-ke-can-ho-layout-khome-city-view-2048x764.jpg.webp", "thumbnail")} alt="Layout thiết kế căn hộ 1PN 2PN 3PN NOXH K-Home CityView Kim Oanh Land Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout căn hộ</p>
                 </div>
               </div>
@@ -1797,11 +1797,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <h3 className="text-lg font-bold text-slate-800">Mặt Bằng K-Home Avenue & Midtown</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-avenue-nhon-trach")}>
-                  <img src={imgUrl("/k-home avenue/layout-can-ho-khome-avenue-nhon-trach.jpg", "full")} alt="Mặt bằng layout căn hộ K-Home Avenue Nhơn Trạch Studio 1PN 2PN nhà ở xã hội Kim Oanh" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
+                  <img src={imgUrl("/k-home avenue/layout-can-ho-khome-avenue-nhon-trach.jpg", "thumbnail")} alt="Mặt bằng layout căn hộ K-Home Avenue Nhơn Trạch Studio 1PN 2PN nhà ở xã hội Kim Oanh" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Avenue</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer" onClick={() => onNavigate("/k-home-midtown-trang-bom")}>
-                  <img src={imgUrl("/k-home midtown/k-home-midtown-mat-bang-can-ho-tang-dien-hinh.jpg.webp", "full")} alt="Mặt bằng tầng điển hình K-Home Midtown Trảng Bom Studio 1PN 2PN nhà ở xã hội Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
+                  <img src={imgUrl("/k-home midtown/k-home-midtown-mat-bang-can-ho-tang-dien-hinh.jpg.webp", "thumbnail")} alt="Mặt bằng tầng điển hình K-Home Midtown Trảng Bom Studio 1PN 2PN nhà ở xã hội Đồng Nai" className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="144" />
                   <p className="text-[10px] text-center py-1.5 bg-white font-semibold text-slate-600">Layout K-Home Midtown</p>
                 </div>
               </div>
@@ -1922,7 +1922,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     }}
                   >
                     <img
-                      src={imgUrl(showroomGallery[activeShowroomTab].images[idx], "full")}
+                      src={imgUrl(showroomGallery[activeShowroomTab].images[idx], "card")}
                       alt={`${project.name} - ${showroomGallery[activeShowroomTab].title} | Tiện ích nội khu K-Home`}
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -2028,7 +2028,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* =========================================================
           5. CALCULATOR – KẾ HOẠCH TÀI CHÍNH MUA NHÀ Ở XÃ HỘI
           ========================================================= */}
-      <section id="calculator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="calculator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 cv-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Công cụ tài chính NOXH</span>
           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
@@ -2549,7 +2549,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
           <div className="space-y-4">
             <img
-              src={imgUrl("/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", "full")}
+              src={imgUrl("/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", "thumbnail")}
               alt="Dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai Kim Oanh Land phối cảnh tổng thể"
               className="w-full rounded-2xl object-cover h-64 shadow-md"
               loading="lazy"
@@ -2575,7 +2575,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* =========================================================
           PHÁP LÝ DỰ ÁN
           ========================================================= */}
-      <section id="phap-ly" className="bg-slate-900 py-16">
+      <section id="phap-ly" className="bg-slate-900 py-16 cv-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-5">
@@ -2649,7 +2649,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* =========================================================
           CHỦ ĐẦU TƯ KIM OANH LAND
           ========================================================= */}
-      <section id="chu-dau-tu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section id="chu-dau-tu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 cv-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-5 order-2 lg:order-1">
             <img src={imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full")} alt="Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land giải thưởng PropertyGuru" className="w-full rounded-2xl object-cover shadow-md" loading="lazy" width="800" height="450" />
@@ -2727,7 +2727,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <div className="grid grid-rows-2 gap-6">
               {[
                 {
-                  img: imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "full"),
+                  img: imgUrl("/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp", "card"),
                   alt: "Top 10 nhà phát triển nhà ở xã hội hàng đầu Việt Nam 2024 Kim Oanh Land Đồng Nai",
                   year: "2024", title: "Top 10 Nhà Phát Triển NOXH Hàng Đầu Việt Nam", idx: 1,
                 },
@@ -2842,7 +2842,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* =========================================================
           TIN TỨC & BÀI VIẾT LIÊN QUAN
           ========================================================= */}
-      <section id="tin-tuc" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <section id="tin-tuc" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 cv-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div className="space-y-2">
             <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Cập nhật mới nhất</span>

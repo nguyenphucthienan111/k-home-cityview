@@ -1,33 +1,34 @@
 const CLOUD_NAME = "dthv0nsq";
 const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 
-// Map local path → Cloudinary public_id (mirror logic của upload script)
 function localPathToPublicId(path: string): string {
   return path
-    .replace(/^\//, "")                           // bỏ leading slash
-    .replace(/(\.(jpg|jpeg|png|webp))+$/i, "")    // bỏ extension kép như .jpg.webp
-    .replace(/ /g, "-");                          // space → dash
+    .replace(/^\//, "")
+    .replace(/(\.(jpg|jpeg|png|webp))+$/i, "")
+    .replace(/ /g, "-");
 }
 
 /**
  * Trả về Cloudinary URL với transform tối ưu.
- * - thumbnail (mặc định): w_600, q_auto:good, f_auto — cho card images
- * - full: w_1200, q_auto:good, f_auto — cho lightbox/detail
- * - original: không transform — cho ảnh đặc biệt
+ * - thumbnail: w_600,h_400,c_fill — card images (mặc định)
+ * - card:      w_800,h_600,c_fill — medium cards, location images
+ * - mobile:    w_400,h_300,c_fill — mobile thumbnails
+ * - full:      w_1200 — lightbox/detail
+ * - original:  q_auto,f_auto — không transform
  */
 export function imgUrl(
   path: string,
-  mode: "thumbnail" | "full" | "original" = "thumbnail"
+  mode: "thumbnail" | "card" | "mobile" | "full" | "original" = "thumbnail"
 ): string {
   if (!path) return path;
-
-  // External URLs — trả về nguyên
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
 
   const publicId = localPathToPublicId(path);
 
   const transforms: Record<string, string> = {
     thumbnail: "w_600,h_400,c_fill,q_auto:good,f_auto",
+    card:      "w_800,h_600,c_fill,q_auto:good,f_auto",
+    mobile:    "w_400,h_300,c_fill,q_auto:good,f_auto",
     full:      "w_1200,q_auto:good,f_auto",
     original:  "q_auto,f_auto",
   };
