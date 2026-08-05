@@ -1313,18 +1313,27 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         className="relative w-full flex flex-col justify-center items-center pt-24 pb-8 lg:py-24"
         style={{ minHeight: "100svh" }}
       >
-        {/* Background — dùng <img> thay CSS background để browser preload được LCP image */}
-        <img
-          src="/hero-background.jpg"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          loading="eager"
-          decoding="sync"
-          width="1920"
-          height="1080"
-          className="absolute inset-0 w-full h-full object-cover object-top -z-0 pointer-events-none"
-        />
+        {/* Background — picture element với responsive images để tối ưu LCP trên mobile */}
+        <picture className="absolute inset-0 -z-0 pointer-events-none w-full h-full">
+          {/* Mobile ≤768px: WebP 768×500, 63KB thay vì 844KB */}
+          <source
+            media="(max-width: 768px)"
+            srcSet="/hero-background-mobile.webp"
+            type="image/webp"
+          />
+          {/* Desktop: ảnh gốc */}
+          <img
+            src="/hero-background.jpg"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+            width="1920"
+            height="1080"
+            className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
+          />
+        </picture>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
 
@@ -1994,17 +2003,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 ))}
               </div>
 
-              {/* Progress bar */}
+              {/* Progress bar — dùng scaleX thay width để tránh non-composited animation */}
               <div className="flex gap-2 px-1">
                 {projectCarousel.map((_, idx) => (
                   <div key={idx} className="flex-1 h-0.5 bg-slate-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-amber-500 rounded-full"
+                      className="h-full bg-amber-500 rounded-full origin-left"
                       style={{
-                        width: activeProjectTab === idx ? "100%" : activeProjectTab > idx ? "100%" : "0%",
+                        transform: activeProjectTab === idx ? "scaleX(1)" : activeProjectTab > idx ? "scaleX(1)" : "scaleX(0)",
                         transition: activeProjectTab === idx && !isCarouselHovered
-                          ? "width 4000ms linear"
-                          : "width 0ms",
+                          ? "transform 4000ms linear"
+                          : "transform 0ms",
                       }}
                     />
                   </div>
