@@ -1493,6 +1493,69 @@ Bạn muốn được tư vấn cụ thể về khả năng vay và số tiền 
 
 ---RELATED---chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026;ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026|Ai Được Mua K-Home CityView Theo Quy Định NOXH 2026`,
   },
+  {
+    id: "n19",
+    slug: "mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau",
+    title: "Mua K-Home CityView Cần Chuẩn Bị Bao Nhiêu Tiền Ban Đầu?",
+    date: "2026-08-05",
+    excerpt: "Mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu? Cập nhật mức vốn tự có, số tiền trả trước và ví dụ tính toán theo từng loại căn hộ năm 2026.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news20/1",
+    category: "Chính sách",
+    project: "cityview",
+    content: `Một trong những câu hỏi được quan tâm nhiều nhất khi mua nhà ở xã hội là: Cần chuẩn bị bao nhiêu tiền ban đầu để sở hữu căn hộ K-Home CityView? Dưới đây là thông tin tổng hợp mới nhất năm 2026.
+
+![Mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu – số tiền trả trước để sở hữu căn hộ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news20/1)
+
+## 1. Mức vốn ban đầu phổ biến
+
+Theo chính sách nhà ở xã hội hiện hành, khách hàng thường chỉ cần chuẩn bị khoảng **20–25% giá trị căn hộ** làm vốn tự có để ký hợp đồng và đủ điều kiện vay phần còn lại từ Ngân hàng Chính sách xã hội.
+
+Phần còn lại (khoảng 75–80%) có thể được hỗ trợ vay với lãi suất ưu đãi khoảng **5,4%/năm**, thời hạn lên đến **25 năm**.
+
+## 2. Ví dụ ước tính tiền ban đầu theo loại căn
+
+Dựa trên mức giá tham khảo khoảng 20 triệu đồng/m² và tỷ lệ vốn tự có 20%:
+
+| Loại căn | Diện tích tham khảo | Giá căn ước tính | Tiền ban đầu (~20%) |
+|---|---|---|---|
+| 1PN / 1PN+ | ~47 m² | Khoảng 940 triệu – 1,1 tỷ | Khoảng 190 – 220 triệu |
+| 2PN nhỏ | ~62 m² | Khoảng 1,24 – 1,4 tỷ | Khoảng 250 – 280 triệu |
+| 2PN lớn | ~70 m² | Khoảng 1,4 – 1,6 tỷ | Khoảng 280 – 320 triệu |
+| 3PN | ~84 m² | Khoảng 1,68 – 1,9 tỷ | Khoảng 340 – 380 triệu |
+
+Các con số trên chỉ mang tính tham khảo. Giá thực tế từng căn phụ thuộc vào tầng, hướng view và bảng giá chính thức của chủ đầu tư.
+
+![Bảng tính tiền ban đầu theo loại căn K-Home CityView – ước tính vốn tự có 1PN 2PN 3PN](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news20/2)
+
+## 3. Những khoản tiền cần chuẩn bị thêm
+
+Ngoài số tiền trả trước theo hợp đồng, khách hàng nên dự trù thêm:
+
+- **Phí bảo trì:** Thường 2% giá trị căn hộ, đóng khi nhận nhà hoặc theo quy định.
+- Các khoản phí quản lý, vận hành ban đầu (nếu có).
+- Chi phí công chứng, sang tên, làm sổ khi hoàn tất thủ tục.
+
+![Các khoản tiền cần chuẩn bị thêm khi mua NOXH – phí bảo trì và chi phí phát sinh](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news20/3)
+
+## 4. Lời khuyên khi chuẩn bị tài chính
+
+- Tính toán dựa trên giá căn cụ thể mà bạn muốn chọn, không chỉ dựa vào giá bình quân.
+- Kết hợp với khả năng trả nợ hàng tháng khi vay ngân hàng.
+- Giữ một khoản dự phòng để tránh phát sinh ngoài dự kiến.
+- Xác nhận lại tỷ lệ thanh toán đợt đầu chính xác với chủ đầu tư tại thời điểm ký hợp đồng.
+
+## Kết luận
+
+Khi mua K-Home CityView, số tiền ban đầu cần chuẩn bị thường chỉ từ khoảng **200 triệu đồng** trở lên tùy loại căn, nhờ chính sách vay ưu đãi từ Ngân hàng Chính sách xã hội. Đây là mức vốn khá dễ tiếp cận đối với nhiều người lao động và gia đình trẻ.
+
+Bạn muốn được tính toán cụ thể số tiền ban đầu theo loại căn mình quan tâm? Hãy để lại thông tin để được hỗ trợ. Liên hệ **0937.587.438** để được hỗ trợ.
+
+![Tính toán vốn ban đầu mua K-Home CityView – liên hệ hỗ trợ tính số tiền cần chuẩn bị](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news20/4)
+
+---PROJECT-LINK---k-home-cityview-ho-nai|Xem chi tiết dự án K-Home CityView →
+
+---RELATED---co-the-vay-ngan-hang-nao-de-mua-k-home-cityview|Có Thể Vay Ngân Hàng Nào Để Mua K-Home CityView;chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026`,
+  },
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
