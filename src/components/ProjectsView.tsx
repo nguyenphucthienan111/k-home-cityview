@@ -31,10 +31,9 @@ const PROJECT_COLORS: Record<string, string> = {
 const STATUS_COLORS: Record<string, string> = {
   "Đang mở bán":   "#059669",
   "Đang bốc thăm": "#f59e0b",
-  "Đã công bố":    "#059669",
+  "Đã công bố":    "#f59e0b",
   "Đang thi công": "#2563eb",
   "Sắp mở bán":    "#2563eb",
-  "Đã công bố":   "#f59e0b",
 };
 
 export default function ProjectsView({ onNavigate, initialProject = "all", initialBedrooms = "all" }: ProjectsViewProps) {

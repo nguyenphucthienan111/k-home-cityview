@@ -266,7 +266,20 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       </div>
 
       {/* Content Area */}
-      <article className="max-w-none text-slate-700 leading-relaxed space-y-0">
+      <article
+        className="max-w-none text-slate-700 leading-relaxed space-y-0"
+        onClick={(e) => {
+          const target = e.target as HTMLElement;
+          if (target.tagName === "A") {
+            const href = target.getAttribute("href");
+            if (href && href.startsWith("/") && !href.startsWith("//")) {
+              e.preventDefault();
+              onNavigate(href);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }
+        }}
+      >
         <p className="font-semibold text-slate-900 text-base border-l-4 border-amber-600 pl-4 py-2 bg-amber-50/60 rounded-r-xl mb-8">
           {article.excerpt}
         </p>
@@ -500,7 +513,9 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               elements.push(
                 <ul key={i} className="my-3 space-y-2">
                   {items.map((item, ii) => {
-                    const html = item.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900">$1</strong>');
+                    const html = item
+                      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
+                      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
                     return (
                       <li key={ii} className="flex items-start gap-2.5 text-sm text-slate-700">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
@@ -519,8 +534,10 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
-            // Normal paragraph with **bold** support
-            const html = line.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>');
+            // Normal paragraph with **bold** and [link](url) support
+            const html = line
+              .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
             elements.push(
               <p key={i} className="text-sm text-slate-700 leading-7 mb-1"
                 dangerouslySetInnerHTML={{ __html: html }} />
