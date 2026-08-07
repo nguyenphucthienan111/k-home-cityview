@@ -48,8 +48,8 @@ for (const filepath of files) {
 
   // Update Avenue developer
   content = content.replace(
-    'status: "Sắp công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land \u2022 K-Home Group"',
-    'status: "Sắp công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)"'
+    'status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land \u2022 K-Home Group"',
+    'status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)"'
   );
 
   fs.writeFileSync(filepath, content, "utf8");

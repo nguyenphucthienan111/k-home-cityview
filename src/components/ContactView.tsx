@@ -61,7 +61,7 @@ export default function ContactView() {
         "latitude": "10.9592617",
         "longitude": "106.9022019",
       },
-      "hasMap": "https://www.google.com/maps?q=10.9592617,106.9022019",
+      "hasMap": "https://maps.app.goo.gl/ZiDceAEQt5DyPFGr6",
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61592416756280",
         "https://k-homecityview.vn/",

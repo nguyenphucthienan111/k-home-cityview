@@ -66,7 +66,7 @@ const ProjectCard = memo(function ProjectCard({
         </div>
         <div className={`absolute bottom-4 right-4 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md ${
           project.status === "Đang bốc thăm" ? "bg-amber-400 text-slate-900"
-          : project.status === "Sắp công bố" ? "bg-sky-300 text-slate-900"
+          : project.status === "Đã công bố" ? "bg-sky-300 text-slate-900"
           : project.status === "Đã công bố"  ? "bg-emerald-300 text-slate-900"
           : "bg-white/90 text-slate-800"
         }`}>
@@ -350,7 +350,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       product: "1.022 căn hộ NOXH và 82 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Surbana Jurong, Global Vireon Studio, Handong, Coninco, K-City",
-      status: "Sắp công bố",
+      status: "Đã công bố",
       statusColor: "#7dd3fc",
     },
   ], []);
@@ -406,7 +406,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       location: "Đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, tỉnh Đồng Nai",
       price: "Từ 750 triệu",
       scale: "84 ha · 4 Block 12 tầng · 1.104 căn",
-      badge: "Sắp công bố",
+      badge: "Đã công bố",
       badgeColor: "#7dd3fc",
       image: "/k-home avenue/PC01-TT-copy_2_2-min.jpg.webp"
     },
@@ -2525,7 +2525,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {[
                 { title: "Chưa có nhà ở", desc: "Chưa đứng tên sổ hồng nhà ở tại tỉnh Đồng Nai hoặc diện tích bình quân dưới 10m²/người" },
                 { title: "Thu nhập đáp ứng quy định", desc: "Vợ chồng dưới 50 triệu/tháng · Đơn thân nuôi con dưới 35 triệu · Cá nhân độc thân dưới 25 triệu/tháng" },
-                { title: "Hộ khẩu hoặc tạm trú", desc: "Có hộ khẩu hoặc đang tạm trú tại Đồng Nai từ 1 năm trở lên theo quy định" },
                 { title: "Chưa từng mua NOXH", desc: "Chưa từng mua hoặc thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào trên cả nước" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-3.5 bg-amber-50/60 rounded-xl border border-amber-100">

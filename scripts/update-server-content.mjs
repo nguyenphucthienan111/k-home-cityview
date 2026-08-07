@@ -23,8 +23,8 @@ content = content.replace(
 content = content
   .replace('status: "Đã công bố", rating: 4.7, floorCount: 15, developer: "Kim Oanh Land \u2022 K-Home Group"',
            'status: "Đã công bố", rating: 4.7, floorCount: 15, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)"')
-  .replace('status: "Sắp công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land \u2022 K-Home Group"',
-           'status: "Sắp công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)"');
+  .replace('status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land \u2022 K-Home Group"',
+           'status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)"');
 
 fs.writeFileSync(path, content, "utf8");
 console.log("Done");

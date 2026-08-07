@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense, useCallback, useMemo, startTransition } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Phone } from "lucide-react";
+import { Phone, Mail, ArrowUp, Send, X } from "lucide-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
@@ -143,6 +143,55 @@ export default function App() {
 
   const isAdmin = path === "/admin";
 
+  // Scroll-to-top visibility
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Contact popup state
+  const [showContactPopup, setShowContactPopup] = useState(false);
+  const [contactName, setContactName] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [contactSuccess, setContactSuccess] = useState(false);
+  const [contactError, setContactError] = useState("");
+
+  const handleContactSubmit = useCallback(async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactError("");
+    if (!contactName.trim() || !contactPhone.trim()) {
+      setContactError("Vui lòng điền Họ tên và Số điện thoại.");
+      return;
+    }
+    setContactSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: contactName,
+          phone: contactPhone,
+          email: contactEmail,
+          message: contactMessage || "Yêu cầu tư vấn từ widget liên hệ.",
+          projectSlug: "general",
+          projectName: "Tư vấn chung",
+        }),
+      });
+      if (!res.ok) throw new Error();
+      setContactSuccess(true);
+      setContactName(""); setContactPhone(""); setContactEmail(""); setContactMessage("");
+    } catch {
+      setContactError("Có lỗi xảy ra. Vui lòng thử lại.");
+    } finally {
+      setContactSubmitting(false);
+    }
+  }, [contactName, contactPhone, contactEmail, contactMessage]);
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans antialiased text-slate-800 flex flex-col justify-between selection:bg-amber-500 selection:text-white">
       <Header currentHash={path} />
@@ -162,9 +211,9 @@ export default function App() {
       <Analytics />
       <SpeedInsights />
 
-      {/* Floating Contact Widget — hidden on admin */}
+      {/* Floating Contact Widget (right side) — hidden on admin */}
       {!isAdmin && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <div className="fixed bottom-6 right-4 z-[9999] flex flex-col gap-3">
           <a
             href="tel:0937587438"
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
@@ -202,6 +251,160 @@ export default function App() {
             </span>
             <img src="/messenger-48.webp" alt="Facebook Messenger" className="w-6 h-6 object-contain" width="24" height="24" />
           </a>
+        </div>
+      )}
+
+      {/* Left-side buttons: Contact popup + Scroll to top */}
+      {!isAdmin && (
+        <div className="fixed bottom-6 left-4 lg:left-16 z-[9999] flex flex-col gap-3">
+          {/* Scroll to top */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Lên đầu trang"
+            title="Lên đầu trang"
+            className={`group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-700 hover:bg-amber-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer ${showScrollTop ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"}`}
+          >
+            <span className="absolute left-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-left pointer-events-none border border-slate-800">
+              Lên đầu trang
+            </span>
+            <ArrowUp className="w-5 h-5" />
+          </button>
+
+          {/* Contact popup trigger */}
+          <button
+            onClick={() => { setShowContactPopup(true); setContactSuccess(false); setContactError(""); }}
+            aria-label="Gửi yêu cầu tư vấn"
+            title="Gửi yêu cầu tư vấn"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-amber-500 hover:bg-amber-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+          >
+            <span className="absolute left-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-left pointer-events-none border border-slate-800">
+              Đăng ký tư vấn
+            </span>
+            <Mail className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+      {/* Contact Popup Modal */}
+      {showContactPopup && (
+        <div
+          className="fixed inset-0 z-[99999] flex items-center justify-center p-4"
+          style={{ backgroundColor: "rgba(15,23,42,0.65)", backdropFilter: "blur(4px)" }}
+          onClick={() => setShowContactPopup(false)}
+        >
+          <div
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden"
+            onClick={e => e.stopPropagation()}
+            style={{ animation: "modalIn 0.3s cubic-bezier(0.34,1.3,0.64,1)" }}
+          >
+            {/* Amber top bar */}
+            <div className="h-1.5 bg-gradient-to-r from-amber-500 to-orange-500" />
+
+            <div className="p-6 space-y-4">
+              {/* Header */}
+              <div className="flex items-start justify-between">
+                <div className="space-y-0.5">
+                  <h3 className="text-base font-bold text-slate-800">Đăng Ký Tư Vấn Miễn Phí</h3>
+                  <p className="text-xs text-slate-500">Phản hồi trong vòng 15–30 phút</p>
+                </div>
+                <button
+                  onClick={() => setShowContactPopup(false)}
+                  className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 w-8 h-8 flex items-center justify-center rounded-full transition-all cursor-pointer text-lg shrink-0 mt-0.5"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {contactSuccess ? (
+                <div className="py-6 text-center space-y-3">
+                  <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto">
+                    <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="font-bold text-slate-800 text-sm">Gửi thành công!</p>
+                  <p className="text-xs text-slate-500">Chuyên viên sẽ liên hệ bạn sớm nhất.</p>
+                  <button
+                    onClick={() => setShowContactPopup(false)}
+                    className="px-5 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-3">
+                  {contactError && (
+                    <div className="p-2.5 bg-red-50 border-l-2 border-red-500 text-red-600 text-xs rounded font-medium">
+                      {contactError}
+                    </div>
+                  )}
+
+                  <div className="space-y-1">
+                    <label htmlFor="popup-contact-name" className="text-xs font-semibold text-slate-600 block">Họ và tên *</label>
+                    <input
+                      id="popup-contact-name"
+                      type="text"
+                      required
+                      placeholder="VD: Nguyễn Văn An"
+                      value={contactName}
+                      onChange={e => setContactName(e.target.value)}
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label htmlFor="popup-contact-phone" className="text-xs font-semibold text-slate-600 block">Số điện thoại *</label>
+                    <input
+                      id="popup-contact-phone"
+                      type="tel"
+                      required
+                      placeholder="VD: 0937 587 438"
+                      value={contactPhone}
+                      onChange={e => setContactPhone(e.target.value)}
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label htmlFor="popup-contact-email" className="text-xs font-semibold text-slate-600 block">Email <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
+                    <input
+                      id="popup-contact-email"
+                      type="email"
+                      placeholder="VD: email@gmail.com"
+                      value={contactEmail}
+                      onChange={e => setContactEmail(e.target.value)}
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label htmlFor="popup-contact-msg" className="text-xs font-semibold text-slate-600 block">Nội dung <span className="text-slate-400 font-normal">(không bắt buộc)</span></label>
+                    <textarea
+                      id="popup-contact-msg"
+                      rows={2}
+                      placeholder="Tôi muốn tư vấn về dự án K-Home..."
+                      value={contactMessage}
+                      onChange={e => setContactMessage(e.target.value)}
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={contactSubmitting}
+                    className="w-full py-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl text-sm font-bold tracking-wide shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-60"
+                  >
+                    {contactSubmitting
+                      ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      : <><Send className="w-4 h-4" /> Gửi Yêu Cầu</>
+                    }
+                  </button>
+
+                  <p className="text-xs text-slate-400 text-center">Thông tin được bảo mật tuyệt đối.</p>
+                </form>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

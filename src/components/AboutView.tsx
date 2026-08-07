@@ -41,7 +41,7 @@ const PROJECTS = [
     location: "Nhơn Trạch, Đồng Nai",
     slug: "k-home-avenue-nhon-trach",
     units: "1.022 căn hộ NOXH",
-    status: "Sắp công bố",
+    status: "Đã công bố",
     statusColor: "text-sky-600 bg-sky-50",
   },
 ];
