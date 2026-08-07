@@ -331,4 +331,46 @@
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/thu-nhap-bao-nhieu-thi-duoc-mua-nha-o-xa-hoi-k-home-cityview"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/bo-so-ho-khau-anh-huong-the-nao-den-viec-mua-k-home-cityview</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/bo-so-ho-khau-anh-huong-the-nao-den-viec-mua-k-home-cityview"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/co-the-vay-ngan-hang-nao-de-mua-k-home-cityview</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/co-the-vay-ngan-hang-nao-de-mua-k-home-cityview"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/gia-k-home-cityview-co-tang-theo-tung-giai-doan-khong</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/gia-k-home-cityview-co-tang-theo-tung-giai-doan-khong"/>
+  </url>
 </urlset>
