@@ -143,7 +143,7 @@ Liên hệ **0937.587.438** để được tư vấn trực tiếp về bảng g
     project: "chung",
     content: `Bạn đang làm việc tại các khu công nghiệp Biên Hòa, Nhơn Trạch, Trảng Bom với mức lương vừa phải và muốn sở hữu nhà ở xã hội (NOXH)? Quy định năm 2026 đã có nhiều thay đổi có lợi cho người lao động. Bài viết dưới đây tổng hợp chính xác, minh bạch các điều kiện theo Luật Nhà ở 2023 và các nghị định mới nhất, kèm thông tin về chuỗi dự án K-Home đang triển khai tại Đồng Nai.
 
-![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](/news/news 1.webp)
+![Chuỗi dự án nhà ở xã hội K-Home Đồng Nai 2026 – cơ hội an cư cho người lao động](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-1)
 
 ## 1. Điều kiện về nhà ở (bắt buộc)
 
@@ -153,7 +153,7 @@ Người đứng tên mua NOXH tại Đồng Nai phải thuộc một trong các
 - Đã có nhà ở nhưng diện tích nhà ở bình quân đầu người trong hộ gia đình thấp hơn 15m² sàn/người.
 - Chưa được mua, thuê mua nhà ở xã hội hoặc hưởng chính sách hỗ trợ nhà ở, đất ở dưới mọi hình thức tại Đồng Nai.
 
-![Điều kiện về nhà ở khi mua nhà ở xã hội Đồng Nai – diện tích dưới 15m2 sàn mỗi người](/news/news 2.jpg)
+![Điều kiện về nhà ở khi mua nhà ở xã hội Đồng Nai – diện tích dưới 15m2 sàn mỗi người](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-2)
 
 ## 2. Điều kiện về thu nhập (đã được nới lỏng mạnh từ 07/4/2026)
 
@@ -170,7 +170,7 @@ Theo Nghị định 136/2026/NĐ-CP (có hiệu lực từ ngày 07/4/2026), m�
 - Thời gian xác định: 12 tháng liền kề trước thời điểm cơ quan có thẩm quyền xác nhận.
 - UBND tỉnh được phép điều chỉnh hệ số theo điều kiện địa phương.
 
-![Mức thu nhập mua nhà ở xã hội Đồng Nai 2026 theo Nghị định 136 – độc thân 25 triệu, vợ chồng 50 triệu](/news/news 3.jpg)
+![Mức thu nhập mua nhà ở xã hội Đồng Nai 2026 theo Nghị định 136 – độc thân 25 triệu, vợ chồng 50 triệu](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-3)
 
 ## 3. Điều kiện về cư trú (đã bỏ sổ hộ khẩu)
 
@@ -179,25 +179,25 @@ Theo Luật Nhà ở 2023, điều kiện về sổ hộ khẩu hoặc tạm tr�
 - Có hợp đồng lao động có thời hạn từ 01 năm trở lên.
 - Đang tham gia đóng Bảo hiểm xã hội (BHXH) tại tỉnh Đồng Nai.
 
-![Điều kiện cư trú mua nhà ở xã hội Đồng Nai 2026 – chỉ cần hợp đồng lao động và BHXH](/news/news 4.jpg)
+![Điều kiện cư trú mua nhà ở xã hội Đồng Nai 2026 – chỉ cần hợp đồng lao động và BHXH](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-4)
 
 ## Chuỗi dự án K-Home tại Đồng Nai
 
 Nếu bạn đáp ứng đủ 3 điều kiện trên, chuỗi dự án K-Home do Kim Oanh Group phát triển là lựa chọn đáng cân nhắc. Các dự án theo tiêu chuẩn Singapore, hướng tới chứng chỉ công trình xanh EDGE.
 
-![Chuỗi dự án nhà ở xã hội K-Home Kim Oanh Group tại Đồng Nai chuẩn Singapore và EDGE](/news/news 5.jpg)
+![Chuỗi dự án nhà ở xã hội K-Home Kim Oanh Group tại Đồng Nai chuẩn Singapore và EDGE](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-5)
 
 **[K-Home CityView (P. Hố Nai, Biên Hòa)](/k-home-cityview-ho-nai):** Đường Điểu Xiển, 2,85 ha, 4 tòa 22 tầng, ~1.800 căn. Đã khởi công 20/5/2026. Tìm hiểu thêm về [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [mặt bằng và loại căn hộ K-Home CityView](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
 
-![Dự án K-Home Cityview phường Hố Nai Biên Hòa – nhà ở xã hội 2026](/news/news 6.jpg)
+![Dự án K-Home Cityview phường Hố Nai Biên Hòa – nhà ở xã hội 2026](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-6)
 
 **K-Home Avenue (Nhơn Trạch):** Mặt tiền đường 25C, ~1.100–1.200 căn (4 tòa 12 tầng). Sales Gallery khai trương 12/4/2026. Kết nối sân bay Long Thành và Vành đai 3.
 
-![K-Home Avenue Nhơn Trạch mặt tiền đường 25C – căn hộ mẫu chuẩn Singapore](/news/news 7.jpg)
+![K-Home Avenue Nhơn Trạch mặt tiền đường 25C – căn hộ mẫu chuẩn Singapore](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-7)
 
 **K-Home Midtown (Trảng Bom):** Trung tâm Trảng Bom, 1 block 15 tầng, ~500–560 căn. Phục vụ lao động các cụm công nghiệp khu vực.
 
-![K-Home Midtown Trảng Bom – nhà ở xã hội cho lao động khu công nghiệp](/news/news 8.webp)
+![K-Home Midtown Trảng Bom – nhà ở xã hội cho lao động khu công nghiệp](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/news/news-8)
 
 Người mua được hỗ trợ vay vốn ưu đãi từ Ngân hàng Chính sách xã hội (lãi suất ~5,4%/năm, tối đa 75–80% giá trị hợp đồng, thời hạn đến 25 năm). Xem thêm [ai được mua K-Home CityView theo quy định NOXH](/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026) và [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) để chuẩn bị đăng ký.
 
