@@ -3,6 +3,140 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n23",
+    slug: "thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao",
+    title: "Thanh Toán K-Home CityView Theo Tiến Độ Như Thế Nào?",
+    date: "2026-08-09",
+    excerpt: "Tìm hiểu phương án thanh toán K-Home CityView theo tiến độ, vốn ban đầu, lịch trả góp, phương án vay và những khoản cần kiểm tra trước khi đăng ký mua căn hộ.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786260159/chinh-sach-thanh-toan-khomecityview-theo-tien-do_lqpqwb.png",
+    category: "Chính sách",
+    project: "cityview",
+    content: `> **Lưu ý:** Lịch đóng tiền, tỷ lệ thanh toán, số tiền đặt cọc, chính sách vay và thời điểm giải ngân có thể thay đổi theo từng giai đoạn. Người mua cần xác nhận phương án áp dụng cho đúng mã căn trước khi đặt cọc hoặc ký hợp đồng.
+
+![Chính sách thanh toán K-Home CityView theo tiến độ](https://res.cloudinary.com/dthv0nsq/image/upload/v1786260159/chinh-sach-thanh-toan-khomecityview-theo-tien-do_lqpqwb.png)
+
+## Thanh toán K-Home CityView theo tiến độ là gì?
+
+Thanh toán theo tiến độ là hình thức người mua [trang dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai) không phải thanh toán toàn bộ giá trị căn hộ trong một lần. Số tiền được chia thành nhiều đợt theo lịch quy định trong phiếu xác nhận, hợp đồng hoặc thông báo chính sách của dự án.
+
+Đây là phương án phổ biến đối với người mua nhà ở xã hội vì giúp giảm áp lực tài chính ban đầu. Thay vì phải chuẩn bị toàn bộ giá trị căn hộ, khách hàng có thể thanh toán từng phần bằng vốn tự có, kết hợp với khoản vay ngân hàng nếu đáp ứng điều kiện. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau) để có kế hoạch tài chính phù hợp.
+
+Theo thông tin đang được công bố, khách hàng có thể lựa chọn phương án thanh toán theo nhiều đợt, trong đó có phương án chia thành 20 đợt, phương án thanh toán đợt đầu 50% rồi chia phần còn lại thành 6 đợt, hoặc thanh toán đợt đầu 70% rồi chia phần còn lại thành 3 đợt.
+
+Tuy nhiên, các phương án trên cần được xem là thông tin tham khảo theo từng chính sách công bố. Khi đăng ký mua, người mua nên yêu cầu bảng lịch thanh toán chính thức dành cho đúng loại căn và mã căn của mình.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|Phối cảnh dự án K-Home CityView Biên Hòa
+
+## Các phương án thanh toán K-Home CityView được tham khảo
+
+Dựa trên thông tin đang được đăng tải, khách hàng có thể gặp một số phương án thanh toán sau. Xem thêm [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) để hiểu rõ hơn về từng hình thức.
+
+**Phương án 1: Thanh toán theo nhiều đợt**
+
+Giá trị căn hộ được chia thành nhiều lần thanh toán. Một nguồn thông tin đang giới thiệu phương án thanh toán thành 20 đợt, giúp khách hàng phân bổ dòng tiền trong thời gian dài hơn.
+
+Phương án thanh toán nhiều đợt thường phù hợp với:
+- Người có thu nhập ổn định hằng tháng
+- Gia đình có một phần vốn tự có nhưng chưa thể thanh toán số tiền lớn cùng lúc
+- Khách hàng muốn kết hợp vốn tự có và khoản vay
+
+Tuy nhiên, số tiền ở mỗi đợt không nhất thiết bằng nhau. Một số đợt đầu có thể yêu cầu tỷ lệ khác với các đợt sau, đặc biệt tại thời điểm ký thỏa thuận hoặc nhận bàn giao.
+
+**Phương án 2: Thanh toán 50% ở đợt đầu, phần còn lại chia thành 6 đợt**
+
+Khách hàng thanh toán 50% ở lần đầu, sau đó chia phần còn lại thành 6 đợt. Phương án này phù hợp hơn với người có khả năng chuẩn bị nguồn vốn ban đầu tương đối lớn.
+
+Trước khi lựa chọn, bạn nên kiểm tra:
+- 50% được tính trên giá trị nào và đã bao gồm VAT chưa
+- Khoản 50% thanh toán ở thời điểm nào
+- Sáu đợt tiếp theo cách nhau bao lâu
+- Có được sử dụng khoản vay cho phần còn lại không
+
+**Phương án 3: Thanh toán 70% ở đợt đầu, phần còn lại chia thành 3 đợt**
+
+Cần nguồn vốn ban đầu lớn hơn nhưng số lần thanh toán tiếp theo ít hơn. Phù hợp với người có sẵn nguồn tiền, muốn giảm số lần theo dõi lịch đóng tiền và không muốn phụ thuộc quá nhiều vào khoản vay dài hạn.
+
+![Các phương án thanh toán K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/v1786260211/cac-phuong-an-thanh-toan-k-home-cityview_my8gb9.png)
+
+## Lịch trả góp K-Home CityView có thể gồm những giai đoạn nào?
+
+Một lịch thanh toán căn hộ thường được chia theo các mốc quan trọng của giao dịch và tiến độ dự án:
+
+| Giai đoạn | Nội dung |
+|---|---|
+| 1 | Khoản đặt cọc hoặc xác nhận đăng ký |
+| 2 | Đợt ký văn bản thỏa thuận |
+| 3 | Đợt ký hợp đồng mua bán |
+| 4–6 | Các đợt theo tiến độ xây dựng |
+| 7 | Đợt hoàn thiện căn hộ |
+| 8 | Đợt trước khi nhận bàn giao |
+| Cuối | Khoản phí liên quan theo hợp đồng |
+
+Không nên chỉ hỏi "đợt đầu đóng bao nhiêu", mà cần xin toàn bộ lịch thanh toán để biết tổng số tiền phải chuẩn bị trong từng tháng hoặc từng quý. Xem thêm [tiến độ K-Home CityView 2026](/tin-tuc/tien-do-k-home-cityview-2026-cap-nhat-moi-nhat) để theo sát các mốc quan trọng của dự án.
+
+## Thanh toán bằng vốn tự có và vốn vay khác nhau thế nào?
+
+**Vốn tự có:** Không phát sinh lãi vay, không phụ thuộc thời gian xét duyệt tín dụng, chủ động dòng tiền. Nhược điểm là phải tích lũy đủ cho từng đợt.
+
+**Vốn vay:** Một số thông tin giới thiệu K-Home CityView cho biết khách hàng có thể được hỗ trợ vay tối đa khoảng 80% giá trị căn hộ qua ngân hàng chính sách, với lãi suất ưu đãi khoảng 5,4%/năm. Xem thêm [có thể vay ngân hàng nào để mua K-Home CityView](/tin-tuc/co-the-vay-ngan-hang-nao-de-mua-k-home-cityview) để hiểu rõ điều kiện và quy trình.
+
+Tỷ lệ vay thực tế phụ thuộc vào thu nhập, tình trạng tín dụng, hồ sơ chứng minh và quy định ngân hàng tại thời điểm vay.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Tiện ích nội khu K-Home CityView Biên Hòa
+
+## Cần chuẩn bị bao nhiêu tiền trước khi thanh toán?
+
+Số tiền cần chuẩn bị phụ thuộc vào [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và phương án thanh toán được lựa chọn. Một số nguồn đề cập mức vốn ban đầu khoảng **150–200 triệu đồng** tùy căn, nhưng đây là số liệu tham khảo.
+
+| Khoản | Nội dung cần kiểm tra |
+|---|---|
+| Tiền cọc | Số tiền, thời điểm nộp, điều kiện xử lý |
+| Vốn tự có | Tỷ lệ theo phương án thanh toán |
+| Khoản vay | Số tiền dự kiến được ngân hàng duyệt |
+| Phí bảo trì | Đã bao gồm trong giá hay chưa |
+| VAT và chi phí khác | Kiểm tra theo hợp đồng |
+| Quỹ dự phòng | Dành cho giai đoạn chờ giải ngân hoặc phát sinh |
+
+Nếu sử dụng khoản vay, không nên dùng toàn bộ tiền tiết kiệm để thanh toán đợt đầu — nên giữ lại khoản dự phòng cho sinh hoạt và trường hợp giải ngân chậm.
+
+## Ví dụ cách tính lịch trả góp (minh họa)
+
+Giả sử một căn hộ có giá trị **1 tỷ đồng** — đây chỉ là ví dụ cách tính, không phải bảng giá chính thức. Xem [bảng giá K-Home CityView 2026 theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can) để có số liệu thực tế.
+
+- **Thanh toán 25% vốn tự có:** Đợt đầu 200 triệu, phần còn lại 800 triệu theo lịch hoặc khoản vay
+- **Thanh toán 50% đợt đầu:** Đợt đầu 500 triệu, còn lại chia 6 đợt ≈ 83,3 triệu/đợt
+- **Thanh toán 70% đợt đầu:** Đợt đầu 700 triệu, còn lại chia 3 đợt ≈ 100 triệu/đợt
+
+## Có thể vừa thanh toán theo tiến độ vừa vay ngân hàng không?
+
+Có. Khách hàng thường dùng vốn tự có để thanh toán các khoản ban đầu, sau đó khoản vay được giải ngân theo quy định. Xem thêm [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [ai được mua K-Home CityView theo quy định NOXH](/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026) để chuẩn bị trước.
+
+Trước khi ký kết, bạn cần hỏi rõ:
+- Ngân hàng giải ngân theo từng đợt hay một lần?
+- Khoản vay có được dùng để thanh toán đợt đầu không?
+- Lãi suất ưu đãi áp dụng trong thời gian nào?
+- Có thời gian ân hạn nợ gốc hay không?
+- Phí trả nợ trước hạn là bao nhiêu?
+
+## Những rủi ro cần lưu ý
+
+- **Không xem toàn bộ lịch đóng tiền** — chỉ quan tâm khoản ban đầu, bỏ qua các đợt tiếp theo có thể lớn hơn
+- **Nhầm giữa giá căn hộ và số tiền thực tế** — cần cộng thêm VAT, phí bảo trì, phí quản lý
+- **Chưa được duyệt vay nhưng đã cam kết lịch thanh toán** — cần có phương án dự phòng
+- **Chuyển tiền khi chưa xác minh tài khoản** — chỉ chuyển theo hướng dẫn chính thức, có phiếu thu
+- **Dùng bảng giá hoặc chính sách đã cũ** — yêu cầu văn bản có ngày phát hành rõ ràng
+
+## Kết luận
+
+Thanh toán K-Home CityView theo tiến độ giúp người mua phân bổ dòng tiền thành nhiều đợt. Các thông tin đang công bố cho thấy dự án có nhiều phương án như 20 đợt, 50%+6 đợt hoặc 70%+3 đợt, kết hợp với phương án vay ưu đãi ~5,4%/năm tối đa 80% giá trị căn hộ.
+
+Trước khi quyết định, người mua nên xem [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z) và [thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview) để nắm toàn bộ quá trình.
+
+Liên hệ **0937.587.438** để được tư vấn phương án thanh toán phù hợp với khả năng tài chính của bạn.
+
+---RELATED---chinh-sach-thanh-toan-k-home-cityview-2026|Chính Sách Thanh Toán K-Home CityView 2026;mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau|Mua K-Home CityView Cần Chuẩn Bị Bao Nhiêu Tiền Ban Đầu`,
+  },
+  {
     id: "n22" ,
      slug: "gia-k-home-cityview-co-tang-theo-tung-giai-doan-khong",
     title: "Giá K-Home CityView Có Tăng Theo Từng Giai Đoạn Không?",

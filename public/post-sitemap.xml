@@ -373,4 +373,11 @@
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/gia-k-home-cityview-co-tang-theo-tung-giai-doan-khong"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao"/>
+  </url>
 </urlset>
