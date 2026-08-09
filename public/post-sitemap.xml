@@ -380,4 +380,11 @@
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram"/>
+  </url>
 </urlset>

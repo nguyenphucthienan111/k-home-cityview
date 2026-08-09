@@ -3,6 +3,119 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n24",
+    slug: "k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram",
+    title: "K-Home CityView Có Hỗ Trợ Vay Bao Nhiêu Phần Trăm?",
+    date: "2026-08-09",
+    excerpt: "K-Home CityView được giới thiệu hỗ trợ vay tối đa khoảng 75–80% giá trị căn hộ. Tìm hiểu tỷ lệ vay, vốn tự có, lãi suất và điều kiện cần biết trước khi đăng ký.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786261925/k-home-cityview-ho-tro-vay-toi-da-bao-nhieu_o8kcfj.png",
+    category: "Chính sách",
+    project: "cityview",
+    content: `> **Lưu ý:** Tỷ lệ vay thực tế phụ thuộc vào điều kiện người mua, giá trị hợp đồng, hồ sơ tín dụng, quy định ngân hàng và chính sách tại thời điểm nộp hồ sơ. "Hỗ trợ vay tối đa 75–80%" không có nghĩa mọi khách hàng đều chắc chắn được ngân hàng duyệt đúng mức đó.
+
+![K-Home CityView hỗ trợ vay tối đa bao nhiêu phần trăm](https://res.cloudinary.com/dthv0nsq/image/upload/v1786261925/k-home-cityview-ho-tro-vay-toi-da-bao-nhieu_o8kcfj.png)
+
+## K-Home CityView hỗ trợ vay bao nhiêu phần trăm?
+
+Theo các thông tin đang được công bố, khách hàng mua [trang dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai) có thể được hỗ trợ vay tối đa khoảng **75–80%** giá trị căn hộ, người mua chuẩn bị khoảng 20–25% vốn tự có.
+
+Đây là chính sách tài chính đáng chú ý đối với người mua nhà ở xã hội, bởi khách hàng không nhất thiết phải chuẩn bị toàn bộ giá trị căn hộ ngay từ đầu. Phần vốn tự có dùng để thanh toán các đợt đầu, trong khi phần còn lại được xem xét vay theo quy định ngân hàng. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau) để có kế hoạch chi tiết.
+
+Tuy nhiên, người mua cần phân biệt rõ:
+- Tỷ lệ vay tối đa theo chính sách
+- Tỷ lệ vay được ngân hàng phê duyệt thực tế
+- Số tiền vay tính trên giá trị hợp đồng
+- Khoản tiền khách hàng phải tự chuẩn bị
+- Các chi phí không nằm trong giá trị được vay
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|Phối cảnh dự án K-Home CityView Biên Hòa Đồng Nai
+
+## Người mua cần chuẩn bị bao nhiêu vốn tự có?
+
+Nếu tạm tính theo phương án vay tối đa 80%, người mua cần chuẩn bị khoảng 20% vốn tự có. Theo phương án vay 75%, vốn tự có khoảng 25%. Đây là tỷ lệ tham khảo để hình dung kế hoạch tài chính ban đầu.
+
+| Giá trị căn hộ | Vốn tự có ~25% | Khoản vay tối đa tham khảo 75% |
+|---|---|---|
+| 1 tỷ đồng | 250 triệu đồng | 750 triệu đồng |
+| 1,2 tỷ đồng | 300 triệu đồng | 900 triệu đồng |
+| 1,5 tỷ đồng | 375 triệu đồng | 1,125 tỷ đồng |
+| 1,8 tỷ đồng | 450 triệu đồng | 1,35 tỷ đồng |
+
+Bảng trên chỉ là phép tính minh họa, chưa bao gồm các khoản phí, chi phí phát sinh hoặc giới hạn phê duyệt của ngân hàng. Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) để có số liệu giá căn thực tế.
+
+Số vốn thực tế còn phụ thuộc vào giá bán của mã căn, diện tích, tỷ lệ vay được duyệt, khoản thanh toán đầu tiên, phí bảo trì và khoản dự phòng sinh hoạt gia đình.
+
+## Lãi suất vay K-Home CityView khoảng bao nhiêu?
+
+Một số thông tin giới thiệu K-Home CityView cho biết khách hàng đủ điều kiện có thể tiếp cận khoản vay nhà ở xã hội với lãi suất ưu đãi khoảng **5,4%/năm**, thời hạn vay có thể lên đến 25 năm. Xem thêm [có thể vay ngân hàng nào để mua K-Home CityView](/tin-tuc/co-the-vay-ngan-hang-nao-de-mua-k-home-cityview) để hiểu rõ điều kiện.
+
+Tuy nhiên, lãi suất vay cần được kiểm tra tại thời điểm nộp hồ sơ vì có thể phụ thuộc vào ngân hàng cho vay, nhóm đối tượng mua, thời điểm giải ngân và chính sách từng giai đoạn.
+
+Người mua không nên chỉ quan tâm đến tỷ lệ vay mà bỏ qua tổng số tiền phải trả trong suốt thời gian vay. Lãi suất thấp giúp giảm áp lực, nhưng khoản vay càng lớn và thời hạn càng dài thì tổng tiền gốc và lãi cần được tính toán cẩn thận.
+
+## Khoản vay 75–80% có phải lúc nào cũng được duyệt không?
+
+Không. Mức 75–80% thường được hiểu là hạn mức tối đa tham khảo, không phải cam kết ngân hàng sẽ giải ngân cho mọi hồ sơ. Ngân hàng sẽ xem xét:
+
+- Người mua có thuộc nhóm được mua nhà ở xã hội không — xem [ai được mua K-Home CityView theo quy định NOXH](/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026)
+- Thu nhập hằng tháng có ổn định và đáp ứng điều kiện không — xem [thu nhập bao nhiêu thì được mua K-Home CityView](/tin-tuc/thu-nhap-bao-nhieu-thi-duoc-mua-nha-o-xa-hoi-k-home-cityview)
+- Hồ sơ tín dụng có phát sinh nợ xấu không
+- Hợp đồng lao động và sao kê thu nhập
+
+Vì vậy, người mua nên chuẩn bị phương án tài chính trong trường hợp ngân hàng chỉ phê duyệt tỷ lệ thấp hơn.
+
+## Vay 75% hay 80% khác nhau thế nào?
+
+Ví dụ với căn hộ giá **1 tỷ đồng**:
+- **Vay 75%:** khoản vay 750 triệu đồng, vốn tự có 250 triệu đồng
+- **Vay 80%:** khoản vay 800 triệu đồng, vốn tự có 200 triệu đồng
+
+Chênh lệch vốn tự có giữa hai phương án là khoảng 50 triệu đồng. Tuy nhiên, phương án vay cao hơn cũng làm số tiền trả nợ hằng tháng và tổng lãi phải trả cao hơn.
+
+Không nên mặc định vay 80% luôn tốt hơn vay 75%. Phương án phù hợp phải dựa trên thu nhập, chi phí sinh hoạt, số người phụ thuộc và khả năng duy trì khoản trả nợ lâu dài.
+
+## Hồ sơ vay mua K-Home CityView cần chuẩn bị gì?
+
+Xem đầy đủ danh sách tại [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi). Tóm tắt các nhóm chính:
+
+- **Hồ sơ cá nhân:** CCCD, giấy xác nhận cư trú, giấy đăng ký kết hôn
+- **Hồ sơ thu nhập:** Hợp đồng lao động, sao kê lương, xác nhận thu nhập
+- **Hồ sơ nhà ở xã hội:** Đơn đăng ký, giấy tờ chứng minh đối tượng và tình trạng nhà ở — xem [thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview)
+- **Hồ sơ căn hộ:** Phiếu đăng ký, hợp đồng mua bán, lịch thanh toán
+
+Người mua nên chuẩn bị hồ sơ song song với việc tìm hiểu giá và mã căn, tránh chờ đến khi cần giải ngân mới bắt đầu.
+
+## Quy trình vay mua K-Home CityView cơ bản
+
+Xem đầy đủ tại [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z). Tóm tắt các bước liên quan đến vay:
+
+- Xác định loại căn và giá trị căn hộ
+- Ước tính vốn tự có và khoản vay cần thiết
+- Chuẩn bị hồ sơ cá nhân và thu nhập
+- Nộp hồ sơ vay cho ngân hàng
+- Nhận thông báo hạn mức được phê duyệt
+- Ký hợp đồng tín dụng
+- Giải ngân theo tiến độ thanh toán — xem [thanh toán K-Home CityView theo tiến độ như thế nào](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao)
+
+## Có nên vay tối đa 80% giá trị căn hộ không?
+
+**Nên cân nhắc vay mức cao khi:** Thu nhập ổn định, khoản trả nợ trong khả năng, còn quỹ dự phòng, không có nhiều khoản nợ khác.
+
+**Nên vay thấp hơn khi:** Thu nhập không ổn định, đang trả nhiều khoản nợ, gia đình có con nhỏ hoặc người phụ thuộc, chưa có khoản dự phòng.
+
+Nguyên tắc thận trọng: tổng các khoản trả nợ hằng tháng không nên vượt quá khả năng tài chính an toàn của gia đình.
+
+## Kết luận
+
+K-Home CityView hiện được giới thiệu với chính sách hỗ trợ vay tối đa khoảng 75–80% giá trị căn hộ và lãi suất ưu đãi khoảng 5,4%/năm. Tuy nhiên, tỷ lệ và điều kiện thực tế cần được xác nhận theo đúng ngân hàng, mã căn và chính sách tại thời điểm nộp hồ sơ.
+
+Trước khi quyết định, người mua nên tham khảo [bảng giá K-Home CityView 2026 theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can), [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) để có bức tranh đầy đủ.
+
+Liên hệ **0937.587.438** để được tư vấn về điều kiện vay và phương án tài chính phù hợp.
+
+---RELATED---co-the-vay-ngan-hang-nao-de-mua-k-home-cityview|Có Thể Vay Ngân Hàng Nào Để Mua K-Home CityView;mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau|Mua K-Home CityView Cần Chuẩn Bị Bao Nhiêu Tiền Ban Đầu`,
+  },
+  {
     id: "n23",
     slug: "thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao",
     title: "Thanh Toán K-Home CityView Theo Tiến Độ Như Thế Nào?",
