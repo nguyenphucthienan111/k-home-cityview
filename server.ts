@@ -364,6 +364,116 @@ const projects = [
 
 const newsList = [
   {
+    id: "n26",
+    slug: "mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi",
+    title: "Mua K-Home CityView Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí?",
+    date: "2026-08-09",
+    excerpt: "So sánh diện tích căn hộ K-Home CityView, ưu nhược điểm căn 1PN, 2PN và 3PN, cách tính vốn tự có 25% và lựa chọn căn phù hợp ngân sách.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Diện tích, giá bán, cơ cấu căn hộ và chính sách thanh toán có thể thay đổi theo từng đợt công bố. Người mua nên kiểm tra mặt bằng, mã căn và bảng giá chính thức trước khi đăng ký.
+
+![Các loại diện tích căn hộ K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
+
+## K-Home CityView có những loại căn hộ nào?
+
+[K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu với nhiều loại căn hộ, diện tích tham khảo từ khoảng **47 m² đến 84 m²**, phù hợp với nhiều nhóm khách hàng từ người độc thân đến gia đình đa thế hệ. Xem chi tiết tại [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+| Loại căn | Diện tích tham khảo | Phù hợp với | Tối ưu chi phí |
+|---|---|---|---|
+| 1PN | ~47 m² | Người độc thân, vợ chồng trẻ | Tối ưu vốn ban đầu |
+| 1PN diện tích lớn | ~62 m² | Vợ chồng trẻ cần thêm không gian | Cân bằng giá và công năng |
+| 2PN | ~62–70 m² | Gia đình 3–4 thành viên | Cân bằng tốt cho ở lâu dài |
+| 3PN | ~84 m² | Gia đình đông người, đa thế hệ | Tối ưu công năng nhưng vốn cao hơn |
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-B/2pns-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg|Layout căn hộ 1PN, 2PN, 3PN tại K-Home CityView
+
+## Vốn tự có khi mua K-Home CityView là bao nhiêu?
+
+Theo chính sách hiện tại, người mua chuẩn bị **25% vốn tự có**, ngân hàng hỗ trợ vay khoảng **75% giá trị căn hộ**. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) để hiểu rõ điều kiện vay.
+
+| Giá trị căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 950 triệu đồng | 237,5 triệu | 712,5 triệu |
+| 1,25 tỷ đồng | 312,5 triệu | 937,5 triệu |
+| 1,5 tỷ đồng | 375 triệu | 1,125 tỷ |
+| 1,8 tỷ đồng | 450 triệu | 1,35 tỷ |
+
+Bảng trên chỉ là phép tính minh họa, chưa bao gồm phí bảo trì, VAT hoặc chi phí phát sinh. Ngoài 25% vốn đối ứng, cần dự trù thêm tiền cọc, phí hồ sơ, nội thất và quỹ dự phòng. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau).
+
+## Căn 1 phòng ngủ ~47 m²: tối ưu vốn ban đầu
+
+Phù hợp với người độc thân, vợ chồng mới cưới, hoặc gia đình nhỏ chưa có con. Tổng giá trị thấp hơn nên vốn tự có 25% cũng dễ tiếp cận hơn.
+
+Ví dụ căn giá **950 triệu đồng**: vốn tự có ~237,5 triệu, khoản vay ~712,5 triệu. Khoản trả góp ước tính ~4,3 triệu đồng/tháng (25 năm, 5,4%/năm). Xem bảng tính chi tiết tại [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview).
+
+**Hạn chế:** Nếu gia đình dự kiến có thêm thành viên, diện tích 47 m² có thể trở nên chật sau vài năm sử dụng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|Căn hộ mẫu 1PN K-Home CityView bàn giao hoàn thiện cơ bản
+
+## Căn 1 phòng ngủ diện tích lớn ~62 m²: phương án cân bằng
+
+Phù hợp với người làm việc tại nhà, vợ chồng trẻ cần thêm không gian làm việc hoặc tiếp đón. So với căn 47 m², loại căn này dễ bố trí hơn nhưng tổng giá cao hơn.
+
+Không nên chỉ nhìn vào giá mỗi mét vuông — cần so sánh **tổng giá trị căn**, vốn tự có 25% và khoản trả hằng tháng.
+
+## Căn 2 phòng ngủ ~62–70 m²: cân bằng nhất cho gia đình trẻ
+
+Đây là phương án cân bằng giữa diện tích, công năng và chi phí. Phù hợp với gia đình 3–4 thành viên, vợ chồng có con nhỏ hoặc muốn ở ổn định 5–10 năm. Xem thêm [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+Ví dụ căn giá **1,5 tỷ đồng**: vốn tự có ~375 triệu, khoản vay ~1,125 tỷ. Khoản trả góp ước tính ~6,4 triệu đồng/tháng.
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) để có số liệu giá căn thực tế.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-4.jpg|Căn hộ mẫu 2PN K-Home CityView Biên Hòa
+
+## Căn 3 phòng ngủ ~84 m²: cho gia đình đông người
+
+Phù hợp với gia đình có 2–3 con, gia đình sống cùng cha mẹ, hoặc cần phòng ngủ riêng cho từng thành viên.
+
+Ví dụ căn giá **1,8 tỷ đồng**: vốn tự có ~450 triệu, khoản vay ~1,35 tỷ. Khoản trả góp ước tính ~8,7 triệu đồng/tháng.
+
+Căn 3PN không phải lựa chọn tối ưu cho người độc thân hoặc gia đình nhỏ — diện tích không dùng hết trong khi khoản vay lớn hơn.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-38.jpg|Căn hộ mẫu 3PN K-Home CityView Biên Hòa
+
+## Nên chọn căn nào để tối ưu chi phí?
+
+**Người độc thân:** Căn 1PN ~47 m² — giảm vốn tự có và khoản vay, dễ tiếp cận nhất.
+
+**Vợ chồng trẻ:** Căn 1PN hoặc 2PN tùy kế hoạch có con. Nếu dự kiến có con sớm, căn 2PN sẽ tránh phải chuyển nhà sau vài năm.
+
+**Gia đình 3–4 thành viên:** Căn 2PN ~62–70 m² là phương án cân bằng nhất.
+
+**Gia đình nhiều thế hệ:** Căn 3PN ~84 m² nếu tài chính đáp ứng 25% vốn tự có và khoản trả nợ hằng tháng.
+
+## 5 tiêu chí chọn diện tích căn hộ
+
+- **Số thành viên gia đình** — không chọn căn quá nhỏ nếu dự kiến tăng thành viên sớm
+- **Thời gian dự kiến ở** — ở ngắn hạn thì căn 1PN, ở lâu dài thì căn 2PN linh hoạt hơn
+- **Khả năng chuẩn bị 25% vốn tự có** — tính thêm phí phát sinh và quỹ dự phòng
+- **Khả năng trả khoản vay 75% hằng tháng** — yêu cầu ngân hàng lập bảng trả nợ trước khi quyết định
+- **Công năng sử dụng thực tế** — căn lớn không phải lúc nào cũng tốt hơn nếu không dùng hết
+
+Xem thêm [thanh toán K-Home CityView theo tiến độ như thế nào](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) và [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) để nắm rõ lịch đóng tiền trước khi chọn căn.
+
+## Kết luận
+
+Để tối ưu chi phí khi mua K-Home CityView, hãy chọn căn có diện tích **vừa đủ nhu cầu**, không tạo áp lực khoản vay quá lớn và phù hợp với thu nhập hằng tháng.
+
+- **1PN ~47 m²** → vốn ban đầu thấp nhất, phù hợp người độc thân/vợ chồng trẻ
+- **1PN lớn ~62 m²** → cân bằng không gian và chi phí
+- **2PN ~70 m²** → lựa chọn phổ biến nhất cho gia đình trẻ
+- **3PN ~84 m²** → công năng tối đa nhưng cần vốn lớn hơn
+
+Trước khi quyết định, xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) để kiểm tra bạn có đủ điều kiện không.
+
+Liên hệ **0937.587.438** để được tư vấn chọn căn phù hợp ngân sách và nhu cầu gia đình.
+
+---RELATED---mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat|Mặt Bằng K-Home CityView: Quy Mô, Loại Căn & Tiện Ích;k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong|K-Home CityView Có Phù Hợp Với Gia Đình Trẻ Không`,
+  },
+  {
     id: "n25",
     slug: "moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview",
     title: "Mỗi Tháng Phải Trả Bao Nhiêu Nếu Mua K-Home CityView?",
