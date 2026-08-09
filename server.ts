@@ -364,6 +364,122 @@ const projects = [
 
 const newsList = [
   {
+    id: "n25",
+    slug: "moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview",
+    title: "Mỗi Tháng Phải Trả Bao Nhiêu Nếu Mua K-Home CityView?",
+    date: "2026-08-09",
+    excerpt: "Mua K-Home CityView mỗi tháng phải trả bao nhiêu? Tìm hiểu ví dụ trả góp theo giá căn hộ, vốn tự có 25%, khoản vay 75% và lãi suất tham khảo 5,4%/năm.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786262906/tra-gop-hang-thang-khi-mua-khome-cityview_my5njf.png",
+    category: "Chính sách",
+    project: "cityview",
+    content: `> **Lưu ý:** Các con số trả góp trong bài là ví dụ tham khảo với tỷ lệ vốn tự có 25%, khoản vay 75%, lãi suất 5,4%/năm và thời hạn 25 năm. Số tiền thực tế phụ thuộc vào giá mã căn, lãi suất, thời hạn, phương thức tính lãi và lịch giải ngân.
+
+![Trả góp hằng tháng khi mua K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/v1786262906/tra-gop-hang-thang-khi-mua-khome-cityview_my5njf.png)
+
+## Mỗi tháng mua K-Home CityView phải trả bao nhiêu?
+
+Số tiền trả góp hằng tháng khi mua [trang dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai) phụ thuộc vào 4 yếu tố chính: giá bán căn hộ, tỷ lệ vốn tự có và khoản vay, lãi suất vay và thời hạn vay.
+
+Theo phương án tài chính đang được áp dụng: người mua chuẩn bị **25% vốn tự có**, ngân hàng hỗ trợ vay khoảng **75% giá trị căn hộ**, lãi suất tham khảo **5,4%/năm**, thời hạn vay lên đến **25 năm**. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) để hiểu rõ điều kiện vay.
+
+| Giá căn hộ tham khảo | Vốn tự có 25% | Khoản vay 75% | Trả góp ước tính/tháng* |
+|---|---|---|---|
+| 950 triệu đồng | 237,5 triệu | 712,5 triệu | ~4,3 triệu đồng |
+| 1,05 tỷ đồng | 262,5 triệu | 787,5 triệu | ~4,8 triệu đồng |
+| 1,4 tỷ đồng | 350 triệu | 1,05 tỷ | ~6,4 triệu đồng |
+| 1,9 tỷ đồng | 475 triệu | 1,425 tỷ | ~8,7 triệu đồng |
+
+*Tính theo khoản vay 75%, lãi suất 5,4%/năm, thời hạn 25 năm, trả đều. Chưa bao gồm phí bảo trì, VAT hoặc điều chỉnh lịch trả nợ chính thức.
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) để có số liệu giá căn thực tế.
+
+## Công thức tài chính khi mua K-Home CityView
+
+Với tỷ lệ vốn tự có 25% và khoản vay 75%:
+- **Vốn tự có** = Giá căn hộ × 25%
+- **Khoản vay** = Giá căn hộ × 75%
+- **Tiền trả hằng tháng** = Khoản vay + lãi vay, phân bổ theo phương thức ngân hàng áp dụng
+
+Ví dụ căn hộ giá **1 tỷ đồng**: vốn tự có 250 triệu, khoản vay 750 triệu, trả góp đều ước tính khoảng **4,56 triệu đồng/tháng** (25 năm, lãi suất 5,4%/năm).
+
+Khi làm hồ sơ thực tế, ngân hàng có thể áp dụng cách tính theo **dư nợ giảm dần**, khiến tiền trả ở thời gian đầu cao hơn rồi giảm dần theo số dư nợ. Xem thêm [thanh toán K-Home CityView theo tiến độ như thế nào](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) để hiểu rõ lịch đóng tiền.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|Tiện ích nội khu K-Home CityView Biên Hòa
+
+## Ví dụ trả góp căn hộ giá 950 triệu đồng
+
+Căn hộ giá **950 triệu đồng**, phương án 25% vốn tự có, vay 75%:
+- Vốn tự có: **237,5 triệu đồng**
+- Khoản vay: **712,5 triệu đồng**
+- Trả góp đều ước tính: **~4,3 triệu đồng/tháng** (25 năm, 5,4%/năm)
+
+Mức này chưa bao gồm phí bảo trì, VAT, chi phí nội thất, phí quản lý sau khi nhận nhà và quỹ dự phòng sinh hoạt.
+
+## Ví dụ trả góp căn hộ giá 1,4 tỷ đồng
+
+Căn hộ giá **1,4 tỷ đồng**:
+- Vốn tự có: **350 triệu đồng**
+- Khoản vay: **1,05 tỷ đồng**
+- Trả góp đều ước tính: **~6,4 triệu đồng/tháng**
+
+Đây là mức phù hợp để gia đình trẻ hình dung trước khi đăng ký. Nếu thu nhập không ổn định hoặc đang có khoản vay khác, nên cân nhắc tăng vốn tự có để giảm khoản vay.
+
+## Ví dụ trả góp căn hộ giá 1,9 tỷ đồng
+
+Căn hộ giá **1,9 tỷ đồng**:
+- Vốn tự có: **475 triệu đồng**
+- Khoản vay: **1,425 tỷ đồng**
+- Trả góp đều ước tính: **~8,7 triệu đồng/tháng**
+
+Căn hộ giá trị càng cao thì khoản trả góp càng lớn. Nếu mục tiêu chính là an cư, không nhất thiết phải chọn căn diện tích lớn nhất — một căn vừa đủ với khoản vay vừa sức sẽ phù hợp hơn về lâu dài.
+
+## Trả góp đều và trả theo dư nợ giảm dần khác nhau thế nào?
+
+**Trả góp đều:** Tổng tiền trả hằng tháng tương đối ổn định, dễ lập ngân sách.
+
+**Trả theo dư nợ giảm dần:** Tiền gốc cố định mỗi tháng, tiền lãi tính trên số dư nợ còn lại nên giảm dần. Khoản trả thời gian đầu cao hơn, sau đó giảm.
+
+Khi hỏi ngân hàng "mỗi tháng trả bao nhiêu", bạn nên hỏi rõ: khoản trả đều hằng tháng, khoản trả tháng đầu, khoản trả trung bình, hay khoản trả sau khi hết thời gian ưu đãi.
+
+## Vốn tự có 25% có phải thanh toán một lần không?
+
+Không nhất thiết. Tùy chính sách dự án, khoản vốn tự có có thể chia thành nhiều đợt theo tiến độ thanh toán. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau) để nắm rõ lịch đóng tiền.
+
+Người mua nên hỏi rõ:
+- Đợt đầu cần thanh toán bao nhiêu?
+- Khoản cọc có được tính vào 25% vốn tự có không?
+- Ngân hàng giải ngân từ đợt nào?
+- Nếu hồ sơ vay chưa được duyệt đúng hạn thì xử lý ra sao?
+
+## Thu nhập bao nhiêu thì phù hợp để mua trả góp?
+
+Không có mức thu nhập chung cho mọi gia đình. Bạn tự kiểm tra bằng bảng đơn giản:
+
+| Khoản mục | Ghi nhận |
+|---|---|
+| Tổng thu nhập hằng tháng | … |
+| Chi phí sinh hoạt + học phí | … |
+| Khoản vay khác | … |
+| Tiền dự phòng | … |
+| **Số tiền có thể trả nhà/tháng** | … |
+
+Nếu chọn căn 950 triệu (trả ~4,3 triệu/tháng) hay căn 1,4 tỷ (trả ~6,4 triệu/tháng), bạn cần đảm bảo vẫn còn đủ tiền sinh hoạt và quỹ dự phòng sau khi trả nợ. Xem [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) để kiểm tra thu nhập có đáp ứng quy định không.
+
+## Kết luận
+
+Theo phương án 25% vốn tự có, 75% khoản vay, lãi suất 5,4%/năm và thời hạn 25 năm, tiền trả góp hằng tháng ước tính:
+- Căn **950 triệu đồng** → ~4,3 triệu đồng/tháng
+- Căn **1,05 tỷ đồng** → ~4,8 triệu đồng/tháng
+- Căn **1,4 tỷ đồng** → ~6,4 triệu đồng/tháng
+- Căn **1,9 tỷ đồng** → ~8,7 triệu đồng/tháng
+
+Trước khi đăng ký mua, hãy yêu cầu bảng tính riêng cho mã căn dự kiến. Xem thêm [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) để chuẩn bị đầy đủ trước khi ký hợp đồng.
+
+Liên hệ **0937.587.438** để nhận bảng tính trả góp theo đúng mã căn và phương án vay của bạn.
+
+---RELATED---k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram|K-Home CityView Có Hỗ Trợ Vay Bao Nhiêu Phần Trăm;thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao|Thanh Toán K-Home CityView Theo Tiến Độ Như Thế Nào`,
+  },
+  {
     id: "n24",
     slug: "k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram",
     title: "K-Home CityView Có Hỗ Trợ Vay Bao Nhiêu Phần Trăm?",
