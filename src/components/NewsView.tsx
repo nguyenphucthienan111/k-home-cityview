@@ -39,15 +39,17 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
       .then(r => r.json())
       .then(data => {
         const list = Array.isArray(data) ? data : [];
-        // Dedup by slug to prevent duplicates
+        // Dedup by slug
         const seen = new Set<string>();
         const unique = list.filter(n => {
           if (seen.has(n.slug)) return false;
           seen.add(n.slug);
           return true;
         });
-        setNews(unique);
-        setFiltered(unique);
+        // Sort mới nhất lên đầu
+        const sorted = [...unique].sort((a, b) => b.date.localeCompare(a.date));
+        setNews(sorted);
+        setFiltered(sorted);
         setLoading(false);
       })
       .catch(() => setLoading(false));
