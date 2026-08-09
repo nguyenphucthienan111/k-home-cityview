@@ -364,6 +364,203 @@ const projects = [
 
 const newsList = [
   {
+    id: "n28",
+    slug: "gia-ban-k-home-cityview-co-thuc-su-phu-hop-nguoi-lao-dong-khong",
+    title: "Giá Bán K-Home CityView Có Thực Sự Phù Hợp Người Lao Động Không?",
+    date: "2026-08-09",
+    excerpt: "Phân tích giá bán K-Home CityView, vốn tự có 25%, khoản vay 75% và khả năng chi trả của người lao động, gia đình trẻ tại Biên Hòa.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786265138/gia-ban-khome-cityview-danh-cho-nguoi-lao-dong_dilmfp.png",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Giá bán, diện tích, chính sách thanh toán và điều kiện vay có thể thay đổi theo từng thời điểm, loại căn và mã căn. Bài viết sử dụng phương án tài chính: 25% vốn tự có và ngân hàng hỗ trợ vay 75%.
+
+![Giá bán K-Home CityView dành cho người lao động tại Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1786265138/gia-ban-khome-cityview-danh-cho-nguoi-lao-dong_dilmfp.png)
+
+## Giá K-Home CityView có phù hợp người lao động không?
+
+Giá bán [K-Home CityView](/k-home-cityview-ho-nai) có thể phù hợp với một bộ phận người lao động tại Biên Hòa nếu người mua có thu nhập ổn định, chuẩn bị được 25% vốn tự có và có khả năng trả khoản vay trong thời gian dài. Tuy nhiên, không nên kết luận mọi người lao động đều có thể mua — khả năng chi trả còn phụ thuộc vào thu nhập gia đình, số người phụ thuộc, các khoản nợ hiện tại và loại căn lựa chọn. Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong).
+
+## Mức giá K-Home CityView tham khảo
+
+Dựa trên thông tin đang được công bố. Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [bảng giá K-Home CityView 2026 theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can):
+
+| Loại căn | Diện tích tham khảo | Giá tham khảo |
+|---|---|---|
+| 1 phòng ngủ | ~47 m² | ~1–1,1 tỷ đồng |
+| 1 phòng ngủ lớn | ~62 m² | Tùy mã căn |
+| 2 phòng ngủ | ~62–70 m² | Từ ~1,4 tỷ đồng |
+| 3 phòng ngủ | ~84 m² | Từ ~1,9 tỷ đồng |
+
+Người mua cần hỏi rõ: giá áp dụng cho loại căn nào, đã bao gồm VAT chưa, phí bảo trì tính thế nào, và đây là giá dự kiến hay giá được phê duyệt.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2|Phối cảnh tổng thể dự án K-Home CityView Biên Hòa
+
+## Phương án 25% vốn tự có và 75% khoản vay
+
+Xem chi tiết tại [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram).
+
+| Giá căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1 tỷ đồng | 250 triệu | 750 triệu |
+| 1,1 tỷ đồng | 275 triệu | 825 triệu |
+| 1,4 tỷ đồng | 350 triệu | 1,05 tỷ |
+| 1,6 tỷ đồng | 400 triệu | 1,2 tỷ |
+| 1,9 tỷ đồng | 475 triệu | 1,425 tỷ |
+
+Chưa bao gồm phí bảo trì, VAT, nội thất và quỹ dự phòng. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau).
+
+## Căn 1 phòng ngủ có phù hợp người lao động không?
+
+Căn 1PN ~47 m² là lựa chọn dễ tiếp cận nhất về tổng giá. Phù hợp với người độc thân, vợ chồng mới cưới, gia đình nhỏ chưa có con. Với giá ~1 tỷ, vốn tự có 25% khoảng 250 triệu. Xem thêm [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) để ước tính khoản trả góp.
+
+**Lưu ý:** Nếu gia đình dự kiến tăng thành viên sớm, căn 2PN có thể phù hợp hơn cho kế hoạch ở lâu dài.
+
+## Căn 2 phòng ngủ — lựa chọn cân bằng cho gia đình trẻ
+
+Căn 2PN ~62–70 m² là phương án cân bằng giữa giá bán và công năng. Phù hợp với gia đình 3–4 thành viên, vợ chồng có con nhỏ, hoặc người muốn ở ổn định 5–10 năm. Xem thêm [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+Với giá ~1,4 tỷ: vốn tự có 25% ~350 triệu, khoản vay 75% ~1,05 tỷ. Cao hơn căn 1PN nhưng đổi lại có thêm không gian sử dụng. Tìm hiểu thêm tại [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg|Layout căn 1PN và 2PN K-Home CityView Biên Hòa
+
+## Căn 3 phòng ngủ có phù hợp với người lao động?
+
+Căn 3PN ~84 m² phù hợp với gia đình đông người hoặc nhiều thế hệ, nhưng không phải lựa chọn tối ưu nếu ngân sách hạn chế. Với giá ~1,9 tỷ: vốn tự có 25% ~475 triệu, khoản vay ~1,425 tỷ. Chỉ nên chọn khi gia đình thực sự cần nhiều phòng và có ít nhất 2 nguồn thu nhập ổn định.
+
+## So sánh với chi phí thuê
+
+Một số tin đăng tại Biên Hòa ghi nhận giá thuê căn hộ khoảng 4,5–13 triệu đồng/tháng. Nếu thuê 5 triệu/tháng: 1 năm ~60 triệu, 5 năm ~300 triệu, 10 năm ~600 triệu — chưa tính tăng giá thuê và chi phí chuyển nhà.
+
+Mua căn hộ yêu cầu vốn ban đầu lớn hơn nhưng phần tiền gốc góp phần hình thành tài sản. Xem phân tích đầy đủ tại [so sánh chi phí mua K-Home CityView và thuê nhà tại Biên Hòa](/tin-tuc/so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa).
+
+## Cách tự kiểm tra khả năng mua
+
+5 bước đơn giản:
+1. Xác định loại căn phù hợp số thành viên gia đình
+2. Tính 25% vốn tự có theo giá căn tham khảo
+3. Yêu cầu ngân hàng lập bảng trả nợ cho khoản vay 75%
+4. Trừ khoản trả nợ khỏi tổng thu nhập gia đình
+5. Kiểm tra số tiền còn lại có đủ sinh hoạt và dự phòng không
+
+Xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) để kiểm tra thu nhập có đáp ứng quy định không.
+
+## Kết luận
+
+Giá bán K-Home CityView có thể phù hợp với người lao động nếu chọn đúng loại căn, có thu nhập ổn định và chuẩn bị được 25% vốn tự có. Câu trả lời phụ thuộc vào từng hoàn cảnh cụ thể, không áp dụng đồng đều cho mọi người.
+
+Xem thêm [thanh toán K-Home CityView theo tiến độ như thế nào](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) và [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z) để chuẩn bị đầy đủ.
+
+Liên hệ **0937.587.438** để được tư vấn cụ thể theo thu nhập và loại căn phù hợp.
+
+---RELATED---mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi|Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí;k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong|K-Home CityView Có Phù Hợp Gia Đình Trẻ Không`,
+  },
+  {
+    id: "n27",
+    slug: "so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa",
+    title: "So Sánh Chi Phí Mua K-Home CityView Và Chi Phí Thuê Nhà Tại Biên Hòa",
+    date: "2026-08-09",
+    excerpt: "So sánh chi phí mua K-Home CityView và thuê nhà tại Biên Hòa, phân tích vốn tự có 25%, khoản vay 75%, tiền thuê hằng tháng và lựa chọn phù hợp.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786264862/so-sanh-mua-can-ho-voi-thue-nha_zytgtt.png",
+    category: "So sánh & Tư vấn",
+    project: "cityview",
+    content: `> **Lưu ý:** Giá bán, giá thuê, lãi suất và chính sách tài chính có thể thay đổi theo thời điểm. Các số liệu trong bài mang tính tham khảo. Bài viết sử dụng phương án tài chính: 25% vốn tự có và ngân hàng hỗ trợ vay 75%.
+
+![So sánh mua căn hộ K-Home CityView và thuê nhà tại Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1786264862/so-sanh-mua-can-ho-voi-thue-nha_zytgtt.png)
+
+## Nên mua K-Home CityView hay tiếp tục thuê nhà?
+
+Với người đang làm việc tại Biên Hòa, lựa chọn giữa mua và thuê phụ thuộc vào khả năng tài chính, thời gian dự kiến ở và nhu cầu ổn định chỗ ở. [K-Home CityView](/k-home-cityview-ho-nai) là dự án nhà ở xã hội tại khu vực Hố Nai, Biên Hòa, có nhiều loại căn từ ~47 m² đến ~84 m². Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong).
+
+## Chi phí thuê nhà tại Biên Hòa hiện nay
+
+Theo các trang đăng tin bất động sản, giá thuê căn hộ tại Biên Hòa dao động khoảng **3–12 triệu đồng/tháng**. Căn gần KCN hoặc có nội thất đầy đủ thường 4,5–6 triệu đồng/tháng.
+
+Ngoài tiền thuê, người thuê còn phải trả: tiền cọc, điện nước, phí quản lý, gửi xe, internet và chi phí chuyển nhà khi thay đổi chỗ ở.
+
+## Chi phí mua K-Home CityView gồm những khoản nào?
+
+Theo phương án 25% vốn tự có và 75% khoản vay. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau) và [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao):
+
+| Giá trị căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1 tỷ đồng | 250 triệu | 750 triệu |
+| 1,25 tỷ đồng | 312,5 triệu | 937,5 triệu |
+| 1,4 tỷ đồng | 350 triệu | 1,05 tỷ |
+| 1,8 tỷ đồng | 450 triệu | 1,35 tỷ |
+
+Ngoài vốn đối ứng 25%, cần dự trù thêm: phí bảo trì, VAT, nội thất, phí quản lý và quỹ dự phòng. Xem [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) để có số liệu thực tế.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V36_TAN-HOA_EXT_NOXH_PARK_FINAL_2|Không gian sống xanh tại K-Home CityView Biên Hòa
+
+## So sánh tiền thuê hằng tháng và khoản trả nợ
+
+Ví dụ tham khảo với căn hộ giá **1 tỷ đồng**, khoản vay 75% = 750 triệu, thời hạn 25 năm, lãi suất tham khảo 5,4%/năm: khoản trả góp ước tính ~**4,56 triệu đồng/tháng**.
+
+Nếu thuê 5 triệu đồng/tháng:
+- 1 năm: ~60 triệu đồng
+- 5 năm: ~300 triệu đồng
+- 10 năm: ~600 triệu đồng (chưa tính tăng giá thuê)
+
+**Điểm khác biệt:** Tiền thuê là chi phí sử dụng, không tích lũy tài sản. Phần tiền **gốc** trong khoản vay mua nhà góp phần hình thành quyền sở hữu căn hộ. Tuy nhiên cần tính thêm tiền **lãi** — đây là chi phí tài chính thực tế.
+
+Xem thêm [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) để so sánh cụ thể theo từng loại căn.
+
+## Bảng so sánh mua và thuê trong 5 năm
+
+| Tiêu chí | Thuê nhà | Mua K-Home CityView |
+|---|---|---|
+| Vốn ban đầu | Tiền cọc + chuyển vào | ~25% vốn tự có + phí liên quan |
+| Chi phí hằng tháng | Tiền thuê + điện nước + quản lý | Gốc + lãi + quản lý + điện nước |
+| Quyền sở hữu | Không | Có cơ hội sở hữu theo hợp đồng |
+| Tính linh hoạt | Dễ chuyển nơi ở | Khó thay đổi ngắn hạn |
+| Ổn định | Phụ thuộc chủ nhà | Chủ động hơn khi đủ điều kiện |
+| Rủi ro | Giá thuê có thể tăng | Lãi suất và khả năng trả nợ |
+| Sau nhiều năm | Không hình thành tài sản | Có thể tích lũy tài sản |
+
+## Khi nào thuê nhà là lựa chọn phù hợp?
+
+- Công việc chưa ổn định hoặc có thể chuyển nơi làm việc
+- Chưa tích lũy đủ 25% vốn tự có
+- Chưa chắc chắn về quy mô gia đình
+- Đang có nhiều khoản nợ khác
+- Muốn thử sống tại khu vực trước khi quyết định mua
+
+## Khi nào mua K-Home CityView có thể phù hợp?
+
+- Có kế hoạch sinh sống lâu dài tại Biên Hòa
+- Làm việc tại Biên Hòa hoặc các KCN lân cận — xem [vị trí K-Home CityView Biên Hòa nổi bật thế nào](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac)
+- Đã chuẩn bị được 25% vốn tự có
+- Thu nhập ổn định, đáp ứng [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026)
+- Cần căn hộ phù hợp cho gia đình trẻ — xem [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong)
+
+## Chọn căn nào để giảm áp lực tài chính?
+
+Xem phân tích đầy đủ tại [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi). Tóm tắt:
+
+- **Căn 1PN ~47 m²:** Vốn ban đầu thấp nhất, phù hợp người độc thân/vợ chồng trẻ
+- **Căn 2PN ~62–70 m²:** Cân bằng tốt nhất cho gia đình 3–4 thành viên
+- **Căn 3PN ~84 m²:** Phù hợp gia đình đông người, cần vốn lớn hơn
+
+## 6 câu hỏi tự trả lời trước khi quyết định
+
+1. Tôi dự kiến sống tại Biên Hòa trong bao lâu?
+2. Tôi đã chuẩn bị đủ 25% vốn tự có chưa?
+3. Thu nhập hiện tại có ổn định trong nhiều năm không?
+4. Khoản trả nợ hằng tháng có ảnh hưởng đến chi phí gia đình không?
+5. Tôi cần căn 1PN, 2PN hay 3PN?
+6. Nếu ngân hàng duyệt khoản vay thấp hơn dự kiến, tôi có phương án dự phòng không?
+
+## Kết luận
+
+Thuê nhà phù hợp với người cần sự linh hoạt hoặc chưa tích lũy đủ vốn. Mua K-Home CityView phù hợp hơn với người có thu nhập ổn định, dự kiến sống lâu dài tại Biên Hòa và chuẩn bị được 25% vốn tự có.
+
+Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) để chuẩn bị đầy đủ trước khi đăng ký.
+
+Liên hệ **0937.587.438** để được tư vấn phương án phù hợp với tình hình tài chính gia đình bạn.
+
+---RELATED---gia-ban-k-home-cityview-co-thuc-su-phu-hop-nguoi-lao-dong-khong|Giá Bán K-Home CityView Có Phù Hợp Người Lao Động Không;mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi|Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí`,
+  },
+  {
     id: "n26",
     slug: "mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi",
     title: "Mua K-Home CityView Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí?",
