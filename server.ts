@@ -2256,8 +2256,24 @@ async function startServer() {
     // Serve public assets (images, etc.) — must be before dist to avoid conflicts
     app.use(express.static(publicPath));
     app.use(express.static(distPath));
-    app.get("*", (_req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
+
+    // ── SPA fallback với canonical injection ──────────────────────────────────
+    // Googlebot đọc HTML trước khi JS chạy, nên cần inject canonical đúng URL
+    // ngay trong HTML response thay vì chờ React cập nhật
+    const { readFileSync } = await import("fs");
+    const indexHtml = readFileSync(path.join(distPath, "index.html"), "utf-8");
+    const BASE_URL = "https://k-homedongnai.com.vn";
+
+    app.get("*", (req, res) => {
+      const reqPath = req.path === "/" ? "/" : req.path.replace(/\/$/, "");
+      const canonicalUrl = `${BASE_URL}${reqPath}`;
+      // Thay canonical href trong HTML trước khi serve
+      const html = indexHtml.replace(
+        /<link rel="canonical" href="[^"]*"/,
+        `<link rel="canonical" href="${canonicalUrl}"`
+      );
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.send(html);
     });
   }
 
