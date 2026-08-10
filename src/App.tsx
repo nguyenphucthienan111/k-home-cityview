@@ -99,15 +99,19 @@ export default function App() {
 
     const unitMatchOldCan = path.match(/^\/([^/]+)\/(can-(?!ho-)[^/]+)$/);
     if (unitMatchOldCan) {
-      const oldSlug = unitMatchOldCan[2];
-      const slugMap: Record<string, string> = {
-        "can-1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-b": "can-ho-1-phong-ngu-b",
-        "can-2pn":   "can-ho-2-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
-        "can-studio":"can-ho-studio",         "can-1pn":   "can-ho-1-phong-ngu",
-        "can-2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-lon":"can-ho-2-phong-ngu-lon",
-      };
-      navigateTo(`/${unitMatchOldCan[1]}/${slugMap[oldSlug] || oldSlug}`);
-      return null;
+      // Chỉ redirect nếu projectSlug là một trong các dự án thực — tránh match tin-tuc URLs
+      const PROJECT_SLUGS_CHECK = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"];
+      if (PROJECT_SLUGS_CHECK.includes(unitMatchOldCan[1])) {
+        const oldSlug = unitMatchOldCan[2];
+        const slugMap: Record<string, string> = {
+          "can-1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-b": "can-ho-1-phong-ngu-b",
+          "can-2pn":   "can-ho-2-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
+          "can-studio":"can-ho-studio",         "can-1pn":   "can-ho-1-phong-ngu",
+          "can-2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-lon":"can-ho-2-phong-ngu-lon",
+        };
+        navigateTo(`/${unitMatchOldCan[1]}/${slugMap[oldSlug] || oldSlug}`);
+        return null;
+      }
     }
 
     const unitMatchOld = path.match(/^\/projects\/([^/]+)\/([^/]+)$/);

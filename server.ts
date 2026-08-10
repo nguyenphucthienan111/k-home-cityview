@@ -364,6 +364,170 @@ const projects = [
 
 const newsList = [
   {
+    id: "n38",
+    slug: "can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y",
+    title: "Căn 2 Phòng Ngủ K-Home CityView Có Gì Đáng Chú Ý?",
+    date: "2026-08-10",
+    excerpt: "Đánh giá căn 2 phòng ngủ K-Home CityView về diện tích, layout 2PN, công năng, giá tham khảo, vốn tự có 25% và mức độ phù hợp với gia đình trẻ.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Diện tích, giá bán và cơ cấu sản phẩm có thể thay đổi theo từng bảng hàng, mã căn và thời điểm. Người mua nên kiểm tra diện tích tim tường, diện tích sử dụng, giá bán và chính sách trước khi đăng ký.
+
+![Layout căn 2 phòng ngủ K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg)
+
+## Căn 2 phòng ngủ K-Home CityView có diện tích bao nhiêu?
+
+Căn 2PN [K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu với diện tích khoảng **62–70 m²**, một số thông tin chi tiết thể hiện khoảng **70,43 m²** tim tường và **62,3 m²** sử dụng. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) để so sánh tất cả loại căn.
+
+Khi xem bản vẽ, cần kiểm tra rõ: diện tích tim tường hay thông thủy, số phòng vệ sinh, kích thước từng phòng và diện tích ban công.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-4.jpg|Căn hộ mẫu 2PN K-Home CityView bàn giao hoàn thiện cơ bản
+
+## Layout 2PN K-Home CityView có gì đáng chú ý?
+
+Căn 2PN thường gồm: phòng ngủ chính, phòng ngủ phụ, phòng khách, khu bếp – bàn ăn, 1–2 phòng vệ sinh và ban công. Thiết kế được giới thiệu theo hướng tối ưu diện tích, đón ánh sáng tự nhiên và phù hợp gia đình 3–4 thành viên.
+
+Phòng thứ hai linh hoạt: có thể dùng cho con nhỏ, phòng làm việc, phòng đa năng hoặc đón người thân — đây là lợi thế lớn so với căn 1PN. Xem thêm [căn 1 phòng ngủ K-Home CityView có đủ cho vợ chồng trẻ không](/tin-tuc/can-1-phong-ngu-k-home-cityview-co-du-cho-vo-chong-tre-khong) để so sánh.
+
+## Căn 2PN phù hợp với gia đình nào?
+
+- Vợ chồng trẻ chuẩn bị sinh con
+- Gia đình có 1–2 con, muốn ở ổn định 5–10 năm
+- Người cần phòng làm việc riêng
+- Gia đình không muốn chuyển nhà khi có thêm thành viên
+
+Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong) và [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-6.jpg|Phòng ngủ và nội thất căn 2PN K-Home CityView
+
+## Căn 2PN có mấy phòng vệ sinh?
+
+Một số thông tin giới thiệu căn 2PN ~70,43 m² có **2 phòng vệ sinh** — lợi thế lớn cho gia đình 3–4 người: giảm thời gian chờ buổi sáng, tăng sự riêng tư. Tuy nhiên số lượng có thể thay đổi theo layout — cần kiểm tra bản vẽ mã căn cụ thể.
+
+## Vốn tự có 25% và khoản vay 75% cho căn 2PN
+
+Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao):
+
+| Giá căn hộ 2PN | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1,4 tỷ | 350 triệu | 1,05 tỷ |
+| 1,5 tỷ | 375 triệu | 1,125 tỷ |
+| 1,6 tỷ | 400 triệu | 1,2 tỷ |
+
+Chưa bao gồm phí bảo trì, VAT, nội thất và quỹ dự phòng. Xem [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) để ước tính khoản trả góp.
+
+## Những điểm cần kiểm tra khi xem layout 2PN
+
+- Phòng ngủ có đặt vừa giường đôi, tủ và lối đi không
+- Bếp có cửa sổ hoặc thông gió không
+- Hướng và kích thước ban công
+- Vị trí đặt máy giặt và giàn phơi
+- Vị trí căn (góc hay giữa, cạnh thang máy không)
+
+## So sánh căn 2PN và căn 3PN
+
+| Tiêu chí | Căn 2PN | Căn 3PN |
+|---|---|---|
+| Diện tích tham khảo | ~62–70 m² | ~84 m² |
+| Phù hợp | Gia đình 3–4 thành viên | Gia đình đông, đa thế hệ |
+| Vốn tự có | Thấp hơn | Cao hơn |
+| Tối ưu chi phí | Cân bằng tốt | Chỉ nên chọn khi thực sự cần |
+
+Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi).
+
+## Kết luận
+
+Căn 2PN K-Home CityView nổi bật với diện tích ~62–70 m², hai phòng ngủ riêng, không gian linh hoạt và có thể có 2 phòng vệ sinh. Đây là lựa chọn cân bằng nhất cho gia đình trẻ muốn ở ổn định lâu dài.
+
+Trước khi quyết định, xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---can-1-phong-ngu-k-home-cityview-co-du-cho-vo-chong-tre-khong|Căn 1PN K-Home CityView Có Đủ Cho Vợ Chồng Trẻ Không;mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi|Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí`,
+  },
+  {
+    id: "n37",
+    slug: "can-1-phong-ngu-k-home-cityview-co-du-cho-vo-chong-tre-khong",
+    title: "Căn 1 Phòng Ngủ K-Home CityView Có Đủ Cho Vợ Chồng Trẻ Không?",
+    date: "2026-08-10",
+    excerpt: "Đánh giá căn 1 phòng ngủ K-Home CityView về diện tích, công năng, chi phí, vốn tự có 25%, khoản vay 75% và mức độ phù hợp với vợ chồng trẻ.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Diện tích, giá bán, tên loại căn và chính sách tài chính có thể thay đổi theo từng bảng hàng. Bài viết sử dụng phương án: 25% vốn tự có và ngân hàng hỗ trợ vay 75%.
+
+![Căn 1 phòng ngủ K-Home CityView dành cho vợ chồng trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg)
+
+## Căn 1 phòng ngủ K-Home CityView có đủ cho vợ chồng trẻ không?
+
+Căn 1PN [K-Home CityView](/k-home-cityview-ho-nai) có thể phù hợp với vợ chồng trẻ — đặc biệt gia đình mới cưới, chưa có con hoặc có một con nhỏ. Mức độ phù hợp phụ thuộc vào cách bố trí mặt bằng, nhu cầu làm việc tại nhà và kế hoạch gia đình những năm tới.
+
+Căn 1PN+A được giới thiệu có diện tích tim tường khoảng **47,29 m²** và diện tích lọt lòng khoảng **42,28 m²**, gồm: phòng ngủ, phòng khách, bếp, phòng vệ sinh và ban công. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230274/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-3.jpg|Căn hộ mẫu 1PN K-Home CityView bàn giao hoàn thiện cơ bản
+
+## Căn 1PN phù hợp với vợ chồng trẻ trong trường hợp nào?
+
+Phù hợp khi:
+- Mới kết hôn, chưa có con hoặc có một con nhỏ chưa cần phòng riêng
+- Ít đồ đạc, ưu tiên lối sống tối giản
+- Làm việc bên ngoài, không cần phòng làm việc riêng
+- Muốn giảm vốn tự có và khoản vay
+- Dự kiến ở giai đoạn đầu 3–5 năm
+
+Không phù hợp khi gia đình có từ hai con, cả hai làm việc tại nhà, hoặc muốn ở ổn định 10 năm trở lên. Trong trường hợp đó, xem thêm [căn 2 phòng ngủ K-Home CityView có gì đáng chú ý](/tin-tuc/can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y).
+
+## Công năng căn 1PN có đáp ứng hai vợ chồng?
+
+Diện tích ~47 m² có thể đáp ứng nếu nội thất được bố trí hợp lý:
+- **Phòng ngủ:** giường đôi + tủ quần áo + kệ đầu giường
+- **Phòng khách:** sofa nhỏ + kệ tivi treo tường + bàn ăn gấp
+- **Bếp:** tủ chữ I/L + tủ lạnh + thiết bị tích hợp
+- **Ban công:** giàn phơi + cây xanh nhỏ (kiểm tra quy định tòa nhà)
+
+Khi xem mặt bằng, cần hỏi rõ: phòng ngủ có đủ đặt giường đôi không, bếp có thông gió không, ban công đặt được máy giặt không.
+
+## So sánh căn 1PN và căn 2PN
+
+| Tiêu chí | Căn 1PN | Căn 2PN |
+|---|---|---|
+| Diện tích | ~47 m² | ~62–70 m² |
+| Vốn tự có 25% | Thấp hơn | Cao hơn |
+| Phòng ngủ | 1 | 2 |
+| Không gian làm việc | Hạn chế | Linh hoạt hơn |
+| Phù hợp lâu dài | Giai đoạn đầu | Tốt hơn |
+| Đón người thân | Khó | Thuận tiện hơn |
+
+Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi).
+
+## Vốn tự có 25% và khoản vay 75% khi mua căn 1PN
+
+| Giá căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 950 triệu | 237,5 triệu | 712,5 triệu |
+| 1 tỷ | 250 triệu | 750 triệu |
+| 1,1 tỷ | 275 triệu | 825 triệu |
+
+Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview). Ngoài 25% vốn tự có, cần dự trù thêm tiền cọc, phí bảo trì, VAT, nội thất và quỹ dự phòng.
+
+## Căn 1PN có phù hợp người chuẩn bị sinh con không?
+
+Căn 1PN có thể dùng trong giai đoạn đầu khi em bé còn nhỏ. Khi trẻ lớn hơn sẽ cần phòng riêng, góc học tập và không gian vận động. Nếu có kế hoạch sinh con sớm và ở lâu dài, căn 2PN là lựa chọn linh hoạt hơn.
+
+Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong).
+
+## Vị trí có thuận tiện cho vợ chồng đi làm không?
+
+K-Home CityView nằm trên đường Điểu Xiển, có khả năng kết nối đến KCN Amata, Hố Nai, Long Bình và trung tâm Biên Hòa. Xem thêm [K-Home CityView có thuận tiện cho người làm ở Amata không](/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong) và [tiện ích xung quanh K-Home CityView có đủ không](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong).
+
+## Kết luận
+
+Căn 1PN K-Home CityView có thể đủ cho vợ chồng trẻ giai đoạn đầu. Ưu điểm là tổng giá trị, vốn tự có và khoản vay thấp hơn căn 2PN. Nhược điểm là không có phòng riêng cho con và không gian làm việc hạn chế.
+
+Trước khi quyết định, xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y|Căn 2PN K-Home CityView Có Gì Đáng Chú Ý;dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong|Diện Tích Căn Hộ K-Home CityView Bao Nhiêu M²`,
+  },
+  {
     id: "n36",
     slug: "dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong",
     title: "Diện Tích Căn Hộ K-Home CityView Bao Nhiêu Mét Vuông?",
