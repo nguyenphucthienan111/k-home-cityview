@@ -390,9 +390,10 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               const [slug, label] = line.replace("---PROJECT-CENTER---", "").split("|");
               elements.push(
                 <div key={i} className="my-8 flex justify-center">
-                  <div
-                    onClick={() => onNavigate(`/projects/${slug.trim()}`)}
-                    className="cursor-pointer group inline-flex flex-col items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-5 rounded-2xl shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105 max-w-sm w-full text-center"
+                  <a
+                    href={`/${slug.trim()}`}
+                    onClick={(e) => { e.preventDefault(); onNavigate(`/${slug.trim()}`); }}
+                    className="cursor-pointer group inline-flex flex-col items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-5 rounded-2xl shadow-xl hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105 max-w-sm w-full text-center no-underline"
                   >
                     <span className="text-xs font-bold uppercase tracking-widest text-amber-100">Xem chi tiết dự án</span>
                     <span className="text-lg font-extrabold leading-tight">{label?.trim() || slug.trim()}</span>
@@ -400,7 +401,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                       <span>Giá · Tiện ích · Tiến độ</span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
-                  </div>
+                  </a>
                 </div>
               );
               i++; continue;
@@ -410,14 +411,15 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             if (line.startsWith("---PROJECT-LINK---")) {
               const [slug, label] = line.replace("---PROJECT-LINK---", "").split("|");
               elements.push(
-                <div
+                <a
                   key={i}
-                  onClick={() => onNavigate(`/projects/${slug.trim()}`)}
-                  className="flex items-center justify-between px-5 py-3.5 bg-amber-50 border border-amber-200 rounded-xl cursor-pointer hover:bg-amber-100 hover:border-amber-400 transition-all group mb-2"
+                  href={`/${slug.trim()}`}
+                  onClick={(e) => { e.preventDefault(); onNavigate(`/${slug.trim()}`); }}
+                  className="flex items-center justify-between px-5 py-3.5 bg-amber-50 border border-amber-200 rounded-xl cursor-pointer hover:bg-amber-100 hover:border-amber-400 transition-all group mb-2 no-underline"
                 >
                   <span className="text-sm font-bold text-amber-800 group-hover:text-amber-900">{label?.trim() || slug.trim()}</span>
                   <ChevronRight className="w-4 h-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </a>
               );
               i++; continue;
             }
