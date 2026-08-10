@@ -485,4 +485,18 @@
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong"/>
+  </url>
 </urlset>

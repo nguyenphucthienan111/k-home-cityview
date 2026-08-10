@@ -364,6 +364,185 @@ const projects = [
 
 const newsList = [
   {
+    id: "n40",
+    slug: "mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong",
+    title: "Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không?",
+    date: "2026-08-10",
+    excerpt: "Đánh giá mặt bằng K-Home CityView về khả năng đón ánh sáng, thông gió tự nhiên, ban công, cửa sổ, hướng block và mức độ phù hợp với nhu cầu an cư.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Khả năng đón sáng và thông gió thực tế còn phụ thuộc vào block, tầng, hướng căn, vị trí căn, thời điểm trong ngày và các công trình xung quanh. Người mua nên kiểm tra đúng mặt bằng và mã căn trước khi đăng ký.
+
+![Mặt bằng tổng thể K-Home CityView tối ưu ánh sáng và thông gió tự nhiên](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1)
+
+## Mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?
+
+Theo thông tin giới thiệu, mặt bằng [K-Home CityView](/k-home-cityview-ho-nai) được định hướng tối ưu ánh sáng và thông gió tự nhiên. Các block được bố trí tạo khe gió, kết hợp cửa sổ và ban công nhằm tăng khả năng đón nắng và đón gió. Xem thêm [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+Một số nguồn cho biết dự án được tư vấn theo định hướng Singapore và quy hoạch theo trục Bắc – Nam để hạn chế nắng hướng Tây. Tuy nhiên, đây là định hướng tổng thể — không phải mọi căn đều có cùng mức độ thông thoáng. Căn góc, căn tầng cao và căn có hai mặt thoáng thường có trải nghiệm khác với căn giữa hoặc tầng thấp.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1|Quy hoạch tổng thể 4 block K-Home CityView Hố Nai Biên Hòa
+
+## Quy hoạch các block ảnh hưởng thế nào đến ánh sáng?
+
+K-Home CityView có quy mô ~2,85 ha, gồm 4 block cao tầng. Cách bố trí tạo khoảng không giữa các tòa, giúp:
+- Tăng khoảng cách giữa các block
+- Hạn chế cảm giác bị bao quanh
+- Hỗ trợ lưu thông gió giữa các block
+- Tăng tiếp cận ánh sáng tự nhiên
+- Kết nối căn hộ với không gian xanh nội khu
+
+Khi chọn căn, cần xem sơ đồ vị trí từng block — khoảng cách giữa các tòa và hướng mặt tiền có thể ảnh hưởng đáng kể đến ánh sáng thực tế.
+
+## Cửa sổ và ban công có vai trò gì?
+
+**Cửa sổ** giúp căn hộ tiếp nhận ánh sáng tự nhiên, giảm nhu cầu bật đèn ban ngày, hạn chế không gian bí tối và hỗ trợ lưu thông không khí.
+
+**Ban công** giúp căn hộ tiếp xúc môi trường bên ngoài, tăng đón gió và hỗ trợ thoát khí. Khi xem layout cần kiểm tra: hướng ban công, chiều rộng, có bị tòa khác che chắn không, vị trí giàn phơi và máy lạnh.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V08_TH_EXT_NOTM_SAN-VUON_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Không gian sân vườn và mặt thoáng nội khu K-Home CityView
+
+## Căn hộ nào có khả năng đón sáng tốt hơn?
+
+**Căn góc** thường có từ hai mặt thoáng, nhiều cửa sổ, thông gió chéo tốt hơn và tầm nhìn rộng hơn. Một số thông tin giới thiệu căn 3PN K-Home CityView nằm ở vị trí góc, có hai mặt thoáng. Xem thêm [căn 3 phòng ngủ K-Home CityView phù hợp gia đình nào](/tin-tuc/can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao).
+
+**Căn giữa** không nhất thiết kém thoáng nếu có ban công, cửa sổ và khoảng cách hợp lý với tòa đối diện. Xem thêm [căn 2 phòng ngủ K-Home CityView có gì đáng chú ý](/tin-tuc/can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y) để hiểu rõ layout từng loại.
+
+**Căn tầng cao** ít bị che chắn hơn nhưng cần đánh giá về gió mạnh và thời gian chờ thang máy. **Căn tầng thấp** thuận tiện di chuyển cho gia đình có trẻ nhỏ hoặc người lớn tuổi nhưng ánh sáng phụ thuộc nhiều vào cảnh quan xung quanh.
+
+## Các loại căn K-Home CityView có khác nhau về thông gió không?
+
+Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) để hiểu rõ từng loại căn. Tóm tắt:
+
+- **Căn 1PN/1PN+A (~47 m²):** Mặt bằng gọn, cần kiểm tra vị trí bếp và khu thông gió
+- **Căn 2PN (~70 m²):** Cần kiểm tra từng phòng ngủ có cửa sổ riêng không
+- **Căn 3PN (~84 m²):** Có thể có hai mặt thoáng nếu là căn góc
+
+Không nên kết luận căn lớn hơn = thông thoáng hơn. Phụ thuộc vào vị trí block và hướng cụ thể.
+
+## Tiêu chuẩn xanh EDGE có hỗ trợ ánh sáng và thông gió không?
+
+K-Home CityView được giới thiệu theo định hướng công trình xanh EDGE. Xem thêm [K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge). Thiết kế xanh thường nhắm đến: tăng diện tích cửa sổ, tận dụng ánh sáng tự nhiên, hạn chế bức xạ nhiệt và tăng lưu thông gió — giúp giảm nhu cầu dùng đèn và điều hòa.
+
+Tuy nhiên tiêu chuẩn xanh không có nghĩa không cần đèn hay điều hòa. Hiệu quả thực tế phụ thuộc hướng căn, vật liệu kính và cách sử dụng.
+
+## Những yếu tố có thể làm giảm ánh sáng và thông gió
+
+- Tòa nhà đối diện quá gần
+- Căn hướng Tây → nóng vào buổi chiều
+- Phòng nằm sâu trong mặt bằng, ít cửa sổ
+- Nội thất che chắn cửa sổ (tủ cao, rèm dày)
+
+## Cách kiểm tra ánh sáng và thông gió khi xem căn
+
+1. Xác định hướng cửa chính và ban công
+2. Xem vị trí cửa sổ từng phòng
+3. Kiểm tra khoảng cách đến tòa đối diện
+4. Đến xem vào buổi sáng **và** buổi chiều
+5. Mở cửa sổ, ban công để cảm nhận luồng gió
+6. Hỏi rõ tiêu chuẩn kính, thông gió và rèm
+
+## Kết luận
+
+Mặt bằng K-Home CityView được định hướng tối ưu ánh sáng và thông gió qua bố trí block, cửa sổ, ban công và khoảng xanh. Căn góc, căn hai mặt thoáng và ban công rộng thường có tiềm năng tốt hơn.
+
+Trước khi quyết định, hãy khảo sát đúng mã căn vào nhiều khung giờ. Xem thêm [K-Home CityView và lợi thế sống gần khu dân cư hiện hữu](/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được tư vấn và đặt lịch xem nhà mẫu.
+
+---RELATED---mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat|Mặt Bằng K-Home CityView: Quy Mô & Loại Căn;can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao|Căn 3PN K-Home CityView Phù Hợp Gia Đình Nào`,
+  },
+  {
+    id: "n39",
+    slug: "can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao",
+    title: "Căn 3 Phòng Ngủ K-Home CityView Phù Hợp Gia Đình Nào?",
+    date: "2026-08-10",
+    excerpt: "Tìm hiểu căn 3 phòng ngủ K-Home CityView diện tích khoảng 84 m², layout, công năng, giá tham khảo và nhóm gia đình phù hợp với loại căn hộ này.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Diện tích, giá bán và cơ cấu căn hộ có thể thay đổi theo từng bảng hàng, mã căn và thời điểm. Người mua nên xác nhận diện tích tim tường, diện tích thông thủy, giá bán và chính sách áp dụng trước khi đăng ký.
+
+![Căn 3 phòng ngủ K-Home CityView dành cho gia đình lớn](https://res.cloudinary.com/dthv0nsq/image/upload/v1785230277/k-home-cityview/Can-3PN/3pn-noxh-k-home-city-view.jpg)
+
+## Căn 3 phòng ngủ K-Home CityView rộng bao nhiêu?
+
+Căn 3PN [K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu với diện tích khoảng **84–84,4 m²** — loại căn lớn nhất trong các nhóm sản phẩm phổ biến của dự án. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) để so sánh tất cả loại căn.
+
+Các loại căn K-Home CityView: 1PN+A ~47,3 m², 1PN+B ~62,4 m², 2PN ~70,4 m², **3PN ~84,4 m²**.
+
+## Layout 3PN có gì đáng chú ý?
+
+Ba phòng ngủ cho phép phân chia không gian linh hoạt:
+- Phòng ngủ bố mẹ + phòng cho con + phòng ông bà
+- Phòng ngủ + phòng làm việc + phòng dự phòng
+- Phòng ngủ + phòng học + phòng đón người thân
+
+Ngoài 3 phòng ngủ, layout 3PN thường có phòng khách, bếp, khu ăn uống, phòng vệ sinh và ban công. Một số thông tin ghi căn 3PN có **2 phòng vệ sinh** — lợi thế lớn cho gia đình đông người. Cần kiểm tra bản vẽ mã căn cụ thể để xác nhận.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-4.jpg|Căn hộ mẫu K-Home CityView bàn giao hoàn thiện cơ bản
+
+## Căn 3PN phù hợp với gia đình nào?
+
+- **Gia đình có nhiều con** — cần phòng riêng cho từng trẻ
+- **Gia đình đa thế hệ** — sống cùng ông bà, phòng riêng cho các thế hệ
+- **Người làm việc tại nhà** — một phòng làm văn phòng, phòng họp
+- **Gia đình thường đón người thân** — phòng ngủ thứ ba dùng tiếp khách
+
+Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong).
+
+**Không nên chọn căn 3PN** nếu gia đình ít người, chưa thực sự cần 3 phòng ngủ hoặc khoản vay vượt khả năng trả nợ dài hạn.
+
+## Giá căn 3PN K-Home CityView khoảng bao nhiêu?
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [bảng giá K-Home CityView 2026 theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can):
+
+| Nguồn tham khảo | Giá tham khảo |
+|---|---|
+| Website K-Home Đồng Nai | Từ ~1,8 tỷ đồng |
+| Một số nguồn thị trường | ~1,75–1,85 tỷ đồng |
+| Nguồn khác | Từ ~1,9 tỷ đồng |
+
+Sự khác biệt do thời điểm cập nhật, mã căn, tầng, hướng, diện tích tim tường/thông thủy và giá đã/chưa bao gồm VAT.
+
+## Vốn tự có 25% và khoản vay 75%
+
+Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram):
+
+| Giá căn 3PN | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1,8 tỷ | 450 triệu | 1,35 tỷ |
+| 1,9 tỷ | 475 triệu | 1,425 tỷ |
+| 2 tỷ | 500 triệu | 1,5 tỷ |
+
+Ngoài 25% vốn tự có, cần dự trù thêm: tiền cọc, phí bảo trì, VAT, nội thất, quỹ dự phòng. Xem [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) để ước tính khoản trả góp.
+
+## So sánh căn 2PN và căn 3PN
+
+Xem thêm [căn 2 phòng ngủ K-Home CityView có gì đáng chú ý](/tin-tuc/can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y):
+
+| Tiêu chí | Căn 2PN | Căn 3PN |
+|---|---|---|
+| Diện tích | ~62–70 m² | ~84 m² |
+| Vốn tự có | Thấp hơn | Cao hơn |
+| Phù hợp | Gia đình 3–4 người | Gia đình lớn, đa thế hệ |
+| Không gian | Cân bằng | Linh hoạt hơn |
+| Tối ưu chi phí | Tốt | Chỉ khi thực sự cần |
+
+Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi).
+
+## Kết luận
+
+Căn 3PN K-Home CityView (~84 m²) phù hợp nhất với gia đình lớn, nhiều con, đa thế hệ hoặc người cần nhiều không gian riêng. Ưu điểm là sử dụng linh hoạt và phù hợp an cư lâu dài. Nhược điểm là tổng giá trị và khoản vay cao hơn.
+
+Trước khi quyết định, xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong) để khảo sát đúng căn trước khi đăng ký.
+
+Liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y|Căn 2PN K-Home CityView Có Gì Đáng Chú Ý;dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong|Diện Tích Căn Hộ K-Home CityView Bao Nhiêu M²`,
+  },
+  {
     id: "n38",
     slug: "can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y",
     title: "Căn 2 Phòng Ngủ K-Home CityView Có Gì Đáng Chú Ý?",
