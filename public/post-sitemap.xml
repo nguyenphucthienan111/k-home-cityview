@@ -443,4 +443,18 @@
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu"/>
+  </url>
 </urlset>

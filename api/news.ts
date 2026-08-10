@@ -3,6 +3,159 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n34",
+    slug: "k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu",
+    title: "K-Home CityView Và Lợi Thế Sống Gần Khu Dân Cư Hiện Hữu",
+    date: "2026-08-09",
+    excerpt: "Phân tích lợi thế sống gần khu dân cư hiện hữu của K-Home CityView tại Hố Nai, Biên Hòa: tiện ích, giao thông, trường học, bệnh viện và khả năng an cư lâu dài.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V06_FINAL_2-1",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin về tiện ích, khoảng cách và thời gian di chuyển trong bài mang tính tham khảo. Người mua nên khảo sát thực tế và xác nhận tình trạng vận hành của từng tiện ích trước khi quyết định.
+
+![K-Home CityView gần khu dân cư hiện hữu tại Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260328_TAN-HOA_V06_FINAL_2-1)
+
+## Khu dân cư hiện hữu là gì và vì sao quan trọng?
+
+Khu dân cư hiện hữu là khu vực đã có người dân sinh sống, đường sá, hàng quán, trường học, chợ và dịch vụ dân sinh được hình thành. Đây là lợi thế so với các dự án nằm trong khu đất mới — nơi cư dân phải chờ tiện ích xung quanh hình thành sau nhiều năm.
+
+[K-Home CityView](/k-home-cityview-ho-nai) nằm trên đường Điểu Xiển, phường Hố Nai, được một số nguồn giới thiệu là khu vực dân cư hiện hữu, phát triển ổn định. Xem thêm [vị trí K-Home CityView Biên Hòa có gì nổi bật](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|Phối cảnh và mặt tiền đường Điểu Xiển K-Home CityView Hố Nai
+
+## 5 lợi thế khi sống gần khu dân cư hiện hữu
+
+**1. Tiện ích bên ngoài đã hình thành**
+
+Cư dân có thể sử dụng ngay các dịch vụ xung quanh: chợ, siêu thị, nhà thuốc, trường học, ngân hàng và hàng quán. Xem chi tiết tại [tiện ích xung quanh K-Home CityView có đủ không](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong).
+
+**2. Thuận tiện đi làm**
+
+K-Home CityView có khả năng kết nối đến KCN Amata, Hố Nai, Long Bình và Biên Hòa 2. Xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [K-Home CityView có thuận tiện cho người làm ở Amata không](/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong).
+
+**3. Thuận tiện cho gia đình có con nhỏ**
+
+Khu vực có trường học các cấp, phòng khám và dịch vụ trẻ em. Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong).
+
+**4. Dễ tiếp cận bệnh viện**
+
+Khu dân cư hiện hữu thường có phòng khám và nhà thuốc hoạt động. Bệnh viện Đồng Nai là cơ sở y tế được nhiều nguồn nhắc đến khi giới thiệu tiện ích quanh dự án.
+
+**5. Không phải chờ tiện ích hình thành hoàn toàn**
+
+Khác với khu vực mới phát triển, cư dân K-Home CityView có thể tiếp cận ngay chợ, trường học và dịch vụ ngay sau khi nhận nhà mà không phụ thuộc hoàn toàn vào tiện ích nội khu.
+
+## Kết hợp tiện ích nội khu và ngoại khu
+
+K-Home CityView được giới thiệu có tiện ích nội khu: minimart, hồ bơi người lớn và trẻ em, trường học, sân chơi, khu gym, vườn cảnh quan, trạm sạc xe điện và nhà sinh hoạt cộng đồng. Xem [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+Khu dân cư hiện hữu bên ngoài bổ trợ thêm: chợ truyền thống, siêu thị lớn, bệnh viện, trường đa dạng, ngân hàng và khu công nghiệp. Sự kết hợp này giúp cư dân có nhiều lựa chọn hơn cho từng nhu cầu.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|Không gian sân vườn và khu vui chơi trẻ em nội khu K-Home CityView
+
+## Khu dân cư hiện hữu có giúp tăng cảm giác an cư không?
+
+An cư không chỉ là sở hữu căn hộ mà còn là duy trì cuộc sống ổn định nhiều năm. Khu vực có cộng đồng dân cư hiện hữu giúp người mua hình dung rõ hơn về môi trường sống, giao thông và dịch vụ xung quanh — điều quan trọng với người mua nhà ở xã hội hướng đến ở thật lâu dài.
+
+Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong).
+
+## Những hạn chế cần cân nhắc
+
+- Mật độ giao thông cao hơn vào giờ cao điểm
+- Tiếng ồn từ đường lớn hoặc chợ gần dự án
+- Cần phân biệt tiện ích nội khu đang quy hoạch với tiện ích bên ngoài đã hiện hữu
+
+## Ai phù hợp với lợi thế này?
+
+- Gia đình trẻ cần môi trường sống sẵn tiện ích
+- Người lao động muốn ở gần KCN Biên Hòa
+- Người đang thuê nhà tại Hố Nai muốn ổn định chỗ ở
+- Khách hàng ưu tiên an cư lâu dài thay vì sống tại khu vực biệt lập
+
+## Kết luận
+
+K-Home CityView có lợi thế khi tọa lạc tại khu vực dân cư hiện hữu phường Hố Nai: cư dân có thể tiếp cận ngay chợ, trường học, bệnh viện, siêu thị và khu công nghiệp. Lợi thế này phù hợp với nhu cầu an cư của người lao động và gia đình trẻ.
+
+Trước khi mua, hãy khảo sát thực tế nhiều khung giờ, kiểm tra [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được tư vấn và đặt lịch khảo sát thực tế.
+
+---RELATED---tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong|Tiện Ích Xung Quanh K-Home CityView Có Đủ Không;song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong|Sống Tại K-Home CityView Có Phù Hợp Gia Đình Có Con Nhỏ Không`,
+  },
+  {
+    id: "n33",
+    slug: "song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong",
+    title: "Sống Tại K-Home CityView Có Phù Hợp Gia Đình Có Con Nhỏ Không?",
+    date: "2026-08-09",
+    excerpt: "Đánh giá K-Home CityView dành cho gia đình có con nhỏ qua vị trí, trường học, bệnh viện, sân chơi, hồ bơi, tiện ích nội khu và khả năng an cư tại Biên Hòa.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Một số tiện ích được giới thiệu theo quy hoạch hoặc thông tin dự án. Người mua nên xác nhận thời điểm hoàn thiện, điều kiện sử dụng và mức phí của từng hạng mục trước khi đăng ký.
+
+![K-Home CityView phù hợp gia đình có con nhỏ tại Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1)
+
+## K-Home CityView có phù hợp gia đình có con nhỏ không?
+
+[K-Home CityView](/k-home-cityview-ho-nai) có thể là lựa chọn đáng cân nhắc với gia đình có con nhỏ nhờ vị trí gần trung tâm Biên Hòa, khả năng tiếp cận trường học, bệnh viện, siêu thị và các tiện ích dân sinh. Dự án được giới thiệu có trường học, hồ bơi trẻ em, công viên, sân chơi và không gian sinh hoạt cộng đồng. Xem thêm [tiện ích xung quanh K-Home CityView có đủ không](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong) và [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau).
+
+Để đánh giá phù hợp, phụ huynh cần xem xét đồng thời: khoảng cách đến trường, khả năng đưa đón, bệnh viện gần nhà, không gian vui chơi, an ninh nội khu, diện tích căn hộ và khả năng tài chính.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1|Hồ bơi và sân vườn nội khu K-Home CityView
+
+## Trường học và nhà trẻ
+
+Theo thông tin giới thiệu, K-Home CityView được quy hoạch với trường học nội khu và có khả năng tiếp cận hệ thống trường học các cấp quanh khu vực Hố Nai, bao gồm cả Đại học Đồng Nai và Đại học Lạc Hồng.
+
+Với gia đình có con nhỏ, trường gần nhà giúp rút ngắn thời gian đưa đón, hạn chế chi phí và dễ xử lý tình huống phát sinh. Tuy nhiên, phụ huynh cần hỏi rõ **thời điểm hoạt động**, điều kiện tuyển sinh và học phí — không nên mặc định trường học nội khu đã sẵn sàng hoạt động khi nhận nhà.
+
+## Hồ bơi và sân chơi trẻ em
+
+Theo một số nguồn giới thiệu, dự án có hồ bơi trẻ em khoảng 86 m², sân chơi trẻ em, công viên cây xanh và khu thể thao ngoài trời.
+
+Khi xem xét tiện ích này, phụ huynh cần kiểm tra:
+- Có nhân viên cứu hộ tại hồ bơi không
+- Thời gian hoạt động và quy định trẻ em sử dụng
+- Chi phí sử dụng từng khu tiện ích
+- Bề mặt sân chơi và thiết bị phù hợp từng độ tuổi
+
+**Không nên để trẻ nhỏ tự sử dụng hồ bơi mà không có người lớn giám sát.**
+
+## Bệnh viện và dịch vụ y tế
+
+Trẻ nhỏ thường xuyên cần khám bệnh, tiêm chủng và mua thuốc. Bệnh viện Đồng Nai và Bệnh viện Quốc tế ITO là các cơ sở được nhắc đến khi giới thiệu tiện ích quanh dự án.
+
+Ngoài bệnh viện lớn, gia đình nên tìm thêm: phòng khám nhi, nhà thuốc mở cửa ngoài giờ, nha khoa trẻ em và cơ sở tiêm chủng gần nhà. Kiểm tra thời gian di chuyển thực tế vào **buổi tối và ngày mưa** — không chỉ giờ bình thường.
+
+## Căn hộ nào phù hợp gia đình có con nhỏ?
+
+- **Căn 1PN:** Phù hợp gia đình nhỏ giai đoạn đầu, vốn tự có thấp hơn
+- **Căn 2PN ~62–70 m²:** Phương án cân bằng nhất cho gia đình 3–4 thành viên, có phòng riêng cho con
+- **Căn 3PN ~84 m²:** Phù hợp gia đình đông người, cần vốn và khoản vay lớn hơn
+
+Theo phương án 25% vốn tự có + 75% khoản vay, diện tích càng lớn thì vốn ban đầu và khoản trả nợ hằng tháng càng cao. Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi) và [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-4.jpg|Căn hộ mẫu 2PN K-Home CityView phù hợp gia đình có con nhỏ
+
+## Những điều cần khảo sát trước khi mua
+
+1. Đến dự án **buổi sáng** — kiểm tra giao thông và thời gian đưa con đi học
+2. Đến **buổi chiều** — quan sát lưu lượng xe, hàng quán, khu đón trẻ
+3. Đến **buổi tối** — kiểm tra an ninh, ánh sáng, tiếng ồn
+4. Đến **cuối tuần** — quan sát mật độ cư dân, khả năng dùng tiện ích
+5. Hỏi rõ tiện ích nào đã hoàn thiện, đang xây hay chỉ trong quy hoạch
+
+## Kết luận
+
+K-Home CityView có thể phù hợp với gia đình có con nhỏ nhờ vị trí tại khu dân cư hiện hữu, khả năng tiếp cận trường học, bệnh viện và dịch vụ dân sinh. Căn 2PN thường là lựa chọn cân bằng nhất. Xem thêm [K-Home CityView và lợi thế sống gần khu dân cư hiện hữu](/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu).
+
+Trước khi quyết định, xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao), [giá bán K-Home CityView có phù hợp người lao động không](/tin-tuc/gia-ban-k-home-cityview-co-thuc-su-phu-hop-nguoi-lao-dong-khong) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được tư vấn căn hộ phù hợp gia đình có con nhỏ.
+
+---RELATED---tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong|Tiện Ích Xung Quanh K-Home CityView Có Đủ Không;k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu|K-Home CityView Và Lợi Thế Khu Dân Cư Hiện Hữu`,
+  },
+  {
     id: "n32",
     slug: "k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong",
     title: "K-Home CityView Có Thuận Tiện Cho Người Làm Ở Amata Không?",
