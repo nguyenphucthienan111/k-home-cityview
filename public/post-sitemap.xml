@@ -457,4 +457,18 @@
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong"/>
+  </url>
 </urlset>

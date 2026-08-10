@@ -3,6 +3,153 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n36",
+    slug: "dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong",
+    title: "Diện Tích Căn Hộ K-Home CityView Bao Nhiêu Mét Vuông?",
+    date: "2026-08-10",
+    excerpt: "Cập nhật diện tích căn hộ K-Home CityView gồm 1PN+A khoảng 47,3 m², 1PN+B khoảng 62,4 m², 2PN khoảng 70,4 m² và 3PN khoảng 84,4 m².",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Diện tích, giá bán và cơ cấu sản phẩm có thể được cập nhật theo từng bảng hàng, mã căn hoặc thời điểm công bố. Khách hàng nên kiểm tra chính xác diện tích tim tường, diện tích thông thủy, loại căn và giá bán áp dụng trước khi đăng ký.
+
+![Diện tích các loại căn hộ K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/thiet-ke-can-ho-layout-khome-city-view-2048x764)
+
+## K-Home CityView có những diện tích căn hộ nào?
+
+[K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu với 4 nhóm căn hộ chính. Xem thêm [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat) để hiểu rõ bố cục toàn dự án.
+
+| Loại căn | Diện tích tham khảo | Phù hợp với |
+|---|---|---|
+| 1PN+A | ~47,3 m² | Người độc thân, vợ chồng trẻ, gia đình nhỏ |
+| 1PN+B | ~62,4 m² | Gia đình trẻ 2–3 người, người làm việc tại nhà |
+| 2PN | ~70,4 m² | Gia đình 3–4 thành viên |
+| 3PN | ~84,4 m² | Gia đình đông người, gia đình đa thế hệ |
+
+Sự khác biệt nhỏ giữa các nguồn về diện tích có thể đến từ cách làm tròn, diện tích tim tường hay thông thủy. Khách hàng nên dùng bảng diện tích chính thức theo mã căn khi ký hồ sơ.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/1pn-noxh-k-home-city-view.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg|Layout căn 1PN và 2PN K-Home CityView Biên Hòa
+
+## Căn 1PN+A khoảng 47,3 m² phù hợp với ai?
+
+Tổng giá trị thường thấp nhất → vốn tự có 25% dễ tiếp cận nhất. Phù hợp người độc thân, vợ chồng mới cưới, gia đình nhỏ muốn giảm khoản vay.
+
+Ví dụ minh họa căn giá 1 tỷ: vốn tự có 25% = 250 triệu, khoản vay 75% = 750 triệu. Xem [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) để ước tính khoản trả góp.
+
+**Lưu ý:** Nếu gia đình dự kiến có thêm thành viên, nên cân nhắc căn 1PN+B hoặc 2PN để tránh phải chuyển nhà sớm.
+
+## Căn 1PN+B khoảng 62,4 m² có gì khác?
+
+Không gian bổ sung có thể dùng làm phòng làm việc, phòng ngủ nhỏ hoặc khu vui chơi. Phù hợp vợ chồng trẻ hoặc người làm việc tại nhà.
+
+So với 1PN+A: thoải mái hơn nhưng vốn tự có và khoản vay cao hơn. Nên so sánh số tiền chênh lệch với nhu cầu sử dụng thực tế.
+
+## Căn 2PN khoảng 70,4 m² — lựa chọn cân bằng
+
+Phù hợp gia đình 3–4 thành viên cần phòng ngủ riêng cho con. Đây thường là lựa chọn cân bằng nhất giữa diện tích, công năng và chi phí.
+
+Ví dụ căn giá 1,5 tỷ: vốn tự có 25% = 375 triệu, khoản vay 75% = 1,125 tỷ. Xem [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi) để so sánh đầy đủ.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230275/k-home-cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg|Căn hộ mẫu 1PN và 2PN bàn giao hoàn thiện cơ bản tại K-Home CityView
+
+## Căn 3PN khoảng 84,4 m² — cho gia đình đông người
+
+Phù hợp gia đình có nhiều con hoặc sống cùng ông bà. Ví dụ căn giá 1,8 tỷ: vốn tự có 25% = 450 triệu, khoản vay 75% = 1,35 tỷ.
+
+Không nên chọn căn 3PN chỉ vì muốn rộng — chỉ chọn khi thực sự cần và có khả năng duy trì khoản trả nợ dài hạn. Xem [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+## Diện tích tim tường và thông thủy khác nhau thế nào?
+
+- **Diện tích tim tường:** Tính từ tim tường bao quanh — số lớn hơn
+- **Diện tích thông thủy:** Phần diện tích sử dụng thực tế bên trong — số nhỏ hơn
+
+Ví dụ: căn 1PN+A tim tường ~47,29 m², lọt lòng ~42,28 m². Khi nhận bảng giá, hỏi rõ giá tính theo diện tích nào, diện tích ban công tính ra sao và có thể điều chỉnh không.
+
+## Bảng minh họa vốn tự có theo từng loại căn
+
+| Loại căn | Giá minh họa | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|---|
+| 1PN+A ~47,3 m² | 1 tỷ | 250 triệu | 750 triệu |
+| 1PN+B ~62,4 m² | 1,25 tỷ | 312,5 triệu | 937,5 triệu |
+| 2PN ~70,4 m² | 1,5 tỷ | 375 triệu | 1,125 tỷ |
+| 3PN ~84,4 m² | 1,8 tỷ | 450 triệu | 1,35 tỷ |
+
+Đây không phải bảng giá chính thức. Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien), [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao).
+
+## Kết luận
+
+Diện tích căn hộ K-Home CityView từ ~47,3 m² đến ~84,4 m². Lựa chọn diện tích phụ thuộc vào nhu cầu sử dụng, số thành viên gia đình và khả năng tài chính — không chỉ dựa vào giá thấp nhất.
+
+Trước khi đăng ký, kiểm tra [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và liên hệ **0937.587.438** để được tư vấn loại căn phù hợp.
+
+---RELATED---mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat|Mặt Bằng K-Home CityView: Quy Mô & Loại Căn;mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi|Nên Chọn Căn Diện Tích Nào Để Tối Ưu Chi Phí`,
+  },
+  {
+    id: "n35",
+    slug: "nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview",
+    title: "Những Tuyến Đường Nào Kết Nối Trực Tiếp Đến K-Home CityView?",
+    date: "2026-08-10",
+    excerpt: "K-Home CityView nằm trên đường Điểu Xiển, kết nối Quốc lộ 1A, Nguyễn Ái Quốc, Võ Nguyên Giáp, cao tốc TP.HCM – Long Thành – Dầu Giây và các trục giao thông quan trọng.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786333107/nhung-tuyen-duong-nao-ket-noi-truc-tiep-voi-khome-cityview-01_rksrxr.png",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Khoảng cách và thời gian di chuyển trong bài chỉ mang tính tham khảo. Người mua nên kiểm tra tuyến đường thực tế theo điểm đến, phương tiện, khung giờ và tình trạng giao thông.
+
+![Các tuyến đường kết nối đến K-Home CityView Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1786333104/nhung-tuyen-duong-nao-ket-noi-truc-tiep-voi-khome-cityview_pq05sg.jpg)
+
+## K-Home CityView nằm trên tuyến đường nào?
+
+[K-Home CityView](/k-home-cityview-ho-nai) tọa lạc trên **đường Điểu Xiển**, phường Hố Nai, Biên Hòa, Đồng Nai. Từ vị trí này có khả năng kết nối với các tuyến giao thông quan trọng. Xem thêm [vị trí K-Home CityView Biên Hòa có gì nổi bật](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac) và [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1|Phối cảnh dự án K-Home CityView nhìn từ trên cao
+
+## Bảng tổng hợp các tuyến đường kết nối
+
+| Tuyến đường | Vai trò | Nhóm người quan tâm |
+|---|---|---|
+| Đường Điểu Xiển | Tuyến tiếp cận trực tiếp dự án | Tất cả cư dân |
+| Quốc lộ 1A | Kết nối Biên Hòa, TP.HCM và các tỉnh | Người đi làm, vận chuyển |
+| Nguyễn Ái Quốc | Kết nối trung tâm Biên Hòa | Gia đình, nhân viên văn phòng |
+| Võ Nguyên Giáp | Kết nối các khu đô thị và công nghiệp | Người lao động, chuyên gia |
+| Bắc Sơn – Long Thành | Kết nối phía Đông Đồng Nai | Người làm việc Long Thành |
+| Cao tốc TP.HCM – Long Thành – Dầu Giây | Kết nối liên vùng | Người đi TP.HCM, sân bay |
+| Quốc lộ 51 | Kết nối Long Thành, Bà Rịa – Vũng Tàu | Người di chuyển liên tỉnh |
+
+## Đường Điểu Xiển — tuyến kết nối trực tiếp
+
+Đây là tuyến đường gắn trực tiếp với dự án. Từ đây, cư dân tiếp cận khu dân cư Hố Nai, Quốc lộ 1A và các tiện ích xung quanh. Một số thông tin cho biết từ dự án đến nút giao Hố Nai trên Quốc lộ 1A khoảng **1,2 km**, thời gian tham khảo ~3 phút trong điều kiện thuận lợi.
+
+## Quốc lộ 1A — trục giao thông chính
+
+Kết nối trung tâm Biên Hòa, TP.HCM, Trảng Bom và các tỉnh. Xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) để đánh giá khả năng đi làm qua tuyến này.
+
+## Cao tốc TP.HCM – Long Thành – Dầu Giây
+
+Một nguồn giới thiệu khoảng cách đến nút giao Long Bình khoảng **8 km**. Phù hợp với người đi TP.HCM, sân bay Long Thành hoặc di chuyển liên vùng. **Lưu ý:** xe máy không được sử dụng cao tốc.
+
+## Lợi thế giao thông cho người mua ở thật
+
+- Nhiều tuyến đường giúp chủ động khi một tuyến bị ùn tắc
+- Kết nối thuận tiện đến KCN Amata, Hố Nai, Long Bình — xem [K-Home CityView có thuận tiện cho người làm ở Amata không](/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong)
+- Tiếp cận trung tâm Biên Hòa, trường học, bệnh viện — xem [tiện ích xung quanh K-Home CityView có đủ không](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong)
+
+## Những điều cần kiểm tra trước khi đánh giá giao thông
+
+- Dự án nằm trực tiếp trên tuyến nào vs kết nối qua đường trung gian
+- Khoảng cách đến nút giao gần nhất
+- Thời gian đi vào giờ cao điểm (7–8h và 17–18h)
+- Phương tiện được phép sử dụng từng tuyến
+- Tình trạng đường vào mùa mưa và chi phí cầu đường
+
+## Kết luận
+
+K-Home CityView có mạng lưới kết nối đa dạng — đường Điểu Xiển (trực tiếp), Quốc lộ 1A và Nguyễn Ái Quốc (kết nối nội đô), cao tốc và Quốc lộ 51 (liên vùng). Lợi thế này phù hợp với người mua ở thật, người lao động tại KCN và gia đình thường xuyên di chuyển.
+
+Xem thêm [K-Home CityView và lợi thế sống gần khu dân cư hiện hữu](/tin-tuc/k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được tư vấn và đặt lịch khảo sát thực tế.
+
+---RELATED---tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau|Từ K-Home CityView Đi Trung Tâm Biên Hòa Mất Bao Lâu;k-home-cityview-gan-nhung-khu-cong-nghiep-nao|K-Home CityView Gần Những KCN Nào`,
+  },
+  {
     id: "n34",
     slug: "k-home-cityview-va-loi-the-song-gan-khu-dan-cu-hien-huu",
     title: "K-Home CityView Và Lợi Thế Sống Gần Khu Dân Cư Hiện Hữu",
