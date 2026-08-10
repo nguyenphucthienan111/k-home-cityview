@@ -364,6 +364,180 @@ const projects = [
 
 const newsList = [
   {
+    id: "n42",
+    slug: "nen-chon-tang-nao-khi-mua-k-home-cityview",
+    title: "Nên Chọn Tầng Nào Khi Mua K-Home CityView?",
+    date: "2026-08-10",
+    excerpt: "Tư vấn nên chọn tầng nào khi mua K-Home CityView dựa trên ánh sáng, thông gió, tiếng ồn, tầm nhìn, khả năng di chuyển và nhu cầu của từng gia đình.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786355045/kinh-nghiem-chon-tang-khi-mua-can-ho-khome-cityview_a8daco.png",
+    category: "So sánh & Tư vấn",
+    project: "cityview",
+    content: `> **Lưu ý:** Tầng phù hợp phụ thuộc vào hướng căn, vị trí block, khoảng cách giữa các tòa nhà, nhu cầu sử dụng và khả năng tài chính. Không có một tầng tốt nhất cho tất cả khách hàng.
+
+![Kinh nghiệm chọn tầng khi mua căn hộ K-Home CityView](https://res.cloudinary.com/dthv0nsq/image/upload/v1786355045/kinh-nghiem-chon-tang-khi-mua-can-ho-khome-cityview_a8daco.png)
+
+## K-Home CityView có bao nhiêu tầng?
+
+[K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu gồm 4 block căn hộ cao **22 tầng**. Khi chọn tầng, cần kiểm tra thêm: vị trí căn trong block, hướng ban công, khoảng cách đến thang máy, tầm nhìn và khoảng cách đến tòa đối diện. Xem thêm [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-12A-22.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/mat-bang/mat-bang-k-home-cityview-tang-4-11.jpg|Mặt bằng tầng điển hình K-Home CityView Hố Nai
+
+## Ưu và nhược điểm của từng nhóm tầng
+
+**Tầng thấp (4–7)**
+
+✅ Dễ di chuyển, phù hợp gia đình có trẻ nhỏ/người lớn tuổi, thời gian ra vào nhanh
+
+❌ Có thể chịu tiếng ồn từ sảnh/tiện ích, tầm nhìn bị che chắn bởi cây/khối đế
+
+**Tầng trung (8–15)**
+
+✅ Cân bằng ánh sáng, gió, tiếng ồn, tầm nhìn và di chuyển — lựa chọn phổ biến nhất
+
+❌ Giá thường cao hơn tầng thấp một số căn, cần kiểm tra hướng và vị trí
+
+**Tầng cao (16–21)**
+
+✅ View rộng, riêng tư, ít bụi và tiếng ồn mặt đất
+
+❌ Phụ thuộc thang máy nhiều, có thể gió mạnh, nóng nếu hướng Tây
+
+**Tầng 22 (trên cùng)**
+
+✅ Tầm nhìn tốt nhất, ít tiếng động từ tầng trên
+
+❌ Cần kiểm tra chống nóng/thấm mái, khu kỹ thuật, tiếng gió
+
+## Bảng tư vấn chọn tầng theo nhu cầu
+
+| Nhu cầu | Nhóm tầng tham khảo | Cần kiểm tra |
+|---|---|---|
+| Gia đình có trẻ nhỏ | Tầng thấp đến trung | An toàn ban công, thang máy |
+| Người lớn tuổi | Tầng thấp đến trung | Khả năng dùng cầu thang khi mất điện |
+| Người thích view | Tầng trung đến cao | Hướng nắng, gió, tầm nhìn |
+| Cần yên tĩnh | Tầng trung/cao vừa | Tránh thang máy, tiện ích, phòng rác |
+| Ưu tiên giá | Tầng thấp hoặc không có view | Tiếng ồn, bụi, hướng |
+| Thích thông thoáng | Tầng trung/cao, căn góc | Mặt thoáng, cửa sổ, hướng gió |
+
+Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong).
+
+## Gia đình có trẻ nhỏ nên chọn tầng nào?
+
+Ưu tiên tầng thấp đến trung (~6–12), không sát hồ bơi/sân chơi hoặc khu thương mại. Cần kiểm tra lan can, ban công an toàn. Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong).
+
+## Những vị trí nên tránh khi chọn tầng
+
+- Sát thang máy → tiếng chuông, người qua lại
+- Gần phòng rác → mùi, tiếng động
+- Ngay trên khu thương mại → ồn ào
+- Dưới tầng kỹ thuật/mái → nóng, ồn
+- Hướng Tây không có giải pháp che nắng → nóng buổi chiều
+- Đối diện tiện ích đông người (hồ bơi, sân chơi) → ồn vào giờ cao điểm
+
+## Giá căn hộ có thay đổi theo tầng không?
+
+Có — căn tầng đẹp, view thoáng, căn góc thường được định giá cao hơn. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) để lập kế hoạch tài chính.
+
+Theo phương án 25% vốn tự có + 75% khoản vay: nếu căn chênh 50 triệu do khác tầng → vốn tự có tăng ~12,5 triệu, khoản vay tăng ~37,5 triệu. Xem [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) để so sánh các loại căn.
+
+## 7 bước chọn tầng
+
+1. Xác định nhu cầu gia đình (trẻ nhỏ, người lớn tuổi, cần view, cần yên tĩnh)
+2. Xem mặt bằng từng block, vị trí căn và hướng
+3. Chọn khoảng tầng phù hợp, loại bỏ căn có vị trí bất lợi
+4. Kiểm tra ánh sáng, thông gió — hướng ban công, cửa sổ, mặt thoáng
+5. Kiểm tra tiếng ồn — tránh thang máy, phòng rác, khu thương mại
+6. So sánh giá và tính khoản vay theo từng mã căn
+7. Khảo sát thực tế vào 3 thời điểm: sáng, chiều, tối
+
+## Kết luận
+
+Với tòa nhà cao 22 tầng, nhóm tầng trung ~8–15 là khoảng tham khảo cân bằng cho nhiều gia đình. Gia đình có trẻ nhỏ/người lớn tuổi nên chọn tầng thấp đến trung; người thích view rộng nên xem tầng trung đến cao.
+
+Bên cạnh số tầng, hướng ban công, cửa sổ và vị trí block quan trọng không kém. Xem thêm [K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được tư vấn chọn tầng và mã căn phù hợp.
+
+---RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong|Thiết Kế K-Home CityView Khác Gì NOXH Truyền Thống`,
+  },
+  {
+    id: "n41",
+    slug: "thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong",
+    title: "Thiết Kế K-Home CityView Có Gì Khác Biệt So Với NOXH Truyền Thống?",
+    date: "2026-08-10",
+    excerpt: "Phân tích những điểm khác biệt trong thiết kế K-Home CityView so với NOXH truyền thống: quy hoạch Singapore, tiện ích khép kín, ánh sáng, thông gió và tiêu chuẩn xanh EDGE.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786354617/thiet-ke-khome-cityview-theo-dinh-huong-singapore_nbv6zr.png",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Bài viết dùng "NOXH truyền thống" để chỉ cách phát triển nhà ở xã hội thường chỉ tập trung vào chức năng ở. Mức độ khác biệt thực tế cần đối chiếu với hồ sơ thiết kế và tiêu chuẩn bàn giao chính thức.
+
+![Thiết kế K-Home CityView theo định hướng Singapore](https://res.cloudinary.com/dthv0nsq/image/upload/v1786354617/thiet-ke-khome-cityview-theo-dinh-huong-singapore_nbv6zr.png)
+
+## K-Home CityView có gì khác biệt về thiết kế?
+
+[K-Home CityView](/k-home-cityview-ho-nai) được giới thiệu theo định hướng nhà ở xã hội chuẩn Singapore, có sự tham gia thiết kế của **Surbana Jurong**. Thay vì chỉ tối đa số lượng căn hộ trên quỹ đất, dự án được quy hoạch theo mô hình khu căn hộ đồng bộ gồm: nhà ở, khu thương mại – dịch vụ, công viên, hồ bơi, sân chơi, khu thể thao, nhà sinh hoạt cộng đồng và trường học.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/slide-25.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|Phối cảnh tổng thể dự án K-Home CityView Hố Nai Biên Hòa
+
+## So sánh nhanh K-Home CityView và NOXH truyền thống
+
+| Tiêu chí | K-Home CityView | NOXH truyền thống |
+|---|---|---|
+| Định hướng thiết kế | Chuẩn Singapore, lấy cư dân làm trung tâm | Thường ưu tiên công năng ở và chi phí |
+| Đơn vị thiết kế | Surbana Jurong (được giới thiệu) | Tùy chủ đầu tư |
+| Không gian xanh | Công viên, vườn cảnh quan, lối đi bộ | Mức độ khác nhau theo dự án |
+| Ánh sáng, thông gió | Định hướng tối ưu cửa sổ, ban công | Phụ thuộc thiết kế từng dự án |
+| Tiện ích | Hồ bơi, sân chơi, thể thao, minimart, cộng đồng | Có thể giới hạn ở tiện ích cơ bản |
+| Tiêu chuẩn xanh | Được giới thiệu theo EDGE | Không phải dự án nào cũng có |
+
+## Thiết kế theo định hướng Singapore
+
+Sự tham gia của Surbana Jurong thể hiện qua: quy hoạch phân khu chức năng rõ ràng, bố trí tiện ích xen kẽ giữa các block, tăng không gian đi bộ và cảnh quan, thiết kế căn hộ đón sáng và thông gió tự nhiên.
+
+Mục tiêu là tạo môi trường sống hoàn chỉnh — cư dân có thể nghỉ ngơi, vui chơi, mua sắm và sinh hoạt cộng đồng trong cùng một khu vực. Xem thêm [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+## Ánh sáng và thông gió tự nhiên
+
+Thiết kế K-Home CityView được giới thiệu tối ưu ánh sáng và thông gió qua cửa sổ phòng ngủ, ban công, khoảng cách giữa các block và hướng bố trí tòa nhà. Xem phân tích chi tiết tại [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong).
+
+Người mua cần kiểm tra đúng mã căn, hướng ban công và số lượng cửa sổ — không phải mọi căn đều có mức độ đón sáng như nhau.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Hồ bơi và sân vườn nội khu K-Home CityView
+
+## Tiêu chuẩn công trình xanh EDGE
+
+K-Home CityView được giới thiệu phát triển theo EDGE với mục tiêu tiết kiệm ~20% năng lượng, ~20% nước và giảm ~20% carbon. Xem phân tích sâu tại [K-Home CityView và tiêu chuẩn sống xanh EDGE có gì khác biệt](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge).
+
+**Lưu ý:** EDGE không chỉ là trồng cây xanh hay ảnh quảng bá. Người mua nên yêu cầu thông tin về chứng nhận, phạm vi áp dụng và giải pháp kỹ thuật cụ thể.
+
+## Cơ cấu căn hộ đa dạng cho người mua ở thật
+
+K-Home CityView có 4 nhóm diện tích từ ~47–84 m², phù hợp nhiều nhóm khách hàng. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong).
+
+Theo phương án 25% vốn tự có + 75% khoản vay, căn diện tích nhỏ giúp giảm vốn ban đầu; căn 2PN/3PN phù hợp gia đình muốn ở ổn định lâu dài. Xem thêm [mua K-Home CityView nên chọn căn diện tích nào](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi) và [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram).
+
+## Không gian cộng đồng — điểm khác biệt lớn
+
+NOXH truyền thống thường tập trung vào căn hộ riêng và hạ tầng cơ bản. K-Home CityView được giới thiệu có: nhà sinh hoạt cộng đồng, công viên, khu vui chơi trẻ em, khu thể thao, café ngoài trời và lối đi bộ — tạo điều kiện giao lưu cho cư dân. Điều này đặc biệt phù hợp với [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong).
+
+## Những điểm không nên kỳ vọng quá mức
+
+- "Chuẩn Singapore" cần xem áp dụng cho hạng mục cụ thể nào
+- Tiện ích phối cảnh cần kiểm tra tiến độ và đơn vị quản lý
+- Thông gió phụ thuộc hướng, tầng, khoảng cách block — không phải mọi căn đều như nhau
+- Chứng nhận EDGE cần tài liệu xác nhận chính thức
+
+## Kết luận
+
+Thiết kế K-Home CityView được giới thiệu nổi bật với: quy hoạch định hướng Singapore (Surbana Jurong), tích hợp nhà ở – thương mại – cảnh quan – tiện ích, chú trọng ánh sáng và thông gió, phát triển theo định hướng EDGE và không gian cộng đồng.
+
+Trước khi quyết định, hãy kiểm tra bản vẽ, tiêu chuẩn bàn giao, chứng nhận EDGE và tiến độ tiện ích. Xem thêm [giá bán K-Home CityView có phù hợp người lao động không](/tin-tuc/gia-ban-k-home-cityview-co-thuc-su-phu-hop-nguoi-lao-dong-khong) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được tư vấn và đặt lịch xem nhà mẫu.
+
+---RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;nen-chon-tang-nao-khi-mua-k-home-cityview|Nên Chọn Tầng Nào Khi Mua K-Home CityView`,
+  },
+  {
     id: "n40",
     slug: "mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong",
     title: "Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không?",
