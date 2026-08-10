@@ -364,6 +364,168 @@ const projects = [
 
 const newsList = [
   {
+    id: "n32",
+    slug: "k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong",
+    title: "K-Home CityView Có Thuận Tiện Cho Người Làm Ở Amata Không?",
+    date: "2026-08-09",
+    excerpt: "K-Home CityView nằm trên đường Điểu Xiển, có khả năng kết nối KCN Amata khoảng 4–7 km và khoảng 10–15 phút di chuyển. Tìm hiểu ưu điểm, tuyến đường và lưu ý thực tế.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786330564/khome-cityview-gan-khu-cong-nghiep-bien-hoa_cje1zh.png",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Khoảng cách và thời gian di chuyển trong bài chỉ mang tính tham khảo. Thời gian thực tế phụ thuộc vào cổng KCN Amata, địa chỉ công ty, tuyến đường, phương tiện và tình trạng giao thông.
+
+![K-Home CityView gần KCN Amata Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1786330564/khome-cityview-gan-khu-cong-nghiep-bien-hoa_cje1zh.png)
+
+## K-Home CityView có thuận tiện cho người làm ở Amata không?
+
+[K-Home CityView](/k-home-cityview-ho-nai) tọa lạc trên đường Điểu Xiển, phường Hố Nai, Biên Hòa. Theo thông tin giới thiệu, dự án cách trung tâm Biên Hòa khoảng 3 km và có khả năng kết nối đến KCN Amata. Một số nguồn ghi nhận khoảng cách đến KCN Amata khoảng **4 km**, nguồn khác ước tính tổng quãng đường theo tuyến khoảng **7 km**, thời gian di chuyển khoảng **10–15 phút** tùy điều kiện giao thông.
+
+Xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau).
+
+| Thông tin | Mức tham khảo |
+|---|---|
+| Khoảng cách (một số nguồn) | ~4 km |
+| Tổng quãng đường theo tuyến khác | ~7 km |
+| Thời gian điều kiện thuận lợi | ~10 phút |
+| Thời gian trung bình | ~15 phút |
+| Phương tiện phù hợp | Xe máy, ô tô |
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|Phối cảnh và mặt tiền đường Điểu Xiển dự án K-Home CityView
+
+## Người làm ở Amata được lợi gì khi sống tại K-Home CityView?
+
+- **Rút ngắn thời gian đi làm** — đặc biệt với người làm ca, tăng ca thường xuyên
+- **Giảm chi phí xăng xe** — khoảng cách ngắn hơn tiết kiệm đáng kể trong nhiều năm
+- **Thuận tiện khi làm ca sớm hoặc về muộn** — chủ động hơn, ít phụ thuộc xe đưa đón
+- **Gần tiện ích gia đình** — xem [tiện ích xung quanh K-Home CityView có đủ không](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong) để đánh giá trường học, bệnh viện, siêu thị
+
+## K-Home CityView có phù hợp gia đình làm việc tại Amata không?
+
+Phù hợp khi:
+- Một hoặc cả hai vợ chồng làm việc tại KCN Amata
+- Gia đình muốn sống lâu dài tại Biên Hòa, cần tiếp cận trường học — xem [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong)
+- Muốn giảm chi phí thuê nhà dài hạn — xem [so sánh chi phí mua K-Home CityView và thuê nhà tại Biên Hòa](/tin-tuc/so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa)
+
+Nếu chỉ một người làm ở Amata còn người kia làm ở khu vực khác, cần so sánh tổng thời gian di chuyển của cả hai trước khi quyết định.
+
+## Cách kiểm tra tuyến đường trước khi mua
+
+1. Ghi chính xác địa chỉ công ty trong KCN Amata
+2. Mở Google Maps, nhập K-Home CityView → công ty
+3. Kiểm tra thời gian vào lúc bắt đầu ca và cuối ca
+4. Thử tuyến đường thay thế khi Quốc lộ 1A đông xe
+5. Đi thực tế ít nhất một lần vào giờ cao điểm
+
+Những yếu tố có thể tăng thời gian di chuyển: giờ cao điểm trên Quốc lộ 1A, mưa lớn, lịch làm ca sớm, khoảng cách đến cổng nhà máy cụ thể.
+
+## Phương án tài chính khi mua
+
+Theo chính sách hiện tại: 25% vốn tự có + 75% khoản vay ngân hàng. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi).
+
+## Kết luận
+
+K-Home CityView có thể thuận tiện cho người làm việc tại KCN Amata với khoảng cách tham khảo 4–7 km và thời gian di chuyển 10–15 phút. Dự án còn có lợi thế về tiện ích đô thị và vị trí trung tâm Biên Hòa.
+
+Trước khi đăng ký, hãy kiểm tra đúng địa chỉ công ty, khảo sát tuyến đường thực tế và xác nhận [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được tư vấn cụ thể.
+
+---RELATED---k-home-cityview-gan-nhung-khu-cong-nghiep-nao|K-Home CityView Gần Những KCN Nào;tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong|Tiện Ích Xung Quanh K-Home CityView Có Đủ Không`,
+  },
+  {
+    id: "n31",
+    slug: "tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong",
+    title: "Tiện Ích Xung Quanh K-Home CityView Có Đủ Cho Cuộc Sống Hằng Ngày Không?",
+    date: "2026-08-09",
+    excerpt: "Đánh giá tiện ích xung quanh K-Home CityView gồm trường học, bệnh viện, siêu thị, chợ, khu vui chơi và khu công nghiệp tại Biên Hòa.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323498/slide-k-home-cityview/slide-27.jpg",
+    category: "Đánh giá dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Khoảng cách và thời gian di chuyển chỉ mang tính tham khảo, có thể thay đổi theo tuyến đường, phương tiện, khung giờ và tình trạng giao thông. Người mua nên kiểm tra trực tiếp trên bản đồ hoặc khảo sát thực tế trước khi quyết định.
+
+![Tiện ích xung quanh K-Home CityView tại Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1785323498/slide-k-home-cityview/slide-27.jpg)
+
+## K-Home CityView có thuận tiện cho sinh hoạt hằng ngày không?
+
+[K-Home CityView](/k-home-cityview-ho-nai) tọa lạc trên đường Điểu Xiển, phường Hố Nai, Biên Hòa. Dự án nằm trong khu vực dân cư hiện hữu, được giới thiệu có khả năng tiếp cận nhiều nhóm tiện ích thiết yếu. Xem thêm [vị trí K-Home CityView Biên Hòa có gì nổi bật](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac) và [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau).
+
+## Nhóm tiện ích mua sắm, chợ và siêu thị
+
+Khu vực Hố Nai có chợ truyền thống, cửa hàng tạp hóa, nhà thuốc và các dịch vụ nhỏ phục vụ nhu cầu hằng ngày. Theo thông tin giới thiệu:
+
+| Điểm đến | Thời gian tham khảo |
+|---|---|
+| Lotte Mart, Trung tâm hành chính, Công viên 30/4 | ~5 phút |
+| GO! Tân Hiệp, Trường ĐH Đồng Nai | ~10 phút |
+| AEON Mall, khu hành chính cấp tỉnh | ~20 phút |
+| Sân bay Long Thành | ~30 phút |
+
+Khi khảo sát thực tế: kiểm tra giờ mở cửa chợ, khoảng cách đến nhà thuốc/ngân hàng, và cửa hàng tiện lợi gần nhất.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|Tiện ích BBQ và khu vui chơi trẻ em nội khu K-Home CityView
+
+## Hệ thống trường học quanh K-Home CityView
+
+Khu vực xung quanh được giới thiệu có trường học từ mầm non đến THPT, cùng với Đại học Đồng Nai và Đại học Lạc Hồng. Đây là yếu tố quan trọng với gia đình trẻ — xem thêm [K-Home CityView có phù hợp với gia đình trẻ không](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+**Lưu ý:** "Gần trường học" không đồng nghĩa nằm trong bán kính đi bộ. Phụ huynh cần kiểm tra từng trường cụ thể và điều kiện tuyển sinh.
+
+## Bệnh viện và dịch vụ chăm sóc sức khỏe
+
+Bệnh viện Đồng Nai là cơ sở y tế được nhiều nguồn nhắc đến khi giới thiệu tiện ích quanh dự án. Ngoài ra, khu vực Hố Nai có nhiều phòng khám, nha khoa và nhà thuốc phục vụ các nhu cầu y tế thường ngày.
+
+Gia đình có trẻ nhỏ hoặc người lớn tuổi nên kiểm tra phòng khám nhi, phòng khám gia đình và nhà thuốc gần nhất trên Google Maps.
+
+## Tiện ích nội khu K-Home CityView
+
+Theo thông tin giới thiệu, dự án được định hướng phát triển tiện ích nội khu gồm:
+- Minimart, café ngoài trời
+- Hồ bơi người lớn và trẻ em
+- Sân chơi trẻ em, khu thể thao, phòng gym
+- Vườn cảnh quan, nhà sinh hoạt cộng đồng
+- Trạm sạc xe điện
+
+Xem thêm [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích nội khu](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+**Lưu ý:** Nên dùng cách diễn đạt "theo thông tin giới thiệu dự án" khi đề cập tiện ích nội khu, vì dự án đang trong giai đoạn xây dựng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V12_TH_EXT_NOXH_POOL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V11_TH_EXT_NOTM_POOL_2|Hồ bơi nội khu K-Home CityView Biên Hòa
+
+## Khu công nghiệp và tiện ích việc làm
+
+Dự án có khả năng kết nối đến KCN Amata, Hố Nai, Long Bình và Biên Hòa 2 — xem chi tiết tại [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao). Đây là yếu tố quan trọng giúp người lao động giảm thời gian đi lại và chi phí xăng xe hằng ngày.
+
+## Tiện ích có đủ để ở lâu dài không?
+
+Tổng hợp theo các nhóm nhu cầu cơ bản:
+
+| Nhu cầu | Khả năng tiếp cận tham khảo |
+|---|---|
+| Mua thực phẩm | Chợ Hố Nai, cửa hàng dân sinh, siêu thị |
+| Mua sắm lớn | Lotte Mart, GO! Tân Hiệp |
+| Giáo dục | Trường các cấp, ĐH Đồng Nai, ĐH Lạc Hồng |
+| Y tế | BV Đồng Nai, phòng khám, nhà thuốc |
+| Giải trí | Công viên 30/4, TTTM, khu vui chơi |
+| Việc làm | KCN Amata, Hố Nai, Long Bình, Biên Hòa 2 |
+
+Bảng trên tổng hợp từ thông tin giới thiệu dự án và các nguồn thị trường. Người mua cần kiểm tra từng địa điểm cụ thể.
+
+## Những điểm cần kiểm tra trước khi quyết định
+
+- Tiện ích đã hiện hữu hay chỉ mới là định hướng phát triển
+- Khoảng cách thực tế vào giờ cao điểm, mùa mưa
+- Chi phí sử dụng tiện ích nội khu (hồ bơi, gym...)
+- Chất lượng và giờ hoạt động của dịch vụ xung quanh
+
+## Kết luận
+
+Tiện ích xung quanh K-Home CityView tương đối đa dạng: chợ, siêu thị, trường học, bệnh viện, công viên và kết nối KCN. Đây là điểm cộng lớn cho người mua ở thật.
+
+Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) để chuẩn bị đầy đủ trước khi đăng ký.
+
+Liên hệ **0937.587.438** để được tư vấn và đặt lịch khảo sát thực tế.
+
+---RELATED---tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau|Từ K-Home CityView Đi Trung Tâm Biên Hòa Mất Bao Lâu;k-home-cityview-gan-nhung-khu-cong-nghiep-nao|K-Home CityView Gần Những KCN Nào`,
+  },
+  {
     id: "n30",
     slug: "k-home-cityview-gan-nhung-khu-cong-nghiep-nao",
     title: "K-Home CityView Gần Những Khu Công Nghiệp Nào?",
