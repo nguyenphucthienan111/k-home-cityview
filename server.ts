@@ -3938,6 +3938,32 @@ Liên hệ **0937.587.438** để được hỗ trợ.
   },
 ];
 
+// ─── 301 Redirects: /projects/* → slug mới ───────────────────────────────────
+// Google đã index các URL /projects/... cũ, cần 301 để chuyển vĩnh viễn
+const PROJECT_REDIRECTS: Record<string, string> = {
+  "/projects/k-home-cityview-ho-nai":   "/k-home-cityview-ho-nai",
+  "/projects/k-home-midtown-trang-bom": "/k-home-midtown-trang-bom",
+  "/projects/k-home-avenue-nhon-trach": "/k-home-avenue-nhon-trach",
+  "/projects/k-home-grand-urban":       "/k-home-cityview-ho-nai",
+};
+
+// Redirect /projects/:slug/:unit → /:slug/:unit
+app.get("/projects/:projectSlug/:unitSlug", (req, res) => {
+  res.redirect(301, `/${req.params.projectSlug}/${req.params.unitSlug}`);
+});
+
+// Redirect /projects/:slug → /:slug hoặc fallback
+app.get("/projects/:projectSlug", (req, res) => {
+  const target = PROJECT_REDIRECTS[`/projects/${req.params.projectSlug}`]
+    || `/${req.params.projectSlug}`;
+  res.redirect(301, target);
+});
+
+// Redirect /projects (trang danh sách) → /san-pham
+app.get("/projects", (_req, res) => {
+  res.redirect(301, "/san-pham");
+});
+
 // ─── Public API Routes ────────────────────────────────────────────────────────
 app.get("/api/projects", (_req, res) => res.json(projects));
 app.get("/api/news", (_req, res) => res.json(newsList));
