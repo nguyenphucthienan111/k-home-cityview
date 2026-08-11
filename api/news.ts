@@ -3,6 +3,168 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n44",
+    slug: "k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026",
+    title: "K-Home CityView Đã Mở Bán Chưa? Cập Nhật Mới Nhất 2026",
+    date: "2026-08-11",
+    excerpt: "K-Home CityView đã tổ chức sự kiện giới thiệu và công bố thông tin mở bán năm 2026. Tìm hiểu tình trạng nhận hồ sơ, giá tham khảo, điều kiện mua và cách đăng ký.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786455248/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-9_wcb86z.webp",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Tình trạng mở bán, thời gian nhận hồ sơ, giá bán và chính sách thanh toán có thể thay đổi theo thông báo chính thức. Người mua cần phân biệt giữa sự kiện giới thiệu dự án, thời điểm công bố mở bán và thời gian tiếp nhận hồ sơ.
+
+![Sự kiện giới thiệu và mở bán K-Home CityView năm 2026](https://res.cloudinary.com/dthv0nsq/image/upload/v1786456719/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-8_r0pjmf.webp)
+
+## K-Home CityView đã mở bán chưa?
+
+Tính đến tháng 8/2026, [K-Home CityView](/k-home-cityview-ho-nai) đã tổ chức sự kiện giới thiệu dự án ngày **21/6/2026** tại Nhà thi đấu Thành phố Đồng Nai, thu hút hơn **1.200 khách hàng** tham dự. Một số nguồn thị trường ghi nhận thời gian thu hồ sơ đợt 1 từ ngày **30/6/2026 đến 1/9/2026**.
+
+Câu trả lời phù hợp: K-Home CityView đã triển khai hoạt động mở bán/tiếp nhận hồ sơ theo từng giai đoạn trong năm 2026. Khách hàng cần **xác nhận tình trạng nhận hồ sơ hiện tại** trước khi đăng ký.
+
+**Lưu ý:** Dự án vẫn đang thi công, thời gian bàn giao dự kiến năm 2027–đầu 2028. Xem [cập nhật tiến độ thi công K-Home CityView tháng mới nhất](/tin-tuc/cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456830/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-10_rpvcu6.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-12_tm9awq.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-6_xgizpz.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456829/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-13_olnn0v.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-1-2_bqb2ss.webp|Sự kiện giới thiệu K-Home CityView ngày 21/6/2026
+
+## Sự kiện giới thiệu ngày 21/6/2026
+
+Sự kiện "Định hình chất sống Singapore" giới thiệu đến khách hàng: quy hoạch dự án, thiết kế chuẩn Singapore, các loại căn hộ, tiện ích nội khu, phương án tài chính và lộ trình triển khai. Người mua vẫn cần kiểm tra bước tiếp theo: đăng ký nguyện vọng, nộp hồ sơ, xét duyệt hay ký hợp đồng mua bán — mỗi giai đoạn có quy trình và giấy tờ khác nhau.
+
+## K-Home CityView đang nhận hồ sơ hay đã ký hợp đồng?
+
+Quy trình nhà ở xã hội gồm nhiều bước: công bố thông tin → tư vấn → đăng ký nguyện vọng → tiếp nhận hồ sơ → xét duyệt → công bố danh sách → thông báo giá → ký hợp đồng → thanh toán → bàn giao.
+
+**Nộp hồ sơ ≠ được duyệt mua; được duyệt mua ≠ khoản vay ngân hàng chắc chắn được phê duyệt.**
+
+## Số lượng căn và giá mở bán tham khảo
+
+Thông tin công khai ghi nhận **1.382 căn hộ NOXH**, trong khi tổng quy mô dự án được giới thiệu khoảng 2.000 căn. Sự khác biệt liên quan đến cơ cấu căn thương mại và cách thống kê theo từng đợt.
+
+Giá tham khảo. Xem chi tiết tại [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [bảng giá K-Home CityView theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can):
+
+| Loại căn | Giá tham khảo |
+|---|---|
+| Căn 1PN | ~1–1,1 tỷ đồng |
+| Căn 2PN | Từ ~1,4 tỷ đồng |
+| Căn 3PN | Từ ~1,9 tỷ đồng |
+
+Người mua cần hỏi rõ giá đã bao gồm VAT và phí bảo trì chưa, và đây là giá dự kiến hay giá được phê duyệt.
+
+## Chính sách tài chính
+
+Theo phương án 25% vốn tự có + 75% khoản vay. Xem chi tiết tại [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao).
+
+| Giá căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1 tỷ | 250 triệu | 750 triệu |
+| 1,4 tỷ | 350 triệu | 1,05 tỷ |
+| 1,9 tỷ | 475 triệu | 1,425 tỷ |
+
+Ngoài 25% vốn tự có, cần dự trù thêm phí bảo trì, VAT, nội thất và quỹ dự phòng. Xem [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau).
+
+## Điều kiện và hồ sơ cần chuẩn bị
+
+Trước khi đăng ký, kiểm tra [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và chuẩn bị hồ sơ theo [hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi).
+
+Xem quy trình đầy đủ tại [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## Dự án dự kiến bàn giao khi nào?
+
+Các nguồn ghi mốc **quý III/2027 đến tháng 1/2028** — chưa hoàn toàn thống nhất. Sự khác biệt có thể do các block có tiến độ khác nhau hoặc tài liệu được cập nhật ở các giai đoạn khác nhau. Khách hàng nên xem mốc bàn giao trong **hợp đồng và thông báo chính thức**.
+
+## Cần lưu ý gì khi đăng ký mua?
+
+- Không chuyển tiền cho tài khoản không xác minh
+- Nộp hồ sơ không đồng nghĩa chắc chắn được duyệt
+- Kiểm tra đúng loại sản phẩm (NOXH hay thương mại)
+- Yêu cầu bảng lịch đóng tiền đầy đủ
+- Mỗi tài liệu cần có ngày phát hành rõ ràng
+
+## Kết luận
+
+K-Home CityView đã mở bán và tiếp nhận hồ sơ theo từng đợt trong năm 2026. Khách hàng cần xác nhận tình trạng nhận hồ sơ hiện tại, kiểm tra điều kiện, chuẩn bị đúng hồ sơ và chỉ ký kết/thanh toán sau khi có đầy đủ căn cứ pháp lý.
+
+Liên hệ **0937.587.438** để được tư vấn tình trạng nhận hồ sơ và hỗ trợ chuẩn bị hồ sơ miễn phí.
+
+---RELATED---cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat|Tiến Độ Thi Công K-Home CityView Tháng Mới Nhất;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026`,
+  },
+  {
+    id: "n43",
+    slug: "cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat",
+    title: "Cập Nhật Tiến Độ Thi Công K-Home CityView Tháng Mới Nhất",
+    date: "2026-08-11",
+    excerpt: "Cập nhật tiến độ thi công K-Home CityView tháng 8/2026, các mốc khởi công, xây dựng, hoàn thiện và thời gian bàn giao dự kiến của dự án.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-39.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý cập nhật:** Bài viết theo các thông tin có thể kiểm chứng tại thời điểm cập nhật. Không khẳng định dự án đã hoàn thành móng, lên tầng hoặc cất nóc nếu chưa có ảnh công trường mới hoặc thông báo chính thức.
+
+![Cập nhật tiến độ thi công K-Home CityView tháng 8/2026](https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-39.jpg)
+
+## Tiến độ K-Home CityView hiện nay
+
+[K-Home CityView](/k-home-cityview-ho-nai) là dự án nhà ở xã hội trên đường Điểu Xiển, phường Hố Nai, Biên Hòa, Đồng Nai. Quy mô ~2,85 ha, 4 block cao 22 tầng. Dự án đã động thổ ngày **23/9/2025** và hiện đang trong giai đoạn triển khai xây dựng. Thời gian bàn giao dự kiến **năm 2027**, một số nguồn ghi quý II/2027, nguồn khác ghi quý III/2027. Xem thêm [đánh giá chi tiết dự án K-Home CityView](/tin-tuc/danh-gia-du-an-k-home-cityview-bien-hoa-2026).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785323504/slide-k-home-cityview/slide-40.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/slide-2.jpg|Tiến độ triển khai dự án K-Home CityView
+
+## Các mốc tiến độ chính
+
+| Mốc triển khai | Thời gian tham khảo | Trạng thái |
+|---|---|---|
+| Động thổ dự án | 23/9/2025 | Đã thực hiện |
+| Triển khai phần móng | 2025–2026 | Đang theo dõi |
+| Thi công kết cấu phần thân | 2026 | Cần ảnh cập nhật |
+| Hoàn thiện căn hộ và tiện ích | Dự kiến 2027 | Chưa đến giai đoạn |
+| Nghiệm thu, bàn giao | Dự kiến 2027 | Chờ thông báo chính thức |
+
+Các mốc chi tiết hơn (hoàn thành móng Q1/2026, hoàn thành thô Q3/2026, hoàn thiện nội thất Q1/2027, bàn giao 2027) được một số nguồn thị trường nêu nhưng chưa phải thông báo chính thức từ chủ đầu tư.
+
+## K-Home CityView đã khởi công chưa?
+
+Dự án đã tổ chức lễ động thổ ngày **23/9/2025** tại đường Điểu Xiển, phường Hố Nai. Đây là mốc khởi đầu — không đồng nghĩa toàn bộ các block đã bước vào cùng một giai đoạn thi công. Sau động thổ còn: chuẩn bị mặt bằng → thi công cọc và móng → kết cấu phần thân → tường và hoàn thiện → hệ thống điện/nước/PCCC → hoàn thiện nội thất → nghiệm thu → bàn giao.
+
+**Ảnh động thổ chỉ dùng cho phần lịch sử dự án, không thay thế cho ảnh tiến độ tháng hiện tại.**
+
+## Tiến độ tháng 8/2026 cần cập nhật gì?
+
+Một bài cập nhật tiến độ có giá trị cần thể hiện:
+- **Tiến độ móng** — đã hoàn thiện cọc, đài móng, tầng hầm chưa
+- **Tiến độ phần thân** — số tầng đã lên (cần ảnh rõ vị trí block)
+- **Khối đế** — khu thương mại, sảnh, tiện ích đã triển khai chưa
+- **Hệ thống kỹ thuật** — điện, nước, PCCC, thang máy
+- **Cảnh quan và tiện ích** — hồ bơi, công viên, sân chơi đã triển khai hay chỉ phối cảnh
+
+Không nên suy đoán số tầng chỉ từ ảnh chụp xa. Cần ảnh công trường có **ngày chụp và vị trí chụp** rõ ràng.
+
+## Bàn giao K-Home CityView dự kiến khi nào?
+
+Các nguồn ghi mốc bàn giao khác nhau trong năm 2027. Người mua nên xác nhận qua: hợp đồng mua bán, phụ lục hợp đồng, thông báo chính thức từ chủ đầu tư. Thời điểm bàn giao phụ thuộc vào: tiến độ xây dựng từng block, nghiệm thu PCCC, hoàn thiện hạ tầng và thủ tục pháp lý.
+
+Cụm từ phù hợp: **"dự kiến bàn giao năm 2027"** — không biến thành cam kết nếu chưa có văn bản chính thức.
+
+## Tiến độ có ảnh hưởng đến lịch thanh toán không?
+
+Có thể có, nếu lịch thanh toán gắn với các mốc xây dựng trong hợp đồng. Xem thêm [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) và [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026).
+
+Theo phương án 25% vốn tự có + 75% khoản vay, cần chủ động dự phòng trường hợp lịch giải ngân có thay đổi. Xem [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau).
+
+## Người mua nên theo dõi tiến độ bằng cách nào?
+
+- **Ảnh công trường có ngày chụp** — nên chụp cùng góc mỗi tháng để so sánh
+- **Thông báo chính thức từ chủ đầu tư** — giá trị cao hơn website môi giới
+- **Đối chiếu hợp đồng** — điều khoản thời hạn hoàn thành, bàn giao
+- **Khảo sát thực tế** — tuân thủ quy định an toàn, không tự ý vào khu thi công
+
+## Kết luận
+
+K-Home CityView động thổ ngày 23/9/2025, đang trong giai đoạn triển khai xây dựng. Tại tháng 8/2026, không nên tự khẳng định dự án đã hoàn thành móng, lên tầng hay xây thô nếu chưa có ảnh công trường hoặc thông báo chính thức.
+
+Xem thêm [K-Home CityView đã mở bán chưa?](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026), [vị trí K-Home CityView tại Biên Hòa](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+Liên hệ **0937.587.438** để được cập nhật tiến độ và đặt lịch xem công trường theo quy định.
+
+---RELATED---k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026|K-Home CityView Đã Mở Bán Chưa? Cập Nhật 2026;danh-gia-du-an-k-home-cityview-bien-hoa-2026|Đánh Giá Chi Tiết K-Home CityView Biên Hòa`,
+  },
+  {
     id: "n42",
     slug: "nen-chon-tang-nao-khi-mua-k-home-cityview",
     title: "Nên Chọn Tầng Nào Khi Mua K-Home CityView?",
