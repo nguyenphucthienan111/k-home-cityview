@@ -3,6 +3,142 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n46",
+    slug: "k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028",
+    title: "K-Home CityView Khi Nào Bàn Giao? Cập Nhật Mốc Tiến Độ 2027–2028",
+    date: "2026-08-11",
+    excerpt: "K-Home CityView dự kiến hoàn thiện và bàn giao căn hộ trong năm 2027, đưa vào sử dụng từ tháng 01/2028. Tổng hợp các mốc tiến độ và lưu ý cho người mua.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-39.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Mốc bàn giao là dự kiến. Người mua cần căn cứ vào hợp đồng và thông báo mới nhất của chủ đầu tư để xác nhận mốc chính thức.
+
+![Lộ trình tiến độ và bàn giao K-Home CityView 2027-2028](https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-39.jpg)
+
+## K-Home CityView khi nào bàn giao?
+
+Câu trả lời ngắn gọn: [K-Home CityView](/k-home-cityview-ho-nai) dự kiến hoàn thiện và bàn giao căn hộ trong **năm 2027**, và theo thông tin từ sự kiện giới thiệu dự án ngày 21/6/2026, dự kiến đưa vào sử dụng từ **tháng 01/2028**.
+
+Mốc cụ thể cho từng block và từng căn cần căn cứ vào hợp đồng và thông báo mới nhất của chủ đầu tư. Xem thêm [cập nhật tiến độ thi công K-Home CityView tháng mới nhất](/tin-tuc/cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat).
+
+## Các mốc bàn giao được công bố
+
+**Mốc năm 2027** — được ghi nhận nhiều nhất trong các nguồn thị trường:
+- Nhiều tài liệu tổng hợp ghi: "dự kiến hoàn thành và bàn giao vào năm 2027"
+- Một số nguồn chi tiết: hoàn thành thô Q3/2026 → hoàn thiện nội thất Q1/2027 → bàn giao năm 2027
+
+**Mốc Quý II và Quý III/2027** — có sự khác biệt giữa các nguồn:
+- Một số ghi "Bàn giao dự kiến Quý III/2027"
+- Nguồn khác ghi "Hoàn thành và bàn giao Quý II/2027"
+
+Sự khác biệt có thể do: cập nhật khác thời điểm, phân kỳ theo block, hoặc phân biệt "hoàn thành xây dựng" và "bàn giao cư dân".
+
+**Mốc tháng 01/2028** — từ sự kiện giới thiệu 21/6/2026, đại diện Kim Oanh Land chia sẻ: *"dự kiến đưa vào sử dụng từ tháng 01/2028."* Đây là thời điểm cư dân bắt đầu ở, có thể sau quá trình hoàn thiện và bàn giao trong năm 2027.
+
+## Timeline tiến độ tham khảo
+
+| Mốc | Thời gian tham khảo | Ghi chú |
+|---|---|---|
+| Khởi công (động thổ) | 23/09/2025 | Đã thực hiện |
+| Thi công móng và khối đế | 2025–2026 | Đang theo dõi |
+| Cất nóc | 2027 (tham khảo) | Cần cập nhật chính thức |
+| Hoàn thiện nội thất | Cuối 2027 (tham khảo) | Theo lộ trình công bố |
+| Bàn giao căn hộ | Năm 2027 (tham khảo) | Cần xem hợp đồng |
+| Đưa vào sử dụng | Tháng 01/2028 (dự kiến) | Theo sự kiện 21/6/2026 |
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785323504/slide-k-home-cityview/slide-40.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/slide-5.jpg|Tiến độ và phối cảnh dự án K-Home CityView
+
+## Người mua cần xem mốc bàn giao ở đâu?
+
+Không nên chỉ dựa vào bài quảng bá. Cần kiểm tra:
+
+- **Hợp đồng mua bán** — điều khoản thời hạn bàn giao, trường hợp điều chỉnh tiến độ
+- **Phụ lục hợp đồng** — tiến độ từng đợt, từng hạng mục
+- **Thông báo chính thức** — thông cáo báo chí, thông báo gửi khách hàng
+- **Giấy tờ pháp lý** — quyết định chấp thuận đầu tư, giấy phép xây dựng, xác nhận PCCC
+
+## Bàn giao có liên quan gì đến lịch thanh toán?
+
+Tiến độ bàn giao thường gắn với các đợt thanh toán. Xem chi tiết tại [thanh toán K-Home CityView theo tiến độ](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) và [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026).
+
+Theo phương án 25% vốn tự có + 75% khoản vay, cần chủ động về thời gian giải ngân. Xem [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram).
+
+Chỉ nên bắt đầu kế hoạch chuyển nhà khi có **thông báo bàn giao chính thức, căn hộ đã nghiệm thu và đã kiểm tra thực tế**.
+
+## Kết luận
+
+K-Home CityView dự kiến bàn giao căn hộ trong năm 2027 và đưa vào sử dụng từ tháng 01/2028. Khi viết bài SEO, luôn ghi rõ "mốc dự kiến" và khuyến nghị người mua kiểm tra hợp đồng, thông báo chính thức và [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) để lập kế hoạch phù hợp.
+
+Xem thêm [K-Home CityView đã mở bán chưa?](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được cập nhật tiến độ mới nhất.
+
+---RELATED---cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat|Tiến Độ Thi Công K-Home CityView Tháng Mới Nhất;su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y|Sự Kiện Giới Thiệu K-Home CityView`,
+  },
+  {
+    id: "n45",
+    slug: "su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y",
+    title: "Sự Kiện Giới Thiệu K-Home CityView Có Gì Đáng Chú Ý?",
+    date: "2026-08-11",
+    excerpt: "Tóm tắt sự kiện giới thiệu K-Home CityView ngày 21/06/2026 với hơn 1.200 khách tham dự, các nội dung chính, thông điệp và ý nghĩa đối với thị trường NOXH Đồng Nai.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-6_xgizpz.webp",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Bài viết dựa trên thông tin công bố chính thức từ Kim Oanh Group. Các con số về khách tham dự, số căn hộ, vốn tự có và thời điểm đưa vào sử dụng cần được coi là số liệu tham khảo tại thời điểm sự kiện.
+
+![Sự kiện giới thiệu K-Home CityView thu hút hơn 1.200 khách hàng](https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-1-2_bqb2ss.webp)
+
+## Tổng quan sự kiện
+
+Ngày **21/06/2026**, Kim Oanh Land tổ chức sự kiện giới thiệu [K-Home CityView](/k-home-cityview-ho-nai) tại Nhà thi đấu Thành phố Đồng Nai với hơn **1.200 khách hàng** tham dự. Sự kiện là cột mốc đưa dự án ra thị trường, giới thiệu đến người lao động, gia đình trẻ và khách hàng mua ở thật.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456830/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-10_rpvcu6.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-12_tm9awq.webp|Sự kiện giới thiệu K-Home CityView ngày 21/06/2026
+
+## Ý nghĩa của hơn 1.200 khách tham dự
+
+Con số 1.200+ người dành thời gian đến dự sự kiện giới thiệu cho thấy:
+- **Nhu cầu mạnh mẽ về NOXH tại Đồng Nai** — đặc biệt với người lao động tại Biên Hòa và các KCN lân cận
+- **Sức hút của thương hiệu K-Home** — sau K-Home Avenue và K-Home Midtown, K-Home CityView tiếp tục tạo được sự tin tưởng
+- **Tín hiệu tích cực cho giai đoạn mở bán** — xem thêm [K-Home CityView đã mở bán chưa?](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026)
+
+## Những nội dung chính được công bố tại sự kiện
+
+**Vị trí và kết nối:** Mặt tiền đường Điểu Xiển, phường Hố Nai, cách trung tâm Biên Hòa ~10 phút, gần KCN Amata, Hố Nai, Long Bình và Biên Hòa 2. Xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao).
+
+**Quy mô và thiết kế:** ~2,85 ha, 4 block 22 tầng, ~1.382 căn NOXH. Thiết kế do Surbana Jurong (Singapore) tham gia tư vấn, định hướng công trình xanh EDGE. Xem thêm [thiết kế K-Home CityView khác gì NOXH truyền thống](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong).
+
+**Cơ cấu căn hộ:** 1PN ~47 m², 2PN ~62–70 m², 3PN ~84 m². Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong).
+
+**Tiện ích nội khu:** Hồ bơi, công viên, sân chơi trẻ em, gym, minimart, trạm sạc xe điện, nhà sinh hoạt cộng đồng. Xem [mặt bằng K-Home CityView: quy mô, loại căn và tiện ích](/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat).
+
+**Phương án tài chính:** Vốn tự có ban đầu tham khảo ~200 triệu đồng, hỗ trợ vay đến 75% với lãi suất ~5,4%/năm, thời hạn đến 25 năm. Xem [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview).
+
+**Thời gian dự kiến đưa vào sử dụng:** Tháng 01/2028 theo thông tin tại sự kiện. Xem thêm [K-Home CityView khi nào bàn giao?](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-3|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/SLIDE-PRESENT-KHOME-CITYVIEW--21-06-2026-hình-ảnh-4|Nội dung trình bày tại sự kiện giới thiệu K-Home CityView
+
+## Sự kiện khai trương Sales Gallery
+
+Bên cạnh sự kiện tại Nhà thi đấu, một nguồn thị trường cũng ghi nhận khai trương Sales Gallery K-Home CityView tại **81 Điểu Xiển, phường Long Bình**, thu hút ~800 khách hàng đến xem sa bàn, căn hộ mẫu và nhận tư vấn trực tiếp.
+
+Sales Gallery giúp khách hàng: xem sa bàn tổng thể, trải nghiệm căn hộ mẫu, tìm hiểu mặt bằng, nhận tư vấn về giá và hồ sơ.
+
+## Thông điệp chính của sự kiện
+
+- K-Home là thương hiệu NOXH chuẩn Singapore, hướng đến người lao động và gia đình trẻ
+- K-Home CityView tại đường Điểu Xiển là dự án chiến lược tại Biên Hòa, gần KCN và tiện ích đô thị
+- Phương án tài chính dễ tiếp cận với vốn ban đầu thấp và lãi suất ưu đãi NOXH
+- Tiêu chuẩn xanh EDGE — tiết kiệm năng lượng, nước và không gian sống bền vững
+
+Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa 2026](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong) và [giá bán K-Home CityView có phù hợp người lao động không](/tin-tuc/gia-ban-k-home-cityview-co-thuc-su-phu-hop-nguoi-lao-dong-khong).
+
+## Kết luận
+
+Sự kiện giới thiệu ngày 21/06/2026 là dấu mốc quan trọng đưa K-Home CityView đến thị trường Đồng Nai. Hơn 1.200 khách tham dự cho thấy nhu cầu NOXH tại Biên Hòa rất thực tế và mô hình K-Home đang tạo được sự tin tưởng.
+
+Xem thêm [cập nhật tiến độ thi công K-Home CityView tháng mới nhất](/tin-tuc/cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được tư vấn và đăng ký tham quan.
+
+---RELATED---k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026|K-Home CityView Đã Mở Bán Chưa? Cập Nhật 2026;k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028|K-Home CityView Khi Nào Bàn Giao?`,
+  },
+  {
     id: "n44",
     slug: "k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026",
     title: "K-Home CityView Đã Mở Bán Chưa? Cập Nhật Mới Nhất 2026",
@@ -93,7 +229,7 @@ Liên hệ **0937.587.438** để được tư vấn tình trạng nhận hồ s
     title: "Cập Nhật Tiến Độ Thi Công K-Home CityView Tháng Mới Nhất",
     date: "2026-08-11",
     excerpt: "Cập nhật tiến độ thi công K-Home CityView tháng 8/2026, các mốc khởi công, xây dựng, hoàn thiện và thời gian bàn giao dự kiến của dự án.",
-    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323503/slide-k-home-cityview/slide-39.jpg",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785323504/slide-k-home-cityview/slide-40.jpg",
     category: "Tin tức dự án",
     project: "cityview",
     content: `> **Lưu ý cập nhật:** Bài viết theo các thông tin có thể kiểm chứng tại thời điểm cập nhật. Không khẳng định dự án đã hoàn thành móng, lên tầng hoặc cất nóc nếu chưa có ảnh công trường mới hoặc thông báo chính thức.

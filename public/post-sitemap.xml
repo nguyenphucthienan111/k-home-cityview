@@ -527,4 +527,18 @@
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026"/>
   </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y"/>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028"/>
+  </url>
 </urlset>
