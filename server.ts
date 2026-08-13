@@ -364,6 +364,201 @@ const projects = [
 
 const newsList = [
   {
+    id: "n48",
+    slug: "nhung-moc-quan-trong-cua-k-home-cityview-tu-khoi-cong-den-hien-tai",
+    title: "Những Mốc Quan Trọng Của K-Home CityView Từ Khởi Công Đến Hiện Tại",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (K-Home City View) đã trải qua nhiều mốc quan trọng: động thổ 23/9/2025, sự kiện giới thiệu 21/6/2026, khai trương Sales Gallery và nhận hồ sơ đợt đầu. Tổng hợp đầy đủ timeline dự án.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786606482/Ong-Tran-Dang-Toan-Pho-Tong-Giam-doc-Phat-trien-Du-an-_-K-Homes-phat-bieu-tai-le-khoi-cong_tlwi5d.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Các mốc tiến độ và thời gian bàn giao là dự kiến dựa trên thông tin công bố. Người mua cần đối chiếu với hợp đồng và thông báo chính thức từ chủ đầu tư Kim Oanh Land.
+
+![Những mốc quan trọng của K-Home CityView từ khởi công đến hiện tại](https://res.cloudinary.com/dthv0nsq/image/upload/v1786606482/Ong-Tran-Dang-Toan-Pho-Tong-Giam-doc-Phat-trien-Du-an-_-K-Homes-phat-bieu-tai-le-khoi-cong_tlwi5d.jpg)
+
+[K-Home CityView](/k-home-cityview-ho-nai) (còn được tìm kiếm với tên **K-Home City View**) đã đi qua một loạt mốc quan trọng từ khi động thổ đến giai đoạn giới thiệu, mở nhà mẫu, nhận hồ sơ và thi công theo tiến độ. Việc nắm rõ các mốc này giúp bạn hiểu bức tranh tổng thể của dự án và tự tin hơn khi quyết định có nên đăng ký mua hay không.
+
+## Tổng quan: K-Home CityView / K-Home City View là dự án gì?
+
+**K-Home CityView** (K-Home City View) là dự án nhà ở xã hội chuẩn Singapore do Kim Oanh Land (thành viên Kim Oanh Group) phát triển tại mặt tiền đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, Đồng Nai. Dự án có:
+
+- Quy mô khoảng **2,85 ha**
+- Khoảng **4 block** căn hộ cao 22 tầng
+- Tổng cộng khoảng **2.000 căn hộ** (trong đó đợt nhà ở xã hội được công bố khoảng 1.382 căn)
+- Được thiết kế theo tiêu chuẩn **công trình xanh EDGE**, hướng đến tiết kiệm năng lượng và nước, nâng cao chất lượng sống của cư dân
+
+## Các mốc quan trọng của K-Home CityView / K-Home City View
+
+### Mốc 1: Chấp thuận chủ trương, quy hoạch và pháp lý
+
+Trước khi khởi công, K-Home CityView / K-Home City View cần có:
+- Quy hoạch chi tiết 1/500
+- Chấp thuận chủ trương đầu tư
+- Giấy phép xây dựng
+- Phê duyệt PCCC
+
+Các tài liệu pháp lý này đã được hoàn thiện, tạo cơ sở cho việc động thổ, xây dựng và công bố thông tin dự án. Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa năm 2026 không?](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong)
+
+### Mốc 2: Lễ động thổ – khởi công dự án (23/09/2025)
+
+Ngày **23/09/2025**, Kim Oanh Land tổ chức lễ động thổ dự án K-Home CityView / K-Home City View trên đường Điểu Xiển, phường Hố Nai, Đồng Nai.
+
+Nội dung chính:
+- Công bố tổng mức đầu tư và quy mô dự án
+- Thể hiện cam kết phát triển chuỗi K-Home tại Đồng Nai
+- Đánh dấu bước chuyển dự án từ giai đoạn chuẩn bị sang giai đoạn thi công thực tế
+- Khẳng định vai trò K-Home CityView trong việc đáp ứng nhu cầu NOXH cho người lao động và gia đình trẻ
+
+### Mốc 3: Triển khai thi công – móng, khối đế, phần thân (2025–2026)
+
+Sau lễ khởi công, K-Home CityView / K-Home City View bước vào giai đoạn:
+- Thi công cọc và móng từng block
+- Thi công hầm (nếu có) và khối đế
+- Thi công kết cấu phần thân theo tiến độ từng tòa
+
+Timeline tổng hợp: Khởi công Q4/2025 → Thi công móng cuối 2025–đầu 2026 → Thi công phần thân trong năm 2026.
+
+Xem thêm [cập nhật tiến độ thi công K-Home CityView tháng mới nhất](/tin-tuc/cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785323504/slide-k-home-cityview/slide-40.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/slide-k-home-cityview/slide-2.jpg|Tiến độ thi công K-Home CityView / K-Home City View
+
+### Mốc 4: Sự kiện giới thiệu K-Home CityView (21/06/2026)
+
+Ngày **21/06/2026**, sự kiện giới thiệu dự án K-Home CityView / K-Home City View diễn ra tại Nhà thi đấu Thành phố Đồng Nai, với hơn **1.200 khách hàng** tham dự.
+
+Điểm đáng chú ý:
+- Sự kiện chủ đề "Định hình chất sống Singapore"
+- Giới thiệu vị trí, quy mô, thiết kế, tiện ích, tiêu chuẩn xanh EDGE
+- Công bố thông tin về các loại căn 1PN, 2PN, 3PN. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông?](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong)
+- Trình bày phương án tài chính: vốn tự có 25%, vay ngân hàng 75%
+- Khẳng định K-Home CityView / K-Home City View phù hợp với người lao động, gia đình trẻ và người mua ở thật
+
+Xem chi tiết tại [sự kiện giới thiệu K-Home CityView có gì đáng chú ý?](/tin-tuc/su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y)
+
+### Mốc 5: Khai trương Sales Gallery & nhà mẫu (2026)
+
+Sau lễ giới thiệu, K-Home CityView / K-Home City View khai trương Sales Gallery tại khu vực dự án, đón khoảng **800 khách hàng** đến trải nghiệm thực tế layout, nội thất và tiện ích. Xem thêm [K-Home CityView có mở nhà mẫu không? Cần xem gì khi đi tham quan](/tin-tuc/k-home-cityview-co-mo-nha-mau-khong-can-xem-gi-khi-di-tham-quan).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786605697/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-20_gpiq5e.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp|Sự kiện giới thiệu và Sales Gallery K-Home CityView
+
+### Mốc 6: Công bố thông tin mở bán & nhận hồ sơ (đợt đầu 2026)
+
+K-Home CityView / K-Home City View bắt đầu nhận hồ sơ theo đợt, với thời gian dự kiến đợt đầu từ **30/06/2026 đến 01/09/2026**.
+
+Điểm cần nhấn mạnh: nhận hồ sơ không đồng nghĩa mọi người đăng ký đều mua được — hồ sơ phải qua xét duyệt đối tượng, thu nhập và tình trạng nhà ở.
+
+Xem thêm [K-Home CityView đã mở bán chưa?](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026) và [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi)
+
+### Mốc 7: Dự kiến bàn giao – đưa vào sử dụng (2027–2028)
+
+| Nguồn | Mốc bàn giao |
+|---|---|
+| Nhiều tài liệu tổng hợp | Dự kiến hoàn thành và bàn giao năm 2027 |
+| Một số nguồn chi tiết | Bàn giao Quý II–III/2027 |
+| Sự kiện giới thiệu 21/6/2026 | Dự kiến đưa vào sử dụng từ tháng 01/2028 |
+
+Theo các tài liệu công bố, **K-Home CityView / K-Home City View dự kiến hoàn thiện và bàn giao căn hộ trong năm 2027, và dự kiến đưa vào sử dụng từ đầu năm 2028**; mốc cụ thể cần căn cứ vào hợp đồng và thông báo mới nhất của chủ đầu tư.
+
+Xem thêm [K-Home CityView khi nào bàn giao?](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028) và [thanh toán K-Home CityView theo tiến độ như thế nào?](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao)
+
+## Kết luận
+
+K-Home CityView (K-Home City View) đã trải qua đầy đủ các mốc từ pháp lý, động thổ, thi công, giới thiệu, nhà mẫu, nhận hồ sơ đến lộ trình bàn giao. Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được tư vấn và cập nhật tiến độ mới nhất.
+
+---RELATED---su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y|Sự Kiện Giới Thiệu K-Home CityView Có Gì Đáng Chú Ý?;k-home-cityview-co-mo-nha-mau-khong-can-xem-gi-khi-di-tham-quan|K-Home CityView Có Mở Nhà Mẫu Không?`,
+  },
+  {
+    id: "n47",
+    slug: "k-home-cityview-co-mo-nha-mau-khong-can-xem-gi-khi-di-tham-quan",
+    title: "K-Home CityView Có Mở Nhà Mẫu Không? Cần Xem Gì Khi Đi Tham Quan",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (K-Home City View) đã khai trương Sales Gallery và nhà mẫu tại khu vực dự án năm 2026. Tìm hiểu cần chuẩn bị gì, cần xem gì và hỏi gì khi đi tham quan nhà mẫu K-Home CityView.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786605627/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-18_thf4k2.webp",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin về nhà mẫu và Sales Gallery dựa trên các nguồn công bố tại thời điểm cập nhật. Lịch tham quan và tình trạng nhà mẫu có thể thay đổi — nên liên hệ trực tiếp để xác nhận trước khi đến.
+
+![K-Home CityView có mở nhà mẫu không? Cần xem gì khi đi tham quan](https://res.cloudinary.com/dthv0nsq/image/upload/v1786605858/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-5_kjphal.webp)
+
+**K-Home CityView** (hay **K-Home City View**) đã khai trương Sales Gallery và nhà mẫu tại khu vực dự án, đón khách tham quan sa bàn và căn hộ mẫu trong năm 2026. Khi đi xem nhà mẫu, bạn nên chuẩn bị sẵn danh sách những điểm cần xem kỹ: layout, ánh sáng, thông gió, chất lượng hoàn thiện, nội thất bàn giao, cảm giác không gian và lối di chuyển của cả khu [K-Home CityView](/k-home-cityview-ho-nai) / K-Home City View.
+
+## K-Home CityView / K-Home City View có mở nhà mẫu không?
+
+**Có.** Theo thông tin cập nhật, Sales Gallery K-Home CityView (K-Home City View) đã khai trương tại khu vực đường Điểu Xiển, Biên Hòa. Sự kiện khai trương thu hút khoảng **800 khách hàng** đến tham quan sa bàn và căn hộ mẫu, thể hiện sự quan tâm lớn của thị trường với dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa.
+
+Nhà mẫu và Sales Gallery của K-Home CityView (K-Home City View) hiện đang:
+- **Trưng bày sa bàn toàn dự án:** vị trí, các block, tiện ích, cảnh quan
+- **Có căn hộ mẫu** cho loại 1 phòng ngủ và 2 phòng ngủ
+- **Cung cấp tài liệu dự án:** mặt bằng, diện tích, chính sách, tiến độ, pháp lý
+- **Có đội ngũ tư vấn tại chỗ** giúp giải đáp điều kiện mua NOXH, hồ sơ, vay vốn
+
+Nếu bạn muốn trải nghiệm thực tế không gian sống và thiết kế căn hộ K-Home CityView / K-Home City View, việc đi tham quan nhà mẫu là bước cần thiết trước khi quyết định đăng ký mua.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786605697/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-20_gpiq5e.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786605699/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-6_fjnrht.webp|Sales Gallery và nhà mẫu K-Home CityView / K-Home City View
+
+## Nên chuẩn bị gì trước khi đi xem nhà mẫu K-Home CityView / K-Home City View?
+
+### 1. Xác định loại căn muốn xem
+
+Trước khi đến nhà mẫu K-Home CityView, nên xác định loại căn (1PN, 2PN, 3PN) để tập trung vào diện tích phù hợp, công năng đủ cho nhu cầu ở thật, và vốn tự có (25%) + khoản vay (75%) cho từng loại căn. Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông?](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) và [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí?](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi)
+
+### 2. Chuẩn bị câu hỏi về bàn giao nội thất
+
+Nhà mẫu K-Home CityView / K-Home City View thường được trang trí đầy đủ nội thất minh họa. Khi xem, cần hỏi rõ hạng mục nào được bàn giao thực tế, hạng mục nào chỉ mang tính minh họa, chất liệu và thương hiệu. Không nên hiểu toàn bộ nội thất trong nhà mẫu K-Home CityView đều được bàn giao theo giá căn hộ — đây là lỗi phổ biến của người mua nếu không hỏi rõ.
+
+### 3. Chuẩn bị câu hỏi về pháp lý và điều kiện mua
+
+Nhà mẫu là nơi thuận tiện để hỏi trực tiếp về điều kiện mua NOXH, quy trình nộp hồ sơ, chính sách vay và lịch nhận hồ sơ. Xem chi tiết tại [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi)
+
+## Cần xem gì khi đi tham quan nhà mẫu K-Home CityView / K-Home City View?
+
+### 1. Layout và cảm giác không gian
+
+Khi bước vào nhà mẫu, tập trung xem bố trí phòng khách, bếp, phòng ngủ, lối đi, vị trí đặt đồ và cảm giác không gian thực tế. Đây là thứ bạn chỉ cảm nhận được khi đứng trong nhà mẫu K-Home CityView / K-Home City View, khó thấy hết qua bản vẽ.
+
+### 2. Ánh sáng và thông gió
+
+Để ý cửa sổ, hướng ban công, cảm giác ánh sáng tự nhiên và hệ thống thông gió. Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong)
+
+### 3. Chất lượng vật liệu và hoàn thiện
+
+Kiểm tra bề mặt sàn, gạch, sơn, trần, cửa, thiết bị vệ sinh. Những chi tiết này ảnh hưởng trực tiếp đến chất lượng sống hàng ngày.
+
+### 4. Phòng ngủ và khả năng bố trí nội thất
+
+Ước lượng khoảng cách hai bên giường, vị trí tủ quần áo, chỗ đặt bàn làm việc và hình dung sử dụng thực tế của gia đình bạn. Tham khảo thêm [nên chọn tầng nào khi mua K-Home CityView?](/tin-tuc/nen-chon-tang-nao-khi-mua-k-home-cityview)
+
+### 5. Phòng vệ sinh và khu giặt phơi
+
+Kiểm tra diện tích phòng vệ sinh, vị trí lắp máy nước nóng, khu giặt phơi có đủ chỗ cho máy giặt và khả năng thoát nước.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786606036/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-4_wx6nwg.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp|Khách hàng tham quan nhà mẫu K-Home CityView / K-Home City View
+
+## Cần hỏi gì thêm khi ở Sales Gallery K-Home CityView / K-Home City View?
+
+### 1. Mã căn, block, tầng và hướng
+
+Hãy hỏi mã căn tương đương, block, tầng, hướng của căn bạn quan tâm để tránh hiểu lầm rằng căn bạn đăng ký sẽ giống 100% căn mẫu nếu vị trí khác.
+
+### 2. Tiến độ thi công và thời gian bàn giao
+
+Kết hợp hỏi về giai đoạn thi công hiện tại và mốc bàn giao theo block của bạn. Xem thêm [K-Home CityView khi nào bàn giao?](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028)
+
+### 3. Lịch thanh toán và vốn tự có
+
+Theo cấu trúc vốn tự có **25%** + vay ngân hàng **75%**, cần hỏi rõ lịch đóng tiền, đợt giải ngân và tiền trả góp hàng tháng dự kiến. Xem chi tiết tại [thanh toán K-Home CityView theo tiến độ như thế nào?](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao)
+
+## Kết luận: Có nên đi xem nhà mẫu K-Home CityView / K-Home City View không?
+
+Nếu bạn nghiêm túc cân nhắc mua K-Home CityView (K-Home City View), việc đến Sales Gallery và nhà mẫu là bước gần như bắt buộc — bạn sẽ trải nghiệm trực tiếp không gian, hiểu rõ layout, ánh sáng, thông gió, vật liệu và có thể hỏi chi tiết về pháp lý, tiến độ và tài chính.
+
+Sự kiện khai trương Sales Gallery thu hút khoảng **800 khách tham quan** và sự kiện giới thiệu tại Nhà thi đấu Đồng Nai thu hút hơn **1.200 khách hàng** — cho thấy nhu cầu thực sự mạnh mẽ. Quyết định cuối cùng vẫn phải dựa trên trải nghiệm nhà mẫu, phân tích tài chính và kế hoạch an cư riêng của bạn.
+
+Liên hệ **0937.587.438** để đặt lịch tham quan nhà mẫu K-Home CityView / K-Home City View miễn phí.
+
+---RELATED---su-kien-gioi-thieu-k-home-cityview-co-gi-dang-chu-y|Sự Kiện Giới Thiệu K-Home CityView Có Gì Đáng Chú Ý?;nhung-moc-quan-trong-cua-k-home-cityview-tu-khoi-cong-den-hien-tai|Những Mốc Quan Trọng Của K-Home CityView Từ Khởi Công Đến Hiện Tại`,
+  },
+  {
     id: "n46",
     slug: "k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028",
     title: "K-Home CityView Khi Nào Bàn Giao? Cập Nhật Mốc Tiến Độ 2027–2028",
