@@ -181,6 +181,9 @@ const PROJECT_SEO: Record<string, {
       { q: "K-Home CityView do ai thiết kế?", a: "K-Home CityView được thiết kế và quy hoạch bởi Tập đoàn Surbana Jurong (Singapore) – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á với hơn 70 năm kinh nghiệm. Dự án phát triển theo tiêu chuẩn công trình xanh EDGE của IFC/World Bank, đảm bảo tiết kiệm ít nhất 20% điện, nước và giảm khí thải carbon." },
       { q: "K-Home CityView bàn giao nội thất gì?", a: "Căn hộ K-Home CityView được bàn giao hoàn thiện đầy đủ nội thất thiết yếu (trừ thiết bị điện tử): sofa, bàn trà, kệ tivi, bàn ăn – ghế ăn, giường, chăn – ga – gối – nệm, tủ quần áo, bàn học/trang điểm, vách kính WC, bồn cầu, lavabo, gương phòng tắm, trần thạch cao, đèn điện cơ bản, ống dẫn máy lạnh, quạt hút mùi. Cư dân dọn vào ở ngay." },
       { q: "K-Home CityView đường Điểu Xiển gần KCN nào?", a: "K-Home CityView nằm tại đường Điểu Xiển, Hố Nai, Biên Hòa – liền kề các khu công nghiệp lớn nhất Đồng Nai: KCN Amata, KCN Long Bình, KCN Biên Hòa 2, KCN Hố Nai. Từ dự án chỉ mất 10–15 phút đến các KCN này, rất thuận tiện cho công nhân và kỹ sư an cư tại chỗ." },
+      { q: "K Home City View Biên Hòa là dự án gì?", a: "K Home City View (hay K-Home CityView, KHome CityView, K Home CityView) đều là tên gọi của cùng một dự án: K-Home CityView Hố Nai tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Đồng Nai – dự án nhà ở xã hội chuẩn Singapore do Kim Oanh Land phát triển với 1.328 căn NOXH, giá từ 950 triệu." },
+      { q: "K Home Cityview và K-Home CityView có phải một không?", a: "Đúng – K Home Cityview, K-Home CityView, K Home City View, KHome City View đều là các cách viết khác nhau của cùng một dự án nhà ở xã hội tại Hố Nai, Biên Hòa do Kim Oanh Land phát triển. Hotline tư vấn: 0937.587.438." },
+      { q: "Khome city view Đồng Nai ở đâu?", a: "Khome city view (tên đầy đủ: K-Home CityView) tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Đây là dự án nhà ở xã hội chuẩn Singapore quy mô 2,85 ha với 1.328 căn hộ NOXH và 39 shophouse." },
     ],
   },
   "k-home-midtown-trang-bom": {
@@ -213,6 +216,8 @@ const PROJECT_SEO: Record<string, {
       { q: "Nhà ở xã hội K-Home Midtown gần KCN nào?", a: "K-Home Midtown gần các KCN lớn tại Đồng Nai: KCN Bàu Xéo, KCN Hố Nai, KCN Biên Hòa. Từ dự án chỉ mất 10–20 phút đến các khu công nghiệp này, giúp công nhân tiết kiệm thời gian và chi phí đi lại." },
       { q: "K-Home Midtown có nhà mẫu để tham quan không?", a: "Liên hệ hotline 0937.587.438 để đăng ký tham quan nhà mẫu và cập nhật lịch tham quan mới nhất từ chủ đầu tư Kim Oanh Land. Hỗ trợ tư vấn và đặt lịch hoàn toàn miễn phí." },
       { q: "Hồ sơ mua nhà ở xã hội K-Home Midtown cần gì?", a: "Hồ sơ gồm: CMND/CCCD, hộ khẩu hoặc xác nhận tạm trú, giấy xác nhận thu nhập, giấy xác nhận chưa có nhà tại Đồng Nai. Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện toàn bộ miễn phí." },
+      { q: "K Home Midtown và K-Home Midtown có phải một không?", a: "Đúng – K Home Midtown, K-Home Midtown, KHome Midtown, K Home Mid Town đều là các cách viết khác nhau của cùng một dự án nhà ở xã hội tại trung tâm huyện Trảng Bom, Đồng Nai do Kim Oanh Land phát triển. Hotline: 0937.587.438." },
+      { q: "K Home Mid Town Trảng Bom là dự án gì?", a: "K Home Mid Town (hay K-Home Midtown) là dự án nhà ở xã hội quy mô 13,97 ha tại trung tâm huyện Trảng Bom, Đồng Nai. 542 căn hộ NOXH từ 750 triệu, thiết kế chuẩn Singapore, bàn giao full nội thất, lãi suất 5,4%/năm." },
     ],
     locationImages: [
       { src: "slide-k-home-midtown/ban-do-vi-tri-du-an-k-home-midtown-tai-trung-tam-trang-bom-ket-noi-cac-tuyen-duo", alt: "Bản đồ vị trí dự án K-Home Midtown tại trung tâm Trảng Bom – kết nối các tuyến đường và KCN Đồng Nai", caption: "Vị trí K-Home Midtown – Trung tâm của trung tâm Trảng Bom" },
@@ -360,6 +365,8 @@ const PROJECT_SEO: Record<string, {
       { q: "Tiện ích dự án K-Home Avenue có gì?", a: "K-Home Avenue có hệ thống tiện ích đầy đủ: hồ bơi, sân chơi trẻ em, khu thể dục ngoài trời, Sky Garden vườn cảnh quan, nhà sinh hoạt cộng đồng, trạm sạc xe điện và 82 căn shophouse khối đế." },
       { q: "Nhà ở xã hội K-Home Avenue Nhơn Trạch có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Kim Oanh Land hỗ trợ hoàn thiện toàn bộ thủ tục pháp lý miễn phí cho người mua." },
       { q: "K-Home Avenue gần KCN Nhơn Trạch không?", a: "Có. K-Home Avenue nằm trong khu vực huyện Nhơn Trạch, gần các KCN Nhơn Trạch 1–6 và KCN Long Thành. Thuận tiện cho công nhân và kỹ sư làm việc tại các khu công nghiệp này an cư tại chỗ." },
+      { q: "K Home Avenue và K-Home Avenue có phải một không?", a: "Đúng – K Home Avenue, K-Home Avenue, KHome Avenue đều là các cách viết của cùng một dự án nhà ở xã hội tại đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, Đồng Nai do Kim Oanh Land phát triển. 1.022 căn NOXH từ 750 triệu." },
+      { q: "K Home Avenue Nhơn Trạch Đồng Nai là dự án gì?", a: "K Home Avenue (tên đầy đủ: K-Home Avenue Nhơn Trạch) là dự án nhà ở xã hội 5,3 ha tại đường 25C, Nhơn Trạch, Đồng Nai – gần sân bay Long Thành. 1.022 căn NOXH + 82 shophouse, giá từ 750 triệu, lãi suất 5,4%/năm." },
     ],
     locationImages: [
       { src: "slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", alt: "Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch – cửa ngõ khu Đông TP.HCM kết nối sân bay Long Thành", caption: "K-Home Avenue – Cửa ngõ khu Đông TP.HCM, 10 phút đến sân bay Long Thành" },
@@ -551,6 +558,13 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             "@context": "https://schema.org",
             "@type": "RealEstateListing",
             "name": found.title,
+            "alternateName": found.slug === "k-home-cityview-ho-nai"
+              ? ["K-Home CityView", "K Home CityView", "K Home City View", "KHome CityView", "K-Home City View", "K Home Cityview Biên Hòa", "NOXH K-Home CityView Hố Nai"]
+              : found.slug === "k-home-midtown-trang-bom"
+              ? ["K-Home Midtown", "K Home Midtown", "K Home Mid Town", "K-Home Mid Town", "KHome Midtown", "K Home Midtown Trảng Bom", "NOXH K-Home Midtown Trảng Bom"]
+              : found.slug === "k-home-avenue-nhon-trach"
+              ? ["K-Home Avenue", "K Home Avenue", "KHome Avenue", "K Home Avenue Nhơn Trạch", "NOXH K-Home Avenue Nhơn Trạch", "K-Home Avenue Đồng Nai"]
+              : undefined,
             "description": found.description,
             "url": `https://k-homedongnai.com.vn/${found.slug}`,
             "image": `https://k-homedongnai.com.vn${found.image}`,
@@ -625,7 +639,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
     // Cleanup: reset title khi unmount
     return () => {
-      document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
+      document.title = "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue";
       document.getElementById("schema-project")?.remove();
       document.getElementById("schema-breadcrumb-project")?.remove();
       document.getElementById("schema-faq-project")?.remove();

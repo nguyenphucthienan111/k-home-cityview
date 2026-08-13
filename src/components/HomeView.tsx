@@ -581,10 +581,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, []);
 
   useEffect(() => {
-    document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
+    document.title = "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "K-Home CityView Hố Nai Biên Hòa – nhà ở xã hội Kim Oanh Group, 1.328 căn NOXH từ 950 triệu, lãi suất 5,4%/năm. Xem bảng giá K-Home Midtown Trảng Bom & K-Home Avenue Nhơn Trạch.");
+      metaDesc.setAttribute("content", "Trang thông tin chính thức 3 dự án nhà ở xã hội K-Home tại Đồng Nai: K-Home CityView Hố Nai, K-Home Midtown Trảng Bom, K-Home Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm. Kim Oanh Land.");
     }
 
     // Schema FAQPage

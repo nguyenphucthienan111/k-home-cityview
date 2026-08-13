@@ -3,11 +3,14 @@
  * generate-sitemap.mjs — Tạo sitemap.xml với image tags + robots.txt
  * Chạy: node scripts/generate-sitemap.mjs
  * Đã tích hợp vào "npm run build"
+ *
+ * News URLs được lấy tự động từ scripts/news-data.mjs — không hardcode nữa
  */
 
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { parseNewsData } from "./parse-news.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(__dirname, "../public");
@@ -76,25 +79,13 @@ const UNIT_URLS = [
     .map(u => ({ loc: `/k-home-avenue-nhon-trach/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
 ];
 
-// ─── Tin tức — thêm vào post-sitemap như đối thủ ───────────────────────────────
-const NEWS_URLS = [
-  { loc: "/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026",                 lastmod: "2026-07-27" },
-  { loc: "/tin-tuc/danh-gia-du-an-k-home-cityview-bien-hoa-2026",              lastmod: "2026-07-28" },
-  { loc: "/tin-tuc/ly-do-chon-k-home-thay-vi-nha-o-xa-hoi-thong-thuong",       lastmod: "2026-07-29" },
-  { loc: "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong", lastmod: "2026-07-30" },
-  { loc: "/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien",            lastmod: "2026-07-30" },
-  { loc: "/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong",         lastmod: "2026-07-30" },
-  { loc: "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac", lastmod: "2026-07-31" },
-  { loc: "/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge",                 lastmod: "2026-07-31" },
-  { loc: "/tin-tuc/vi-sao-k-home-cityview-thu-hut-su-quan-tam-lon",             lastmod: "2026-07-31" },
-  { loc: "/tin-tuc/mat-bang-k-home-cityview-quy-mo-loai-can-va-tien-ich-noi-khu-moi-nhat", lastmod: "2026-08-01" },
-  { loc: "/tin-tuc/tien-do-k-home-cityview-2026-cap-nhat-moi-nhat",             lastmod: "2026-08-01" },
-  { loc: "/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can",           lastmod: "2026-08-02" },
-  { loc: "/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026",                 lastmod: "2026-08-02" },
-  { loc: "/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026",    lastmod: "2026-08-04" },
-  { loc: "/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi",             lastmod: "2026-08-04" },
-  { loc: "/tin-tuc/thu-nhap-bao-nhieu-thi-duoc-mua-nha-o-xa-hoi-k-home-cityview", lastmod: "2026-08-04" },
-].map(n => ({ ...n, priority: "0.65", changefreq: "weekly" }));
+// ─── Tin tức — tự động parse từ api/news.ts ───────────────────────────────────
+const NEWS_URLS = parseNewsData().map(article => ({
+  loc: `/tin-tuc/${article.slug}`,
+  lastmod: article.date,
+  priority: "0.65",
+  changefreq: "weekly",
+}));
 
 const ALL_URLS = [...STATIC_URLS, ...UNIT_URLS, ...NEWS_URLS];
 

@@ -128,7 +128,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
 
     // Cleanup: reset title khi unmount
     return () => {
-      document.title = "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | K-Home Đồng Nai";
+      document.title = "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue";
       document.getElementById("schema-unit")?.remove();
       document.getElementById("schema-breadcrumb-unit")?.remove();
     };
