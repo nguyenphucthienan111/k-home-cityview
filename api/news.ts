@@ -3,6 +3,199 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n60",
+    slug: "so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre",
+    title: "So Sánh Căn 1 Phòng Ngủ Và 2 Phòng Ngủ K-Home CityView Cho Gia Đình Trẻ",
+    date: "2026-08-13",
+    excerpt: "Với gia đình trẻ mua NOXH tại Biên Hòa, chọn căn 1PN hay 2PN K-Home CityView (k-home city view) không chỉ là sở thích mà còn liên quan đến tài chính, kế hoạch sinh con và nhu cầu ở thực. So sánh chi tiết để đưa ra quyết định phù hợp.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin về diện tích, giá bán và bố trí mặt bằng dựa trên nguồn công bố tại thời điểm cập nhật. Người mua cần xem bảng giá và layout chính thức từng mã căn trước khi quyết định.
+
+![So sánh căn 1 phòng ngủ và 2 phòng ngủ K-Home CityView / k-home city view cho gia đình trẻ](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-1.jpg)
+
+Với gia đình trẻ mua nhà ở xã hội tại Biên Hòa, việc chọn giữa căn 1 phòng ngủ và 2 phòng ngủ **K-Home CityView** (hay **k-home city view**) không chỉ là chuyện "thích căn nào hơn", mà còn liên quan đến tài chính, kế hoạch sinh con, nhu cầu ở thực và khả năng linh hoạt trong tương lai.
+
+## Tổng quan về loại căn 1PN và 2PN tại K-Home CityView / k-home city view
+
+[K-Home CityView](/k-home-cityview-ho-nai) / k-home city view là dự án NOXH Biên Hòa với các loại căn chủ yếu:
+- **Căn 1 phòng ngủ (1PN):** phù hợp người độc thân, vợ chồng trẻ chưa có con hoặc có 1 con nhỏ
+- **Căn 2 phòng ngủ (2PN):** phù hợp gia đình trẻ có 1–2 con, hoặc cần phòng làm việc, phòng đa năng
+
+1PN thường có diện tích nhỏ hơn, tổng giá trị thấp hơn. 2PN có diện tích lớn hơn, công năng linh hoạt hơn, nhưng giá và khoản vay cũng cao hơn. Xem chi tiết tại [diện tích căn hộ K-Home CityView bao nhiêu mét vuông?](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong)
+
+## So sánh căn 1PN và 2PN K-Home CityView / k-home city view theo tiêu chí chính
+
+### 1. Diện tích và bố trí mặt bằng
+
+**Căn 1 phòng ngủ:** 1 phòng ngủ, phòng khách + bếp mở, 1 WC, ban công/logia. Phù hợp 2–3 người, không gian gọn, dễ dọn dẹp.
+
+**Căn 2 phòng ngủ:** 2 phòng ngủ (1 chính + 1 nhỏ), phòng khách + bếp, 1–2 WC, ban công/logia. Phòng ngủ thứ 2 có thể làm phòng cho con, phòng làm việc tại nhà hoặc phòng cho ông bà đến ở tạm.
+
+Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-2.jpg|Nhà mẫu căn 1PN và 2PN K-Home CityView / k-home city view
+
+### 2. Tài chính: giá bán, vốn ban đầu và khoản vay
+
+| Tiêu chí | Căn 1 phòng ngủ | Căn 2 phòng ngủ |
+|---|---|---|
+| Tổng giá trị căn | Thấp hơn | Cao hơn |
+| Vốn tự có ban đầu (25%) | Nhỏ hơn | Lớn hơn |
+| Khoản vay (75%) | Thấp hơn | Cao hơn |
+| Tiền trả hàng tháng | Nhẹ hơn | Cao hơn |
+
+Nếu thu nhập hai vợ chồng chưa quá cao và chưa ổn định lâu dài, 1PN giúp giảm áp lực tài chính những năm đầu. Nếu thu nhập ổn định và muốn "mua một lần, ở lâu dài", 2PN có thể hợp lý hơn.
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien), [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026)
+
+### 3. Công năng sử dụng theo từng giai đoạn cuộc sống
+
+**Giai đoạn 1 — vợ chồng trẻ, chưa có con hoặc có 1 con nhỏ:**
+- 1PN đủ cho 2–3 người, không gian gọn, chi phí thấp, phù hợp nếu chỉ ở 3–5 năm rồi đổi nhà lớn hơn
+- 2PN cho phép có phòng riêng cho con, phòng làm việc tại nhà hoặc phòng cho khách
+
+**Giai đoạn 2 — gia đình có 2 con hoặc có người thân ở cùng:**
+- 1PN bắt đầu chật khi con lớn, khó bố trí chỗ học và làm việc riêng
+- 2PN mỗi con một phòng hoặc 1 phòng ngủ + 1 phòng học, dễ sắp xếp khi có ông bà đến ở cùng
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/khome-cityview-nha-mau-can-ho-1PN-3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-4.jpg|Không gian sống căn 1PN và 2PN K-Home CityView / k-home city view
+
+### 4. Khả năng linh hoạt và "nâng cấp" trong tương lai
+
+**Nếu mua 1PN:** Áp lực tài chính thấp, dễ "thở" những năm đầu, phù hợp nếu có kế hoạch đổi nhà lớn hơn sau 5–7 năm. Tuy nhiên khi gia đình đông hơn có thể phải chuyển nhà sớm hơn dự kiến, tốn chi phí và công sức.
+
+**Nếu mua 2PN:** Có thể ở lâu dài 10–15 năm mà không cần đổi nhà, linh hoạt hơn khi có thêm con hoặc người thân. Tuy nhiên áp lực tài chính ban đầu cao hơn.
+
+Xem thêm [K-Home CityView có đáng mua nếu chỉ muốn ở thật 5–10 năm?](/tin-tuc/k-home-cityview-co-dang-mua-neu-chi-muon-o-that-5-10-nam) và [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không?](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong)
+
+### 5. Khả năng cho thuê lại (nếu cần)
+
+**Căn 1PN:** Dễ cho thuê cho người độc thân, vợ chồng trẻ chưa có con; giá thuê thấp hơn 2PN; thanh khoản tốt trong phân khúc người mới đi làm.
+
+**Căn 2PN:** Dễ cho thuê cho gia đình trẻ có 1–2 con; giá thuê cao hơn 1PN; thanh khoản tốt trong phân khúc gia đình nhỏ, ổn định.
+
+Nếu mua K-Home CityView / k-home city view với kế hoạch ở thực một thời gian rồi cho thuê lại, 2PN thường dễ cho thuê giá tốt hơn và phù hợp nhiều đối tượng hơn.
+
+## Bảng so sánh nhanh 1PN và 2PN K-Home CityView / k-home city view
+
+| Tiêu chí | Căn 1 phòng ngủ | Căn 2 phòng ngủ |
+|---|---|---|
+| Đối tượng phù hợp | Độc thân, vợ chồng trẻ, 1 con nhỏ | Gia đình trẻ 1–2 con, cần phòng đa năng |
+| Diện tích | Nhỏ – vừa phải | Lớn hơn 1PN |
+| Tổng giá trị căn | Thấp hơn | Cao hơn |
+| Vốn ban đầu | Nhỏ hơn | Lớn hơn |
+| Khoản vay & trả hàng tháng | Nhẹ hơn | Cao hơn |
+| Công năng | Đủ dùng trong ngắn – trung hạn | Linh hoạt, ở lâu dài |
+| Khả năng cho thuê | Tốt cho người độc thân, vợ chồng trẻ | Tốt cho gia đình nhỏ |
+
+## Nên chọn 1PN hay 2PN K-Home CityView / k-home city view?
+
+**Chọn 1PN khi:** Bạn là vợ chồng trẻ chưa có con hoặc chỉ có 1 con nhỏ, thu nhập chưa quá cao, muốn giảm áp lực tài chính, có kế hoạch đổi nhà lớn hơn sau 5–7 năm, ưu tiên sống gọn và chi phí thấp.
+
+**Chọn 2PN khi:** Bạn dự kiến có 2 con hoặc muốn có phòng làm việc/phòng đa năng, thu nhập ổn định có khả năng trả góp cao hơn, muốn mua một lần ở lâu dài, cân nhắc khả năng cho thuê lại với giá tốt trong tương lai.
+
+Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí?](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+## Kết luận
+
+Với gia đình trẻ, căn 1 phòng ngủ K-Home CityView (k-home city view) phù hợp nếu bạn ưu tiên tài chính nhẹ, chưa có con hoặc chỉ có 1 con nhỏ và có kế hoạch đổi nhà sau vài năm. Căn 2 phòng ngủ phù hợp hơn nếu bạn dự kiến có 2 con, cần phòng làm việc và muốn ở lâu dài, hạn chế chuyển nhà.
+
+Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu) và [lãi suất vay mua K-Home CityView được tính như thế nào?](/tin-tuc/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao). Liên hệ **0937.587.438** để được tư vấn chọn căn phù hợp.
+
+---RELATED---lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao|Lãi Suất Vay Mua K-Home CityView Được Tính Như Thế Nào?;can-2-phong-ngu-k-home-cityview-co-gi-dang-chu-y|Căn 2 Phòng Ngủ K-Home CityView Có Gì Đáng Chú Ý?`,
+  },
+  {
+    id: "n59",
+    slug: "lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao",
+    title: "Lãi Suất Vay Mua K-Home CityView Được Tính Như Thế Nào?",
+    date: "2026-08-13",
+    excerpt: "Lãi suất vay mua K-Home CityView (k-home city view) gồm giai đoạn ưu đãi cố định (thấp, 1–3 năm đầu) và giai đoạn lãi suất thả nổi sau đó theo công thức 'lãi suất cơ sở + biên độ'. Tìm hiểu cách tính và lập kế hoạch tài chính đúng.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786627950/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao_z1pqpq.png",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Mức lãi suất, thời gian ưu đãi và biên độ có thể thay đổi theo từng ngân hàng và thời điểm. Các con số trong bài chỉ mang tính minh họa — người mua cần xác nhận với ngân hàng trực tiếp trước khi ký hợp đồng.
+
+![Lãi suất vay mua K-Home CityView / k-home city view được tính như thế nào?](https://res.cloudinary.com/dthv0nsq/image/upload/v1786627950/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao_z1pqpq.png)
+
+Lãi suất vay mua **K-Home CityView** (hay **k-home city view**) thường được tính theo cơ chế lãi suất ưu đãi cho nhà ở xã hội (NOXH) trong một khoảng thời gian cố định, sau đó chuyển sang lãi suất thả nổi theo quy định của ngân hàng và chính sách từng thời kỳ. Cụ thể cách tính, mức lãi suất và thời gian ưu đãi sẽ phụ thuộc vào ngân hàng cho vay, chương trình hỗ trợ của chủ đầu tư và quy định vay NOXH tại thời điểm bạn ký hợp đồng.
+
+## Vì sao cần hiểu rõ cách tính lãi suất vay K-Home CityView / k-home city view?
+
+[K-Home CityView](/k-home-cityview-ho-nai) / k-home city view là dự án NOXH Biên Hòa, nên phần lớn khách hàng mua đều vay ngân hàng với tỷ lệ 70–85% giá trị căn. Khi đó lãi suất ảnh hưởng trực tiếp đến số tiền trả hàng tháng. Sai lầm thường gặp là chỉ nhìn lãi suất ưu đãi ban đầu mà không tính lãi suất thả nổi sau ưu đãi, khiến bạn "sốc" tài chính sau 1–3 năm đầu.
+
+Hiểu rõ cách tính lãi suất giúp bạn lập kế hoạch tài chính chính xác hơn, chọn ngân hàng và gói vay phù hợp với thu nhập. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+## Các thành phần chính khi tính lãi suất vay mua K-Home CityView / k-home city view
+
+Khi vay mua K-Home CityView / k-home city view, lãi suất thường được xây dựng từ các yếu tố:
+
+- **Lãi suất cơ sở / lãi suất tham chiếu:** Do ngân hàng công bố, có thể thay đổi theo thời gian và chính sách tiền tệ
+- **Biên độ lãi suất:** Phần % cộng thêm vào lãi suất cơ sở (ví dụ: lãi suất cơ sở 6%/năm + biên độ 3,5%/năm = 9,5%/năm)
+- **Lãi suất ưu đãi (nếu có):** Áp dụng trong thời gian cố định (6–36 tháng), thấp hơn lãi suất thả nổi
+- **Lãi suất thả nổi sau ưu đãi:** Công thức thường là **lãi suất cơ sở + biên độ**, điều chỉnh theo từng kỳ (3 tháng, 6 tháng, 12 tháng)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786629005/lap-ke-hoach-tai-chinh-truoc-khi-hop-dong-vay-01_zymyhp.png|https://res.cloudinary.com/dthv0nsq/image/upload/v1786629097/lap-ke-hoach-tai-chinh-truoc-khi-hop-dong-vay-02_zjqauv.png|K-Home CityView / k-home city view – lập kế hoạch tài chính trước khi ký hợp đồng vay
+
+## Lãi suất vay NOXH K-Home CityView / k-home city view thường được áp dụng như thế nào?
+
+### Giai đoạn 1: Lãi suất ưu đãi
+
+Thời gian thường từ 6–36 tháng đầu, lãi suất cố định thấp hơn thị trường. Mục đích là giúp khách hàng ổn định tài chính những năm đầu khi vừa nhận nhà, vừa trả góp.
+
+**Ví dụ minh họa** (chỉ mang tính ví dụ, không phải số liệu chính thức): lãi suất ưu đãi khoảng 5–6%/năm trong 24 tháng đầu.
+
+### Giai đoạn 2: Lãi suất thả nổi
+
+Sau khi hết thời gian ưu đãi, lãi suất chuyển sang thả nổi theo công thức **lãi suất cơ sở + biên độ**. Biên độ thường từ 3–4,5%/năm tùy ngân hàng và hồ sơ khách hàng. Lãi suất cơ sở có thể tăng/giảm theo chính sách ngân hàng và biến động lãi suất huy động.
+
+**Ví dụ minh họa:** Lãi suất cơ sở 6%/năm + biên độ 3,5%/năm = lãi suất thả nổi 9,5%/năm.
+
+## Cách tính số tiền lãi và tiền trả hàng tháng khi vay mua K-Home CityView / k-home city view
+
+**Ví dụ minh họa** (giả sử vay mua K-Home CityView / k-home city view):
+- Giá căn: 1,4 tỷ đồng
+- Vay 75% = **1,05 tỷ đồng**
+- Thời hạn vay: 20 năm (240 tháng)
+- Lãi suất ưu đãi: 5,5%/năm trong 24 tháng đầu; sau đó thả nổi khoảng 9,5%/năm
+
+**Trong giai đoạn ưu đãi** (tính theo dư nợ giảm dần):
+- Tiền gốc hàng tháng: 1.050.000.000 ÷ 240 ≈ **4.375.000 đồng/tháng**
+- Tiền lãi tháng đầu: 1.050.000.000 × 5,5% ÷ 12 ≈ **4.813.000 đồng**
+- Tiền trả tháng đầu: ≈ **9.188.000 đồng** (giảm dần các tháng sau do dư nợ giảm)
+
+**Khi chuyển sang lãi suất thả nổi:** Dư nợ còn lại được tính theo lãi suất mới cao hơn → tiền trả hàng tháng có thể tăng đáng kể. Đây là lý do bạn cần tính trước kịch bản lãi suất tăng để tránh "vỡ kế hoạch" tài chính.
+
+Xem thêm [thanh toán K-Home CityView theo tiến độ như thế nào?](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao) và [mỗi tháng phải trả bao nhiêu nếu mua K-Home CityView?](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V36_TAN-HOA_EXT_NOXH_PARK_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Cảnh quan và không gian xanh K-Home CityView / k-home city view
+
+## Những yếu tố ảnh hưởng đến lãi suất vay K-Home CityView / k-home city view
+
+- **Ngân hàng cho vay:** Mỗi ngân hàng có chính sách lãi suất, biên độ và thời gian ưu đãi khác nhau. Một số ngân hàng có gói vay NOXH riêng với lãi suất thấp hơn
+- **Hồ sơ tín dụng của khách hàng:** Thu nhập ổn định, lịch sử tín dụng tốt → dễ được lãi suất tốt hơn
+- **Thời điểm vay:** Khi lãi suất thị trường cao thì lãi suất vay cũng cao; khi có chính sách hỗ trợ NOXH thì lãi suất có thể được ưu đãi
+- **Chương trình hỗ trợ từ chủ đầu tư:** Một số đợt mở bán K-Home CityView / k-home city view có thể có hỗ trợ lãi suất 1–2 năm đầu hoặc chiết khấu gián tiếp
+
+## Cách chọn gói vay phù hợp khi mua K-Home CityView / k-home city view
+
+1. **So sánh ít nhất 2–3 ngân hàng:** Lãi suất ưu đãi bao nhiêu %, trong bao lâu? Lãi suất thả nổi sau ưu đãi dự kiến bao nhiêu? Phí trả nợ trước hạn, phí tất toán
+2. **Tính kịch bản lãi suất tăng:** Giả sử lãi suất thả nổi tăng thêm 1–2%/năm — xem tiền trả hàng tháng tăng bao nhiêu, mình có chịu được không
+3. **Chọn thời hạn vay phù hợp:** Vay càng dài → tiền trả hàng tháng càng thấp nhưng tổng lãi càng cao; vay càng ngắn → tiền trả cao nhưng tổng lãi thấp hơn
+4. **Hỏi rõ tư vấn viên:** Ngân hàng nào đang hỗ trợ vay cho dự án? Có chương trình hỗ trợ lãi suất nào từ chủ đầu tư không?
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+## Kết luận
+
+Lãi suất vay mua K-Home CityView (k-home city view) thường gồm giai đoạn ưu đãi cố định (thấp, trong 1–3 năm đầu) và giai đoạn lãi suất thả nổi sau đó theo công thức "lãi suất cơ sở + biên độ". Để biết chính xác cách tính và mức lãi suất, bạn cần xem hợp đồng vay, so sánh các ngân hàng và tính trước kịch bản lãi suất tăng.
+
+Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu) và [K-Home CityView đã nhận hồ sơ mua nhà ở xã hội chưa?](/tin-tuc/k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua). Liên hệ **0937.587.438** để được tư vấn chi tiết về gói vay.
+
+---RELATED---so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre|So Sánh Căn 1 Phòng Ngủ Và 2 Phòng Ngủ K-Home CityView Cho Gia Đình Trẻ;k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram|K-Home CityView Có Hỗ Trợ Vay Bao Nhiêu Phần Trăm?`,
+  },
+  {
     id: "n58",
     slug: "gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua",
     title: "Giá K-Home CityView Đã Bao Gồm VAT Và Phí Bảo Trì Chưa?",
