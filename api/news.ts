@@ -3,6 +3,190 @@
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
+    id: "n56",
+    slug: "dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview",
+    title: "Điều Kiện Thu Nhập Và Tình Trạng Nhà Ở Khi Mua K-Home CityView",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (k-home city view) là NOXH Biên Hòa — không phải ai có tiền cũng mua được. Phải đáp ứng điều kiện thu nhập (không quá cao, đủ trả góp) và tình trạng nhà ở (chưa có nhà hoặc nhà chật) theo quy định NOXH Đồng Nai.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Điều kiện thu nhập và tình trạng nhà ở có thể thay đổi theo từng đợt và quyết định của tỉnh Đồng Nai. Người mua cần đối chiếu với thông báo chính thức và trao đổi trực tiếp với tư vấn trước khi nộp hồ sơ.
+
+![Điều kiện thu nhập và tình trạng nhà ở khi mua K-Home CityView / k-home city view](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2)
+
+**K-Home CityView** (hay **k-home city view**) là dự án nhà ở xã hội (NOXH) Biên Hòa, nên không phải ai có tiền cũng mua được. Bạn phải đáp ứng điều kiện thu nhập và tình trạng nhà ở theo quy định NOXH Đồng Nai thì mới đủ điều kiện nộp hồ sơ mua [K-Home CityView](/k-home-cityview-ho-nai) / k-home city view.
+
+## Vì sao phải quan tâm đến điều kiện thu nhập và nhà ở?
+
+K-Home CityView / k-home city view thuộc nhóm NOXH Biên Hòa, chịu sự điều chỉnh của Luật Nhà ở, Nghị định về nhà ở xã hội và quy định của tỉnh Đồng Nai. Mục tiêu của NOXH là hỗ trợ người chưa có nhà, nhà chật, thu nhập thấp – trung bình, khó mua được căn hộ thương mại, đồng thời tránh việc người thu nhập cao, đã có nhà, mua thêm NOXH để đầu tư.
+
+Vì vậy, mua K-Home CityView / k-home city view không chỉ là chuyện giá và tài chính, mà còn là chuyện điều kiện thu nhập và tình trạng nhà ở. Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu)
+
+## Điều kiện thu nhập khi mua K-Home CityView / k-home city view
+
+### 1. Thu nhập không quá cao
+
+Đối với NOXH Biên Hòa, người mua thường phải có thu nhập không quá mức "thu nhập cao" theo ngưỡng quy định địa phương, và phải chứng minh được bằng hợp đồng lao động, bảng lương, sao kê tài khoản nhận lương.
+
+Các nhóm thường được ưu tiên:
+- Công nhân, người lao động tại các KCN Amata, Biên Hòa 1–2, Hố Nai, Long Bình
+- Nhân viên văn phòng, giáo viên, viên chức, cán bộ trẻ
+- Người làm việc tại Biên Hòa – Đồng Nai chưa có khả năng mua nhà thương mại
+
+### 2. Thu nhập đủ trả góp
+
+Ngoài việc thu nhập không quá cao, bạn cần thu nhập đủ để trả góp khoản vay (thường 75% giá trị căn) + chi phí sinh hoạt. Ngân hàng sẽ xem xét tổng thu nhập gia đình, chi tiêu cố định, khoản nợ hiện tại và khả năng trả nợ hàng tháng.
+
+Xem chi tiết tại [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-6_xgizpz.webp|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|K-Home CityView / k-home city view NOXH Biên Hòa hướng đến người lao động và gia đình trẻ
+
+## Điều kiện tình trạng nhà ở khi mua K-Home CityView / k-home city view
+
+### 1. Chưa có nhà ở phù hợp tại Đồng Nai
+
+NOXH Biên Hòa – trong đó có K-Home CityView / k-home city view – hướng đến người:
+- Chưa có nhà tại Đồng Nai
+- Hoặc có nhà nhưng diện tích quá nhỏ, không đáp ứng tiêu chuẩn tối thiểu
+
+Ví dụ: ở trọ chưa sở hữu căn nhà nào, hoặc sống chung nhiều thế hệ với diện tích mỗi người quá thấp.
+
+### 2. Không sở hữu nhiều nhà để đầu tư
+
+Các quy định NOXH thường không cho phép người đã có nhiều căn hộ mua thêm NOXH để đầu tư, hoặc người có nhà diện tích lớn, sở hữu bất động sản giá trị cao, vẫn mua NOXH.
+
+Khi nộp hồ sơ mua K-Home CityView / k-home city view, bạn sẽ phải kê khai tình trạng nhà ở và cung cấp giấy tờ chứng minh chưa có nhà hoặc nhà chật. Xem hướng dẫn tại [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview)
+
+## Tóm tắt các điều kiện chính (mang tính định hướng)
+
+| Nhóm điều kiện | Yêu cầu |
+|---|---|
+| Đối tượng | Người lao động tại Biên Hòa, KCN lân cận, thu nhập thấp–trung bình |
+| Thu nhập | Không vượt ngưỡng "thu nhập cao"; đủ sức trả góp khoản vay |
+| Nhà ở | Chưa có nhà tại Đồng Nai, hoặc diện tích nhà dưới chuẩn tối thiểu |
+| Cư trú | Có đăng ký thường trú hoặc cư trú dài hạn tại Đồng Nai |
+
+Để biết chi tiết chính xác, xem [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Tiện ích nội khu K-Home CityView / k-home city view hướng đến gia đình trẻ và người ở thật
+
+## Cách tự kiểm tra điều kiện trước khi mua K-Home CityView / k-home city view
+
+1. **Liệt kê tài sản nhà đất** của bạn tại Đồng Nai và các địa phương khác
+2. **Viết ra thu nhập hàng tháng** của gia đình (lương chính, thu nhập phụ, chi tiêu cố định)
+3. **Đối chiếu với tiêu chí NOXH** qua văn bản hoặc tư vấn
+4. **Hỏi trực tiếp** tại Sales Gallery K-Home CityView / k-home city view hoặc hotline: "Em có thuộc đối tượng NOXH không?" và "Thu nhập như vậy có đủ điều kiện vừa mua vừa vay ngân hàng không?"
+
+Nếu hồ sơ không đủ điều kiện NOXH, cần cân nhắc giải pháp khác (thuê nhà hoặc mua dự án thương mại). Xem thêm [K-Home CityView hay thuê nhà ở Biên Hòa, lựa chọn nào tốt hơn?](/tin-tuc/k-home-cityview-hay-thue-nha-o-bien-hoa-lua-chon-nao-tot-hon)
+
+## Tại sao nên kiểm tra kỹ điều kiện trước khi nộp hồ sơ?
+
+- **Tiết kiệm thời gian:** Tránh nộp hồ sơ rồi bị loại vì không đủ điều kiện
+- **Giảm rủi ro:** Tránh kỳ vọng quá mức vào dự án K-Home CityView / k-home city view nếu không thuộc đối tượng
+- **Chuẩn bị kế hoạch tài chính đúng:** Biết rõ mình có thể vay được bao nhiêu, trả được bao nhiêu mỗi tháng
+
+## Kết luận
+
+Để mua K-Home CityView (k-home city view) — dự án NOXH Biên Hòa — bạn phải đáp ứng điều kiện thu nhập (không quá cao, đủ trả góp) và điều kiện tình trạng nhà ở (chưa có nhà hoặc nhà chật) theo quy định nhà ở xã hội Đồng Nai. Hãy kiểm tra kỹ điều kiện trước khi nộp hồ sơ để tránh bị từ chối và lãng phí thời gian.
+
+Xem thêm [K-Home CityView đã nhận hồ sơ mua nhà ở xã hội chưa?](/tin-tuc/k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua) và [câu hỏi thường gặp về K-Home CityView: 15 thắc mắc phổ biến nhất](/tin-tuc/cau-hoi-thuong-gap-ve-k-home-cityview-15-thac-mac-pho-bien-nhat). Liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026;k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua|K-Home CityView Đã Nhận Hồ Sơ Mua Nhà Ở Xã Hội Chưa?`,
+  },
+  {
+    id: "n55",
+    slug: "k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua",
+    title: "K-Home CityView Đã Nhận Hồ Sơ Mua Nhà Ở Xã Hội Chưa?",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (k-home city view) đã nhận hồ sơ mua NOXH theo từng đợt trong năm 2026, đợt đầu dự kiến 30/06–01/09/2026. Tìm hiểu quy trình, hồ sơ cần chuẩn bị và cách xác nhận đợt nhận hồ sơ hiện tại.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786456829/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-13_olnn0v.webp",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin về thời gian nhận hồ sơ dựa trên nguồn công bố tại thời điểm cập nhật. Người mua cần xác nhận đợt nhận hồ sơ hiện tại qua thông báo chính thức của chủ đầu tư hoặc cơ quan quản lý trước khi nộp.
+
+![K-Home CityView / k-home city view đã nhận hồ sơ mua nhà ở xã hội chưa?](https://res.cloudinary.com/dthv0nsq/image/upload/v1786456829/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-13_olnn0v.webp)
+
+Theo các nguồn cập nhật, **K-Home CityView** (hay **k-home city view**) đã bước vào giai đoạn nhận hồ sơ mua nhà ở xã hội theo từng đợt trong năm 2026, nhưng thời gian và cách nhận hồ sơ cụ thể phụ thuộc từng đợt và thông báo chính thức của chủ đầu tư, Sở Xây dựng hoặc đơn vị tiếp nhận.
+
+## K-Home CityView / k-home city view đã nhận hồ sơ mua NOXH chưa?
+
+Một số nguồn thông tin thị trường về NOXH Biên Hòa cho biết:
+- Dự án K-Home CityView / k-home city view đã được đưa vào danh sách NOXH đang triển khai tại Biên Hòa
+- Có tài liệu ghi thời gian thu hồ sơ dự kiến đợt đầu khoảng từ **30/06/2026 đến 01/09/2026**
+- Các bài tổng hợp NOXH Kim Oanh Group cũng nêu K-Home CityView là một trong những dự án đang tiếp cận khách hàng và hướng dẫn hồ sơ mua nhà ở xã hội
+
+Điều đó cho thấy: K-Home CityView / k-home city view đã nhận hồ sơ mua NOXH (ít nhất trong đợt đầu năm 2026), nhưng việc dự án **đang nhận hồ sơ ở thời điểm hiện tại** cần kiểm tra theo thông báo mới nhất. Xem thêm [K-Home CityView đã mở bán chưa? Cập nhật mới nhất 2026](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026).
+
+## Hồ sơ mua K-Home CityView / k-home city view thường được nhận qua kênh nào?
+
+Hồ sơ mua K-Home CityView / k-home city view có thể được nhận qua:
+- **Đơn vị quản lý dự án** (Kim Oanh Land / Kim Oanh Group)
+- **Cơ quan nhà nước** (Sở Xây dựng, Trung tâm phát triển quỹ nhà ở xã hội) — tùy hướng dẫn từng đợt
+- **Điểm tiếp nhận tại Sales Gallery** dự án (đường Điểu Xiển, Hố Nai)
+
+Các thông tin chi tiết về địa điểm nộp hồ sơ, thời gian và thủ tục thường được công bố trên website chính thức của K-Home CityView / k-home city view, trên website của Kim Oanh Group và trong thông báo NOXH do Sở Xây dựng Đồng Nai công bố.
+
+Vì vậy, trước khi chuẩn bị hồ sơ, bạn cần xem thông báo chính thức cho đợt mình muốn nộp và liên hệ hotline K-Home CityView / k-home city view để xác nhận kênh nhận hồ sơ hiện tại.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-1-2_bqb2ss.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456830/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-10_rpvcu6.webp|Sales Gallery K-Home CityView / k-home city view nơi tiếp nhận tư vấn và hồ sơ
+
+## Hồ sơ mua K-Home CityView / k-home city view thường gồm những gì?
+
+Dù từng đợt có thể yêu cầu chi tiết khác nhau, bộ hồ sơ mua NOXH K-Home CityView / k-home city view thường xoay quanh 4 nhóm giấy tờ:
+
+**1. Giấy tờ cá nhân:** Căn cước công dân, sổ hộ khẩu hoặc giấy xác nhận thông tin cư trú, giấy đăng ký kết hôn hoặc giấy xác nhận tình trạng hôn nhân.
+
+**2. Giấy tờ về thu nhập:** Hợp đồng lao động, bảng lương, sao kê tài khoản nhận lương, giấy tờ chứng minh thu nhập khác nếu có.
+
+**3. Giấy tờ về tình trạng nhà ở:** Xác nhận chưa có nhà ở tại Đồng Nai, giấy tờ về diện tích nhà ở hiện tại (nếu nhà chật), giấy tờ về ở chung nhiều thế hệ (nếu áp dụng).
+
+**4. Đơn và biểu mẫu:** Đơn đăng ký mua NOXH K-Home CityView / k-home city view, cam kết về việc sử dụng nhà ở đúng mục đích, các mẫu biểu theo quy định.
+
+Xem hướng dẫn chi tiết tại [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [điều kiện thu nhập và tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview).
+
+## Khi nào nên chuẩn bị hồ sơ mua K-Home CityView / k-home city view?
+
+Bạn nên bắt đầu chuẩn bị hồ sơ khi:
+- Đã đọc rõ điều kiện NOXH Đồng Nai — chắc chắn mình thuộc nhóm đối tượng. Xem [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026)
+- Biết thời gian nhận hồ sơ cho đợt mình muốn nộp — tránh chuẩn bị quá sớm mà không nộp được, hoặc chuẩn bị quá trễ
+- Hiểu rõ loại căn mình muốn mua — 1PN, 2PN, 3PN, vì hồ sơ và tài chính sẽ gắn với loại căn đó
+- Đã kiểm tra thu nhập và khả năng vay — để tránh nộp hồ sơ nhưng sau đó không thể làm bước vay vốn. Xem [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-12_tm9awq.webp|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|Khách hàng tham quan và tư vấn hồ sơ tại K-Home CityView / k-home city view
+
+## K-Home CityView / k-home city view có nhận hồ sơ "thường xuyên" không?
+
+**Không.** NOXH nói chung và K-Home CityView / k-home city view nói riêng thường nhận hồ sơ theo từng đợt, với thời gian cụ thể và số lượng căn nhất định. Điều này có nghĩa:
+- Không phải lúc nào cũng "đang nhận hồ sơ"
+- Cần xem thông báo đợt nhận hồ sơ mới nhất
+- Nộp hồ sơ không đúng thời gian đợt sẽ dẫn đến hồ sơ không được xử lý
+
+## Nếu chưa có thông báo mới, nên làm gì?
+
+Nếu ở thời điểm hiện tại chưa có thông báo rõ ràng về đợt nhận hồ sơ mới, hoặc đợt cũ đã kết thúc, bạn nên:
+- **Liên hệ hotline 0937.587.438** hỏi có đợt nhận hồ sơ mới không, thời gian cụ thể và địa điểm nộp
+- **Theo dõi website chính thức** của dự án, Kim Oanh Group và Sở Xây dựng Đồng Nai
+- **Chuẩn bị sẵn hồ sơ** theo mẫu chung để khi có đợt, chỉ cần chỉnh sửa và nộp ngay
+
+## Kinh nghiệm tránh sai lầm khi nộp hồ sơ K-Home CityView / k-home city view
+
+- **Đừng chỉ nộp cho có:** Nếu không đủ điều kiện NOXH, việc nộp hồ sơ không giúp tăng cơ hội mua
+- **Không nộp hồ sơ thiếu giấy tờ:** Thiếu giấy xác nhận nhà ở, thiếu giấy xác nhận thu nhập sẽ bị yêu cầu bổ sung, mất thời gian
+- **Không nộp qua kênh không chính thức:** Chỉ nộp qua điểm nhận hồ sơ được công bố
+- **Giữ bản sao hồ sơ và biên nhận:** Để theo dõi tiến trình và chứng minh đã nộp đúng thời gian
+
+Xem thêm [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z) và [những sai lầm cần tránh khi mua K-Home CityView](/tin-tuc/nhung-sai-lam-can-tranh-khi-mua-k-home-cityview).
+
+## Kết luận
+
+K-Home CityView (k-home city view) đã nhận hồ sơ mua nhà ở xã hội trong các đợt năm 2026. Tuy nhiên, việc dự án đang nhận hồ sơ ở thời điểm hiện tại cần kiểm tra theo thông báo chính thức mới nhất. Hãy xác nhận đợt nhận hồ sơ, kiểm tra điều kiện NOXH và chuẩn bị hồ sơ đầy đủ trước khi nộp.
+
+Xem thêm [điều kiện thu nhập và tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview) và [cập nhật tiến độ thi công K-Home CityView tháng mới nhất](/tin-tuc/cap-nhat-tien-do-thi-cong-k-home-cityview-thang-moi-nhat). Liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview|Điều Kiện Thu Nhập Và Tình Trạng Nhà Ở Khi Mua K-Home CityView;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì?`,
+  },
+  {
     id: "n54",
     slug: "k-home-cityview-nam-o-dau-dia-chi-du-an-chinh-xac-la-gi",
     title: "K-Home CityView Nằm Ở Đâu? Địa Chỉ Dự Án Chính Xác Là Gì?",
