@@ -364,6 +364,146 @@ const projects = [
 
 const newsList = [
   {
+    id: "n54",
+    slug: "k-home-cityview-nam-o-dau-dia-chi-du-an-chinh-xac-la-gi",
+    title: "K-Home CityView Nằm Ở Đâu? Địa Chỉ Dự Án Chính Xác Là Gì?",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (k-home city view) nằm trên mặt tiền đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, Đồng Nai. Cách trung tâm Biên Hòa khoảng 3 km, gần KCN Amata, Biên Hòa 1–2, Hố Nai và Long Bình.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785515197/news11/1.webp",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin địa chỉ và kết nối giao thông dựa trên các nguồn công bố tại thời điểm cập nhật. Thời gian di chuyển là tham khảo, có thể thay đổi tùy tình trạng giao thông thực tế.
+
+![K-Home CityView / k-home city view nằm ở đâu? Địa chỉ chính xác đường Điểu Xiển Hố Nai Biên Hòa](https://res.cloudinary.com/dthv0nsq/image/upload/v1785515197/news11/1.webp)
+
+**K-Home CityView** (hay **k-home city view**) nằm trên mặt tiền đường Điểu Xiển, thuộc phường Hố Nai (khu Tân Hòa cũ), TP. Biên Hòa, tỉnh Đồng Nai. Đây là một trong những khu vực dân cư sầm uất, gần Quốc lộ 1A, trung tâm Biên Hòa và nhiều khu công nghiệp lớn như Amata, Biên Hòa 1–2, Hố Nai, Long Bình.
+
+## Địa chỉ chính xác của K-Home CityView / k-home city view
+
+Các nguồn chính thức và trang giới thiệu dự án thống nhất:
+
+**Địa chỉ K-Home CityView / k-home city view:** Đường Điểu Xiển, phường Hố Nai (Tân Hòa cũ), TP. Biên Hòa, tỉnh Đồng Nai.
+
+Đây là thông tin được lặp lại nhất trong các bài giới thiệu và tài liệu pháp lý dự án NOXH K-Home CityView.
+
+## Vị trí K-Home CityView / k-home city view trong tổng thể Biên Hòa
+
+### Nằm trong khu dân cư hiện hữu Hố Nai
+
+Hố Nai là khu dân cư lâu năm, có chợ, trường học, nhà thờ, cửa hàng và dịch vụ dân sinh đầy đủ. K-Home CityView / k-home city view không nằm ở khu đất tách biệt xa dân cư, mà nằm trong khu vực đô thị đang phát triển mạnh của Biên Hòa — lợi thế lớn so với nhiều dự án NOXH nằm ở vùng ven.
+
+### Gần các trục giao thông chính
+
+Từ K-Home CityView / k-home city view, cư dân có thể tiếp cận:
+- **Quốc lộ 1A** — kết nối Biên Hòa với TP.HCM và các tỉnh
+- Các tuyến nội đô: Nguyễn Ái Quốc, Võ Nguyên Giáp, kết nối đến trung tâm Biên Hòa
+- Cao tốc TP.HCM – Long Thành – Dầu Giây theo các tuyến kết nối
+
+Xem thêm [những tuyến đường nào kết nối trực tiếp đến K-Home CityView?](/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785427981/news8/4.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785255561/k-home-cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg|Vị trí K-Home CityView / k-home city view trên bản đồ Biên Hòa và mặt tiền đường Điểu Xiển
+
+### Vị trí so với trung tâm Biên Hòa
+
+Từ K-Home CityView / k-home city view đến trung tâm Biên Hòa khoảng **3 km**, thời gian di chuyển tham khảo khoảng **10 phút** trong điều kiện giao thông thuận lợi. Xem thêm [từ K-Home CityView đi đến trung tâm Biên Hòa mất bao lâu?](/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau)
+
+## K-Home CityView / k-home city view kết nối những khu công nghiệp nào?
+
+Vị trí đường Điểu Xiển, phường Hố Nai giúp dự án gần KCN Amata, Biên Hòa 1, Biên Hòa 2, Hố Nai và Long Bình. Xem phân tích chi tiết tại [K-Home CityView gần những khu công nghiệp nào?](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [K-Home CityView có thuận tiện cho người làm ở Amata không?](/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong)
+
+## Tiện ích xung quanh K-Home CityView / k-home city view
+
+Vị trí trong khu dân cư Hố Nai – Biên Hòa giúp cư dân dễ tiếp cận chợ, siêu thị, trường học các cấp, bệnh viện, phòng khám và trung tâm mua sắm. Xem thêm [tiện ích xung quanh K-Home CityView có đủ cho cuộc sống hằng ngày không?](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230285/k-home-cityview/V35_TAN-HOA_EXT_NOXH_POOL2_2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230282/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1.jpg|Tiện ích xung quanh và toàn cảnh K-Home CityView / k-home city view tại Hố Nai Biên Hòa
+
+## Địa chỉ Sales Gallery và nhà mẫu K-Home CityView / k-home city view
+
+Sales Gallery K-Home CityView / k-home city view được khai trương ngay tại khu vực dự án trên đường Điểu Xiển. Khi đến tham quan, **gọi 0937.587.438** để được hướng dẫn điểm đón và xác nhận lịch tham quan. Xem thêm [K-Home CityView có mở nhà mẫu không? Cần xem gì khi đi tham quan](/tin-tuc/k-home-cityview-co-mo-nha-mau-khong-can-xem-gi-khi-di-tham-quan).
+
+## Tóm tắt địa chỉ K-Home CityView / k-home city view
+
+**K-Home CityView** (k-home city view) tọa lạc trên mặt tiền **đường Điểu Xiển, phường Hố Nai (Tân Hòa cũ), TP. Biên Hòa, tỉnh Đồng Nai** — gần KCN Amata, Biên Hòa 1–2, Hố Nai, Long Bình và chỉ mất khoảng 10 phút di chuyển tham khảo đến trung tâm Biên Hòa.
+
+Xem thêm [vị trí K-Home CityView Biên Hòa có gì nổi bật so với các dự án NOXH khác?](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac) và [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu). Liên hệ **0937.587.438** để được tư vấn và đặt lịch tham quan.
+
+---RELATED---k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu|K-Home CityView Là Dự Án Gì? Ai Là Chủ Đầu Tư?;vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac|Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật?`,
+  },
+  {
+    id: "n53",
+    slug: "k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu",
+    title: "K-Home CityView Là Dự Án Gì? Ai Là Chủ Đầu Tư?",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (k-home city view) là dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa, Đồng Nai do Kim Oanh Land – thành viên Kim Oanh Group phát triển. Tìm hiểu về loại hình, quy mô, chủ đầu tư và đối tượng mua.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786456719/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-8_r0pjmf.webp",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin trong bài được tổng hợp từ các nguồn công bố chính thức tại thời điểm cập nhật. Người mua cần xác minh thực tế và liên hệ trực tiếp với chủ đầu tư để có thông tin chính xác nhất.
+
+![K-Home CityView là dự án gì? Ai là chủ đầu tư K-Home CityView / k-home city view?](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2)
+
+**K-Home CityView** (hay **k-home city view**) là một dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa, Đồng Nai, được phát triển bởi Kim Oanh Land – thành viên của Kim Oanh Group. Dự án hướng đến người lao động và gia đình trẻ đang tìm chỗ ở thật, pháp lý rõ ràng, giá dễ tiếp cận tại khu vực trung tâm Biên Hòa.
+
+## K-Home CityView / k-home city view là dự án gì?
+
+### Loại hình dự án
+
+- **Loại hình:** Chung cư nhà ở xã hội (NOXH)
+- **Định hướng:** Chuẩn Singapore, thiết kế theo công trình xanh EDGE
+- **Mục tiêu:** Cung cấp căn hộ chất lượng, giá phù hợp cho người lao động, công nhân, nhân viên văn phòng và gia đình trẻ tại Biên Hòa
+
+K-Home CityView / k-home city view không phải dự án chung cư thương mại thuần túy, mà nằm trong chương trình NOXH Biên Hòa với chính sách hỗ trợ đối tượng đủ điều kiện. Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa năm 2026 không?](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong)
+
+### Vị trí dự án
+
+**Địa chỉ:** Mặt tiền đường Điểu Xiển, phường Hố Nai (Tân Hòa cũ), TP. Biên Hòa, Đồng Nai. Cách trung tâm Biên Hòa khoảng 3 km, gần các KCN Amata, Biên Hòa 1, Biên Hòa 2, Hố Nai, Long Bình và liền kề Quốc lộ 1A.
+
+### Quy mô và thiết kế
+
+Diện tích khu đất khoảng **2,85 ha**, khoảng **4 block** căn hộ cao **22 tầng**, tổng khoảng **2.000 căn** (đợt NOXH công bố khoảng **1.382 căn**). Thiết kế bởi **Surbana Jurong (Singapore)**, theo tiêu chuẩn EDGE, chú trọng ánh sáng tự nhiên, thông gió, tiết kiệm năng lượng và cảnh quan nội khu.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1.webp|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|Toàn cảnh K-Home CityView / k-home city view nhìn từ trên cao tại Hố Nai Biên Hòa
+
+## Ai là chủ đầu tư K-Home CityView / k-home city view?
+
+- **Chủ đầu tư:** Công ty liên quan trong hệ sinh thái Kim Oanh Group
+- **Đơn vị phát triển:** Kim Oanh Land – thành viên Kim Oanh Group
+- **Đơn vị thiết kế:** Surbana Jurong (Singapore)
+
+Kim Oanh Group là đơn vị đã triển khai nhiều dự án K-Home (NOXH) tại Bình Dương và Đồng Nai, với K-Home CityView / k-home city view nằm trong chuỗi gồm K-Home Midtown (Trảng Bom), K-Home Avenue (Nhơn Trạch) và các dự án K-Home khác tại Bình Dương.
+
+## K-Home CityView / k-home city view dành cho ai?
+
+Dự án hướng đến người lao động làm việc tại Biên Hòa và các KCN lân cận, gia đình trẻ có thu nhập trung bình – khá chưa có nhà tại Đồng Nai, và người đủ điều kiện mua NOXH Biên Hòa với nhu cầu ở thật.
+
+Xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [ai được mua K-Home CityView theo quy định NOXH năm 2026?](/tin-tuc/ai-duoc-mua-k-home-cityview-theo-quy-dinh-noxh-nam-2026)
+
+## Căn hộ K-Home CityView / k-home city view gồm những loại nào?
+
+| Loại căn | Diện tích | Phù hợp |
+|---|---|---|
+| 1PN+A | ~47 m² | Người độc thân, vợ chồng trẻ |
+| 1PN+B | ~62 m² | Vợ chồng trẻ, gia đình nhỏ |
+| 2PN | ~62–70 m² | Gia đình 3–4 người |
+| 3PN | ~84 m² | Gia đình lớn, đa thế hệ |
+
+Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông?](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong) và [mua K-Home CityView nên chọn căn diện tích nào để tối ưu chi phí?](/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-6_xgizpz.webp|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|Sự kiện giới thiệu và khu shophouse khối đế K-Home CityView / k-home city view
+
+## K-Home CityView / k-home city view là NOXH, mua có khó không?
+
+Mua K-Home CityView / k-home city view khó hơn mua căn hộ thương mại vì phải đáp ứng điều kiện NOXH, chuẩn bị hồ sơ và chờ xét duyệt. Nhưng đổi lại: giá thấp hơn nhiều so với chung cư thương mại cùng khu vực và được vay ưu đãi 75% lãi suất khoảng 5,4%/năm. Xem chi tiết tại [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram) và [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi)
+
+## Kết luận
+
+K-Home CityView (k-home city view) là dự án NOXH chuẩn Singapore tại Biên Hòa, do Kim Oanh Land – Kim Oanh Group phát triển, thiết kế bởi Surbana Jurong. Quy mô ~2,85 ha, 4 block, khoảng 2.000 căn, hướng đến người lao động và gia đình trẻ mua ở thật đủ điều kiện NOXH Biên Hòa.
+
+Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [K-Home CityView nằm ở đâu? Địa chỉ dự án chính xác là gì?](/tin-tuc/k-home-cityview-nam-o-dau-dia-chi-du-an-chinh-xac-la-gi). Liên hệ **0937.587.438** để được tư vấn và hỗ trợ hồ sơ miễn phí.
+
+---RELATED---k-home-cityview-nam-o-dau-dia-chi-du-an-chinh-xac-la-gi|K-Home CityView Nằm Ở Đâu? Địa Chỉ Dự Án Chính Xác Là Gì?;cau-hoi-thuong-gap-ve-k-home-cityview-15-thac-mac-pho-bien-nhat|Câu Hỏi Thường Gặp Về K-Home CityView: 15 Thắc Mắc Phổ Biến Nhất`,
+  },
+  {
     id: "n52",
     slug: "cau-hoi-thuong-gap-ve-k-home-cityview-15-thac-mac-pho-bien-nhat",
     title: "Câu Hỏi Thường Gặp Về K-Home CityView: 15 Thắc Mắc Phổ Biến Nhất",
