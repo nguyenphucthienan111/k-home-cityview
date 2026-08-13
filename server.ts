@@ -364,6 +364,178 @@ const projects = [
 
 const newsList = [
   {
+    id: "n50",
+    slug: "k-home-cityview-co-dang-mua-neu-chi-muon-o-that-5-10-nam",
+    title: "K-Home CityView Có Đáng Mua Nếu Chỉ Muốn Ở Thật 5–10 Năm?",
+    date: "2026-08-13",
+    excerpt: "K-Home CityView (K-Home City View) có thể đáng mua nếu bạn chỉ muốn ở thật 5–10 năm với điều kiện: dự định sống tại Biên Hòa, thu nhập ổn định, đủ 25% vốn tự có và đáp ứng điều kiện NOXH. Phân tích chi tiết để tự quyết định.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+    category: "So sánh & Tư vấn",
+    project: "cityview",
+    content: `> **Lưu ý:** Bài viết dựa trên thông tin công bố tại thời điểm cập nhật. Giá bán, lãi suất và điều kiện vay có thể thay đổi. Người mua cần xác minh thực tế trước khi quyết định.
+
+![K-Home CityView có đáng mua nếu chỉ muốn ở thật 5–10 năm?](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2)
+
+[K-Home CityView](/k-home-cityview-ho-nai) (hay **K-Home City View**) có thể đáng mua nếu bạn chỉ muốn ở thật trong 5–10 năm với điều kiện: dự định sống tại Biên Hòa trong suốt khoảng thời gian đó, thu nhập ổn định, chuẩn bị được 25% vốn tự có và đáp ứng điều kiện mua nhà ở xã hội. Nếu khả năng tài chính hoặc kế hoạch ở Biên Hòa chưa rõ ràng, thì thuê nhà hoặc lùi thời điểm mua sẽ an toàn hơn.
+
+## 1. Ở thật 5–10 năm: K-Home CityView / K-Home City View có hợp?
+
+### Vị trí phù hợp cho người làm việc tại Biên Hòa
+
+K-Home CityView / K-Home City View nằm trên đường Điểu Xiển, phường Hố Nai, cách trung tâm Biên Hòa khoảng 3 km (thời gian di chuyển tham khảo khoảng 10 phút trong điều kiện giao thông thuận lợi), gần các KCN Amata, Biên Hòa 1, Biên Hòa 2, Hố Nai, Long Bình.
+
+Nếu bạn dự định làm việc tại Biên Hòa trong 5–10 năm tới, an cư tại K-Home CityView / K-Home City View giúp giảm thời gian đi làm, giảm chi phí di chuyển và ổn định cuộc sống gia đình.
+
+### Tiện ích đáp ứng nhu cầu ở thật
+
+Theo các nguồn giới thiệu, K-Home CityView / K-Home City View có hồ bơi người lớn và trẻ em, công viên, sân chơi, khu gym, minimart, nhà sinh hoạt cộng đồng và trường học nội khu theo định hướng quy hoạch. Xung quanh dự án là khu dân cư Hố Nai – Biên Hòa, gần chợ, siêu thị, bệnh viện và trường học các cấp.
+
+Xem thêm [sống tại K-Home CityView có phù hợp gia đình có con nhỏ không?](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho-khong)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V11_TH_EXT_NOTM_POOL_2|Tiện ích nội khu K-Home CityView / K-Home City View phù hợp ở thật 5–10 năm
+
+## 2. K-Home CityView / K-Home City View trong 5–10 năm: tài chính có hợp không?
+
+### Vốn tự có 25% – vay 75%
+
+Theo cấu trúc tài chính được giới thiệu: 25% vốn tự có + 75% giá trị căn hộ vay ngân hàng NOXH, lãi suất ưu đãi tham khảo khoảng 5,4%/năm, thời hạn tối đa 25 năm. Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+Ví dụ với căn hộ K-Home CityView / K-Home City View giá 1,4 tỷ đồng: vốn tự có 25% là **350 triệu đồng**, khoản vay 75% là **1,05 tỷ đồng**.
+
+### Ở 5–10 năm, sau đó thì sao?
+
+Nếu bạn dự định ở K-Home CityView / K-Home City View khoảng 5–10 năm rồi chuyển đi, cần tính: số gốc đã trả, giá trị căn hộ có tăng không, quy định chuyển nhượng NOXH và khoản lãi đã trả so với thuê nhà. Nếu mua đúng với khả năng tài chính, 5–10 năm ở thật giúp tích lũy giá trị tài sản. Xem [thanh toán K-Home CityView theo tiến độ như thế nào?](/tin-tuc/thanh-toan-k-home-cityview-theo-tien-do-nhu-the-nao)
+
+## 3. So sánh nhanh: Mua K-Home CityView / K-Home City View hay thuê nhà trong 5–10 năm?
+
+| Tiêu chí | Mua K-Home CityView / K-Home City View | Thuê nhà ở Biên Hòa |
+|---|---|---|
+| Mục tiêu | Sở hữu căn hộ, tích lũy tài sản | Linh hoạt chỗ ở, không vay dài hạn |
+| Vốn ban đầu | 25% giá trị căn (vốn tự có) | Tiền cọc + vài tháng tiền thuê |
+| Chi phí hằng tháng | Gốc + lãi + phí quản lý + điện nước | Tiền thuê + điện nước + phí quản lý |
+| Sau 5–10 năm | Có tài sản, đã trả một phần gốc | Không có tài sản, đã chi tiền thuê |
+| Rủi ro | Áp lực trả nợ nếu thu nhập giảm | Nguy cơ tăng giá thuê, bị chấm dứt hợp đồng |
+| Điều kiện | Phải đủ điều kiện NOXH + tín dụng | Chỉ cần điều kiện thuê (dễ hơn) |
+
+Xem phân tích đầy đủ tại [K-Home CityView hay thuê nhà ở Biên Hòa, lựa chọn nào tốt hơn?](/tin-tuc/k-home-cityview-hay-thue-nha-o-bien-hoa-lua-chon-nao-tot-hon)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1|Không gian sống tại K-Home CityView / K-Home City View
+
+## 4. Những yếu tố giúp K-Home CityView / K-Home City View "đáng mua" cho 5–10 năm
+
+**Thiết kế và môi trường sống:** Quy hoạch theo chuẩn Singapore, tiêu chuẩn xanh EDGE, chú trọng ánh sáng, thông gió và tiết kiệm năng lượng. Layout căn hộ K-Home CityView / K-Home City View tối ưu cho gia đình trẻ và người lao động. Xem thêm [thiết kế K-Home CityView có gì khác biệt so với NOXH truyền thống?](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong)
+
+**Tiện ích và khu dân cư hiện hữu:** Dự án nằm trong khu dân cư Hố Nai, không phải khu mới tách biệt. Thích hợp cho gia đình có con nhỏ muốn vừa gần nơi làm việc, vừa gần trường học và dịch vụ y tế.
+
+**Pháp lý và tiến độ:** Dự án đã có quy hoạch 1/500, giấy phép xây dựng, PCCC, chấp thuận đầu tư. Khởi công 23/09/2025, dự kiến bàn giao năm 2027 và đưa vào sử dụng từ 01/2028. Phù hợp với kế hoạch mua để ở trong giai đoạn 2027–2037.
+
+## 5. Cách tự quyết định: K-Home CityView / K-Home City View có đáng mua nếu chỉ ở 5–10 năm?
+
+Hãy tự trả lời rõ 5 câu hỏi:
+
+**1. Ở đâu?** Bạn có chắc 5–10 năm tới sẽ ở Biên Hòa không?
+
+**2. Thu nhập?** Thu nhập hiện tại có đủ an toàn để trả khoản vay trong 5–10 năm không?
+
+**3. Vốn tự có?** Bạn có đủ 25% vốn tự có mà không phải vét sạch toàn bộ tiền tiết kiệm không?
+
+**4. Điều kiện NOXH?** Bạn đáp ứng [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) không?
+
+**5. Ưu tiên?** Bạn ưu tiên an cư, sở hữu tài sản hay linh hoạt, ít ràng buộc hơn?
+
+Nếu câu trả lời 1–4 là **"Có"** và câu 5 là **"ưu tiên an cư"** → K-Home CityView / K-Home City View là lựa chọn đáng mua cho 5–10 năm ở thật. Ngược lại, hãy cân nhắc thuê nhà thêm vài năm cho đến khi điều kiện chín muồi hơn.
+
+## Kết luận
+
+K-Home CityView (K-Home City View) đáng mua cho 5–10 năm ở thật nếu bạn có kế hoạch rõ ràng: gắn bó Biên Hòa, thu nhập ổn định, đủ vốn tự có và đủ điều kiện NOXH. Xem thêm [giá bán K-Home CityView 2026](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa năm 2026 không?](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong). Liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---k-home-cityview-hay-thue-nha-o-bien-hoa-lua-chon-nao-tot-hon|K-Home CityView Hay Thuê Nhà Ở Biên Hòa, Lựa Chọn Nào Tốt Hơn?;k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong|K-Home CityView Có Phù Hợp Với Gia Đình Trẻ Không?`,
+  },
+  {
+    id: "n49",
+    slug: "k-home-cityview-hay-thue-nha-o-bien-hoa-lua-chon-nao-tot-hon",
+    title: "K-Home CityView Hay Thuê Nhà Ở Biên Hòa, Lựa Chọn Nào Tốt Hơn?",
+    date: "2026-08-13",
+    excerpt: "So sánh mua K-Home CityView (K-Home City View) và thuê nhà tại Biên Hòa: vốn ban đầu, chi phí hằng tháng, quyền sở hữu, độ ổn định và điều kiện. Phân tích thực tế để chọn đúng phương án an cư.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2",
+    category: "So sánh & Tư vấn",
+    project: "cityview",
+    content: `> **Lưu ý:** Bài viết mang tính tham khảo. Các con số về giá thuê, lãi suất và vốn tự có là ví dụ minh họa tại thời điểm cập nhật. Người đọc cần xác minh thông tin thực tế trước khi quyết định.
+
+![K-Home CityView hay thuê nhà ở Biên Hòa, lựa chọn nào tốt hơn?](https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2)
+
+**K-Home CityView** (hay **K-Home City View**) là một lựa chọn an cư mới tại Biên Hòa dành cho người lao động và gia đình trẻ, trong khi thuê nhà vẫn là phương án phổ biến với nhiều người chưa sẵn sàng vay mua. Lựa chọn nào tốt hơn phụ thuộc vào thu nhập, vốn tự có, kế hoạch sống lâu dài tại Biên Hòa và việc bạn có đủ điều kiện mua nhà ở xã hội hay chưa.
+
+## Mua K-Home CityView / K-Home City View: được gì?
+
+### 1. Có cơ hội sở hữu tài sản tại Biên Hòa
+
+[K-Home CityView](/k-home-cityview-ho-nai) / K-Home City View là dự án nhà ở xã hội chuẩn Singapore tại mặt tiền đường Điểu Xiển, phường Hố Nai, Biên Hòa. Quy mô 2,85 ha, 4 block cao 22 tầng, khoảng 2.000 căn hộ, tiêu chuẩn công trình xanh EDGE.
+
+Khi mua K-Home CityView / K-Home City View, bạn sở hữu tài sản thay vì chỉ sử dụng tạm, tích lũy giá trị căn hộ theo thời gian và ổn định chỗ ở lâu dài không phụ thuộc hợp đồng thuê.
+
+### 2. Vị trí thuận tiện cho an cư tại Biên Hòa
+
+Dự án cách trung tâm Biên Hòa khoảng 3 km (thời gian di chuyển tham khảo khoảng 10 phút), gần các KCN Amata, Biên Hòa 1, Biên Hòa 2, Hố Nai, Long Bình và nằm trong khu dân cư hiện hữu, gần chợ, trường học, bệnh viện và siêu thị. Xem thêm [K-Home CityView gần những khu công nghiệp nào?](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao)
+
+### 3. Tiện ích nội khu và xung quanh
+
+K-Home CityView / K-Home City View được giới thiệu có hồ bơi, công viên, sân chơi, khu gym, minimart, nhà sinh hoạt cộng đồng và trạm sạc xe điện. Điều này giúp an cư tại K-Home CityView / K-Home City View thuận tiện hơn rất nhiều so với thuê nhà ở khu trọ xa tiện ích.
+
+### 4. Phương án tài chính dễ tiếp cận (25% vốn tự có, 75% vay)
+
+Phương án tài chính K-Home CityView / K-Home City View: 25% vốn tự có + 75% giá trị căn hộ vay ngân hàng, lãi suất ưu đãi NOXH tham khảo khoảng 5,4%/năm. Xem chi tiết tại [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+| Giá căn hộ | Vốn tự có 25% | Khoản vay 75% |
+|---|---|---|
+| 1 tỷ đồng | 250 triệu | 750 triệu |
+| 1,4 tỷ đồng | 350 triệu | 1,05 tỷ |
+| 1,6 tỷ đồng | 400 triệu | 1,2 tỷ |
+
+Nếu bạn có thu nhập ổn định, chuẩn bị được vốn tự có và đủ điều kiện vay, việc mua K-Home CityView / K-Home City View giúp chuyển tiền thuê nhà hằng tháng thành khoản trả gốc và lãi cho căn hộ của chính mình.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1|Phối cảnh K-Home CityView / K-Home City View và tiện ích nội khu
+
+## Thuê nhà ở Biên Hòa: vẫn có lợi trong nhiều trường hợp
+
+### 1. Linh hoạt khi chưa chắc chắn sống lâu dài ở Biên Hòa
+
+Thuê nhà phù hợp nếu bạn mới chuyển lên Biên Hòa làm việc, chưa chắc sẽ gắn bó lâu dài hoặc kế hoạch công việc và gia đình chưa ổn định. Thuê nhà giúp dễ đổi khu vực nếu công việc thay đổi, không phải gánh khoản vay dài hạn và không cần chuẩn bị vốn tự có lớn.
+
+### 2. Không phải chuẩn bị 25% vốn tự có
+
+Nếu bạn chưa đủ tiền cho vốn tự có 25% K-Home CityView / K-Home City View, thuê nhà là cách giảm áp lực tài chính, tiếp tục tích lũy vốn và duy trì quỹ dự phòng cho gia đình.
+
+### 3. Phù hợp nếu không đủ điều kiện mua NOXH
+
+Mua K-Home CityView / K-Home City View cần thuộc đúng đối tượng, có thu nhập trong khoảng quy định và đáp ứng điều kiện tình trạng nhà ở. Xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Nếu không đáp ứng, thuê nhà là phương án thực tế hơn.
+
+## So sánh mua K-Home CityView / K-Home City View và thuê nhà Biên Hòa
+
+| Tiêu chí | Mua K-Home CityView / K-Home City View | Thuê nhà ở Biên Hòa |
+|---|---|---|
+| Mục tiêu | Sở hữu tài sản, an cư lâu dài | Linh hoạt chỗ ở, không gánh khoản vay |
+| Vốn ban đầu | 25% giá trị căn hộ | Tiền cọc + vài tháng tiền thuê |
+| Chi phí hằng tháng | Gốc + lãi + phí quản lý + điện nước | Tiền thuê + điện nước + phí quản lý |
+| Quyền sở hữu | Có (sau khi hoàn tất nghĩa vụ) | Không có |
+| Độ ổn định | Cao – ít lo bị chấm dứt hợp đồng | Phụ thuộc chủ nhà, hợp đồng thuê |
+| Điều kiện | Phải đáp ứng điều kiện NOXH + tín dụng | Chỉ cần điều kiện thuê (dễ hơn) |
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V36_TAN-HOA_EXT_NOXH_PARK_FINAL_2|Khu dân cư và không gian xanh K-Home CityView / K-Home City View
+
+## K-Home CityView / K-Home City View hay thuê nhà: lựa chọn nào tốt hơn?
+
+**Chọn K-Home CityView / K-Home City View nếu:** bạn chắc chắn sống tại Biên Hòa lâu dài, thu nhập ổn định, đã chuẩn bị được 25% vốn tự có, đủ điều kiện mua NOXH và muốn tích lũy tài sản thay vì trả tiền thuê.
+
+**Chọn thuê nhà nếu:** chưa chắc chắn gắn bó lâu dài với Biên Hòa, chưa đủ vốn tự có 25%, thu nhập chưa ổn định, chưa đủ điều kiện mua NOXH hoặc ưu tiên linh hoạt hơn là sở hữu.
+
+Cách thực tế: thuê nhà 1–2 năm đầu, vừa làm việc tại Biên Hòa vừa quan sát tiến độ K-Home CityView / K-Home City View. Khi thu nhập và vốn tự có đủ, chuyển từ thuê sang mua cho giai đoạn an cư lâu dài.
+
+Xem thêm [K-Home CityView là gì? Có nên mua ở thật tại Biên Hòa năm 2026 không?](/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong) và [K-Home CityView đã mở bán chưa? Cập nhật mới nhất 2026](/tin-tuc/k-home-cityview-da-mo-ban-chua-cap-nhat-moi-nhat-2026). Liên hệ **0937.587.438** để được tư vấn.
+
+---RELATED---k-home-cityview-co-dang-mua-neu-chi-muon-o-that-5-10-nam|K-Home CityView Có Đáng Mua Nếu Chỉ Muốn Ở Thật 5–10 Năm?;so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa|So Sánh Chi Phí Mua K-Home CityView Và Thuê Nhà Biên Hòa`,
+  },
+  {
     id: "n48",
     slug: "nhung-moc-quan-trong-cua-k-home-cityview-tu-khoi-cong-den-hien-tai",
     title: "Những Mốc Quan Trọng Của K-Home CityView Từ Khởi Công Đến Hiện Tại",
