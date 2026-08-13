@@ -364,6 +364,161 @@ const projects = [
 
 const newsList = [
   {
+    id: "n58",
+    slug: "gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua",
+    title: "Giá K-Home CityView Đã Bao Gồm VAT Và Phí Bảo Trì Chưa?",
+    date: "2026-08-13",
+    excerpt: "Giá bán K-Home CityView (k-home city view) thường được công bố đã bao gồm VAT, nhưng phí bảo trì và các khoản phí khác có thể tính riêng. Tìm hiểu cách kiểm tra tổng chi phí thực tế trước khi ký hợp đồng.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786626448/gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua_omexjw.png",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Thông tin về VAT, phí bảo trì và các khoản phí có thể thay đổi theo từng đợt và chính sách chủ đầu tư. Người mua cần xem bảng giá chính thức và hỏi rõ tư vấn trước khi ký hợp đồng.
+
+![Giá K-Home CityView / k-home city view đã bao gồm VAT và phí bảo trì chưa?](https://res.cloudinary.com/dthv0nsq/image/upload/v1786626448/gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua_omexjw.png)
+
+Giá bán **K-Home CityView** (hay **k-home city view**) thường được công bố đã bao gồm VAT, nhưng phí bảo trì và các khoản phí khác có thể được tính riêng tùy theo chính sách từng đợt và thông báo chính thức của chủ đầu tư. Khi xem bảng giá K-Home CityView / k-home city view, bạn cần đọc kỹ phần "giá đã bao gồm/chưa bao gồm" để tránh hiểu sai tổng chi phí thực tế.
+
+## Giá K-Home CityView / k-home city view thường được công bố như thế nào?
+
+Với K-Home CityView / k-home city view, các thông tin thị trường và bài giới thiệu dự án thường nhấn mạnh mức giá khởi điểm và tổng giá trị căn theo loại 1PN, 2PN, 3PN, nhưng không phải lúc nào cũng ghi rõ "đã bao gồm VAT và phí bảo trì" ngay từ tiêu đề bài viết. Do đó, bạn cần kiểm tra kỹ bảng giá chính thức, hợp đồng mua bán và thông báo từ Kim Oanh Land. Xem thêm [giá bán K-Home CityView 2026: cần bao nhiêu tiền để sở hữu căn hộ?](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien)
+
+## VAT trong giá bán K-Home CityView / k-home city view
+
+VAT với bất động sản thường được tính trên giá trị hợp đồng mua bán, mức VAT có thể thay đổi theo chính sách nhà nước (5%, 8%, 10% tùy thời kỳ). Thông thường khi công bố giá bán cho khách hàng cuối, chủ đầu tư đã cộng VAT vào. Tuy nhiên trong một số trường hợp, bảng giá nội bộ có thể ghi giá chưa VAT.
+
+**Khi tư vấn, hãy hỏi rõ:** "Giá này đã bao gồm VAT chưa?" và "Nếu chưa, VAT bao nhiêu %?"
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V07_TH_EXT_NOXH_KHOI-DE_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2|K-Home CityView / k-home city view – tìm hiểu rõ giá bán và các khoản phí trước khi quyết định
+
+## Phí bảo trì trong giá bán K-Home CityView / k-home city view
+
+Với nhiều dự án chung cư và NOXH: **giá bán thường chưa bao gồm phí bảo trì** — được tính riêng theo % giá trị căn hộ hoặc mức cố định theo m².
+
+Đối với K-Home CityView / k-home city view, các bài giới thiệu thường nhấn mạnh giá bán và chính sách thanh toán, nhưng không phải lúc nào cũng ghi rõ phí bảo trì trong cùng một câu.
+
+**Khi tư vấn, hãy hỏi:** "Phí bảo trì bao nhiêu? Thu một lần hay nhiều lần? Thu khi nào?"
+
+## Các khoản phí khác có thể chưa nằm trong giá bán
+
+Ngoài VAT và phí bảo trì, khi mua K-Home CityView / k-home city view, bạn còn có thể gặp: phí trước bạ (nếu áp dụng), phí làm sổ hồng (lệ phí đăng ký, cấp giấy chứng nhận), phí quản lý vận hành (thu hàng tháng sau khi nhận nhà) và phí dịch vụ (giữ xe, an ninh, vệ sinh).
+
+Xem thêm [chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) và [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+## Cách kiểm tra xem giá đã bao gồm VAT và phí bảo trì hay chưa
+
+1. **Đọc kỹ phần chú thích dưới bảng giá** — thường ghi rõ "đã bao gồm VAT", "chưa bao gồm phí bảo trì"
+2. **Xem hợp đồng mua bán** — phần "Giá bán và các khoản phí" nêu rõ giá trước VAT, VAT %, phí bảo trì
+3. **Hỏi trực tiếp tư vấn viên** — "Anh/chị cho em biết tổng số tiền phải trả khi nhận nhà, bao gồm VAT, phí bảo trì và các phí bắt buộc khác?"
+4. **Yêu cầu bảng tính tổng chi phí** — giá căn + VAT + phí bảo trì + các phí khác = tổng cộng
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/260323_TAN-HOA_BALCONY_FINAL_2-1|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2|Không gian sống K-Home CityView / k-home city view – hiểu rõ tổng chi phí trước khi ký hợp đồng
+
+## Tài chính mua nhà: nên tính tổng chi phí, không chỉ giá niêm yết
+
+Khi lập kế hoạch tài chính mua K-Home CityView / k-home city view, cần tính: vốn tự có ban đầu (khoảng 25% giá trị căn), khoản vay ngân hàng (khoảng 75%, lãi suất NOXH ưu đãi), các khoản phí bắt buộc (VAT nếu chưa bao gồm, phí bảo trì, phí trước bạ và làm sổ) và chi phí sinh hoạt + trả góp hàng tháng.
+
+Sai lầm nhiều người gặp: chỉ nhìn giá niêm yết mà quên tính VAT, phí bảo trì và các phí khác — dẫn đến tổng chi phí thực tế cao hơn dự kiến. Xem thêm [mua K-Home CityView cần chuẩn bị bao nhiêu tiền ban đầu?](/tin-tuc/mua-k-home-cityview-can-chuan-bi-bao-nhieu-tien-ban-dau) và [giá K-Home CityView có tăng theo từng giai đoạn không?](/tin-tuc/gia-k-home-cityview-co-tang-theo-tung-giai-doan-khong)
+
+## Kết luận
+
+Giá bán K-Home CityView (k-home city view) thường được công bố đã bao gồm VAT, nhưng phí bảo trì và một số khoản phí khác có thể tính riêng. Để biết chính xác tổng chi phí, bạn cần xem bảng giá chính thức, hợp đồng mua bán và hỏi rõ tư vấn viên.
+
+Xem thêm [K-Home CityView đã nhận hồ sơ mua nhà ở xã hội chưa?](/tin-tuc/k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua) và [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026). Liên hệ **0937.587.438** để được tư vấn chi tiết.
+
+---RELATED---gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?;nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview|Những Lỗi Thường Gặp Khi Chuẩn Bị Hồ Sơ Mua K-Home CityView`,
+  },
+  {
+    id: "n57",
+    slug: "nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview",
+    title: "Những Lỗi Thường Gặp Khi Chuẩn Bị Hồ Sơ Mua K-Home CityView",
+    date: "2026-08-13",
+    excerpt: "Nhiều khách hàng mua K-Home CityView (k-home city view) bị trả hồ sơ, yêu cầu bổ sung nhiều lần hoặc trễ đợt vì những lỗi nhỏ trong khâu chuẩn bị giấy tờ. Tổng hợp 8 lỗi thường gặp và cách khắc phục.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786626247/nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview_ogowvw.png",
+    category: "Hỏi đáp / FAQ",
+    project: "cityview",
+    content: `> **Lưu ý:** Bài viết tổng hợp các lỗi thường gặp dựa trên thông tin công bố và kinh nghiệm thực tế. Yêu cầu hồ sơ cụ thể có thể khác nhau theo từng đợt — người mua cần đối chiếu với thông báo chính thức trước khi nộp.
+
+![Những lỗi thường gặp khi chuẩn bị hồ sơ mua K-Home CityView / k-home city view](https://res.cloudinary.com/dthv0nsq/image/upload/v1786626247/nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview_ogowvw.png)
+
+Nhiều khách hàng muốn mua **K-Home CityView** (hay **k-home city view**) đã nộp hồ sơ nhưng bị trả lại, bị yêu cầu bổ sung nhiều lần, hoặc trễ đợt chỉ vì những lỗi tưởng chừng nhỏ trong khâu chuẩn bị giấy tờ. Bài viết dưới đây tổng hợp những lỗi thường gặp khi chuẩn bị hồ sơ mua K-Home CityView / k-home city view để bạn tránh lặp lại và tăng cơ hội được xét duyệt.
+
+## Vì sao hồ sơ mua K-Home CityView / k-home city view hay bị lỗi?
+
+[K-Home CityView](/k-home-cityview-ho-nai) / k-home city view là dự án NOXH Biên Hòa, nên hồ sơ phải tuân theo Luật Nhà ở, Nghị định về NOXH, quy định của tỉnh Đồng Nai và hướng dẫn từng đợt nhận hồ sơ. Chỉ cần sai một mục nhỏ (tên, địa chỉ, ngày tháng, loại giấy tờ) là hồ sơ có thể bị trả lại, bị yêu cầu bổ sung kéo dài, hoặc bị loại khỏi đợt xét duyệt nếu trễ hạn.
+
+## 1. Không kiểm tra kỹ điều kiện NOXH trước khi nộp hồ sơ
+
+**Lỗi:** Nộp hồ sơ dù không chắc mình thuộc đối tượng NOXH, chỉ nghe tư vấn "cứ nộp trước xem sao".
+
+**Cách khắc phục:** Đọc kỹ [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [điều kiện thu nhập và tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview) trước khi nộp đơn.
+
+## 2. Thiếu giấy tờ hoặc sai loại giấy tờ
+
+**Lỗi:** Thiếu một trong các nhóm giấy tờ, hoặc dùng giấy tờ không đúng loại (tạm trú thay cho thường trú, giấy xác nhận thu nhập không đúng mẫu).
+
+**Cách khắc phục:** Chuẩn bị hồ sơ theo danh sách chính thức từng đợt. Xem đầy đủ tại [hồ sơ mua K-Home CityView gồm những giấy tờ gì?](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-1-2_bqb2ss.webp|https://res.cloudinary.com/dthv0nsq/image/upload/v1786456830/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-10_rpvcu6.webp|Sales Gallery K-Home CityView / k-home city view nơi tư vấn và hướng dẫn hồ sơ
+
+## 3. Sai thông tin cá nhân và hộ khẩu
+
+**Lỗi:** Sai họ tên, ngày sinh, số CCCD so với giấy tờ gốc; sai địa chỉ thường trú; không khớp giữa CCCD, sổ hộ khẩu và giấy xác nhận cư trú.
+
+**Cách khắc phục:** Khi điền đơn, mở sẵn CCCD và sổ hộ khẩu để đối chiếu từng chữ, từng số. Viết đúng dấu, khoảng cách, viết hoa theo giấy tờ gốc.
+
+## 4. Giấy tờ chứng minh thu nhập không đúng yêu cầu
+
+**Lỗi:** Chỉ nộp hợp đồng lao động mà không có bảng lương và sao kê; bảng lương không có chữ ký, đóng dấu; thu nhập không khớp giữa các giấy tờ.
+
+**Cách khắc phục:** Chuẩn bị hợp đồng lao động còn hiệu lực, bảng lương 3–6 tháng gần nhất (có chữ ký, đóng dấu), sao kê tài khoản nhận lương ghi rõ "lương/phụ cấp". Xem thêm [K-Home CityView có hỗ trợ vay bao nhiêu phần trăm?](/tin-tuc/k-home-cityview-co-ho-tro-vay-bao-nhieu-phan-tram)
+
+## 5. Giấy tờ về tình trạng nhà ở thiếu hoặc không rõ ràng
+
+**Lỗi:** Không có giấy xác nhận chưa có nhà tại Đồng Nai; giấy xác nhận nhà ở không đúng mẫu, không đúng cơ quan cấp.
+
+**Cách khắc phục:** Liên hệ UBND phường/xã để xin giấy xác nhận chưa có nhà hoặc diện tích nhà ở hiện tại. Xem thêm [thủ tục chứng minh tình trạng nhà ở khi mua K-Home CityView](/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview)
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-12_tm9awq.webp|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1|K-Home CityView / k-home city view – chuẩn bị hồ sơ đúng để được xét duyệt thuận lợi
+
+## 6. Không tuân thủ thời gian và địa điểm nộp hồ sơ
+
+**Lỗi:** Nộp trước hoặc sau thời gian quy định; nộp qua kênh không chính thức; không giữ biên nhận xác nhận đã nộp hồ sơ.
+
+**Cách khắc phục:** Xem kỹ thông báo về thời gian và địa điểm nộp. Chỉ nộp qua kênh chính thức. Luôn xin và giữ biên nhận. Xem thêm [K-Home CityView đã nhận hồ sơ mua nhà ở xã hội chưa?](/tin-tuc/k-home-cityview-da-nhan-ho-so-mua-nha-o-xa-hoi-chua)
+
+## 7. Không giữ bản sao hồ sơ và không theo dõi tiến độ
+
+**Lỗi:** Nộp hồ sơ xong là "quên", không lưu bản sao; không theo dõi kết quả sơ thẩm và danh sách cần bổ sung.
+
+**Cách khắc phục:** Photo hoặc scan toàn bộ hồ sơ trước khi nộp, lưu theo thứ tự. Theo dõi thông báo về danh sách hồ sơ hợp lệ, cần bổ sung và kết quả xét duyệt.
+
+## 8. Tin vào "cam kết" không chính thức từ bên ngoài
+
+**Lỗi:** Nghe lời "chạy hồ sơ", "bao đậu" từ người không thuộc đơn vị chính thức; nộp thêm "phí dịch vụ" không rõ ràng.
+
+**Cách khắc phục:** Chỉ tin vào thông tin chính thức từ website K-Home CityView / k-home city view, Kim Oanh Group và Sở Xây dựng Đồng Nai. Mọi thủ tục, lệ phí đều phải có biên nhận, hóa đơn.
+
+## Checklist nhanh trước khi nộp hồ sơ K-Home CityView / k-home city view
+
+✅ Đã đọc kỹ điều kiện NOXH và chắc chắn thuộc đối tượng chưa?
+✅ Hồ sơ đã đủ 4 nhóm giấy tờ (cá nhân, thu nhập, nhà ở, đơn mẫu) chưa?
+✅ Thông tin trên đơn có khớp 100% với CCCD, sổ hộ khẩu chưa?
+✅ Giấy tờ thu nhập có đầy đủ, rõ ràng, có chữ ký, đóng dấu chưa?
+✅ Giấy tờ nhà ở có đúng mẫu, đúng cơ quan cấp chưa?
+✅ Mình có nộp đúng thời gian, đúng địa điểm quy định không?
+✅ Đã lưu bản sao toàn bộ hồ sơ và biên nhận chưa?
+
+Xem thêm [quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z) và [những sai lầm cần tránh khi mua K-Home CityView](/tin-tuc/nhung-sai-lam-can-tranh-khi-mua-k-home-cityview).
+
+## Kết luận
+
+Những lỗi thường gặp khi chuẩn bị hồ sơ mua K-Home CityView (k-home city view): không kiểm tra điều kiện NOXH, thiếu/sai giấy tờ, sai thông tin cá nhân, giấy tờ thu nhập và nhà ở không đúng yêu cầu, nộp sai thời gian – địa điểm, không lưu bản sao và tin vào "cam kết" không chính thức. Tránh các lỗi này sẽ giúp hồ sơ được xét duyệt nhanh và đúng quy định.
+
+Xem thêm [giá K-Home CityView đã bao gồm VAT và phí bảo trì chưa?](/tin-tuc/gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua) và [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu). Liên hệ **0937.587.438** để được hỗ trợ hồ sơ miễn phí.
+
+---RELATED---gia-k-home-cityview-da-bao-gom-vat-va-phi-bao-tri-chua|Giá K-Home CityView Đã Bao Gồm VAT Và Phí Bảo Trì Chưa?;ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi|Hồ Sơ Mua K-Home CityView Gồm Những Giấy Tờ Gì?`,
+  },
+  {
     id: "n56",
     slug: "dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview",
     title: "Điều Kiện Thu Nhập Và Tình Trạng Nhà Ở Khi Mua K-Home CityView",
