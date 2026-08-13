@@ -25,16 +25,76 @@ const STATIC_ROUTES = [
     keywords: "k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội k-home cityview, bảng giá k-home cityview, mặt bằng k-home cityview, k home đồng nai",
   },
   {
+    dir: "k-home-cityview-ho-nai/can-ho-1-phong-ngu-a",
+    title: "Căn Hộ 1 Phòng Ngủ A K-Home CityView | 47,3m² | Giá từ 950 Triệu",
+    description: "Căn hộ 1 phòng ngủ + A tại K-Home CityView Hố Nai, diện tích 47,3m², giá từ 950 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-cityview-ho-nai/can-ho-1-phong-ngu-b",
+    title: "Căn Hộ 1 Phòng Ngủ B K-Home CityView | 62,4m² | Giá từ 1,2 Tỷ",
+    description: "Căn hộ 1 phòng ngủ + B tại K-Home CityView Hố Nai, diện tích 62,4m², 2 nhà vệ sinh, giá từ 1,2 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-cityview-ho-nai/can-ho-2-phong-ngu",
+    title: "Căn Hộ 2 Phòng Ngủ K-Home CityView | 70,4m² | Giá từ 1,5 Tỷ",
+    description: "Căn hộ 2 phòng ngủ tại K-Home CityView Hố Nai, diện tích 70,4m², 2 nhà vệ sinh, giá từ 1,5 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-cityview-ho-nai/can-ho-3-phong-ngu",
+    title: "Căn Hộ 3 Phòng Ngủ K-Home CityView | 84,4m² | Giá từ 1,8 Tỷ",
+    description: "Căn hộ 3 phòng ngủ tại K-Home CityView Hố Nai, diện tích 84,4m², 2 nhà vệ sinh, giá từ 1,8 tỷ, bàn giao full nội thất. NOXH đầu tiên tại Đồng Nai có căn 3PN.",
+  },
+  {
     dir: "k-home-midtown-trang-bom",
     title: "K-Home Midtown Trảng Bom | Nhà Ở Xã Hội Kim Oanh | Giá từ 750 Triệu",
     description: "K-Home Midtown Trảng Bom – dự án NOXH quy mô 13,97 ha, 542 căn hộ Studio đến 2PN. Trung tâm Trảng Bom, vay 5,4%/năm. Xem bảng giá & mặt bằng mới nhất 2026.",
     keywords: "k-home midtown, k home midtown, k home midtown trảng bom, k-home midtown trảng bom, khome midtown, k home mid town, k-home mid town, nhà ở xã hội trảng bom, noxh trảng bom kim oanh, k home đồng nai trảng bom",
   },
   {
+    dir: "k-home-midtown-trang-bom/can-ho-studio",
+    title: "Căn Hộ Studio K-Home Midtown Trảng Bom | 36,1m² | Giá từ 750 Triệu",
+    description: "Căn hộ Studio tại K-Home Midtown Trảng Bom, diện tích 36,1m², giá từ 750 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-midtown-trang-bom/can-ho-1-phong-ngu-a",
+    title: "Căn Hộ 1 Phòng Ngủ A K-Home Midtown | 47m² | Giá từ 990 Triệu",
+    description: "Căn hộ 1 phòng ngủ + A tại K-Home Midtown Trảng Bom, diện tích 47m², giá từ 990 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-midtown-trang-bom/can-ho-1-phong-ngu-b",
+    title: "Căn Hộ 1 Phòng Ngủ B K-Home Midtown | 55,1m² | Giá từ 1,2 Tỷ",
+    description: "Căn hộ 1 phòng ngủ + B tại K-Home Midtown Trảng Bom, diện tích 55,1m², giá từ 1,2 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-midtown-trang-bom/can-ho-2-phong-ngu",
+    title: "Căn Hộ 2 Phòng Ngủ K-Home Midtown Trảng Bom | 68,8m² | Giá từ 1,5 Tỷ",
+    description: "Căn hộ 2 phòng ngủ tại K-Home Midtown Trảng Bom, diện tích 68,8m², 2 nhà vệ sinh, giá từ 1,5 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
     dir: "k-home-avenue-nhon-trach",
     title: "K-Home Avenue Nhơn Trạch | NOXH Gần Sân Bay Long Thành | Giá từ 750 Triệu",
     description: "K-Home Avenue Nhơn Trạch – nhà ở xã hội 4 block 12 tầng, 1.022 căn hộ. Gần sân bay Long Thành, đường 25C. Vay 5,4%/năm, pháp lý đầy đủ. Xem bảng giá & mặt bằng.",
     keywords: "k-home avenue, k home avenue, k home avenue nhơn trạch, k-home avenue nhơn trạch, khome avenue, k-home avenue đồng nai, nhà ở xã hội nhơn trạch, noxh nhơn trạch kim oanh, k home đồng nai nhơn trạch, noxh gần sân bay long thành",
+  },
+  {
+    dir: "k-home-avenue-nhon-trach/can-ho-studio",
+    title: "Căn Hộ Studio K-Home Avenue Nhơn Trạch | 37,7m² | Giá từ 750 Triệu",
+    description: "Căn hộ Studio tại K-Home Avenue Nhơn Trạch, diện tích 37,7m², giá từ 750 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-avenue-nhon-trach/can-ho-1-phong-ngu",
+    title: "Căn Hộ 1 Phòng Ngủ K-Home Avenue Nhơn Trạch | 46,6m² | Giá từ 990 Triệu",
+    description: "Căn hộ 1 phòng ngủ tại K-Home Avenue Nhơn Trạch, diện tích 46,6m², giá từ 990 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-nho",
+    title: "Căn Hộ 2 Phòng Ngủ Nhỏ K-Home Avenue Nhơn Trạch | 65,7m² | Giá từ 1,23 Tỷ",
+    description: "Căn hộ 2 phòng ngủ nhỏ tại K-Home Avenue Nhơn Trạch, diện tích 65,7m², giá từ 1,23 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-lon",
+    title: "Căn Hộ 2 Phòng Ngủ Lớn K-Home Avenue Nhơn Trạch | 69,5m² | Giá từ 1,4 Tỷ",
+    description: "Căn hộ 2 phòng ngủ lớn tại K-Home Avenue Nhơn Trạch, diện tích 69,5m², giá từ 1,4 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
     dir: "san-pham",
