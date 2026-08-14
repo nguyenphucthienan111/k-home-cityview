@@ -34,9 +34,13 @@
     <!-- Mobile: preload webp nhỏ (63KB) -->
     <link rel="preload" as="image" href="/hero-background-mobile.webp" fetchpriority="high" media="(max-width: 768px)" />
     <!-- Desktop: preload jpg gốc -->
-    <link rel="preload" as="image" href="/hero-background.jpg" fetchpriority="high" media="(min-width: 769px)" />
-    <!-- Preload API news — giảm blocking trong network dependency tree -->
+    <link rel="preload" href="/hero-background.jpg" as="image" fetchpriority="high" media="(min-width: 769px)" />
+    <!-- Preload API projects + news — giảm blocking trong network dependency tree -->
+    <link rel="preload" href="/api/projects" as="fetch" crossorigin="anonymous" />
     <link rel="preload" href="/api/news" as="fetch" crossorigin="anonymous" />
+    <!-- Preconnect Cloudinary — giảm TTFB cho ảnh dự án -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
