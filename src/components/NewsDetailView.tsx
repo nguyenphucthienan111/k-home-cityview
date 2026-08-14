@@ -152,6 +152,72 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           if (metaDesc) {
             metaDesc.setAttribute("content", found.excerpt);
           }
+
+          // Schema NewsArticle — giúp Google hiểu đây là bài báo, tăng cơ hội rich results
+          const existingSchema = document.getElementById("schema-news-article");
+          if (existingSchema) existingSchema.remove();
+          const articleSchema = document.createElement("script");
+          articleSchema.id = "schema-news-article";
+          articleSchema.type = "application/ld+json";
+          articleSchema.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": found.title,
+            "description": found.excerpt,
+            "image": found.image
+              ? [found.image]
+              : ["https://k-homedongnai.com.vn/hero-background.jpg"],
+            "datePublished": found.date,
+            "dateModified": found.date,
+            "author": {
+              "@type": "Organization",
+              "name": "K-Home Đồng Nai – Kim Oanh Land",
+              "url": "https://k-homedongnai.com.vn"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "K-Home Đồng Nai",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`
+            },
+            "url": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`,
+            "articleSection": found.category || "Tin tức dự án",
+            "keywords": [
+              "K-Home CityView",
+              "k-home city view",
+              "nhà ở xã hội Biên Hòa",
+              "NOXH Đồng Nai",
+              found.category || "Tin tức dự án"
+            ],
+            "inLanguage": "vi-VN",
+            "isAccessibleForFree": true
+          });
+          document.head.appendChild(articleSchema);
+
+          // BreadcrumbList cho bài tin tức
+          const existingBc = document.getElementById("schema-breadcrumb-news");
+          if (existingBc) existingBc.remove();
+          const bc = document.createElement("script");
+          bc.id = "schema-breadcrumb-news";
+          bc.type = "application/ld+json";
+          bc.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+              { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": "https://k-homedongnai.com.vn/tin-tuc" },
+              { "@type": "ListItem", "position": 3, "name": found.title, "item": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}` }
+            ]
+          });
+          document.head.appendChild(bc);
         }
         setLoading(false);
       })
@@ -159,6 +225,12 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         console.error("Failed to fetch news detail:", err);
         setLoading(false);
       });
+
+    // Cleanup khi unmount hoặc slug thay đổi
+    return () => {
+      document.getElementById("schema-news-article")?.remove();
+      document.getElementById("schema-breadcrumb-news")?.remove();
+    };
   }, [slug]);
 
   if (loading) {
