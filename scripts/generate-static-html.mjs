@@ -175,8 +175,20 @@ function injectMeta(template, { title, description, canonical, keywords }) {
   return html;
 }
 
+// Ghi file HTML với optional static internal links cho Googlebot
 function writeRoute(template, dirPath, meta) {
-  const html = injectMeta(template, meta);
+  let html = injectMeta(template, meta);
+
+  // Inject static <a href> links vào <body> — Googlebot đọc được trước khi JS render
+  // Giải quyết vấn đề: internal links trong React content không có trong HTML tĩnh
+  const staticLinks = meta.staticLinks || [];
+  if (staticLinks.length > 0) {
+    const linkHtml = `\n<div id="seo-links" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${
+      staticLinks.map(({ href, text }) => `<a href="${escAttr(href)}">${text}</a>`).join("")
+    }</div>`;
+    html = html.replace("</body>", `${linkHtml}\n</body>`);
+  }
+
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
@@ -227,6 +239,12 @@ async function main() {
       title,
       description: article.excerpt,
       canonical,
+      // Static <a href> links cho Googlebot — link về money page trong HTML tĩnh
+      staticLinks: [
+        { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },
+        { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
+        { href: "/", text: "K-Home Đồng Nai" },
+      ],
     });
     count++;
     console.log(`✅ /tin-tuc/${article.slug}`);
