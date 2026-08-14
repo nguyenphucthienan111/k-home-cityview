@@ -15,6 +15,9 @@ const NewsDetailView     = lazy(() => import("./components/NewsDetailView"));
 const AboutView          = lazy(() => import("./components/AboutView"));
 const ContactView        = lazy(() => import("./components/ContactView"));
 const AdminDashboardView = lazy(() => import("./components/AdminDashboardView"));
+const NotFoundView       = lazy(() => import("./components/NotFoundView"));
+const ServerErrorView    = lazy(() => import("./components/ServerErrorView"));
+const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
 
 // Module-level constant — không rebuild mỗi lần navigateTo chạy
 const PAGE_TITLES: Record<string, string> = {
@@ -160,7 +163,11 @@ export default function App() {
       case "/lien-he":
       case "/contact": return <ContactView />;
       case "/admin":   return <AdminDashboardView />;
-      default:         return <HomeView onNavigate={navigateTo} />;
+      case "/403":     return <ForbiddenView onNavigate={navigateTo} />;
+      case "/500":     return <ServerErrorView onNavigate={navigateTo} code={500} />;
+      case "/503":     return <ServerErrorView onNavigate={navigateTo} code={503} />;
+      case "/502":     return <ServerErrorView onNavigate={navigateTo} code={502} />;
+      default:         return <NotFoundView onNavigate={navigateTo} />;
     }
   }, [path, navigateTo]);
 

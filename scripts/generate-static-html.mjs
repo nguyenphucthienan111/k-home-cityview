@@ -116,6 +116,22 @@ const STATIC_ROUTES = [
     title: "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438",
     description: "Liên hệ tư vấn miễn phí về dự án nhà ở xã hội K-Home tại Đồng Nai. Hotline: 0937 587 438. Hỗ trợ hồ sơ NOXH, bảng giá và thủ tục vay ngân hàng.",
   },
+  // ─── Error pages ────────────────────────────────────────────────────────────
+  {
+    dir: "404",
+    title: "Không Tìm Thấy Trang | K-Home Đồng Nai",
+    description: "Trang bạn đang tìm không tồn tại. Hãy quay lại trang chủ hoặc xem các dự án nhà ở xã hội K-Home tại Đồng Nai.",
+  },
+  {
+    dir: "403",
+    title: "Truy Cập Bị Từ Chối | K-Home Đồng Nai",
+    description: "Bạn không có quyền truy cập trang này. Hãy quay lại trang chủ K-Home Đồng Nai.",
+  },
+  {
+    dir: "500",
+    title: "Lỗi Máy Chủ | K-Home Đồng Nai",
+    description: "Hệ thống gặp sự cố. Vui lòng thử lại sau hoặc liên hệ hỗ trợ K-Home Đồng Nai.",
+  },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -217,6 +233,17 @@ async function main() {
   }
 
   console.log(`\n🎉 Done — ${count} files generated (${STATIC_ROUTES.length} static + ${NEWS_DATA.length} news)`);
+
+  // 3. Vercel root 404.html — Vercel dùng file này khi không tìm thấy asset tĩnh
+  // (khác với /404/index.html dành cho route /404 trong SPA)
+  const notFoundHtml = injectMeta(template, {
+    title: "Không Tìm Thấy Trang | K-Home Đồng Nai",
+    description: "Trang bạn đang tìm không tồn tại. Hãy quay lại trang chủ hoặc xem các dự án nhà ở xã hội K-Home tại Đồng Nai.",
+    canonical: `${BASE_URL}/404`,
+    keywords: null,
+  });
+  fs.writeFileSync(path.join(DIST_DIR, "404.html"), notFoundHtml, "utf-8");
+  console.log("✅ /404.html (Vercel root error page)");
 }
 
 main().catch((err) => {
