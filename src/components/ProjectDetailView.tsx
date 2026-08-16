@@ -36,7 +36,7 @@ const PROJECT_SEO: Record<string, {
   avenueHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
-    titleTag: "K-Home CityView Hố Nai Biên Hòa | Nhà Ở Xã Hội Kim Oanh | Giá từ 950 triệu",
+    titleTag: "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
     metaDesc: "K-Home CityView Hố Nai (Biên Hòa) – dự án NOXH chuẩn Singapore do Kim Oanh Land phát triển. 1.328 căn hộ xã hội + 39 shophouse, diện tích 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028, hỗ trợ hồ sơ miễn phí.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },

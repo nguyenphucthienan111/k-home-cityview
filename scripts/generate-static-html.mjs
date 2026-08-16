@@ -20,7 +20,7 @@ const BASE_URL = "https://k-homedongnai.com.vn";
 const STATIC_ROUTES = [
   {
     dir: "k-home-cityview-ho-nai",
-    title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Mặt Bằng NOXH Kim Oanh Land",
+    title: "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
     description: "Dự án nhà ở xã hội K-Home CityView tại đường Điểu Xiển, Hố Nai, Biên Hòa. 1.352 căn hộ NOXH, diện tích 47–84m², giá từ 950 triệu, lãi suất 5,4%/năm. Cập nhật bảng giá & tiến độ 2026.",
     keywords: "k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội k-home cityview, bảng giá k-home cityview, mặt bằng k-home cityview, k home đồng nai",
   },

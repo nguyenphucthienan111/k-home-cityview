@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://k-homedongnai.com.vn/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/"/>
@@ -15,28 +15,28 @@
   </url>
   <url>
     <loc>https://k-homedongnai.com.vn/san-pham</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/san-pham"/>
   </url>
   <url>
     <loc>https://k-homedongnai.com.vn/tin-tuc</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc"/>
   </url>
   <url>
     <loc>https://k-homedongnai.com.vn/gioi-thieu</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/gioi-thieu"/>
   </url>
   <url>
     <loc>https://k-homedongnai.com.vn/lien-he</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/lien-he"/>

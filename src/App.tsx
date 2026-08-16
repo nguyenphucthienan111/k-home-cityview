@@ -27,7 +27,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/tin-tuc":     "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
   "/gioi-thieu":  "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai",
   "/lien-he":     "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438",
-  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Mặt Bằng NOXH Kim Oanh",
+  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
   "/k-home-midtown-trang-bom":  "K-Home Midtown Trảng Bom | Nhà Ở Xã Hội Kim Oanh | Giá từ 750 Triệu",
   "/k-home-avenue-nhon-trach":  "K-Home Avenue Nhơn Trạch | NOXH Gần Sân Bay Long Thành | Giá từ 750 Triệu",
 };
