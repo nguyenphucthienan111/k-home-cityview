@@ -706,6 +706,22 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
     { id: "lien-he", label: "Liên Hệ" },
     { id: "faq", label: "FAQ" },
+  ] : slug === "k-home-midtown-trang-bom" ? [
+    { id: "tong-quan", label: "Tổng Quan" },
+    { id: "mat-bang", label: "Mặt Bằng" },
+    { id: "tien-ich", label: "Tiện Ích" },
+    { id: "phap-ly", label: "Pháp Lý" },
+    { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "lien-he", label: "Liên Hệ" },
+    { id: "faq", label: "FAQ" },
+  ] : slug === "k-home-avenue-nhon-trach" ? [
+    { id: "tong-quan", label: "Tổng Quan" },
+    { id: "mat-bang", label: "Mặt Bằng" },
+    { id: "tien-ich", label: "Tiện Ích" },
+    { id: "phap-ly", label: "Pháp Lý" },
+    { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "lien-he", label: "Liên Hệ" },
+    { id: "faq", label: "FAQ" },
   ] : [];
 
   const scrollToSection = (id: string) => {
@@ -719,9 +735,13 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
   // Track active section on scroll
   useEffect(() => {
-    if (slug !== "k-home-cityview-ho-nai") return;
+    if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
+    
+    const ids = slug === "k-home-cityview-ho-nai" 
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
+      : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
+    
     const handleScroll = () => {
-      const ids = ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "faq"];
       for (let i = ids.length - 1; i >= 0; i--) {
         const el = document.getElementById(ids[i]);
         if (el && el.getBoundingClientRect().top <= 120) {
@@ -813,51 +833,119 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   }
 
   return (
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <>
+      {/* ── Mobile: Sticky Top Navigation — chỉ CityView ── */}
+      {/* REMOVED - will add better design later */}
 
-      {/* ── Sticky Nav Dots — chỉ CityView, chỉ hiện trên màn hình lớn ── */}
-      {slug === "k-home-cityview-ho-nai" && (
-        <div className="fixed left-4 xl:left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center">
-          {/* Thanh dọc trên */}
-          <div className="w-px h-8 bg-gradient-to-b from-transparent to-slate-300" />
+      {/* ── Mobile: Side Dot Navigation — Option 3 ── */}
+      {["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug) && (
+        <div style={{
+          position: 'fixed',
+          right: '12px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 30,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '2px'
+        }}>
+          {/* Top line */}
+          <div style={{
+            width: '2px',
+            height: '16px',
+            background: 'linear-gradient(to bottom, transparent, #cbd5e1)',
+            marginBottom: '8px'
+          }} />
 
           {/* Dots container */}
-          <div className="relative flex flex-col items-center gap-0">
-            {/* Thanh dọc nền xuyên suốt */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-3 bottom-3 w-px bg-slate-200" />
+          {navSections.map((s, idx) => (
+            <button
+              key={s.id}
+              onClick={() => scrollToSection(s.id)}
+              title={s.label}
+              style={{
+                width: activeSection === s.id ? '20px' : '12px',
+                height: activeSection === s.id ? '20px' : '12px',
+                borderRadius: '50%',
+                border: activeSection === s.id ? '2px solid #dc2626' : '2px solid #cbd5e1',
+                backgroundColor: activeSection === s.id ? '#fca5a5' : '#f1f5f9',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                padding: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '8px',
+                fontWeight: 'bold',
+                color: activeSection === s.id ? '#dc2626' : '#94a3b8'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#fed7d7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = activeSection === s.id ? '#fca5a5' : '#f1f5f9';
+              }}
+            >
+              {idx + 1}
+            </button>
+          ))}
 
-            {navSections.map((s, idx) => (
-              <button
-                key={s.id}
-                onClick={() => scrollToSection(s.id)}
-                title={s.label}
-                className="group relative flex items-center justify-center py-1.5 cursor-pointer z-10"
-              >
-                {/* Dot */}
-                <span className={`block rounded-full border-2 transition-all duration-200 ${
-                  activeSection === s.id
-                    ? "w-3.5 h-3.5 bg-amber-500 border-amber-500 shadow-md shadow-amber-300"
-                    : idx === navSections.length - 1
-                    ? "w-2.5 h-2.5 bg-white border-amber-400 group-hover:border-amber-500 group-hover:bg-amber-100"
-                    : "w-2.5 h-2.5 bg-white border-slate-300 group-hover:border-amber-400 group-hover:bg-amber-50"
-                }`} />
-
-                {/* Tooltip label */}
-                <span className={`absolute left-5 whitespace-nowrap text-[11px] font-semibold px-2.5 py-1 rounded-lg pointer-events-none shadow-lg opacity-0 group-hover:opacity-100 transition-opacity ${
-                  idx === navSections.length - 1
-                    ? "bg-amber-500 text-white"
-                    : "bg-slate-800 text-white"
-                }`}>
-                  {s.label}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          {/* Thanh dọc dưới */}
-          <div className="w-px h-8 bg-gradient-to-b from-slate-300 to-transparent" />
+          {/* Bottom line */}
+          <div style={{
+            width: '2px',
+            height: '16px',
+            background: 'linear-gradient(to top, transparent, #cbd5e1)',
+            marginTop: '8px'
+          }} />
         </div>
       )}
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+
+        {/* ── Desktop: Side Navigation (Hidden on mobile, lg:flex) ── */}
+        {slug === "k-home-cityview-ho-nai" && (
+          <div className="fixed left-4 xl:left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center">
+            {/* Thanh dọc trên */}
+            <div className="w-px h-8 bg-gradient-to-b from-transparent to-slate-300" />
+
+            {/* Dots container */}
+            <div className="relative flex flex-col items-center gap-0">
+              {/* Thanh dọc nền xuyên suốt */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-3 bottom-3 w-px bg-slate-200" />
+
+              {navSections.map((s, idx) => (
+                <button
+                  key={s.id}
+                  onClick={() => scrollToSection(s.id)}
+                  title={s.label}
+                  className="group relative flex items-center justify-center py-1.5 cursor-pointer z-10"
+                >
+                  {/* Dot */}
+                  <span className={`block rounded-full border-2 transition-all duration-200 ${
+                    activeSection === s.id
+                      ? "w-3.5 h-3.5 bg-amber-500 border-amber-500 shadow-md shadow-amber-300"
+                      : idx === navSections.length - 1
+                      ? "w-2.5 h-2.5 bg-white border-amber-400 group-hover:border-amber-500 group-hover:bg-amber-100"
+                      : "w-2.5 h-2.5 bg-white border-slate-300 group-hover:border-amber-400 group-hover:bg-amber-50"
+                  }`} />
+
+                  {/* Tooltip label */}
+                  <span className={`absolute left-5 whitespace-nowrap text-[11px] font-semibold px-2.5 py-1 rounded-lg pointer-events-none shadow-lg opacity-0 group-hover:opacity-100 transition-opacity ${
+                    idx === navSections.length - 1
+                      ? "bg-amber-500 text-white"
+                      : "bg-slate-800 text-white"
+                  }`}>
+                    {s.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Thanh dọc dưới */}
+            <div className="w-px h-8 bg-gradient-to-b from-slate-300 to-transparent" />
+          </div>
+        )}
       
       {/* Back navigation button */}
       <div id="tong-quan">
@@ -2587,5 +2675,6 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       />
 
     </div>
+    </>
   );
 }

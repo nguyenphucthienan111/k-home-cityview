@@ -319,6 +319,21 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   // Hero Slideshow States
   const [activeHeroSlide, setActiveHeroSlide] = useState<number>(0);
 
+  const homeNavSections = [
+    { id: "hero", label: "Hero" },
+    { id: "featured-projects", label: "Dự Án" },
+    { id: "vi-tri", label: "Vị Trí" },
+    { id: "mat-bang", label: "Mặt Bằng" },
+    { id: "nha-mau", label: "Nhà Mẫu" },
+    { id: "amenities", label: "Tiện Ích" },
+    { id: "calculator", label: "Tính Toán" },
+    { id: "dieu-kien-noxh", label: "Điều Kiện" },
+    { id: "phap-ly", label: "Pháp Lý" },
+    { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "lai-suat-noxh", label: "Lãi Suất" },
+    { id: "tin-tuc", label: "Tin Tức" },
+  ];
+
   const heroProjects = useMemo(() => [
     {
       name: "K-Home CityView Biên Hòa",
@@ -454,6 +469,32 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [counts, setCounts] = useState({ v15: 0, v12: 0, v10: 0, v98: 0 });
 
   const projectsSectionRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to section function
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      setActiveSection(id);
+    }
+  };
+
+  // Track active section on scroll
+  useEffect(() => {
+    const ids = ["hero", "featured-projects", "vi-tri", "mat-bang", "nha-mau", "amenities", "calculator", "dieu-kien-noxh", "phap-ly", "chu-dau-tu", "lai-suat-noxh", "tin-tuc"];
+    const handleScroll = () => {
+      for (let i = ids.length - 1; i >= 0; i--) {
+        const el = document.getElementById(ids[i]);
+        if (el && el.getBoundingClientRect().top <= 120) {
+          setActiveSection(ids[i]);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Auto-rotate project carousel every 4 seconds — dừng khi hover
   useEffect(() => {
@@ -926,6 +967,68 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   return (
     <div className="space-y-24 pb-24 bg-gradient-to-b from-amber-50/20 via-white to-slate-50 overflow-hidden relative">
+      {/* ── Mobile: Side Dot Navigation for Home Page ── */}
+      <div style={{
+        position: 'fixed',
+        right: '12px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        zIndex: 30,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '2px'
+      }}>
+        {/* Top line */}
+        <div style={{
+          width: '2px',
+          height: '16px',
+          background: 'linear-gradient(to bottom, transparent, #cbd5e1)',
+          marginBottom: '8px'
+        }} />
+
+        {/* Dots container */}
+        {homeNavSections.map((s, idx) => (
+          <button
+            key={s.id}
+            onClick={() => scrollToSection(s.id)}
+            title={s.label}
+            style={{
+              width: activeSection === s.id ? '20px' : '12px',
+              height: activeSection === s.id ? '20px' : '12px',
+              borderRadius: '50%',
+              border: activeSection === s.id ? '2px solid #dc2626' : '2px solid #cbd5e1',
+              backgroundColor: activeSection === s.id ? '#fca5a5' : '#f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              padding: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '8px',
+              fontWeight: 'bold',
+              color: activeSection === s.id ? '#dc2626' : '#94a3b8'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#fed7d7';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = activeSection === s.id ? '#fca5a5' : '#f1f5f9';
+            }}
+          >
+            {idx + 1}
+          </button>
+        ))}
+
+        {/* Bottom line */}
+        <div style={{
+          width: '2px',
+          height: '16px',
+          background: 'linear-gradient(to top, transparent, #cbd5e1)',
+          marginTop: '8px'
+        }} />
+      </div>
+
       {/* H1 cho SEO — visually hidden, Googlebot đọc được */}
       <h1 className="sr-only">K-Home Đồng Nai – Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai</h1>
 
