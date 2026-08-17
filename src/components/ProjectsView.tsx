@@ -40,6 +40,17 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
   const [allUnits, setAllUnits] = useState<UnitCardData[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Check if mobile view
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 1024 : false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const [searchQuery, setSearchQuery]           = useState("");
   const [selectedBedrooms, setSelectedBedrooms] = useState<number | "all">(
     initialBedrooms === "studio" ? 0 :
@@ -173,8 +184,82 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
 
+      {/* ── Mobile: Side Dot Navigation for Projects Page ── */}
+      {isMobile && (
+      <div style={{
+        position: 'fixed',
+        right: '12px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        zIndex: 30,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '2px',
+      }}
+      >
+        {/* Top line */}
+        <div style={{
+          width: '2px',
+          height: '16px',
+          background: 'linear-gradient(to bottom, transparent, #cbd5e1)',
+          marginBottom: '8px'
+        }} />
+
+        {/* Dots - 2 sections for projects page */}
+        {[
+          { id: "header", label: "Header" },
+          { id: "units-list", label: "Danh Sách" }
+        ].map((s, idx) => (
+          <button
+            key={s.id}
+            onClick={() => {
+              const el = document.getElementById(s.id);
+              if (el) {
+                const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }
+            }}
+            title={s.label}
+            style={{
+              width: '12px',
+              height: '12px',
+              borderRadius: '50%',
+              border: '2px solid #cbd5e1',
+              backgroundColor: '#f1f5f9',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              padding: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '8px',
+              fontWeight: 'bold',
+              color: '#94a3b8'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#fed7d7';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#f1f5f9';
+            }}
+          >
+            {idx + 1}
+          </button>
+        ))}
+
+        {/* Bottom line */}
+        <div style={{
+          width: '2px',
+          height: '16px',
+          background: 'linear-gradient(to top, transparent, #cbd5e1)',
+          marginTop: '8px'
+        }} />
+      </div>
+      )}
+
       {/* 1. Page Header */}
-      <div className="border-b border-slate-100 pb-8 space-y-3">
+      <div id="header" className="border-b border-slate-100 pb-8 space-y-3">
         <span className="text-xs font-bold text-amber-600 tracking-widest uppercase">K-Home Đồng Nai</span>
         <h1 className="text-3xl md:text-4xl font-display font-bold text-slate-800">
           Danh Sách Loại Căn Hộ
@@ -339,6 +424,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
       )}
 
       {/* 4. Cards Grid */}
+      <div id="units-list">
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, n) => (
@@ -462,6 +548,7 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }

@@ -316,6 +316,17 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Check if mobile view
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 1024 : false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Hero Slideshow States
   const [activeHeroSlide, setActiveHeroSlide] = useState<number>(0);
 
@@ -968,6 +979,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
     <div className="space-y-24 pb-24 bg-gradient-to-b from-amber-50/20 via-white to-slate-50 overflow-hidden relative">
       {/* ── Mobile: Side Dot Navigation for Home Page ── */}
+      {isMobile && (
       <div style={{
         position: 'fixed',
         right: '12px',
@@ -977,8 +989,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: '2px'
-      }}>
+        gap: '2px',
+      }}
+      >
         {/* Top line */}
         <div style={{
           width: '2px',
@@ -1028,6 +1041,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           marginTop: '8px'
         }} />
       </div>
+      )}
 
       {/* H1 cho SEO — visually hidden, Googlebot đọc được */}
       <h1 className="sr-only">K-Home Đồng Nai – Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai</h1>
