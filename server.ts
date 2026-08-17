@@ -287,6 +287,7 @@ const projects = [
     ],
     amenities: ["Hồ bơi người lớn & trẻ em", "Sân chơi trẻ em", "Khu thể dục ngoài trời", "Sky Garden & vườn cảnh quan", "82 căn shophouse thương mại", "Hệ thống an ninh 24/7"],
     unitTypes: [
+      // ── Avenue: Chuẩn hóa slug naming để match CityView/Midtown ──
       { slug: "can-ho-studio", name: "Căn Studio",    bedrooms: 0, bathrooms: 1, constructionArea: "37,7m²", usableArea: "33,3m²", price: "Từ 750 triệu/căn",       priceNumber: 750,  furnished: true,
         description: "**Căn Studio K-Home Avenue** là lựa chọn tối ưu cho người độc thân, công nhân kỹ thuật cao và cặp đôi trẻ tại khu vực Nhơn Trạch — nơi đang được đầu tư hạ tầng mạnh mẽ nhờ sân bay Long Thành. Đây là loại căn có mức giá khởi điểm thấp nhất và tỷ lệ đặt cọc cao nhất trong dự án.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **37,7m²** và diện tích sử dụng **33,3m²** — thiết kế studio linh hoạt tối ưu từng cm². Không gian mở thông thoáng với khu sinh hoạt kết hợp ngủ nghỉ, **1 nhà vệ sinh** đầy đủ tiện nghi, bếp mini hiện đại và ban công nhỏ đón gió mát.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** cao cấp theo tiêu chuẩn Singapore của dự án. Nội thất được thiết kế đa năng, tiết kiệm tối đa không gian: giường ngủ tích hợp tủ, bàn làm việc gấp gọn, tủ bếp compact và khu vệ sinh clean-line hiện đại. Chỉ trừ các thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **750 triệu/căn** — mức giá NOXH thấp nhất trong hệ thống K-Home, được hỗ trợ lãi suất vay ưu đãi. Khu vực Nhơn Trạch đang trong giai đoạn tăng trưởng mạnh nhờ hạ tầng sân bay Long Thành, căn studio tại đây có tiềm năng cho thuê rất tốt.",
         images: [
@@ -303,7 +304,7 @@ const projects = [
         "/k-home avenue/Can-Studio/dsc01129.webp",
         "/k-home avenue/Can-Studio/dsc01134.webp",
       ]},
-      { slug: "can-ho-1-phong-ngu", name: "Căn 1 Phòng Ngủ +",      bedrooms: 1, bathrooms: 1, constructionArea: "46,6m²", usableArea: "41,6m²", price: "Từ 990 triệu/căn",       priceNumber: 990,  furnished: true,
+      { slug: "can-ho-1-phong-ngu-a", name: "Căn 1 Phòng Ngủ +",      bedrooms: 1, bathrooms: 1, constructionArea: "46,6m²", usableArea: "41,6m²", price: "Từ 990 triệu/căn",       priceNumber: 990,  furnished: true,
         description: "**Căn 1 Phòng Ngủ+ K-Home Avenue** là loại căn phổ biến nhất trong dự án, cân bằng tốt giữa diện tích, công năng và giá cả — phù hợp cho cặp đôi trẻ và gia đình 2–3 người muốn sở hữu tổ ấm đầu tiên tại khu vực cửa ngõ sân bay Long Thành.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **46,6m²** và diện tích sử dụng **41,6m²** với bố cục tách biệt rõ ràng: **1 phòng ngủ** riêng biệt đón ánh sáng tự nhiên, **1 nhà vệ sinh** tiện nghi, phòng khách thông bếp mở rộng thoáng và ban công đón gió. Cửa sổ được thiết kế đón hướng Đông hoặc Tây Nam theo tiêu chuẩn thiết kế Singapore.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện theo tiêu chuẩn dự án được tư vấn bởi **Surbana Jurong** Singapore. Toàn bộ nội thất cố định được lắp đặt sẵn: tủ âm tường phòng ngủ, tủ bếp trên dưới, sàn gỗ, trần thạch cao và hệ thống chiếu sáng. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **990 triệu/căn** — mức giá NOXH được Nhà nước phê duyệt, hỗ trợ vay lãi suất ưu đãi. Nhơn Trạch là khu vực có tốc độ tăng giá BĐS nhanh nhất vùng Đông Nam Bộ nhờ sân bay Long Thành — tiềm năng tăng giá và cho thuê rất cao trong tương lai gần.",
         images: [
         "/k-home avenue/Can-1PN/layout-can-ho-khome-avenue-1PN.jpg",
@@ -320,7 +321,7 @@ const projects = [
         "/k-home avenue/Can-1PN/dsc01279.webp",
         "/k-home avenue/Can-1PN/dsc01286.webp",
       ]},
-      { slug: "can-ho-2-phong-ngu-nho", name: "Căn 2 Phòng Ngủ (Nhỏ)", bedrooms: 2, bathrooms: 2, constructionArea: "65,7m²", usableArea: "58,4m²", price: "1,23 tỷ – 1,39 tỷ/căn", priceNumber: 1230, furnished: true,
+      { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ (Nhỏ)", bedrooms: 2, bathrooms: 2, constructionArea: "65,7m²", usableArea: "58,4m²", price: "1,23 tỷ – 1,39 tỷ/căn", priceNumber: 1230, furnished: true,
         description: "**Căn 2 Phòng Ngủ (Nhỏ) K-Home Avenue** là loại căn 2 phòng ngủ có diện tích vừa phải, tối ưu cho gia đình 3–4 người muốn có không gian riêng tư cho mỗi thành viên với mức ngân sách hợp lý nhất trong phân khúc 2PN của dự án.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **65,7m²** và diện tích sử dụng **58,4m²** — phân bổ hợp lý với **2 phòng ngủ** riêng biệt (phòng ngủ chính rộng đủ giường đôi Queen, phòng ngủ phụ đủ giường đơn hoặc bàn làm việc), **2 nhà vệ sinh** tiện nghi, phòng khách kết hợp bàn ăn và ban công thoáng.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp, đồng bộ toàn dự án theo tiêu chuẩn thiết kế Singapore. Cả 2 phòng ngủ đều có tủ âm tường built-in, phòng khách đủ diện tích bố trí bàn ăn 4 người. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **1,23 tỷ đến 1,39 tỷ/căn** tùy tầng và hướng nhìn — đây là mức giá NOXH được kiểm soát, thấp hơn đáng kể so với căn hộ thương mại cùng diện tích tại Nhơn Trạch. Tiềm năng cho thuê cao nhờ vị trí gần các KCN Nhơn Trạch và cửa ngõ sân bay Long Thành.",
         images: [
         "/k-home avenue/Can-2PN-nho/layout-can-ho-khome-avenue-2PNA.jpg",
@@ -339,7 +340,7 @@ const projects = [
         "/k-home avenue/Can-2PN-nho/dsc01426.webp",
         "/k-home avenue/Can-2PN-nho/dsc01440.webp",
       ]},
-      { slug: "can-ho-2-phong-ngu-lon", name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
+      { slug: "can-ho-2-phong-ngu-b", name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
         description: "**Căn 2 Phòng Ngủ (Lớn) K-Home Avenue** là loại căn cao cấp nhất trong rổ hàng NOXH của dự án, dành cho gia đình cần không gian sinh hoạt rộng rãi hơn với diện tích phòng ngủ master lớn và phòng khách thoải mái hơn phiên bản nhỏ.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **69,5m²** và diện tích sử dụng **62,2m²** — diện tích vượt trội so với 2PN (Nhỏ) được phân bổ vào phòng ngủ master rộng hơn (đủ cho giường King size), phòng khách có diện tích bố trí bàn ăn 6 người và góc làm việc riêng. **2 nhà vệ sinh** với master bathroom riêng biệt hoàn toàn.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp nhất trong hệ thống K-Home Avenue, phòng ngủ master có tủ âm tường walk-in đặc biệt rộng rãi. Toàn bộ nội thất cố định được thiết kế đồng bộ theo tiêu chuẩn Singapore. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **1,40 tỷ đến 1,47 tỷ/căn** — là mức giá đỉnh trong rổ hàng NOXH K-Home Avenue nhưng vẫn thấp hơn rất nhiều so với căn hộ thương mại cùng diện tích. Vị trí Nhơn Trạch đang trong giai đoạn bùng nổ hạ tầng, loại căn lớn nhất thường có khả năng tăng giá mạnh nhất trong dài hạn.",
         images: [
         "/k-home avenue/Can-2PN-lon/layout-can-ho-khome-avenue-2PNB.jpg",
@@ -377,6 +378,22 @@ const PROJECT_REDIRECTS: Record<string, string> = {
 // Redirect /projects/:slug/:unit → /:slug/:unit
 app.get("/projects/:projectSlug/:unitSlug", (req, res) => {
   res.redirect(301, `/${req.params.projectSlug}/${req.params.unitSlug}`);
+});
+
+// ─── 301 Redirects: Old Avenue unit slugs → Standardized slugs ────────────────
+// Google đã index URLs cũ của Avenue với -nho, -lon, cần redirect lâu dài
+const AVENUE_SLUG_REDIRECTS: Record<string, string> = {
+  "can-ho-2-phong-ngu-nho": "can-ho-2-phong-ngu",
+  "can-ho-2-phong-ngu-lon": "can-ho-2-phong-ngu-b",
+};
+
+app.get("/k-home-avenue-nhon-trach/:oldUnitSlug", (req, res, next) => {
+  const newSlug = AVENUE_SLUG_REDIRECTS[req.params.oldUnitSlug];
+  if (newSlug) {
+    res.redirect(301, `/k-home-avenue-nhon-trach/${newSlug}`);
+  } else {
+    next();
+  }
 });
 
 // Redirect /projects/:slug → /:slug hoặc fallback

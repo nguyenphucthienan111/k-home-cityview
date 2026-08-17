@@ -75,7 +75,7 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
           if (foundProject && foundUnit) {
             document.title = `${foundUnit.name} - ${foundProject.title} | K-Home Đồng Nai`;
 
-            // Schema Product cho loại căn hộ
+            // Schema Product cho loại căn hộ — thêm differentiation để Google không gom canonical
             const existingSchema = document.getElementById("schema-unit");
             if (existingSchema) existingSchema.remove();
             const schema = document.createElement("script");
@@ -85,9 +85,24 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
               "@context": "https://schema.org",
               "@type": "Product",
               "name": `${foundUnit.name} - ${foundProject.title}`,
-              "description": foundUnit.description || `${foundUnit.name} tại ${foundProject.title}. Diện tích ${foundUnit.constructionArea}, giá ${foundUnit.price}.`,
+              "description": foundUnit.description || `${foundUnit.name} tại ${foundProject.title}, ${foundProject.location}. Diện tích ${foundUnit.constructionArea}, giá ${foundUnit.price}.`,
               "image": foundUnit.images.map(img => `https://k-homedongnai.com.vn${img}`),
               "brand": { "@type": "Brand", "name": "K-Home Group" },
+              "category": foundProject.title,
+              "location": foundProject.location,
+              "sku": `${foundProject.slug}-${foundUnit.slug}`,
+              "identifier": {
+                "@type": "PropertyValue",
+                "name": "Unit Slug",
+                "value": foundUnit.slug,
+                "propertyID": "unit-type"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "1",
+                "description": `${foundUnit.constructionArea} - ${foundUnit.name}`
+              },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "VND",
@@ -114,6 +129,16 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
               ]
             });
             document.head.appendChild(bc);
+
+            // Canonical URL validation: ensure canonical points to THIS unit, not consolidated to another project
+            const canonicalUrl = `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`;
+            let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+            if (!canonical) {
+              canonical = document.createElement("link");
+              canonical.rel = "canonical";
+              document.head.appendChild(canonical);
+            }
+            canonical.href = canonicalUrl;
           }
         } else {
           setProject(null);

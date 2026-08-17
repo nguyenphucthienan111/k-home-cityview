@@ -87,12 +87,12 @@ const STATIC_ROUTES = [
     description: "Căn hộ 1 phòng ngủ tại K-Home Avenue Nhơn Trạch, diện tích 46,6m², giá từ 990 triệu, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
-    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-nho",
-    title: "Căn Hộ 2 Phòng Ngủ Nhỏ K-Home Avenue Nhơn Trạch | 65,7m² | Giá từ 1,23 Tỷ",
-    description: "Căn hộ 2 phòng ngủ nhỏ tại K-Home Avenue Nhơn Trạch, diện tích 65,7m², giá từ 1,23 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
+    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu",
+    title: "Căn Hộ 2 Phòng Ngủ K-Home Avenue Nhơn Trạch | 65,7m² | Giá từ 1,23 Tỷ",
+    description: "Căn hộ 2 phòng ngủ tại K-Home Avenue Nhơn Trạch, diện tích 65,7m², giá từ 1,23 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
-    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-lon",
+    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b",
     title: "Căn Hộ 2 Phòng Ngủ Lớn K-Home Avenue Nhơn Trạch | 69,5m² | Giá từ 1,4 Tỷ",
     description: "Căn hộ 2 phòng ngủ lớn tại K-Home Avenue Nhơn Trạch, diện tích 69,5m², giá từ 1,4 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
