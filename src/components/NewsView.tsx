@@ -196,9 +196,10 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
 
             {/* ── Featured (first article) ── */}
             {featured && (
-              <div
-                onClick={() => onNavigate(`/tin-tuc/${featured.slug}`)}
-                className="group cursor-pointer grid grid-cols-1 md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-xl transition-all duration-500"
+              <a
+                href={`/tin-tuc/${featured.slug}`}
+                onClick={(e) => { e.preventDefault(); onNavigate(`/tin-tuc/${featured.slug}`); }}
+                className="group cursor-pointer grid grid-cols-1 md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-xl transition-all duration-500 no-underline block"
               >
                 {/* Image */}
                 <div className="relative h-72 md:h-auto overflow-hidden bg-slate-200">
@@ -245,19 +246,18 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                     <span className="w-5 h-0.5 bg-amber-600 group-hover:w-8 transition-all duration-300 inline-block" />
                   </div>
                 </div>
-              </div>
+              </a>
             )}
-
-            {/* ── Rest: 3-column grid ── */}
             {rest.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {rest.map(article => {
                   const accent = article.project ? (PROJECT_ACCENT[article.project] ?? "#94a3b8") : "#94a3b8";
                   return (
-                    <div
+                    <a
                       key={article.id}
-                      onClick={() => onNavigate(`/tin-tuc/${article.slug}`)}
-                      className="group cursor-pointer flex flex-col bg-white rounded-2xl border border-slate-100 hover:border-amber-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                      href={`/tin-tuc/${article.slug}`}
+                      onClick={(e) => { e.preventDefault(); onNavigate(`/tin-tuc/${article.slug}`); }}
+                      className="group cursor-pointer flex flex-col bg-white rounded-2xl border border-slate-100 hover:border-amber-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 no-underline"
                     >
                       {/* Image */}
                       <div className="relative h-52 overflow-hidden bg-slate-100 shrink-0">
@@ -309,7 +309,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   );
                 })}
               </div>

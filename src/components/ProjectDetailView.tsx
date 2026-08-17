@@ -4,6 +4,7 @@ import { Project } from "../types";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
 import MortgageCalculator from "./MortgageCalculator";
+import RelatedArticles from "./RelatedArticles";
 
 // Danh sách slug có calculator
 const CALC_CONFIG_SLUGS = ["k-home-cityview-ho-nai", "k-home-avenue-nhon-trach", "k-home-midtown-trang-bom"];
@@ -36,8 +37,8 @@ const PROJECT_SEO: Record<string, {
   avenueHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
-    titleTag: "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
-    metaDesc: "K-Home CityView Hố Nai (Biên Hòa) – dự án NOXH chuẩn Singapore do Kim Oanh Land phát triển. 1.328 căn hộ xã hội + 39 shophouse, diện tích 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028, hỗ trợ hồ sơ miễn phí.",
+    titleTag: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+    metaDesc: "Dự án K-Home CityView Hố Nai Biên Hòa – 1.328 căn hộ NOXH chuẩn Singapore do Kim Oanh Land phát triển. 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028, hỗ trợ hồ sơ miễn phí.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -886,6 +887,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           <p className="text-slate-500 text-sm flex items-center gap-1.5 font-light">
             <MapPin className="w-4 h-4 text-amber-500 shrink-0" /> {project.location}
           </p>
+          {/* Freshness badge — SEO signal + user trust */}
+          <p className="text-xs text-slate-400 flex items-center gap-1.5">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400" />
+            Cập nhật: Tháng 8/2026
+          </p>
         </div>
 
         <div className="bg-amber-50 border border-amber-100 p-4 rounded-2xl flex items-center justify-between gap-10 w-full lg:w-auto">
@@ -1388,6 +1394,68 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
           <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">Bên cạnh kết nối tiện lợi đến các trung tâm thương mại và dịch vụ, K-Home CityView còn nằm liền kề các khu công nghiệp lớn nhất Đồng Nai: <strong className="text-slate-800">KCN Amata, Long Bình, Biên Hòa 2, Hố Nai</strong> – nơi hàng trăm nghìn công nhân và kỹ sư đang làm việc và có nhu cầu an cư ngay tại chỗ. Đây chính là lợi thế vị trí độc đáo giúp K-Home CityView luôn duy trì nhu cầu cao từ người mua ở thực lẫn tiềm năng cho thuê.</p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Hướng dẫn đường đi đến K-Home CityView — Local SEO ── */}
+      {slug === "k-home-cityview-ho-nai" && (
+        <section id="duong-di" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Hướng Dẫn Đường Đi Đến K-Home CityView</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Địa chỉ: Đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Đồng Nai</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              {
+                from: "Từ Trung tâm Biên Hòa",
+                time: "~10 phút",
+                route: "Theo đường Nguyễn Ái Quốc → rẽ vào đường Hùng Vương → rẽ phải vào đường Điểu Xiển, dự án nằm bên tay phải (~3km).",
+                icon: "🏙️",
+              },
+              {
+                from: "Từ TP. Hồ Chí Minh",
+                time: "~45–60 phút",
+                route: "Theo cao tốc TP.HCM – Long Thành → ra Quốc lộ 1A hướng Biên Hòa → vào đường Điểu Xiển (~40km qua cao tốc).",
+                icon: "🛣️",
+              },
+              {
+                from: "Từ KCN Amata Biên Hòa",
+                time: "~10–15 phút",
+                route: "Theo đường nội bộ KCN Amata → ra Quốc lộ 1A → rẽ vào đường Điểu Xiển (~5–7km).",
+                icon: "🏭",
+              },
+              {
+                from: "Từ Sân bay Long Thành",
+                time: "~30 phút",
+                route: "Theo đường 25C (Tỉnh lộ) → vào Quốc lộ 51 → kết nối Quốc lộ 1A → đường Điểu Xiển (~30km).",
+                icon: "✈️",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{item.icon}</span>
+                  <div>
+                    <p className="text-sm font-bold text-slate-800">{item.from}</p>
+                    <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">{item.time}</span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed">{item.route}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 flex items-start gap-3">
+            <Phone className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-slate-700">
+              Cần hướng dẫn đường đi thực tế hoặc đặt lịch tham quan dự án? Gọi ngay{" "}
+              <a href="tel:0937587438" className="font-bold text-amber-600 hover:underline">0937 587 438</a>
+              {" "}— đội ngũ sẽ hướng dẫn và đón tiếp tận nơi.
+            </p>
           </div>
         </section>
       )}
@@ -2509,6 +2577,14 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           onClose={() => setLightboxOpen(false)}
         />
       )}
+
+      {/* Related Articles — Internal Linking Cluster for SEO */}
+      <RelatedArticles
+        projectSlug={slug}
+        limit={6}
+        title={`Tin Tức Liên Quan ${project.name || "K-Home"}`}
+        onNavigate={onNavigate}
+      />
 
     </div>
   );

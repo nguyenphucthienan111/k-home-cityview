@@ -1,7 +1,6 @@
-﻿import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { News } from '../types';
 
-// AUTO-GENERATED — synced from server.ts
-const DATA  = [
+export const newsData: News[] = [
   {
     id: "n60",
     slug: "so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre",
@@ -5765,8 +5764,3 @@ Xem thêm [K-Home CityView có đáng mua 5–10 năm](/tin-tuc/k-home-cityview-
 ---RELATED---k-home-cityview-co-dang-mua-neu-chi-muon-o-that-5-10-nam|K-Home CityView Đáng Mua 5-10 Năm;nhung-sai-lam-can-tranh-khi-mua-k-home-cityview|Những Sai Lầm Cần Tránh Khi Mua K-Home CityView`,
   },
 ];
-
-export default function handler(_req: VercelRequest, res: VercelResponse) {
-  res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
-  return res.json(DATA);
-}

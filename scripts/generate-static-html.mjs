@@ -20,9 +20,9 @@ const BASE_URL = "https://k-homedongnai.com.vn";
 const STATIC_ROUTES = [
   {
     dir: "k-home-cityview-ho-nai",
-    title: "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
-    description: "Dự án nhà ở xã hội K-Home CityView tại đường Điểu Xiển, Hố Nai, Biên Hòa. 1.352 căn hộ NOXH, diện tích 47–84m², giá từ 950 triệu, lãi suất 5,4%/năm. Cập nhật bảng giá & tiến độ 2026.",
-    keywords: "k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội k-home cityview, bảng giá k-home cityview, mặt bằng k-home cityview, k home đồng nai",
+    title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+    description: "Dự án K-Home CityView Hố Nai Biên Hòa: 1.328 căn hộ NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028. Xem bảng giá, mặt bằng, điều kiện mua NOXH Đồng Nai.",
+    keywords: "k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội k-home cityview, bảng giá k-home cityview, mặt bằng k-home cityview, k home đồng nai, k-home cityview đồng nai, giá k-home cityview",
   },
   {
     dir: "k-home-cityview-ho-nai/can-ho-1-phong-ngu-a",
@@ -189,6 +189,15 @@ function writeRoute(template, dirPath, meta) {
     html = html.replace("</body>", `${linkHtml}\n</body>`);
   }
 
+  // Inject JSON-LD schemas nếu có (FAQPage, BreadcrumbList, etc.)
+  const schemas = meta.schemas || [];
+  if (schemas.length > 0) {
+    const schemaHtml = schemas.map(s =>
+      `<script type="application/ld+json">${JSON.stringify(s)}</script>`
+    ).join("\n");
+    html = html.replace("</head>", `${schemaHtml}\n</head>`);
+  }
+
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
@@ -210,6 +219,95 @@ async function main() {
 
   // 1. Static routes
   console.log("── Static routes ──────────────────────────────");
+
+  // ─── Schemas per-route ────────────────────────────────────────────────────
+  // FAQPage + BreadcrumbList cho trang CityView — inject vào HTML tĩnh để Googlebot đọc
+  const CITYVIEW_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "K-Home CityView Hố Nai giá bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView có giá từ 950 triệu đến 2 tỷ/căn tùy loại: 1PN+A từ 950 triệu, 1PN+B từ 1,20 tỷ, 2PN từ 1,50 tỷ, 3PN từ 1,80 tỷ. Tất cả bàn giao full nội thất, lãi suất NOXH 5,4%/năm." } },
+      { "@type": "Question", "name": "Điều kiện mua K-Home CityView là gì?", "acceptedAnswer": { "@type": "Answer", "text": "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (cặp vợ chồng) hoặc dưới 25 triệu (độc thân), có hộ khẩu hoặc tạm trú tại Đồng Nai." } },
+      { "@type": "Question", "name": "K-Home CityView ở đâu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai. Cách trung tâm Biên Hòa khoảng 3km, gần các KCN Amata, Long Bình, Biên Hòa 2, Hố Nai." } },
+      { "@type": "Question", "name": "K-Home CityView khi nào bàn giao nhà?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án đã khởi công và đang thi công. Tiến độ dự kiến: hoàn thành móng tháng 8–10/2026, cất nóc tháng 6/2027, hoàn thiện nội thất tháng 12/2027 và bàn giao đợt đầu tháng 1/2028." } },
+      { "@type": "Question", "name": "Vay mua K-Home CityView được bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "Người mua đủ điều kiện NOXH được vay tối đa 75–80% giá trị căn hộ từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm trong 25 năm. Trả góp chỉ từ khoảng 3,5–4,5 triệu/tháng." } },
+      { "@type": "Question", "name": "K-Home CityView có được bán lại không?", "acceptedAnswer": { "@type": "Answer", "text": "Theo quy định NOXH, người mua phải ở tối thiểu 5 năm sau khi nhận bàn giao mới được bán lại. Khi bán phải bán lại cho người đủ điều kiện NOXH hoặc trả lại cho chủ đầu tư." } },
+      { "@type": "Question", "name": "K-Home CityView có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án có tổng cộng 1.816 căn gồm: 1.328 căn hộ NOXH, 425 căn nhà ở thương mại (Block T4) và 39 căn shophouse, phân bổ trong 4 block cao 22 tầng trên quỹ đất 2,85 hecta tại Hố Nai, Biên Hòa." } },
+      { "@type": "Question", "name": "Hỗ trợ hồ sơ NOXH K-Home CityView như thế nào?", "acceptedAnswer": { "@type": "Answer", "text": "Đội ngũ Kim Oanh Land hỗ trợ hoàn toàn miễn phí: kiểm tra điều kiện đủ tiêu chuẩn, chuẩn bị giấy tờ, nộp hồ sơ xét duyệt và kết nối Ngân hàng Chính sách Xã hội. Hotline: 0937.587.438." } },
+      { "@type": "Question", "name": "Mặt bằng K-Home CityView gồm những loại căn nào?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView Hố Nai có 4 loại căn hộ: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2 phòng ngủ (70,4m²) và 3 phòng ngủ (84,4m²). NOXH đầu tiên tại Đồng Nai có căn 3 phòng ngủ." } },
+      { "@type": "Question", "name": "Tiện ích K-Home CityView Hố Nai có gì?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView có hồ bơi người lớn và trẻ em, sân chơi trẻ em, khu thể dục ngoài trời, nhà sinh hoạt cộng đồng, vườn cảnh quan, khu BBQ, bãi đỗ xe và hệ thống shophouse khối đế." } },
+      { "@type": "Question", "name": "K-Home CityView có sổ hồng không?", "acceptedAnswer": { "@type": "Answer", "text": "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Hồ sơ pháp lý minh bạch từ giai đoạn đặt cọc đến khi nhận nhà." } },
+      { "@type": "Question", "name": "K-Home CityView do ai thiết kế?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView được thiết kế và quy hoạch bởi Tập đoàn Surbana Jurong (Singapore) – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á. Dự án phát triển theo tiêu chuẩn công trình xanh EDGE của IFC/World Bank." } },
+      { "@type": "Question", "name": "K-Home CityView đường Điểu Xiển gần KCN nào?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView nằm tại đường Điểu Xiển, Hố Nai – liền kề KCN Amata, KCN Long Bình, KCN Biên Hòa 2, KCN Hố Nai. Từ dự án chỉ mất 10–15 phút đến các KCN này." } },
+      { "@type": "Question", "name": "K Home City View Biên Hòa là dự án gì?", "acceptedAnswer": { "@type": "Answer", "text": "K Home City View (hay K-Home CityView) là dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa, Đồng Nai do Kim Oanh Land phát triển. 1.328 căn NOXH + 39 shophouse, giá từ 950 triệu, lãi suất 5,4%/năm." } },
+    ],
+  };
+
+  const CITYVIEW_BREADCRUMB_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Dự án K-Home", "item": `${BASE_URL}/san-pham` },
+      { "@type": "ListItem", "position": 3, "name": "K-Home CityView Hố Nai Biên Hòa", "item": `${BASE_URL}/k-home-cityview-ho-nai` },
+    ],
+  };
+
+  const CITYVIEW_WEBPAGE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+    "url": `${BASE_URL}/k-home-cityview-ho-nai`,
+    "description": "Dự án K-Home CityView Hố Nai Biên Hòa: 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
+    "inLanguage": "vi-VN",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Land",
+      "url": `${BASE_URL}/`,
+    },
+    "about": {
+      "@type": "Residence",
+      "name": "K-Home CityView Hố Nai Biên Hòa",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Đường Điểu Xiển, Phường Hố Nai",
+        "addressLocality": "TP. Biên Hòa",
+        "addressRegion": "Tỉnh Đồng Nai",
+        "addressCountry": "VN",
+      },
+    },
+  };
+
+  // Schemas cho Midtown
+  const MIDTOWN_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Dự án K-Home", "item": `${BASE_URL}/san-pham` },
+      { "@type": "ListItem", "position": 3, "name": "K-Home Midtown Trảng Bom", "item": `${BASE_URL}/k-home-midtown-trang-bom` },
+    ],
+  };
+
+  // Schemas cho Avenue
+  const AVENUE_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Dự án K-Home", "item": `${BASE_URL}/san-pham` },
+      { "@type": "ListItem", "position": 3, "name": "K-Home Avenue Nhơn Trạch", "item": `${BASE_URL}/k-home-avenue-nhon-trach` },
+    ],
+  };
+
+  // Map schema per dir
+  const ROUTE_SCHEMAS = {
+    "k-home-cityview-ho-nai": [CITYVIEW_FAQ_SCHEMA, CITYVIEW_BREADCRUMB_SCHEMA, CITYVIEW_WEBPAGE_SCHEMA],
+    "k-home-midtown-trang-bom": [MIDTOWN_BREADCRUMB],
+    "k-home-avenue-nhon-trach": [AVENUE_BREADCRUMB],
+  };
+
   for (const route of STATIC_ROUTES) {
     const canonical = `${BASE_URL}/${route.dir}`;
     const dirPath = path.join(DIST_DIR, route.dir);
@@ -218,6 +316,7 @@ async function main() {
       description: route.description,
       canonical,
       keywords: route.keywords ?? null,
+      schemas: ROUTE_SCHEMAS[route.dir] ?? [],
     });
     count++;
     console.log(`✅ /${route.dir}`);
@@ -235,10 +334,54 @@ async function main() {
       ? `${article.title} | K-Home Đồng Nai`
       : `${article.title} | K-Home CityView Đồng Nai`;
     const dirPath = path.join(newsDirBase, article.slug);
+
+    // Tạo NewsArticle + BreadcrumbList schema cho từng bài
+    const newsArticleSchema = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": article.title,
+      "description": article.excerpt,
+      "datePublished": article.date,
+      "dateModified": article.date,
+      "url": canonical,
+      "inLanguage": "vi-VN",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Organization",
+        "name": "K-Home Đồng Nai – Kim Oanh Land",
+        "url": BASE_URL,
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "K-Home Đồng Nai",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}/android-chrome-512x512.png`,
+          "width": 512,
+          "height": 512,
+        },
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonical,
+      },
+    };
+
+    const newsBreadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+        { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": `${BASE_URL}/tin-tuc` },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": canonical },
+      ],
+    };
+
     writeRoute(template, dirPath, {
       title,
       description: article.excerpt,
       canonical,
+      schemas: [newsArticleSchema, newsBreadcrumbSchema],
       // Static <a href> links cho Googlebot — link về money page trong HTML tĩnh
       staticLinks: [
         { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },

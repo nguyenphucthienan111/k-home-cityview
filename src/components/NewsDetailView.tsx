@@ -653,10 +653,11 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {autoRelated.map((n) => (
-                <div
+                <a
                   key={n.id}
-                  onClick={() => { onNavigate(`/news/${n.slug}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                  className="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-0.5"
+                  href={`/tin-tuc/${n.slug}`}
+                  onClick={(e) => { e.preventDefault(); onNavigate(`/tin-tuc/${n.slug}`); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  className="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-0.5 no-underline block"
                 >
                   <div className="relative h-40 overflow-hidden bg-slate-100">
                     <img
@@ -683,7 +684,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                       Đọc tiếp <ChevronRight className="w-3.5 h-3.5" />
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

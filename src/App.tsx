@@ -21,15 +21,15 @@ const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
 
 // Module-level constant — không rebuild mỗi lần navigateTo chạy
 const PAGE_TITLES: Record<string, string> = {
-  "/":            "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue",
-  "/home":        "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue",
+  "/":            "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
+  "/home":        "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
   "/san-pham":    "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
   "/tin-tuc":     "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
   "/gioi-thieu":  "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai",
   "/lien-he":     "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438",
-  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hoà Đồng Nai | Bảng Giá & Mặt Bằng NOXH",
-  "/k-home-midtown-trang-bom":  "K-Home Midtown Trảng Bom | Nhà Ở Xã Hội Kim Oanh | Giá từ 750 Triệu",
-  "/k-home-avenue-nhon-trach":  "K-Home Avenue Nhơn Trạch | NOXH Gần Sân Bay Long Thành | Giá từ 750 Triệu",
+  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+  "/k-home-midtown-trang-bom":  "K-Home Midtown Trảng Bom | Bảng Giá, Mặt Bằng NOXH Trảng Bom 2026",
+  "/k-home-avenue-nhon-trach":  "K-Home Avenue Nhơn Trạch | Bảng Giá NOXH Gần Sân Bay Long Thành 2026",
 };
 
 // Helper: normalize path from window.location
@@ -88,9 +88,58 @@ export default function App() {
       document.head.appendChild(canonical);
     }
     canonical.href = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
-    // Cập nhật og:url
+    // Cập nhật og:url + og:title + og:description + og:image + twitter per-route
+    const canonicalUrl = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
     const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
-    if (ogUrl) ogUrl.content = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
+    if (ogUrl) ogUrl.content = canonicalUrl;
+    const twUrl = document.querySelector<HTMLMetaElement>("meta[name='twitter:url']");
+    if (twUrl) twUrl.content = canonicalUrl;
+    // Per-route OG data map
+    const PAGE_OG: Record<string, { title: string; description: string; image: string }> = {
+      "/": {
+        title: "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
+        description: "K-Home Đồng Nai – 3 dự án nhà ở xã hội chuẩn Singapore: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm. Kim Oanh Land.",
+        image: "https://k-homedongnai.com.vn/hero-background.jpg",
+      },
+      "/k-home-cityview-ho-nai": {
+        title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+        description: "Dự án K-Home CityView Hố Nai, Biên Hòa: 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028. Xem bảng giá, mặt bằng, điều kiện mua.",
+        image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+      },
+      "/k-home-midtown-trang-bom": {
+        title: "K-Home Midtown Trảng Bom | Bảng Giá, Mặt Bằng NOXH Trảng Bom 2026",
+        description: "K-Home Midtown tại trung tâm Trảng Bom, Đồng Nai. Studio-2PN từ 750 triệu, lãi suất 5,4%/năm, bàn giao nội thất hoàn thiện. Xem mặt bằng và đăng ký tư vấn miễn phí.",
+        image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150",
+      },
+      "/k-home-avenue-nhon-trach": {
+        title: "K-Home Avenue Nhơn Trạch | Bảng Giá NOXH Gần Sân Bay Long Thành 2026",
+        description: "K-Home Avenue Nhơn Trạch – dự án NOXH gần sân bay Long Thành. Studio-2PN từ 750 triệu, lãi suất 5,4%/năm, bàn giao hoàn thiện nội thất. Xem bảng giá và mặt bằng.",
+        image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-avenue/Pc09-Loi-vao-shophouse_2-min",
+      },
+      "/tin-tuc": {
+        title: "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
+        description: "Tin tức mới nhất về K-Home CityView, K-Home Midtown, K-Home Avenue và thị trường nhà ở xã hội Đồng Nai. Cập nhật giá, tiến độ, chính sách NOXH 2026.",
+        image: "https://k-homedongnai.com.vn/hero-background.jpg",
+      },
+      "/san-pham": {
+        title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
+        description: "So sánh 3 dự án NOXH K-Home tại Đồng Nai: CityView Hố Nai (từ 950tr), Midtown Trảng Bom (từ 750tr), Avenue Nhơn Trạch (từ 750tr). Lãi suất 5,4%/năm.",
+        image: "https://k-homedongnai.com.vn/hero-background.jpg",
+      },
+    };
+    const ogData = PAGE_OG[cleanPath] ?? PAGE_OG["/"];
+    const selectors: [string, string][] = [
+      ["meta[property='og:title']",         ogData.title],
+      ["meta[property='og:description']",   ogData.description],
+      ["meta[property='og:image']",         ogData.image],
+      ["meta[name='twitter:title']",        ogData.title],
+      ["meta[name='twitter:description']",  ogData.description],
+      ["meta[name='twitter:image']",        ogData.image],
+    ];
+    selectors.forEach(([sel, val]) => {
+      const el = document.querySelector<HTMLMetaElement>(sel);
+      if (el) el.content = val;
+    });
   }, []);
 
   // Memoize renderContent để tránh re-run 8 regex khi App re-render vì lý do khác

@@ -37,7 +37,12 @@ const ICON_STYLES = {
 
 const DURATION = 3500; // ms
 
-function ToastItem({ toast, onRemove }: { toast: ToastItem; onRemove: (id: string) => void }) {
+interface ToastItemProps {
+  toast: ToastItem;
+  onRemove: (id: string) => void;
+}
+
+const ToastItem: React.FC<ToastItemProps> = ({ toast, onRemove }) => {
   useEffect(() => {
     const timer = setTimeout(() => onRemove(toast.id), DURATION);
     return () => clearTimeout(timer);
@@ -59,7 +64,7 @@ function ToastItem({ toast, onRemove }: { toast: ToastItem; onRemove: (id: strin
       </button>
     </div>
   );
-}
+};
 
 export default function Toast({ toasts, onRemove }: ToastProps) {
   if (toasts.length === 0) return null;

@@ -926,6 +926,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   return (
     <div className="space-y-24 pb-24 bg-gradient-to-b from-amber-50/20 via-white to-slate-50 overflow-hidden relative">
+      {/* H1 cho SEO — visually hidden, Googlebot đọc được */}
+      <h1 className="sr-only">K-Home Đồng Nai – Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai</h1>
 
       {/* =========== MODAL LỊCH TRẢ NỢ CHI TIẾT =========== */}
       {showLoanModal && ReactDOM.createPortal(
