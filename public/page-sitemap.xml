@@ -7,6 +7,7 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <link rel="canonical" href="https://k-homedongnai.com.vn/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/"/>
     <image:image>
       <image:loc>https://k-homedongnai.com.vn/hero-background.jpg</image:loc>
@@ -18,6 +19,7 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <link rel="canonical" href="https://k-homedongnai.com.vn/san-pham"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/san-pham"/>
   </url>
   <url>
@@ -25,6 +27,7 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <link rel="canonical" href="https://k-homedongnai.com.vn/tin-tuc"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/tin-tuc"/>
   </url>
   <url>
@@ -32,6 +35,7 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <link rel="canonical" href="https://k-homedongnai.com.vn/gioi-thieu"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/gioi-thieu"/>
   </url>
   <url>
@@ -39,6 +43,7 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <link rel="canonical" href="https://k-homedongnai.com.vn/lien-he"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://k-homedongnai.com.vn/lien-he"/>
   </url>
 </urlset>

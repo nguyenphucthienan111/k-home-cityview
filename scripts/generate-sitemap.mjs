@@ -107,6 +107,7 @@ ${ALL_URLS.map(url => {
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
+    <link rel="canonical" href="${BASE_URL}${url.loc}"/>
     <xhtml:link rel="alternate" hreflang="vi" href="${BASE_URL}${url.loc}"/>
 ${imgXml ? imgXml + "\n" : ""}  </url>`;
 }).join("\n")}
@@ -128,6 +129,7 @@ ${postUrls.map(url => {
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
+    <link rel="canonical" href="${BASE_URL}${url.loc}"/>
     <xhtml:link rel="alternate" hreflang="vi" href="${BASE_URL}${url.loc}"/>
 ${imgXml ? imgXml + "\n" : ""}  </url>`;
 }).join("\n")}
@@ -149,6 +151,7 @@ ${pageUrls.map(url => {
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
+    <link rel="canonical" href="${BASE_URL}${url.loc}"/>
     <xhtml:link rel="alternate" hreflang="vi" href="${BASE_URL}${url.loc}"/>
 ${imgXml ? imgXml + "\n" : ""}  </url>`;
 }).join("\n")}
