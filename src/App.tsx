@@ -44,9 +44,18 @@ export default function App() {
 
   // ── Cập nhật canonical + og:url ngay khi mount và mỗi khi path thay đổi ──
   // Quan trọng: phải chạy trước khi Googlebot đọc canonical
+  // NHƯNG: Không ghi đè nếu component (như UnitDetailView) đã set canonical riêng
   useEffect(() => {
     const BASE = "https://k-homedongnai.com.vn";
     const currentPath = getPath();
+    
+    // Kiểm tra: nếu là route /project/unit, hãy để UnitDetailView xử lý canonical
+    const isUnitRoute = /^\/[^/]+\/(can-ho-[^/]+)$/.test(currentPath);
+    if (isUnitRoute) {
+      // UnitDetailView sẽ set canonical riêng — không ghi đè
+      return;
+    }
+    
     const canonicalUrl = `${BASE}${currentPath === "/" ? "/" : currentPath}`;
 
     let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
