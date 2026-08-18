@@ -91,24 +91,54 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
               "category": foundProject.title,
               "location": foundProject.location,
               "sku": `${foundProject.slug}-${foundUnit.slug}`,
-              "identifier": {
-                "@type": "PropertyValue",
-                "name": "Unit Slug",
-                "value": foundUnit.slug,
-                "propertyID": "unit-type"
-              },
+              "identifier": [
+                {
+                  "@type": "PropertyValue",
+                  "name": "Unit Slug",
+                  "value": foundUnit.slug,
+                  "propertyID": "unit-slug"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Project Slug",
+                  "value": foundProject.slug,
+                  "propertyID": "project-slug"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Construction Area",
+                  "value": foundUnit.constructionArea,
+                  "propertyID": "construction-area"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Usable Area",
+                  "value": foundUnit.usableArea,
+                  "propertyID": "usable-area"
+                }
+              ],
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
                 "reviewCount": "1",
-                "description": `${foundUnit.constructionArea} - ${foundUnit.name}`
+                "description": `${foundUnit.constructionArea} xây dựng / ${foundUnit.usableArea} sử dụng - ${foundUnit.name} tại ${foundProject.title}`
               },
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "VND",
                 "price": foundUnit.priceNumber ? foundUnit.priceNumber * 1000000 : undefined,
                 "availability": "https://schema.org/InStock",
-                "url": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`
+                "url": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`,
+                "seller": {
+                  "@type": "Organization",
+                  "name": foundProject.developer,
+                  "url": `https://k-homedongnai.com.vn/${foundProject.slug}`
+                }
+              },
+              "potentialAction": {
+                "@type": "TradeAction",
+                "target": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`,
+                "deliveryMethod": "OnSite"
               }
             });
             document.head.appendChild(schema);
