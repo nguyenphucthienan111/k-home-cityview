@@ -213,7 +213,7 @@ Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/
 **Liên hệ Sales Gallery K-Home CityView tại số 0937.587.438 để xem thêm video tiến độ mới nhất, tham quan nhà mẫu, tư vấn chi tiết về giá cả, chính sách thanh toán, điều kiện mua và các câu hỏi khác của bạn. Chúng tôi sẵn sàng hỗ trợ bạn 24/7.**
 
 ---RELATED---k-home-cityview-du-kien-ban-giao-khi-nao|K-Home CityView Dự Kiến Bàn Giao Khi Nào?;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?;nhung-tien-ich-noi-khu-k-home-cityview-co-gi-dac-biet|Những Tiện Ích Nội Khu K-Home CityView Có Gì Đặc Biệt?`
-  },,
+  },
   {
     id: "n60",
     slug: "so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre",
