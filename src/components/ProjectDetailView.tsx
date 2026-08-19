@@ -385,7 +385,7 @@ const PROJECT_SEO: Record<string, {
       { src: "slide-k-home-avenue/phoi-canh-tong-the-du-an-nha-o-xa-hoi-k-home-avenue-chuan-singapore-tai-nhon-tra", alt: "Phối cảnh tổng thể nhà ở xã hội K-Home Avenue chuẩn Singapore Nhơn Trạch Đồng Nai", caption: "Phối cảnh tổng thể K-Home Avenue" },
       { src: "slide-k-home-avenue/tong-quan-du-an-k-home-avenue-nang-tam-chuan-song-xanh-voi-4-block-cao-12-tang-t", alt: "Tổng quan K-Home Avenue Nhơn Trạch 4 block 12 tầng nâng tầm chuẩn sống xanh", caption: "4 block cao 12 tầng – 1.022 căn hộ NOXH" },
     ],
-    developerImage: "slide-k-home-avenue/doi-tac-dong-hanh-du-an-k-home-avenue-global-vireon-studio-cubic-phan-vu-handong",
+    developerImage: "/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp",
     sampleUnitImages: [
       { src: "/k-home avenue/Can-Studio/layout-can-ho-khome-avenue-studio.jpg", alt: "Nhà mẫu căn Studio K-Home Avenue Nhơn Trạch Kim Oanh Land 37,7m²", label: "Căn Studio (37,7m²)" },
       { src: "/k-home avenue/Can-1PN/layout-can-ho-khome-avenue-1pn.jpg", alt: "Nhà mẫu căn 1 phòng ngủ K-Home Avenue Nhơn Trạch Kim Oanh Land 46,6m²", label: "Căn 1PN+ (46,6m²)" },
@@ -706,32 +706,65 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
   // Nav dots state
   const [activeSection, setActiveSection] = useState("tong-quan");
+  const scrollLockRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navSections = slug === "k-home-cityview-ho-nai" ? [
     { id: "tong-quan", label: "Tổng Quan" },
     { id: "vi-tri", label: "Vị Trí" },
     { id: "gia-ban", label: "Giá Bán" },
     { id: "mat-bang", label: "Mặt Bằng" },
-    { id: "video-tien-do", label: "Video" },
     { id: "tien-ich", label: "Tiện Ích" },
+    { id: "tiem-nang", label: "Tiềm Năng" },
+    { id: "tien-do-trien-khai", label: "Tiến Độ" },
+    { id: "video-tien-do", label: "Video" },
     { id: "phap-ly", label: "Pháp Lý" },
+    { id: "yeu-to-singapore", label: "8 Yếu Tố" },
+    { id: "chung-chi-edge", label: "EDGE" },
+    { id: "mua-vs-thue", label: "Mua vs Thuê" },
+    { id: "giai-thuong", label: "Giải Thưởng" },
     { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "dieu-kien-mua", label: "Điều Kiện" },
+    { id: "chinh-sach-thanh-toan", label: "Thanh Toán" },
+    { id: "tinh-tra-gop", label: "Trả Góp" },
     { id: "lien-he", label: "Liên Hệ" },
     { id: "faq", label: "FAQ" },
   ] : slug === "k-home-midtown-trang-bom" ? [
     { id: "tong-quan", label: "Tổng Quan" },
     { id: "mat-bang", label: "Mặt Bằng" },
     { id: "tien-ich", label: "Tiện Ích" },
+    { id: "nha-mau", label: "Nhà Mẫu" },
+    { id: "tien-do-trien-khai", label: "Tiến Độ" },
     { id: "phap-ly", label: "Pháp Lý" },
+    { id: "yeu-to-singapore", label: "Tiềm Năng" },
+    { id: "chung-chi-edge", label: "EDGE" },
+    { id: "mua-vs-thue", label: "Mua vs Thuê" },
+    { id: "giai-thuong", label: "Giải Thưởng" },
+    { id: "doi-tac", label: "Đối Tác" },
     { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "midtown-highlights", label: "Highlights" },
+    { id: "midtown-edge", label: "Tiện Ích EDGE" },
+    { id: "dieu-kien-mua", label: "Điều Kiện" },
+    { id: "chinh-sach-thanh-toan", label: "Thanh Toán" },
+    { id: "tinh-tra-gop", label: "Trả Góp" },
     { id: "lien-he", label: "Liên Hệ" },
     { id: "faq", label: "FAQ" },
   ] : slug === "k-home-avenue-nhon-trach" ? [
     { id: "tong-quan", label: "Tổng Quan" },
     { id: "mat-bang", label: "Mặt Bằng" },
     { id: "tien-ich", label: "Tiện Ích" },
+    { id: "nha-mau", label: "Nhà Mẫu" },
+    { id: "tien-do-trien-khai", label: "Tiến Độ" },
     { id: "phap-ly", label: "Pháp Lý" },
+    { id: "yeu-to-singapore", label: "Tiềm Năng" },
+    { id: "chung-chi-edge", label: "EDGE" },
+    { id: "mua-vs-thue", label: "Mua vs Thuê" },
+    { id: "giai-thuong", label: "Giải Thưởng" },
+    { id: "doi-tac", label: "Đối Tác" },
     { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "avenue-highlights", label: "Highlights" },
+    { id: "dieu-kien-mua", label: "Điều Kiện" },
+    { id: "chinh-sach-thanh-toan", label: "Thanh Toán" },
+    { id: "tinh-tra-gop", label: "Trả Góp" },
     { id: "lien-he", label: "Liên Hệ" },
     { id: "faq", label: "FAQ" },
   ] : [];
@@ -739,56 +772,77 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
+      // Lock scroll tracking for 1.2 seconds to prevent conflicting updates
+      if (scrollLockRef.current) clearTimeout(scrollLockRef.current);
+      
       const y = el.getBoundingClientRect().top + window.scrollY - 90;
       window.scrollTo({ top: y, behavior: "smooth" });
       setActiveSection(id);
+      
+      // Re-enable scroll tracking after smooth scroll completes
+      scrollLockRef.current = setTimeout(() => {
+        scrollLockRef.current = null;
+      }, 1200);
     }
   };
 
-  // Track active section on scroll - SIMPLE VERSION
+
+  // Track active section on scroll - SIMPLE: section whose top is closest to viewport top wins
   useEffect(() => {
-    if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
+    if (!["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
     
-    const ids = slug === "k-home-cityview-ho-nai" 
-      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "video-tien-do", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
-      : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
+    const sectionIds = slug === "k-home-cityview-ho-nai" 
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "tiem-nang", "tien-do-trien-khai", "video-tien-do", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      : slug === "k-home-midtown-trang-bom"
+      ? ["tong-quan", "mat-bang", "nha-mau", "tien-do-trien-khai", "tien-ich", "tiem-nang", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "midtown-highlights", "midtown-edge", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      : ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "avenue-highlights", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"];
     
-    const handleScroll = () => {
-      // Find which section's top is closest to the top of the viewport
-      let bestId = ids[0];
-      let minDistance = Math.abs(document.getElementById(ids[0])?.getBoundingClientRect().top ?? 0);
+    const trackSection = () => {
+      // Skip if scroll lock is active (user just clicked a dot)
+      if (scrollLockRef.current !== null) return;
       
-      for (let i = 1; i < ids.length; i++) {
-        const el = document.getElementById(ids[i]);
-        if (!el) continue;
+      let closestSection = sectionIds[0];
+      let closestDistance = Infinity;
+      
+      // Find section whose top is closest to viewport top
+      for (const sectionId of sectionIds) {
+        const element = document.getElementById(sectionId);
+        if (!element) continue;
         
-        const rect = el.getBoundingClientRect();
+        const rect = element.getBoundingClientRect();
         
-        // Only consider sections that are visible
-        if (rect.top > window.innerHeight + 50) continue;
-        if (rect.bottom < 0) continue;
+        // Calculate distance from viewport top
+        // Prefer sections that are in or near the viewport
+        let distance: number;
         
-        // Calculate distance from top of viewport (considering it's positive = below top)
-        const distance = rect.top < 0 
-          ? 5000 + Math.abs(rect.top)  // If above, penalize
-          : rect.top;                   // If below top, use raw distance
+        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+          // Section is in viewport - distance is how far from top
+          distance = rect.top;
+        } else if (rect.top < 0) {
+          // Section is above viewport - distance is how far below top it disappeared
+          // Use large penalty so it's only chosen if nothing else is visible
+          distance = 10000 + Math.abs(rect.top);
+        } else {
+          // Section is below viewport
+          distance = 10000 + rect.top;
+        }
         
-        if (distance < minDistance) {
-          minDistance = distance;
-          bestId = ids[i];
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = sectionId;
         }
       }
       
-      setActiveSection(bestId);
+      setActiveSection(closestSection);
     };
     
-    // No throttle - just raw scroll events
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", trackSection);
+    trackSection();
     
-    // Call once on mount
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", trackSection);
+      if (scrollLockRef.current) clearTimeout(scrollLockRef.current);
+    };
   }, [slug]);
 
   const openLightbox = (index: number) => {
@@ -1819,7 +1873,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Nhà mẫu ── */}
       {seo?.sampleUnitImages && seo.sampleUnitImages.length > 0 && (
-        <section className="space-y-5">
+        <section id="nha-mau" className="space-y-5">
           <h2 className="text-2xl font-display font-bold text-slate-800">
             Nhà Mẫu Căn Hộ {slug === "k-home-midtown-trang-bom" ? "K-Home Midtown" : slug === "k-home-avenue-nhon-trach" ? "K-Home Avenue" : "K-Home CityView"}
           </h2>
@@ -1864,7 +1918,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Tổng quan Biên Hòa / Đồng Nai ── */}
       {seo?.dongNaiOverview && (
-        <section className="space-y-6">
+        <section id="tiem-nang" className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
               <Building2 className="w-5 h-5 text-white" />
@@ -1936,7 +1990,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Tiến độ xây dựng ── */}
       {seo?.constructionProgress && (
-        <section className="space-y-5">
+        <section id="tien-do-trien-khai" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
               <TrendingUp className="w-5 h-5 text-white" />
@@ -2082,7 +2136,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── 8 Yếu tố Singapore ── */}
       {seo?.singaporeFactors && (
-        <section className="space-y-5">
+        <section id="yeu-to-singapore" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
               <Star className="w-5 h-5 text-white fill-white" />
@@ -2139,7 +2193,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Chứng chỉ EDGE ── */}
       {seo?.edgeCert && (
-        <section className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
+        <section id="chung-chi-edge" className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
               <Award className="w-5 h-5 text-white" />
@@ -2189,7 +2243,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Mua vs Thuê ── */}
       {seo?.buyVsRent && (
-        <section className="space-y-5">
+        <section id="mua-vs-thue" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center shrink-0">
               <TrendingUp className="w-5 h-5 text-white" />
@@ -2229,7 +2283,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Giải thưởng ── */}
       {seo?.awards && (
-        <section className="space-y-5">
+        <section id="giai-thuong" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-yellow-500 rounded-xl flex items-center justify-center shrink-0">
               <Award className="w-5 h-5 text-white" />
@@ -2281,7 +2335,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Các đối tác ── */}
       {seo?.partners && (
-        <section className="space-y-5">
+        <section id="doi-tac" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-slate-700 rounded-xl flex items-center justify-center shrink-0">
               <Handshake className="w-5 h-5 text-white" />
@@ -2368,7 +2422,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Midtown: Vị trí & 10 điểm nhấn ── */}
       {seo?.midtownHighlights && (
-        <section className="space-y-6">
+        <section id="midtown-highlights" className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5 text-white" />
@@ -2398,7 +2452,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </button>
 
           {/* 10 điểm nhấn */}
-          <div className="flex items-center gap-3 pt-2">
+          <div id="10-diem-nhan" className="flex items-center gap-3 pt-2">
             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
               <Star className="w-5 h-5 text-white fill-white" />
             </div>
@@ -2430,7 +2484,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Midtown: EDGE & Tiện ích ── */}
       {seo?.midtownEdge && (
-        <section className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
+        <section id="midtown-edge" className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 rounded-3xl p-8 space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
               <Award className="w-5 h-5 text-white" />
@@ -2465,7 +2519,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Avenue: Vị trí & 10 giá trị cốt lõi ── */}
       {seo?.avenueHighlights && (
-        <section className="space-y-6">
+        <section id="avenue-highlights" className="space-y-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5 text-white" />
@@ -2499,7 +2553,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </button>
 
           {/* 10 giá trị cốt lõi */}
-          <div className="flex items-center gap-3 pt-2">
+          <div id="10-gia-tri" className="flex items-center gap-3 pt-2">
             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center shrink-0">
               <Star className="w-5 h-5 text-white fill-white" />
             </div>
@@ -2529,7 +2583,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Điều kiện mua NOXH ── */}
       {seo?.noxhConditions && (
-        <section className="bg-amber-50 border border-amber-100 rounded-3xl p-8 space-y-6">
+        <section id="dieu-kien-mua" className="bg-amber-50 border border-amber-100 rounded-3xl p-8 space-y-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
               <BadgeCheck className="w-5 h-5 text-white" />
@@ -2564,7 +2618,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Chính sách thanh toán ── */}
       {seo?.paymentPolicy && (
-        <section className="space-y-5">
+        <section id="chinh-sach-thanh-toan" className="space-y-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5 text-amber-400" />
@@ -2594,13 +2648,15 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
       {/* ── Tính Trả Góp ── */}
       {CALC_CONFIG_SLUGS.includes(slug) && (
-        <MortgageCalculator
-          slug={slug}
-          onContact={() => {
-            const el = document.getElementById("lien-he");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-        />
+        <section id="tinh-tra-gop">
+          <MortgageCalculator
+            slug={slug}
+            onContact={() => {
+              const el = document.getElementById("lien-he");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          />
+        </section>
       )}
 
       {/* ── Form liên hệ sau Chính Sách Thanh Toán ── */}
