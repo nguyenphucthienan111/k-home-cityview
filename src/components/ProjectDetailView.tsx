@@ -745,7 +745,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     }
   };
 
-  // Track active section on scroll
+  // Track active section on scroll - EXPLICIT VERSION
   useEffect(() => {
     if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
     
@@ -753,59 +753,60 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "video-tien-do", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
     
-    let scrollTimeout: NodeJS.Timeout | null = null;
+    let frameId: number | null = null;
     
-    const handleScroll = () => {
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+    const updateActiveSection = () => {
+      // Find section closest to top of viewport
+      let bestSection = ids[0];
+      let bestDistance = Infinity;
       
-      scrollTimeout = setTimeout(() => {
-        // Find which section is closest to top of viewport
-        let bestSection = ids[0];
-        let bestDistance = Infinity;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
         
-        for (const id of ids) {
-          const el = document.getElementById(id);
-          if (!el) continue;
-          
-          const rect = el.getBoundingClientRect();
-          
-          // Only consider sections that are visible or about to be visible
-          if (rect.top > window.innerHeight) continue; // Way below
-          if (rect.bottom < -100) continue; // Way above
-          
-          // Calculate how far this section's top is from the top of viewport
-          // Prefer sections that are entering viewport from top
-          let distance = rect.top;
-          
-          // If section is above viewport, penalize it heavily
-          if (distance < 0) {
-            // Only consider if section extends into viewport
-            if (rect.bottom >= 150) { // At least 150px visible
-              distance = 10000 + distance; // Large penalty + how far above
-            } else {
-              continue;
-            }
-          }
-          
-          if (distance < bestDistance) {
-            bestDistance = distance;
-            bestSection = id;
-          }
+        const rect = el.getBoundingClientRect();
+        
+        // Skip if completely below viewport
+        if (rect.top > window.innerHeight) continue;
+        
+        // Skip if completely above viewport (with tolerance)
+        if (rect.bottom < 50) continue;
+        
+        // Distance = how far top of element is from top of viewport
+        let distance: number;
+        
+        if (rect.top >= 0) {
+          // Section is entering or in viewport - prefer this
+          distance = rect.top;
+        } else {
+          // Section is above viewport but partially visible
+          // Give it a high penalty distance
+          distance = 5000 + Math.abs(rect.top);
         }
         
-        setActiveSection(bestSection);
-      }, 10);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestSection = id;
+        }
+      }
+      
+      setActiveSection(bestSection);
     };
     
-    // Use passive listener for better scroll performance
+    // Use requestAnimationFrame for smooth updates
+    const handleScroll = () => {
+      if (frameId) cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateActiveSection);
+    };
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     
     // Set initial state
-    handleScroll();
+    updateActiveSection();
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (frameId) cancelAnimationFrame(frameId);
     };
   }, [slug]);
 
