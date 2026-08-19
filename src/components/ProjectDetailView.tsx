@@ -745,7 +745,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     }
   };
 
-  // Track active section on scroll using Intersection Observer (more reliable)
+  // Track active section on scroll using scroll event
   useEffect(() => {
     if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
     
@@ -753,33 +753,63 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "video-tien-do", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
     
-    // Create Intersection Observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Only update if section is visible in upper half of viewport
-          if (entry.isIntersecting && entry.boundingClientRect.top < window.innerHeight * 0.6) {
-            const sectionId = entry.target.id;
-            if (ids.includes(sectionId)) {
-              setActiveSection(sectionId);
-            }
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "-30% 0px -50% 0px", // Trigger when section is in upper part
-        threshold: [0, 0.5, 1],
+    let lastUpdate = 0;
+    const THROTTLE_MS = 50;
+    
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastUpdate < THROTTLE_MS) return;
+      lastUpdate = now;
+      
+      const headerHeight = 90;
+      let selected = ids[0];
+      let selectedDistance = Infinity;
+      
+      // Go through each section and find the one currently in viewport at top
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        
+        const rect = el.getBoundingClientRect();
+        
+        // Skip sections way below viewport
+        if (rect.top > window.innerHeight + 100) continue;
+        
+        // Skip sections completely above viewport
+        if (rect.bottom < 0) continue;
+        
+        // Prefer sections that are entering/visible in viewport
+        // Score based on how close top of section is to viewport top
+        let score = 0;
+        
+        if (rect.top >= 0) {
+          // Section top is in viewport - this is ideal
+          // Lower score = better. Score = distance from top of viewport
+          score = rect.top;
+        } else if (rect.bottom > headerHeight) {
+          // Section is partially above viewport but still somewhat visible
+          // High penalty score to deprioritize
+          score = 5000 - rect.bottom;
+        } else {
+          // Section is completely above viewport
+          continue;
+        }
+        
+        if (score < selectedDistance) {
+          selectedDistance = score;
+          selected = id;
+        }
       }
-    );
+      
+      setActiveSection(selected);
+    };
     
-    // Observe all sections
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     
-    return () => observer.disconnect();
+    // Trigger once on mount
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [slug]);
 
   const openLightbox = (index: number) => {
