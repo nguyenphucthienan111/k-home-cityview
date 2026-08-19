@@ -360,28 +360,51 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           const lines = article.content.split("\n").filter(l => !l.startsWith("---RELATED---"));
           const elements: React.ReactNode[] = [];
           let i = 0;
+          const articleId = article.id || "default";
 
           while (i < lines.length) {
             const line = lines[i];
 
-            // Gallery carousel: ---GALLERY--- url1 | url2 | url3 | caption
+            // Gallery carousel: ---GALLERY--- 
+            // Format: url1|alt1 | url2|alt2 | url3|alt3 | [optional: caption]
+            // Each URL can have its own alt text (alt text after |)
+            // Last part without :// is treated as caption
             if (line.startsWith("---GALLERY---")) {
-              const parts = line.replace("---GALLERY---", "").trim().split("|").map(s => s.trim());
-              const caption = parts[parts.length - 1].includes("://") ? "" : parts.pop() || "";
-              const urls = parts;
-              const gKey = `gallery-${i}`;
+              const rawParts = line.replace("---GALLERY---", "").trim().split("|").map(s => s.trim());
+              
+              // Try to identify caption (last part that doesn't look like URL)
+              let caption = "";
+              let parts = [...rawParts];
+              if (parts.length > 0 && !parts[parts.length - 1].includes("://")) {
+                caption = parts.pop() || "";
+              }
+              
+              // Parse URL + alt pairs: each item can be "url" or "url|alttext"
+              const galleryItems = parts.map((item) => {
+                const [url, ...altParts] = item.split("|").map(s => s.trim());
+                const altText = altParts.join("|") || ""; // rejoin in case alt had pipes
+                return { url, alt: altText || caption };
+              });
+              
+              const urls = galleryItems.map(item => item.url);
+              const gKey = `gallery-${articleId}-${i}`;
               const activeIdx = galleryIndexes[gKey] ?? 0;
-              // Prep lightbox images for this gallery
-              const galleryLightboxImages = urls.map(url => ({ src: url, alt: caption || "" }));
+              
+              // Prep lightbox images with individual alt texts
+              const galleryLightboxImages = galleryItems.map((item, di) => ({ 
+                src: item.url, 
+                alt: item.alt || `Ảnh ${di + 1}` 
+              }));
+              
               elements.push(
                 <figure key={gKey} className="my-8">
                   <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "auto" }}>
                     {/* All images stacked — crossfade */}
-                    {urls.map((url, di) => (
+                    {galleryItems.map((item, di) => (
                       <img
-                        key={url}
-                        src={url}
-                        alt={caption || `Ảnh ${di + 1}`}
+                        key={item.url}
+                        src={item.url}
+                        alt={item.alt || `Ảnh ${di + 1}`}
                         className="w-full block cursor-zoom-in"
                         onClick={() => openLightbox(galleryLightboxImages, di)}
                         style={{
@@ -406,16 +429,16 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                     </div>
 
                     {/* Prev / Next */}
-                    {urls.length > 1 && (
+                    {galleryItems.length > 1 && (
                       <>
                         <button
-                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx - 1 + urls.length) % urls.length }))}
+                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx - 1 + galleryItems.length) % galleryItems.length }))}
                           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer hover:scale-110 active:scale-95"
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
                         </button>
                         <button
-                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx + 1) % urls.length }))}
+                          onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: (activeIdx + 1) % galleryItems.length }))}
                           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer hover:scale-110 active:scale-95"
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -425,13 +448,13 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
 
                     {/* Counter pill */}
                     <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-                      {activeIdx + 1} / {urls.length}
+                      {activeIdx + 1} / {galleryItems.length}
                     </div>
 
                     {/* Dots */}
-                    {urls.length > 1 && (
+                    {galleryItems.length > 1 && (
                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                        {urls.map((_, di) => (
+                        {galleryItems.map((_, di) => (
                           <button
                             key={di}
                             onClick={() => setGalleryIndexes(p => ({ ...p, [gKey]: di }))}
@@ -457,11 +480,38 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
+            // Video: ---VIDEO---url|caption
+            if (line.startsWith("---VIDEO---")) {
+              const parts = line.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
+              const caption = parts.length > 1 ? parts[1] : "";
+              const videoUrl = parts[0];
+              elements.push(
+                <figure key={`${articleId}-video-${i}`} className="my-8">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "16/9" }}>
+                    <video
+                      src={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/w_1200,h_800,c_fill,q_auto,f_auto/") : videoUrl}
+                      controls
+                      preload="auto"
+                      className="w-full h-full object-cover"
+                      style={{ display: "block" }}
+                      poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : undefined}
+                    />
+                  </div>
+                  {caption && (
+                    <figcaption className="text-center text-xs text-slate-400 mt-3 italic">
+                      {caption}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+              i++; continue;
+            }
+
             // Project link center: ---PROJECT-CENTER---slug|label
             if (line.startsWith("---PROJECT-CENTER---")) {
               const [slug, label] = line.replace("---PROJECT-CENTER---", "").split("|");
               elements.push(
-                <div key={i} className="my-8 flex justify-center">
+                <div key={`${articleId}-proj-center-${i}`} className="my-8 flex justify-center">
                   <a
                     href={`/${slug.trim()}`}
                     onClick={(e) => { e.preventDefault(); onNavigate(`/${slug.trim()}`); }}
@@ -484,7 +534,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               const [slug, label] = line.replace("---PROJECT-LINK---", "").split("|");
               elements.push(
                 <a
-                  key={i}
+                  key={`${articleId}-proj-link-${i}`}
                   href={`/${slug.trim()}`}
                   onClick={(e) => { e.preventDefault(); onNavigate(`/${slug.trim()}`); }}
                   className="flex items-center justify-between px-5 py-3.5 bg-amber-50 border border-amber-200 rounded-xl cursor-pointer hover:bg-amber-100 hover:border-amber-400 transition-all group mb-2 no-underline"
@@ -502,7 +552,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               const imgAlt = imgMatch[1];
               const imgSrc = imgMatch[2];
               elements.push(
-                <figure key={i} className="my-6">
+                <figure key={`${articleId}-img-${i}`} className="my-6">
                   <div
                     className="relative cursor-zoom-in group rounded-2xl overflow-hidden shadow-md"
                     onClick={() => openLightbox([{ src: imgSrc, alt: imgAlt }], 0)}
@@ -528,7 +578,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             // H2
             if (line.startsWith("## ")) {
               elements.push(
-                <h2 key={i} className="text-xl font-bold text-slate-900 mt-10 mb-3 pb-2 border-b-2 border-amber-200 flex items-center gap-2">
+                <h2 key={`${articleId}-h2-${i}`} className="text-xl font-bold text-slate-900 mt-10 mb-3 pb-2 border-b-2 border-amber-200 flex items-center gap-2">
                   <span className="w-1 h-5 bg-amber-500 rounded-full inline-block shrink-0" />
                   {line.slice(3)}
                 </h2>
@@ -552,7 +602,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 const headerCells = parseCells(allRows[0]);
                 const bodyRows = allRows.slice(1);
                 elements.push(
-                  <div key={i} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                  <div key={`${articleId}-table-${i}`} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                     <table className="w-full border-collapse text-sm">
                       <thead>
                         <tr className="bg-amber-500 text-white">
@@ -585,13 +635,13 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 i++;
               }
               elements.push(
-                <ul key={i} className="my-3 space-y-2">
+                <ul key={`${articleId}-list-${i}`} className="my-3 space-y-2">
                   {items.map((item, ii) => {
                     const html = item
                       .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
                       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
                     return (
-                      <li key={ii} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <li key={`${articleId}-item-${i}-${ii}`} className="flex items-start gap-2.5 text-sm text-slate-700">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
                         <span dangerouslySetInnerHTML={{ __html: html }} />
                       </li>
@@ -604,7 +654,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
 
             // Empty line
             if (line.trim() === "") {
-              elements.push(<div key={i} className="h-2" />);
+              elements.push(<div key={`${articleId}-empty-${i}`} className="h-2" />);
               i++; continue;
             }
 
@@ -613,7 +663,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>')
               .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
             elements.push(
-              <p key={i} className="text-sm text-slate-700 leading-7 mb-1"
+              <p key={`${articleId}-p-${i}`} className="text-sm text-slate-700 leading-7 mb-1"
                 dangerouslySetInnerHTML={{ __html: html }} />
             );
             i++;
@@ -625,6 +675,9 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
 
       {/* Related Articles */}
       {(() => {
+        // Guard clause: if article is null, return nothing
+        if (!article) return null;
+        
         // Parse ---RELATED--- marker từ content
         const relatedMarker = "---RELATED---";
         const relatedLine = article.content.split("\n").find(l => l.startsWith(relatedMarker));
@@ -632,15 +685,20 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         // Lấy bài liên quan: từ marker hoặc tự động (cùng category, khác slug)
         let relatedSlugs: { slug: string; label: string }[] = [];
         if (relatedLine) {
-          relatedSlugs = relatedLine.replace(relatedMarker, "").split(";").map(item => {
-            const [s, l] = item.split("|");
-            return { slug: s.trim(), label: l?.trim() || s.trim() };
-          });
+          relatedSlugs = relatedLine.replace(relatedMarker, "").split(";")
+            .map(item => {
+              const [s, l] = item.split("|");
+              if (!s || !s.trim()) return null;
+              return { slug: s.trim(), label: l?.trim() || s.trim() };
+            })
+            .filter((r): r is { slug: string; label: string } => r !== null);
         }
 
         // Lấy bài tự động (cùng category, khác slug hiện tại)
+        if (!article) return null;
+        
         const autoRelated = allNews
-          .filter(n => n.slug !== article.slug && (n.category === article.category || relatedSlugs.some(r => r.slug === n.slug)))
+          .filter(n => n && n.slug !== article.slug && (n.category === article.category || relatedSlugs.some(r => r?.slug === n.slug)))
           .slice(0, 3);
 
         if (autoRelated.length === 0) return null;

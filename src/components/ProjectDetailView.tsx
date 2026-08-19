@@ -712,6 +712,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "vi-tri", label: "Vị Trí" },
     { id: "gia-ban", label: "Giá Bán" },
     { id: "mat-bang", label: "Mặt Bằng" },
+    { id: "video-tien-do", label: "Video" },
     { id: "tien-ich", label: "Tiện Ích" },
     { id: "phap-ly", label: "Pháp Lý" },
     { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
@@ -744,25 +745,41 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     }
   };
 
-  // Track active section on scroll
+  // Track active section on scroll using Intersection Observer (more reliable)
   useEffect(() => {
     if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
     
     const ids = slug === "k-home-cityview-ho-nai" 
-      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "video-tien-do", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
     
-    const handleScroll = () => {
-      for (let i = ids.length - 1; i >= 0; i--) {
-        const el = document.getElementById(ids[i]);
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActiveSection(ids[i]);
-          break;
-        }
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Only update if section is visible in upper half of viewport
+          if (entry.isIntersecting && entry.boundingClientRect.top < window.innerHeight * 0.6) {
+            const sectionId = entry.target.id;
+            if (ids.includes(sectionId)) {
+              setActiveSection(sectionId);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-30% 0px -50% 0px", // Trigger when section is in upper part
+        threshold: [0, 0.5, 1],
       }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    );
+    
+    // Observe all sections
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    
+    return () => observer.disconnect();
   }, [slug]);
 
   const openLightbox = (index: number) => {
@@ -1959,6 +1976,54 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               ))}
             </div>
           )}
+        </section>
+      )}
+
+      {/* ── Video Tiến Độ Xây Dựng (K-Home CityView only) ── */}
+      {slug === "k-home-cityview-ho-nai" && (
+        <section id="video-tien-do" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
+              <span className="text-white font-bold text-lg">▶</span>
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Video Tiến Độ Xây Dựng</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Theo dõi quá trình xây dựng K-Home CityView - Cập nhật tháng 8/2026</p>
+            </div>
+          </div>
+
+          {/* Video Player */}
+          <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-black group">
+            <video
+              controls
+              preload="auto"
+              className="w-full h-auto"
+              poster="https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
+              style={{ maxHeight: "600px", objectFit: "contain", display: "block" }}
+              title="Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026 - Kết Cấu Chính Tiến Hành"
+            >
+              <source
+                src="https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4"
+                type="video/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ video tag. Vui lòng tải xuống video: <a href="https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4">Tiến Độ Xây Dựng K-Home CityView</a>
+            </video>
+          </div>
+
+          {/* Video Description */}
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
+            <h3 className="font-bold text-slate-800">Về Video Này</h3>
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Video tiến độ xây dựng K-Home CityView ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu các công tác hoàn thiện bên trong các căn hộ. 
+              <br /><br />
+              Dự án nhà ở xã hội Biên Hòa được phát triển bởi <strong>Kim Oanh Group</strong>, một trong những nhà phát triển bất động sản uy tín nhất tại Đông Nam Bộ. Với tiến độ xây dựng ổn định, K-Home CityView dự kiến bàn giao các căn hộ đầu tiên cho cư dân vào <strong>tháng 1/2028</strong>.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200">
+              <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Công trình xanh EDGE</span>
+              <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">Thiết kế Singapore</span>
+              <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-semibold">1.328 căn NOXH</span>
+            </div>
+          </div>
         </section>
       )}
 

@@ -39,10 +39,10 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
       .then(r => r.json())
       .then(data => {
         const list = Array.isArray(data) ? data : [];
-        // Dedup by slug
+        // Filter out null entries and dedup by slug
         const seen = new Set<string>();
-        const unique = list.filter(n => {
-          if (seen.has(n.slug)) return false;
+        const unique = list.filter((n): n is News => {
+          if (!n || !n.slug || seen.has(n.slug)) return false;
           seen.add(n.slug);
           return true;
         });

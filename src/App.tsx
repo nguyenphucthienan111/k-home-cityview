@@ -42,6 +42,15 @@ const getPath = () => {
 export default function App() {
   const [path, setPath] = useState<string>(getPath());
 
+  // ── Cập nhật title khi mount lần đầu (vì App.tsx load trước pre-render HTML) ──
+  // Đảm bảo Googlebot thấy đúng title ngay từ đầu
+  useEffect(() => {
+    const currentPath = getPath();
+    if (PAGE_TITLES[currentPath]) {
+      document.title = PAGE_TITLES[currentPath];
+    }
+  }, []);
+
   // ── Cập nhật canonical + og:url ngay khi mount và mỗi khi path thay đổi ──
   // Quan trọng: phải chạy trước khi Googlebot đọc canonical
   // NHƯNG: Không ghi đè nếu component (như UnitDetailView) đã set canonical riêng
@@ -49,10 +58,11 @@ export default function App() {
     const BASE = "https://k-homedongnai.com.vn";
     const currentPath = getPath();
     
-    // Kiểm tra: nếu là route /project/unit, hãy để UnitDetailView xử lý canonical
+    // Kiểm tra: nếu là route /project/unit hoặc /tin-tuc/*, hãy để component xử lý canonical
     const isUnitRoute = /^\/[^/]+\/(can-ho-[^/]+)$/.test(currentPath);
-    if (isUnitRoute) {
-      // UnitDetailView sẽ set canonical riêng — không ghi đè
+    const isNewsRoute = /^\/tin-tuc\//.test(currentPath);
+    if (isUnitRoute || isNewsRoute) {
+      // UnitDetailView/NewsDetailView sẽ set canonical riêng — không ghi đè
       return;
     }
     
@@ -88,16 +98,25 @@ export default function App() {
     if (PAGE_TITLES[cleanPath]) {
       document.title = PAGE_TITLES[cleanPath];
     }
-    // Cập nhật canonical URL động theo route
-    const BASE = "https://k-homedongnai.com.vn";
-    let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
+    
+    // ── Cập nhật canonical URL động theo route ──
+    // NHƯNG: Không ghi đè cho unit routes (/project/unit) hoặc news routes (/tin-tuc/*)
+    // Vì những routes này có canonical riêng được set bởi UnitDetailView/NewsDetailView
+    const isUnitRoute = /^\/[^/]+\/(can-ho-[^/]+)$/.test(cleanPath);
+    const isNewsRoute = /^\/tin-tuc\//.test(cleanPath);
+    if (!isUnitRoute && !isNewsRoute) {
+      const BASE = "https://k-homedongnai.com.vn";
+      let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
     }
-    canonical.href = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
+    
     // Cập nhật og:url + og:title + og:description + og:image + twitter per-route
+    const BASE = "https://k-homedongnai.com.vn";
     const canonicalUrl = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
     const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
     if (ogUrl) ogUrl.content = canonicalUrl;

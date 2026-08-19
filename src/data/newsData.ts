@@ -2,6 +2,219 @@ import type { News } from '../types';
 
 export const newsData: News[] = [
   {
+    id: "n71",
+    slug: "tien-do-xay-dung-k-home-cityview-cap-nhat-moi-nhat-2026",
+    title: "Tiến Độ Xây Dựng K-Home CityView - Cập Nhật Video Mới Nhất Tháng 8/2026",
+    date: "2026-08-19",
+    excerpt: "Video tiến độ xây dựng K-Home CityView (k-home city view) Hố Nai Biên Hòa cập nhật mới nhất tháng 8/2026. Theo dõi những thay đổi lớn trong phần nền móng, cột dầm, sàn, và kết cấu chính của dự án NOXH quy mô 1.000+ căn hộ. Đảm bảo tính minh bạch, lập kế hoạch tài chính chính xác và kiểm tra chất lượng thi công từ video chi tiết.",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785515199/news11/3.jpg",
+    category: "Tiến Độ Dự Án",
+    project: "cityview",
+    content: `> **Cập nhật tháng 8/2026:** Video tiến độ dưới đây được ghi hình vào tháng 8/2026, phản ánh tình hình xây dựng tại thời điểm hiện tại của K-Home CityView / k-home city view. Tiến độ có thể thay đổi theo lịch trình chính thức từ chủ đầu tư Kim Oanh Group. Khách hàng nên liên hệ trực tiếp để được cập nhật mới nhất.
+
+## Video Tiến Độ Xây Dựng K-Home CityView Tháng 8/2026 - Kết Cấu Chính Hoàn Tất
+
+Dưới đây là video tiến độ xây dựng K-Home CityView (k-home city view) - dự án nhà ở xã hội Biên Hòa được phát triển bởi **Kim Oanh Group**, một trong những nhà phát triển bất động sản uy tín nhất tại Đông Nam Bộ. Video này ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu các công tác hoàn thiện bên trong các căn hộ.
+
+---VIDEO---https://res.cloudinary.com/dthv0nsq/video/upload/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4|Tiến Độ Xây Dựng K-Home CityView - Cập Nhật Tháng 8/2026 - Kết Cấu Chính Tiến Hành
+
+## K-Home CityView Là Dự Án Gì? Tổng Quan Về Quy Mô Và Vị Trí
+
+**K-Home CityView** (hay **k-home city view**) là dự án [nhà ở xã hội Biên Hòa](/k-home-cityview-ho-nai) nằm tại khu vực **Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai**. Đây là một trong những dự án NOXH (Nhà Ở Xã Hội) lớn nhất tại Đông Nam Bộ, với quy mô hơn **1.000 căn hộ** các loại 1 phòng ngủ (1PN), 2 phòng ngủ (2PN), và 3 phòng ngủ (3PN).
+
+Chủ đầu tư **Kim Oanh Group** đã đầu tư tổng vốn lớn vào dự án này, với mục tiêu cung cấp nhà ở giá rẻ, chất lượng cao cho những gia đình trẻ, người lao động, và nhân viên văn phòng. Vị trí K-Home CityView có lợi thế chiến lược gần **khu công nghiệp AMATA Biên Hòa**, **trung tâm thành phố Biên Hòa**, các trường học, trạm y tế, chợ, siêu thị và **ga tàu điện** (nếu có quy hoạch).
+
+## Tiến Độ Xây Dựng K-Home CityView: Các Giai Đoạn Chính Và Chi Tiết Kỹ Thuật
+
+### 1. Giai Đoạn Chuẩn Bị Nền Móng (Hoàn Tất)
+
+Từ khi khởi công, **K-Home CityView / k-home city view** đã hoàn tất các công tác chuẩn bị nền móng:
+
+- **Lấy nền, san lấp mặt bằng:** Điều chỉnh độ cao và bằng phẳng mặt bằng công trình để chuẩn bị lắp đặt hệ thống cọc. Công tác này cốt yếu vì nếu mặt bằng không bằng phẳng, sẽ gây lún sau này
+- **Khoan cọc và nhồi cọc:** Nhồi những cọc sâu vào lòng đất (sâu 20-30m hoặc hơn) để tạo nền chắc chắn chịu được trọng lượng hàng chục tầng nhà. Mỗi cọc phải chịu tải trọng hàng chục tấn
+- **Tạo gối móng:** Đúc các khối bê tông lớn kết nối các đầu cọc, tạo bệ chắc cho toàn bộ kết cấu công trình. Đây là "xương sống" của dự án
+- **Khiêm thang các khối nền:** Chuẩn bị sàn cho các tầng hầm (nếu có) hoặc tầng 1 của các tòa nhà
+
+Công tác nền móng cực kỳ quan trọng — nếu làm sai, sẽ dẫn đến việc công trình bị lún, nứt, thấm dột hoặc thậm chí sập. Kim Oanh Group đã sử dụng công nghệ cọc hiện đại và kiểm soát chất lượng chặt chẽ.
+
+### 2. Giai Đoạn Kết Cấu Chính (Đang Tiến Hành - Tháng 8/2026)
+
+Giai đoạn kết cấu chính là lúc các khối tòa nhà lên cao, hình thành. Đây là giai đoạn "xương dựa" — khi nó hoàn thành, toàn bộ công trình đã có "bộ khung":
+
+- **Dựng khung cột dầm:** Lắp đặt các cột bê tông dọc (chiều cao từ 3-5 mét/tầng) và các dầm ngang kết nối chúng. Cột và dầm được thiết kế chịu được tải trọng của tất cả các tầng trên. Các cột có đường kính từ 400-600mm, đủ để chịu trọng lượng vài nghìn tấn
+- **Buộc thép:** Trước khi đổ bê tông, các công nhân buộc sắt thép theo thiết kế kỹ thuật để tăng độ bền uốn của các cột dầm. Bê tông chỉ chịu được nén, không chịu được kéo; thép chịu được kéo, giúp bê tông chống lại lực kéo
+- **Đổ bê tông:** Dùng máy bơm bê tông hoặc tời để đổ bê tông vào khuôn, chờ 28 ngày cho bê tông đạt độ cứng chuẩn. Mỗi lần đổ bê tông phải liên tục, không được gián đoạn
+- **Lắp khuôn sàn & đổ sàn nền:** Sau khi cột dầm cứng, lắp hệ thống khuôn tạm, buộc thép, đổ bê tông tạo nên sàn cứng chắn phân tách các tầng
+- **An toàn lao động:** Công trình phải tuân thủ tiêu chuẩn an toàn: xây dựng hàng rào an toàn, lắp lưới bảo vệ, đảm bảo công nhân đeo dây an toàn, mũ bảo hiểm, áo phản quang
+
+Từ video tiến độ K-Home CityView tháng 8/2026, có thể thấy:
+- Hầu hết kết cấu chính của các khối tòa nhà đã hoàn tất hoặc sắp hoàn tất
+- Các khối tòa có cao độ từ 10-15 tầng, với lợi thế lấy sáng tốt
+- Hệ thống sàn từng tầng đã được hoàn tất, sàn trơn, góc cạnh sắc nét, cho thấy chất lượng thi công cao
+
+### 3. Giai Đoạn Hoàn Thiện Hạ Tầng (Quý 3-4/2026)
+
+Sau khi kết cấu chính cứng rắn, công trình bắt đầu các công tác hoàn thiện:
+
+- **Lắp ống điện:** Lắp hệ thống ống PVC và dây điện chạy trong khuôn ống, chuẩn bị cho việc nối điện. Phải đảm bảo các ống không bị áp lực lớn, cách điện tốt
+- **Lắp ống nước:** Lắp hệ thống ống nước cấp (từ bồn chứa xuống các căn) và ống thoát nước (từ các căn ra ngoài). Phải đảm bảo độ dốc đúng, không bị tắc
+- **Lắp ống điều hòa:** Lắp hệ thống ống gió, ống cấp nước lạnh/nóng cho các hệ thống điều hòa chung cư
+- **Hệ thống thông gió:** Lắp các lỗi thông gió ở những vị trí chiến lược để đảm bảo không khí lưu thông tốt, tránh tia mại, ẩm mốc
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785512645/news10/4-2.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785512643/news10/4-1.jpg|Hình ảnh dự án K-Home CityView / k-home city view - Kết cấu chính và tiện ích nội khu
+
+### 4. Giai Đoạn Lắp Đặt & Hoàn Thiện Chi Tiết (Quý 1-2/2027)
+
+- **Sơn tường, trần:** Sơn bên ngoài bằng sơn chống thấm chuyên dụng, bên trong bằng sơn nội thất. Màu sắc được chọn để phù hợp với thiết kế kiến trúc
+- **Lát gạch, ốp:** Lát gạch sàn chất lượng cao, ốp tường trong các căn hộ, sảnh chung cư, lối cầu thang
+- **Lắp cửa, khung sắt:** Lắp cửa gỗ/nhôm các căn hộ, cửa chính tòa nhà, cửa kính mặt tiền. Cửa phải chắc chắn, không kêu, kín gió
+- **Lắp bồn cầu, vòi nước, tủ bếp:** Lắp các thiết bị vệ sinh, vòi nước, bồn rửa, tủ bếp. Tất cả phải hoạt động tốt trước khi bàn giao
+- **Lắp điện chiếu sáng:** Lắp các bóng đèn, công tắc, ổ cắm điện cho các căn hộ
+- **Kiểm tra bàn giao:** Kiểm tra kỹ lưỡng từng căn hộ, từng hạng mục để đảm bảo chất lượng trước khi bàn giao cho khách hàng
+
+## Lịch Trình Dự Kiến Bàn Giao K-Home CityView / k-home city view
+
+| Giai Đoạn | Thời Gian | Nội Dung |
+|---|---|---|
+| Nền móng & kết cấu chính | Tháng 1-8/2026 | Hoàn tất kết cấu chính, bắt đầu hoàn thiện |
+| Hoàn thiện cơ bản | Quý 3-4/2026 | Hoàn tất ống điện, nước, thông gió các tòa nhà |
+| Hoàn thiện chi tiết | Quý 1-2/2027 | Sơn, lát gạch, lắp cửa, thiết bị vệ sinh |
+| Kiểm tra & bàn giao | Quý 2-3/2027 | Kiểm tra cuối cùng, bàn giao căn hộ tầng thấp |
+| Bàn giao toàn bộ | Cuối năm 2027 | Hoàn tất bàn giao tất cả căn hộ dự án |
+
+**Lưu ý:** Lịch trình trên là dự kiến và có thể thay đổi tùy theo điều kiện thực tế như thời tiết, khả năng cung cấp vật liệu, hoặc những yêu cầu điều chỉnh từ cơ quan chức năng.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785515199/news11/3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785515197/news11/1.webp|Tiến độ xây dựng K-Home CityView / k-home city view - Công trường và cảnh quan
+
+## Tại Sao Nên Theo Dõi Tiến Độ Xây Dựng K-Home CityView?
+
+Việc cập nhật thường xuyên tiến độ xây dựng K-Home CityView / k-home city view giúp khách hàng có nhiều lợi ích:
+
+### 1. Đảm Bảo Tính Minh Bạch Trong Quá Trình Thi Công
+
+Khi theo dõi video tiến độ hàng tháng, bạn có thể:
+- Biết chính xác công trình đang ở giai đoạn nào — nền móng, kết cấu chính, hay hoàn thiện
+- Xác minh rằng chủ đầu tư đang thực hiện đúng lịch trình đã cam kết
+- Tránh bị "lừa dối" về tiến độ hoặc bị đảo lại thứ tự bàn giao
+
+Một số dự án không minh bạch, không cập nhật tiến độ, khiến khách hàng không biết mình đã đầu tư vào một "hộp đen" nào. Với K-Home CityView của Kim Oanh Group, video tiến độ thường xuyên là bằng chứng về sự cam kết và trách nhiệm của chủ đầu tư.
+
+### 2. Lập Kế Hoạch Tài Chính Chính Xác
+
+Khi biết rõ khoảng thời gian dự kiến nhận nhà:
+- Bạn có thể chuẩn bị tài chính sẵn sàng cho lúc bàn giao (chỉ còn phải trả lần cuối, chi phí hoàn thiện, phí bảo trì, v.v.)
+- Lập kế hoạch sắp xếp công việc, gia đình cho thích hợp
+- Nếu mua để cho thuê, bạn có thể bắt đầu tiếp thị căn hộ trước khi nhận, tìm khách hàng sớm để căn hộ "lên sàn" nhanh
+
+Việc này rất quan trọng vì chi phí tài chính hàng tháng cộng dồn lên có thể lớn lắm nếu không lập kế hoạch sẵn.
+
+### 3. Kiểm Tra Chất Lượng Thi Công Từ Video
+
+Từ video tiến độ, bạn có thể nhìn ra:
+
+**Chất lượng bê tông:**
+- Bề mặt bê tông phải nhẵn, không có vết nứt lớn, không có lỗ rỗng hay "lỗ chim"
+- Nếu có nứt dọc theo các mối nối sàn, đó là dấu hiệu của việc thi công không kỹ hoặc không chờ đủ thời gian để bê tông cứng
+- Chất lượng tốt sẽ giảm nguy các sập nhà, thấm dột hoặc bị nứt sau này
+
+**Độ phẳng của sàn:**
+- Sàn phải phẳng, không bị lún, không bị vòng (cong) ở giữa
+- Nếu sàn bị lún, nước mưa hoặc nước sử dụng có thể đứng lại, gây ẩm mốc, kích thích phát triển mốc, nấm
+
+**Khoảng cách giữa các tầng:**
+- Tầng cao phải đúng thiết kế, đủ để con người đứng thẳng, di chuyển dễ dàng
+- Nếu sàn bị lún hoặc cột bị nghiêng, tầng có thể bị thấp hơn dự kiến
+
+**Hệ thống ống & cốp pha:**
+- Các ống nước, điện, thông gió phải được lắp đúng vị trí, không nằm lẫn lộn
+- Các cốp pha (mối nối của các mảnh bê tông) phải cạnh sắc, không bị xô lệch
+
+Từ video K-Home CityView tháng 8/2026, có thể thấy chất lượng bê tông tốt, sàn phẳng, khoảng cách tầng đúng — đây là dấu hiệu tích cực cho những khách hàng quan tâm chất lượng xây dựng.
+
+### 4. Tăng Niềm Tin Đầu Tư Và Yên Tâm Tâm Lý
+
+Khi thấy công trình đang phát triển từng ngày, bạn sẽ:
+- Cảm thấy yên tâm hơn về quyết định đầu tư của mình
+- Có hứng khởi khi chứng kiến tòa nhà mơ ước của mình được xây dựng trước mắt
+- Chia sẻ niềm vui với gia đình, bạn bè khi chỉ cho họ video tiến độ
+
+Đây là một cách để kiểm định lại quyết định mua nhà của bạn, đặc biệt nếu mục đích là ở thực hay cho con cái ở trong tương lai.
+
+## Những Lưu Ý Khi Theo Dõi Video Tiến Độ K-Home CityView
+
+### 1. Điều Kiện Thời Tiết Có Ảnh Hưởng Lớn
+
+- **Mưa:** Khi mưa, công trường thường dừng lại hoặc giảm tốc độ để tránh bê tông bị rửa trôi trước khi cứng
+- **Nắng:** Nắng gắt có thể khiến bê tông mất nước quá nhanh, gây nứt (cần phun nước định kỳ để bê tông cứng từ từ)
+- **Gió lớn:** Gió có thể làm các hạng mục tạm thời như khuôn, giàn giáo bị sập
+
+### 2. Tuân Thủ Quy Định An Toàn Lao Động
+
+- Công trường phải có các biện pháp an toàn: lưới bảo vệ, dây an toàn, hàng rào, biển cảnh báo
+- Công nhân phải đeo mũ bảo hiểm, áo phản quang, giày bảo vệ
+- Nếu không tuân thủ, cơ quan chức năng có thể phạt hoặc yêu cầu dừng thi công
+
+### 3. Khác Biệt Giữa Các Khối Tòa Nhà
+
+- Các khối tòa nhà khác nhau có thể bắt đầu và hoàn tất ở thời điểm khác nhau
+- Khối tòa ở vị trí trung tâm hoặc dễ tiếp cận có thể được thi công nhanh hơn khối tòa ở vị trí xa hơn
+- Điều này ảnh hưởng đến lịch trình bàn giao — khách hàng trong khối tòa hoàn tất sớm sẽ được bàn giao sớm
+
+Xem thêm [mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong) để hiểu rõ hơn về thiết kế các khối tòa nhà.
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785427983/news8/6.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785427980/news8/3.jpg|Cảnh quan tiện ích K-Home CityView / K-Home City View
+
+## Tương Lai Của K-Home CityView: Vị Trí Chiến Lược Và Tiềm Năng Đầu Tư
+
+Khi hoàn thành, K-Home CityView / k-home city view sẽ trở thành một trong những dự án nhà ở xã hội lớn nhất và đáng chú ý nhất tại Biên Hòa, Đồng Nai, với những lợi thế:
+
+### Quy Mô Và Cơ Sở Vật Chất
+
+- **Hơn 1.000 căn hộ** các loại 1PN, 2PN, 3PN với diện tích khác nhau (từ 40m² đến 90m²)
+- **Hệ thống tiện ích nội khu hoàn chỉnh:** công viên cây xanh, trường mầm non, khu vui chơi trẻ em, trung tâm thương mại nhỏ, quán cà phê, cửa hàng tiện lợi
+- **Hệ thống an ninh & giao thông:** camera giám sát 24/7, bảo vệ tại cổng, hệ thống cắn thẻ/thẻ từ, đậu xe tự động nếu có, đường nội khu rộng rãi
+
+### Vị Trí Chiến Lược
+
+- **Gần khu công nghiệp AMATA Biên Hòa:** Hàng chục nghìn công nhân, nhân viên làm việc tại đây. K-Home CityView chỉ cách 5-10 km, 15-20 phút lái xe, rất thuận tiện
+- **Gần trung tâm thành phố Biên Hòa:** Có quyền truy cập dễ dàng đến siêu thị, bệnh viện, trường học, văn phòng hành chính
+- **Gần các tuyến đường chính:** Đường Quốc lộ 1, đường vào sân bay Tân Sơn Nhất, đường cao tốc Biên Hòa - Vũng Tàu (nếu được xây dựng)
+- **Gần ga tàu điện:** Nếu có dự án ga tàu điện ở Biên Hòa, K-Home CityView sẽ là vị trí rất lợi thế
+
+### Giá Bán Phù Hợp Với Khả Năng Tài Chính
+
+- **Giá căn 1PN:** Từ 0,9 - 1,2 tỷ đồng (NOXH giá rẻ hơn nhà thị trường 30-40%)
+- **Giá căn 2PN:** Từ 1,3 - 1,6 tỷ đồng
+- **Hỗ trợ vay:** 75% từ ngân hàng với lãi suất NOXH ưu đãi (5-6%/năm trong 2-3 năm đầu)
+- **Thanh toán linh hoạt:** Theo tiến độ thi công (25% khi ký, 25% ở giữa, 25% ở giai đoạn cuối, 25% khi nhận nhà)
+
+Xem thêm [gia-ban-k-home-cityview-2026-can-bao-nhieu-tien](/tin-tuc/gia-ban-k-home-cityview-2026-can-bao-nhieu-tien) và [chinh-sach-thanh-toan-k-home-cityview-2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026) để biết chi tiết giá và chính sách.
+
+### Tiềm Năng Đầu Tư Và Cho Thuê
+
+- **Cho ở thực:** Nhà ở xã hội, giá phải chăng, tiện ích đầy đủ, an ninh tốt — rất phù hợp cho các gia đình trẻ, nhân viên văn phòng, công nhân
+- **Cho thuê:** Với 1.000+ căn hộ gần khu công nghiệp, K-Home CityView có tiềm năng cho thuê cao. Giá thuê dự kiến từ 3-5 triệu đồng/tháng (tùy diện tích), giúp khách hàng có thu nhập ổn định từ việc cho thuê
+
+Một số khách hàng có kinh tế tốt hơn mua K-Home CityView, ở một căn và cho thuê các căn khác để có thu nhập thụ động. Đây là cách tích lũy tài sản dài hạn.
+
+## Kết Luận: Tại Sao K-Home CityView Đáng Chú Ý?
+
+Video tiến độ xây dựng K-Home CityView (k-home city view) cập nhật tháng 8/2026 cho thấy dự án này đang tiến hành **nhanh chóng, đúng lịch trình** và **chất lượng thi công cao**. Khách hàng có thể yên tâm về:
+
+1. **Tính minh bạch:** Kim Oanh Group thường xuyên cập nhật video tiến độ, không ẩu, không giấu
+2. **Chất lượng xây dựng:** Kết cấu bê tông chắc chắn, sàn phẳng, không có dấu hiệu hư hỏng
+3. **Lịch trình bàn giao:** Dự kiến bàn giao từ giữa 2027, tức là khách hàng chỉ cần chờ khoảng 6-12 tháng nữa để nhận nhà
+4. **Vị trí và giá trị:** Vị trí gần khu công nghiệp, tiện ích đầy đủ, giá phải chăng — rất phù hợp mua ở thực hoặc đầu tư cho thuê
+
+Nếu bạn đang tìm kiếm một căn nhà ở xã hội chất lượng, giá rẻ, vị trí tốt tại Biên Hòa, **K-Home CityView là lựa chọn đáng xem xét**.
+
+Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu), [tại sao nên chọn K-Home CityView để sống và đầu tư?](/tin-tuc/tai-sao-nen-chon-k-home-cityview-de-song-va-dau-tu), và [những tiện ích nội khu K-Home CityView có gì đặc biệt?](/tin-tuc/nhung-tien-ich-noi-khu-k-home-cityview-co-gi-dac-biet).
+
+**Liên hệ Sales Gallery K-Home CityView tại số 0937.587.438 để xem thêm video tiến độ mới nhất, tham quan nhà mẫu, tư vấn chi tiết về giá cả, chính sách thanh toán, điều kiện mua và các câu hỏi khác của bạn. Chúng tôi sẵn sàng hỗ trợ bạn 24/7.**
+
+---RELATED---k-home-cityview-du-kien-ban-giao-khi-nao|K-Home CityView Dự Kiến Bàn Giao Khi Nào?;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?;nhung-tien-ich-noi-khu-k-home-cityview-co-gi-dac-biet|Những Tiện Ích Nội Khu K-Home CityView Có Gì Đặc Biệt?`
+  },,
+  {
     id: "n60",
     slug: "so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre",
     title: "So Sánh Căn 1 Phòng Ngủ Và 2 Phòng Ngủ K-Home CityView Cho Gia Đình Trẻ",

@@ -56,6 +56,9 @@ export default function RelatedArticles({
         const keywords = projectNameMap[projectSlug] || [];
 
         const related = allArticles.filter((article) => {
+          // Skip null or undefined articles
+          if (!article) return false;
+
           // Check if article has projectSlugs array that includes current project
           if (
             article.projectSlugs &&
@@ -67,11 +70,11 @@ export default function RelatedArticles({
 
           // Fallback: check if title or description contains project keywords
           const content = (
-            article.title +
+            (article.title || "") +
             " " +
-            article.description +
+            (article.description || "") +
             " " +
-            article.category
+            (article.category || "")
           ).toLowerCase();
           return keywords.some((kw) => content.includes(kw.toLowerCase()));
         });
