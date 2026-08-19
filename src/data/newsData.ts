@@ -208,11 +208,11 @@ Video tiến độ xây dựng K-Home CityView (k-home city view) cập nhật t
 
 Nếu bạn đang tìm kiếm một căn nhà ở xã hội chất lượng, giá rẻ, vị trí tốt tại Biên Hòa, **K-Home CityView là lựa chọn đáng xem xét**.
 
-Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu), [tại sao nên chọn K-Home CityView để sống và đầu tư?](/tin-tuc/tai-sao-nen-chon-k-home-cityview-de-song-va-dau-tu), và [những tiện ích nội khu K-Home CityView có gì đặc biệt?](/tin-tuc/nhung-tien-ich-noi-khu-k-home-cityview-co-gi-dac-biet).
+Xem thêm [K-Home CityView là dự án gì? Ai là chủ đầu tư?](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu), [tại sao nên chọn K-Home CityView để sống và đầu tư?](/tin-tuc/k-home-cityview-that-su-dang-mua-khong-uu-va-nhuoc-diem), và [những tiện ích nội khu K-Home CityView có gì đặc biệt?](/tin-tuc/tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong).
 
 **Liên hệ Sales Gallery K-Home CityView tại số 0937.587.438 để xem thêm video tiến độ mới nhất, tham quan nhà mẫu, tư vấn chi tiết về giá cả, chính sách thanh toán, điều kiện mua và các câu hỏi khác của bạn. Chúng tôi sẵn sàng hỗ trợ bạn 24/7.**
 
----RELATED---k-home-cityview-du-kien-ban-giao-khi-nao|K-Home CityView Dự Kiến Bàn Giao Khi Nào?;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?;nhung-tien-ich-noi-khu-k-home-cityview-co-gi-dac-biet|Những Tiện Ích Nội Khu K-Home CityView Có Gì Đặc Biệt?`
+---RELATED---k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028|K-Home CityView Khi Nào Bàn Giao? Cập Nhật Mốc Tiến Độ 2027–2028;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?;tien-ich-xung-quanh-k-home-cityview-co-du-cho-cuoc-song-hang-ngay-khong|Tiện Ích Xung Quanh K-Home CityView Có Đủ Cho Cuộc Sống Hằng Ngày Không?`
   },
   {
     id: "n60",
