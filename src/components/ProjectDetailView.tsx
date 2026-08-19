@@ -745,7 +745,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     }
   };
 
-  // Track active section on scroll using scroll event
+  // Track active section on scroll
   useEffect(() => {
     if (!slug || !["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
     
@@ -753,63 +753,60 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "video-tien-do", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "tien-ich", "phap-ly", "chu-dau-tu", "lien-he", "faq"];
     
-    let lastUpdate = 0;
-    const THROTTLE_MS = 50;
+    let scrollTimeout: NodeJS.Timeout | null = null;
     
     const handleScroll = () => {
-      const now = Date.now();
-      if (now - lastUpdate < THROTTLE_MS) return;
-      lastUpdate = now;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
       
-      const headerHeight = 90;
-      let selected = ids[0];
-      let selectedDistance = Infinity;
-      
-      // Go through each section and find the one currently in viewport at top
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (!el) continue;
+      scrollTimeout = setTimeout(() => {
+        // Find which section is closest to top of viewport
+        let bestSection = ids[0];
+        let bestDistance = Infinity;
         
-        const rect = el.getBoundingClientRect();
-        
-        // Skip sections way below viewport
-        if (rect.top > window.innerHeight + 100) continue;
-        
-        // Skip sections completely above viewport
-        if (rect.bottom < 0) continue;
-        
-        // Prefer sections that are entering/visible in viewport
-        // Score based on how close top of section is to viewport top
-        let score = 0;
-        
-        if (rect.top >= 0) {
-          // Section top is in viewport - this is ideal
-          // Lower score = better. Score = distance from top of viewport
-          score = rect.top;
-        } else if (rect.bottom > headerHeight) {
-          // Section is partially above viewport but still somewhat visible
-          // High penalty score to deprioritize
-          score = 5000 - rect.bottom;
-        } else {
-          // Section is completely above viewport
-          continue;
+        for (const id of ids) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          
+          const rect = el.getBoundingClientRect();
+          
+          // Only consider sections that are visible or about to be visible
+          if (rect.top > window.innerHeight) continue; // Way below
+          if (rect.bottom < -100) continue; // Way above
+          
+          // Calculate how far this section's top is from the top of viewport
+          // Prefer sections that are entering viewport from top
+          let distance = rect.top;
+          
+          // If section is above viewport, penalize it heavily
+          if (distance < 0) {
+            // Only consider if section extends into viewport
+            if (rect.bottom >= 150) { // At least 150px visible
+              distance = 10000 + distance; // Large penalty + how far above
+            } else {
+              continue;
+            }
+          }
+          
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            bestSection = id;
+          }
         }
         
-        if (score < selectedDistance) {
-          selectedDistance = score;
-          selected = id;
-        }
-      }
-      
-      setActiveSection(selected);
+        setActiveSection(bestSection);
+      }, 10);
     };
     
+    // Use passive listener for better scroll performance
     window.addEventListener("scroll", handleScroll, { passive: true });
     
-    // Trigger once on mount
+    // Set initial state
     handleScroll();
     
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
   }, [slug]);
 
   const openLightbox = (index: number) => {
