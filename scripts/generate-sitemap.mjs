@@ -71,11 +71,11 @@ const STATIC_URLS = [
 ];
 
 const UNIT_URLS = [
-  ...["can-ho-1-phong-ngu-a","can-ho-1-phong-ngu-b","can-ho-2-phong-ngu","can-ho-3-phong-ngu"]
+  ...["can-ho-1-phong-ngu-a","can-ho-1-phong-ngu-b","can-ho-2-phong-ngu-cityview","can-ho-3-phong-ngu"]
     .map(u => ({ loc: `/k-home-cityview-ho-nai/${u}`,   priority: "0.8",  changefreq: "weekly", lastmod: TODAY })),
   ...["can-ho-studio","can-ho-1-phong-ngu-a","can-ho-1-phong-ngu-b","can-ho-2-phong-ngu"]
     .map(u => ({ loc: `/k-home-midtown-trang-bom/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
-  ...["can-ho-studio","can-ho-1-phong-ngu","can-ho-2-phong-ngu","can-ho-2-phong-ngu-b"]
+  ...["can-ho-studio","can-ho-1-phong-ngu","can-ho-2-phong-ngu","can-ho-2-phong-ngu-b-avenue"]
     .map(u => ({ loc: `/k-home-avenue-nhon-trach/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
 ];
 

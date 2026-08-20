@@ -199,9 +199,9 @@ export default function App() {
         const oldSlug = unitMatchOldCan[2];
         const slugMap: Record<string, string> = {
           "can-1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-b": "can-ho-1-phong-ngu-b",
-          "can-2pn":   "can-ho-2-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
+          "can-2pn":   "can-ho-2-phong-ngu-cityview",   "can-3pn":   "can-ho-3-phong-ngu",
           "can-studio":"can-ho-studio",         "can-1pn":   "can-ho-1-phong-ngu",
-          "can-2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-lon":"can-ho-2-phong-ngu-lon",
+          "can-2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-lon":"can-ho-2-phong-ngu-b-avenue",
         };
         navigateTo(`/${unitMatchOldCan[1]}/${slugMap[oldSlug] || oldSlug}`);
         return null;
@@ -210,17 +210,40 @@ export default function App() {
 
     const unitMatchOld = path.match(/^\/projects\/([^/]+)\/([^/]+)$/);
     if (unitMatchOld) {
-      const slugMap: Record<string, string> = {
-        "1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-a": "can-ho-1-phong-ngu-a",
-        "1pn-b": "can-ho-1-phong-ngu-b", "can-1pn-b": "can-ho-1-phong-ngu-b",
-        "2pn":   "can-ho-2-phong-ngu",   "can-2pn":   "can-ho-2-phong-ngu",
-        "3pn":   "can-ho-3-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
-        "studio":"can-ho-studio",         "can-studio":"can-ho-studio",
-        "1pn":   "can-ho-1-phong-ngu",   "can-1pn":   "can-ho-1-phong-ngu",
-        "2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-nho":"can-ho-2-phong-ngu-nho",
-        "2pn-lon":"can-ho-2-phong-ngu-lon","can-2pn-lon":"can-ho-2-phong-ngu-lon",
-      };
-      navigateTo(`/${unitMatchOld[1]}/${slugMap[unitMatchOld[2]] || `can-ho-${unitMatchOld[2]}`}`);
+      // CityView specific
+      if (unitMatchOld[1] === "k-home-cityview-ho-nai") {
+        const cityviewMap: Record<string, string> = {
+          "1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-a": "can-ho-1-phong-ngu-a",
+          "1pn-b": "can-ho-1-phong-ngu-b", "can-1pn-b": "can-ho-1-phong-ngu-b",
+          "2pn":   "can-ho-2-phong-ngu-cityview",   "can-2pn":   "can-ho-2-phong-ngu-cityview",
+          "3pn":   "can-ho-3-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
+        };
+        navigateTo(`/${unitMatchOld[1]}/${cityviewMap[unitMatchOld[2]] || `can-ho-${unitMatchOld[2]}`}`);
+      }
+      // Avenue specific
+      else if (unitMatchOld[1] === "k-home-avenue-nhon-trach") {
+        const avenueMap: Record<string, string> = {
+          "studio": "can-ho-studio", "can-studio": "can-ho-studio",
+          "1pn": "can-ho-1-phong-ngu", "can-1pn": "can-ho-1-phong-ngu",
+          "2pn-nho": "can-ho-2-phong-ngu-nho", "can-2pn-nho": "can-ho-2-phong-ngu-nho",
+          "2pn-lon": "can-ho-2-phong-ngu-b-avenue", "can-2pn-lon": "can-ho-2-phong-ngu-b-avenue",
+        };
+        navigateTo(`/${unitMatchOld[1]}/${avenueMap[unitMatchOld[2]] || `can-ho-${unitMatchOld[2]}`}`);
+      }
+      // Midtown and generic
+      else {
+        const slugMap: Record<string, string> = {
+          "1pn-a": "can-ho-1-phong-ngu-a", "can-1pn-a": "can-ho-1-phong-ngu-a",
+          "1pn-b": "can-ho-1-phong-ngu-b", "can-1pn-b": "can-ho-1-phong-ngu-b",
+          "2pn":   "can-ho-2-phong-ngu",   "can-2pn":   "can-ho-2-phong-ngu",
+          "3pn":   "can-ho-3-phong-ngu",   "can-3pn":   "can-ho-3-phong-ngu",
+          "studio":"can-ho-studio",         "can-studio":"can-ho-studio",
+          "1pn":   "can-ho-1-phong-ngu",   "can-1pn":   "can-ho-1-phong-ngu",
+          "2pn-nho":"can-ho-2-phong-ngu-nho","can-2pn-nho":"can-ho-2-phong-ngu-nho",
+          "2pn-lon":"can-ho-2-phong-ngu-lon","can-2pn-lon":"can-ho-2-phong-ngu-lon",
+        };
+        navigateTo(`/${unitMatchOld[1]}/${slugMap[unitMatchOld[2]] || `can-ho-${unitMatchOld[2]}`}`);
+      }
       return null;
     }
 

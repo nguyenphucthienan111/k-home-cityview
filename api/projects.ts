@@ -73,7 +73,7 @@ const DATA = [
           "/k-home cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-5.jpg",
           "/k-home cityview/Can-1PN-B/khome-cityview-nha-mau-can-ho-1PN-7.jpg",
         ]},
-      { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ", bedrooms: 2, bathrooms: 2, constructionArea: "70,4m²", usableArea: "63,2m²", price: "1,50 tỷ – 1,70 tỷ/căn", priceNumber: 1500, furnished: true,
+      { slug: "can-ho-2-phong-ngu-cityview", name: "Căn 2 Phòng Ngủ", bedrooms: 2, bathrooms: 2, constructionArea: "70,4m²", usableArea: "63,2m²", price: "1,50 tỷ – 1,70 tỷ/căn", priceNumber: 1500, furnished: true,
         description: "**Căn hộ 2 Phòng Ngủ** là lựa chọn phổ biến nhất tại K-Home CityView, phù hợp cho gia đình 3–4 thành viên với nhu cầu có phòng ngủ riêng cho con cái và không gian sinh hoạt chung thoải mái.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **70,4m²** và diện tích sử dụng **63,2m²** — đây là diện tích lý tưởng cho gia đình nhỏ. Bố cục gồm **2 phòng ngủ** đầy đủ cửa sổ đón sáng, **2 nhà vệ sinh** riêng biệt, phòng khách – bếp rộng và ban công thông thoáng.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp theo tiêu chuẩn dự án. Toàn bộ các phòng đều được trang bị nội thất cố định chất lượng, sẵn sàng để ở ngay sau khi nhận bàn giao — ngoại trừ thiết bị điện tử.\n\n**Giá bán & Chính sách**\n\nMức giá **1,50 tỷ – 1,60 tỷ/căn** là mức giá NOXH cạnh tranh nhất thị trường Biên Hòa cho căn 2 phòng ngủ. Người đủ điều kiện mua NOXH được hưởng lãi suất vay ưu đãi từ **Ngân hàng Vietinbank, BIDV, Vietcombank, Agribank** theo chính sách nhà ở xã hội quốc gia.",
         images: [
           "/k-home cityview/Can-2PN/2pn-noxh-k-home-city-view-2048x1536.jpg",
@@ -250,7 +250,7 @@ const DATA = [
         "/k-home avenue/Can-2PN-nho/dsc01426.webp",
         "/k-home avenue/Can-2PN-nho/dsc01440.webp",
       ]},
-      { slug: "can-ho-2-phong-ngu-b",    name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
+      { slug: "can-ho-2-phong-ngu-b-avenue",    name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
         description: "**Căn 2 Phòng Ngủ (Lớn) K-Home Avenue** là loại căn cao cấp nhất trong rổ hàng NOXH của dự án, dành cho gia đình cần không gian sinh hoạt rộng rãi hơn với diện tích phòng ngủ master lớn và phòng khách thoải mái hơn phiên bản nhỏ.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **69,5m²** và diện tích sử dụng **62,2m²** — diện tích vượt trội so với 2PN (Nhỏ) được phân bổ vào phòng ngủ master rộng hơn (đủ cho giường King size), phòng khách có diện tích bố trí bàn ăn 6 người và góc làm việc riêng. **2 nhà vệ sinh** với master bathroom riêng biệt hoàn toàn.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp nhất trong hệ thống K-Home Avenue, phòng ngủ master có tủ âm tường walk-in đặc biệt rộng rãi. Toàn bộ nội thất cố định được thiết kế đồng bộ theo tiêu chuẩn Singapore. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **1,40 tỷ đến 1,47 tỷ/căn** — là mức giá đỉnh trong rổ hàng NOXH K-Home Avenue nhưng vẫn thấp hơn rất nhiều so với căn hộ thương mại cùng diện tích. Vị trí Nhơn Trạch đang trong giai đoạn bùng nổ hạ tầng, loại căn lớn nhất thường có khả năng tăng giá mạnh nhất trong dài hạn.",
         images: [
         "/k-home avenue/Can-2PN-lon/layout-can-ho-khome-avenue-2PNB.jpg",

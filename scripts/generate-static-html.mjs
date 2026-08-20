@@ -35,7 +35,7 @@ const STATIC_ROUTES = [
     description: "Căn hộ 1 phòng ngủ + B tại K-Home CityView Hố Nai, diện tích 62,4m², 2 nhà vệ sinh, giá từ 1,2 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
-    dir: "k-home-cityview-ho-nai/can-ho-2-phong-ngu",
+    dir: "k-home-cityview-ho-nai/can-ho-2-phong-ngu-cityview",
     title: "Căn Hộ 2 Phòng Ngủ K-Home CityView | 70,4m² | Giá từ 1,5 Tỷ",
     description: "Căn hộ 2 phòng ngủ tại K-Home CityView Hố Nai, diện tích 70,4m², 2 nhà vệ sinh, giá từ 1,5 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
@@ -92,7 +92,7 @@ const STATIC_ROUTES = [
     description: "Căn hộ 2 phòng ngủ tại K-Home Avenue Nhơn Trạch, diện tích 65,7m², giá từ 1,23 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
-    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b",
+    dir: "k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b-avenue",
     title: "Căn Hộ 2 Phòng Ngủ Lớn K-Home Avenue Nhơn Trạch | 69,5m² | Giá từ 1,4 Tỷ",
     description: "Căn hộ 2 phòng ngủ lớn tại K-Home Avenue Nhơn Trạch, diện tích 69,5m², giá từ 1,4 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },

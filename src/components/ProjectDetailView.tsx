@@ -486,6 +486,12 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const [project, setProject] = useState<Project | null>(null);
   const seo = PROJECT_SEO[slug];
 
+  // Redirect mapping for old URL slugs
+  const slugRedirectMap: Record<string, string> = {
+    "can-ho-2-phong-ngu": "can-ho-2-phong-ngu-cityview", // CityView 2BR
+    "can-ho-2-phong-ngu-b": "can-ho-2-phong-ngu-b-avenue", // Avenue 2BR (Lớn)
+  };
+
   // Parse **bold** markers and \n\n paragraph breaks into JSX
   const renderRichText = (text: string) => {
     return text.split("\n\n").map((paragraph, pIdx) => {
@@ -532,7 +538,28 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       .then((res) => res.json())
       .then((data: Project[]) => {
         const list = Array.isArray(data) ? data : [];
-        const found = list.find((p) => p.slug === slug);
+        let found = list.find((p) => p.slug === slug);
+        
+        // If not found, check if this is a unit URL with old slug
+        if (!found) {
+          // Extract unit slug from the full slug
+          // Format: /k-home-project-name/unit-slug
+          const parts = slug.split('/');
+          if (parts.length === 2) {
+            const projectPart = parts[0];
+            const unitSlugOld = parts[1];
+            
+            // Try to find the project first
+            const projectFound = list.find(p => p.slug === projectPart);
+            if (projectFound && slugRedirectMap[unitSlugOld]) {
+              // Redirect to new unit slug
+              const newUnitSlug = slugRedirectMap[unitSlugOld];
+              onNavigate(`/${projectPart}/${newUnitSlug}`);
+              return;
+            }
+          }
+        }
+        
         setProject(found || null);
         if (found) {
           // Preload ảnh mặt bằng để tránh lag khi click tab

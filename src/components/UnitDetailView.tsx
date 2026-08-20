@@ -10,6 +10,12 @@ interface UnitDetailViewProps {
   onNavigate: (hash: string) => void;
 }
 
+// Map of old unit slugs to new unit slugs (for 301 redirects on direct URL access)
+const OLD_UNIT_SLUGS: Record<string, string> = {
+  "can-ho-2-phong-ngu": "can-ho-2-phong-ngu-cityview",      // CityView 2BR
+  "can-ho-2-phong-ngu-b": "can-ho-2-phong-ngu-b-avenue",    // Avenue 2BR-B
+};
+
 export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: UnitDetailViewProps) {
   const [project, setProject] = useState<Project | null>(null);
   const [unit, setUnit] = useState<UnitType | null>(null);
@@ -69,6 +75,15 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
         const foundProject = list.find((p) => p.slug === projectSlug);
         if (foundProject && foundProject.unitTypes) {
           const foundUnit = foundProject.unitTypes.find((u) => u.slug === unitSlug);
+          
+          // If unit not found and unitSlug is an old slug, redirect to new slug
+          if (!foundUnit && OLD_UNIT_SLUGS[unitSlug]) {
+            const newSlug = OLD_UNIT_SLUGS[unitSlug];
+            onNavigate(`/${projectSlug}/${newSlug}`);
+            setLoading(false);
+            return;
+          }
+          
           setProject(foundProject);
           setUnit(foundUnit || null);
 
