@@ -218,6 +218,21 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             ]
           });
           document.head.appendChild(bc);
+
+          // ── Canonical URL validation: ensure each news article has its own canonical ──
+          // Prevent Google from consolidating multiple news pages into one canonical
+          const canonicalUrl = `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`;
+          let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+          if (!canonical) {
+            canonical = document.createElement("link");
+            canonical.rel = "canonical";
+            document.head.appendChild(canonical);
+          }
+          canonical.href = canonicalUrl;
+
+          // Also update og:url to match canonical
+          const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
+          if (ogUrl) ogUrl.content = canonicalUrl;
         }
         setLoading(false);
       })

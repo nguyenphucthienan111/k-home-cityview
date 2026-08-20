@@ -408,6 +408,23 @@ app.get("/projects", (_req, res) => {
   res.redirect(301, "/san-pham");
 });
 
+// ─── 301 Redirects: Old news slugs → New news slugs ────────────────────────────
+// Google đã index các URL tin tức cũ, cần 301 để transfer link juice
+const NEWS_SLUG_REDIRECTS: Record<string, string> = {
+  "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
+  "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
+};
+
+app.get("/tin-tuc/:slug", (req, res, next) => {
+  const oldPath = `/tin-tuc/${req.params.slug}`;
+  const newPath = NEWS_SLUG_REDIRECTS[oldPath];
+  if (newPath) {
+    res.redirect(301, newPath);
+  } else {
+    next();
+  }
+});
+
 // ─── Public API Routes ────────────────────────────────────────────────────────
 app.get("/api/projects", (_req, res) => res.json(projects));
 app.get("/api/news", (_req, res) => res.json(newsList));

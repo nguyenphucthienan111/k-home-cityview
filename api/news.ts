@@ -1,5 +1,12 @@
 ﻿import type { VercelRequest, VercelResponse } from "@vercel/node";
 
+// ─── 301 Redirects: Old news slugs → New news slugs ────────────────
+// Handle old URLs on production (Vercel doesn't use server.ts)
+const NEWS_SLUG_REDIRECTS: Record<string, string> = {
+  "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
+  "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
+};
+
 // AUTO-GENERATED — synced from server.ts
 const DATA  = [
   {
@@ -3970,7 +3977,7 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về các loạ
   },
   {
     id: "n4" ,
-     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac",
+     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
     title: "Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật So Với Các Dự Án NOXH Khác?",
     date: "2026-08-19",
     excerpt: "Khám phá vị trí K-Home CityView Biên Hòa, lợi thế kết nối, tiện ích xung quanh, tiềm năng an cư và lý do dự án nổi bật giữa các NOXH tại Đồng Nai.",
@@ -4066,7 +4073,7 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, 
   },
 {
     id: "n5" ,
-     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong",
+     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
     title: "K-Home CityView Là Gì? Có Nên Mua Ở Thật Tại Biên Hòa Năm 2026 Không?",
     date: "2026-08-19",
     excerpt: "Tìm hiểu K-Home CityView là gì, vị trí ở đâu, quy mô ra sao, giá bán, tiện ích và lý do dự án được quan tâm tại Biên Hòa năm 2026.",
@@ -6919,7 +6926,16 @@ Nếu bạn đang chuẩn bị mua hoặc đã đăng ký căn hộ tại K-Home
   },
 ];
 
-export default function handler(_req: VercelRequest, res: VercelResponse) {
+export default function handler(req: VercelRequest, res: VercelResponse) {
+  // ── 301 Redirect check for old news slugs ──
+  // If request path matches old slug, redirect to new slug with 301 status
+  const requestPath = req.url || "";
+  const newPath = NEWS_SLUG_REDIRECTS[requestPath];
+  if (newPath) {
+    res.redirect(301, newPath);
+    return;
+  }
+
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
   return res.json(DATA);
 }

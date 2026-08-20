@@ -5134,7 +5134,7 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về các loạ
   },
   {
     id: "n4" ,
-     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac",
+     slug: "vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
     title: "Vị Trí K-Home CityView Biên Hòa Có Gì Nổi Bật So Với Các Dự Án NOXH Khác?",
     date: "2026-08-19",
     excerpt: "Khám phá vị trí K-Home CityView Biên Hòa, lợi thế kết nối, tiện ích xung quanh, tiềm năng an cư và lý do dự án nổi bật giữa các NOXH tại Đồng Nai.",
@@ -5230,7 +5230,7 @@ Liên hệ **0937.587.438** để được tư vấn miễn phí về hồ sơ, 
   },
   {
     id: "n5" ,
-     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong",
+     slug: "k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
     title: "K-Home CityView Là Gì? Có Nên Mua Ở Thật Tại Biên Hòa Năm 2026 Không?",
     date: "2026-08-19",
     excerpt: "Tìm hiểu K-Home CityView là gì, vị trí ở đâu, quy mô ra sao, giá bán, tiện ích và lý do dự án được quan tâm tại Biên Hòa năm 2026.",

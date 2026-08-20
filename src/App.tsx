@@ -19,6 +19,13 @@ const NotFoundView       = lazy(() => import("./components/NotFoundView"));
 const ServerErrorView    = lazy(() => import("./components/ServerErrorView"));
 const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
 
+// ── 301 Redirect map for old news slugs → new slugs ──
+// When Googlebot crawls old URL, it will see redirect and transfer link juice
+const NEWS_REDIRECTS: Record<string, string> = {
+  "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
+  "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
+};
+
 // Module-level constant — không rebuild mỗi lần navigateTo chạy
 const PAGE_TITLES: Record<string, string> = {
   "/":            "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
@@ -172,6 +179,12 @@ export default function App() {
 
   // Memoize renderContent để tránh re-run 8 regex khi App re-render vì lý do khác
   const content = useMemo(() => {
+    // ── Check for 301 redirect of old news slugs ──
+    if (NEWS_REDIRECTS[path]) {
+      navigateTo(NEWS_REDIRECTS[path]);
+      return null;
+    }
+
     const unitMatch = path.match(/^\/([^/]+)\/(can-ho-[^/]+|can-ho[^/]*)$/);
     if (unitMatch) {
       return <UnitDetailView projectSlug={unitMatch[1]} unitSlug={unitMatch[2]} onNavigate={navigateTo} />;
