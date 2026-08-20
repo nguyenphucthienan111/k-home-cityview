@@ -3074,7 +3074,7 @@ Liên hệ **0937.587.438** để được tư vấn và đặt lịch xem nhà 
   },
   {
     id: "n40",
-    slug: "mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong",
+    slug: "mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay",
     title: "Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không?",
     date: "2026-08-10",
     excerpt: "Đánh giá mặt bằng K-Home CityView về khả năng đón ánh sáng, thông gió tự nhiên, ban công, cửa sổ, hướng block và mức độ phù hợp với nhu cầu an cư.",

@@ -28,7 +28,7 @@
     { "source": "/projects/k-home-avenue-nhon-trach/studio","destination": "/k-home-avenue-nhon-trach/can-ho-studio",         "permanent": true },
     { "source": "/projects/k-home-avenue-nhon-trach/1pn",   "destination": "/k-home-avenue-nhon-trach/can-ho-1-phong-ngu",   "permanent": true },
     { "source": "/projects/k-home-avenue-nhon-trach/2pn-nho","destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-nho","permanent": true },
-    { "source": "/projects/k-home-avenue-nhon-trach/2pn-lon","destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-lon","permanent": true },
+    { "source": "/projects/k-home-avenue-nhon-trach/2pn-lon","destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b","permanent": true },
     { "source": "/k-home-cityview-ho-nai/can-1pn-a",   "destination": "/k-home-cityview-ho-nai/can-ho-1-phong-ngu-a",   "permanent": true },
     { "source": "/k-home-cityview-ho-nai/can-1pn-b",   "destination": "/k-home-cityview-ho-nai/can-ho-1-phong-ngu-b",   "permanent": true },
     { "source": "/k-home-cityview-ho-nai/can-2pn",     "destination": "/k-home-cityview-ho-nai/can-ho-2-phong-ngu",     "permanent": true },
@@ -42,7 +42,8 @@
     { "source": "/k-home-avenue-nhon-trach/can-2pn-nho","destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu","permanent": true },
     { "source": "/k-home-avenue-nhon-trach/can-2pn-lon","destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b","permanent": true },
     { "source": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong", "destination": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026", "permanent": true },
-    { "source": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac", "destination": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh", "permanent": true }
+    { "source": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac", "destination": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh", "permanent": true },
+    { "source": "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong", "destination": "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay", "permanent": true }
   ],
   "functions": {
     "api/contact.ts": { "maxDuration": 30 },
