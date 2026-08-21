@@ -148,7 +148,7 @@ function escAttr(str) {
     .replace(/>/g, "&gt;");
 }
 
-function injectMeta(template, { title, description, canonical, keywords }) {
+function injectMeta(template, { title, description, canonical, keywords, ogType }) {
   const t = escAttr(title);
   const d = escAttr(description);
   const c = escAttr(canonical);
@@ -163,6 +163,19 @@ function injectMeta(template, { title, description, canonical, keywords }) {
     .replace(/<meta name="twitter:url"[^>]*>/, `<meta name="twitter:url" content="${c}" />`)
     .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${t}" />`)
     .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${d}" />`);
+
+  // Add or replace og:type if provided
+  if (ogType) {
+    if (html.includes('<meta property="og:type"')) {
+      html = html.replace(/<meta property="og:type"[^>]*>/, `<meta property="og:type" content="${ogType}" />`);
+    } else {
+      // Insert og:type after og:url
+      html = html.replace(
+        /<meta property="og:url"[^>]*>/,
+        `$&\n    <meta property="og:type" content="${ogType}" />`
+      );
+    }
+  }
 
   // Inject keywords nếu có
   if (keywords) {
@@ -381,6 +394,7 @@ async function main() {
       title,
       description: article.excerpt,
       canonical,
+      ogType: "article",
       schemas: [newsArticleSchema, newsBreadcrumbSchema],
       // Static <a href> links cho Googlebot — link về money page trong HTML tĩnh
       staticLinks: [
