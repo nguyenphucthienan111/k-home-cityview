@@ -580,8 +580,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const homeSections = [
     // Nhóm 1: Dự án
     { id: "hero",              label: "Tổng quan dự án",    group: "Dự Án" },
-    { id: "featured-cityview", label: "K-Home CityView",    group: "Dự Án" },
     { id: "featured-projects", label: "Danh mục dự án",     group: "Dự Án" },
+    { id: "featured-cityview", label: "K-Home CityView",    group: "Dự Án" },
     { id: "vi-tri",            label: "Vị trí kết nối",     group: "Dự Án" },
     { id: "mat-bang",          label: "Mặt bằng căn hộ",    group: "Dự Án" },
     { id: "nha-mau",           label: "Nhà mẫu thực tế",    group: "Dự Án" },
@@ -1745,6 +1745,86 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
       </section>
 
+    
+      {/* =========================================================
+          2. DANH MỤC KIỆT TÁC — FEATURED PROJECTS (moved after hero)
+          ========================================================= */}
+      <section id="featured-projects" className="bg-slate-50 py-24 border-y border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">3 Dự án đang triển khai</span>
+              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
+                Dự Án Nổi Bật
+              </h2>
+              <div className="w-16 h-1 bg-amber-500 rounded-full" />
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => onNavigate("/san-pham")}
+                className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
+              >
+                Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm animate-pulse">
+                  {/* Image placeholder */}
+                  <div className="h-72 bg-slate-200" />
+                  {/* Content placeholder */}
+                  <div className="p-8 space-y-4">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => <div key={i} className="w-3.5 h-3.5 rounded-full bg-slate-200" />)}
+                    </div>
+                    <div className="h-6 bg-slate-200 rounded-lg w-3/4" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-1/2" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-full" />
+                    <div className="h-4 bg-slate-100 rounded-lg w-5/6" />
+                    <div className="h-1.5 bg-slate-100 rounded-full w-full mt-4" />
+                    <div className="flex justify-between pt-4 border-t border-slate-100">
+                      <div className="h-4 bg-slate-200 rounded w-1/3" />
+                      <div className="h-6 bg-amber-100 rounded w-1/4" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              {filteredProjects.length === 0 ? (
+                <div className="text-center py-16 bg-white rounded-3xl border border-slate-100 space-y-4 max-w-xl mx-auto shadow-sm">
+                  <div className="text-slate-400 text-4xl">🔍</div>
+                  <h3 className="text-lg font-bold text-slate-800">Không tìm thấy dự án phù hợp</h3>
+                  <p className="text-slate-500 text-sm px-6">Vui lòng đặt lại bộ lọc để xem các dự án đang triển khai.</p>
+                  <button
+                    onClick={resetFilters}
+                    className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-5 rounded-full text-xs transition-colors cursor-pointer"
+                  >
+                    Xem Tất Cả Dự Án
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {filteredProjects.map((project) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      onClick={onNavigate}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* =========================================================
           1.5. FEATURED CITYHOME — EDITORIAL LINKS FOR LINK EQUITY
           ========================================================= */}
@@ -1841,85 +1921,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          2. DANH MỤC KIỆT TÁC — FEATURED PROJECTS (moved after hero)
-          ========================================================= */}
-      <section id="featured-projects" className="bg-slate-50 py-24 border-y border-slate-100 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
-            <div className="space-y-3">
-              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">3 Dự án đang triển khai</span>
-              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-                Dự Án Nổi Bật
-              </h2>
-              <div className="w-16 h-1 bg-amber-500 rounded-full" />
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => onNavigate("/san-pham")}
-                className="text-amber-700 font-bold text-sm hover:text-amber-800 flex items-center gap-1.5 transition-colors cursor-pointer bg-white px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-400/30 shadow-sm"
-              >
-                Xem Toàn Bộ Dự Án ({allProjects.length ? allProjects.length : "..."}) <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm animate-pulse">
-                  {/* Image placeholder */}
-                  <div className="h-72 bg-slate-200" />
-                  {/* Content placeholder */}
-                  <div className="p-8 space-y-4">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => <div key={i} className="w-3.5 h-3.5 rounded-full bg-slate-200" />)}
-                    </div>
-                    <div className="h-6 bg-slate-200 rounded-lg w-3/4" />
-                    <div className="h-4 bg-slate-100 rounded-lg w-1/2" />
-                    <div className="h-4 bg-slate-100 rounded-lg w-full" />
-                    <div className="h-4 bg-slate-100 rounded-lg w-5/6" />
-                    <div className="h-1.5 bg-slate-100 rounded-full w-full mt-4" />
-                    <div className="flex justify-between pt-4 border-t border-slate-100">
-                      <div className="h-4 bg-slate-200 rounded w-1/3" />
-                      <div className="h-6 bg-amber-100 rounded w-1/4" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div>
-              {filteredProjects.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-3xl border border-slate-100 space-y-4 max-w-xl mx-auto shadow-sm">
-                  <div className="text-slate-400 text-4xl">🔍</div>
-                  <h3 className="text-lg font-bold text-slate-800">Không tìm thấy dự án phù hợp</h3>
-                  <p className="text-slate-500 text-sm px-6">Vui lòng đặt lại bộ lọc để xem các dự án đang triển khai.</p>
-                  <button
-                    onClick={resetFilters}
-                    className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-5 rounded-full text-xs transition-colors cursor-pointer"
-                  >
-                    Xem Tất Cả Dự Án
-                  </button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {filteredProjects.map((project) => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                      onClick={onNavigate}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
         </div>
       </section>
 
