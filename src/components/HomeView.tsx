@@ -1786,8 +1786,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {/* Column 1: Bảng Giá */}
             <a 
-              href="/k-home-cityview-ho-nai#nha-mau" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#nha-mau"); }}
+              href="/k-home-cityview-ho-nai#gia-ban" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#gia-ban"); }}
               className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
             >
               <div className="flex items-center justify-between mb-4">
@@ -1816,8 +1816,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             {/* Column 3: Điều Kiện Mua */}
             <a 
-              href="/k-home-cityview-ho-nai#dieu-kien-noxh" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#dieu-kien-noxh"); }}
+              href="/k-home-cityview-ho-nai#dieu-kien-mua" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#dieu-kien-mua"); }}
               className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
             >
               <div className="flex items-center justify-between mb-4">
