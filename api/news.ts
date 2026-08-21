@@ -40,7 +40,7 @@ Với gia đình trẻ mua nhà ở xã hội tại Biên Hòa, việc chọn gi
 
 **Căn 2 phòng ngủ:** 2 phòng ngủ (1 chính + 1 nhỏ), phòng khách + bếp, 1–2 WC, ban công/logia. Phòng ngủ thứ 2 có thể làm phòng cho con, phòng làm việc tại nhà hoặc phòng cho ông bà đến ở tạm.
 
-Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong)
+Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay)
 
 ---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-1PN-A/khome-cityview-nha-mau-can-ho-1PN-1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/Can-2PN/khome-cityview-nha-mau-can-ho-2PN-2.jpg|Nhà mẫu căn 1PN và 2PN K-Home CityView / k-home city view
 
@@ -946,7 +946,7 @@ K-Home CityView / K-Home City View có 4 loại căn: 1PN+A khoảng 47 m², 1PN
 
 Sai lầm: chọn căn chỉ theo diện tích hoặc giá, không kiểm tra phòng ngủ có cửa sổ không, bếp đặt ở đâu, phòng vệ sinh có thuận tiện không, ban công ở phòng khách hay phòng ngủ.
 
-**Cách tránh:** Xem layout từng loại căn. Đến nhà mẫu K-Home CityView / K-Home City View để xem cảm giác thực tế. Hình dung cách sống của gia đình trong 5–10 năm trong không gian đó. Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong)
+**Cách tránh:** Xem layout từng loại căn. Đến nhà mẫu K-Home CityView / K-Home City View để xem cảm giác thực tế. Hình dung cách sống của gia đình trong 5–10 năm trong không gian đó. Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay)
 
 ## 5. Chọn tầng theo cảm tính, không theo nhu cầu thật
 
@@ -1050,7 +1050,7 @@ Xem phân tích đầy đủ tại [K-Home CityView hay thuê nhà ở Biên Hò
 
 ## 4. Những yếu tố giúp K-Home CityView / K-Home City View "đáng mua" cho 5–10 năm
 
-**Thiết kế và môi trường sống:** Quy hoạch theo chuẩn Singapore, tiêu chuẩn xanh EDGE, chú trọng ánh sáng, thông gió và tiết kiệm năng lượng. Layout căn hộ K-Home CityView / K-Home City View được giới thiệu tối ưu cho gia đình trẻ và người lao động. Xem thêm [thiết kế K-Home CityView có gì khác biệt so với NOXH truyền thống?](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong-khong)
+**Thiết kế và môi trường sống:** Quy hoạch theo chuẩn Singapore, tiêu chuẩn xanh EDGE, chú trọng ánh sáng, thông gió và tiết kiệm năng lượng. Layout căn hộ K-Home CityView / K-Home City View được giới thiệu tối ưu cho gia đình trẻ và người lao động. Xem thêm [thiết kế K-Home CityView có gì khác biệt so với NOXH truyền thống?](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong)
 
 **Tiện ích và khu dân cư hiện hữu:** Dự án nằm trong khu dân cư Hố Nai, không phải khu mới tách biệt. Nội khu có hồ bơi, sân chơi, công viên, gym, minimart, trường học. Thích hợp cho gia đình có con nhỏ muốn vừa gần nơi làm việc, vừa gần trường học và dịch vụ y tế.
 
@@ -1388,7 +1388,7 @@ Khi bước vào nhà mẫu, hãy tập trung xem:
 
 ### 2. Ánh sáng và thông gió
 
-Hãy để ý cửa sổ ở phòng khách và phòng ngủ, hướng ban công, cảm giác ánh sáng tự nhiên và hệ thống thông gió ở bếp và phòng vệ sinh. Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong)
+Hãy để ý cửa sổ ở phòng khách và phòng ngủ, hướng ban công, cảm giác ánh sáng tự nhiên và hệ thống thông gió ở bếp và phòng vệ sinh. Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không?](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay)
 
 ### 3. Chất lượng vật liệu và hoàn thiện
 
@@ -1544,7 +1544,7 @@ Con số 1.200+ người dành thời gian đến dự sự kiện giới thiệ
 
 **Vị trí và kết nối:** Mặt tiền đường Điểu Xiển, phường Hố Nai, cách trung tâm Biên Hòa ~10 phút, gần KCN Amata, Hố Nai, Long Bình và Biên Hòa 2. Xem thêm [K-Home CityView gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao).
 
-**Quy mô và thiết kế:** ~2,85 ha, 4 block 22 tầng, ~1.382 căn NOXH. Thiết kế do Surbana Jurong (Singapore) tham gia tư vấn, định hướng công trình xanh EDGE. Xem thêm [thiết kế K-Home CityView khác gì NOXH truyền thống](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong-khong).
+**Quy mô và thiết kế:** ~2,85 ha, 4 block 22 tầng, ~1.382 căn NOXH. Thiết kế do Surbana Jurong (Singapore) tham gia tư vấn, định hướng công trình xanh EDGE. Xem thêm [thiết kế K-Home CityView khác gì NOXH truyền thống](/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong).
 
 **Cơ cấu căn hộ:** 1PN ~47 m², 2PN ~62–70 m², 3PN ~84 m². Xem thêm [diện tích căn hộ K-Home CityView bao nhiêu mét vuông](/tin-tuc/dien-tich-can-ho-k-home-cityview-bao-nhieu-met-vuong).
 
@@ -1797,7 +1797,7 @@ Liên hệ **0937.587.438** để được cập nhật tiến độ và đặt 
 | Ưu tiên giá | Tầng thấp hoặc không có view | Tiếng ồn, bụi, hướng |
 | Thích thông thoáng | Tầng trung/cao, căn góc | Mặt thoáng, cửa sổ, hướng gió |
 
-Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong).
+Xem thêm [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay).
 
 ## Gia đình có trẻ nhỏ nên chọn tầng nào?
 
@@ -1836,7 +1836,7 @@ Bên cạnh số tầng, hướng ban công, cửa sổ và vị trí block quan
 
 Liên hệ **0937.587.438** để được tư vấn chọn tầng và mã căn phù hợp.
 
----RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong|Thiết Kế K-Home CityView Khác Gì NOXH Truyền Thống`,
+---RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong|Thiết Kế K-Home CityView Khác Gì NOXH Truyền Thống`,
   },
   {
     id: "n41",
@@ -1876,7 +1876,7 @@ Mục tiêu là tạo môi trường sống hoàn chỉnh — cư dân có thể
 
 ## Ánh sáng và thông gió tự nhiên
 
-Thiết kế K-Home CityView được giới thiệu tối ưu ánh sáng và thông gió qua cửa sổ phòng ngủ, ban công, khoảng cách giữa các block và hướng bố trí tòa nhà. Xem phân tích chi tiết tại [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong).
+Thiết kế K-Home CityView được giới thiệu tối ưu ánh sáng và thông gió qua cửa sổ phòng ngủ, ban công, khoảng cách giữa các block và hướng bố trí tòa nhà. Xem phân tích chi tiết tại [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay).
 
 Người mua cần kiểm tra đúng mã căn, hướng ban công và số lượng cửa sổ — không phải mọi căn đều có mức độ đón sáng như nhau.
 
@@ -1913,7 +1913,7 @@ Trước khi quyết định, hãy kiểm tra bản vẽ, tiêu chuẩn bàn gia
 
 Liên hệ **0937.587.438** để được tư vấn và đặt lịch xem nhà mẫu.
 
----RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;nen-chon-tang-nao-khi-mua-k-home-cityview|Nên Chọn Tầng Nào Khi Mua K-Home CityView`,
+---RELATED---mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay|Mặt Bằng K-Home CityView Có Tối Ưu Ánh Sáng Và Thông Gió Không;nen-chon-tang-nao-khi-mua-k-home-cityview|Nên Chọn Tầng Nào Khi Mua K-Home CityView`,
   },
   {
     id: "n40",
@@ -2088,7 +2088,7 @@ Xem thêm [mua K-Home CityView nên chọn căn diện tích nào để tối ư
 
 Căn 3PN K-Home CityView (~84 m²) phù hợp nhất với gia đình lớn, nhiều con, đa thế hệ hoặc người cần nhiều không gian riêng. Ưu điểm là sử dụng linh hoạt và phù hợp an cư lâu dài. Nhược điểm là tổng giá trị và khoản vay cao hơn.
 
-Trước khi quyết định, xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong) để khảo sát đúng căn trước khi đăng ký.
+Trước khi quyết định, xem thêm [điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [mặt bằng K-Home CityView có tối ưu ánh sáng và thông gió không](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay) để khảo sát đúng căn trước khi đăng ký.
 
 Liên hệ **0937.587.438** để được tư vấn.
 
@@ -5930,7 +5930,7 @@ Khi thấy công trình đang phát triển từng ngày, bạn sẽ:
 - Khối tòa ở vị trí trung tâm hoặc dễ tiếp cận có thể được thi công nhanh hơn khối tòa ở vị trí xa hơn
 - Điều này ảnh hưởng đến lịch trình bàn giao — khách hàng trong khối tòa hoàn tất sớm sẽ được bàn giao sớm
 
-Xem thêm [mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong) để hiểu rõ hơn về thiết kế các khối tòa nhà.
+Xem thêm [mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay](/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay) để hiểu rõ hơn về thiết kế các khối tòa nhà.
 
 ---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785427983/news8/6.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785427980/news8/3.jpg|Cảnh quan tiện ích K-Home CityView / K-Home City View
 
