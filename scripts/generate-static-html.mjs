@@ -153,10 +153,11 @@ function injectMeta(template, { title, description, canonical, keywords, ogType 
   const d = escAttr(description);
   const c = escAttr(canonical);
 
+  // Fix canonical by removing any whitespace/newlines and making it single line
   let html = template
+    .replace(/<link\s+rel="canonical"[^>]*>\s*/gs, `<link rel="canonical" href="${c}" />\n    `)
     .replace(/<title>[^<]*<\/title>/, `<title>${t}</title>`)
     .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${d}" />`)
-    .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${c}" />`)
     .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${t}" />`)
     .replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${d}" />`)
     .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${c}" />`)

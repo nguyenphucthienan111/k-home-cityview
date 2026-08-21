@@ -176,14 +176,17 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
             document.head.appendChild(bc);
 
             // Canonical URL validation: ensure canonical points to THIS unit, not consolidated to another project
-            const canonicalUrl = `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`;
-            let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
-            if (!canonical) {
-              canonical = document.createElement("link");
-              canonical.rel = "canonical";
-              document.head.appendChild(canonical);
-            }
-            canonical.href = canonicalUrl;
+            // NOTE: Unit detail pages are pre-rendered by generate-static-html.mjs with correct canonical tags.
+            // DO NOT override canonical from pre-render to avoid conflicts that confuse Google.
+            // Canonical from pre-render HTML is sufficient and will be used by Google.
+            // const canonicalUrl = `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`;
+            // let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+            // if (!canonical) {
+            //   canonical = document.createElement("link");
+            //   canonical.rel = "canonical";
+            //   document.head.appendChild(canonical);
+            // }
+            // canonical.href = canonicalUrl;
           }
         } else {
           setProject(null);
