@@ -332,6 +332,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const homeNavSections = [
     { id: "hero", label: "Hero" },
+    { id: "featured-cityview", label: "K-Home CityView" },
     { id: "featured-projects", label: "Dự Án" },
     { id: "vi-tri", label: "Vị Trí" },
     { id: "mat-bang", label: "Mặt Bằng" },
@@ -493,7 +494,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Track active section on scroll
   useEffect(() => {
-    const ids = ["hero", "featured-projects", "vi-tri", "mat-bang", "nha-mau", "amenities", "calculator", "dieu-kien-noxh", "phap-ly", "chu-dau-tu", "lai-suat-noxh", "tin-tuc"];
+    const ids = ["hero", "featured-cityview", "featured-projects", "vi-tri", "mat-bang", "nha-mau", "amenities", "calculator", "dieu-kien-noxh", "phap-ly", "chu-dau-tu", "lai-suat-noxh", "tin-tuc"];
     const handleScroll = () => {
       for (let i = ids.length - 1; i >= 0; i--) {
         const el = document.getElementById(ids[i]);
@@ -579,6 +580,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   const homeSections = [
     // Nhóm 1: Dự án
     { id: "hero",              label: "Tổng quan dự án",    group: "Dự Án" },
+    { id: "featured-cityview", label: "K-Home CityView",    group: "Dự Án" },
     { id: "featured-projects", label: "Danh mục dự án",     group: "Dự Án" },
     { id: "vi-tri",            label: "Vị trí kết nối",     group: "Dự Án" },
     { id: "mat-bang",          label: "Mặt bằng căn hộ",    group: "Dự Án" },
@@ -1739,6 +1741,105 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <span className="hidden sm:inline-block text-slate-200">|</span>
               <span className="flex items-center gap-1.5"><TrendingUp className="w-3.5 h-3.5 text-amber-500" /> Lãi suất ưu đãi NOXH 5,4%/năm</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          1.5. FEATURED CITYHOME — EDITORIAL LINKS FOR LINK EQUITY
+          ========================================================= */}
+      <section id="featured-cityview" className="bg-white py-16 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Section Title with Editorial Link */}
+          <div className="mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+              <a 
+                href="/k-home-cityview-ho-nai" 
+                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai"); }}
+                className="hover:text-amber-600 transition-colors"
+              >
+                K-Home CityView Hố Nai Biên Hòa
+              </a>
+            </h3>
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl">
+              Dự án nhà ở xã hội chuẩn Singapore tại TP. Biên Hòa, Đồng Nai. Vị trí chiến lược, 
+              <a 
+                href="/k-home-cityview-ho-nai#mat-bang" 
+                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#mat-bang"); }}
+                className="text-amber-600 hover:text-amber-700 font-semibold mx-1"
+              >
+                mặt bằng căn hộ
+              </a>
+              tiện nghi, pháp lý đầy đủ, và
+              <a 
+                href="/k-home-cityview-ho-nai#calculator" 
+                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#calculator"); }}
+                className="text-amber-600 hover:text-amber-700 font-semibold mx-1"
+              >
+                lãi suất ưu đãi 5,4%/năm
+              </a>
+              cho cư dân.
+            </p>
+          </div>
+
+          {/* 3-Column Grid with Linked CTAs */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Column 1: Bảng Giá */}
+            <a 
+              href="/k-home-cityview-ho-nai#nha-mau" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#nha-mau"); }}
+              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Bảng Giá & Sản Phẩm</h4>
+                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-slate-600 text-sm">
+                Khám phá chi tiết các loại căn hộ từ 1PN+A đến 3PN với giá từ 950 triệu.
+              </p>
+            </a>
+
+            {/* Column 2: Mặt Bằng & Layout */}
+            <a 
+              href="/k-home-cityview-ho-nai#mat-bang" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#mat-bang"); }}
+              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Mặt Bằng & Layout</h4>
+                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-slate-600 text-sm">
+                Xem chi tiết các bản vẽ mặt bằng căn hộ, hệ thống tiện ích và quy hoạch dự án.
+              </p>
+            </a>
+
+            {/* Column 3: Điều Kiện Mua */}
+            <a 
+              href="/k-home-cityview-ho-nai#dieu-kien-noxh" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#dieu-kien-noxh"); }}
+              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Điều Kiện Mua & Thủ Tục</h4>
+                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <p className="text-slate-600 text-sm">
+                Tìm hiểu điều kiện mua nhà ở xã hội, thủ tục pháp lý và hỗ trợ tài chính.
+              </p>
+            </a>
+          </div>
+
+          {/* Main CTA Button */}
+          <div className="text-center">
+            <a 
+              href="/k-home-cityview-ho-nai" 
+              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai"); }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/30"
+            >
+              Khám Phá K-Home CityView Hố Nai
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
