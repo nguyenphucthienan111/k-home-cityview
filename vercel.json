@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/((?!api/|assets/|sitemap\\.xml|sitemap_index\\.xml|post-sitemap\\.xml|page-sitemap\\.xml|robots\\.txt|.*\\..*).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|sitemap\\.xml|sitemap_index\\.xml|post-sitemap\\.xml|page-sitemap\\.xml|robots\\.txt|.*\\..*).*)", "destination": "/index.html" }
   ],
   "redirects": [
     {
@@ -54,13 +54,6 @@
     "api/admin/login.ts": { "maxDuration": 30 }
   },
   "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
-      ]
-    },
     {
       "source": "/api/projects",
       "headers": [
