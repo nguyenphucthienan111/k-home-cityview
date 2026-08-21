@@ -1512,27 +1512,21 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 items-center">
                 <button
-                  onClick={() => onNavigate("/k-home-cityview-ho-nai")}
-                  className="bg-white hover:bg-amber-50 text-amber-800 px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer hover:scale-105"
-                >
-                  Xem K-Home CityView <ArrowRight className="w-4 h-4" />
-                </button>
-                <button
                   onClick={() => {
                     const featuredEl = document.getElementById("featured-projects");
                     if (featuredEl) {
                       featuredEl.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="bg-white/50 hover:bg-white/70 text-amber-800 px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer hover:scale-105"
+                  className="bg-white hover:bg-amber-100 text-amber-800 px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer hover:scale-103"
                 >
-                  Danh Sách Dự Án
+                  Tìm hiểu thêm <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => onNavigate("/lien-he")}
                   className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
                 >
-                  Nhận Báo Giá
+                  Nhận Báo Giá Đợt 1
                 </button>
               </div>
             </div>

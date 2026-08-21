@@ -60,8 +60,8 @@ const PAGE_IMAGES = {
 
 // ─── URL list ─────────────────────────────────────────────────────────────────
 const STATIC_URLS = [
-  { loc: "/",                         priority: "0.8",  changefreq: "daily",   lastmod: TODAY },
-  { loc: "/san-pham",                 priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
+  { loc: "/",                         priority: "1.0",  changefreq: "daily",   lastmod: TODAY },
+  { loc: "/san-pham",                 priority: "0.9",  changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-cityview-ho-nai",   priority: "0.95", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-midtown-trang-bom", priority: "0.90", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-avenue-nhon-trach", priority: "0.90", changefreq: "weekly",  lastmod: TODAY },

@@ -29,8 +29,8 @@ const NEWS_REDIRECTS: Record<string, string> = {
 
 // Module-level constant — không rebuild mỗi lần navigateTo chạy
 const PAGE_TITLES: Record<string, string> = {
-  "/":            "K-Home Đồng Nai | Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Land",
-  "/home":        "K-Home Đồng Nai | Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Land",
+  "/":            "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
+  "/home":        "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
   "/san-pham":    "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
   "/tin-tuc":     "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
   "/gioi-thieu":  "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai",
@@ -59,20 +59,33 @@ export default function App() {
     }
   }, []);
 
-  // ── Update og:url ONLY (không touch canonical — để HTML handle) ──
-  // Canonical phải set từ HTML static, không từ JS (Google crawl HTML trước JS execution)
+  // ── Cập nhật canonical + og:url ngay khi mount và mỗi khi path thay đổi ──
+  // Quan trọng: phải chạy trước khi Googlebot đọc canonical
+  // NHƯNG: Không ghi đè nếu component (như UnitDetailView) đã set canonical riêng
   useEffect(() => {
     const BASE = "https://k-homedongnai.com.vn";
     const currentPath = getPath();
     
-    // Chỉ update OG URL, không touch canonical tag
-    const canonicalUrl = `${BASE}${currentPath === "/" ? "/" : currentPath}`;
+    // Kiểm tra: nếu là route /project/unit hoặc /tin-tuc/*, hãy để component xử lý canonical
+    const isUnitRoute = /^\/[^/]+\/(can-ho-[^/]+)$/.test(currentPath);
+    const isNewsRoute = /^\/tin-tuc\//.test(currentPath);
+    if (isUnitRoute || isNewsRoute) {
+      // UnitDetailView/NewsDetailView sẽ set canonical riêng — không ghi đè
+      return;
+    }
     
+    const canonicalUrl = `${BASE}${currentPath === "/" ? "/" : currentPath}`;
+
+    let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
     const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
     if (ogUrl) ogUrl.content = canonicalUrl;
-    
-    const twUrl = document.querySelector<HTMLMetaElement>("meta[name='twitter:url']");
-    if (twUrl) twUrl.content = canonicalUrl;
   }, [path]);
 
   useEffect(() => {
@@ -94,7 +107,23 @@ export default function App() {
       document.title = PAGE_TITLES[cleanPath];
     }
     
-    // ── Cập nhật og:url + og:title + og:description + og:image + twitter per-route ──
+    // ── Cập nhật canonical URL động theo route ──
+    // NHƯNG: Không ghi đè cho unit routes (/project/unit) hoặc news routes (/tin-tuc/*)
+    // Vì những routes này có canonical riêng được set bởi UnitDetailView/NewsDetailView
+    const isUnitRoute = /^\/[^/]+\/(can-ho-[^/]+)$/.test(cleanPath);
+    const isNewsRoute = /^\/tin-tuc\//.test(cleanPath);
+    if (!isUnitRoute && !isNewsRoute) {
+      const BASE = "https://k-homedongnai.com.vn";
+      let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
+    }
+    
+    // Cập nhật og:url + og:title + og:description + og:image + twitter per-route
     const BASE = "https://k-homedongnai.com.vn";
     const canonicalUrl = `${BASE}${cleanPath === "/" ? "/" : cleanPath}`;
     const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
@@ -104,8 +133,8 @@ export default function App() {
     // Per-route OG data map
     const PAGE_OG: Record<string, { title: string; description: string; image: string }> = {
       "/": {
-        title: "K-Home Đồng Nai | Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Land",
-        description: "K-Home Đồng Nai – chuỗi nhà ở xã hội chuẩn Singapore của Kim Oanh Land tại Đồng Nai. Giá từ 750 triệu, lãi suất 5,4%/năm. Khám phá các dự án: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch.",
+        title: "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
+        description: "K-Home Đồng Nai – 3 dự án nhà ở xã hội chuẩn Singapore: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm. Kim Oanh Land.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
       "/k-home-cityview-ho-nai": {
