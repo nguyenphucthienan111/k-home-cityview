@@ -413,7 +413,7 @@ app.get("/projects", (_req, res) => {
 const NEWS_SLUG_REDIRECTS: Record<string, string> = {
   "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
   "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
-  "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong": "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay",
+  "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay": "/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien",
 };
 
 app.get("/tin-tuc/:slug", (req, res, next) => {

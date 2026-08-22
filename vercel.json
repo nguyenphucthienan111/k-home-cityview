@@ -44,7 +44,11 @@
     { "source": "/k-home-cityview-ho-nai/can-ho-2-phong-ngu", "destination": "/k-home-cityview-ho-nai/can-ho-2-phong-ngu-cityview", "permanent": true },
     { "source": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b", "destination": "/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b-avenue", "permanent": true },
     { "source": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong", "destination": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026", "permanent": true },
-    { "source": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac", "destination": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh", "permanent": true }
+    { "source": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac", "destination": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh", "permanent": true },
+    { "source": "/tin-tuc/thiet-ke-k-home-cityview-co-gi-khac-biet-so-voi-noxh-truyen-thong-khong", "destination": "/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026", "permanent": true },
+    { "source": "/tin-tuc/mua-k-home-cityview-nen-chon-can-dien-tich-nao-de-toi-uu-chi-phi-vay", "destination": "/tin-tuc/huong-dan-chon-can-ho-k-home-cityview-theo-nhu-cau-va-ngan-sach", "permanent": true },
+    { "source": "/tin-tuc/tu-k-home-cityview-di-den-trung-tam-bien-hoa-mat-bao-lau-vay", "destination": "/tin-tuc/vi-tri-k-home-cityview-va-khoang-cach-di-chuyen-den-trung-tam-bien-hoa", "permanent": true },
+    { "source": "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay", "destination": "/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien", "permanent": true }
   ],
   "functions": {
     "api/contact.ts": { "maxDuration": 30 },

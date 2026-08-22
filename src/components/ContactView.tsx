@@ -61,8 +61,9 @@ export default function ContactView() {
         "latitude": "10.9592617",
         "longitude": "106.9022019",
       },
-      "hasMap": "https://maps.app.goo.gl/ZiDceAEQt5DyPFGr6",
+      "hasMap": "https://maps.app.goo.gl/AGywfAE793NgUYMT9",
       "sameAs": [
+        "https://maps.app.goo.gl/AGywfAE793NgUYMT9",
         "https://www.facebook.com/profile.php?id=61592416756280",
         "https://k-homecityview.vn/",
         "https://kimoanhgroup.vn/du-an/k-home-cityview/"
