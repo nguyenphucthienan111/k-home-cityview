@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef, startTransition } from "react";
 import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper } from "lucide-react";
 import { Project } from "../types";
+import { STATIC_PROJECTS } from "../data/staticProjects";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
 import MortgageCalculator from "./MortgageCalculator";
@@ -560,135 +561,147 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
   useEffect(() => {
     setLoading(true);
+
+    const processData = (list: Project[]) => {
+      let found = list.find((p) => p.slug === slug);
+
+      // If not found in fetched list, check static fallback list
+      if (!found) {
+        found = STATIC_PROJECTS.find((p) => p.slug === slug);
+      }
+
+      // If still not found, check if this is a unit URL with old slug
+      if (!found) {
+        const parts = slug.split('/');
+        if (parts.length === 2) {
+          const projectPart = parts[0];
+          const unitSlugOld = parts[1];
+
+          const projectFound = list.find(p => p.slug === projectPart) || STATIC_PROJECTS.find(p => p.slug === projectPart);
+          if (projectFound && slugRedirectMap[unitSlugOld]) {
+            const newUnitSlug = slugRedirectMap[unitSlugOld];
+            onNavigate(`/${projectPart}/${newUnitSlug}`);
+            return;
+          }
+        }
+      }
+
+      const activeProject = found || STATIC_PROJECTS.find(p => p.slug === slug) || STATIC_PROJECTS[0];
+      setProject(activeProject);
+      setLoading(false);
+
+      if (activeProject) {
+        // Preload ảnh mặt bằng để tránh lag khi click tab
+        if (seo?.floorPlanImages) {
+          seo.floorPlanImages.forEach((img) => {
+            const preloadImg = new Image();
+            preloadImg.src = imgUrl(img.src, "full");
+          });
+        }
+
+        // Dùng SEO title/meta từ PROJECT_SEO nếu có
+        document.title = seo?.titleTag ?? `${activeProject.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.setAttribute("content", seo?.metaDesc ?? `${activeProject.description} Cập nhật mặt bằng, chính sách chiết khấu đợt 1 từ chủ đầu tư Kim Oanh Group.`);
+        }
+
+        // Schema RealEstateListing
+        const existingSchema = document.getElementById("schema-project");
+        if (existingSchema) existingSchema.remove();
+        const schema = document.createElement("script");
+        schema.id = "schema-project";
+        schema.type = "application/ld+json";
+        schema.text = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateListing",
+          "name": activeProject.title,
+          "alternateName": activeProject.slug === "k-home-cityview-ho-nai"
+            ? ["K-Home CityView", "K Home CityView", "K Home City View", "KHome CityView", "K-Home City View", "K Home Cityview Biên Hòa", "NOXH K-Home CityView Hố Nai"]
+            : activeProject.slug === "k-home-midtown-trang-bom"
+            ? ["K-Home Midtown", "K Home Midtown", "K Home Mid Town", "K-Home Mid Town", "KHome Midtown", "K Home Midtown Trảng Bom", "NOXH K-Home Midtown Trảng Bom"]
+            : activeProject.slug === "k-home-avenue-nhon-trach"
+            ? ["K-Home Avenue", "K Home Avenue", "KHome Avenue", "K Home Avenue Nhơn Trạch", "NOXH K-Home Avenue Nhơn Trạch", "K-Home Avenue Đồng Nai"]
+            : undefined,
+          "description": activeProject.description,
+          "url": `https://k-homedongnai.com.vn/${activeProject.slug}`,
+          "image": `https://k-homedongnai.com.vn${activeProject.image}`,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": activeProject.location,
+            "addressRegion": "Đồng Nai",
+            "addressCountry": "VN"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "VND",
+            "price": activeProject.priceNumber ? activeProject.priceNumber * 1000000000 : undefined,
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Kim Oanh Group",
+              "url": "https://k-homedongnai.com.vn"
+            }
+          },
+          "numberOfRooms": activeProject.unitTypes?.length,
+          "floorSize": {
+            "@type": "QuantitativeValue",
+            "value": activeProject.area,
+            "unitCode": "MTK"
+          }
+        });
+        document.head.appendChild(schema);
+
+        // Schema BreadcrumbList
+        const existingBreadcrumb = document.getElementById("schema-breadcrumb-project");
+        if (existingBreadcrumb) existingBreadcrumb.remove();
+        const breadcrumb = document.createElement("script");
+        breadcrumb.id = "schema-breadcrumb-project";
+        breadcrumb.type = "application/ld+json";
+        breadcrumb.text = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+            { "@type": "ListItem", "position": 2, "name": "Dự án", "item": "https://k-homedongnai.com.vn/san-pham" },
+            { "@type": "ListItem", "position": 3, "name": activeProject.title, "item": `https://k-homedongnai.com.vn/${activeProject.slug}` }
+          ]
+        });
+        document.head.appendChild(breadcrumb);
+
+        // FAQ Schema — lợi thế SEO lớn nhất, 3 trang top 1 đều không có
+        const existingFaq = document.getElementById("schema-faq-project");
+        if (existingFaq) existingFaq.remove();
+        if (seo?.faq?.length) {
+          const faqSchema = document.createElement("script");
+          faqSchema.id = "schema-faq-project";
+          faqSchema.type = "application/ld+json";
+          faqSchema.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": seo.faq.map(({ q, a }) => ({
+              "@type": "Question",
+              "name": q,
+              "acceptedAnswer": { "@type": "Answer", "text": a },
+            })),
+          });
+          document.head.appendChild(faqSchema);
+        }
+      }
+    };
+
     fetch("/api/projects")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
       .then((data: Project[]) => {
-        const list = Array.isArray(data) ? data : [];
-        let found = list.find((p) => p.slug === slug);
-        
-        // If not found, check if this is a unit URL with old slug
-        if (!found) {
-          // Extract unit slug from the full slug
-          // Format: /k-home-project-name/unit-slug
-          const parts = slug.split('/');
-          if (parts.length === 2) {
-            const projectPart = parts[0];
-            const unitSlugOld = parts[1];
-            
-            // Try to find the project first
-            const projectFound = list.find(p => p.slug === projectPart);
-            if (projectFound && slugRedirectMap[unitSlugOld]) {
-              // Redirect to new unit slug
-              const newUnitSlug = slugRedirectMap[unitSlugOld];
-              onNavigate(`/${projectPart}/${newUnitSlug}`);
-              return;
-            }
-          }
-        }
-        
-        setProject(found || null);
-        if (found) {
-          // Preload ảnh mặt bằng để tránh lag khi click tab
-          if (seo?.floorPlanImages) {
-            seo.floorPlanImages.forEach((img) => {
-              const preloadImg = new Image();
-              preloadImg.src = imgUrl(img.src, "full");
-            });
-          }
-          // Dùng SEO title/meta từ PROJECT_SEO nếu có
-          document.title = seo?.titleTag ?? `${found.title} | Giá Bán & Mặt Bằng Dự Án K-Home`;
-          const metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) {
-            metaDesc.setAttribute("content", seo?.metaDesc ?? `${found.description} Cập nhật mặt bằng, chính sách chiết khấu đợt 1 từ chủ đầu tư Kim Oanh Group.`);
-          }
-
-          // Schema RealEstateListing
-          const existingSchema = document.getElementById("schema-project");
-          if (existingSchema) existingSchema.remove();
-          const schema = document.createElement("script");
-          schema.id = "schema-project";
-          schema.type = "application/ld+json";
-          schema.text = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "RealEstateListing",
-            "name": found.title,
-            "alternateName": found.slug === "k-home-cityview-ho-nai"
-              ? ["K-Home CityView", "K Home CityView", "K Home City View", "KHome CityView", "K-Home City View", "K Home Cityview Biên Hòa", "NOXH K-Home CityView Hố Nai"]
-              : found.slug === "k-home-midtown-trang-bom"
-              ? ["K-Home Midtown", "K Home Midtown", "K Home Mid Town", "K-Home Mid Town", "KHome Midtown", "K Home Midtown Trảng Bom", "NOXH K-Home Midtown Trảng Bom"]
-              : found.slug === "k-home-avenue-nhon-trach"
-              ? ["K-Home Avenue", "K Home Avenue", "KHome Avenue", "K Home Avenue Nhơn Trạch", "NOXH K-Home Avenue Nhơn Trạch", "K-Home Avenue Đồng Nai"]
-              : undefined,
-            "description": found.description,
-            "url": `https://k-homedongnai.com.vn/${found.slug}`,
-            "image": `https://k-homedongnai.com.vn${found.image}`,
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": found.location,
-              "addressRegion": "Đồng Nai",
-              "addressCountry": "VN"
-            },
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "VND",
-              "price": found.priceNumber ? found.priceNumber * 1000000000 : undefined,
-              "availability": "https://schema.org/InStock",
-              "seller": {
-                "@type": "Organization",
-                "name": "Kim Oanh Group",
-                "url": "https://k-homedongnai.com.vn"
-              }
-            },
-            "numberOfRooms": found.unitTypes?.length,
-            "floorSize": {
-              "@type": "QuantitativeValue",
-              "value": found.area,
-              "unitCode": "MTK"
-            }
-          });
-          document.head.appendChild(schema);
-
-          // Schema BreadcrumbList
-          const existingBreadcrumb = document.getElementById("schema-breadcrumb-project");
-          if (existingBreadcrumb) existingBreadcrumb.remove();
-          const breadcrumb = document.createElement("script");
-          breadcrumb.id = "schema-breadcrumb-project";
-          breadcrumb.type = "application/ld+json";
-          breadcrumb.text = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
-              { "@type": "ListItem", "position": 2, "name": "Dự án", "item": "https://k-homedongnai.com.vn/san-pham" },
-              { "@type": "ListItem", "position": 3, "name": found.title, "item": `https://k-homedongnai.com.vn/${found.slug}` }
-            ]
-          });
-          document.head.appendChild(breadcrumb);
-
-          // FAQ Schema — lợi thế SEO lớn nhất, 3 trang top 1 đều không có
-          const existingFaq = document.getElementById("schema-faq-project");
-          if (existingFaq) existingFaq.remove();
-          if (seo?.faq?.length) {
-            const faqSchema = document.createElement("script");
-            faqSchema.id = "schema-faq-project";
-            faqSchema.type = "application/ld+json";
-            faqSchema.text = JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": seo.faq.map(({ q, a }) => ({
-                "@type": "Question",
-                "name": q,
-                "acceptedAnswer": { "@type": "Answer", "text": a },
-              })),
-            });
-            document.head.appendChild(faqSchema);
-          }
-        }
-        setLoading(false);
+        const list = Array.isArray(data) && data.length > 0 ? data : STATIC_PROJECTS;
+        processData(list);
       })
       .catch((err) => {
-        console.error("Failed to fetch project detail:", err);
-        setLoading(false);
+        console.warn("API fetch projects failed/blocked by robots.txt, using static projects fallback:", err);
+        processData(STATIC_PROJECTS);
       });
 
     // Cleanup: reset title khi unmount
@@ -698,7 +711,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       document.getElementById("schema-breadcrumb-project")?.remove();
       document.getElementById("schema-faq-project")?.remove();
     };
-  }, [slug]);
+  }, [slug, onNavigate, seo]);
 
   // Handle Form Submission
   const handleSubmit = (e: React.FormEvent) => {

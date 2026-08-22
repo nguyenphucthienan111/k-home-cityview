@@ -180,8 +180,10 @@ console.log(`   page-sitemap.xml  — ${pageUrls.length} URLs`);
 const robotsTxt = `# robots.txt — k-homedongnai.com.vn
 User-agent: *
 Allow: /
+Allow: /api/projects
+Allow: /api/news
 Disallow: /admin
-Disallow: /api/
+Disallow: /api/admin
 Sitemap: ${BASE_URL}/sitemap_index.xml
 `;
 

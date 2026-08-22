@@ -1,6 +1,8 @@
 # robots.txt — k-homedongnai.com.vn
 User-agent: *
 Allow: /
+Allow: /api/projects
+Allow: /api/news
 Disallow: /admin
-Disallow: /api/
+Disallow: /api/admin
 Sitemap: https://k-homedongnai.com.vn/sitemap_index.xml
