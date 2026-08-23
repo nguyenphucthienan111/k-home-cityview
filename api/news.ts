@@ -6928,7 +6928,7 @@ Nếu bạn đang chuẩn bị mua hoặc đã đăng ký căn hộ tại K-Home
     id: "n74",
     slug: "co-nen-mua-k-home-cityview-de-o-hay-khong",
     title: "Có Nên Mua K-Home CityView Để Ở Hay Không?",
-    date: "2026-08-19",
+    date: "2026-08-23",
     excerpt: "Có nên mua K-Home CityView để ở hay không là câu hỏi được nhiều người quan tâm khi tìm hiểu dự án nhà ở tại khu vực Hố Nai, Biên Hòa, Đồng Nai. Khám phá những yếu tố nên cân nhắc trước khi quyết định.",
     image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp",
     category: "Hỏi đáp / FAQ",
