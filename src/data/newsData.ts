@@ -2,6 +2,337 @@ import type { News } from '../types';
 
 export const newsData: News[] = [
   {
+    id: "n78",
+    slug: "bien-hoa-but-pha-co-hoi-an-cu-lac-nghiep-tai-khome-cityview-ho-nai",
+    title: "Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai | Kim Oanh Group",
+    date: "2026-08-26",
+    excerpt: "Phóng sự phân tích bứt phá hạ tầng TP. Biên Hòa và cơ hội sở hữu căn hộ nhà ở xã hội K-Home CityView (k-home city view) Hố Nai do Kim Oanh Group phát triển. Căn hộ chuẩn Singapore giá từ 950 triệu, hỗ trợ vay CSXH 5,4%/năm.",
+    image: "https://img.youtube.com/vi/Y9502b3sDJU/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Phóng sự kinh tế & hạ tầng:** Thước phim phân tích sự bứt phá hạ tầng đô thị TP. Biên Hòa và cơ hội an cư bền vững tại dự án **Nhà ở xã hội K-Home CityView** (hay **k-home city view**) tọa lạc tại đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** (Kim Oanh Land) làm chủ đầu tư.
+
+![Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai](https://img.youtube.com/vi/Y9502b3sDJU/hqdefault.jpg)
+
+## Video Phóng Sự Hạ Tầng & Cơ Hội An Cư K-Home CityView Hố Nai
+
+Dưới đây là video phóng sự ghi lại góc nhìn toàn cảnh về tiềm năng tăng trưởng hạ tầng TP. Biên Hòa cùng dự án **K-Home CityView**:
+
+---VIDEO---https://www.youtube.com/embed/Y9502b3sDJU|Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai - Hotline 0937 587 438
+
+## 1. Sức Bật Hạ Tầng Giao Thông TP. Biên Hòa & Cơ Hội Cho Bất Động Sản An Cư
+
+Thành phố Biên Hòa – hạt nhân kinh tế hàng đầu của tỉnh Đồng Nai – đang trải qua giai đoạn nâng cấp và phát triển hạ tầng mạnh mẽ nhất trong thập kỷ qua. Hàng loạt công trình trọng điểm quốc gia và khu vực đang đồng loạt được triển khai:
+
+- **Sân bay Quốc tế Long Thành:** Đòn bẩy đưa Đồng Nai trở thành trung tâm giao thương quốc tế.
+- **Cao tốc TP.HCM – Long Thành – Dầu Giây & Cao tốc Biên Hòa – Vũng Tàu:** Rút ngắn thời gian di chuyển liên vùng.
+- **Tuyến đường sắt đô thị Metro số 1 nối dài:** Kết nối trực tiếp Biên Hòa với trung tâm TP. Hồ Chí Minh.
+- **Nâng cấp & mở rộng các tuyến trục chính:** Đường Điểu Xiển, Quốc lộ 1A, Quốc lộ 51 giúp giải tỏa áp lực giao thông đô thị.
+
+Sự bứt phá hạ tầng không chỉ thu hút dòng vốn đầu tư FDI mạnh mẽ mà còn kéo theo làn sóng hơn **500.000 chuyên gia, kỹ sư, công nhân** về Biên Hòa sinh sống. Điều này tạo ra sức ép khổng lồ về nhu cầu nhà ở thực, và dự án **K-Home CityView** (k-home city view) Hố Nai chính là lời giải hoàn hảo nhất.
+
+Xem thêm chi tiết tại [Trang thông tin dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai), [Đánh giá vị trí K-Home CityView Biên Hòa](/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh) và [Các tuyến đường kết nối trực tiếp K-Home CityView](/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785515199/news11/3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp|Hình ảnh vị trí & không khí tham quan thực tế dự án K-Home CityView Biên Hòa
+
+## 2. Thông Tin Tổng Quan Dự Án K-Home CityView Hố Nai
+
+| Tiêu chí | Thông tin chi tiết K-Home CityView |
+|---|---|
+| **Tên thương mại dự án** | K-Home CityView (tên gọi khác: k-home city view) |
+| **Vị trí địa lý** | Mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai |
+| **Chủ đầu tư** | Kim Oanh Land (Tập đoàn Kim Oanh Group) |
+| **Đơn vị tư vấn thiết kế** | Tập đoàn Surbana Jurong (Singapore) |
+| **Tiêu chuẩn công trình xanh** | Chứng chỉ công trình xanh EDGE (Tổ chức IFC / World Bank) |
+| **Quy mô đất quy hoạch** | 2,85 hecta |
+| **Cơ cấu sản phẩm** | 4 Block cao 22 tầng — 1.328 căn NOXH + 39 căn Shophouse |
+| **Diện tích căn hộ** | Đa dạng từ 47,3 m² đến 84,4 m² (1PN+A, 1PN+B, 2PN, 3PN) |
+| **Giá bán công bố đợt 1** | Từ 950 triệu đến 1,8 tỷ đồng/căn |
+| **Chính sách hỗ trợ vay** | Ngân hàng CSXH hỗ trợ vay 75–80%, lãi suất 5,4%/năm trong 25 năm |
+| **Lộ trình bàn giao** | Dự kiến Tháng 1/2028 |
+
+## 3. Lý Do K-Home CityView Trở Thành Tâm Điểm An Cư Tại Biên Hòa
+
+### Vị trí đắc địa kết nối nhanh đến các KCN trọng điểm
+Tọa lạc ngay mặt tiền đường Điểu Xiển, cư dân **K-Home CityView** (k-home city view) sở hữu lợi thế di chuyển vượt trội:
+- **7 phút:** Đến KCN Amata Biên Hòa
+- **10 phút:** Đến KCN Long Bình & KCN Biên Hòa 2
+- **10–15 phút:** Đến KCN Hố Nai & KCN Sông Mây
+- **5–10 phút:** Đến trung tâm hành chính TP. Biên Hòa, Bệnh viện đa khoa Đồng Nai, Siêu thị Lotte Mart.
+
+Xem chi tiết tại [K-Home CityView có gần các KCN nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [K-Home CityView có thuận tiện cho người làm ở Amata không](/tin-tuc/k-home-cityview-co-thuan-tien-cho-nguoi-lam-o-amata-khong).
+
+### Đô thị nhà ở xã hội chuẩn Singapore từ Surbana Jurong
+Khác hoàn toàn các dự án NOXH giá rẻ truyền thống, K-Home CityView được tư vấn quy hoạch bởi **Surbana Jurong (Singapore)**. 100% căn hộ có thiết kế tối ưu thông gió tự nhiên, đón nguồn ánh sáng ngập tràn, kết hợp tiêu chuẩn xanh **EDGE** tiết kiệm 20% hóa đơn điện nước hàng tháng.
+
+Xem thêm bài viết [K-Home CityView đạt tiêu chuẩn sống xanh EDGE](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge) và [Đánh giá thiết kế căn hộ K-Home CityView](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026).
+
+## 4. Phân Tích Mức Giá Bán & Giải Pháp Trả Góp 3,5 Triệu/Tháng
+
+Chủ đầu tư Kim Oanh Group đưa ra mức giá niêm yết cạnh tranh giúp đại đa số gia đình người lao động dễ dàng chạm tay tới giấc mơ an cư:
+
+- **Căn 1PN+ A (47,3 m²):** Giá từ **950 triệu**, trả góp chỉ ~3,5 – 4,0 triệu/tháng.
+- **Căn 1PN+ B (62,4 m²):** Giá từ **1,20 tỷ**, trả góp chỉ ~4,2 – 4,8 triệu/tháng.
+- **Căn 2 Phòng Ngủ (70,4 m²):** Giá từ **1,50 tỷ**, trả góp chỉ ~5,0 – 5,5 triệu/tháng.
+- **Căn 3 Phòng Ngủ (84,4 m²):** Giá từ **1,80 tỷ**, trả góp chỉ ~6,0 – 6,5 triệu/tháng.
+
+Đặc biệt, gói vay ưu đãi từ **Ngân hàng Chính sách Xã hội** (NHCSXH) cho vay **75–80%** giá trị căn hộ với lãi suất cố định **5,4%/năm trong 25 năm**, giúp số tiền trả góp hàng tháng chỉ bằng hoặc thấp hơn tiền chi trả thuê nhà trọ tại Biên Hòa.
+
+Đọc thêm bài viết [Mỗi tháng phải trả bao nhiêu tiền khi mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) và [Bảng giá K-Home CityView 2026 mới nhất](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can).
+
+## 5. Hướng Dẫn Hồ Sơ Đăng Ký Mua NOXH K-Home CityView Hố Nai
+
+Để đủ điều kiện xét duyệt mua căn hộ NOXH **K-Home CityView** (k-home city view), người mua cần chuẩn bị:
+
+1. **Điều kiện nhà ở:** Chưa sở hữu nhà ở/đất ở đứng tên cá nhân tại Đồng Nai.
+2. **Điều kiện thu nhập:** Thu nhập thực nhận thuộc khung đối tượng hưởng chính sách NOXH theo Luật Nhà ở.
+3. **Điều kiện cư trú:** Có hộ khẩu thường trú hoặc tạm trú (KT3) từ 1 năm trở lên tại tỉnh Đồng Nai.
+
+Xem trọn bộ hướng dẫn hồ sơ tại [Điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [Hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [Quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## Kết Luận: Thời Điểm Vàng Để An Cư Lạc Nghiệp Tại Biên Hòa
+
+Khi hạ tầng Biên Hòa bứt phá mạnh mẽ, **K-Home CityView** chính là cơ hội an cư đắt giá dành cho cộng đồng người lao động và gia đình trẻ tại Đồng Nai.
+
+**Liên hệ ngay Sales Gallery K-Home CityView để được hỗ trợ kiểm tra điều kiện & chọn căn đẹp:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn
+
+---RELATED---khome-cityview-ho-nai-to-am-chuan-singapore-cho-gia-dinh-viet|K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt;phong-su-nha-o-xa-hoi-k-home-cityview-ho-nai-dong-nai|Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai;le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa|Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026`
+  },
+  {
+    id: "n77",
+    slug: "khome-cityview-ho-nai-to-am-chuan-singapore-cho-gia-dinh-viet",
+    title: "K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt | Kim Oanh Land",
+    date: "2026-08-26",
+    excerpt: "Khám phá không gian sống chuẩn Singapore tại dự án nhà ở xã hội K-Home CityView (k-home city view) Hố Nai, TP. Biên Hòa do Kim Oanh Group phát triển. Căn hộ 47–84m² thiết kế Surbana Jurong, đạt chuẩn xanh EDGE, giá từ 950 triệu.",
+    image: "https://img.youtube.com/vi/f4Av04RYDrw/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Video giới thiệu nổi bật:** Thước phim giới thiệu không gian sống chuẩn Singapore tại dự án **Nhà ở xã hội K-Home CityView** (hay **k-home city view**) tọa lạc tại mặt tiền đường Điểu Xiển, Phường Hố Nai, Thành phố Biên Hòa, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** (Kim Oanh Land) kiến tạo. Bài viết dưới đây sẽ phân tích toàn diện lý do vì sao dự án được đánh giá là chốn an cư đáng sống nhất khu vực.
+
+![K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt](https://img.youtube.com/vi/f4Av04RYDrw/hqdefault.jpg)
+
+## Video Giới Thiệu K-Home CityView Hố Nai Biên Hòa
+
+Dưới đây là video chi tiết giới thiệu thiết kế kiến trúc Singapore, tiện ích nội khu đỉnh cao và giải pháp an cư cho các gia đình Việt tại **K-Home CityView**:
+
+---VIDEO---https://www.youtube.com/embed/f4Av04RYDrw|K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt - Hotline 0937 587 438
+
+## 1. Xu Hướng Chọn Tổ Ấm Chuẩn Singapore Tại Thủ Phủ Công Nghiệp Biên Hòa
+
+Thành phố Biên Hòa – thủ phủ của tỉnh Đồng Nai – là một trong những đô thị có tốc độ phát triển công nghiệp và tăng trưởng dân số cơ học thuộc hàng cao nhất cả nước. Với hàng chục Khu công nghiệp (KCN) quy mô hàng trăm hecta như KCN Amata, KCN Long Bình, KCN Biên Hòa 1, KCN Biên Hòa 2, KCN Hố Nai, KCN Sông Mây... nơi đây đang là quê hương thứ hai của hơn **500.000 công nhân, kỹ sư và chuyên gia** đang sinh sống và làm việc.
+
+Tuy nhiên, bài toán nhức nhối suốt nhiều năm qua chính là sự thiếu hụt trầm trọng của dòng sản phẩm nhà ở có mức giá bình dân nhưng vẫn đảm bảo chất lượng sống tốt, tiện nghi và văn minh. Hầu hết người lao động phải chấp nhận sống trong những căn phòng trọ chật chực, thiếu ánh sáng và an ninh không đảm bảo.
+
+Nắm bắt được nhu cầu thiết thực đó, **Kim Oanh Group** (Kim Oanh Land) đã tiên phong phát triển dự án **K-Home CityView** (k-home city view) tại khu vực Hố Nai. Đây không chỉ là một dự án căn hộ nhà ở xã hội (NOXH) đơn thuần mà là một **hệ sinh thái đô thị xanh chuẩn Singapore**, nơi mỗi gia đình được tận hưởng cuộc sống văn minh, an lành và hạnh phúc trọn vẹn.
+
+Xem thông tin chi tiết dự án tại [Trang thông tin chính thức K-Home CityView Hố Nai](/k-home-cityview-ho-nai), [Đánh giá thiết kế căn hộ K-Home CityView](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026) và [Phóng sự nhà ở xã hội K-Home CityView Hố Nai](/tin-tuc/phong-su-nha-o-xa-hoi-k-home-cityview-ho-nai-dong-nai).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785515199/news11/3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp|Hình ảnh không khí tham quan nhà mẫu & quy hoạch K-Home CityView Biên Hòa
+
+## 2. Thông Tin Tổng Quan Dự Án K-Home CityView Hố Nai
+
+| Tiêu chí | Thông tin chi tiết K-Home CityView |
+|---|---|
+| **Tên thương mại dự án** | K-Home CityView (tên gọi khác: k-home city view) |
+| **Vị trí địa lý** | Mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai |
+| **Chủ đầu tư & Phát triển** | Kim Oanh Land (Tập đoàn Kim Oanh Group) |
+| **Đơn vị tư vấn thiết kế** | Tập đoàn Surbana Jurong (Singapore) |
+| **Tiêu chuẩn công trình xanh** | Chứng chỉ xanh EDGE (Tổ chức IFC / Ngân hàng Thế giới) |
+| **Quy mô diện tích quy hoạch** | 2,85 hecta |
+| **Cơ cấu sản phẩm** | 4 Block cao 22 tầng — 1.328 căn NOXH + 39 căn Shophouse |
+| **Loại hình căn hộ** | 1PN+A (47m²), 1PN+B (62m²), 2PN (70m²), 3PN (84m²) |
+| **Giá bán công bố đợt 1** | Từ 950 triệu đến 1,8 tỷ đồng/căn |
+| **Chính sách hỗ trợ vay vốn** | Vay Ngân hàng CSXH 75–80%, lãi suất 5,4%/năm cố định 25 năm |
+| **Dự kiến bàn giao nhà** | Tháng 1/2028 |
+
+## 3. Lý Do K-Home CityView Trở Thành Tổ Ấm Lý Tưởng Cho Gia Đình Việt
+
+### Thiết kế tinh gọn, tối ưu nguồn sáng tự nhiên từ Surbana Jurong
+Được thiết kế bởi **Surbana Jurong** – tập đoàn quy hoạch kiến trúc huyền thoại hàng đầu Singapore, các tòa tháp **K-Home CityView** (k-home city view) sở hữu bố cục đón gió thông thoáng, 100% căn hộ đều có cửa sổ lớn đón ánh sáng tự nhiên và logia phơi đồ riêng biệt. Bố trí này không chỉ mang lại phong thủy tốt mà còn giúp căn hộ luôn thoáng mát, giảm tiêu thụ điện năng chiếu sáng và điều hòa.
+
+Xem thêm bài viết phân tích [Mặt bằng K-Home CityView hướng nắng & thông gió tự nhiên](/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien).
+
+### Hệ tiện ích đa tầng nâng tầm chất lượng sống
+- **Hồ bơi ngoài trời xanh mát:** Nơi thư giãn lý tưởng cho cả gia đình sau những giờ làm việc căng thẳng.
+- **Công viên & Vườn treo Sky Garden:** Không gian xanh mát dành riêng cho người già tập dưỡng sinh và trẻ nhỏ vui chơi.
+- **Khu vui chơi trẻ em & Nhà trẻ nội khu:** Giúp các bậc phụ huynh hoàn toàn an tâm gửi gắm con trẻ ngay tại tòa nhà.
+- **Tuyến phố Shophouse thương mại:** Đáp ứng tức thì mọi nhu cầu siêu thị, café, spa, dịch vụ thiết yếu 24/7.
+
+Xem thêm bài viết [K-Home CityView có bể bơi không? Tiện ích nội khu](/tin-tuc/k-home-cityview-co-be-boi-khong-tien-ich-noi-khu).
+
+### Tiêu chuẩn công trình xanh EDGE bảo vệ sức khỏe & tiết kiệm chi phí
+Dự án áp dụng tiêu chuẩn **EDGE quốc tế** (Excellence in Design for Greater Efficiencies), giúp giảm tối thiểu 20% lượng điện, 20% lượng nước tiêu thụ và 20% lượng khí phát thải carbon. Cư dân không chỉ tận hưởng môi trường sống an lành, sạch sẽ mà còn tiết kiệm trực tiếp hàng triệu đồng tiền hóa đơn sinh hoạt mỗi tháng.
+
+Xem chi tiết bài viết [K-Home CityView đạt tiêu chuẩn sống xanh EDGE có lợi gì](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge).
+
+## 4. Phân Tích Bảng Giá & Giải Pháp Trả Góp Chỉ Từ 3,5 Triệu/Tháng
+
+Chủ đầu tư Kim Oanh Group cam kết mang tới mức giá nhà ở xã hội cạnh tranh và hợp lý nhất cho cư dân Biên Hòa:
+
+- **Căn 1PN+ A (47,3 m²):** Giá từ **950 triệu**, trả góp chỉ ~3,5 – 4,0 triệu/tháng.
+- **Căn 1PN+ B (62,4 m²):** Giá từ **1,20 tỷ**, trả góp chỉ ~4,2 – 4,8 triệu/tháng.
+- **Căn 2 Phòng Ngủ (70,4 m²):** Giá từ **1,50 tỷ**, trả góp chỉ ~5,0 – 5,5 triệu/tháng.
+- **Căn 3 Phòng Ngủ (84,4 m²):** Giá từ **1,80 tỷ**, trả góp chỉ ~6,0 – 6,5 triệu/tháng.
+
+Nhờ chính sách vay từ **Ngân hàng Chính sách Xã hội** (NHCSXH) với lãi suất ưu đãi chỉ **5,4%/năm** cố định trong **25 năm**, số tiền trả góp hàng tháng hoàn toàn tương đương tiền chi trả thuê nhà trọ tại Biên Hòa nhưng cư dân lại được sở hữu tài sản lâu dài.
+
+Đọc bài phân tích tại [Mỗi tháng phải trả bao nhiêu tiền khi mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) và [Bảng giá K-Home CityView 2026 mới nhất](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can).
+
+## 5. Hướng Dẫn Hồ Sơ Đăng Ký Mua Nhà Ở Xã Hội K-Home CityView
+
+Để không bỏ lỡ cơ hội sở hữu căn hộ vị trí đẹp đợt mở bán đầu tiên, người đăng ký mua **K-Home CityView** (k-home city view) cần đáp ứng 4 tiêu chí cốt lõi:
+
+1. **Điều kiện nhà ở:** Chưa đứng tên sổ đỏ nhà ở/đất ở tại tỉnh Đồng Nai hoặc diện tích nhà ở bình quân dưới 10m²/người.
+2. **Điều kiện thu nhập:** Thu nhập thực nhận thuộc diện không nộp thuế TNCN thường xuyên hoặc dưới 15 triệu/tháng (đơn thân), dưới 30 triệu/tháng (2 vợ chồng).
+3. **Điều kiện cư trú:** Có hộ khẩu thường trú hoặc đăng ký tạm trú (KT3) từ 1 năm trở lên tại tỉnh Đồng Nai.
+4. **Điều kiện đối tượng:** Thuộc 10 nhóm đối tượng được hưởng chính sách hỗ trợ NOXH theo quy định Luật Nhà ở.
+
+Xem trọn bộ hướng dẫn hồ sơ tại [Điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [Hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [Quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## 6. Lộ Trình Tiến Độ Thi Công & Bàn Giao Nhà K-Home CityView
+
+- **Tháng 9/2025:** Tổ chức thành công Lễ động thổ và làm sạch mặt bằng.
+- **Tháng 8/2026:** Hoàn thành phần móng hầm, bắt đầu thi công kết cấu cột dầm sàn các tầng.
+- **Tháng 6/2027:** Dự kiến cất nóc toàn bộ 4 block tòa tháp 22 tầng.
+- **Tháng 1/2028:** Tiến hành nghiệm thu và bàn giao những căn hộ đầu tiên cho cư dân về ở.
+
+Theo dõi tiến độ tại [Video Tiến độ xây dựng K-Home CityView cập nhật mới nhất](/tin-tuc/tien-do-xay-dung-k-home-cityview-cap-nhat-moi-nhat-2026) và [K-Home CityView khi nào bàn giao nhà](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028).
+
+## Kết Luận: Lựa Chọn An Cư Hàng Đầu Tại Biên Hòa
+
+Dự án **K-Home CityView** Hố Nai chính là câu trả lời hoàn hảo cho giấc mơ an cư chuẩn Singapore của hàng ngàn gia đình Việt tại Đồng Nai.
+
+**Liên hệ ngay Sales Gallery K-Home CityView để được hỗ trợ kiểm tra điều kiện & chọn căn đẹp:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn
+
+---RELATED---phong-su-nha-o-xa-hoi-k-home-cityview-ho-nai-dong-nai|Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai;le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa|Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?`
+  },
+  {
+    id: "n76",
+    slug: "phong-su-nha-o-xa-hoi-k-home-cityview-ho-nai-dong-nai",
+    title: "Phóng Sự Toàn Cảnh Dự Án Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa — Kim Oanh Land",
+    date: "2026-08-26",
+    excerpt: "Phóng sự truyền hình chi tiết về dự án nhà ở xã hội K-Home CityView (k-home city view) tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Giải pháp an cư chuẩn Singapore với gói vay ưu đãi 5,4%/năm cho công nhân & gia đình trẻ Đồng Nai.",
+    image: "https://img.youtube.com/vi/RJGULOh6Wrs/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "cityview",
+    content: `> **Phóng sự truyền hình chính thức:** Thước phim phóng sự toàn cảnh đánh giá dự án **Nhà ở xã hội K-Home CityView** (hay **k-home city view**) tọa lạc tại mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** (Kim Oanh Land) làm chủ đầu tư. Đây là một trong những dự án NOXH quy mô và hiện đại bậc nhất khu vực Đông Nam Bộ.
+
+![Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land](https://img.youtube.com/vi/RJGULOh6Wrs/hqdefault.jpg)
+
+## Video Phóng Sự Toàn Cảnh K-Home CityView Hố Nai Biên Hòa
+
+Dưới đây là video phóng sự ghi lại hình ảnh thực tế, đánh giá vị trí chiến lược và phỏng vấn giải pháp tài chính an cư dành cho người lao động tại **K-Home CityView**:
+
+---VIDEO---https://www.youtube.com/embed/RJGULOh6Wrs|Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land - Hotline 0937 587 438
+
+## 1. Ý Nghĩa Của Dự Án K-Home CityView Trong Điểm Nóng An Cư Biên Hòa
+
+Thành phố Biên Hòa – Tỉnh Đồng Nai từ lâu đã được biết đến là "thủ phủ công nghiệp" phát triển bậc nhất vùng Đông Nam Bộ. Nơi đây tập trung hàng chục Khu công nghiệp (KCN) quy mô lớn như KCN Amata, KCN Long Bình, KCN Biên Hòa 1, KCN Biên Hòa 2, KCN Hố Nai, KCN Sông Mây... thu hút hơn **500.000 công nhân, kỹ sư và chuyên gia** đang làm việc. Nhu cầu tìm kiếm một chốn an cư lạc nghiệp chất lượng, giá rẻ và pháp lý minh bạch ngày càng trở nên vô cùng cấp thiết.
+
+Sự xuất hiện của khu căn hộ **K-Home CityView** (k-home city view) do **Kim Oanh Group** phát triển tại mặt tiền đường Điểu Xiển, Phường Hố Nai đã mang đến giải pháp đột phá. Dự án không chỉ giải bài toán nhà ở cho người có thu nhập thấp mà còn xóa tan định kiến truyền thống về "nhà ở xã hội giá rẻ thường gắn liền với chất lượng xập xệ, xuống cấp". Thay vào đó, **K-Home CityView Hố Nai** được định vị là mô hình đô thị **nhà ở xã hội chuẩn Singapore** hiện đại bậc nhất khu vực.
+
+Xem thông tin chi tiết dự án tại [Trang thông tin chính thức K-Home CityView Hố Nai](/k-home-cityview-ho-nai), [Đánh giá dự án K-Home CityView Biên Hòa 2026](/tin-tuc/danh-gia-du-an-k-home-cityview-bien-hoa-2026) và [Lễ động thổ K-Home CityView Hố Nai](/tin-tuc/le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785515199/news11/3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1786606035/hon-800-khach-hang-tham-quan-sales-gallery-k-home-cityview-trong-ngay-khai-truong-1-1_u18yau.webp|Hình ảnh phối cảnh & đông đảo khách hàng tham quan dự án K-Home CityView Biên Hòa
+
+## 2. Thông Tin Tổng Quan Dự Án K-Home CityView Hố Nai
+
+| Tiêu chí | Thông tin chi tiết K-Home CityView |
+|---|---|
+| **Tên thương mại dự án** | K-Home CityView (tên gọi khác: k-home city view) |
+| **Vị trí địa lý** | Đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai |
+| **Chủ đầu tư** | Kim Oanh Land (Tập đoàn Kim Oanh Group) |
+| **Đơn vị tư vấn quy hoạch** | Surbana Jurong (Tập đoàn hàng đầu Singapore) |
+| **Tiêu chuẩn công trình xanh** | Chứng chỉ xanh EDGE (Do IFC / Ngân hàng Thế giới cấp) |
+| **Quy mô quy hoạch** | 2,85 hecta |
+| **Cơ cấu sản phẩm** | 4 Block cao 22 tầng — 1.328 căn NOXH + 39 căn Shophouse |
+| **Diện tích căn hộ** | Đa dạng từ 47,3 m² đến 84,4 m² (1PN+A, 1PN+B, 2PN, 3PN) |
+| **Mức giá niêm yết** | Từ 950 triệu đến 1,8 tỷ đồng/căn |
+| **Gói vay ngân hàng** | Ngân hàng CSXH hỗ trợ vay 75–80%, lãi suất 5,4%/năm trong 25 năm |
+| **Thời gian bàn giao** | Dự kiến Tháng 1/2028 |
+
+## 3. Lý Do K-Home CityView Được Đánh Giá Cao Trong Phóng Sự
+
+### Kiến trúc chuẩn Singapore từ Tập đoàn Surbana Jurong
+Không giống các dự án NOXH thông thường, **K-Home CityView** (k-home city view) được tư vấn quy hoạch và thiết kế bởi **Surbana Jurong (Singapore)**. Bố cục 4 tòa tháp được tính toán khoa học giúp 100% căn hộ đều có ban công, logia riêng và thiết kế thông gió tự nhiên, đảm bảo ánh sáng ngập tràn mọi góc nhà.
+
+Xem đánh giá kiến trúc tại [Đánh giá thiết kế căn hộ K-Home CityView](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026) và [Mặt bằng K-Home CityView hướng nắng & thông gió](/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien).
+
+### Chứng chỉ xanh EDGE – Tiết kiệm 20% chi phí điện nước hàng tháng
+Dự án đạt chứng chỉ xanh **EDGE** do Tổ chức Tài chính Quốc tế (IFC) thuộc Ngân hàng Thế giới trao tặng. Nhờ hệ thống vật liệu cách nhiệt, kính giảm nhiệt và thiết bị vệ sinh tiết kiệm nước, cư dân sinh sống tại K-Home CityView sẽ cắt giảm tối thiểu 20% hóa đơn điện nước mỗi tháng.
+
+Xem chi tiết tại [K-Home CityView đạt tiêu chuẩn sống xanh EDGE có lợi gì](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge).
+
+### Vị trí vàng kết nối trực tiếp các Khu Công Nghiệp lớn
+Nằm ngay mặt tiền đường Điểu Xiển, cư dân K-Home CityView dễ dàng kết nối:
+- **KCN Amata Biên Hòa:** 7 phút di chuyển
+- **KCN Long Bình & KCN Biên Hòa 2:** 10 phút di chuyển
+- **KCN Hố Nai & KCN Sông Mây:** 10–15 phút di chuyển
+- **Trung tâm hành chính TP. Biên Hòa & Lotte Mart:** 5–10 phút di chuyển
+
+Xem phân tích vị trí tại [K-Home CityView nằm ở đâu? Địa chỉ chính xác](/tin-tuc/k-home-cityview-nam-o-dau-dia-chi-du-an-chinh-xac-la-gi) và [K-Home CityView có gần các Khu Công Nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao).
+
+## 4. Các Loại Hình Căn Hộ Và Bảng Giá K-Home CityView Hố Nai
+
+Chủ đầu tư Kim Oanh Group cung cấp 4 loại hình căn hộ đáp ứng nhu cầu của đa dạng gia đình:
+
+1. **Căn 1 phòng ngủ+ A (47,3 m²):** Giá từ **950 triệu**, thích hợp cho người độc thân hoặc vợ chồng trẻ mới cưới.
+2. **Căn 1 phòng ngủ+ B (62,4 m²):** Giá từ **1,20 tỷ**, thiết kế rộng rãi với 2 nhà vệ sinh tiện lợi.
+3. **Căn 2 phòng ngủ (70,4 m²):** Giá từ **1,50 tỷ**, sự lựa chọn lý tưởng cho gia đình có 1–2 con nhỏ.
+4. **Căn 3 phòng ngủ (84,4 m²):** Giá từ **1,80 tỷ**, dòng sản phẩm NOXH hiếm hoi tại Đồng Nai dành cho gia đình đa thế hệ.
+
+Xem chi tiết tại [So sánh căn 1PN và 2PN K-Home CityView](/tin-tuc/so-sanh-can-1-phong-ngu-va-2-phong-ngu-k-home-cityview-cho-gia-dinh-tre), [Căn 3 phòng ngủ K-Home CityView phù hợp ai](/tin-tuc/can-3-phong-ngu-k-home-cityview-phu-hop-gia-dinh-nao) và [Bảng giá K-Home CityView 2026 theo từng loại căn](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can).
+
+## 5. Giải Đáp Bài Toán Tài Chính & Gói Vay Ngân Hàng CSXH 5,4%/Năm
+
+Điểm thu hút lớn nhất được nhấn mạnh trong phóng sự là chính sách hỗ trợ tài chính tối ưu cho người lao động:
+
+- **Vốn tự có ban đầu:** Chỉ cần 20–25% (khoảng **200 – 250 triệu đồng**).
+- **Ngân hàng hỗ trợ cho vay:** Tối đa **75 – 80%** giá trị hợp đồng từ Ngân hàng Chính sách Xã hội (NHCSXH).
+- **Lãi suất ưu đãi:** **5,4%/năm** cố định trong thời hạn vay tối đa 25 năm.
+- **Số tiền trả góp hàng tháng:** Chỉ từ **3,5 – 4,5 triệu đồng/tháng** (tương đương với chi phí đi thuê nhà trọ tại Biên Hòa).
+
+Đọc hướng dẫn chi tiết tại [Mỗi tháng phải trả bao nhiêu tiền khi mua K-Home CityView](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview), [Lãi suất vay mua K-Home CityView tính như thế nào](/tin-tuc/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao) và [Chính sách thanh toán K-Home CityView 2026](/tin-tuc/chinh-sach-thanh-toan-k-home-cityview-2026).
+
+## 6. Điều Kiện & Quy Trình Đăng Ký Mua NOXH K-Home CityView
+
+Để đăng ký mua nhà ở xã hội **K-Home CityView** (k-home city view) Hố Nai, người mua cần đáp ứng các điều kiện sau theo quy định của Luật Nhà ở:
+
+1. **Điều kiện đối tượng:** Thuộc 10 nhóm đối tượng hưởng chính sách NOXH (công nhân KCN, cán bộ công nhân viên chức, hộ gia đình thu nhập thấp...).
+2. **Điều kiện nhà ở:** Chưa sở hữu nhà ở/đất ở đứng tên cá nhân tại tỉnh Đồng Nai hoặc diện tích nhà ở bình quân dưới 10m²/người.
+3. **Điều kiện thu nhập:** Thu nhập thực nhận dưới 15 triệu/tháng (đối với người độc thân) hoặc tổng thu nhập 2 vợ chồng dưới 30 triệu/tháng.
+4. **Điều kiện cư trú:** Có hộ khẩu thường trú hoặc đăng ký tạm trú (KT3) từ 1 năm trở lên tại tỉnh Đồng Nai.
+
+Xem trọn bộ hướng dẫn hồ sơ tại [Điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [Hồ sơ mua K-Home CityView gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [Quy trình đăng ký mua K-Home CityView từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## 7. Cập Nhật Tiến Độ Xây Dựng K-Home CityView Mới Nhất
+
+Dự án đang được đẩy nhanh tiến độ thi công để đảm bảo lộ trình bàn giao đúng cam kết:
+
+- **Tháng 9/2025:** Lễ động thổ và làm sạch mặt bằng.
+- **Tháng 8/2026:** Hoàn thành móng hầm, thi công kết cấu phần thân tòa nhà.
+- **Tháng 6/2027:** Dự kiến cất nóc toàn bộ 4 block tòa tháp.
+- **Tháng 1/2028:** Bàn giao những căn hộ đầu tiên cho cư dân.
+
+Theo dõi tiến độ tại [Video Tiến độ xây dựng K-Home CityView cập nhật mới nhất](/tin-tuc/tien-do-xay-dung-k-home-cityview-cap-nhat-moi-nhat-2026) và [K-Home CityView khi nào bàn giao nhà](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028).
+
+## Kết Luận: Khởi Đầu Cuộc Sống An Cư Đẳng Cấp Tại K-Home CityView
+
+Phóng sự toàn cảnh về dự án **K-Home CityView** Hố Nai là minh chứng rõ nét cho tầm nhìn và tâm huyết của **Kim Oanh Group** trong việc nâng cao chất lượng cuộc sống người lao động tại Đồng Nai.
+
+Nếu bạn đang tìm kiếm một căn hộ chuẩn Singapore, vị trí đắc địa, pháp lý an toàn với chi phí vừa túi tiền tại Biên Hòa, **K-Home CityView chính là sự lựa chọn hoàn hảo nhất**.
+
+**Liên hệ ngay Phòng Kinh Doanh & Sales Gallery K-Home CityView:**
+- **Hotline / Zalo:** 0937 587 438 (Hỗ trợ 24/7)
+- **Website:** https://k-homedongnai.com.vn
+
+---RELATED---le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa|Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa;tien-do-xay-dung-k-home-cityview-cap-nhat-moi-nhat-2026|Tiến Độ Xây Dựng K-Home CityView - Cập Nhật Video Mới Nhất Tháng 8/2026;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026;gia-ban-k-home-cityview-2026-can-bao-nhieu-tien|Giá Bán K-Home CityView 2026: Cần Bao Nhiêu Tiền?`
+  },
+  {
     id: "n75",
     slug: "le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa",
     title: "Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa - Mốc Khởi Đầu Chuỗi NOXH Singapore",

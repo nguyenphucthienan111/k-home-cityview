@@ -1239,19 +1239,20 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <div className="lg:col-span-2 space-y-8">
           
           {/* Tabs Selector */}
-          <div className="flex border-b border-slate-100">
+          <div className="flex items-center overflow-x-auto no-scrollbar border-b border-slate-100 whitespace-nowrap">
             {[
-              { id: "overview",  label: "Tổng Quan & Mô Tả" },
-              { id: "units",     label: "Bảng Giá & Loại Hình" },
-              { id: "amenities", label: "Tiện Ích Đẳng Cấp" },
-              { id: "map",       label: "Vị Trí Bản Đồ" }
+              { id: "overview",        label: "Tổng Quan" },
+              ...(slug === "k-home-cityview-ho-nai" ? [{ id: "video_phong_su", label: "🎬 Video Phóng Sự" }] : []),
+              { id: "units",           label: "Bảng Giá & Loại Hình" },
+              { id: "amenities",       label: "Tiện Ích" },
+              { id: "map",             label: "Vị Trí Bản Đồ" }
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`py-4 px-6 text-sm font-semibold tracking-wide transition-all border-b-2 cursor-pointer ${
+                className={`py-3.5 px-4 text-xs sm:text-sm font-semibold tracking-wide transition-all border-b-2 cursor-pointer shrink-0 ${
                   activeTab === tab.id
-                    ? "border-amber-600 text-amber-600"
+                    ? "border-amber-600 text-amber-600 bg-amber-50/50"
                     : "border-transparent text-slate-500 hover:text-amber-600"
                 }`}
               >
@@ -1259,6 +1260,89 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </button>
             ))}
           </div>
+
+          {/* Tab Video Phóng Sự & Giới Thiệu */}
+          {activeTab === "video_phong_su" && slug === "k-home-cityview-ho-nai" && (
+            <div className="space-y-8">
+              {/* Video 1: Biên Hòa Bứt Phá */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      PHÓNG SỰ HẠ TẦNG & CƠ HỘI AN CƯ
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai</h3>
+                  </div>
+                  <span className="text-xs text-amber-400 font-medium">Kim Oanh Group</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/Y9502b3sDJU?autoplay=0&rel=0"
+                    title="Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai | Kim Oanh Group"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Phóng sự phân tích bứt phá hạ tầng TP. Biên Hòa, tiềm năng quy hoạch kết nối giao thông và cơ hội sở hữu căn hộ NOXH K-Home CityView Hố Nai do Kim Oanh Group phát triển.
+                </p>
+              </div>
+
+              {/* Video 2: Tổ Ấm Chuẩn Singapore */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-blue-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      VIDEO GIỚI THIỆU CHÍNH THỨC
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt</h3>
+                  </div>
+                  <span className="text-xs text-blue-400 font-medium">Kim Oanh Land</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/f4Av04RYDrw?autoplay=0&rel=0"
+                    title="K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Video giới thiệu chi tiết không gian sống chuẩn Singapore, quy hoạch kiến trúc đỉnh cao Surbana Jurong và hệ tiện ích phong phú tại K-Home CityView Hố Nai, TP. Biên Hòa.
+                </p>
+              </div>
+
+              {/* Video 3: Phóng Sự Truyền Hình */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-emerald-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      PHÓNG SỰ TRUYỀN HÌNH
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai</h3>
+                  </div>
+                  <span className="text-xs text-emerald-400 font-medium">Kim Oanh Land</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/RJGULOh6Wrs?autoplay=0&rel=0"
+                    title="Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Phóng sự đánh giá vị trí chiến lược, tiềm năng phát triển và giải pháp tài chính vay ưu đãi 5,4%/năm trong 25 năm dành cho công nhân và người lao động Đồng Nai.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Tab 1: Overview */}
           {activeTab === "overview" && (
