@@ -46,8 +46,8 @@ const STATIC_ROUTES = [
   },
   {
     dir: "k-home-midtown-trang-bom",
-    title: "K-Home Midtown Trảng Bom | Nhà Ở Xã Hội Kim Oanh | Giá từ 750 Triệu",
-    description: "K-Home Midtown Trảng Bom – dự án NOXH quy mô 13,97 ha, 542 căn hộ Studio đến 2PN. Trung tâm Trảng Bom, vay 5,4%/năm. Xem bảng giá & mặt bằng mới nhất 2026.",
+    title: "K-Home Midtown (K Home Mid Town) Trảng Bom | Bảng Giá 2026",
+    description: "Dự án K-Home Midtown (k-home mid town) Trảng Bom quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
     keywords: "k-home midtown, k home midtown, k home midtown trảng bom, k-home midtown trảng bom, khome midtown, k home mid town, k-home mid town, nhà ở xã hội trảng bom, noxh trảng bom kim oanh, k home đồng nai trảng bom",
   },
   {
@@ -72,8 +72,8 @@ const STATIC_ROUTES = [
   },
   {
     dir: "k-home-avenue-nhon-trach",
-    title: "K-Home Avenue Nhơn Trạch | NOXH Gần Sân Bay Long Thành | Giá từ 750 Triệu",
-    description: "K-Home Avenue Nhơn Trạch – nhà ở xã hội 4 block 12 tầng, 1.022 căn hộ. Gần sân bay Long Thành, đường 25C. Vay 5,4%/năm, pháp lý đầy đủ. Xem bảng giá & mặt bằng.",
+    title: "K-Home Avenue (K Home Avenue) Nhơn Trạch | Bảng Giá 2026",
+    description: "K-Home Avenue (k-home avenue) Nhơn Trạch nhà ở xã hội 1.022 căn gần Sân bay Long Thành giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
     keywords: "k-home avenue, k home avenue, k home avenue nhơn trạch, k-home avenue nhơn trạch, khome avenue, k-home avenue đồng nai, nhà ở xã hội nhơn trạch, noxh nhơn trạch kim oanh, k home đồng nai nhơn trạch, noxh gần sân bay long thành",
   },
   {
