@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight, X, ZoomIn, ChevronLeft } from "lucide-react";
 import { News } from "../types";
@@ -219,22 +219,44 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           });
           document.head.appendChild(bc);
 
-          // ── Canonical URL validation: ensure each news article has its own canonical ──
-          // NOTE: News pages are pre-rendered by generate-static-html.mjs with correct canonical tags.
-          // DO NOT override canonical from pre-render to avoid conflicts that confuse Google.
-          // Canonical from pre-render HTML is sufficient and will be used by Google.
-          // const canonicalUrl = `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`;
-          // let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
-          // if (!canonical) {
-          //   canonical = document.createElement("link");
-          //   canonical.rel = "canonical";
-          //   document.head.appendChild(canonical);
-          // }
-          // canonical.href = canonicalUrl;
-          //
-          // // Also update og:url to match canonical
-          // const ogUrl = document.querySelector<HTMLMetaElement>("meta[property='og:url']");
-          // if (ogUrl) ogUrl.content = canonicalUrl;
+          // VideoObject Schema nếu bài tin tức chứa video
+          const existingVideoSchema = document.getElementById("schema-video-news");
+          if (existingVideoSchema) existingVideoSchema.remove();
+
+          if (found.content && found.content.includes("---VIDEO---")) {
+            const videoLine = found.content.split("\n").find(line => line.startsWith("---VIDEO---"));
+            if (videoLine) {
+              const parts = videoLine.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
+              const rawVideoUrl = parts[0];
+              const videoCaption = parts.length > 1 ? parts[1] : found.title;
+              const posterUrl = rawVideoUrl.includes("cloudinary")
+                ? rawVideoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
+                : found.image || "https://k-homedongnai.com.vn/hero-background.jpg";
+
+              const videoSchema = document.createElement("script");
+              videoSchema.id = "schema-video-news";
+              videoSchema.type = "application/ld+json";
+              videoSchema.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                "name": videoCaption,
+                "description": found.excerpt || videoCaption,
+                "thumbnailUrl": [posterUrl],
+                "uploadDate": found.date ? `${found.date}T08:00:00+07:00` : "2026-08-24T08:00:00+07:00",
+                "contentUrl": rawVideoUrl,
+                "embedUrl": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`,
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "K-Home Đồng Nai",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
+                  }
+                }
+              });
+              document.head.appendChild(videoSchema);
+            }
+          }
         }
         setLoading(false);
       })
@@ -247,6 +269,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
     return () => {
       document.getElementById("schema-news-article")?.remove();
       document.getElementById("schema-breadcrumb-news")?.remove();
+      document.getElementById("schema-video-news")?.remove();
     };
   }, [slug]);
 

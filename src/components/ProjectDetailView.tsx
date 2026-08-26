@@ -687,6 +687,36 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           });
           document.head.appendChild(faqSchema);
         }
+
+        // Schema VideoObject — giúp Google lập chỉ mục video tiến độ xây dựng K-Home CityView
+        const existingVideoSchema = document.getElementById("schema-video-project");
+        if (existingVideoSchema) existingVideoSchema.remove();
+        if (activeProject.slug === "k-home-cityview-ho-nai") {
+          const videoSchema = document.createElement("script");
+          videoSchema.id = "schema-video-project";
+          videoSchema.type = "application/ld+json";
+          videoSchema.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026",
+            "description": "Video tiến độ xây dựng K-Home CityView ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu công tác hoàn thiện.",
+            "thumbnailUrl": [
+              "https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
+            ],
+            "uploadDate": "2026-08-24T08:00:00+07:00",
+            "contentUrl": "https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4",
+            "embedUrl": "https://k-homedongnai.com.vn/k-home-cityview-ho-nai#video-tien-do",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Kim Oanh Group",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
+              }
+            }
+          });
+          document.head.appendChild(videoSchema);
+        }
       }
     };
 
@@ -710,6 +740,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       document.getElementById("schema-project")?.remove();
       document.getElementById("schema-breadcrumb-project")?.remove();
       document.getElementById("schema-faq-project")?.remove();
+      document.getElementById("schema-video-project")?.remove();
     };
   }, [slug, onNavigate, seo]);
 

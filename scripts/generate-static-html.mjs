@@ -315,9 +315,30 @@ async function main() {
     ],
   };
 
+  const CITYVIEW_VIDEO_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026",
+    "description": "Video tiến độ xây dựng K-Home CityView ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu công tác hoàn thiện.",
+    "thumbnailUrl": [
+      "https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
+    ],
+    "uploadDate": "2026-08-24T08:00:00+07:00",
+    "contentUrl": "https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4",
+    "embedUrl": `${BASE_URL}/k-home-cityview-ho-nai#video-tien-do`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${BASE_URL}/android-chrome-512x512.png`
+      }
+    }
+  };
+
   // Map schema per dir
   const ROUTE_SCHEMAS = {
-    "k-home-cityview-ho-nai": [CITYVIEW_FAQ_SCHEMA, CITYVIEW_BREADCRUMB_SCHEMA, CITYVIEW_WEBPAGE_SCHEMA],
+    "k-home-cityview-ho-nai": [CITYVIEW_FAQ_SCHEMA, CITYVIEW_BREADCRUMB_SCHEMA, CITYVIEW_WEBPAGE_SCHEMA, CITYVIEW_VIDEO_SCHEMA],
     "k-home-midtown-trang-bom": [MIDTOWN_BREADCRUMB],
     "k-home-avenue-nhon-trach": [AVENUE_BREADCRUMB],
   };
@@ -349,54 +370,80 @@ async function main() {
       : `${article.title} | K-Home CityView Đồng Nai`;
     const dirPath = path.join(newsDirBase, article.slug);
 
-    // Tạo NewsArticle + BreadcrumbList schema cho từng bài
-    const newsArticleSchema = {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": article.title,
-      "description": article.excerpt,
-      "datePublished": article.date,
-      "dateModified": article.date,
-      "url": canonical,
-      "inLanguage": "vi-VN",
-      "isAccessibleForFree": true,
-      "author": {
-        "@type": "Organization",
-        "name": "K-Home Đồng Nai – Kim Oanh Land",
-        "url": BASE_URL,
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "K-Home Đồng Nai",
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${BASE_URL}/android-chrome-512x512.png`,
-          "width": 512,
-          "height": 512,
+    // Tạo NewsArticle + BreadcrumbList + VideoObject schema cho từng bài
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": article.title,
+        "description": article.excerpt,
+        "datePublished": article.date,
+        "dateModified": article.date,
+        "url": canonical,
+        "inLanguage": "vi-VN",
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai – Kim Oanh Land",
+          "url": BASE_URL,
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${BASE_URL}/android-chrome-512x512.png`,
+            "width": 512,
+            "height": 512,
+          },
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonical,
         },
       },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": canonical,
-      },
-    };
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": `${BASE_URL}/tin-tuc` },
+          { "@type": "ListItem", "position": 3, "name": article.title, "item": canonical },
+        ],
+      }
+    ];
 
-    const newsBreadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
-        { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": `${BASE_URL}/tin-tuc` },
-        { "@type": "ListItem", "position": 3, "name": article.title, "item": canonical },
-      ],
-    };
+    if (article.videoUrl) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": article.videoCaption || article.title,
+        "description": article.excerpt,
+        "thumbnailUrl": [
+          article.videoUrl.includes("cloudinary")
+            ? article.videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
+            : `${BASE_URL}/hero-background.jpg`
+        ],
+        "uploadDate": `${article.date}T08:00:00+07:00`,
+        "contentUrl": article.videoUrl,
+        "embedUrl": canonical,
+        "publisher": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${BASE_URL}/android-chrome-512x512.png`
+          }
+        }
+      });
+    }
 
     writeRoute(template, dirPath, {
       title,
       description: article.excerpt,
       canonical,
       ogType: "article",
-      schemas: [newsArticleSchema, newsBreadcrumbSchema],
+      schemas,
       // Static <a href> links cho Googlebot — link về money page trong HTML tĩnh
       staticLinks: [
         { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },
