@@ -39,7 +39,7 @@ const PROJECT_SEO: Record<string, {
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "K-Home CityView (K Home City View) Hố Nai | Bảng Giá & Mặt Bằng 2026",
-    metaDesc: "Dự án K-Home CityView (k-home city view) Hố Nai Biên Hòa — 1.328 căn hộ NOXH chuẩn Singapore do Kim Oanh Land phát triển. 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
+    metaDesc: "K-Home CityView (k-home city view) Hố Nai Biên Hòa 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -1090,7 +1090,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </div>
       )}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+      <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
 
         {/* ── Desktop: Side Navigation (Hidden on mobile, lg:flex) ── */}
         {["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug) && (
@@ -3161,7 +3161,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         onNavigate={onNavigate}
       />
 
-    </div>
+    </main>
     </>
   );
 }

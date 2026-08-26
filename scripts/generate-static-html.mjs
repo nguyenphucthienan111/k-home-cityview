@@ -21,7 +21,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-cityview-ho-nai",
     title: "K-Home CityView (K Home City View) Hố Nai | Bảng Giá & Mặt Bằng 2026",
-    description: "Dự án K-Home CityView (k-home city view) Hố Nai Biên Hòa — 1.328 căn hộ NOXH chuẩn Singapore do Kim Oanh Land phát triển. 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
+    description: "K-Home CityView (k-home city view) Hố Nai Biên Hòa 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
     keywords: "k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội k-home cityview, bảng giá k-home cityview, mặt bằng k-home cityview, k home đồng nai, k-home cityview đồng nai, giá k-home cityview",
   },
   {
