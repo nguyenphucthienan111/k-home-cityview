@@ -525,18 +525,46 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               const parts = line.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
               const caption = parts.length > 1 ? parts[1] : "";
               const videoUrl = parts[0];
+              const isYouTube = videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be");
+              let embedSrc = videoUrl;
+
+              if (isYouTube) {
+                if (videoUrl.includes("embed/")) {
+                  embedSrc = videoUrl;
+                } else if (videoUrl.includes("watch?v=")) {
+                  const id = videoUrl.split("watch?v=")[1]?.split("&")[0];
+                  embedSrc = `https://www.youtube.com/embed/${id}`;
+                } else if (videoUrl.includes("youtu.be/")) {
+                  const id = videoUrl.split("youtu.be/")[1]?.split("?")[0];
+                  embedSrc = `https://www.youtube.com/embed/${id}`;
+                }
+              }
+
               elements.push(
                 <figure key={`${articleId}-video-${i}`} className="my-8">
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "16/9" }}>
-                    <video
-                      src={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/w_1200,h_800,c_fill,q_auto,f_auto/") : videoUrl}
-                      controls
-                      preload="auto"
-                      className="w-full h-full object-cover"
-                      style={{ display: "block" }}
-                      poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : undefined}
-                    />
-                  </div>
+                  {isYouTube ? (
+                    <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900 max-w-sm mx-auto sm:max-w-md md:max-w-lg" style={{ aspectRatio: embedSrc.includes("z9ZL9_Sng4Q") ? "9/16" : "16/9", maxHeight: "650px" }}>
+                      <iframe
+                        src={embedSrc}
+                        title={caption || "Video tiến độ dự án K-Home CityView"}
+                        className="w-full h-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative rounded-2xl overflow-hidden shadow-xl bg-slate-900" style={{ aspectRatio: "16/9" }}>
+                      <video
+                        src={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/w_1200,h_800,c_fill,q_auto,f_auto/") : videoUrl}
+                        controls
+                        preload="auto"
+                        className="w-full h-full object-cover"
+                        style={{ display: "block" }}
+                        poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : undefined}
+                      />
+                    </div>
+                  )}
                   {caption && (
                     <figcaption className="text-center text-xs text-slate-400 mt-3 italic">
                       {caption}

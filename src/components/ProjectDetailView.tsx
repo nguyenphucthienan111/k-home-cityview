@@ -38,8 +38,8 @@ const PROJECT_SEO: Record<string, {
   avenueHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
-    titleTag: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
-    metaDesc: "Dự án K-Home CityView Hố Nai Biên Hòa – 1.328 căn hộ NOXH chuẩn Singapore do Kim Oanh Land phát triển. 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028, hỗ trợ hồ sơ miễn phí.",
+    titleTag: "K-Home CityView (K Home City View) Hố Nai | Bảng Giá & Mặt Bằng 2026",
+    metaDesc: "Dự án K-Home CityView (k-home city view) Hố Nai Biên Hòa — 1.328 căn hộ NOXH chuẩn Singapore do Kim Oanh Land phát triển. 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE. Giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -698,17 +698,17 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           videoSchema.text = JSON.stringify({
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            "name": "Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026",
+            "name": "Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026",
             "description": "Video tiến độ xây dựng K-Home CityView ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu công tác hoàn thiện.",
             "thumbnailUrl": [
-              "https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
+              "https://img.youtube.com/vi/z9ZL9_Sng4Q/hqdefault.jpg"
             ],
-            "uploadDate": "2026-08-24T08:00:00+07:00",
-            "contentUrl": "https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4",
-            "embedUrl": "https://k-homedongnai.com.vn/k-home-cityview-ho-nai#video-tien-do",
+            "uploadDate": "2026-08-26T08:00:00+07:00",
+            "contentUrl": "https://www.youtube.com/watch?v=z9ZL9_Sng4Q",
+            "embedUrl": "https://www.youtube.com/embed/z9ZL9_Sng4Q",
             "publisher": {
               "@type": "Organization",
-              "name": "Kim Oanh Group",
+              "name": "K-Home Đồng Nai",
               "logo": {
                 "@type": "ImageObject",
                 "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
@@ -2195,6 +2195,51 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Lễ Động Thổ & Sự Kiện (K-Home CityView only) ── */}
+      {slug === "k-home-cityview-ho-nai" && (
+        <section id="le-dong-tho" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+              <span className="text-white font-bold text-lg">🏛️</span>
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Lễ Động Thổ Dự Án K-Home CityView</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Sự kiện chính thức khởi công ngày 23/09/2025 - Kim Oanh Group</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-amber-50/50 border border-amber-200/80 rounded-2xl p-4 sm:p-6">
+            <div className="lg:col-span-7 relative rounded-xl overflow-hidden shadow-md bg-slate-900" style={{ aspectRatio: "16/9" }}>
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/v-l5Dosbi3M"
+                title="Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa - Kim Oanh Group"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <div className="lg:col-span-5 space-y-3">
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-md font-semibold">Mốc Lịch Sử • 23/09/2025</span>
+              <h3 className="text-lg font-bold text-slate-800 leading-snug">Khởi Đầu Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Tại Đồng Nai</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Vào ngày 23/09/2025, Kim Oanh Group đã chính thức tổ chức lễ động thổ xây dựng dự án K-Home CityView Hố Nai. Dự án đánh dấu bước ngoặt lớn mang 1.328 căn hộ chất lượng cao đến với người lao động Biên Hòa.
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => onNavigate?.("/tin-tuc/le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa")}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 underline"
+                >
+                  Xem bài viết chi tiết sự kiện ➔
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Video Tiến Độ Xây Dựng (K-Home CityView only) ── */}
       {slug === "k-home-cityview-ho-nai" && (
         <section id="video-tien-do" className="space-y-5">
@@ -2209,21 +2254,16 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           </div>
 
           {/* Video Player */}
-          <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-black group">
-            <video
-              controls
-              preload="auto"
-              className="w-full h-auto"
-              poster="https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
-              style={{ maxHeight: "600px", objectFit: "contain", display: "block" }}
-              title="Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026 - Kết Cấu Chính Tiến Hành"
-            >
-              <source
-                src="https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4"
-                type="video/mp4"
-              />
-              Trình duyệt của bạn không hỗ trợ video tag. Vui lòng tải xuống video: <a href="https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4">Tiến Độ Xây Dựng K-Home CityView</a>
-            </video>
+          <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-900 shadow-xl max-w-sm mx-auto sm:max-w-md md:max-w-lg" style={{ aspectRatio: "9/16", maxHeight: "650px" }}>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/z9ZL9_Sng4Q"
+              title="Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026 | Hotline 0937 587 438"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </div>
 
           {/* Video Description */}
