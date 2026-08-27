@@ -315,30 +315,85 @@ async function main() {
     ],
   };
 
-  const CITYVIEW_VIDEO_SCHEMA = {
+  const CITYVIEW_VIDEO_SCHEMA_SHORTS = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "Video Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Tháng 8/2026",
-    "description": "Video tiến độ xây dựng K-Home CityView ghi lại những bước tiến ngoạn mục của công trình từ giai đoạn nhồi cọc, nền móng, dựng kết cấu chính (cột dầm), đổ sàn từng tầng, cho đến bắt đầu công tác hoàn thiện.",
+    "name": "Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026",
+    "description": "Video ngắn cập nhật tiến độ xây dựng thực tế dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa mới nhất.",
     "thumbnailUrl": [
-      "https://res.cloudinary.com/dthv0nsq/video/upload/so_0,w_800,c_scale/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.jpg"
+      "https://img.youtube.com/vi/z9ZL9_Sng4Q/hqdefault.jpg"
     ],
-    "uploadDate": "2026-08-24T08:00:00+07:00",
-    "contentUrl": "https://res.cloudinary.com/dthv0nsq/video/upload/w_800,h_600,c_fill,q_auto,f_auto/v1787103780/k-home-cityview/news/1787061348083_6670155327040053447_g6651426268921315096.mp4",
-    "embedUrl": `${BASE_URL}/k-home-cityview-ho-nai#video-tien-do`,
+    "uploadDate": "2026-08-25T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/z9ZL9_Sng4Q",
     "publisher": {
       "@type": "Organization",
       "name": "Kim Oanh Group",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${BASE_URL}/android-chrome-512x512.png`
-      }
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const CITYVIEW_VIDEO_SCHEMA_PHONGSU_1 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land",
+    "description": "Phóng sự truyền hình toàn cảnh đánh giá dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa do Kim Oanh Land làm chủ đầu tư.",
+    "thumbnailUrl": [
+      "https://img.youtube.com/vi/RJGULOh6Wrs/hqdefault.jpg"
+    ],
+    "uploadDate": "2026-08-26T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/RJGULOh6Wrs",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const CITYVIEW_VIDEO_SCHEMA_PHONGSU_2 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt",
+    "description": "Video giới thiệu không gian sống chuẩn Singapore, quy hoạch Surbana Jurong và tiện ích tại K-Home CityView Hố Nai.",
+    "thumbnailUrl": [
+      "https://img.youtube.com/vi/f4Av04RYDrw/hqdefault.jpg"
+    ],
+    "uploadDate": "2026-08-26T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/f4Av04RYDrw",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const CITYVIEW_VIDEO_SCHEMA_PHONGSU_3 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai",
+    "description": "Phóng sự phân tích bứt phá hạ tầng TP. Biên Hòa và cơ hội sở hữu căn hộ NOXH K-Home CityView Hố Nai do Kim Oanh Group phát triển.",
+    "thumbnailUrl": [
+      "https://img.youtube.com/vi/Y9502b3sDJU/hqdefault.jpg"
+    ],
+    "uploadDate": "2026-08-26T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/Y9502b3sDJU",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
     }
   };
 
   // Map schema per dir
   const ROUTE_SCHEMAS = {
-    "k-home-cityview-ho-nai": [CITYVIEW_FAQ_SCHEMA, CITYVIEW_BREADCRUMB_SCHEMA, CITYVIEW_WEBPAGE_SCHEMA, CITYVIEW_VIDEO_SCHEMA],
+    "k-home-cityview-ho-nai": [
+      CITYVIEW_FAQ_SCHEMA,
+      CITYVIEW_BREADCRUMB_SCHEMA,
+      CITYVIEW_WEBPAGE_SCHEMA,
+      CITYVIEW_VIDEO_SCHEMA_SHORTS,
+      CITYVIEW_VIDEO_SCHEMA_PHONGSU_1,
+      CITYVIEW_VIDEO_SCHEMA_PHONGSU_2,
+      CITYVIEW_VIDEO_SCHEMA_PHONGSU_3
+    ],
     "k-home-midtown-trang-bom": [MIDTOWN_BREADCRUMB],
     "k-home-avenue-nhon-trach": [AVENUE_BREADCRUMB],
   };
@@ -414,19 +469,29 @@ async function main() {
     ];
 
     if (article.videoUrl) {
+      let embedUrl = article.videoUrl;
+      let thumbnailUrl = `${BASE_URL}/hero-background.jpg`;
+
+      if (article.videoUrl.includes("youtube.com") || article.videoUrl.includes("youtu.be")) {
+        const ytIdMatch = article.videoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/);
+        if (ytIdMatch && ytIdMatch[1]) {
+          const ytId = ytIdMatch[1];
+          embedUrl = `https://www.youtube.com/embed/${ytId}`;
+          thumbnailUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+        }
+      } else if (article.videoUrl.includes("cloudinary")) {
+        thumbnailUrl = article.videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg";
+      }
+
       schemas.push({
         "@context": "https://schema.org",
         "@type": "VideoObject",
         "name": article.videoCaption || article.title,
         "description": article.excerpt,
-        "thumbnailUrl": [
-          article.videoUrl.includes("cloudinary")
-            ? article.videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
-            : `${BASE_URL}/hero-background.jpg`
-        ],
+        "thumbnailUrl": [thumbnailUrl],
         "uploadDate": `${article.date}T08:00:00+07:00`,
         "contentUrl": article.videoUrl,
-        "embedUrl": canonical,
+        "embedUrl": embedUrl,
         "publisher": {
           "@type": "Organization",
           "name": "K-Home Đồng Nai",

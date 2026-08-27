@@ -3038,7 +3038,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <p className="text-xs text-slate-300">Bao gồm: Sơ đồ mặt bằng 4 block, danh mục bàn giao nội thất, file tính dòng tiền chi tiết và mẫu hồ sơ NOXH 2026.</p>
                 </div>
                 <a
-                  href="/news/SLIDE PRESENT KHOME CITYVIEW- 21-06-2026.pdf"
+                  href="/documents/slide-present-khome-cityview.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="SLIDE-PRESENT-KHOME-CITYVIEW-21-06-2026.pdf"

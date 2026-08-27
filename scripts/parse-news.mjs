@@ -36,8 +36,12 @@ export function parseNewsData() {
     const date    = extractField(block, "date");
     const excerpt = extractField(block, "excerpt");
 
+    const videoMatch = block.match(/---VIDEO---([^|\n]+)(?:\|([^\n]+))?/);
+    const videoUrl = videoMatch ? videoMatch[1].trim() : null;
+    const videoCaption = videoMatch && videoMatch[2] ? videoMatch[2].trim() : null;
+
     if (slug && title && date && excerpt) {
-      entries.push({ slug, title, date, excerpt });
+      entries.push({ slug, title, date, excerpt, videoUrl, videoCaption });
     }
   }
 
