@@ -2,6 +2,446 @@ import type { News } from '../types';
 
 export const newsData: News[] = [
   {
+    id: "n81",
+    slug: "khome-midtown-trang-bom-kham-pha-phong-cach-song-singapore-ngay-trung-tam",
+    title: "K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm | Kim Oanh Group",
+    date: "2026-08-27",
+    excerpt: "Khám phá dự án nhà ở xã hội K-Home Midtown (k-home midtown hay k-home mid town) Trảng Bom quy mô 13,97ha 542 căn hộ chuẩn Singapore Surbana Jurong, tiêu chuẩn xanh EDGE giá từ 750 triệu, vay CSXH 5,4%/năm.",
+    image: "https://img.youtube.com/vi/8qd60-fFFkY/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "midtown",
+    content: `> **Video giới thiệu nổi bật:** Thước phim giới thiệu phong cách sống chuẩn Singapore tại dự án **Nhà ở xã hội K-Home Midtown** (hay **k-home mid town**) tọa lạc ngay trung tâm Huyện Trảng Bom, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** (Kim Oanh Land) kiến tạo. Bài viết dưới đây sẽ phân tích toàn diện lý do vì sao dự án được đánh giá là chốn an cư đáng sống nhất Trảng Bom.
+
+![K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm](https://img.youtube.com/vi/8qd60-fFFkY/hqdefault.jpg)
+
+## Video Giới Thiệu K-Home Midtown Trảng Bom Đồng Nai
+
+Dưới đây là video chi tiết giới thiệu quy hoạch không gian sống chuẩn Singapore, kết nối giao thông và hệ tiện ích đa tầng tại **K-Home Midtown**:
+
+---VIDEO---https://www.youtube.com/embed/8qd60-fFFkY|K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm - Hotline 0937 587 438
+
+## 1. Xu Hướng Chọn An Cư Chuẩn Singapore Tại Trung Tâm Huyện Trảng Bom
+
+Huyện Trảng Bom (Tỉnh Đồng Nai) nằm trên hành lang kinh tế huyết mạch kết nối TP. Hồ Chí Minh với các tỉnh Tây Nguyên và Duyên hải Nam Trung Bộ. Với hàng loạt Khu công nghiệp (KCN) quy mô hàng trăm hecta như KCN Bàu Xéo, KCN Hố Nai, KCN Sông Mây và KCN Giang Điền, Trảng Bom đang là quê hương thứ hai của hơn **200.000 công nhân, kỹ sư và chuyên gia** sinh sống và làm việc.
+
+Tuy nhiên, nguồn cung nhà ở có chất lượng sống tốt, tiện nghi và mức giá bình dân tại Trảng Bom luôn trong trạng thái thiếu hụt nghiêm trọng. Đại đa số người lao động phải sống trong những khu nhà trọ chật hẹp, nóng bức và thiếu an ninh. Nhu cầu sở hữu một căn hộ hiện đại, an toàn và đầy đủ tiện ích là khát khao của hàng ngàn gia đình trẻ.
+
+Nắm bắt nhu cầu thiết thực đó, Tập đoàn **Kim Oanh Group** đã tiên phong phát triển dự án **K-Home Midtown** (hay **k-home mid town**). Đây là một đại dự án **nhà ở xã hội xanh chuẩn Singapore** quy mô 13,97 hecta lớn nhất Trảng Bom, mang tới không gian an cư văn minh và hạnh phúc cho các gia đình Việt.
+
+Xem thông tin chi tiết dự án tại [Trang chính thức K-Home Midtown Trảng Bom](/k-home-midtown-trang-bom), [Bài viết cộng đồng cư dân K-Home Midtown](/tin-tuc/khome-midtown-trang-bom-kien-tao-cong-dong-thau-cam-se-chia-gia-tri-song), [Video tiến độ K-Home Midtown](/tin-tuc/khome-midtown-trang-bom-tien-do-thi-cong-than-toc-cap-nhat-moi-nhat), [Trang dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai) và [Trang dự án K-Home Avenue Nhơn Trạch](/k-home-avenue-nhon-trach).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230244/avenue1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230246/avenue2.jpg|Hình ảnh quy hoạch & phối cảnh K-Home Midtown Trảng Bom Đồng Nai
+
+## 2. Thông Tin Tổng Quan Dự Án K-Home Midtown Trảng Bom
+
+| Tiêu chí | Thông tin chi tiết K-Home Midtown |
+|---|---|
+| **Tên thương mại dự án** | K-Home Midtown (tên gọi khác: k-home mid town) |
+| **Vị trí địa lý** | Giao lộ 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, H. Trảng Bom |
+| **Chủ đầu tư & Phát triển** | Kim Oanh Land (Tập đoàn Kim Oanh Group) |
+| **Đơn vị tư vấn thiết kế** | Tập đoàn Surbana Jurong (Singapore) |
+| **Tiêu chuẩn công trình xanh** | Chứng chỉ xanh EDGE (Tổ chức IFC / Ngân hàng Thế giới) |
+| **Quy mô diện tích quy hoạch** | 13,97 hecta (dự án NOXH lớn nhất Trảng Bom) |
+| **Cơ cấu sản phẩm** | 542 căn hộ nhà ở xã hội (NOXH) + 20 căn Shophouse thương mại |
+| **Loại hình căn hộ** | Căn Studio (36m²), Căn 1PN+A (47m²), Căn 1PN+B (55m²), Căn 2PN (69m²) |
+| **Giá bán công bố đợt 1** | Từ 750 triệu đến 1,5 tỷ đồng/căn |
+| **Chính sách hỗ trợ vay vốn** | Vay Ngân hàng CSXH 80% giá trị, lãi suất 5,4%/năm cố định 25 năm |
+| **Dự kiến bàn giao nhà** | Năm 2027 |
+
+## 3. Lý Do K-Home Midtown Trở Thành Chốn An Cư Đáng Sống Nhất Trảng Bom
+
+### Vị trí trái tim giao thương kết nối Trảng Bom
+Dự án **K-Home Midtown** (k-home mid town) tọa lạc ngay tâm điểm trung tâm huyện Trảng Bom, nằm giữa 4 tuyến trục đường hành chính sầm uất. Cư dân dễ dàng kết nối nhanh chóng:
+- **3 phút:** Đến Chợ Trảng Bom, Bệnh viện đa khoa Trảng Bom, Trung tâm Hành chính huyện Trảng Bom.
+- **5 phút:** Di chuyển đến KCN Bàu Xéo.
+- **10 phút:** Kết nối nhanh đến KCN Hố Nai & KCN Sông Mây.
+- **30 phút:** Di chuyển về trung tâm TP. Biên Hòa và TP. Hồ Chí Minh qua Quốc lộ 1A và các tuyến cao tốc.
+
+Xem thêm tại [Các tuyến đường kết nối trực tiếp dự án K-Home](/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview), [K-Home gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [Hướng dẫn đường đi đến K-Home](/tin-tuc/huong-dan-duong-di-den-k-home-cityview-tu-cac-diem-chinh).
+
+### Quy hoạch chuẩn Singapore từ Surbana Jurong & Tiêu chuẩn EDGE
+Tập đoàn tư vấn thiết kế hàng đầu châu Á **Surbana Jurong (Singapore)** mang đến thiết kế tối ưu công năng từng m², 100% căn hộ **K-Home Midtown** (k-home mid town) sở hữu cửa sổ rộng đón ánh sáng tự nhiên và gió trời thông thoáng.
+
+Tiêu chuẩn công trình xanh quốc tế **EDGE** (được cấp bởi tổ chức IFC thuộc Ngân hàng Thế giới) giúp tòa nhà tiết kiệm ít nhất **20% năng lượng điện, 20% lượng nước sinh hoạt** và giảm chi phí quản lý hàng tháng cho cư dân.
+
+Đọc bài phân tích chi tiết tại [K-Home tiêu chuẩn sống xanh EDGE có lợi gì](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge), [Đánh giá thiết kế căn hộ K-Home 2026](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026) và [Mặt bằng K-Home hướng nắng & thông gió tự nhiên](/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien).
+
+### Hệ thống tiện ích nội khu đa tầng vượt trội
+- **Hồ bơi ngoài trời xanh mát:** Nơi giải tỏa mệt mỏi sau ngày làm việc.
+- **Công viên Sky Garden & Vườn dạo bộ:** Không gian cho ông bà tập dưỡng sinh và đi dạo.
+- **Sân chơi trẻ em & Nhà trẻ nội khu:** An tâm gửi con gần nhà mà không phải di chuyển xa.
+- **Tuyến Shophouse thương mại 20 căn:** Chuỗi siêu thị, nhà thuốc, café, spa phục vụ 24/7.
+
+Xem chi tiết tại [K-Home có bể bơi không? Tiện ích nội khu](/tin-tuc/k-home-cityview-co-be-boi-khong-tien-ich-noi-khu) và [K-Home có chỗ đậu xe ô tô không](/tin-tuc/k-home-cityview-co-cho-dau-xe-o-to-khong).
+
+### Pháp lý an toàn minh bạch – Sổ hồng sở hữu lâu dài
+Dự án **K-Home Midtown** (k-home mid town) được chấp thuận chủ trương đầu tư minh bạch, quy hoạch 1/500 hoàn chỉnh, cấp phép xây dựng đúng quy định pháp luật. Cư dân hoàn toàn an tâm về tính pháp lý và sở hữu sổ hồng lâu dài.
+
+Xem bài viết [Pháp lý NOXH K-Home có sổ hồng không](/tin-tuc/k-home-cityview-co-so-hong-khong-phap-ly-noxh-2026).
+
+## 4. Bảng Giá & Giải Pháp Trả Góp Chỉ Từ 3,5 Triệu/Tháng
+
+Mức giá niêm yết cạnh tranh tại **K-Home Midtown** (k-home mid town) phù hợp mọi thu nhập của người lao động:
+
+- **Căn Studio (36m²):** Giá từ **750 triệu**, trả góp chỉ ~3,0 – 3,5 triệu/tháng.
+- **Căn 1PN+A (47m²):** Giá từ **990 triệu**, trả góp chỉ ~3,8 – 4,2 triệu/tháng.
+- **Căn 1PN+B (55m²):** Giá từ **1,20 tỷ**, trả góp chỉ ~4,2 – 4,8 triệu/tháng.
+- **Căn 2 Phòng Ngủ (69m²):** Giá từ **1,50 tỷ**, trả góp chỉ ~5,0 – 5,5 triệu/tháng.
+
+Gói vay ưu đãi **Ngân hàng Chính sách Xã hội** (NHCSXH) hỗ trợ vay **80%** giá trị căn hộ với lãi suất cố định **5,4%/năm trong 25 năm**, giúp số tiền trả góp hàng tháng thấp hơn chi phí đi thuê nhà trọ bấp bênh tại Trảng Bom.
+
+Đọc thêm tại [Mỗi tháng phải trả bao nhiêu khi mua K-Home](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview), [Bảng giá K-Home 2026 mới nhất](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can), [Lãi suất vay mua K-Home ước tính thế nào](/tin-tuc/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao) và [So sánh chi phí mua K-Home và thuê trọ](/tin-tuc/so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa-dong-nai).
+
+## 5. Hướng Dẫn Hồ Sơ Mua Nhà Ở Xã Hội K-Home Midtown Trảng Bom
+
+Người đăng ký mua **K-Home Midtown** (k-home mid town) cần đáp ứng 3 điều kiện cơ bản:
+1. **Điều kiện nhà ở:** Chưa đứng tên sở hữu nhà ở/đất ở tại tỉnh Đồng Nai.
+2. **Điều kiện thu nhập:** Thu nhập thực nhận thuộc diện không nộp thuế TNCN thường xuyên hoặc thuộc khung đối tượng NOXH.
+3. **Điều kiện cư trú:** Có hộ khẩu thường trú hoặc xác nhận tạm trú (KT3) từ 1 năm trở lên tại Đồng Nai.
+
+Đọc bài hướng dẫn tại [Điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [Hồ sơ mua K-Home gồm những gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi), [Điều kiện thu nhập và tình trạng nhà ở](/tin-tuc/dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview), [Những lỗi thường gặp khi làm hồ sơ](/tin-tuc/nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview) và [Quy trình đăng ký mua K-Home từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## Kết Luận: Cơ Hội An Cư Vàng Tại Trung Tâm Trảng Bom
+
+Dự án **K-Home Midtown** Trảng Bom chính là lời giải hoàn hảo cho giấc mơ an cư chuẩn Singapore của người lao động Đồng Nai.
+
+**Liên hệ ngay Sales Gallery K-Home Midtown Trảng Bom:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn/k-home-midtown-trang-bom
+
+---RELATED---khome-midtown-trang-bom-kien-tao-cong-dong-thau-cam-se-chia-gia-tri-song|K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống;khome-midtown-trang-bom-tien-do-thi-cong-than-toc-cap-nhat-moi-nhat|K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026`
+  },
+  {
+    id: "n82",
+    slug: "khome-midtown-trang-bom-kien-tao-cong-dong-thau-cam-se-chia-gia-tri-song",
+    title: "K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống | Kim Oanh Land",
+    date: "2026-08-27",
+    excerpt: "K-Home Midtown (k-home midtown hay k-home mid town) Trảng Bom không chỉ xây dựng căn hộ NOXH mà còn kiến tạo cộng đồng cư dân thấu cảm, gắn kết và văn minh. Giá từ 750 triệu, trả góp 3,5 triệu/tháng.",
+    image: "https://img.youtube.com/vi/EyKr3u7KkyE/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "midtown",
+    content: `> **Thước phim cộng đồng an cư:** Thước phim nhân văn ghi lại hành trình xây dựng cộng đồng cư dân gắn kết, thấu cảm và sẻ chia giá trị sống tại dự án **Nhà ở xã hội K-Home Midtown** (hay **k-home mid town**) tại Trảng Bom, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** làm chủ đầu tư.
+
+![K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống](https://img.youtube.com/vi/EyKr3u7KkyE/hqdefault.jpg)
+
+## Video Cộng Đồng Cư Dân K-Home Midtown Trảng Bom
+
+Dưới đây là thước phim chi tiết về môi trường sống văn minh, hệ sinh thái tiện ích nhân văn dành cho cư dân **K-Home Midtown**:
+
+---VIDEO---https://www.youtube.com/embed/EyKr3u7KkyE|K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống - Hotline 0937 587 438
+
+## 1. Triết Lý Xây Dựng Cộng Đồng Thấu Cảm Tại K-Home Midtown Trảng Bom
+
+Nhà ở không chỉ đơn thuần là bốn bức tường bê tông che mưa che nắng, mà còn là nơi bồi đắp tâm hồn, tạo dựng những mối quan hệ láng giềng tốt đẹp. Thấu hiểu giá trị đó, **Kim Oanh Group** mang đến dự án **K-Home Midtown** (k-home mid town) với triết lý kiến tạo một **cộng đồng thấu cảm & sẻ chia giá trị sống**.
+
+Tại K-Home Midtown Trảng Bom, cư dân là những gia đình công nhân, kỹ sư, giáo viên, người lao động đang nỗ lực vươn lên trong cuộc sống. Tất cả cùng sinh hoạt trong một không gian an toàn, giàu tính kết nối cộng đồng, nơi tình láng giềng thắm thiết luôn được trân trọng.
+
+Xem thông tin dự án tại [Trang chính thức K-Home Midtown Trảng Bom](/k-home-midtown-trang-bom), [Khám phá phong cách sống Singapore K-Home Midtown](/tin-tuc/khome-midtown-trang-bom-kham-pha-phong-cach-song-singapore-ngay-trung-tam) và [Bài viết K-Home Avenue Nhơn Trạch](/tin-tuc/khome-avenue-nhon-trach-kham-pha-du-an-nha-o-xa-hoi-chuan-singapore).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230245/avenue3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230243/avenue.jpg|Hình ảnh sinh hoạt cộng đồng & không gian sống tại K-Home Midtown Trảng Bom
+
+## 2. 4 Không Gian Kết Nối Nhân Văn Tại K-Home Midtown
+
+### Nhà sinh hoạt cộng đồng rộng rãi
+Nơi diễn ra các hoạt động giao lưu văn hóa, sinh hoạt tập thể, ngày hội gia đình và tổ chức sinh nhật cho con trẻ. Không gian này giúp gắn kết cư dân **K-Home Midtown** (k-home mid town) thêm bền chặt.
+
+Xem chi tiết tại [K-Home co nha sinh hoat cong dong khong](/tin-tuc/k-home-cityview-co-be-boi-khong-tien-ich-noi-khu).
+
+### Công viên cây xanh & Vườn dạo bộ dưỡng sinh
+Nơi các cụ ông, cụ bà thư thái đi dạo mỗi sáng, trò chuyện cùng những người bạn già, tận hưởng không khí trong lành đạt chuẩn **EDGE xanh quốc tế**.
+
+Đọc bài viết tại [K-Home tiêu chuẩn sống xanh EDGE](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge).
+
+### Sân chơi trẻ em an toàn & Nhà trẻ nội khu
+Con trẻ có môi trường phát triển toàn diện, tự do chạy nhảy vui chơi cùng bạn bè đồng lứa dưới sự giám sát an ninh 24/7.
+
+Đọc thêm tại [Song tai K-Home co phu hop gia dinh co con nho](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho) và [K-Home co truong hoc noi khu khong](/tin-tuc/k-home-cityview-co-truong-hoc-noi-khu-khong).
+
+### Ban quản trị vận hành chuyên nghiệp mô hình Singapore
+Quy trình vận hành minh bạch, ứng dụng công nghệ quản lý tòa nhà thông minh BMS giúp giải quyết nhanh chóng mọi phản hồi của cư dân, duy trì nếp sống văn minh đô thị.
+
+## 3. Chính Sách Tài Chính Nhân Văn – Vay 80% Lãi Suất 5,4%/Năm
+
+Kim Oanh Group đồng hành cùng người lao động Trảng Bom qua giải pháp tài chính vay Ngân hàng Chính sách Xã hội:
+- **Giá bán bình dân:** Từ **750 triệu/căn Studio**, **990 triệu/căn 1PN+**, **1,5 tỷ/căn 2PN**.
+- **Số tiền trả góp:** Chỉ từ **3,5 triệu/tháng** trong **25 năm**.
+
+Xem bài viết [Mỗi tháng phai tra bao nhieu khi mua K-Home](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) và [Lai suat vay mua K-Home uoc tinh](/tin-tuc/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao).
+
+## 4. Hướng Dẫn Nộp Hồ Sơ Đăng Ký Mua K-Home Midtown
+
+Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện hồ sơ xét duyệt miễn phí 100%. Đọc chi tiết tại [Dieu kien mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026) và [Ho so mua K-Home gom nhung gi](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi).
+
+## Kết Luận: Gia Nhập Cộng Đồng An Cư Văn Minh K-Home Midtown
+
+**K-Home Midtown** Trảng Bom chính là tổ ấm đong đầy yêu thương dành cho gia đình bạn.
+
+**Liên hệ ngay Sales Gallery K-Home Midtown Trảng Bom:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn/k-home-midtown-trang-bom
+
+---RELATED---khome-midtown-trang-bom-kham-pha-phong-cach-song-singapore-ngay-trung-tam|K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm;khome-midtown-trang-bom-tien-do-thi-cong-than-toc-cap-nhat-moi-nhat|K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026`
+  },
+  {
+    id: "n83",
+    slug: "khome-midtown-trang-bom-tien-do-thi-cong-than-toc-cap-nhat-moi-nhat",
+    title: "K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất | Kim Oanh Group",
+    date: "2026-08-27",
+    excerpt: "Video tiến độ thi công thực tế mới nhất tại dự án nhà ở xã hội K-Home Midtown (k-home midtown hay k-home mid town) Trảng Bom do Kim Oanh Group làm chủ đầu tư. Cam kết chất lượng & bàn giao đúng hẹn 2027.",
+    image: "https://img.youtube.com/vi/3FbIphjZu38/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "midtown",
+    content: `> **Cập nhật tiến độ thực tế:** Video ghi nhận không khí thi công khẩn trương tại công trường đại dự án **Nhà ở xã hội K-Home Midtown** (hay **k-home mid town**) quy mô 13,97ha tại trung tâm Huyện Trảng Bom, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** làm chủ đầu tư.
+
+![K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất](https://img.youtube.com/vi/3FbIphjZu38/hqdefault.jpg)
+
+## Video Thực Tế Công Trường K-Home Midtown Trảng Bom
+
+Dưới đây là video chi tiết cập nhật nhịp độ thi công thần tốc tại công trường **K-Home Midtown**:
+
+---VIDEO---https://www.youtube.com/embed/3FbIphjZu38|K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất - Hotline 0937 587 438
+
+## 1. Nhịp Độ Thi Công Khẩn Trương Tại Công Trường K-Home Midtown Trảng Bom
+
+Nhằm đáp ứng kỳ vọng nhận nhà sớm của hàng trăm gia đình người lao động tại Trảng Bom, Tập đoàn **Kim Oanh Group** cùng các nhà thầu thi công uy tín đang đẩy mạnh tối đa nhân lực, máy móc thi công liên tục tại công trường **K-Home Midtown** (k-home mid town).
+
+Công trình áp dụng công nghệ cốp pha nhôm màng hiện đại, giúp tăng tốc độ đổ sàn bê tông mà vẫn đảm bảo độ chịu lực, khả năng chống thấm và độ bền kết cấu hoàn hảo.
+
+Xem chi tiết dự án tại [Trang chính thức K-Home Midtown Trảng Bom](/k-home-midtown-trang-bom), [Khám phá phong cách sống Singapore K-Home Midtown](/tin-tuc/khome-midtown-trang-bom-kham-pha-phong-cach-song-singapore-ngay-trung-tam) và [Cộng đồng cư dân K-Home Midtown](/tin-tuc/khome-midtown-trang-bom-kien-tao-cong-dong-thau-cam-se-chia-gia-tri-song).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230244/avenue1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230246/avenue2.jpg|Hình ảnh thực tế công trường thi công K-Home Midtown Trảng Bom
+
+## 2. Các Cột Mốc Tiến Độ Quan Trọng Của Dự Án K-Home Midtown
+
+- **Năm 2024:** Hoàn thành quy hoạch chi tiết 1/500 và giấy phép xây dựng.
+- **Tháng 8/2025:** Tổ chức thành công Lễ động thổ chính thức.
+- **Tháng 1/2026:** Hoàn thành toàn bộ móng hầm cọc ép đài móng.
+- **Tháng 8/2026:** Thi công kết cấu cột dầm sàn tầng thô.
+- **Năm 2027:** Cất nóc, hoàn thiện nội thất và bàn giao những căn hộ đầu tiên cho cư dân.
+
+Xem bài viết tiến độ chuỗi K-Home tại [Tien do xây dựng K-Home cập nhật mới nhất](/tin-tuc/tien-do-xay-dung-k-home-cityview-cap-nhat-moi-nhat-2026) và [K-Home khi nao ban giao](/tin-tuc/k-home-cityview-khi-nao-ban-giao-cap-nhat-moc-tien-do-2027-2028).
+
+## 3. Lý Do Yên Tâm Tuyệt Đối Vào Tiến Độ K-Home Midtown
+
+### Chủ đầu tư Kim Oanh Group uy tín top 10 Việt Nam
+Kim Oanh Group là thương hiệu phát triển bất động sản hàng đầu với hơn 15 năm kinh nghiệm, luôn cam kết tiến độ xây dựng và pháp lý minh bạch cho khách hàng.
+
+### Nhà thầu giám sát chuyên nghiệp
+Dự án được giám sát chặt chẽ bởi các đơn vị tư vấn hàng đầu như Decofi, Nagecco, đảm bảo từng giai đoạn thi công đạt tiêu chuẩn kỹ thuật nghiêm ngặt.
+
+### Chứng chỉ xanh EDGE được giám sát định kỳ
+Toàn bộ quy trình vật liệu xây dựng và tiêu chuẩn năng lượng được các chuyên gia EDGE (IFC/World Bank) kiểm định thực tế tại công trường.
+
+Đọc thêm bài viết [Top 10 nhà phát triển nhà ở xã hội hàng đầu](/tin-tuc/k-home-cityview-la-du-an-gi-ai-la-chu-dau-tu).
+
+## 4. Đăng Ký Mua Căn Hộ Đợt 1 Giá Ưu Đãi Chỉ Từ 750 Triệu
+
+Sở hữu căn hộ **K-Home Midtown** (k-home mid town) ngay trong đợt thi công thô để nhận chính sách giá tốt nhất:
+- Trả góp chỉ từ **3,5 triệu/tháng** qua Ngân hàng Chính sách Xã hội lãi suất **5,4%/năm**.
+- Đội ngũ Kim Oanh Land hỗ trợ tư vấn và làm hồ sơ xét duyệt miễn phí 100%.
+
+Đọc hướng dẫn tại [Ho so mua K-Home gom nhung gi](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi) và [Quy trình đăng ký mua K-Home](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z).
+
+## Kết Luận: Theo Dõi & Đăng Ký Sở Hữu K-Home Midtown Trảng Bom
+
+Cơ hội sở hữu căn hộ NOXH chuẩn Singapore ngay trung tâm Trảng Bom trong tầm tay bạn.
+
+**Liên hệ ngay Sales Gallery K-Home Midtown Trảng Bom:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn/k-home-midtown-trang-bom
+
+---RELATED---khome-midtown-trang-bom-kham-pha-phong-cach-song-singapore-ngay-trung-tam|K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm;khome-midtown-trang-bom-kien-tao-cong-dong-thau-cam-se-chia-gia-tri-song|K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026`
+  },
+  {
+    id: "n79",
+    slug: "khome-avenue-nhon-trach-kham-pha-du-an-nha-o-xa-hoi-chuan-singapore",
+    title: "K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore | Kim Oanh Land",
+    date: "2026-08-27",
+    excerpt: "Khám phá dự án nhà ở xã hội K-Home Avenue (k-home avenue) Nhơn Trạch quy mô 1,7ha 520 căn hộ chuẩn Singapore Surbana Jurong, tiêu chuẩn xanh EDGE giá từ 800 triệu, hỗ trợ vay CSXH 5,4%/năm.",
+    image: "https://img.youtube.com/vi/nV0widFZQOY/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "avenue",
+    content: `> **Video giới thiệu nổi bật:** Thước phim giới thiệu không gian sống chuẩn Singapore tại dự án **Nhà ở xã hội K-Home Avenue** (hay **k-home avenue**) tọa lạc tại vị trí cửa ngõ đắc địa Huyện Nhơn Trạch, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** (Kim Oanh Land) phát triển. Bài viết dưới đây sẽ phân tích toàn diện tiềm năng vị trí, kiến trúc hiện đại và giải pháp tài chính vượt trội của dự án.
+
+![K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore](https://img.youtube.com/vi/nV0widFZQOY/hqdefault.jpg)
+
+## Video Giới Thiệu K-Home Avenue Nhơn Trạch Đồng Nai
+
+Dưới đây là video chi tiết giới thiệu quy hoạch không gian sống chuẩn Singapore, kết nối hạ tầng giao thông và giải pháp an cư tài chính cho các gia đình Việt:
+
+---VIDEO---https://www.youtube.com/embed/nV0widFZQOY|K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore - Hotline 0937 587 438
+
+## 1. Xu Hướng Chọn An Cư Chuẩn Singapore Tại Cửa Ngõ Nhơn Trạch & Sân Bay Long Thành
+
+Huyện Nhơn Trạch (Tỉnh Đồng Nai) sở hữu vị trí địa lý chiến lược được ví như "tâm điểm kết nối" nằm giữa TP. Hồ Chí Minh, TP. Thủ Đức và Cảng hàng không Quốc tế Long Thành. Với hàng loạt khu công nghiệp (KCN) quy mô hàng ngàn hecta như KCN Nhơn Trạch 1, 2, 3, 4, 5, 6 và KCN Dệt may Nhơn Trạch, nơi đây đang là điểm đến an cư của hơn **150.000 chuyên gia, kỹ sư và công nhân** sinh sống và làm việc.
+
+Sự bứt phá mạnh mẽ của mạng lưới hạ tầng giao thông vùng Đông Nam Bộ với các công trình trọng điểm như **Cầu Nhơn Trạch** (nối liền TP. Thủ Đức với Đồng Nai), tuyến đường Vành đai 3 TP.HCM, đường cao tốc Bến Lức – Long Thành và đường Tỉnh lộ 25C đang biến Nhơn Trạch thành trung tâm đô thị vệ tinh sôi động nhất.
+
+Nắm bắt nhu cầu nhà ở thực ngày càng gia tăng, Tập đoàn **Kim Oanh Group** đã kiến tạo dự án **K-Home Avenue** (k-home avenue) Nhơn Trạch. Đây không chỉ là một công trình nhà ở xã hội (NOXH) đơn thuần mà là một **hệ sinh thái đô thị xanh chuẩn Singapore**, nơi cư dân thụ hưởng trọn vẹn sự an lành và tiện nghi hiện đại.
+
+Xem chi tiết thông tin dự án tại [Trang thông tin chính thức K-Home Avenue Nhơn Trạch](/k-home-avenue-nhon-trach), [Bài viết ý nghĩa an cư gia đình tại K-Home Avenue](/tin-tuc/khome-avenue-nhon-trach-mon-qua-y-nghia-ba-me-trao-tang-con-tre), [Trang dự án K-Home CityView Hố Nai](/k-home-cityview-ho-nai) và [Trang dự án K-Home Midtown Trảng Bom](/k-home-midtown-trang-bom).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230244/avenue1.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230246/avenue2.jpg|Hình ảnh phối cảnh & quy hoạch dự án K-Home Avenue Nhơn Trạch
+
+## 2. Thông Tin Tổng Quan Dự Án K-Home Avenue Nhơn Trạch
+
+| Tiêu chí | Thông tin chi tiết K-Home Avenue |
+|---|---|
+| **Tên thương mại dự án** | K-Home Avenue (tên gọi khác: k-home avenue) |
+| **Vị trí địa lý** | Trung tâm Huyện Nhơn Trạch, Tỉnh Đồng Nai (kết nối Cầu Nhơn Trạch & Vành đai 3) |
+| **Chủ đầu tư & Phát triển** | Kim Oanh Land (Tập đoàn Kim Oanh Group) |
+| **Đơn vị tư vấn thiết kế** | Tập đoàn Surbana Jurong (Singapore) |
+| **Tiêu chuẩn công trình xanh** | Chứng chỉ xanh EDGE (Tổ chức IFC / Ngân hàng Thế giới) |
+| **Quy mô diện tích** | 1,7 hecta |
+| **Cơ cấu sản phẩm** | 520 căn hộ nhà ở xã hội (NOXH) + Shophouse thương mại khối đế |
+| **Loại hình căn hộ** | Căn Studio (35m²), Căn 1PN (45–52m²), Căn 2PN (65–72m²) |
+| **Giá bán công bố đợt 1** | Từ 800 triệu đến 1,4 tỷ đồng/căn |
+| **Chính sách hỗ trợ vay vốn** | Vay Ngân hàng CSXH 80% giá trị, lãi suất 5,4%/năm cố định 25 năm |
+| **Lộ trình bàn giao** | Dự kiến Tháng 12/2027 |
+
+## 3. Lý Do K-Home Avenue Là Sự Lựa Chọn An Cư Hàng Đầu Tại Nhơn Trạch
+
+### Quy hoạch kiến trúc Singapore tinh tế từ Surbana Jurong
+Tập đoàn **Surbana Jurong (Singapore)** – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á – mang đến ngôn ngữ thiết kế tối giản, tối ưu 100% diện tích sử dụng. Mỗi căn hộ **K-Home Avenue** (k-home avenue) đều sở hữu ban công đón gió mát từ sông Đồng Nai, phòng khách ngập tràn ánh sáng tự nhiên và logia giặt phơi thông thoáng.
+
+Đọc thêm bài đánh giá thiết kế tại [Đánh giá thiết kế căn hộ K-Home 2026](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026) và [Mặt bằng K-Home hướng nắng & thông gió tự nhiên](/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien).
+
+### Tiêu chuẩn sống xanh quốc tế EDGE tiết kiệm chi phí
+Dự án đạt chứng chỉ xanh **EDGE quốc tế** do IFC thuộc Ngân hàng Thế giới cấp. Dự án ứng dụng giải pháp vật liệu cách nhiệt tiên tiến, kính giảm bức xạ nhiệt và thiết bị vệ sinh tiết kiệm nước. Nhờ đó cư dân **K-Home Avenue** tiết kiệm ít nhất **20% chi phí điện nước sinh hoạt** mỗi tháng, bảo vệ sức khỏe cho cả gia đình.
+
+Đọc bài phân tích chi tiết tại [K-Home tiêu chuẩn sống xanh EDGE có lợi gì](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge).
+
+### Tiện ích nội khu phong phú nâng tầm trải nghiệm
+- **Hồ bơi ngoài trời xanh mát:** Nơi giải tỏa căng thẳng tuyệt vời sau ngày làm việc.
+- **Công viên cây xanh & Vườn dạo bộ:** Không gian thư thái cho người già và trẻ em.
+- **Sân chơi trẻ em & Nhà trẻ nội khu:** An tâm tuyệt đối cho các gia đình trẻ.
+- **Shophouse thương mại 24/7:** Siêu thị, café, spa ngay dưới chân nhà.
+
+Xem thêm tại [K-Home có bể bơi không? Tiện ích nội khu phong phú](/tin-tuc/k-home-cityview-co-be-boi-khong-tien-ich-noi-khu).
+
+### Vị trí đắc địa di chuyển về TP.HCM chỉ 20 phút
+Khi tuyến đường Vành đai 3 và Cầu Nhơn Trạch đi vào hoạt động, cư dân **K-Home Avenue** (k-home avenue) di chuyển về TP. Thủ Đức và Quận 7 (TP.HCM) chỉ mất 15–20 phút, đồng thời kết nối nhanh chóng đến Sân bay Quốc tế Long Thành.
+
+Xem các bài viết hướng dẫn tại [Các tuyến đường kết nối trực tiếp dự án K-Home](/tin-tuc/nhung-tuyen-duong-nao-ket-noi-truc-tiep-den-k-home-cityview), [K-Home gần những khu công nghiệp nào](/tin-tuc/k-home-cityview-gan-nhung-khu-cong-nghiep-nao) và [Hướng dẫn đường đi đến dự án K-Home](/tin-tuc/huong-dan-duong-di-den-k-home-cityview-tu-cac-diem-chinh).
+
+### Pháp lý hoàn chỉnh, sổ hồng lâu dài
+Dự án được phê duyệt quy hoạch 1/500, chấp thuận chủ trương đầu tư minh bạch, đảm bảo quyền sở hữu sổ hồng lâu dài cho người mua nhà ở thực.
+
+Xem chi tiết tại [Pháp lý nhà ở xã hội K-Home có sổ hồng không](/tin-tuc/k-home-cityview-co-so-hong-khong-phap-ly-noxh-2026).
+
+## 4. Phân Tích Bảng Giá & Bài Toán Trả Góp 3,5 Triệu/Tháng
+
+Chính sách giá bán bình dân tại **K-Home Avenue** (k-home avenue) giúp giấc mơ có nhà riêng trở nên dễ dàng hơn bao giờ hết:
+
+- **Căn hộ Studio (35m²):** Giá từ **800 triệu**, trả góp chỉ ~3,0 – 3,5 triệu/tháng.
+- **Căn hộ 1 Phòng Ngủ (48m²):** Giá từ **1,05 tỷ**, trả góp chỉ ~3,8 – 4,2 triệu/tháng.
+- **Căn hộ 2 Phòng Ngủ (68m²):** Giá từ **1,35 tỷ**, trả góp chỉ ~4,8 – 5,5 triệu/tháng.
+
+Nhờ gói tín dụng ưu đãi từ **Ngân hàng Chính sách Xã hội** (NHCSXH) lãi suất **5,4%/năm** cố định trong **25 năm**, số tiền trả góp hàng tháng hoàn toàn tương đương chi phí thuê trọ bấp bênh tại Nhơn Trạch.
+
+Đọc thêm bài viết [Mỗi tháng phải trả bao nhiêu tiền khi mua K-Home](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview), [Bảng giá K-Home 2026 mới nhất](/tin-tuc/bang-gia-k-home-cityview-2026-theo-tung-loai-can) và [So sánh chi phí mua K-Home và chi phí thuê nhà](/tin-tuc/so-sanh-chi-phi-mua-k-home-cityview-va-chi-phi-thue-nha-tai-bien-hoa-dong-nai).
+
+## 5. Hướng Dẫn Hồ Sơ Đăng Ký Mua NOXH K-Home Avenue Nhơn Trạch
+
+Khách hàng đăng ký mua **K-Home Avenue** (k-home avenue) cần đáp ứng các điều kiện cốt lõi:
+
+1. **Điều kiện nhà ở:** Chưa đứng tên sở hữu nhà ở/đất ở tại tỉnh Đồng Nai.
+2. **Điều kiện thu nhập:** Thu nhập thực nhận thuộc diện không nộp thuế TNCN thường xuyên hoặc thuộc khung đối tượng NOXH.
+3. **Điều kiện cư trú:** Có hộ khẩu thường trú hoặc xác nhận tạm trú (KT3) từ 1 năm trở lên tại Đồng Nai.
+
+Đọc hướng dẫn chi tiết tại [Điều kiện mua nhà ở xã hội Đồng Nai 2026](/tin-tuc/dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026), [Hồ sơ mua K-Home gồm những giấy tờ gì](/tin-tuc/ho-so-mua-k-home-cityview-gom-nhung-giay-to-gi), [Quy trình đăng ký mua K-Home từ A đến Z](/tin-tuc/quy-trinh-dang-ky-mua-k-home-cityview-tu-a-den-z) và [Thủ tục chứng minh tình trạng nhà ở](/tin-tuc/thu-tuc-chung-minh-tinh-trang-nha-o-khi-mua-k-home-cityview).
+
+## Kết Luận: Thời Điểm Vàng Để Sở Hữu Căn Hộ Nhơn Trạch
+
+Dự án **K-Home Avenue** Nhơn Trạch là cơ hội đầu tiên và tốt nhất giúp bạn sở hữu một tổ ấm chuẩn Singapore với mức giá bình dân ngay cửa ngõ TP.HCM.
+
+**Liên hệ ngay Sales Gallery K-Home Avenue Nhơn Trạch:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn/k-home-avenue-nhon-trach
+
+---RELATED---khome-avenue-nhon-trach-mon-qua-y-nghia-ba-me-trao-tang-con-tre|K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026;khome-cityview-ho-nai-to-am-chuan-singapore-cho-gia-dinh-viet|K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt`
+  },
+  {
+    id: "n80",
+    slug: "khome-avenue-nhon-trach-mon-qua-y-nghia-ba-me-trao-tang-con-tre",
+    title: "K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ | Kim Oanh Land",
+    date: "2026-08-27",
+    excerpt: "K-Home Avenue (k-home avenue) Nhơn Trạch không chỉ là căn hộ NOXH mà còn là môi trường sống xanh an lành chuẩn Singapore cho con trẻ trưởng thành. Căn hộ giá từ 800 triệu, trả góp 3,5 triệu/tháng.",
+    image: "https://img.youtube.com/vi/SlsSGiKYRBE/hqdefault.jpg",
+    category: "Tin tức dự án",
+    project: "avenue",
+    content: `> **Thước phim an cư gia đình:** Đoạn phim xúc động về ý nghĩa tổ ấm gia đình và môi trường sống nuôi dưỡng tuổi thơ con trẻ tại dự án **Nhà ở xã hội K-Home Avenue** (hay **k-home avenue**) tọa lạc tại Huyện Nhơn Trạch, Tỉnh Đồng Nai do Tập đoàn **Kim Oanh Group** phát triển. Bài viết dưới đây sẽ phân tích giá trị sống gia đình và giải pháp an cư lâu dài.
+
+![K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ](https://img.youtube.com/vi/SlsSGiKYRBE/hqdefault.jpg)
+
+## Video Ý Nghĩa Tổ Ấm K-Home Avenue Nhơn Trạch
+
+Dưới đây là thước phim cảm động ghi lại hành trình kiến tạo môi trường sống nhân văn cho thế hệ tương lai tại **K-Home Avenue**:
+
+---VIDEO---https://www.youtube.com/embed/SlsSGiKYRBE|K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ - Hotline 0937 587 438
+
+## 1. Môi Trường Sống Gia Đình – Món Quà Vô Giá Dành Cho Tuổi Thơ Con Trẻ
+
+Trong hành trình bôn ba lập nghiệp tại thủ phủ công nghiệp Nhơn Trạch (Đồng Nai), mong ước lớn nhất của mỗi người làm cha làm mẹ là mang tới cho con yêu một không gian sống an toàn, sạch sẽ và văn minh. Thấu hiểu tâm tư đó, **Kim Oanh Group** đã tâm huyết kiến tạo dự án **K-Home Avenue** (k-home avenue) Nhơn Trạch với mục tiêu xây dựng một môi trường an cư trọn vẹn hạnh phúc.
+
+Tại **K-Home Avenue**, con trẻ không còn phải lớn lên trong những căn phòng trọ chật chội, thiếu ánh sáng và nỗi lo mất an toàn giao thông. Thay vào đó là một **khu đô thị khép kín chuẩn Singapore**, ngập tràn sắc xanh công viên, khu vui chơi vận động và cộng đồng cư dân tri thức, hòa nhã.
+
+Xem chi tiết thông tin dự án tại [Trang thông tin chính thức K-Home Avenue Nhơn Trạch](/k-home-avenue-nhon-trach), [Khám phá K-Home Avenue chuẩn Singapore](/tin-tuc/khome-avenue-nhon-trach-kham-pha-du-an-nha-o-xa-hoi-chuan-singapore), [K-Home CityView Hố Nai](/k-home-cityview-ho-nai) và [K-Home Midtown Trảng Bom](/k-home-midtown-trang-bom).
+
+---GALLERY---https://res.cloudinary.com/dthv0nsq/image/upload/v1785230245/avenue3.jpg|https://res.cloudinary.com/dthv0nsq/image/upload/v1785230243/avenue.jpg|Hình ảnh không gian sống & tiện ích cho trẻ em K-Home Avenue Nhơn Trạch
+
+## 2. 4 Giá Trị Nổi Bật K-Home Avenue Mang Đến Cho Con Trẻ & Gia Đình
+
+### Tiêu chuẩn sống xanh EDGE bảo vệ hệ hô hấp nhỏ tuổi
+Dự án đạt chứng chỉ xanh **EDGE quốc tế**, giảm phát thải khí carbon và sử dụng sơn tường, vật liệu xây dựng thân thiện với môi trường. Không khí trong lành và cây xanh bao phủ giúp trẻ nhỏ giảm nguy cơ mắc các bệnh về đường hô hấp, luôn khỏe mạnh và năng động.
+
+Xem chi tiết tại [K-Home tiêu chuẩn sống xanh EDGE](/tin-tuc/k-home-cityview-tieu-chuan-song-xanh-edge) và [Đánh giá thiết kế căn hộ K-Home 2026](/tin-tuc/danh-gia-thiet-ke-can-ho-k-home-cityview-2026).
+
+### Hệ thống tiện ích mầm mầm & khu vui chơi an toàn
+Ngay trong nội khu **K-Home Avenue** (k-home avenue) được bố trí nhà trẻ tiêu chuẩn, sân chơi cát ngoài trời và hồ bơi trẻ em với mực nước an toàn. Ba mẹ hoàn toàn yên tâm gửi con gần nhà mà không phải tốn thời gian di chuyển xa.
+
+Xem thêm tại [Song tai K-Home co phu hop gia dinh co con nho](/tin-tuc/song-tai-k-home-cityview-co-phu-hop-gia-dinh-co-con-nho) và [K-Home co truong hoc noi khu khong](/tin-tuc/k-home-cityview-co-truong-hoc-noi-khu-khong).
+
+### An ninh 3 lớp bảo vệ 24/7
+Hệ thống camera giám sát thông minh, thẻ từ thang máy phân tầng và đội ngũ bảo vệ chuyên nghiệp trực 24/24. Con trẻ tự do chạy nhảy vui chơi trong khuôn viên nội khu khép kín **K-Home Avenue** mà không gặp bất kỳ nguy cơ mất an toàn nào.
+
+### Cộng đồng cư dân hòa nhã, văn minh
+Sống tại K-Home Avenue, trẻ nhỏ được hòa mình vào cộng đồng gia đình trẻ văn minh, giúp con rèn luyện kỹ năng giao tiếp, tinh thần chia sẻ và có một tuổi thơ đầy ắp kỷ niệm đẹp.
+
+Xem thêm bài viết [K-Home co phu hop voi gia dinh tre khong](/tin-tuc/k-home-cityview-co-phu-hop-voi-gia-dinh-tre-khong).
+
+## 3. Bài Toán Tài Chính An Cư – Trả Góp Chỉ 3,5 Triệu/Tháng
+
+Để món quà an cư trở thành hiện thực cho các gia đình trẻ, Kim Oanh Group phối hợp cùng **Ngân hàng Chính sách Xã hội** mang đến gói tài chính vay cực kỳ ưu đãi:
+
+- **Hỗ trợ vay vốn:** Tối đa **80%** giá trị căn hộ.
+- **Lãi suất ưu đãi:** Cố định **5,4%/năm** suốt **25 năm**.
+- **Số tiền trả góp:** Chỉ từ **3,5 – 4,5 triệu/tháng**, tương đương số tiền đi thuê nhà trọ nhưng gia đình được sở hữu tài sản lâu dài.
+
+Xem bài tính chi tiết tại [Mỗi tháng phải trả bao nhiêu khi mua K-Home](/tin-tuc/moi-thang-phai-tra-bao-nhieu-neu-mua-k-home-cityview) và [Lãi suất vay mua K-Home ước tính thế nào](/tin-tuc/lai-suat-vay-mua-k-home-cityview-uoc-tinh-nhu-the-nao).
+
+## 4. Hướng Dẫn Nộp Hồ Sơ Đăng Ký Mua K-Home Avenue Nhơn Trạch
+
+Gia đình bạn chỉ cần đáp ứng 3 điều kiện cơ bản:
+1. Chưa đứng tên sở hữu nhà đất tại tỉnh Đồng Nai.
+2. Thu nhập thuộc diện đối tượng nhà ở xã hội.
+3. Có hộ khẩu hoặc xác nhận tạm trú (KT3) tại Đồng Nai.
+
+Xem trọn bộ tư vấn tại [Điều kiện thu nhập và tình trạng nhà ở](/tin-tuc/dieu-kien-thu-nhap-va-tinh-trang-nha-o-khi-mua-k-home-cityview) và [Những lỗi thường gặp khi chuẩn bị hồ sơ](/tin-tuc/nhung-loi-thuong-gap-khi-chuan-bi-ho-so-mua-k-home-cityview).
+
+Đội ngũ chuyên viên Kim Oanh Land sẽ hỗ trợ kiểm tra điều kiện và hoàn thiện hồ sơ xét duyệt hoàn toàn **MIỄN PHÍ** cho bạn.
+
+## Kết Luận: Hãy Dành Tặng Con Tổ Ấm An Cư Trọn Vẹn
+
+Dự án **K-Home Avenue** Nhơn Trạch chính là món quà ý nghĩa nhất mà cha mẹ dành tặng cho tương lai rực rỡ của con trẻ.
+
+**Liên hệ ngay Sales Gallery K-Home Avenue Nhơn Trạch để chọn căn góc view đẹp đợt mở bán đầu tiên:**
+- **Hotline / Zalo:** 0937 587 438 (Kim Oanh Land)
+- **Website chính thức:** https://k-homedongnai.com.vn/k-home-avenue-nhon-trach
+
+---RELATED---khome-avenue-nhon-trach-kham-pha-du-an-nha-o-xa-hoi-chuan-singapore|K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore;dieu-kien-mua-nha-o-xa-hoi-dong-nai-2026|Điều Kiện Mua Nhà Ở Xã Hội Đồng Nai 2026;khome-cityview-ho-nai-to-am-chuan-singapore-cho-gia-dinh-viet|K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt`
+  },
+  {
     id: "n78",
     slug: "bien-hoa-but-pha-co-hoi-an-cu-lac-nghiep-tai-khome-cityview-ho-nai",
     title: "Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai | Kim Oanh Group",

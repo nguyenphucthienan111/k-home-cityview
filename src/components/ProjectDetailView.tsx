@@ -1242,7 +1242,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           <div className="flex items-center overflow-x-auto no-scrollbar border-b border-slate-100 whitespace-nowrap">
             {[
               { id: "overview",        label: "Tổng Quan" },
-              ...(slug === "k-home-cityview-ho-nai" ? [{ id: "video_phong_su", label: "🎬 Video Phóng Sự" }] : []),
+              { id: "video_phong_su", label: "🎬 Video Phóng Sự" },
               { id: "units",           label: "Bảng Giá & Loại Hình" },
               { id: "amenities",       label: "Tiện Ích" },
               { id: "map",             label: "Vị Trí Bản Đồ" }
@@ -1339,6 +1339,146 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed italic">
                   Phóng sự đánh giá vị trí chiến lược, tiềm năng phát triển và giải pháp tài chính vay ưu đãi 5,4%/năm trong 25 năm dành cho công nhân và người lao động Đồng Nai.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Tab Video Phóng Sự & Giới Thiệu (K-Home Avenue Nhơn Trạch) */}
+          {activeTab === "video_phong_su" && slug === "k-home-avenue-nhon-trach" && (
+            <div className="space-y-8">
+              {/* Video 1: Khám Phá Dự Án Chuẩn Singapore */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      VIDEO GIỚI THIỆU CHÍNH THỨC
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore</h3>
+                  </div>
+                  <span className="text-xs text-amber-400 font-medium">Kim Oanh Land</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/nV0widFZQOY?autoplay=0&rel=0"
+                    title="K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore | Hotline 0937 587 438"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Video giới thiệu toàn cảnh vị trí cửa ngõ Sân bay Long Thành, thiết kế chuẩn Singapore Surbana Jurong và hệ tiện ích phong phú tại K-Home Avenue Nhơn Trạch do Kim Oanh Group phát triển.
+                </p>
+              </div>
+
+              {/* Video 2: Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-emerald-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      THƯỚC PHIM AN CƯ GIA ĐÌNH
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ</h3>
+                  </div>
+                  <span className="text-xs text-emerald-400 font-medium">Kim Oanh Land</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/SlsSGiKYRBE?autoplay=0&rel=0"
+                    title="K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ | Kim Oanh Land"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Thước phim xúc động về ý nghĩa tổ ấm gia đình, môi trường sống xanh an lành chuẩn EDGE và giải pháp trả góp vay ưu đãi 5,4%/năm dành cho cư dân Nhơn Trạch.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Tab Video Phóng Sự & Giới Thiệu (K-Home Midtown Trảng Bom) */}
+          {activeTab === "video_phong_su" && slug === "k-home-midtown-trang-bom" && (
+            <div className="space-y-8">
+              {/* Video 1: Khám Phá Phong Cách Sống Singapore */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      VIDEO GIỚI THIỆU CHÍNH THỨC
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm</h3>
+                  </div>
+                  <span className="text-xs text-amber-400 font-medium">Kim Oanh Group</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/8qd60-fFFkY?autoplay=0&rel=0"
+                    title="K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm | Kim Oanh Group"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Video giới thiệu chi tiết vị trí trung tâm huyện Trảng Bom, quy hoạch kiến trúc Singapore chuẩn công trình xanh EDGE và hệ tiện ích phong phú tại K-Home Midtown do Kim Oanh Group phát triển.
+                </p>
+              </div>
+
+              {/* Video 2: Kiến Tạo Cộng Đồng Thấu Cảm */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-blue-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      CỘNG ĐỒNG CƯ DÂN AN CƯ
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống</h3>
+                  </div>
+                  <span className="text-xs text-blue-400 font-medium">Kim Oanh Land</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/EyKr3u7KkyE?autoplay=0&rel=0"
+                    title="K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống | Kim Oanh Land"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Thước phim nhân văn về không gian sinh hoạt cộng đồng, an ninh văn minh 24/7 và giải pháp hỗ trợ vay gói nhà ở xã hội 5,4%/năm trong 25 năm dành cho người lao động Trảng Bom.
+                </p>
+              </div>
+
+              {/* Video 3: Tiến Độ Thi Công Thần Tốc */}
+              <div className="space-y-4 bg-slate-900 p-6 rounded-2xl text-white border border-slate-800 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="bg-emerald-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      CẬP NHẬT TIẾN ĐỘ THỰC TẾ
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1">K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất</h3>
+                  </div>
+                  <span className="text-xs text-emerald-400 font-medium">Kim Oanh Group</span>
+                </div>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/3FbIphjZu38?autoplay=0&rel=0"
+                    title="K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất | Kim Oanh Group"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed italic">
+                  Video hình ảnh thực tế công trường thi công dự án K-Home Midtown Trảng Bom, đảm bảo các tiêu chuẩn kỹ thuật chất lượng và tiến độ bàn giao nhà cho cư dân.
                 </p>
               </div>
             </div>

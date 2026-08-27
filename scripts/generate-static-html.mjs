@@ -383,6 +383,83 @@ async function main() {
     }
   };
 
+  // Video Schemas cho Avenue
+  const AVENUE_VIDEO_SCHEMA_1 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore",
+    "description": "Video giới thiệu toàn cảnh vị trí cửa ngõ Sân bay Long Thành, thiết kế chuẩn Singapore Surbana Jurong và hệ tiện ích phong phú tại K-Home Avenue Nhơn Trạch.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/nV0widFZQOY/hqdefault.jpg"],
+    "uploadDate": "2026-08-27T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/nV0widFZQOY",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const AVENUE_VIDEO_SCHEMA_2 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ",
+    "description": "Thước phim xúc động về ý nghĩa tổ ấm gia đình, môi trường sống xanh an lành chuẩn EDGE và giải pháp trả góp vay ưu đãi 5,4%/năm dành cho cư dân Nhơn Trạch.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/SlsSGiKYRBE/hqdefault.jpg"],
+    "uploadDate": "2026-08-27T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/SlsSGiKYRBE",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  // Video Schemas cho Midtown
+  const MIDTOWN_VIDEO_SCHEMA_1 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm",
+    "description": "Video giới thiệu chi tiết vị trí trung tâm huyện Trảng Bom, quy hoạch kiến trúc Singapore chuẩn công trình xanh EDGE và hệ tiện ích phong phú tại K-Home Midtown.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/8qd60-fFFkY/hqdefault.jpg"],
+    "uploadDate": "2026-08-27T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/8qd60-fFFkY",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const MIDTOWN_VIDEO_SCHEMA_2 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống",
+    "description": "Thước phim nhân văn về không gian sinh hoạt cộng đồng, an ninh văn minh 24/7 và giải pháp hỗ trợ vay gói nhà ở xã hội 5,4%/năm trong 25 năm dành cho người lao động Trảng Bom.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/EyKr3u7KkyE/hqdefault.jpg"],
+    "uploadDate": "2026-08-27T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/EyKr3u7KkyE",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
+  const MIDTOWN_VIDEO_SCHEMA_3 = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất",
+    "description": "Video hình ảnh thực tế công trường thi công dự án K-Home Midtown Trảng Bom, đảm bảo các tiêu chuẩn kỹ thuật chất lượng và tiến độ bàn giao nhà cho cư dân.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/3FbIphjZu38/hqdefault.jpg"],
+    "uploadDate": "2026-08-27T08:00:00+07:00",
+    "embedUrl": "https://www.youtube.com/embed/3FbIphjZu38",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    }
+  };
+
   // Map schema per dir
   const ROUTE_SCHEMAS = {
     "k-home-cityview-ho-nai": [
@@ -394,8 +471,17 @@ async function main() {
       CITYVIEW_VIDEO_SCHEMA_PHONGSU_2,
       CITYVIEW_VIDEO_SCHEMA_PHONGSU_3
     ],
-    "k-home-midtown-trang-bom": [MIDTOWN_BREADCRUMB],
-    "k-home-avenue-nhon-trach": [AVENUE_BREADCRUMB],
+    "k-home-midtown-trang-bom": [
+      MIDTOWN_BREADCRUMB,
+      MIDTOWN_VIDEO_SCHEMA_1,
+      MIDTOWN_VIDEO_SCHEMA_2,
+      MIDTOWN_VIDEO_SCHEMA_3
+    ],
+    "k-home-avenue-nhon-trach": [
+      AVENUE_BREADCRUMB,
+      AVENUE_VIDEO_SCHEMA_1,
+      AVENUE_VIDEO_SCHEMA_2
+    ],
   };
 
   for (const route of STATIC_ROUTES) {
