@@ -193,13 +193,21 @@ function injectMeta(template, { title, description, canonical, keywords, ogType 
 function writeRoute(template, dirPath, meta) {
   let html = injectMeta(template, meta);
 
-  // Inject static <a href> links vào <body> — Googlebot đọc được trước khi JS render
-  // Giải quyết vấn đề: internal links trong React content không có trong HTML tĩnh
+  // Inject static <a href> links & <iframe video> vào <body> — Googlebot đọc được trước khi JS render
   const staticLinks = meta.staticLinks || [];
-  if (staticLinks.length > 0) {
+  let videoHtml = "";
+  const videos = meta.staticVideos || (meta.staticVideoUrl ? [{ url: meta.staticVideoUrl, title: meta.staticVideoTitle || meta.title }] : []);
+  
+  if (videos.length > 0) {
+    videoHtml = videos.map(v => 
+      `<div class="seo-video-embed" style="max-width:800px;margin:20px auto"><iframe src="${escAttr(v.url)}" title="${escAttr(v.title)}" width="100%" height="450" style="border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    ).join("\n");
+  }
+
+  if (staticLinks.length > 0 || videoHtml) {
     const linkHtml = `\n<div id="seo-links" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${
       staticLinks.map(({ href, text }) => `<a href="${escAttr(href)}">${text}</a>`).join("")
-    }</div>`;
+    }</div>${videoHtml}`;
     html = html.replace("</body>", `${linkHtml}\n</body>`);
   }
 
@@ -484,15 +492,37 @@ async function main() {
     ],
   };
 
+  // Map ALL video URLs cho tất cả các trang dự án chính
+  const PROJECT_STATIC_VIDEOS = {
+    "k-home-cityview-ho-nai": [
+      { url: "https://www.youtube.com/embed/RJGULOh6Wrs", title: "Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land" },
+      { url: "https://www.youtube.com/embed/Y9502b3sDJU", title: "Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai" },
+      { url: "https://www.youtube.com/embed/f4Av04RYDrw", title: "K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt" },
+      { url: "https://www.youtube.com/embed/z9ZL9_Sng4Q", title: "Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026" }
+    ],
+    "k-home-midtown-trang-bom": [
+      { url: "https://www.youtube.com/embed/8qd60-fFFkY", title: "K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm" },
+      { url: "https://www.youtube.com/embed/EyKr3u7KkyE", title: "Cộng Đồng Cư Dân K-Home Midtown Trảng Bom" },
+      { url: "https://www.youtube.com/embed/3FbIphjZu38", title: "Tiến Độ Thi Công K-Home Midtown Trảng Bom Mới Nhất" }
+    ],
+    "k-home-avenue-nhon-trach": [
+      { url: "https://www.youtube.com/embed/nV0widFZQOY", title: "K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore" },
+      { url: "https://www.youtube.com/embed/SlsSGiKYRBE", title: "K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ" }
+    ]
+  };
+
   for (const route of STATIC_ROUTES) {
     const canonical = `${BASE_URL}/${route.dir}`;
     const dirPath = path.join(DIST_DIR, route.dir);
+    const projVideos = PROJECT_STATIC_VIDEOS[route.dir] || [];
+
     writeRoute(template, dirPath, {
       title: route.title,
       description: route.description,
       canonical,
       keywords: route.keywords ?? null,
       schemas: ROUTE_SCHEMAS[route.dir] ?? [],
+      staticVideos: projVideos,
     });
     count++;
     console.log(`✅ /${route.dir}`);
@@ -589,18 +619,22 @@ async function main() {
       });
     }
 
+    // Static links + Static Video Element cho Googlebot nhận diện Video Watch Page
+    const staticLinks = [
+      { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },
+      { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
+      { href: "/", text: "K-Home Đồng Nai" },
+    ];
+
     writeRoute(template, dirPath, {
       title,
       description: article.excerpt,
       canonical,
       ogType: "article",
       schemas,
-      // Static <a href> links cho Googlebot — link về money page trong HTML tĩnh
-      staticLinks: [
-        { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },
-        { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
-        { href: "/", text: "K-Home Đồng Nai" },
-      ],
+      staticLinks,
+      staticVideoUrl: article.videoUrl ? (article.videoUrl.includes("youtube.com") || article.videoUrl.includes("youtu.be") ? `https://www.youtube.com/embed/${article.videoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/)?.[1]}` : article.videoUrl) : null,
+      staticVideoTitle: article.videoCaption || article.title,
     });
     count++;
     console.log(`✅ /tin-tuc/${article.slug}`);
