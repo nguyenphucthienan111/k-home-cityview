@@ -207,7 +207,7 @@ function writeRoute(template, dirPath, meta) {
   if (staticLinks.length > 0 || videoHtml) {
     const linkHtml = `\n<div id="seo-links" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${
       staticLinks.map(({ href, text }) => `<a href="${escAttr(href)}">${text}</a>`).join("")
-    }</div>${videoHtml}`;
+    }</div><div id="seo-videos" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${videoHtml}</div>`;
     html = html.replace("</body>", `${linkHtml}\n</body>`);
   }
 
