@@ -354,28 +354,87 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         </div>
       </div>
 
-      {/* Featured Image */}
-      <div
-        className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden shadow-sm border border-slate-100 cursor-zoom-in group"
-        onClick={() => openLightbox([{ src: article.image, alt: article.title }], 0)}
-      >
-        <img
-          src={article.image.includes("cloudinary")
-            ? article.image.replace("/upload/", "/upload/w_900,q_auto:good,f_auto/")
-            : article.image}
-          alt={`${article.title} – K-Home Đồng Nai`}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          loading="eager"
-          fetchPriority="high"
-          width="900"
-          height="420"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-full p-3">
-            <ZoomIn className="w-6 h-6 text-white" />
+      {/* Featured Header: Video Player or Featured Image */}
+      {(() => {
+        const videoLine = article.content.split("\n").find(l => l.startsWith("---VIDEO---"));
+        if (videoLine) {
+          const parts = videoLine.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
+          const caption = parts.length > 1 ? parts[1] : article.title;
+          const videoUrl = parts[0];
+          const isYouTube = videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be");
+          let embedSrc = videoUrl;
+          if (isYouTube) {
+            if (videoUrl.includes("embed/")) {
+              embedSrc = videoUrl;
+            } else if (videoUrl.includes("watch?v=")) {
+              const id = videoUrl.split("watch?v=")[1]?.split("&")[0];
+              embedSrc = `https://www.youtube.com/embed/${id}`;
+            } else if (videoUrl.includes("youtu.be/")) {
+              const id = videoUrl.split("youtu.be/")[1]?.split("?")[0];
+              embedSrc = `https://www.youtube.com/embed/${id}`;
+            }
+          }
+
+          return (
+            <div className="space-y-3 bg-slate-950 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-xl text-white">
+              <div className="flex items-center justify-between">
+                <span className="bg-red-600 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  🎬 VIDEO NỔI BẬT BÀI VIẾT
+                </span>
+                <span className="text-xs text-amber-400 font-medium">K-Home Đồng Nai</span>
+              </div>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900">
+                {isYouTube ? (
+                  <iframe
+                    src={embedSrc}
+                    title={caption}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                ) : (
+                  <video
+                    src={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/w_1200,h_800,c_fill,q_auto,f_auto/") : videoUrl}
+                    controls
+                    preload="auto"
+                    className="w-full h-full object-cover"
+                    style={{ display: "block" }}
+                    poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : undefined}
+                  />
+                )}
+              </div>
+              <p className="text-xs text-slate-300 italic text-center">
+                {caption}
+              </p>
+            </div>
+          );
+        }
+
+        return (
+          <div
+            className="relative h-64 md:h-[420px] rounded-2xl overflow-hidden shadow-sm border border-slate-100 cursor-zoom-in group"
+            onClick={() => openLightbox([{ src: article.image, alt: article.title }], 0)}
+          >
+            <img
+              src={article.image.includes("cloudinary")
+                ? article.image.replace("/upload/", "/upload/w_900,q_auto:good,f_auto/")
+                : article.image}
+              alt={`${article.title} – K-Home Đồng Nai`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="eager"
+              fetchPriority="high"
+              width="900"
+              height="420"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-full p-3">
+                <ZoomIn className="w-6 h-6 text-white" />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* Content Area */}
       <article

@@ -1487,6 +1487,196 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Tab 1: Overview */}
           {activeTab === "overview" && (
             <div className="space-y-6">
+              {/* 🎬 Video Phóng Sự Nổi Bật Đầu Trang — Watch Page Multi-Video Showcase */}
+              {slug === "k-home-cityview-ho-nai" && (
+                <div className="space-y-4 bg-slate-950 p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-xl text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        🎬 THƯ VIỆN VIDEO DỰ ÁN (4 PHÓNG SỰ)
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                        Toàn Cảnh Phóng Sự & Tiến Độ K-Home CityView Hố Nai
+                      </h3>
+                    </div>
+                    <span className="text-xs text-amber-400 font-medium hidden sm:inline-block">Kim Oanh Group</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Video 1: Biên Hòa Bứt Phá */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/Y9502b3sDJU?autoplay=0&rel=0"
+                          title="Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">1. Phóng sự: Biên Hòa Bứt Phá — Cơ Hội An Cư</h4>
+                    </div>
+
+                    {/* Video 2: Phóng Sự Truyền Hình */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/RJGULOh6Wrs?autoplay=0&rel=0"
+                          title="Phóng Sự Nhà Ở Xã Hội K-Home CityView Hố Nai Đồng Nai — Kim Oanh Land"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">2. Phóng sự truyền hình NOXH K-Home CityView</h4>
+                    </div>
+
+                    {/* Video 3: Tổ Ấm Chuẩn Singapore */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/f4Av04RYDrw?autoplay=0&rel=0"
+                          title="K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">3. Giới thiệu không gian sống chuẩn Singapore</h4>
+                    </div>
+
+                    {/* Video 4: Tiến Độ Xây Dựng */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/z9ZL9_Sng4Q?autoplay=0&rel=0"
+                          title="Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">4. Tiến độ xây dựng thực tế tháng 8/2026</h4>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {slug === "k-home-midtown-trang-bom" && (
+                <div className="space-y-4 bg-slate-950 p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-xl text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        🎬 THƯ VIỆN VIDEO DỰ ÁN (3 VIDEO)
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                        Toàn Cảnh K-Home Midtown Trảng Bom Chuẩn Singapore
+                      </h3>
+                    </div>
+                    <span className="text-xs text-amber-400 font-medium hidden sm:inline-block">Kim Oanh Group</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {/* Video 1 */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/8qd60-fFFkY?autoplay=0&rel=0"
+                          title="K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">1. Khám phá phong cách sống Singapore</h4>
+                    </div>
+
+                    {/* Video 2 */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/EyKr3u7KkyE?autoplay=0&rel=0"
+                          title="K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">2. Cộng đồng cư dân văn minh</h4>
+                    </div>
+
+                    {/* Video 3 */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/3FbIphjZu38?autoplay=0&rel=0"
+                          title="Tiến Độ Thi Công K-Home Midtown Trảng Bom Mới Nhất"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">3. Tiến độ thi công thực tế</h4>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {slug === "k-home-avenue-nhon-trach" && (
+                <div className="space-y-4 bg-slate-950 p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-xl text-white">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        🎬 THƯ VIỆN VIDEO DỰ ÁN (2 VIDEO)
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                        Toàn Cảnh K-Home Avenue Nhơn Trạch Liền Kề Sân Bay Long Thành
+                      </h3>
+                    </div>
+                    <span className="text-xs text-amber-400 font-medium hidden sm:inline-block">Kim Oanh Land</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Video 1 */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/nV0widFZQOY?autoplay=0&rel=0"
+                          title="K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">1. Khám phá dự án chuẩn Singapore</h4>
+                    </div>
+
+                    {/* Video 2 */}
+                    <div className="space-y-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                      <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-700/50 bg-slate-950">
+                        <iframe
+                          className="w-full h-full"
+                          src="https://www.youtube.com/embed/SlsSGiKYRBE?autoplay=0&rel=0"
+                          title="K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <h4 className="text-xs font-bold text-slate-100 line-clamp-1">2. Món quà an cư ý nghĩa cho con trẻ</h4>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="bg-slate-50/50 p-6 rounded-2xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div className="space-y-1">
                   <span className="text-slate-400 text-xs uppercase font-tech">Chủ đầu tư:</span>
