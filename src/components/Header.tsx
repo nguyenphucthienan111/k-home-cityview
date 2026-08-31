@@ -170,6 +170,18 @@ export default function Header({ currentHash }: HeaderProps) {
               {(activeSection === "/tin-tuc" || activeSection === "/news") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
             </a>
 
+            {/* Video */}
+            <a
+              href="/video/phong-su-k-home-cityview-ho-nai"
+              onClick={(e) => handleNav(e, "/video/phong-su-k-home-cityview-ho-nai")}
+              className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
+                activeSection === "/video" ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+              }`}
+            >
+              Video
+              {activeSection === "/video" && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+            </a>
+
             {/* Giới Thiệu */}
             <a
               href="/gioi-thieu"
@@ -270,6 +282,7 @@ export default function Header({ currentHash }: HeaderProps) {
 
           {[
             { title: "Tin Tức",    href: "/tin-tuc" },
+            { title: "Video",      href: "/video/phong-su-k-home-cityview-ho-nai" },
             { title: "Giới Thiệu", href: "/gioi-thieu" },
             { title: "Liên Hệ",   href: "/lien-he" },
           ].map((item) => (

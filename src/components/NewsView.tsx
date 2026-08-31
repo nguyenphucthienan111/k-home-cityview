@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { News } from "../types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -6,7 +6,7 @@ interface NewsViewProps {
   onNavigate: (hash: string) => void;
 }
 
-const CATEGORIES = ["Tất cả", "Tin tức dự án", "Chính sách", "Đánh giá dự án", "So sánh & Tư vấn", "Hỏi đáp / FAQ"];
+const CATEGORIES = ["Tất cả", "Video Dự Án", "Tin tức dự án", "Chính sách", "Đánh giá dự án", "So sánh & Tư vấn", "Hỏi đáp / FAQ"];
 
 const PROJECTS = [
   { key: "tat-ca",   label: "Tất cả" },
@@ -61,8 +61,14 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
       const q = search.toLowerCase();
       r = r.filter(n => n.title.toLowerCase().includes(q) || n.excerpt.toLowerCase().includes(q));
     }
-    if (category !== "Tất cả") r = r.filter(n => n.category === category);
-    if (project  !== "tat-ca")  r = r.filter(n => (n.project ?? "chung") === project);
+    if (category === "Video Dự Án") {
+      r = r.filter(n => n.content && n.content.includes("---VIDEO---"));
+    } else if (category !== "Tất cả") {
+      r = r.filter(n => n.category === category);
+    }
+    if (project !== "tat-ca") {
+      r = r.filter(n => (n.project ?? "chung") === project);
+    }
     setFiltered(r);
     setPage(1); // reset về trang 1 khi filter thay đổi
   }, [search, category, project, news]);
@@ -215,6 +221,13 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                     height="288"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-950/10" />
+                  {featured.content && featured.content.includes("---VIDEO---") && (
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl backdrop-blur-sm group-hover:scale-110 transition-transform">
+                        <span className="text-xl ml-1">▶</span>
+                      </div>
+                    </div>
+                  )}
                   {featured.project && featured.project !== "chung" && (
                     <span
                       className="absolute top-5 left-5 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest"
@@ -271,9 +284,17 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                           width="400"
                           height="208"
                         />
+                        {/* Video Play Overlay */}
+                        {article.content && article.content.includes("---VIDEO---") && (
+                          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div className="w-10 h-10 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-lg backdrop-blur-sm group-hover:scale-110 transition-transform">
+                              <span className="text-sm ml-0.5">▶</span>
+                            </div>
+                          </div>
+                        )}
                         {/* Category pill */}
                         <span className="absolute top-3 left-3 bg-slate-950/70 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                          {article.category}
+                          {article.content && article.content.includes("---VIDEO---") ? "🎬 Video" : article.category}
                         </span>
                         {/* Project dot */}
                         {article.project && article.project !== "chung" && (

@@ -18,6 +18,7 @@ const AdminDashboardView = lazy(() => import("./components/AdminDashboardView"))
 const NotFoundView       = lazy(() => import("./components/NotFoundView"));
 const ServerErrorView    = lazy(() => import("./components/ServerErrorView"));
 const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
+const VideoWatchView     = lazy(() => import("./components/VideoWatchView"));
 
 // ── 301 Redirect map for old news slugs → new slugs ──
 // When Googlebot crawls old URL, it will see redirect and transfer link juice
@@ -257,6 +258,9 @@ export default function App() {
 
     const newsMatch = path.match(/^\/tin-tuc\/([^/]+)$/);
     if (newsMatch) return <NewsDetailView slug={newsMatch[1]} onNavigate={navigateTo} />;
+
+    const videoMatch = path.match(/^\/video\/([^/]+)$/);
+    if (videoMatch) return <VideoWatchView videoSlug={videoMatch[1]} onNavigate={navigateTo} />;
 
     const newsMatchOld = path.match(/^\/news\/([^/]+)$/);
     if (newsMatchOld) { navigateTo(`/tin-tuc/${newsMatchOld[1]}`); return null; }

@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { MapPin, Mail, Phone, Clock, ArrowUp, Gem, X, ChevronRight } from "lucide-react";
 
 type ModalType = "terms" | "privacy" | null;
@@ -177,6 +177,14 @@ export default function Footer() {
                     className="hover:text-amber-600 transition-colors flex items-center gap-1">
                     <ChevronRight className="w-3 h-3 shrink-0" />
                     <span>K-Home Midtown Trảng Bom – Trung tâm Trảng Bom</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/video/phong-su-k-home-cityview-ho-nai"
+                    title="Thư viện Video Phóng Sự & Tiến Độ K-Home Đồng Nai"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Video phóng sự & tiến độ K-Home</span>
                   </a>
                 </li>
                 <li>

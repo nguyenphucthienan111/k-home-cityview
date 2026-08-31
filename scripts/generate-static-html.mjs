@@ -630,9 +630,141 @@ async function main() {
     console.log(`✅ /tin-tuc/${article.slug}`);
   }
 
-  console.log(`\n🎉 Done — ${count} files generated (${STATIC_ROUTES.length} static + ${NEWS_DATA.length} news)`);
+  // 3. Dedicated Video Watch Pages — dist/video/[slug]/index.html
+  // Đạt 100% tiêu chí Watch Page của Google Video Indexing
+  const DEDICATED_VIDEOS = [
+    {
+      slug: "phong-su-k-home-cityview-ho-nai",
+      title: "Phóng Sự Toàn Cảnh Dự Án Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa — Kim Oanh Land",
+      description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.328 căn chuẩn Singapore, giá từ 950 triệu.",
+      youtubeId: "RJGULOh6Wrs",
+      date: "2026-08-26",
+    },
+    {
+      slug: "bien-hoa-but-pha-k-home-cityview",
+      title: "Biên Hòa Bứt Phá — Cơ Hội An Cư Lạc Nghiệp Tại K-Home CityView Hố Nai",
+      description: "Phóng sự phân tích bứt phá hạ tầng TP. Biên Hòa và cơ hội an cư tại K-Home CityView Hố Nai từ Kim Oanh Group. Giá chỉ từ 950 triệu, gói vay 5,4%/năm.",
+      youtubeId: "Y9502b3sDJU",
+      date: "2026-08-26",
+    },
+    {
+      slug: "to-am-chuan-singapore-k-home-cityview",
+      title: "K-Home CityView Hố Nai — Tổ Ấm Chuẩn Singapore Cho Gia Đình Việt",
+      description: "Khám phá không gian sống xanh chuẩn Singapore tại dự án NOXH K-Home CityView Hố Nai. Thiết kế bởi Surbana Jurong, đạt chứng chỉ xanh quốc tế EDGE.",
+      youtubeId: "f4Av04RYDrw",
+      date: "2026-08-26",
+    },
+    {
+      slug: "tien-do-thi-cong-k-home-cityview",
+      title: "Tiến Độ Xây Dựng K-Home CityView Hố Nai - Cập Nhật Mới Nhất Tháng 8/2026",
+      description: "Video thực tế cập nhật tiến độ thi công nền móng và khối tháp K-Home CityView Hố Nai Biên Hòa mới nhất tháng 8/2026.",
+      youtubeId: "z9ZL9_Sng4Q",
+      date: "2026-08-19",
+    },
+    {
+      slug: "kham-pha-phong-cach-singapore-k-home-midtown",
+      title: "K-Home Midtown Trảng Bom — Khám Phá Phong Cách Sống Singapore Ngay Trung Tâm",
+      description: "Video giới thiệu đại dự án nhà ở xã hội K-Home Midtown Trảng Bom 13,97ha 542 căn hộ chuẩn Singapore Surbana Jurong, tiêu chuẩn xanh EDGE giá từ 750 triệu.",
+      youtubeId: "8qd60-fFFkY",
+      date: "2026-08-27",
+    },
+    {
+      slug: "cong-dong-thau-cam-k-home-midtown",
+      title: "K-Home Midtown Trảng Bom — Kiến Tạo Cộng Đồng Thấu Cảm & Sẻ Chia Giá Trị Sống",
+      description: "Thước phim nhân văn ghi lại hành trình kiến tạo cộng đồng cư dân gắn kết, thấu cảm và sẻ chia giá trị sống tại dự án K-Home Midtown Trảng Bom.",
+      youtubeId: "EyKr3u7KkyE",
+      date: "2026-08-27",
+    },
+    {
+      slug: "tien-do-than-toc-k-home-midtown",
+      title: "K-Home Midtown Trảng Bom — Tiến Độ Thi Công Thần Tốc Cập Nhật Mới Nhất",
+      description: "Video tiến độ thi công thực tế tại dự án nhà ở xã hội K-Home Midtown Trảng Bom do Kim Oanh Group làm chủ đầu tư. Bàn giao 2027.",
+      youtubeId: "3FbIphjZu38",
+      date: "2026-08-27",
+    },
+    {
+      slug: "kham-pha-k-home-avenue-nhon-trach",
+      title: "K-Home Avenue Nhơn Trạch — Khám Phá Dự Án Nhà Ở Xã Hội Chuẩn Singapore",
+      description: "Khám phá dự án nhà ở xã hội K-Home Avenue Nhơn Trạch 1.022 căn hộ chuẩn Singapore, liền kề sân bay quốc tế Long Thành, giá từ 750 triệu.",
+      youtubeId: "nV0widFZQOY",
+      date: "2026-08-27",
+    },
+    {
+      slug: "mon-qua-y-nghia-k-home-avenue",
+      title: "K-Home Avenue Nhơn Trạch — Món Quà Ý Nghĩa Ba Mẹ Trao Tặng Con Trẻ",
+      description: "Thước phim cảm động về tổ ấm tương lai tại K-Home Avenue Nhơn Trạch – môi trường sống xanh an lành chuẩn Singapore cho con trẻ trưởng thành.",
+      youtubeId: "SlsSGiKYRBE",
+      date: "2026-08-27",
+    }
+  ];
 
-  // 3. Vercel root 404.html — Vercel dùng file này khi không tìm thấy asset tĩnh
+  console.log(`\n── Trang xem Video chuyên biệt (${DEDICATED_VIDEOS.length} video) ──────`);
+  const videoDirBase = path.join(DIST_DIR, "video");
+
+  for (const vid of DEDICATED_VIDEOS) {
+    const canonical = `${BASE_URL}/video/${vid.slug}`;
+    const title = `${vid.title} | Video K-Home Đồng Nai`;
+    const dirPath = path.join(videoDirBase, vid.slug);
+
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemPage",
+        "name": vid.title,
+        "url": canonical,
+        "primaryImageOfPage": `https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`,
+        "mainEntity": {
+          "@type": "VideoObject",
+          "name": vid.title
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": vid.title,
+        "description": vid.description,
+        "thumbnailUrl": [
+          `https://img.youtube.com/vi/${vid.youtubeId}/maxresdefault.jpg`,
+          `https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`
+        ],
+        "uploadDate": `${vid.date}T08:00:00+07:00`,
+        "contentUrl": `https://www.youtube.com/watch?v=${vid.youtubeId}`,
+        "embedUrl": `https://www.youtube.com/embed/${vid.youtubeId}`,
+        "publisher": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai – Kim Oanh Land",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${BASE_URL}/android-chrome-512x512.png`
+          }
+        }
+      }
+    ];
+
+    const staticLinks = [
+      { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai" },
+      { href: "/k-home-midtown-trang-bom", text: "K-Home Midtown Trảng Bom" },
+      { href: "/k-home-avenue-nhon-trach", text: "K-Home Avenue Nhơn Trạch" },
+      { href: "/", text: "Trang chủ K-Home Đồng Nai" },
+    ];
+
+    writeRoute(template, dirPath, {
+      title,
+      description: vid.description,
+      canonical,
+      ogType: "video.other",
+      schemas,
+      staticLinks,
+      staticVideoUrl: `https://www.youtube.com/embed/${vid.youtubeId}`,
+      staticVideoTitle: vid.title,
+    });
+    count++;
+    console.log(`✅ /video/${vid.slug}`);
+  }
+
+  console.log(`\n🎉 Done — ${count} files generated (${STATIC_ROUTES.length} static + ${NEWS_DATA.length} news + ${DEDICATED_VIDEOS.length} watch pages)`);
+
+  // 4. Vercel root 404.html — Vercel dùng file này khi không tìm thấy asset tĩnh
   // (khác với /404/index.html dành cho route /404 trong SPA)
   const notFoundHtml = injectMeta(template, {
     title: "Không Tìm Thấy Trang | K-Home Đồng Nai",
