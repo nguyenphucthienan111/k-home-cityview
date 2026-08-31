@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight, X, ZoomIn, ChevronLeft } from "lucide-react";
 import { News } from "../types";
+import { newsData } from "../data/newsData";
 
 interface NewsDetailViewProps {
   slug: string;
@@ -39,87 +40,67 @@ function Lightbox({ state, onClose, onPrev, onNext }: {
 
   return createPortal(
     <div
-      className="fixed inset-0 flex items-center justify-center"
-      style={{ backgroundColor: "rgba(0,0,0,0.92)", zIndex: 99999 }}
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 select-none backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* Close */}
       <button
-        className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
-        onClick={onClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        className="absolute top-4 right-4 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer z-10"
+        aria-label="Đóng"
       >
-        <X className="w-5 h-5" />
+        <X className="w-6 h-6" />
       </button>
 
-      {/* Counter */}
-      {images.length > 1 && (
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 rounded-full">
-          {index + 1} / {images.length}
-        </div>
-      )}
-
-      {/* Prev */}
       {images.length > 1 && (
         <button
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer z-10"
+          aria-label="Ảnh trước"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
       )}
 
-      {/* Next */}
       {images.length > 1 && (
         <button
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors cursor-pointer"
           onClick={(e) => { e.stopPropagation(); onNext(); }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors cursor-pointer z-10"
+          aria-label="Ảnh sau"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
       )}
 
-      {/* Image */}
       <div
-        className="relative max-w-[92vw] max-h-[90vh] flex flex-col items-center gap-3"
+        className="max-w-4xl max-h-[85vh] flex flex-col items-center gap-3"
         onClick={(e) => e.stopPropagation()}
       >
         <img
           src={current.src}
           alt={current.alt}
-          className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
-          style={{ display: "block" }}
+          className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl"
         />
         {current.alt && (
-          <p className="text-white/70 text-xs text-center max-w-xl italic px-4">{current.alt}</p>
+          <p className="text-white/80 text-sm text-center max-w-xl px-4 line-clamp-2">
+            {current.alt}
+          </p>
+        )}
+        {images.length > 1 && (
+          <span className="text-white/50 text-xs font-mono">
+            {index + 1} / {images.length}
+          </span>
         )}
       </div>
-
-      {/* Dot strip */}
-      {images.length > 1 && (
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
-          {images.map((_, di) => (
-            <button
-              key={di}
-              onClick={(e) => { e.stopPropagation(); }}
-              className="cursor-pointer transition-all duration-300 rounded-full"
-              style={{
-                width: di === index ? "24px" : "8px",
-                height: "8px",
-                backgroundColor: di === index ? "white" : "rgba(255,255,255,0.4)",
-              }}
-            />
-          ))}
-        </div>
-      )}
     </div>,
     document.body
   );
 }
 
 export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps) {
-  const [article, setArticle] = useState<News | null>(null);
-  const [allNews, setAllNews] = useState<News[]>([]);
-  const [loading, setLoading] = useState(true);
+  const initialFound = newsData.find((n) => n.slug === slug) || null;
+  const [article, setArticle] = useState<News | null>(initialFound);
+  const [allNews, setAllNews] = useState<News[]>(newsData);
+  const [loading, setLoading] = useState(false);
   const [galleryIndexes, setGalleryIndexes] = useState<Record<string, number>>({});
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
 
@@ -138,140 +119,138 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
   }, []);
 
   useEffect(() => {
-    setLoading(true);
     fetch("/api/news")
       .then((res) => res.json())
       .then((data: News[]) => {
         const list = Array.isArray(data) ? data : [];
-        setAllNews(list);
-        const found = list.find((n) => n.slug === slug);
-        setArticle(found || null);
-        if (found) {
-          document.title = `${found.title} | Tin Tức NOXH K-Home Đồng Nai`;
-          const metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) {
-            metaDesc.setAttribute("content", found.excerpt);
+        if (list.length > 0) {
+          setAllNews(list);
+          const found = list.find((n) => n.slug === slug);
+          if (found) setArticle(found);
+        }
+      })
+      .catch(() => {});
+
+    const found = initialFound || article;
+    if (found) {
+      document.title = `${found.title} | Tin Tức NOXH K-Home Đồng Nai`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", found.excerpt);
+      }
+
+      const existingSchema = document.getElementById("schema-news-article");
+      if (existingSchema) existingSchema.remove();
+      const articleSchema = document.createElement("script");
+      articleSchema.id = "schema-news-article";
+      articleSchema.type = "application/ld+json";
+      articleSchema.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": found.title,
+        "description": found.excerpt,
+        "image": found.image
+          ? [found.image]
+          : ["https://k-homedongnai.com.vn/hero-background.jpg"],
+        "datePublished": found.date,
+        "dateModified": found.date,
+        "author": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai – Kim Oanh Land",
+          "url": "https://k-homedongnai.com.vn"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png",
+            "width": 512,
+            "height": 512
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`
+        },
+        "url": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`,
+        "articleSection": found.category || "Tin tức dự án",
+        "keywords": [
+          "K-Home CityView",
+          "k-home city view",
+          "nhà ở xã hội Biên Hòa",
+          "NOXH Đồng Nai",
+          found.category || "Tin tức dự án"
+        ],
+        "inLanguage": "vi-VN",
+        "isAccessibleForFree": true
+      });
+      document.head.appendChild(articleSchema);
+
+      // BreadcrumbList cho bài tin tức
+      const existingBc = document.getElementById("schema-breadcrumb-news");
+      if (existingBc) existingBc.remove();
+      const bc = document.createElement("script");
+      bc.id = "schema-breadcrumb-news";
+      bc.type = "application/ld+json";
+      bc.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+          { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": "https://k-homedongnai.com.vn/tin-tuc" },
+          { "@type": "ListItem", "position": 3, "name": found.title, "item": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}` }
+        ]
+      });
+      document.head.appendChild(bc);
+
+      // VideoObject Schema nếu bài tin tức chứa video
+      const existingVideoSchema = document.getElementById("schema-video-news");
+      if (existingVideoSchema) existingVideoSchema.remove();
+
+      if (found.content && found.content.includes("---VIDEO---")) {
+        const videoLine = found.content.split("\n").find(line => line.startsWith("---VIDEO---"));
+        if (videoLine) {
+          const parts = videoLine.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
+          const rawVideoUrl = parts[0];
+          const videoCaption = parts.length > 1 ? parts[1] : found.title;
+          const posterUrl = rawVideoUrl.includes("cloudinary")
+            ? rawVideoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
+            : found.image || "https://k-homedongnai.com.vn/hero-background.jpg";
+
+          let embedUrl = rawVideoUrl;
+          if (rawVideoUrl.includes("youtube.com") || rawVideoUrl.includes("youtu.be")) {
+            const ytIdMatch = rawVideoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/);
+            if (ytIdMatch && ytIdMatch[1]) {
+              embedUrl = `https://www.youtube.com/embed/${ytIdMatch[1]}`;
+            }
           }
 
-          // Schema NewsArticle — giúp Google hiểu đây là bài báo, tăng cơ hội rich results
-          const existingSchema = document.getElementById("schema-news-article");
-          if (existingSchema) existingSchema.remove();
-          const articleSchema = document.createElement("script");
-          articleSchema.id = "schema-news-article";
-          articleSchema.type = "application/ld+json";
-          articleSchema.text = JSON.stringify({
+          const videoSchema = document.createElement("script");
+          videoSchema.id = "schema-video-news";
+          videoSchema.type = "application/ld+json";
+          videoSchema.text = JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "headline": found.title,
-            "description": found.excerpt,
-            "image": found.image
-              ? [found.image]
-              : ["https://k-homedongnai.com.vn/hero-background.jpg"],
-            "datePublished": found.date,
-            "dateModified": found.date,
-            "author": {
-              "@type": "Organization",
-              "name": "K-Home Đồng Nai – Kim Oanh Land",
-              "url": "https://k-homedongnai.com.vn"
-            },
+            "@type": "VideoObject",
+            "name": videoCaption,
+            "description": found.excerpt || videoCaption,
+            "thumbnailUrl": [posterUrl],
+            "uploadDate": found.date ? `${found.date}T08:00:00+07:00` : "2026-08-24T08:00:00+07:00",
+            "contentUrl": rawVideoUrl,
+            "embedUrl": embedUrl,
             "publisher": {
               "@type": "Organization",
               "name": "K-Home Đồng Nai",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png",
-                "width": 512,
-                "height": 512
+                "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
               }
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`
-            },
-            "url": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`,
-            "articleSection": found.category || "Tin tức dự án",
-            "keywords": [
-              "K-Home CityView",
-              "k-home city view",
-              "nhà ở xã hội Biên Hòa",
-              "NOXH Đồng Nai",
-              found.category || "Tin tức dự án"
-            ],
-            "inLanguage": "vi-VN",
-            "isAccessibleForFree": true
-          });
-          document.head.appendChild(articleSchema);
-
-          // BreadcrumbList cho bài tin tức
-          const existingBc = document.getElementById("schema-breadcrumb-news");
-          if (existingBc) existingBc.remove();
-          const bc = document.createElement("script");
-          bc.id = "schema-breadcrumb-news";
-          bc.type = "application/ld+json";
-          bc.text = JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
-              { "@type": "ListItem", "position": 2, "name": "Tin tức", "item": "https://k-homedongnai.com.vn/tin-tuc" },
-              { "@type": "ListItem", "position": 3, "name": found.title, "item": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}` }
-            ]
-          });
-          document.head.appendChild(bc);
-
-          // VideoObject Schema nếu bài tin tức chứa video
-          const existingVideoSchema = document.getElementById("schema-video-news");
-          if (existingVideoSchema) existingVideoSchema.remove();
-
-          if (found.content && found.content.includes("---VIDEO---")) {
-            const videoLine = found.content.split("\n").find(line => line.startsWith("---VIDEO---"));
-            if (videoLine) {
-              const parts = videoLine.replace("---VIDEO---", "").trim().split("|").map(s => s.trim());
-              const rawVideoUrl = parts[0];
-              const videoCaption = parts.length > 1 ? parts[1] : found.title;
-              const posterUrl = rawVideoUrl.includes("cloudinary")
-                ? rawVideoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
-                : found.image || "https://k-homedongnai.com.vn/hero-background.jpg";
-
-              let embedUrl = rawVideoUrl;
-              if (rawVideoUrl.includes("youtube.com") || rawVideoUrl.includes("youtu.be")) {
-                const ytIdMatch = rawVideoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/);
-                if (ytIdMatch && ytIdMatch[1]) {
-                  embedUrl = `https://www.youtube.com/embed/${ytIdMatch[1]}`;
-                }
-              }
-
-              const videoSchema = document.createElement("script");
-              videoSchema.id = "schema-video-news";
-              videoSchema.type = "application/ld+json";
-              videoSchema.text = JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "VideoObject",
-                "name": videoCaption,
-                "description": found.excerpt || videoCaption,
-                "thumbnailUrl": [posterUrl],
-                "uploadDate": found.date ? `${found.date}T08:00:00+07:00` : "2026-08-24T08:00:00+07:00",
-                "contentUrl": rawVideoUrl,
-                "embedUrl": embedUrl,
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "K-Home Đồng Nai",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
-                  }
-                }
-              });
-              document.head.appendChild(videoSchema);
             }
-          }
+          });
+          document.head.appendChild(videoSchema);
         }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch news detail:", err);
-        setLoading(false);
-      });
+      }
+    }
 
     // Cleanup khi unmount hoặc slug thay đổi
     return () => {
