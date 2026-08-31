@@ -233,6 +233,14 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 ? rawVideoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg"
                 : found.image || "https://k-homedongnai.com.vn/hero-background.jpg";
 
+              let embedUrl = rawVideoUrl;
+              if (rawVideoUrl.includes("youtube.com") || rawVideoUrl.includes("youtu.be")) {
+                const ytIdMatch = rawVideoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/);
+                if (ytIdMatch && ytIdMatch[1]) {
+                  embedUrl = `https://www.youtube.com/embed/${ytIdMatch[1]}`;
+                }
+              }
+
               const videoSchema = document.createElement("script");
               videoSchema.id = "schema-video-news";
               videoSchema.type = "application/ld+json";
@@ -244,7 +252,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 "thumbnailUrl": [posterUrl],
                 "uploadDate": found.date ? `${found.date}T08:00:00+07:00` : "2026-08-24T08:00:00+07:00",
                 "contentUrl": rawVideoUrl,
-                "embedUrl": `https://k-homedongnai.com.vn/tin-tuc/${found.slug}`,
+                "embedUrl": embedUrl,
                 "publisher": {
                   "@type": "Organization",
                   "name": "K-Home Đồng Nai",
