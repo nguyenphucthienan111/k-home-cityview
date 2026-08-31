@@ -193,21 +193,11 @@ function injectMeta(template, { title, description, canonical, keywords, ogType 
 function writeRoute(template, dirPath, meta) {
   let html = injectMeta(template, meta);
 
-  // Inject static <a href> links & <iframe video> vào <body> — Googlebot đọc được trước khi JS render
   const staticLinks = meta.staticLinks || [];
-  let videoHtml = "";
-  const videos = meta.staticVideos || (meta.staticVideoUrl ? [{ url: meta.staticVideoUrl, title: meta.staticVideoTitle || meta.title }] : []);
-  
-  if (videos.length > 0) {
-    videoHtml = videos.map(v => 
-      `<div class="seo-video-embed" style="max-width:800px;margin:20px auto"><iframe src="${escAttr(v.url)}" title="${escAttr(v.title)}" width="100%" height="450" style="border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
-    ).join("\n");
-  }
-
-  if (staticLinks.length > 0 || videoHtml) {
+  if (staticLinks.length > 0) {
     const linkHtml = `\n<div id="seo-links" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${
       staticLinks.map(({ href, text }) => `<a href="${escAttr(href)}">${text}</a>`).join("")
-    }</div><div id="seo-videos" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">${videoHtml}</div>`;
+    }</div>`;
     html = html.replace("</body>", `${linkHtml}\n</body>`);
   }
 
