@@ -712,30 +712,26 @@ async function main() {
         "@type": "ItemPage",
         "name": vid.title,
         "url": canonical,
+        "description": vid.description,
         "primaryImageOfPage": `https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`,
         "mainEntity": {
           "@type": "VideoObject",
-          "name": vid.title
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": vid.title,
-        "description": vid.description,
-        "thumbnailUrl": [
-          `https://img.youtube.com/vi/${vid.youtubeId}/maxresdefault.jpg`,
-          `https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`
-        ],
-        "uploadDate": `${vid.date}T08:00:00+07:00`,
-        "contentUrl": `https://www.youtube.com/watch?v=${vid.youtubeId}`,
-        "embedUrl": `https://www.youtube.com/embed/${vid.youtubeId}`,
-        "publisher": {
-          "@type": "Organization",
-          "name": "K-Home Đồng Nai – Kim Oanh Land",
-          "logo": {
-            "@type": "ImageObject",
-            "url": `${BASE_URL}/android-chrome-512x512.png`
+          "name": vid.title,
+          "description": vid.description,
+          "thumbnailUrl": [
+            `https://img.youtube.com/vi/${vid.youtubeId}/maxresdefault.jpg`,
+            `https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`
+          ],
+          "uploadDate": `${vid.date}T08:00:00+07:00`,
+          "contentUrl": `https://www.youtube.com/watch?v=${vid.youtubeId}`,
+          "embedUrl": `https://www.youtube.com/embed/${vid.youtubeId}`,
+          "publisher": {
+            "@type": "Organization",
+            "name": "K-Home Đồng Nai – Kim Oanh Land",
+            "logo": {
+              "@type": "ImageObject",
+              "url": `${BASE_URL}/android-chrome-512x512.png`
+            }
           }
         }
       }

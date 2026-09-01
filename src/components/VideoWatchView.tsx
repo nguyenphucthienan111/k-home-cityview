@@ -127,37 +127,7 @@ export default function VideoWatchView({ videoSlug, onNavigate }: VideoWatchView
   useEffect(() => {
     document.title = `${currentVideo.title} | Video K-Home Đồng Nai`;
     
-    // Schema VideoObject chuyên biệt cho Watch Page (Google Video Indexing Priority 1)
-    const existingVideoSchema = document.getElementById("schema-video-watch");
-    if (existingVideoSchema) existingVideoSchema.remove();
-
-    const videoSchema = document.createElement("script");
-    videoSchema.id = "schema-video-watch";
-    videoSchema.type = "application/ld+json";
-    videoSchema.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": currentVideo.title,
-      "description": currentVideo.description,
-      "thumbnailUrl": [
-        `https://img.youtube.com/vi/${currentVideo.youtubeId}/maxresdefault.jpg`,
-        `https://img.youtube.com/vi/${currentVideo.youtubeId}/hqdefault.jpg`
-      ],
-      "uploadDate": `${currentVideo.date}T08:00:00+07:00`,
-      "contentUrl": `https://www.youtube.com/watch?v=${currentVideo.youtubeId}`,
-      "embedUrl": `https://www.youtube.com/embed/${currentVideo.youtubeId}`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "K-Home Đồng Nai – Kim Oanh Land",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
-        }
-      }
-    });
-    document.head.appendChild(videoSchema);
-
-    // Schema WebPage
+    // Schema ItemPage với mainEntity là VideoObject (Chuẩn Google Rich Results 100%)
     const existingWebPage = document.getElementById("schema-webpage-video");
     if (existingWebPage) existingWebPage.remove();
     const wpSchema = document.createElement("script");
@@ -168,10 +138,27 @@ export default function VideoWatchView({ videoSlug, onNavigate }: VideoWatchView
       "@type": "ItemPage",
       "name": currentVideo.title,
       "url": `https://k-homedongnai.com.vn/video/${currentVideo.slug}`,
+      "description": currentVideo.description,
       "primaryImageOfPage": `https://img.youtube.com/vi/${currentVideo.youtubeId}/hqdefault.jpg`,
       "mainEntity": {
         "@type": "VideoObject",
-        "name": currentVideo.title
+        "name": currentVideo.title,
+        "description": currentVideo.description,
+        "thumbnailUrl": [
+          `https://img.youtube.com/vi/${currentVideo.youtubeId}/maxresdefault.jpg`,
+          `https://img.youtube.com/vi/${currentVideo.youtubeId}/hqdefault.jpg`
+        ],
+        "uploadDate": `${currentVideo.date}T08:00:00+07:00`,
+        "contentUrl": `https://www.youtube.com/watch?v=${currentVideo.youtubeId}`,
+        "embedUrl": `https://www.youtube.com/embed/${currentVideo.youtubeId}`,
+        "publisher": {
+          "@type": "Organization",
+          "name": "K-Home Đồng Nai – Kim Oanh Land",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://k-homedongnai.com.vn/android-chrome-512x512.png"
+          }
+        }
       }
     });
     document.head.appendChild(wpSchema);
