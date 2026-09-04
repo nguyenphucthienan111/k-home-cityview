@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo, startTransition, useRef } from "react";
+import React, { useState, useMemo, startTransition, useRef } from "react";
 import ReactDOM from "react-dom";
 import { Calculator, Coins, Percent, ArrowRight, Phone } from "lucide-react";
 
@@ -10,59 +10,90 @@ interface CalcUnit {
 interface CalcConfig {
   name: string; loanYears: number; loanPercent: number; policyRate: number;
   units: CalcUnit[];
-  schedule: { dot: string; pct: string; note: string }[];
+  policySchedule: { dot: string; pct: string; note: string }[];
+  cashSchedule: { dot: string; pct: string; note: string }[];
 }
 
 const CALC_CONFIG: Record<string, CalcConfig> = {
   "k-home-cityview-ho-nai": {
     name: "K-Home CityView Hố Nai", loanYears: 25, loanPercent: 75, policyRate: 5.4,
     units: [
-      { label: "1PN+A", area: "47,3m²", price: 1.0,  priceMin: 0.95, priceMax: 1.08, priceLabel: "950tr – 1,08 tỷ" },
-      { label: "1PN+B", area: "62,4m²", price: 1.3,  priceMin: 1.20, priceMax: 1.40, priceLabel: "1,20 – 1,40 tỷ" },
-      { label: "2PN",   area: "70,4m²", price: 1.60, priceMin: 1.50, priceMax: 1.70, priceLabel: "1,50 – 1,70 tỷ" },
-      { label: "3PN",   area: "84,4m²", price: 1.9,  priceMin: 1.80, priceMax: 2.00, priceLabel: "1,80 – 2,00 tỷ" },
+      { label: "1PN+A", area: "47,3m²", price: 0.95, priceMin: 0.95, priceMax: 1.08, priceLabel: "950tr – 1,08 tỷ" },
+      { label: "1PN+B", area: "62,4m²", price: 1.20, priceMin: 1.20, priceMax: 1.40, priceLabel: "1,20 – 1,40 tỷ" },
+      { label: "2PN",   area: "70,4m²", price: 1.50, priceMin: 1.50, priceMax: 1.70, priceLabel: "1,50 – 1,70 tỷ" },
+      { label: "3PN",   area: "84,4m²", price: 1.80, priceMin: 1.80, priceMax: 2.00, priceLabel: "1,80 – 2,00 tỷ" },
     ],
-    schedule: [
+    policySchedule: [
       { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
       { dot: "Đợt 1",    pct: "15%",                 note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
       { dot: "Đợt 2",    pct: "5%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
-      { dot: "Đợt 3",    pct: "5%",                  note: "30 ngày kể từ ngày đến hạn đợt 2" },
-      { dot: "Đợt 4",    pct: "75% (NH giải ngân)",  note: "Ngân hàng giải ngân" },
-      { dot: "Bàn giao", pct: "Phí bảo trì 2%",     note: "15 ngày kể từ thông báo bàn giao" },
+      { dot: "Đợt 3",    pct: "5%",                  note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
+      { dot: "Đợt 4",    pct: "45% (NH giải ngân)",  note: "45 ngày sau ký HĐMB, Ngân hàng giải ngân lần 1" },
+      { dot: "Đợt 5",    pct: "25% (NH giải ngân)",  note: "15 ngày kể từ thông báo bàn giao nhà, NH giải ngân lần 2 + KH đóng 2% phí bảo trì" },
+      { dot: "Đợt 6",    pct: "5% (NH giải ngân)",   note: "15 ngày kể từ ngày nhận thông báo nhận GCNQSHCH (Sổ hồng)" },
+    ],
+    cashSchedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",         note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                  note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "10%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3",    pct: "5%",                   note: "60 ngày kể từ ngày đến hạn đợt 2" },
+      { dot: "Đợt 4",    pct: "5%",                   note: "90 ngày kể từ ngày đến hạn đợt 3" },
+      { dot: "Đợt 5–14", pct: "3%/đợt (10 đợt)",      note: "Mỗi đợt cách nhau 30 ngày theo tiến độ thi công" },
+      { dot: "Đợt 15",   pct: "5%",                   note: "30 ngày kể từ ngày đến hạn đợt 14" },
+      { dot: "Đợt 16",   pct: "25% + phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao nhà" },
+      { dot: "Đợt 17",   pct: "5%",                   note: "15 ngày kể từ thông báo nhận GCNQSHCH (Sổ hồng)" },
     ],
   },
   "k-home-avenue-nhon-trach": {
     name: "K-Home Avenue Nhơn Trạch", loanYears: 25, loanPercent: 75, policyRate: 5.4,
     units: [
-      { label: "Studio", area: "38m²",    price: 0.75, priceMin: 0.75, priceMax: 0.85, priceLabel: "Từ 750 triệu" },
-      { label: "1PN+",   area: "47m²",    price: 0.95, priceMin: 0.95, priceMax: 1.05, priceLabel: "950 triệu" },
-      { label: "2PN-S",  area: "65m²",    price: 1.4,  priceMin: 1.40, priceMax: 1.50, priceLabel: "Từ 1,4 tỷ" },
-      { label: "2PN-L",  area: "69,5m²",  price: 1.5,  priceMin: 1.50, priceMax: 1.60, priceLabel: "1,5 tỷ" },
+      { label: "Studio", area: "37,7m²", price: 0.75, priceMin: 0.75, priceMax: 0.85, priceLabel: "Từ 750 triệu" },
+      { label: "1PN+",   area: "46,6m²", price: 0.99, priceMin: 0.99, priceMax: 1.10, priceLabel: "Từ 990 triệu" },
+      { label: "2PN-S",  area: "65,7m²", price: 1.23, priceMin: 1.23, priceMax: 1.39, priceLabel: "1,23 – 1,39 tỷ" },
+      { label: "2PN-L",  area: "69,5m²", price: 1.40, priceMin: 1.40, priceMax: 1.47, priceLabel: "1,40 – 1,47 tỷ" },
     ],
-    schedule: [
+    policySchedule: [
       { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
       { dot: "Đợt 1",    pct: "15%",                 note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
       { dot: "Đợt 2",    pct: "5%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
       { dot: "Đợt 3",    pct: "5%",                  note: "15 ngày kể từ ngày nhận thông báo ký HĐMB" },
-      { dot: "Đợt 4",    pct: "75% (NH giải ngân)",  note: "Ngân hàng giải ngân" },
-      { dot: "Bàn giao", pct: "Phí bảo trì 2%",     note: "15 ngày kể từ thông báo bàn giao" },
+      { dot: "Đợt 4",    pct: "45% (NH giải ngân)",  note: "45 ngày sau ký HĐMB, Ngân hàng giải ngân lần 1" },
+      { dot: "Đợt 5",    pct: "25% (NH giải ngân)",  note: "15 ngày kể từ thông báo bàn giao nhà, NH giải ngân lần 2 + KH đóng 2% phí bảo trì" },
+      { dot: "Đợt 6",    pct: "5% (NH giải ngân)",   note: "15 ngày kể từ ngày nhận thông báo nhận GCNQSHCH (Sổ hồng)" },
+    ],
+    cashSchedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",         note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                  note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2–5",  pct: "5%/đợt (4 đợt)",       note: "Mỗi đợt cách nhau 30–60 ngày" },
+      { dot: "Đợt 6–15", pct: "3%/đợt (10 đợt)",      note: "Mỗi đợt cách nhau 30 ngày theo tiến độ tầng" },
+      { dot: "Đợt 16",   pct: "5%",                   note: "30 ngày kể từ ngày đến hạn đợt 15" },
+      { dot: "Đợt 17",   pct: "25% + phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao nhà" },
+      { dot: "Đợt 18",   pct: "5%",                   note: "15 ngày kể từ thông báo nhận GCNQSHCH (Sổ hồng)" },
     ],
   },
   "k-home-midtown-trang-bom": {
     name: "K-Home Midtown Trảng Bom", loanYears: 25, loanPercent: 75, policyRate: 5.4,
     units: [
-      { label: "Studio", area: "~35m²", price: 0.8, priceMin: 0.80, priceMax: 0.90, priceLabel: "Từ ~800 triệu" },
-      { label: "1PN+A",  area: "~47m²", price: 1.0, priceMin: 1.00, priceMax: 1.15, priceLabel: "Từ ~1,0 tỷ" },
-      { label: "1PN+B",  area: "~55m²", price: 1.2, priceMin: 1.20, priceMax: 1.35, priceLabel: "Từ ~1,2 tỷ" },
-      { label: "2PN",    area: "~65m²", price: 1.4, priceMin: 1.40, priceMax: 1.55, priceLabel: "Từ ~1,4 tỷ" },
+      { label: "Studio", area: "36,1m²", price: 0.75, priceMin: 0.75, priceMax: 0.85, priceLabel: "Từ 750 triệu" },
+      { label: "1PN+A",  area: "47,0m²", price: 0.99, priceMin: 0.99, priceMax: 1.10, priceLabel: "Từ 990 triệu" },
+      { label: "1PN+B",  area: "55,1m²", price: 1.20, priceMin: 1.20, priceMax: 1.35, priceLabel: "Từ 1,20 tỷ" },
+      { label: "2PN",    area: "68,8m²", price: 1.50, priceMin: 1.50, priceMax: 1.65, priceLabel: "Từ 1,50 tỷ" },
     ],
-    schedule: [
+    policySchedule: [
       { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
       { dot: "Đợt 1",    pct: "15%",                 note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
-      { dot: "Đợt 2",    pct: "5%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
-      { dot: "Đợt 3",    pct: "10%",                 note: "30 ngày kể từ ngày đến hạn đợt 2" },
-      { dot: "Đợt 4",    pct: "75% (NH giải ngân)",  note: "Ngân hàng giải ngân" },
-      { dot: "Bàn giao", pct: "Phí bảo trì 2%",     note: "15 ngày kể từ thông báo bàn giao" },
+      { dot: "Đợt 2",    pct: "10%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3",    pct: "45% (NH giải ngân)",  note: "Ngân hàng giải ngân lần 1" },
+      { dot: "Đợt 4",    pct: "25% (NH giải ngân)",  note: "15 ngày kể từ thông báo bàn giao nhà, NH giải ngân lần 2 + KH đóng 100% phí bảo trì" },
+      { dot: "Đợt 5",    pct: "5% (NH giải ngân)",   note: "Nhận GCNQSHCH (Sổ hồng)" },
+    ],
+    cashSchedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",         note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                  note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "10%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3–11", pct: "5%/đợt (9 đợt)",       note: "Mỗi đợt cách nhau 30–60 ngày theo tiến độ thi công" },
+      { dot: "Đợt 12",   pct: "25% + phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao nhà" },
+      { dot: "Đợt 13",   pct: "5%",                   note: "15 ngày kể từ thông báo nhận GCNQSHCH (Sổ hồng)" },
     ],
   },
 };
@@ -72,6 +103,60 @@ function formatVND(billion: number): string {
   if (billion < 1) return `${Math.round(billion * 1000)} triệu`;
   if (billion === Math.floor(billion)) return `${billion} tỷ`;
   return `${billion.toFixed(2).replace(/\.?0+$/, "")} tỷ`;
+}
+
+// Chuyển số tiền VNĐ thành chuỗi đọc tiếng Việt chuẩn (hỗ trợ đến hàng trăm tỷ)
+function numberToVietnameseWords(n: number): string {
+  if (!n || isNaN(n) || n <= 0) return "";
+  const num = Math.round(n);
+  const ones = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+  
+  function readTriple(t: number, hasHigher: boolean): string {
+    const h = Math.floor(t / 100);
+    const ten = Math.floor((t % 100) / 10);
+    const o = t % 10;
+    let res = "";
+    if (h > 0 || hasHigher) {
+      res += ones[h] + " trăm ";
+    }
+    if (ten > 1) {
+      res += ones[ten] + " mươi ";
+      if (o === 1) res += "mốt ";
+      else if (o === 4) res += "tư ";
+      else if (o === 5) res += "lăm ";
+      else if (o > 0) res += ones[o] + " ";
+    } else if (ten === 1) {
+      res += "mười ";
+      if (o === 5) res += "lăm ";
+      else if (o > 0) res += ones[o] + " ";
+    } else if (ten === 0 && o > 0) {
+      if (h > 0 || hasHigher) res += "lẻ ";
+      res += ones[o] + " ";
+    }
+    return res;
+  }
+
+  const ty = Math.floor(num / 1_000_000_000);
+  const trieu = Math.floor((num % 1_000_000_000) / 1_000_000);
+  const nghin = Math.floor((num % 1_000_000) / 1_000);
+  const dong = num % 1_000;
+
+  let str = "";
+  if (ty > 0) {
+    str += readTriple(ty, false).trim() + " tỷ ";
+  }
+  if (trieu > 0) {
+    str += readTriple(trieu, ty > 0).trim() + " triệu ";
+  }
+  if (nghin > 0) {
+    str += readTriple(nghin, ty > 0 || trieu > 0).trim() + " nghìn ";
+  }
+  if (dong > 0) {
+    str += readTriple(dong, ty > 0 || trieu > 0 || nghin > 0).trim() + " ";
+  }
+  
+  str = str.trim() + " đồng";
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function getDaysInMonth(monthIdx: number, startYear: number): number {
@@ -94,64 +179,87 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
   const [unitIdx, setUnitIdx]           = useState(0);
   const [price, setPrice]               = useState(cfg.units[0].priceMin); // tỷ
   const [method, setMethod]             = useState<"" | "cash" | "policy">("");
-  const [inputMode, setInputMode]       = useState<"slider" | "input">("slider");
   const [rawInput, setRawInput]         = useState("");
   const [showModal, setShowModal]       = useState(false);
   const [modalPage, setModalPage]       = useState(0);
   const [modalStartYear, setModalStartYear] = useState(2026);
   const [modalStartMonth, setModalStartMonth] = useState(1);
-  const [openMonthDrop, setOpenMonthDrop] = useState(false);
-  const [openYearDrop, setOpenYearDrop]   = useState(false);
+  const [modalStartDay, setModalStartDay]   = useState(24);
+  const [openDayDrop, setOpenDayDrop]       = useState(false);
+  const [openMonthDrop, setOpenMonthDrop]   = useState(false);
+  const [openYearDrop, setOpenYearDrop]     = useState(false);
   const modalScrollRef = useRef<HTMLDivElement>(null);
 
   const unit = cfg.units[unitIdx];
 
-  // ── Vốn tự có / Khoản vay — đơn vị tỷ, làm tròn 2 chữ số thập phân như HomeView ──
-  const downPayment = parseFloat((price * (100 - cfg.loanPercent) / 100).toFixed(2));
-  const loanAmount  = parseFloat((price * cfg.loanPercent / 100).toFixed(2));
+  // ── Tổng giá gồm 5% VAT (chuẩn HĐMB NOXH) ─────────────────────────────────
+  const priceWithVat = useMemo(() => price * 1.05, [price]);
+  const downPayment = parseFloat((priceWithVat * (100 - cfg.loanPercent) / 100).toFixed(2));
+  const loanAmount  = parseFloat((priceWithVat * cfg.loanPercent / 100).toFixed(2));
 
-  // ── Trả góp — mô hình giải ngân 3 đợt (giống HomeView disbCalcResult) ───────
+  // ── Trả góp — mô hình giải ngân 3 đợt chuẩn theo file Excel (rYear / 12) ───────
   const disbResult = useMemo(() => {
     if (method !== "policy") return { firstMonthly: 0, totalInterest: 0 };
-    // Dùng cùng contractValue như modal: loanMil / lp — giống HomeView
-    const loanMilExact = Math.round(price * cfg.loanPercent / 100 * 1000 * 10) / 10;
-    const contractValue = loanMilExact / (cfg.loanPercent / 100);
+    const fullPriceWithVatVnd = Math.round(priceWithVat * 1_000_000_000); // VNĐ
     const rYear = cfg.policyRate / 100;
-    const n = cfg.loanYears * 12;
-    const sy = 2026;
-    const disbEvents = [
-      { atMonth: 1,  pct: 0.45 },
-      { atMonth: 13, pct: 0.25 },
-      { atMonth: 25, pct: 0.05 },
-    ];
-    let bal = 0, firstMonthly = 0, totalInterest = 0;
+    const n = cfg.loanYears * 12; // 300 tháng
+    const d1_val = fullPriceWithVatVnd * 0.45;
+    const d2_val = fullPriceWithVatVnd * 0.25;
+    const d3_val = fullPriceWithVatVnd * 0.05;
+
+    let prevBal = 0;
+    let prevGoc = 0;
+    let firstMonthly = 0;
+    let totalInterest = 0;
+
     for (let m = 1; m <= n; m++) {
-      const d = disbEvents.find(e => e.atMonth === m);
-      if (d) bal += contractValue * d.pct;
-      if (bal <= 0) continue;
-      const rem    = n - m + 1;
-      const prin   = bal / rem;
-      const mIdx   = m - 1;
-      const year   = sy + Math.floor(mIdx / 12);
-      const mo     = mIdx % 12;
-      const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-      const days   = mo === 1 ? (isLeap ? 29 : 28) : [31,28,31,30,31,30,31,31,30,31,30,31][mo];
-      const interest = bal * rYear * days / (isLeap ? 366 : 365);
-      if (firstMonthly === 0) firstMonthly = prin + interest;
-      totalInterest += interest;
-      bal -= prin;
-      if (bal < 0.001) bal = 0;
+      let bal = 0;
+      let goc = 0;
+      let lai = 0;
+
+      if (m === 1) {
+        bal = d1_val;
+        goc = bal / n;
+        lai = bal * rYear / 12;
+        firstMonthly = goc + lai;
+      } else {
+        const remBefore = prevBal - prevGoc;
+        let extra = 0;
+        if (m === 16) extra += d2_val;
+        if (m === 26) extra += d3_val;
+        bal = remBefore + extra;
+        const remMonths = n - m + 1;
+        goc = bal / remMonths;
+        lai = remBefore * rYear / 12;
+      }
+
+      totalInterest += lai;
+      prevBal = bal;
+      prevGoc = goc;
     }
+
     return { firstMonthly, totalInterest };
-  }, [price, method, cfg]);
+  }, [priceWithVat, method, cfg]);
 
   // ── Parse số tiền từ chuỗi % ────────────────────────────────────────────────
   const parseAmt = (pct: string, dot: string): string => {
-    const p = price * 1000;
-    if (pct === "30.000.000đ") return "30 triệu";
-    if (dot === "Đợt 1" && pct === "15%") return `${formatVND((p * 0.15 - 30) / 1000)} (đã trừ cọc)`;
-    const num = parseFloat(pct);
-    if (!isNaN(num) && pct.includes("%")) return formatVND((p * num / 100) / 1000);
+    const p = Math.round(priceWithVat * 1_000_000_000); // tính trên tổng giá gồm 5% VAT (VNĐ)
+    if (pct === "30.000.000đ") return "30.000.000 đ";
+    if (dot === "Đợt 1" && pct === "15%") {
+      const net = p * 0.15 - 30_000_000;
+      return `${Math.round(net).toLocaleString("vi-VN")} đ (đã trừ cọc)`;
+    }
+    if (pct.includes("%") && !pct.includes("phí") && !pct.includes("BT")) {
+      const num = parseFloat(pct);
+      if (!isNaN(num)) return `${Math.round(p * num / 100).toLocaleString("vi-VN")} đ`;
+    }
+    if (pct.includes("3%/đợt")) return `${Math.round(p * 0.03).toLocaleString("vi-VN")} đ/đợt`;
+    if (pct.includes("5%/đợt")) return `${Math.round(p * 0.05).toLocaleString("vi-VN")} đ/đợt`;
+    if (pct.includes("25% + phí bảo trì 2%") || pct.includes("25% + 100% phí bảo trì")) {
+      const v25 = Math.round(p * 0.25).toLocaleString("vi-VN");
+      const bt = Math.round(p * 0.02).toLocaleString("vi-VN");
+      return `${v25} đ + ${bt} đ (PBT)`;
+    }
     return "—";
   };
 
@@ -180,7 +288,12 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {cfg.units.map((u, i) => (
               <button key={i} type="button"
-                onClick={() => { setUnitIdx(i); setPrice(u.priceMin); setInputMode("slider"); setRawInput(""); setMethod(""); }}
+                onClick={() => {
+                  setUnitIdx(i);
+                  setPrice(u.priceMin);
+                  setRawInput(Math.round(u.priceMin * 1_000_000_000).toLocaleString("vi-VN"));
+                  setMethod("");
+                }}
                 className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${unitIdx === i ? "border-amber-500 bg-amber-50 shadow-sm" : "border-slate-200 hover:border-amber-300 bg-white"}`}
               >
                 <div className={`w-4 h-4 rounded-full border-2 mb-2 ${unitIdx === i ? "bg-amber-500 border-amber-500" : "border-slate-300"}`} />
@@ -192,59 +305,112 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
           </div>
         </div>
 
-        {/* Bước 2 — Slider / nhập giá */}
+        {/* Bước 2 — Nhập giá căn hộ */}
         <div className="space-y-3 relative z-10 pt-2 border-t border-slate-100">
           <div className="flex items-center justify-between">
             <p className="text-sm font-semibold text-slate-700">
               <span className="bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full mr-2">02</span>
-              Chọn mức giá cụ thể:
+              Nhập giá trị căn hộ dự tính:
             </p>
-            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
-              {(["slider", "input"] as const).map(m => (
-                <button key={m} type="button" onClick={() => setInputMode(m)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${inputMode === m ? "bg-white text-amber-600 shadow-sm" : "text-slate-500"}`}>
-                  {m === "slider" ? "🎚 Kéo thả" : "✏️ Nhập số"}
-                </button>
-              ))}
-            </div>
+            <span className="text-xs text-slate-500 font-medium hidden sm:inline">{unit.label} · {unit.area}</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-xs text-slate-500">{unit.label} · {unit.area}</span>
-            <span className="text-xl font-extrabold text-amber-600 bg-amber-50 px-4 py-1.5 rounded-xl">{formatVND(price)}</span>
-          </div>
-          {inputMode === "slider" ? (
-            <>
-              <input type="range" min={unit.priceMin} max={unit.priceMax} step={0.01} value={price}
-                onChange={e => { startTransition(() => setPrice(parseFloat(e.target.value))); }}
-                className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-500" />
-              <div className="flex justify-between text-xs text-slate-500 font-mono">
-                <span>{formatVND(unit.priceMin)} (thấp nhất)</span>
-                <span>{formatVND(unit.priceMax)} (cao nhất)</span>
+
+          {(() => {
+            const minVnd = Math.round(unit.priceMin * 1_000_000_000);
+            const maxVnd = Math.round(unit.priceMax * 1_000_000_000);
+            const currentVnd = Math.round(price * 1_000_000_000); // Giá chưa VAT
+            const isOutOfRange = currentVnd > 0 && (currentVnd < minVnd || currentVnd > maxVnd);
+            const vatVnd = Math.round(currentVnd * 0.05); // 5% VAT NOXH
+            const totalVnd = currentVnd + vatVnd; // Tổng giá gồm VAT
+            const words = numberToVietnameseWords(totalVnd);
+
+            return (
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center text-xs text-slate-600 px-1 font-semibold">
+                    <span>Giá Bán Chưa VAT:</span>
+                    <span className="text-slate-400 font-normal">
+                      Khoảng hợp lệ: <strong className="text-amber-600">{minVnd.toLocaleString("vi-VN")} đ</strong> – <strong className="text-amber-600">{maxVnd.toLocaleString("vi-VN")} đ</strong>
+                    </span>
+                  </div>
+                  <div className="relative flex items-center">
+                    <div className="absolute left-4 text-slate-400 font-bold text-sm pointer-events-none">
+                      🏷️
+                    </div>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      placeholder={`Ví dụ: ${minVnd.toLocaleString("vi-VN")}`}
+                      value={rawInput || (currentVnd > 0 ? currentVnd.toLocaleString("vi-VN") : "")}
+                      onChange={(e) => {
+                        const digitsOnly = e.target.value.replace(/\D/g, "");
+                        if (digitsOnly === "") {
+                          setRawInput("");
+                          return;
+                        }
+                        const num = parseInt(digitsOnly, 10);
+                        if (!isNaN(num)) {
+                          setRawInput(num.toLocaleString("vi-VN"));
+                          setPrice(num / 1_000_000_000);
+                        }
+                      }}
+                      onBlur={() => {
+                        const digitsOnly = (rawInput || "").replace(/\D/g, "");
+                        let num = parseInt(digitsOnly, 10);
+                        if (isNaN(num) || num <= 0 || num < minVnd) {
+                          num = minVnd;
+                        } else if (num > maxVnd) {
+                          num = maxVnd;
+                        }
+                        setRawInput(num.toLocaleString("vi-VN"));
+                        setPrice(num / 1_000_000_000);
+                      }}
+                      className={`w-full pl-11 pr-20 py-3.5 sm:py-4 bg-slate-50 hover:bg-white focus:bg-white border-2 rounded-2xl text-xl sm:text-2xl font-extrabold text-slate-800 outline-none transition-all shadow-inner tracking-wide ${
+                        isOutOfRange
+                          ? "border-rose-400 bg-rose-50/50 focus:border-rose-500"
+                          : "border-slate-200 focus:border-amber-500"
+                      }`}
+                    />
+                    <div className="absolute right-4 text-sm font-extrabold text-amber-600 pointer-events-none bg-amber-50 px-2.5 py-1 rounded-lg">
+                      VNĐ
+                    </div>
+                  </div>
+                  {isOutOfRange && (
+                    <p className="text-xs text-rose-500 font-semibold px-1 flex items-center gap-1 mt-1">
+                      ⚠️ Giá nhập ({currentVnd.toLocaleString("vi-VN")} đ) ngoài khoảng {unit.label} ({minVnd.toLocaleString("vi-VN")} – {maxVnd.toLocaleString("vi-VN")} đ). Tự động điều chỉnh khi rời ô nhập.
+                    </p>
+                  )}
+                </div>
+
+                {/* Breakdown 3 ô: Giá Chưa VAT + Thuế VAT 5% (NOXH) = TỔNG GIÁ KÝ HĐMB */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3.5 rounded-2xl bg-amber-500/5 border border-amber-500/20">
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-100 shadow-sm">
+                    <span className="text-[11px] text-slate-500 block font-medium">1. Giá chưa VAT</span>
+                    <span className="text-sm sm:text-base font-extrabold text-slate-700 block mt-0.5">{currentVnd.toLocaleString("vi-VN")} đ</span>
+                  </div>
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-100 shadow-sm">
+                    <span className="text-[11px] text-emerald-600 block font-bold">+ 5% Thuế VAT (NOXH)</span>
+                    <span className="text-sm sm:text-base font-extrabold text-emerald-600 block mt-0.5">+{vatVnd.toLocaleString("vi-VN")} đ</span>
+                  </div>
+                  <div className="bg-amber-500/15 p-2.5 rounded-xl border border-amber-500/40 shadow-sm">
+                    <span className="text-[11px] text-amber-900 block font-extrabold">TỔNG GIÁ CĂN HỘ (GỒM VAT)</span>
+                    <span className="text-base sm:text-lg font-black text-amber-800 block mt-0.5">{totalVnd.toLocaleString("vi-VN")} đ</span>
+                  </div>
+                </div>
+
+                {/* Đọc số tiền bằng chữ + Khoảng giá tham chiếu */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 px-1 text-xs">
+                  <div className="text-amber-800 font-medium flex items-center gap-1.5 flex-1">
+                    <span className="text-amber-600 font-bold shrink-0">💬 Tổng giá bằng chữ:</span>
+                    <span className="italic line-clamp-1">{words || "Chưa nhập số tiền"}</span>
+                  </div>
+                  <div className="text-slate-400 shrink-0 font-mono text-[11px]">
+                    Giá tham khảo: <strong className="text-slate-600">{formatVND(unit.priceMin)}</strong> – <strong className="text-slate-600">{formatVND(unit.priceMax)}</strong>
+                  </div>
+                </div>
               </div>
-            </>
-          ) : (
-            <div className="flex gap-2 items-center">
-              <input type="number" step={10}
-                min={Math.round(unit.priceMin * 1000)} max={Math.round(unit.priceMax * 1000)}
-                placeholder={`${Math.round(unit.priceMin * 1000)} – ${Math.round(unit.priceMax * 1000)}`}
-                value={rawInput}
-                onChange={e => {
-                  setRawInput(e.target.value);
-                  const n = parseFloat(e.target.value);
-                  if (!isNaN(n) && n >= unit.priceMin * 1000 && n <= unit.priceMax * 1000) {
-                    setPrice(parseFloat((n / 1000).toFixed(3)));
-                  }
-                }}
-                onBlur={() => {
-                  const n = parseFloat(rawInput);
-                  if (isNaN(n) || rawInput === "") { setRawInput(String(Math.round(unit.priceMin * 1000))); setPrice(unit.priceMin); }
-                  else if (n < unit.priceMin * 1000) { setRawInput(String(Math.round(unit.priceMin * 1000))); setPrice(unit.priceMin); }
-                  else if (n > unit.priceMax * 1000) { setRawInput(String(Math.round(unit.priceMax * 1000))); setPrice(unit.priceMax); }
-                }}
-                className="flex-1 border-2 border-amber-200 focus:border-amber-500 rounded-xl px-4 py-3 text-base font-extrabold text-slate-800 outline-none text-center" />
-              <span className="text-sm font-bold text-slate-500 shrink-0">triệu đồng</span>
-            </div>
-          )}
+            );
+          })()}
         </div>
 
         {/* Bước 3 — Phương thức */}
@@ -255,7 +421,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {([
-              { key: "cash" as const,   title: "Bằng vốn tự có",           sub: `Thanh toán theo ${cfg.schedule.length} đợt, không vay NH` },
+              { key: "cash" as const,   title: "Bằng vốn tự có",           sub: `Thanh toán theo ${cfg.cashSchedule.length} đợt, không vay NH` },
               { key: "policy" as const, title: "Bằng vốn vay ngân hàng",   sub: `Vay tối đa ${cfg.loanPercent}% · ${cfg.policyRate}%/năm · ${cfg.loanYears} năm` },
             ]).map(opt => (
               <button key={opt.key} type="button" onClick={() => setMethod(opt.key)}
@@ -283,7 +449,7 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                 <span className="text-center font-extrabold">Số tiền</span>
                 <span className="text-right text-[10px]">Ghi chú</span>
               </div>
-              {cfg.schedule.map((row, i) => (
+              {(method === "cash" ? cfg.cashSchedule : cfg.policySchedule).map((row, i) => (
                 <div key={i} className={`grid grid-cols-4 px-3 py-2.5 border-b border-slate-50 items-center ${i % 2 === 0 ? "bg-amber-50/40" : "bg-white"}`}>
                   <span className="font-semibold text-slate-700">{row.dot}</span>
                   <span className="text-center font-bold text-amber-700">{row.pct}</span>
@@ -314,42 +480,53 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
             <div className="bg-gradient-to-r from-orange-500 to-amber-600 rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
               <div className="absolute right-0 bottom-0 w-24 h-24 bg-white/5 rounded-tl-full pointer-events-none" />
               <span className="text-[10px] font-extrabold uppercase tracking-widest text-yellow-100 bg-white/15 border border-white/10 px-3 py-1 rounded-full inline-block mb-5">
-                KẾT QUẢ DỰ TÍNH — {unit.label} · {unit.area} · {unit.priceLabel}
+                KẾT QUẢ DỰ TÍNH — {unit.label} · {unit.area} · Tổng giá: {Math.round(priceWithVat * 1_000_000_000).toLocaleString("vi-VN")} đ (đã gồm 5% VAT)
               </span>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
-                <div className="space-y-1">
-                  <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                    <Coins className="w-3.5 h-3.5 text-yellow-200" /> Vốn tự có ({100 - cfg.loanPercent}%):
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 items-stretch">
+                <div className="flex flex-col justify-between bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 sm:p-5">
+                  <span className="text-xs font-semibold text-amber-100 flex items-center gap-1.5 mb-2">
+                    <Coins className="w-4 h-4 text-yellow-300 shrink-0" /> Vốn tự có ({100 - cfg.loanPercent}%):
                   </span>
-                  <div className="text-2xl font-extrabold text-white font-display">{formatVND(downPayment)}</div>
-                  <p className="text-[10px] text-amber-100/70">Đóng theo nhiều đợt</p>
-                </div>
-                <div className="space-y-1">
-                  <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                    <Percent className="w-3.5 h-3.5 text-yellow-200" /> Khoản vay ({cfg.loanPercent}%):
-                  </span>
-                  <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                    {method === "cash" ? "—" : formatVND(loanAmount)}
+                  <div>
+                    <div className="text-xl sm:text-2xl font-black text-white font-sans tabular-nums tracking-tight whitespace-nowrap">
+                      {Math.round(priceWithVat * (100 - cfg.loanPercent) / 100 * 1_000_000_000).toLocaleString("vi-VN")} đ
+                    </div>
+                    <p className="text-[11px] text-amber-100/80 mt-1.5 font-medium">~{formatVND(downPayment)} · Đóng theo nhiều đợt</p>
                   </div>
-                  <p className="text-[10px] text-amber-100/70">
-                    {method === "policy" ? `${cfg.policyRate}%/năm · ${cfg.loanYears} năm` : "Không vay"}
-                  </p>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-xs text-amber-100 flex items-center gap-1.5">
-                    <Calculator className="w-3.5 h-3.5 text-yellow-200" /> Tổng lãi phải trả:
+
+                <div className="flex flex-col justify-between bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 sm:p-5">
+                  <span className="text-xs font-semibold text-amber-100 flex items-center gap-1.5 mb-2">
+                    <Percent className="w-4 h-4 text-yellow-300 shrink-0" /> Khoản vay ({cfg.loanPercent}%):
                   </span>
-                  {method === "cash"
-                    ? <div className="text-2xl font-extrabold text-yellow-100">Không vay</div>
-                    : <>
-                        <div className="text-2xl font-extrabold text-yellow-100 font-display">
-                          ~{Math.round(disbResult.totalInterest).toLocaleString("vi")} <span className="text-xs font-normal text-white/80">triệu</span>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-black text-yellow-100 font-sans tabular-nums tracking-tight whitespace-nowrap">
+                      {method === "cash" ? "—" : `${Math.round(priceWithVat * cfg.loanPercent / 100 * 1_000_000_000).toLocaleString("vi-VN")} đ`}
+                    </div>
+                    <p className="text-[11px] text-amber-100/80 mt-1.5 font-medium">
+                      {method === "policy" ? `~${formatVND(loanAmount)} · Lãi ${cfg.policyRate}%/năm (${cfg.loanYears} năm)` : "Không vay"}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-between bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 sm:p-5">
+                  <span className="text-xs font-semibold text-amber-100 flex items-center gap-1.5 mb-2">
+                    <Calculator className="w-4 h-4 text-yellow-300 shrink-0" /> Tổng lãi phải trả:
+                  </span>
+                  <div>
+                    {method === "cash" ? (
+                      <div className="text-xl sm:text-2xl font-black text-yellow-100 font-sans tracking-tight">Không vay</div>
+                    ) : (
+                      <>
+                        <div className="text-xl sm:text-2xl font-black text-yellow-100 font-sans tabular-nums tracking-tight whitespace-nowrap">
+                          {Math.round(disbResult.totalInterest).toLocaleString("vi-VN")} đ
                         </div>
-                        <p className="text-[10px] text-amber-100/70">
-                          Trong {cfg.loanYears} năm · lãi {cfg.policyRate}%/năm
+                        <p className="text-[11px] text-amber-100/80 mt-1.5 font-medium">
+                          Kỳ đầu trả: ~{Math.round(disbResult.firstMonthly).toLocaleString("vi-VN")} đ/tháng
                         </p>
                       </>
-                  }
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-white/20 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
@@ -409,92 +586,155 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
 
             {/* Thông số */}
             <div className="px-4 sm:px-6 py-3 space-y-2 shrink-0 bg-slate-50/60 border-b border-slate-100">
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
-                  { label: "Khoản vay (triệu)", val: Math.round(loanAmount * 1000) },
-                  { label: "Lãi suất (%/năm)", val: cfg.policyRate },
-                  { label: "Thời hạn (năm)", val: cfg.loanYears },
+                  { label: "Tổng giá gồm VAT", val: Math.round(priceWithVat * 1000000000).toLocaleString("vi-VN") + " đ", highlight: true },
+                  { label: "Khoản vay (" + cfg.loanPercent + "%)", val: Math.round(loanAmount * 1000000000).toLocaleString("vi-VN") + " đ" },
+                  { label: "Lãi suất ưu đãi", val: cfg.policyRate + "% / năm" },
+                  { label: "Thời hạn vay", val: cfg.loanYears + " năm (" + (cfg.loanYears * 12) + " kỳ)" },
                 ].map(f => (
-                  <div key={f.label}>
-                    <label className="text-[9px] font-bold text-slate-500 uppercase block mb-1">{f.label}</label>
-                    <div className="border-2 border-slate-100 bg-slate-50 rounded-xl px-2 py-2 text-sm font-extrabold text-slate-500 text-center">{f.val}</div>
+                  <div key={f.label} className={`${f.highlight ? "bg-amber-50/80 border-amber-200" : "bg-white border-slate-200"} border rounded-xl p-2.5 shadow-sm`}>
+                    <label className={`text-[10px] font-bold uppercase tracking-wider block mb-0.5 ${f.highlight ? "text-amber-700" : "text-slate-500"}`}>{f.label}</label>
+                    <div className={`text-xs sm:text-sm font-extrabold truncate ${f.highlight ? "text-amber-800" : "text-slate-700"}`}>
+                      {f.val}
+                    </div>
                   </div>
                 ))}
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <div>
-                  <label className="text-[9px] font-bold text-slate-500 uppercase block mb-1">Tỷ lệ vay (%)</label>
-                  <div className="border-2 border-slate-100 bg-slate-50 rounded-xl px-2 py-2 text-sm font-extrabold text-slate-500 text-center">{cfg.loanPercent}</div>
-                </div>
-                  <div>
-                  <label className="text-[9px] font-bold text-amber-500 uppercase block mb-1">Giá căn (triệu)</label>
-                  <div className="border-2 border-amber-200 bg-amber-50 rounded-xl px-2 py-2 text-sm font-extrabold text-amber-700 text-center">{Math.round(price * 1000)}</div>
-                </div>
               </div>
             </div>
 
             {/* Summary + bảng */}
             {(() => {
-              const loanMil = Math.round(price * cfg.loanPercent / 100 * 1000 * 10) / 10; // giữ 1 chữ số thập phân, giống HomeView
+              const loanVnd = Math.round(priceWithVat * 1000000000 * (cfg.loanPercent / 100));
               const lp = cfg.loanPercent / 100;
-              const contractVal = loanMil / lp;
+              const contractVal = loanVnd / lp;
               const rYear = cfg.policyRate / 100;
               const n = cfg.loanYears * 12;
-              const sy = modalStartYear;
-              const startOffset = modalStartMonth - 1; // 0-indexed offset trong năm sy
-              const disbEvts = [{atMonth:1,pct:0.45,label:"Đợt 4 – Giải ngân 45%"},{atMonth:13,pct:0.25,label:"Đợt 5 – Giải ngân 25%"},{atMonth:25,pct:0.05,label:"Đợt 6 – Giải ngân 5%"}];
-              const getDays = (m: number) => {
-                const totalMonthIdx = startOffset + (m - 1);
-                const yr = sy + Math.floor(totalMonthIdx / 12);
+              const startOffset = modalStartMonth - 1;
+              const calcDate = (kyCur: number) => {
+                const totalMonthIdx = startOffset + (kyCur - 1);
+                const year = modalStartYear + Math.floor(totalMonthIdx / 12);
                 const mo = totalMonthIdx % 12;
-                const isL = (yr%4===0&&yr%100!==0)||yr%400===0;
-                return {days:mo===1?(isL?29:28):[31,28,31,30,31,30,31,31,30,31,30,31][mo],year:yr,mo,isLeap:isL};
+                const maxDays = new Date(year, mo + 1, 0).getDate();
+                const d = Math.min(modalStartDay, maxDays);
+                return { date: `${String(d).padStart(2, "0")}/${String(mo + 1).padStart(2, "0")}/${year}`, year, mo };
               };
-              let bal=0,firstTotal=0,lastTotal=0,firstDays=0,totalInt=0;
-              type DRow={seq:number;date:string;balance:number;principal:number;interest:number;total:number;isEvent?:boolean;eventLabel?:string;eventAmt?:number;disbMonth?:number;isFinal?:boolean};
-              const rows:DRow[]=[];
-              for(let m=1;m<=n;m++){
-                const d=disbEvts.find(e=>e.atMonth===m);
-                if(d){bal+=contractVal*d.pct;const {year,mo}=getDays(m);rows.push({seq:m,date:`01/${String(mo+1).padStart(2,"0")}/${year}`,balance:bal,principal:0,interest:0,total:0,isEvent:true,eventLabel:d.label,eventAmt:contractVal*d.pct,disbMonth:m});}
-                if(bal<=0)continue;
-                const rem=n-m+1,prin=bal/rem,{days,year,mo,isLeap}=getDays(m),interest=bal*rYear*days/(isLeap?366:365),total=prin+interest;
-                if(firstTotal===0){firstTotal=total;firstDays=days;}lastTotal=total;
-                totalInt+=interest;rows.push({seq:m,date:`01/${String(mo+1).padStart(2,"0")}/${year}`,balance:bal,principal:prin,interest,total});
-                bal-=prin;if(bal<0.001)bal=0;
+
+              const d1Val = contractVal * 0.45;
+              const d2Val = contractVal * 0.25;
+              const d3Val = contractVal * 0.05;
+
+              type DRow = { seq: number; date: string; balance: number; principal: number; interest: number; total: number; isEvent?: boolean; eventLabel?: string; eventAmt?: number; disbMonth?: number; isFinal?: boolean };
+              const rows: DRow[] = [];
+              let prevBal = 0;
+              let prevGoc = 0;
+              let firstTotal = 0;
+              let lastTotal = 0;
+              let totalInt = 0;
+
+              for (let m = 1; m <= n; m++) {
+                const { date } = calcDate(m);
+                let bal = 0;
+                let goc = 0;
+                let lai = 0;
+
+                if (m === 1) {
+                  bal = d1Val;
+                  goc = bal / n;
+                  lai = bal * rYear / 12;
+                  rows.push({ seq: m, date, balance: bal, principal: 0, interest: 0, total: 0, isEvent: true, eventLabel: "Đợt 4 – Giải ngân 45%", eventAmt: d1Val, disbMonth: m });
+                } else {
+                  const remBefore = prevBal - prevGoc;
+                  let extra = 0;
+                  if (m === 16) {
+                    extra += d2Val;
+                    rows.push({ seq: m, date, balance: remBefore + extra, principal: 0, interest: 0, total: 0, isEvent: true, eventLabel: "Đợt 5 – Giải ngân 25%", eventAmt: d2Val, disbMonth: m });
+                  }
+                  if (m === 26) {
+                    extra += d3Val;
+                    rows.push({ seq: m, date, balance: remBefore + extra, principal: 0, interest: 0, total: 0, isEvent: true, eventLabel: "Đợt 6 – Giải ngân 5%", eventAmt: d3Val, disbMonth: m });
+                  }
+                  bal = remBefore + extra;
+                  const remMonths = n - m + 1;
+                  goc = bal / remMonths;
+                  lai = remBefore * rYear / 12;
+                }
+
+                const total = goc + lai;
+                if (firstTotal === 0) firstTotal = total;
+                lastTotal = total;
+                totalInt += lai;
+
+                rows.push({ seq: m, date, balance: bal, principal: goc, interest: lai, total });
+                prevBal = bal;
+                prevGoc = goc;
               }
+
               // Dòng tất toán
-              {const {year,mo}=getDays(n+1);rows.push({seq:n+1,date:`01/${String(mo+1).padStart(2,"0")}/${year}`,balance:0,principal:0,interest:0,total:0,isFinal:true});}
-              const PAGE=24,payRows=rows.filter(r=>!r.isEvent&&!r.isFinal),totalP=Math.ceil(payRows.length/PAGE);
-              const ps=modalPage*PAGE,pe=Math.min(ps+PAGE,payRows.length);
-              const seqS=payRows[ps]?.seq??1,seqE=payRows[pe-1]?.seq??n;
-              const isLastPage=modalPage===totalP-1;
-              const paged=rows.filter(r=>{
-                if(r.isFinal)return isLastPage;
-                if(r.isEvent)return((r.disbMonth??0)>=seqS&&(r.disbMonth??0)<=seqE);
-                return r.seq>=seqS&&r.seq<=seqE;
+              {
+                const { date } = calcDate(n + 1);
+                rows.push({ seq: n + 1, date, balance: 0, principal: 0, interest: 0, total: 0, isFinal: true });
+              }
+
+              const PAGE = 24;
+              const payRows = rows.filter(r => !r.isEvent && !r.isFinal);
+              const totalP = Math.ceil(payRows.length / PAGE);
+              const ps = modalPage * PAGE;
+              const pe = Math.min(ps + PAGE, payRows.length);
+              const seqS = payRows[ps]?.seq ?? 1;
+              const seqE = payRows[pe - 1]?.seq ?? n;
+              const isLastPage = modalPage === totalP - 1;
+
+              const paged = rows.filter(r => {
+                if (r.isFinal) return isLastPage;
+                if (r.isEvent) return (r.disbMonth ?? 0) >= seqS && (r.disbMonth ?? 0) <= seqE;
+                return r.seq >= seqS && r.seq <= seqE;
               });
+
               return (<>
                 <div className="px-4 sm:px-6 py-3 grid grid-cols-2 sm:grid-cols-4 gap-2 border-b border-slate-100 shrink-0">
-                  {[{label:"Kỳ 1 trả",val:firstTotal.toFixed(2),sub:`${firstDays} ngày`,bg:"bg-amber-50 border-amber-200",tx:"text-amber-700"},
-                    {label:"Kỳ cuối",val:lastTotal.toFixed(2),sub:"kỳ cuối",bg:"bg-emerald-50 border-emerald-200",tx:"text-emerald-700"},
-                    {label:"Tổng lãi",val:totalInt.toFixed(1),sub:"phải trả",bg:"bg-rose-50 border-rose-200",tx:"text-rose-600"},
-                    {label:"Tổng gốc+lãi",val:(loanMil+totalInt).toFixed(1),sub:"toàn bộ",bg:"bg-slate-50 border-slate-200",tx:"text-slate-700"},
-                  ].map(c=>(<div key={c.label} className={`${c.bg} border rounded-2xl px-3 py-2 text-center`}><p className="text-[10px] font-semibold text-slate-500 mb-1">{c.label}</p><p className={`text-base font-extrabold ${c.tx}`}>{c.val} <span className="text-xs font-normal">tr</span></p><p className="text-xs text-slate-500">{c.sub}</p></div>))}
+                  {[{label:"Kỳ 1 trả",val:Math.round(firstTotal).toLocaleString("vi-VN") + " đ",sub:"kỳ đầu",bg:"bg-amber-50 border-amber-200",tx:"text-amber-700"},
+                    {label:"Kỳ cuối trả",val:Math.round(lastTotal).toLocaleString("vi-VN") + " đ",sub:`kỳ ${n}`,bg:"bg-emerald-50 border-emerald-200",tx:"text-emerald-700"},
+                    {label:"Tổng lãi toàn kỳ",val:Math.round(totalInt).toLocaleString("vi-VN") + " đ",sub:`${n} tháng`,bg:"bg-rose-50 border-rose-200",tx:"text-rose-600"},
+                    {label:"Tổng gốc + lãi",val:Math.round(loanVnd+totalInt).toLocaleString("vi-VN") + " đ",sub:"toàn bộ khoản vay",bg:"bg-slate-50 border-slate-200",tx:"text-slate-700"},
+                  ].map(c=>(<div key={c.label} className={`${c.bg} border rounded-2xl px-3 sm:px-4 py-2.5 text-center shadow-sm`}><p className="text-[10px] font-semibold text-slate-500 mb-0.5">{c.label}</p><p className={`text-xs sm:text-sm font-extrabold ${c.tx}`}>{c.val}</p><p className="text-[9px] text-slate-400 mt-0.5">{c.sub}</p></div>))}
                 </div>
-                <div className="px-6 pt-3 pb-2 flex items-center gap-2 shrink-0">
-                  <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white">🏦 Giải ngân theo đợt</span>
-                  {/* Dropdown Tháng + Năm */}
+                <div className="px-6 pt-3 pb-2 flex items-center gap-2 shrink-0 flex-wrap">
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500 text-white shadow-sm">🏦 Giải ngân theo tiến độ xây dựng</span>
+                  {/* Dropdown Ngày + Tháng + Năm */}
                   <div className="flex items-center gap-2 ml-auto flex-wrap">
                     <span className="text-[10px] text-slate-500 font-semibold shrink-0">📅 Bắt đầu:</span>
+
+                    {/* Ngày */}
+                    <div className="relative">
+                      <button onClick={e=>{e.stopPropagation();setOpenDayDrop(v=>!v);setOpenMonthDrop(false);setOpenYearDrop(false);}}
+                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-2.5 py-1.5 bg-white transition-all shadow-sm cursor-pointer min-w-[68px] justify-between">
+                        <span>Ngày {modalStartDay}</span>
+                        <span className="text-slate-500 text-[10px]">{openDayDrop?"▴":"▾"}</span>
+                      </button>
+                      {openDayDrop&&(
+                        <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-48 max-h-56 overflow-y-auto p-1.5">
+                          <div className="grid grid-cols-5 gap-1">
+                            {Array.from({length:31},(_,i)=>i+1).map(d=>(
+                              <button key={d} onClick={()=>{setModalStartDay(d);setOpenDayDrop(false);}}
+                                className={`py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${d===modalStartDay?"bg-amber-500 text-white shadow-sm":"text-slate-600 hover:bg-amber-50 hover:text-amber-600"}`}>
+                                {d}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     {/* Tháng */}
                     <div className="relative">
-                      <button onClick={e=>{e.stopPropagation();setOpenMonthDrop(v=>!v);setOpenYearDrop(false);}}
-                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between">
+                      <button onClick={e=>{e.stopPropagation();setOpenMonthDrop(v=>!v);setOpenDayDrop(false);setOpenYearDrop(false);}}
+                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-1.5 bg-white transition-all shadow-sm cursor-pointer min-w-[72px] justify-between">
                         <span>Tháng {modalStartMonth}</span>
                         <span className="text-slate-500 text-[10px]">{openMonthDrop?"▴":"▾"}</span>
                       </button>
                       {openMonthDrop&&(
-                        <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden w-32">
+                        <div className="absolute top-full mt-1 left-0 z-50 bg-white border border-slate-200 rounded-2xl shadow-xl w-32 overflow-hidden">
                           <div className="grid grid-cols-3 gap-0.5 p-1.5">
                             {Array.from({length:12},(_,i)=>i+1).map(m=>(
                               <button key={m} onClick={()=>{setModalStartMonth(m);setModalPage(0);setOpenMonthDrop(false);}}
@@ -508,8 +748,8 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                     </div>
                     {/* Năm */}
                     <div className="relative">
-                      <button onClick={e=>{e.stopPropagation();setOpenYearDrop(v=>!v);setOpenMonthDrop(false);}}
-                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-2 bg-white transition-all shadow-sm cursor-pointer min-w-[64px] justify-between">
+                      <button onClick={e=>{e.stopPropagation();setOpenYearDrop(v=>!v);setOpenDayDrop(false);setOpenMonthDrop(false);}}
+                        className="flex items-center gap-1.5 border-2 border-slate-200 hover:border-amber-400 rounded-xl text-xs font-extrabold text-slate-700 px-3 py-1.5 bg-white transition-all shadow-sm cursor-pointer min-w-[64px] justify-between">
                         <span>{modalStartYear}</span>
                         <span className="text-slate-500 text-[10px]">{openYearDrop?"▴":"▾"}</span>
                       </button>
@@ -528,41 +768,41 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                     </div>
                   </div>
                 </div>
-                <div ref={modalScrollRef} className="overflow-y-auto flex-1 px-6 pb-4">
+                <div ref={modalScrollRef} className="overflow-y-auto flex-1 px-4 sm:px-6 pb-4">
                   <div className="space-y-3">
                     <div className="p-3 bg-blue-50 rounded-xl border border-blue-200 text-xs text-blue-700">
-                      <strong>Giải ngân 3 đợt (% trên giá căn):</strong> 45% ký HĐMB · 25% bàn giao nhà · 5% nhận GCN. Ô <span className="bg-rose-100 text-rose-600 px-1 rounded font-bold">đỏ</span> = NH giải ngân thêm, dư nợ tăng đột biến.
+                      <strong>Giải ngân 3 đợt theo tiến độ:</strong> 45% ký HĐMB · 25% bàn giao nhà · 5% nhận GCN. Tổng = 75% giá căn = {Math.round(loanVnd).toLocaleString("vi-VN")} đ. Ô <span className="bg-rose-100 text-rose-600 px-1 rounded font-bold">đỏ</span> = NH giải ngân thêm, dư nợ tăng theo đợt.
                     </div>
                     <table className="w-full text-[11px]">
                       <thead><tr className="border-b-2 border-slate-200">
                         <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Kỳ</th>
-                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Ngày</th>
-                        <th className="pb-1.5 text-right text-[10px] font-bold text-slate-500 uppercase hidden sm:table-cell">Dư nợ (tr)</th>
+                        <th className="pb-1.5 text-left text-[10px] font-bold text-slate-500 uppercase">Ngày trả</th>
+                        <th className="pb-1.5 text-right text-[10px] font-bold text-slate-500 uppercase hidden sm:table-cell">Dư nợ đầu kỳ</th>
                         <th className="pb-1.5 text-right text-[10px] font-bold text-emerald-600 uppercase">Gốc</th>
                         <th className="pb-1.5 text-right text-[10px] font-bold text-rose-500 uppercase">Lãi</th>
-                        <th className="pb-1.5 text-right text-[10px] font-bold text-amber-600 uppercase">Tổng</th>
+                        <th className="pb-1.5 text-right text-[10px] font-bold text-amber-600 uppercase">Tổng thanh toán</th>
                       </tr></thead>
                       <tbody className="divide-y divide-slate-100">
                         {paged.map((r,i)=>r.isEvent?(
                           <tr key={`e${i}`} className="bg-rose-50 border-y-2 border-rose-300">
-                            <td colSpan={2} className="py-2 px-1 font-extrabold text-rose-700 text-[10px]">🏦 {r.eventLabel} +{r.eventAmt?.toFixed(1)} tr</td>
-                            <td className="py-2 text-right font-extrabold text-rose-700 hidden sm:table-cell">→ {r.balance.toFixed(1)} tr</td>
-                            <td colSpan={3} className="py-2 text-right font-extrabold text-rose-700">→ {r.balance.toFixed(1)} tr</td>
+                            <td colSpan={2} className="py-2 px-1 font-extrabold text-rose-700 text-[10px]">🏦 {r.eventLabel} +{Math.round(r.eventAmt ?? 0).toLocaleString("vi-VN")} đ</td>
+                            <td className="py-2 text-right font-extrabold text-rose-700 hidden sm:table-cell">→ {Math.round(r.balance).toLocaleString("vi-VN")} đ</td>
+                            <td colSpan={3} className="py-2 text-right font-extrabold text-rose-700">→ {Math.round(r.balance).toLocaleString("vi-VN")} đ</td>
                           </tr>
                         ):r.isFinal?(
                           <tr key="final" className="bg-emerald-50 border-t-2 border-emerald-400">
                             <td className="py-2 font-extrabold text-emerald-700 text-[10px]">✅ Tất toán</td>
-                            <td className="py-2 text-emerald-600 text-[10px]">{r.date}</td>
-                            <td colSpan={4} className="py-2 text-right font-extrabold text-emerald-700">Dư nợ: 0</td>
+                            <td className="py-2 text-emerald-600 text-[10px] font-bold">{r.date}</td>
+                            <td colSpan={4} className="py-2 text-right font-extrabold text-emerald-700">Dư nợ: 0 đ</td>
                           </tr>
                         ):(
                           <tr key={r.seq} className={`${r.seq%2===0?"bg-slate-50/40":""} hover:bg-amber-50 transition-colors`}>
                             <td className="py-1.5 font-bold text-slate-700 tabular-nums">{r.seq}</td>
                             <td className="py-1.5 text-slate-400 text-[10px]">{r.date}</td>
-                            <td className="py-1.5 text-right text-slate-500 tabular-nums hidden sm:table-cell">{r.balance.toFixed(2)}</td>
-                            <td className="py-1.5 text-right text-emerald-600 font-semibold tabular-nums">{r.principal.toFixed(2)}</td>
-                            <td className="py-1.5 text-right text-rose-500 tabular-nums">{r.interest.toFixed(2)}</td>
-                            <td className="py-1.5 text-right font-extrabold text-amber-600 tabular-nums">{r.total.toFixed(2)}</td>
+                            <td className="py-1.5 text-right text-slate-500 tabular-nums hidden sm:table-cell">{Math.round(r.balance).toLocaleString("vi-VN")} đ</td>
+                            <td className="py-1.5 text-right text-emerald-600 font-semibold tabular-nums">{Math.round(r.principal).toLocaleString("vi-VN")} đ</td>
+                            <td className="py-1.5 text-right text-rose-500 tabular-nums">{Math.round(r.interest).toLocaleString("vi-VN")} đ</td>
+                            <td className="py-1.5 text-right font-extrabold text-amber-600 tabular-nums">{Math.round(r.total).toLocaleString("vi-VN")} đ</td>
                           </tr>
                         ))}
                       </tbody>
