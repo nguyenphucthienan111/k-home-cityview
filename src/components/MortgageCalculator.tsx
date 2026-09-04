@@ -1,6 +1,7 @@
 import React, { useState, useMemo, startTransition, useRef } from "react";
 import ReactDOM from "react-dom";
-import { Calculator, Coins, Percent, ArrowRight, Phone } from "lucide-react";
+import { Calculator, Coins, Percent, ArrowRight, Phone, Download } from "lucide-react";
+import { exportLoanScheduleToExcel } from "../utils/excelExport";
 
 // ─── Config dữ liệu từng dự án ───────────────────────────────────────────────
 interface CalcUnit {
@@ -814,9 +815,34 @@ export default function MortgageCalculator({ slug, onContact }: Props) {
                     </div>)}
                   </div>
                 </div>
-                <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between shrink-0">
-                  <p className="text-xs text-slate-400">Hotline: <a href="tel:0937587438" className="font-bold text-amber-600">0937.587.438</a></p>
-                  <button onClick={()=>setShowModal(false)} className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 px-6 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer shadow-md">Đóng</button>
+                <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between shrink-0 gap-3">
+                  <p className="text-xs text-slate-400 hidden sm:block">Hotline: <a href="tel:0937587438" className="font-bold text-amber-600">0937.587.438</a></p>
+                  <div className="flex items-center gap-2 ml-auto sm:ml-0">
+                    <button
+                      onClick={() => {
+                        exportLoanScheduleToExcel({
+                          projectName: cfg.name,
+                          unitLabel: unit.label,
+                          unitArea: unit.area,
+                          totalPriceWithVat: Math.round(priceWithVat * 1_000_000_000),
+                          loanAmount: Math.round(loanVnd),
+                          loanPercent: cfg.loanPercent,
+                          ratePerYear: cfg.policyRate,
+                          years: cfg.loanYears,
+                          startDay: modalStartDay,
+                          startMonth: modalStartMonth,
+                          startYear: modalStartYear,
+                          rows: rows,
+                          totalInterest: Math.round(totalInt),
+                          totalPayment: Math.round(loanVnd + totalInt),
+                        });
+                      }}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs tracking-wider transition-all cursor-pointer shadow-md shadow-emerald-600/20 flex items-center gap-1.5"
+                    >
+                      <Download className="w-3.5 h-3.5" /> Xuất Excel (.xlsx)
+                    </button>
+                    <button onClick={()=>setShowModal(false)} className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer shadow-md">Đóng</button>
+                  </div>
                 </div>
               </>);
             })()}

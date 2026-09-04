@@ -203,6 +203,14 @@ export default function Footer() {
               <h4 className="text-slate-800 font-bold text-base tracking-wide border-l-3 border-amber-500 pl-3">Hỗ Trợ Khách Hàng</h4>
               <ul className="space-y-2 text-sm text-slate-500">
                 <li>
+                  <a href="/#calculator"
+                    title="Bảng tính trả góp & lịch đóng tiền mua nhà ở xã hội K-Home"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1 font-semibold text-amber-700">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Công cụ tính trả góp NOXH</span>
+                  </a>
+                </li>
+                <li>
                   <a href="/k-home-cityview-ho-nai#gia-ban"
                     title="Bảng giá K-Home CityView Biên Hòa – Cập nhật mới nhất"
                     className="hover:text-amber-600 transition-colors flex items-center gap-1">

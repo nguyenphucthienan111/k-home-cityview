@@ -23,10 +23,12 @@ import {
   Info,
   X,
   Send,
-  CheckCircle
+  CheckCircle,
+  Download
 } from "lucide-react";
 import { Project } from "../types";
 import { imgUrl } from "../utils/imageUrl";
+import { exportLoanScheduleToExcel } from "../utils/excelExport";
 
 // ─── Memoized sub-components để tránh re-render khi HomeView state thay đổi ───
 
@@ -1440,9 +1442,34 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                       )}
                     </div>
                   </div>
-                  <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between shrink-0">
-                    <p className="text-xs text-slate-400">Hotline: <span className="font-bold text-amber-600">0937.587.438</span></p>
-                    <button onClick={() => setShowLoanModal(false)} className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 px-6 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer shadow-md shadow-amber-500/25">Đóng</button>
+                  <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between shrink-0 gap-3">
+                    <p className="text-xs text-slate-400 hidden sm:block">Hotline: <span className="font-bold text-amber-600">0937.587.438</span></p>
+                    <div className="flex items-center gap-2 ml-auto sm:ml-0">
+                      <button
+                        onClick={() => {
+                          exportLoanScheduleToExcel({
+                            projectName: PROJECT_CALC_CONFIG[selectedCalcProject].name,
+                            unitLabel: PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].label,
+                            unitArea: PROJECT_CALC_CONFIG[selectedCalcProject].units[selectedUnitIndex].area,
+                            totalPriceWithVat: Math.round(priceWithVat * 1_000_000_000),
+                            loanAmount: Math.round(L2),
+                            loanPercent: modalLoanPct,
+                            ratePerYear: modalRate,
+                            years: modalYears,
+                            startDay: modalStartDay,
+                            startMonth: modalStartMonth,
+                            startYear: modalStartYear,
+                            rows: rows,
+                            totalInterest: Math.round(totalInt2),
+                            totalPayment: Math.round(totalPay2),
+                          });
+                        }}
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs tracking-wider transition-all cursor-pointer shadow-md shadow-emerald-600/20 flex items-center gap-1.5"
+                      >
+                        <Download className="w-3.5 h-3.5" /> Xuất Excel (.xlsx)
+                      </button>
+                      <button onClick={() => setShowLoanModal(false)} className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2.5 px-5 rounded-xl text-xs tracking-wider uppercase transition-all cursor-pointer shadow-md shadow-amber-500/25">Đóng</button>
+                    </div>
                   </div>
                 </>
               );

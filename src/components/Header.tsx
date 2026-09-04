@@ -51,6 +51,20 @@ export default function Header({ currentHash }: HeaderProps) {
 
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
+    if (href.includes("#")) {
+      const [targetPath, hash] = href.split("#");
+      const currentPath = window.location.pathname;
+      if (currentPath === (targetPath || "/")) {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", href);
+          setIsOpen(false);
+          setDuAnOpen(false);
+          return;
+        }
+      }
+    }
     window.history.pushState(null, "", href);
     window.dispatchEvent(new PopStateEvent("popstate"));
     setIsOpen(false);
@@ -143,6 +157,18 @@ export default function Header({ currentHash }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            {/* Tính Trả Góp */}
+            <a
+              href="/#calculator"
+              onClick={(e) => handleNav(e, "/#calculator")}
+              className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
+                currentHash.includes("#calculator") ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+              }`}
+            >
+              Tính Trả Góp
+              {currentHash.includes("#calculator") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+            </a>
 
             {/* Sản Phẩm */}
             <a
@@ -268,6 +294,17 @@ export default function Header({ currentHash }: HeaderProps) {
               </div>
             )}
           </div>
+
+          {/* Tính Trả Góp */}
+          <a
+            href="/#calculator"
+            onClick={(e) => handleNav(e, "/#calculator")}
+            className={`block py-2 px-3 rounded-lg text-base font-medium transition-colors ${
+              currentHash.includes("#calculator") ? "bg-amber-50 text-amber-700 font-semibold" : "text-slate-700 hover:bg-slate-50 hover:text-amber-600"
+            }`}
+          >
+            Tính Trả Góp
+          </a>
 
           {/* Sản Phẩm */}
           <a
