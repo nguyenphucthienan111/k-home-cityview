@@ -3292,6 +3292,312 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
             </section>
           )}
+
+          {/* ── BẢNG GIÁ & TẢI PDF SLIDE PRESENT CHO K-HOME MIDTOWN TRẢNG BOM ── */}
+          {slug === "k-home-midtown-trang-bom" && (
+            <section id="bang-gia-chi-tiet" className="space-y-5">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0 text-white">
+                    <Building className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-display font-bold text-slate-800">Bảng Giá Chi Tiết Các Loại Căn Hộ K-Home Midtown Trảng Bom</h2>
+                    <p className="text-xs text-slate-500 mt-0.5">Áp dụng gói vay nhà ở xã hội lãi suất ưu đãi 5,4%/năm – Thời hạn vay 25 năm</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById("lien-he");
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1.5"
+                >
+                  <Send className="w-3.5 h-3.5" /> Nhận Báo Giá Căn Đẹp
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Căn Studio */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">Căn Studio</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 36,1 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~750 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~187 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~2,5 - 3,5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Tối ưu người trẻ độc thân, chuyên gia KCN</p>
+                </div>
+
+                {/* Căn 1PN+A */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">1 Phòng Ngủ (Căn A)</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 47,0 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~990 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~247 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~3,5 - 5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Phù hợp vợ chồng mới cưới, tối ưu công năng</p>
+                </div>
+
+                {/* Căn 1PN+B */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">1 Phòng Ngủ (Căn B)</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 55,1 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~1,20 Tỷ</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~300 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~4,5 - 6 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Không gian rộng rãi, góc làm việc riêng</p>
+                </div>
+
+                {/* Căn 2PN */}
+                <div className="bg-amber-500 text-white rounded-2xl border border-amber-600 p-5 space-y-3 relative shadow-md">
+                  <span className="inline-block bg-white text-amber-700 text-[11px] font-bold px-2.5 py-1 rounded-md">2 Phòng Ngủ (Bán Chạy)</span>
+                  <h3 className="text-lg font-bold text-white">Diện tích 68,8 m²</h3>
+                  <div className="border-t border-amber-400/40 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Giá tham khảo:</span>
+                      <span className="font-bold text-white text-sm">~1,50 Tỷ</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả trước (25%):</span>
+                      <span className="font-bold text-white">~375 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả góp tháng:</span>
+                      <span className="font-bold text-amber-200">~6 - 8 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-amber-100">Hoàn hảo cho gia đình 3-4 thành viên</p>
+                </div>
+              </div>
+
+              {/* Tải Brochure PDF Banner Lead Capture cho Midtown */}
+              <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 rounded-2xl p-6 text-white flex items-center justify-between flex-wrap gap-4 border border-amber-500/30 shadow-lg">
+                <div className="space-y-1 max-w-xl">
+                  <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Tài Liệu Độc Quyền</span>
+                  <h3 className="text-lg font-bold text-white">Tải Trọn Bộ File PDF Bảng Giá & Bản Vẽ Thiết Kế K-Home Midtown Trảng Bom</h3>
+                  <p className="text-xs text-slate-300">Bao gồm: Sơ đồ mặt bằng tổng thể, danh mục bàn giao nội thất, file tính dòng tiền chi tiết và mẫu hồ sơ NOXH 2026.</p>
+                </div>
+                <a
+                  href="/documents/slide-present-khome-midtown.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="SLIDE-PRESENT-KHOME-MIDTOWN.pdf"
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md flex items-center gap-2"
+                >
+                  <Send className="w-4 h-4" /> Tải Trọn Bộ File PDF Presentation (Miễn Phí)
+                </a>
+              </div>
+
+              {/* Thẻ Chuyên Viên Tư Vấn Chính Thức (Tối ưu E-E-A-T Uy Tín) */}
+              <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-md">
+                    KO
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                      Chuyên Viên Tư Vấn Kim Oanh Land Chính Thức <BadgeCheck className="w-4 h-4 text-blue-600 inline" />
+                    </h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Hỗ trợ kiểm tra điều kiện mua NOXH & hướng dẫn làm hồ sơ xét duyệt miễn phí 100%</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a href="tel:0937587438" className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5" /> Hotline: 0937 587 438
+                  </a>
+                  <a href="https://zalo.me/0937587438" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors">
+                    Chat Zalo
+                  </a>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── BẢNG GIÁ & TẢI PDF SLIDE PRESENT CHO K-HOME AVENUE NHƠN TRẠCH ── */}
+          {slug === "k-home-avenue-nhon-trach" && (
+            <section id="bang-gia-chi-tiet" className="space-y-5">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0 text-white">
+                    <Building className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-display font-bold text-slate-800">Bảng Giá Chi Tiết Các Loại Căn Hộ K-Home Avenue Nhơn Trạch</h2>
+                    <p className="text-xs text-slate-500 mt-0.5">Áp dụng gói vay nhà ở xã hội lãi suất ưu đãi 5,4%/năm – Thời hạn vay 25 năm</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById("lien-he");
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1.5"
+                >
+                  <Send className="w-3.5 h-3.5" /> Nhận Báo Giá Căn Đẹp
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Căn Studio */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">Căn Studio</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 37,7 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~750 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~187 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~2,5 - 3,5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Phù hợp chuyên gia sân bay Long Thành, độc thân</p>
+                </div>
+
+                {/* Căn 1PN+ */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">1 Phòng Ngủ +</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 46,6 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~990 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~247 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~3,5 - 5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Thiết kế tối ưu, có phòng đa năng phụ</p>
+                </div>
+
+                {/* Căn 2PN Nhỏ */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">2 Phòng Ngủ (Nhỏ)</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 65,7 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~1,23 - 1,39 Tỷ</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~310 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~5 - 7 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Không gian thoáng đãng cho gia đình trẻ</p>
+                </div>
+
+                {/* Căn 2PN Lớn */}
+                <div className="bg-amber-500 text-white rounded-2xl border border-amber-600 p-5 space-y-3 relative shadow-md">
+                  <span className="inline-block bg-white text-amber-700 text-[11px] font-bold px-2.5 py-1 rounded-md">2 Phòng Ngủ (Lớn - Bán Chạy)</span>
+                  <h3 className="text-lg font-bold text-white">Diện tích 69,5 m²</h3>
+                  <div className="border-t border-amber-400/40 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Giá tham khảo:</span>
+                      <span className="font-bold text-white text-sm">~1,40 - 1,47 Tỷ</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả trước (25%):</span>
+                      <span className="font-bold text-white">~350 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả góp tháng:</span>
+                      <span className="font-bold text-amber-200">~6 - 8 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-amber-100">Phù hợp gia đình đa thế hệ, 2 phòng ngủ lớn</p>
+                </div>
+              </div>
+
+              {/* Tải Brochure PDF Banner Lead Capture cho Avenue */}
+              <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 rounded-2xl p-6 text-white flex items-center justify-between flex-wrap gap-4 border border-amber-500/30 shadow-lg">
+                <div className="space-y-1 max-w-xl">
+                  <span className="text-amber-400 text-xs font-bold uppercase tracking-wider">Tài Liệu Độc Quyền</span>
+                  <h3 className="text-lg font-bold text-white">Tải Trọn Bộ File PDF Bảng Giá & Bản Vẽ Thiết Kế K-Home Avenue Nhơn Trạch</h3>
+                  <p className="text-xs text-slate-300">Bao gồm: Sơ đồ mặt bằng tổng thể 5,3 ha, danh mục bàn giao nội thất, file tính dòng tiền chi tiết và mẫu hồ sơ NOXH 2026.</p>
+                </div>
+                <a
+                  href="/documents/slide-present-khome-avenue.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="SLIDE-PRESENT-KHOME-AVENUE.pdf"
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md flex items-center gap-2"
+                >
+                  <Send className="w-4 h-4" /> Tải Trọn Bộ File PDF Presentation (Miễn Phí)
+                </a>
+              </div>
+
+              {/* Thẻ Chuyên Viên Tư Vấn Chính Thức (Tối ưu E-E-A-T Uy Tín) */}
+              <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-md">
+                    KO
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                      Chuyên Viên Tư Vấn Kim Oanh Land Chính Thức <BadgeCheck className="w-4 h-4 text-blue-600 inline" />
+                    </h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Hỗ trợ kiểm tra điều kiện mua NOXH & hướng dẫn làm hồ sơ xét duyệt miễn phí 100%</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a href="tel:0937587438" className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5" /> Hotline: 0937 587 438
+                  </a>
+                  <a href="https://zalo.me/0937587438" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors">
+                    Chat Zalo
+                  </a>
+                </div>
+              </div>
+            </section>
+          )}
         </section>
       )}
 
