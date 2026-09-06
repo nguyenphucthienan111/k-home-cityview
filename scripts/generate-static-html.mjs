@@ -292,6 +292,17 @@ async function main() {
   };
 
   // Schemas cho Midtown
+  const MIDTOWN_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "K-Home Midtown Trảng Bom ở đâu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home Midtown tọa lạc tại trung tâm huyện Trảng Bom, giao lộ 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, TT. Trảng Bom, Đồng Nai." } },
+      { "@type": "Question", "name": "K-Home Midtown Trảng Bom giá bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home Midtown có giá từ 750 triệu đến 1,5 tỷ/căn: Studio từ 750 triệu, 1PN+A từ 990 triệu, 1PN+B từ 1,2 tỷ, 2PN từ 1,5 tỷ. Bàn giao full nội thất, trả góp từ 3,5 triệu/tháng." } },
+      { "@type": "Question", "name": "K-Home Midtown có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án có 542 căn hộ NOXH và 20 căn shophouse, trên quỹ đất 13,97 ha tại trung tâm huyện Trảng Bom do Kim Oanh Land phát triển." } },
+      { "@type": "Question", "name": "Điều kiện mua K-Home Midtown là gì?", "acceptedAnswer": { "@type": "Answer", "text": "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (hộ gia đình), có hộ khẩu hoặc tạm trú tại Đồng Nai. Vay ưu đãi 5,4%/năm trong 25 năm." } },
+    ]
+  };
+
   const MIDTOWN_BREADCRUMB = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -302,7 +313,41 @@ async function main() {
     ],
   };
 
+  const MIDTOWN_WEBPAGE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "K-Home Midtown Trảng Bom | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+    "url": `${BASE_URL}/k-home-midtown-trang-bom`,
+    "description": "Dự án K-Home Midtown Trảng Bom: 542 căn NOXH chuẩn Singapore, quy mô 13,97 ha, giá từ 750 triệu, lãi suất 5,4%/năm.",
+    "inLanguage": "vi-VN",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "publisher": { "@type": "Organization", "name": "Kim Oanh Land", "url": `${BASE_URL}/` },
+    "about": {
+      "@type": "Residence",
+      "name": "K-Home Midtown Trảng Bom",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Đường 30/4, Thị Trấn Trảng Bom",
+        "addressLocality": "Huyện Trảng Bom",
+        "addressRegion": "Tỉnh Đồng Nai",
+        "addressCountry": "VN",
+      },
+    },
+  };
+
   // Schemas cho Avenue
+  const AVENUE_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "K-Home Avenue Nhơn Trạch ở đâu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home Avenue tọa lạc trên đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Phước An / Long Thọ, huyện Nhơn Trạch, tỉnh Đồng Nai – trục đường kết nối trực tiếp đến Cảng Hàng không Quốc tế Long Thành và Vành Đai 3 TP.HCM." } },
+      { "@type": "Question", "name": "K-Home Avenue Nhơn Trạch giá bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home Avenue có giá từ 750 triệu đến 1,47 tỷ/căn: Studio 37,7m² từ 750 triệu, 1PN+ 46,6m² từ 990 triệu, 2PN nhỏ 65,7m² từ 1,23 tỷ, 2PN lớn 69,5m² từ 1,40 tỷ. Tất cả bàn giao full nội thất chuẩn Singapore." } },
+      { "@type": "Question", "name": "K-Home Avenue cách Sân bay Long Thành bao xa?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home Avenue chỉ cách Sân bay Quốc tế Long Thành khoảng 10–12 phút di chuyển qua đại lộ 25C Nguyễn Ái Quốc. Đón đầu nhu cầu an cư của chuyên gia hàng không." } },
+      { "@type": "Question", "name": "Điều kiện mua và vay vốn K-Home Avenue là gì?", "acceptedAnswer": { "@type": "Answer", "text": "Chưa có nhà tại Đồng Nai, thu nhập dưới 50 triệu/tháng (vợ chồng) hoặc dưới 25 triệu (độc thân). Vay tối đa 80% từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định 25 năm, trả góp từ 2,5 – 3,5 triệu/tháng." } },
+      { "@type": "Question", "name": "K-Home Avenue có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án quy mô 5,3 ha, gồm 4 block cao 12 tầng với 1.022 căn hộ NOXH chuẩn Singapore và 82 căn shophouse thương mại." } },
+    ]
+  };
+
   const AVENUE_BREADCRUMB = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -311,6 +356,28 @@ async function main() {
       { "@type": "ListItem", "position": 2, "name": "Dự án K-Home", "item": `${BASE_URL}/san-pham` },
       { "@type": "ListItem", "position": 3, "name": "K-Home Avenue Nhơn Trạch", "item": `${BASE_URL}/k-home-avenue-nhon-trach` },
     ],
+  };
+
+  const AVENUE_WEBPAGE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "K-Home Avenue (K Home Avenue) Nhơn Trạch | Bảng Giá & Mặt Bằng 2026",
+    "url": `${BASE_URL}/k-home-avenue-nhon-trach`,
+    "description": "K-Home Avenue (k-home avenue) Nhơn Trạch nhà ở xã hội 1.022 căn gần Sân bay Long Thành giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
+    "inLanguage": "vi-VN",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "publisher": { "@type": "Organization", "name": "Kim Oanh Land", "url": `${BASE_URL}/` },
+    "about": {
+      "@type": "Residence",
+      "name": "K-Home Avenue Nhơn Trạch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Đường Nguyễn Ái Quốc (25C), Xã Phước An",
+        "addressLocality": "Huyện Nhơn Trạch",
+        "addressRegion": "Tỉnh Đồng Nai",
+        "addressCountry": "VN",
+      },
+    },
   };
 
   const CITYVIEW_VIDEO_SCHEMA_SHORTS = {
@@ -470,13 +537,17 @@ async function main() {
       CITYVIEW_VIDEO_SCHEMA_PHONGSU_3
     ],
     "k-home-midtown-trang-bom": [
+      MIDTOWN_FAQ_SCHEMA,
       MIDTOWN_BREADCRUMB,
+      MIDTOWN_WEBPAGE_SCHEMA,
       MIDTOWN_VIDEO_SCHEMA_1,
       MIDTOWN_VIDEO_SCHEMA_2,
       MIDTOWN_VIDEO_SCHEMA_3
     ],
     "k-home-avenue-nhon-trach": [
+      AVENUE_FAQ_SCHEMA,
       AVENUE_BREADCRUMB,
+      AVENUE_WEBPAGE_SCHEMA,
       AVENUE_VIDEO_SCHEMA_1,
       AVENUE_VIDEO_SCHEMA_2
     ],

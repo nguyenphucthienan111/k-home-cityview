@@ -305,7 +305,12 @@ const PROJECT_SEO: Record<string, {
         { date: "Q2–Q3/2026", event: "Thi công phần thô các tầng", done: false },
         { date: "2027", event: "Hoàn thiện nội thất & bàn giao", done: false },
       ],
-      siteImages: [],
+      siteImages: [
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699479/k-home-midtown/image-maps-midtown/midtown-4.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699479/k-home-midtown/image-maps-midtown/midtown-5.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699480/k-home-midtown/image-maps-midtown/midtown-6.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699481/k-home-midtown/image-maps-midtown/midtown-7.jpg"
+      ],
     },
     legalInfo: {
       items: [
@@ -381,20 +386,26 @@ const PROJECT_SEO: Record<string, {
       { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
     ],
     faq: [
-      { q: "K-Home Avenue Nhơn Trạch ở đâu?", a: "K-Home Avenue tọa lạc trên đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Nhơn Trạch, tỉnh Đồng Nai – trục đường kết nối trực tiếp đến Cảng Hàng không Quốc tế Long Thành đang xây dựng." },
-      { q: "K-Home Avenue Nhơn Trạch giá bao nhiêu?", a: "K-Home Avenue có giá từ 750 triệu: Studio 37,7m² từ 750 triệu, 1PN+ 46,6m² từ 990 triệu, 2PN nhỏ 65,7m² từ 1,23 tỷ, 2PN lớn 69,5m² từ 1,40 tỷ. Tất cả bàn giao full nội thất." },
-      { q: "Điều kiện mua K-Home Avenue là gì?", a: "Người mua cần: chưa có nhà tại Đồng Nai, chưa từng mua NOXH, thu nhập dưới 50 triệu/tháng (hộ gia đình), có hộ khẩu hoặc tạm trú tại Đồng Nai. Hỗ trợ hồ sơ hoàn toàn miễn phí." },
-      { q: "K-Home Avenue gần sân bay Long Thành không?", a: "Có. K-Home Avenue nằm trên trục đường 25C – tuyến đường kết nối trực tiếp đến Sân bay Quốc tế Long Thành, dự kiến hoạt động 2026. Đây là lợi thế lớn về tiềm năng tăng giá trị bất động sản." },
-      { q: "K-Home Avenue có bao nhiêu căn?", a: "Dự án có 1.022 căn hộ NOXH và 82 căn shophouse thương mại, trên quỹ đất 5,3 ha tại Nhơn Trạch – huyện đang phát triển mạnh nhờ hạ tầng sân bay Long Thành." },
-      { q: "Vay mua K-Home Avenue lãi suất bao nhiêu?", a: "Người đủ điều kiện NOXH được vay tối đa 80% từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm cố định 25 năm. Trả góp chỉ từ 3,5 triệu/tháng cho căn Studio." },
-      { q: "K-Home Avenue khi nào mở bán chính thức?", a: "K-Home Avenue đang trong giai đoạn chuẩn bị ra hàng. Liên hệ hotline 0937.587.438 để đăng ký danh sách ưu tiên và nhận thông báo ngay khi mở bán chính thức." },
-      { q: "Từ K-Home Avenue đến TP.HCM mất bao lâu?", a: "Từ K-Home Avenue đến TP.HCM khoảng 30–40 phút qua cầu Phước Khánh và các tuyến đường vành đai, cầu Nhơn Trạch đang thi công sẽ rút ngắn thêm thời gian di chuyển." },
-      { q: "Mặt bằng K-Home Avenue Nhơn Trạch có những loại căn nào?", a: "K-Home Avenue có 4 loại căn: Studio (37,7m²), 1 phòng ngủ+ (46,6m²), 2 phòng ngủ nhỏ (65,7m²) và 2 phòng ngủ lớn (69,5m²). 4 block cao 12 tầng, bàn giao hoàn thiện nội thất tiêu chuẩn Singapore." },
-      { q: "Tiện ích dự án K-Home Avenue có gì?", a: "K-Home Avenue có hệ thống tiện ích đầy đủ: hồ bơi, sân chơi trẻ em, khu thể dục ngoài trời, Sky Garden vườn cảnh quan, nhà sinh hoạt cộng đồng, trạm sạc xe điện và 82 căn shophouse khối đế." },
-      { q: "Nhà ở xã hội K-Home Avenue Nhơn Trạch có sổ hồng không?", a: "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Kim Oanh Land hỗ trợ hoàn thiện toàn bộ thủ tục pháp lý miễn phí cho người mua." },
-      { q: "K-Home Avenue gần KCN Nhơn Trạch không?", a: "Có. K-Home Avenue nằm trong khu vực huyện Nhơn Trạch, gần các KCN Nhơn Trạch 1–6 và KCN Long Thành. Thuận tiện cho công nhân và kỹ sư làm việc tại các khu công nghiệp này an cư tại chỗ." },
-      { q: "K Home Avenue và K-Home Avenue có phải một không?", a: "Đúng – K Home Avenue, K-Home Avenue, KHome Avenue đều là các cách viết của cùng một dự án nhà ở xã hội tại đường Nguyễn Ái Quốc (25C), xã Nhơn Trạch, Đồng Nai do Kim Oanh Land phát triển. 1.022 căn NOXH từ 750 triệu." },
-      { q: "K Home Avenue Nhơn Trạch Đồng Nai là dự án gì?", a: "K Home Avenue (tên đầy đủ: K-Home Avenue Nhơn Trạch) là dự án nhà ở xã hội 5,3 ha tại đường 25C, Nhơn Trạch, Đồng Nai – gần sân bay Long Thành. 1.022 căn NOXH + 82 shophouse, giá từ 750 triệu, lãi suất 5,4%/năm." },
+      { q: "K-Home Avenue Nhơn Trạch ở đâu?", a: "K-Home Avenue tọa lạc trên đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Phước An / Long Thọ, huyện Nhơn Trạch, tỉnh Đồng Nai – trục đường kết nối trực tiếp vào Cảng Hàng không Quốc tế Long Thành và Vành Đai 3 TP.HCM." },
+      { q: "K-Home Avenue Nhơn Trạch giá bao nhiêu?", a: "K-Home Avenue có mức giá dự kiến từ khoảng 750 triệu đến 1,47 tỷ/căn: Studio 37,7m² từ 750 triệu, 1PN+ 46,6m² từ 990 triệu, 2PN nhỏ (A) 65,7m² từ 1,23 tỷ, 2PN lớn (B) 69,5m² từ 1,40 tỷ. Tất cả bàn giao hoàn thiện nội thất chuẩn Singapore." },
+      { q: "Điều kiện mua K-Home Avenue là gì?", a: "Người mua cần đáp ứng 3 tiêu chí NOXH: (1) Chưa sở hữu nhà ở tại tỉnh Đồng Nai; (2) Chưa từng mua/thuê mua NOXH tại bất kỳ đâu; (3) Thu nhập cá nhân dưới 25 triệu/tháng (độc thân) hoặc vợ chồng dưới 50 triệu/tháng; có đăng ký thường trú hoặc tạm trú tại Đồng Nai. Hotline 0937.587.438 hỗ trợ xét duyệt miễn phí 100%." },
+      { q: "K-Home Avenue cách Sân bay Long Thành bao xa?", a: "K-Home Avenue chỉ cách Sân bay Quốc tế Long Thành khoảng 10–12 phút di chuyển trực tiếp qua đại lộ Nguyễn Ái Quốc (25C). Khi sân bay vận hành giai đoạn 1 (2026), dự án là điểm đón đầu nhu cầu an cư của hàng vạn chuyên gia, phi công, tiếp viên và nhân sự kỹ thuật hàng không." },
+      { q: "Từ K-Home Avenue di chuyển về TP.HCM mất bao lâu?", a: "Hiện tại di chuyển khoảng 35-40 phút qua phà Cát Lái hoặc cao tốc TP.HCM - Long Thành - Dầu Giây. Khi cầu Nhơn Trạch (thuộc Vành Đai 3) và cầu Cát Lái hoàn thành, thời gian di chuyển từ K-Home Avenue về TP. Thủ Đức và trung tâm TP.HCM chỉ còn khoảng 20-25 phút." },
+      { q: "K-Home Avenue có quy mô bao nhiêu căn?", a: "Dự án quy mô 5,3 ha, bao gồm 4 block căn hộ cao 12 tầng với tổng cộng 1.022 căn hộ nhà ở xã hội chuẩn Singapore và 82 căn shophouse thương mại phục vụ kinh doanh đa dịch vụ tại khối đế." },
+      { q: "Vay mua K-Home Avenue lãi suất bao nhiêu, mỗi tháng trả bao nhiêu?", a: "Người mua đủ điều kiện NOXH được vay vốn ngân hàng chính sách với lãi suất cố định 5,4%/năm trong 25 năm, hạn mức vay tối đa 75–80% giá trị căn hộ. Mức trả góp gốc và lãi chỉ từ khoảng 2,5 – 3,5 triệu/tháng cho căn Studio và từ 5 – 7 triệu/tháng cho căn 2 phòng ngủ." },
+      { q: "K-Home Avenue khi nào mở bán và nhận đặt chỗ?", a: "Dự án hiện đang tiếp nhận hồ sơ xét duyệt điều kiện NOXH và tư vấn danh sách ưu tiên chọn căn đẹp. Liên hệ trực tiếp hotline chính thức Kim Oanh Land: 0937.587.438 để nhận bảng giá gốc đợt 1 và hướng dẫn nộp hồ sơ." },
+      { q: "Mặt bằng K-Home Avenue Nhơn Trạch gồm những loại căn nào?", a: "K-Home Avenue cung cấp 4 loại căn hộ tối ưu công năng: Căn Studio (37,7m²), Căn 1 Phòng Ngủ + (46,6m²), Căn 2 Phòng Ngủ nhỏ 2PN-A (65,7m²) và Căn 2 Phòng Ngủ lớn 2PN-B (69,5m²). Thiết kế thông minh chuẩn Singapore, 100% phòng đều có ánh sáng và thông gió tự nhiên." },
+      { q: "Tiện ích nội khu K-Home Avenue có những gì?", a: "Dự án tích hợp đầy đủ hệ tiện ích chuẩn nghỉ dưỡng: hồ bơi phong cách resort, công viên cây xanh, sân chơi thiếu nhi, khu BBQ ngoài trời, đường dạo bộ, khu thể dục dưỡng sinh, nhà sinh hoạt cộng đồng đa năng, hệ thống trạm sạc xe điện thông minh và phố thương mại shophouse tại khối đế." },
+      { q: "Nhà ở xã hội K-Home Avenue Nhơn Trạch có sổ hồng không?", a: "Có. K-Home Avenue được cấp phép xây dựng đầy đủ, minh bạch pháp lý theo Luật Nhà ở. Khách hàng sở hữu căn hộ được cấp sổ hồng sở hữu lâu dài (đối với người Việt Nam) theo quy định của pháp luật hiện hành." },
+      { q: "K-Home Avenue gần các khu công nghiệp nào ở Nhơn Trạch?", a: "Dự án nằm tại tâm điểm cụm công nghiệp lớn bậc nhất Đồng Nai, bao gồm KCN Nhơn Trạch 1, 2, 3, 4, 5, 6, KCN Dệt may Nhơn Trạch, KCN Ông Kèo và KCN Long Thành. Rất thuận tiện cho cán bộ, kỹ sư, công nhân viên đi lại làm việc hàng ngày." },
+      { q: "K-Home Avenue bàn giao nội thất gì?", a: "Căn hộ bàn giao hoàn thiện full nội thất cơ bản cao cấp: sàn gạch men cao cấp / sàn gỗ phòng ngủ, trần thạch cao, thiết bị chiếu sáng LED, hệ thống tủ bếp trên và dưới, bồn rửa, trọn bộ thiết bị vệ sinh cao cấp, cửa chống cháy kèm khóa từ thông minh. Khách hàng chỉ cần mang đồ cá nhân là có thể dọn vào ở ngay." },
+      { q: "Tiêu chuẩn xanh EDGE tại K-Home Avenue là gì?", a: "K-Home Avenue được phát triển theo tiêu chuẩn công trình xanh quốc tế EDGE do IFC (Tổ chức Tài chính Quốc tế thuộc Ngân hàng Thế giới World Bank) cấp chứng nhận. Giúp tiết kiệm tối thiểu 20% điện năng tiêu thụ, 20% lượng nước sinh hoạt và giảm 20% lượng phát thải carbon." },
+      { q: "Chủ đầu tư K-Home Avenue là ai?", a: "Dự án do Kim Oanh Land (Tập đoàn Kim Oanh Group) phát triển – Top 10 nhà phát triển bất động sản & nhà ở xã hội hàng đầu Việt Nam, được vinh danh tại giải thưởng danh giá PropertyGuru Vietnam Property Awards." },
+      { q: "K Home Avenue và K-Home Avenue có phải một không?", a: "Đúng. K Home Avenue, K-Home Avenue, KHome Avenue, Nhà ở xã hội K-Home Nhơn Trạch đều là tên gọi chung của cùng một dự án NOXH quy mô 1.022 căn tại đường 25C, Nhơn Trạch do Kim Oanh Land làm chủ đầu tư." },
+      { q: "K Home Avenue Nhơn Trạch Đồng Nai là dự án gì?", a: "K Home Avenue (tên đầy đủ: K-Home Avenue Nhơn Trạch) là dự án khu căn hộ nhà ở xã hội chuẩn Singapore quy mô 5,3 ha tại trục đường 25C Nguyễn Ái Quốc, huyện Nhơn Trạch, tỉnh Đồng Nai – cửa ngõ kết nối Sân bay Quốc tế Long Thành. Dự án có 1.022 căn NOXH và 82 shophouse, giá từ 750 triệu, vay ưu đãi 5,4%/năm." },
+      { q: "Hồ sơ đăng ký mua K-Home Avenue cần chuẩn bị những giấy tờ gì?", a: "Bộ hồ sơ cơ bản gồm: CCCD gắn chip của các thành viên trong gia đình, giấy đăng ký kết hôn (hoặc xác nhận độc thân), giấy xác nhận thực trạng nhà ở tại Đồng Nai, giấy xác nhận thu nhập / bảng lương, và giấy xác nhận tham gia BHXH tại Đồng Nai từ 1 năm trở lên. Kim Oanh Land hỗ trợ kiểm tra và hoàn thiện hồ sơ tận nơi miễn phí." },
+      { q: "Sau khi mua K-Home Avenue có được bán lại hoặc cho thuê không?", a: "Theo Luật Nhà ở mới nhất, người mua NOXH có thể cho thuê hoặc chuyển nhượng lại sau thời gian quy định (tối thiểu 5 năm kể từ ngày thanh toán hết tiền và nhận bàn giao nhà) cho các đối tượng đủ điều kiện mua NOXH hoặc bán lại cho CĐT." },
+      { q: "Liên hệ văn phòng bán hàng và xem nhà mẫu K-Home Avenue ở đâu?", a: "Quý khách vui lòng liên hệ Trung tâm tư vấn & Sales Gallery Kim Oanh Land qua Hotline 24/7: 0937.587.438 để được đón tiếp tham quan sa bàn, xem căn hộ mẫu thực tế và nhận trọn bộ tài liệu pháp lý." },
     ],
     locationImages: [
       { src: "slide-k-home-avenue/ban-do-vi-tri-chien-luoc-k-home-avenue-cua-ngo-khu-dong-tp-hcm-ket-noi-san-bay-l", alt: "Bản đồ vị trí chiến lược K-Home Avenue Nhơn Trạch – cửa ngõ khu Đông TP.HCM kết nối sân bay Long Thành", caption: "K-Home Avenue – Cửa ngõ khu Đông TP.HCM, 10 phút đến sân bay Long Thành" },
@@ -439,11 +450,16 @@ const PROJECT_SEO: Record<string, {
       timeline: [
         { date: "2024 – đầu 2025", event: "Phê duyệt quy hoạch 1/500 và hoàn tất pháp lý dự án", done: true },
         { date: "21/08/2025", event: "Động thổ dự án – cùng 3 dự án K-Home Đồng Nai", done: true },
-        { date: "Q1/2026", event: "Khởi công xây dựng chính thức", done: true },
-        { date: "2026 – 2027", event: "Thi công phần thô và hoàn thiện các block", done: false },
-        { date: "Cuối 2027", event: "Hoàn thiện nội thất & bàn giao căn hộ cho cư dân", done: false },
+        { date: "Q1/2026", event: "Khởi công xây dựng chính thức và thi công nền móng", done: true },
+        { date: "2026 – 2027", event: "Thi công kết cấu phần thân và hoàn thiện 4 block", done: false },
+        { date: "Cuối 2027", event: "Hoàn thiện nội thất, nghiệm thu và bàn giao căn hộ cho cư dân", done: false },
       ],
-      siteImages: [],
+      siteImages: [
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699472/k-home-avenue/image-maps-avenue/avenue-5.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699473/k-home-avenue/image-maps-avenue/avenue-6.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699474/k-home-avenue/image-maps-avenue/avenue-7.jpg",
+        "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699475/k-home-avenue/image-maps-avenue/avenue-8.jpg"
+      ],
     },
     legalInfo: {
       items: [
@@ -2442,6 +2458,114 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
             </div>
           )}
+
+          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home Midtown */}
+          {slug === "k-home-midtown-trang-bom" && (
+            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-800">Vị Trí Thực Tế Trên Google Maps & Kết Nối Vùng Trảng Bom</h3>
+                    <p className="text-xs text-slate-500">Giao lộ 4 tuyến đường 30/4 - Hùng Vương - Lý Nam Đế - Lê Đại Hành, TT. Trảng Bom</p>
+                  </div>
+                </div>
+                <a href="https://maps.app.goo.gl/9c4o7FhM73Hn2N9e9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Midtown) →
+                </a>
+              </div>
+
+              <div className="w-full h-80 rounded-2xl overflow-hidden border border-teal-200 relative shadow-md">
+                <iframe
+                  title="K-Home Midtown Trảng Bom Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384.902626805889!2d107.00522593899112!3d10.956108940275927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e700442d0327%3A0xc12a0db1c85bf214!2sK-Home%20Midtown!5e0!3m2!1sen!2s!4v1784803611439!5m2!1sen!2s"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
+                  <span className="block text-slate-800 font-bold text-base">3 Phút (1,5km)</span>
+                  <span className="block text-[11px] text-slate-500">Liền kề KCN</span>
+                </div>
+                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">Trung Tâm Hành Chính</span>
+                  <span className="block text-slate-800 font-bold text-base">2 Phút (800m)</span>
+                  <span className="block text-[11px] text-slate-500">Đường 30/4</span>
+                </div>
+                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa</span>
+                  <span className="block text-slate-800 font-bold text-base">15 Phút (12km)</span>
+                  <span className="block text-[11px] text-slate-500">Trục Quốc Lộ 1A</span>
+                </div>
+                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Hồ Chí Minh</span>
+                  <span className="block text-slate-800 font-bold text-base">35 Phút</span>
+                  <span className="block text-[11px] text-slate-500">Cao tốc Long Thành - Dầu Giây</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home Avenue */}
+          {slug === "k-home-avenue-nhon-trach" && (
+            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-800">Vị Trí Thực Tế Trên Google Maps & Cửa Ngõ Sân Bay Long Thành</h3>
+                    <p className="text-xs text-slate-500">Đường Nguyễn Ái Quốc (25C), xã Phước An / Long Thọ, H. Nhơn Trạch, Đồng Nai</p>
+                  </div>
+                </div>
+                <a href="https://maps.app.goo.gl/uX3y2iK1uW8zH95b6" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Avenue - Kim Oanh Homes) →
+                </a>
+              </div>
+
+              <div className="w-full h-80 rounded-2xl overflow-hidden border border-emerald-200 relative shadow-md">
+                <iframe
+                  title="K-Home Avenue Nhơn Trạch Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.298520835324!2d106.89406377488157!3d10.711442389433383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31751946f2629b55%3A0x3fffa92e2b45f1d8!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Homes!5e0!3m2!1sen!2s!4v1784803690040!5m2!1sen!2s"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Sân Bay Long Thành</span>
+                  <span className="block text-slate-800 font-bold text-base">10 Phút (7km)</span>
+                  <span className="block text-[11px] text-slate-500">Đại lộ 25C thẳng tiến</span>
+                </div>
+                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Công Nghiệp Nhơn Trạch</span>
+                  <span className="block text-slate-800 font-bold text-base">5 Phút (3km)</span>
+                  <span className="block text-[11px] text-slate-500">Cụm KCN Nhơn Trạch 1-6</span>
+                </div>
+                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">TP. Thủ Đức / TP.HCM</span>
+                  <span className="block text-slate-800 font-bold text-base">20 - 25 Phút</span>
+                  <span className="block text-[11px] text-slate-500">Qua Cầu Nhơn Trạch / Vành Đai 3</span>
+                </div>
+                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Thương Mại Tự Do</span>
+                  <span className="block text-slate-800 font-bold text-base">5 Phút</span>
+                  <span className="block text-[11px] text-slate-500">Quy mô 1.000 ha liền kề</span>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -2482,18 +2606,48 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
           {/* Ảnh công trường — click to zoom */}
           {seo.constructionProgress.siteImages.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[39, 40].map((num, i) => (
-                <button key={i} onClick={() => openSlide([39, 40], i, [
-                  "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
-                  "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
-                ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                  <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="224" style={{ backgroundColor: "#e2e8f0" }} />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-                  </div>
-                </button>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {slug === "k-home-cityview-ho-nai" ? (
+                [39, 40].map((num, i) => (
+                  <button key={i} onClick={() => openSlide([39, 40], i, [
+                    "Tiến độ triển khai dự án K-Home CityView Hố Nai Biên Hòa 2026–2028",
+                    "Công trường xây dựng nhà ở xã hội K-Home CityView Đồng Nai Kim Oanh",
+                  ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full col-span-2">
+                    <img src={slideImg(num, "thumbnail")} alt={`Tiến độ triển khai K-Home CityView Hố Nai Biên Hòa - slide ${num}`} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="224" style={{ backgroundColor: "#e2e8f0" }} />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+                    </div>
+                  </button>
+                ))
+              ) : (
+                seo.constructionProgress.siteImages.map((src, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setSlideLightboxImages(seo.constructionProgress!.siteImages);
+                      setSlideLightboxAlts(seo.constructionProgress!.siteImages.map((_, idx) => `Hình ảnh thực tế dự án ${project.title} - Ảnh ${idx + 1}`));
+                      setSlideLightboxIndex(i);
+                      setSlideLightboxOpen(true);
+                    }}
+                    className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full shadow-sm"
+                  >
+                    <img
+                      src={src}
+                      alt={`Hình ảnh công trường thực tế ${project.title} Kim Oanh Land - Ảnh ${i + 1}`}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width="400"
+                      height="192"
+                      style={{ backgroundColor: "#e2e8f0" }}
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
+                        <Eye className="w-3.5 h-3.5" /> Xem ảnh thực tế
+                      </span>
+                    </div>
+                  </button>
+                ))
+              )}
             </div>
           )}
         </section>
