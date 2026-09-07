@@ -422,7 +422,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const homeNavSections = [
     { id: "hero", label: "Hero" },
-    { id: "featured-cityview", label: "K-Home CityView" },
     { id: "featured-projects", label: "Dự Án" },
     { id: "vi-tri", label: "Vị Trí" },
     { id: "mat-bang", label: "Mặt Bằng" },
@@ -585,7 +584,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   // Track active section on scroll
   useEffect(() => {
-    const ids = ["hero", "featured-cityview", "featured-projects", "vi-tri", "mat-bang", "nha-mau", "amenities", "calculator", "dieu-kien-noxh", "phap-ly", "chu-dau-tu", "lai-suat-noxh", "tin-tuc"];
+    const ids = ["hero", "featured-projects", "vi-tri", "mat-bang", "nha-mau", "amenities", "calculator", "dieu-kien-noxh", "phap-ly", "chu-dau-tu", "lai-suat-noxh", "tin-tuc"];
     const handleScroll = () => {
       for (let i = ids.length - 1; i >= 0; i--) {
         const el = document.getElementById(ids[i]);
@@ -672,7 +671,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     // Nhóm 1: Dự án
     { id: "hero",              label: "Tổng quan dự án",    group: "Dự Án" },
     { id: "featured-projects", label: "Danh mục dự án",     group: "Dự Án" },
-    { id: "featured-cityview", label: "K-Home CityView",    group: "Dự Án" },
     { id: "vi-tri",            label: "Vị trí kết nối",     group: "Dự Án" },
     { id: "mat-bang",          label: "Mặt bằng căn hộ",    group: "Dự Án" },
     { id: "nha-mau",           label: "Nhà mẫu thực tế",    group: "Dự Án" },
@@ -726,10 +724,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   }, []);
 
   useEffect(() => {
-    document.title = "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue";
+    document.title = "K-Home Đồng Nai | Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Group";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Trang thông tin chính thức 3 dự án nhà ở xã hội K-Home tại Đồng Nai: K-Home CityView Hố Nai, K-Home Midtown Trảng Bom, K-Home Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm. Kim Oanh Land.");
+      metaDesc.setAttribute("content", "Cổng thông tin chính thức chuỗi dự án nhà ở xã hội K-Home tại Đồng Nai do Kim Oanh Land phát triển. Cập nhật bảng giá, mặt bằng, hồ sơ NOXH lãi suất 5,4%/năm.");
     }
 
     // Schema FAQPage
@@ -1850,9 +1848,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
             <div className="space-y-3">
-              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">3 Dự án đang triển khai</span>
+              <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3 py-1.5 rounded-full inline-block">
+                {allProjects.length ? `${allProjects.length} Dự án đang triển khai` : "Chuỗi dự án đang triển khai"}
+              </span>
               <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 tracking-tight">
-                Dự Án Nổi Bật
+                Danh Mục Dự Án K-Home
               </h2>
               <div className="w-16 h-1 bg-amber-500 rounded-full" />
             </div>
@@ -1922,112 +1922,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
-          1.5. FEATURED CITYHOME — EDITORIAL LINKS FOR LINK EQUITY
-          ========================================================= */}
-      <section id="featured-cityview" className="bg-white py-16 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Featured Section Title with Editorial Link */}
-          <div className="mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              <a 
-                href="/k-home-cityview-ho-nai" 
-                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai"); }}
-                className="hover:text-amber-600 transition-colors"
-              >
-                K-Home CityView Hố Nai Biên Hòa
-              </a>
-            </h3>
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl">
-              Dự án nhà ở xã hội chuẩn Singapore tại TP. Biên Hòa, Đồng Nai. Vị trí chiến lược, 
-              <a 
-                href="/k-home-cityview-ho-nai#mat-bang" 
-                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#mat-bang"); }}
-                className="text-amber-600 hover:text-amber-700 font-semibold mx-1"
-              >
-                mặt bằng căn hộ
-              </a>
-              tiện nghi, pháp lý đầy đủ, và
-              <a 
-                href="/k-home-cityview-ho-nai#calculator" 
-                onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#calculator"); }}
-                className="text-amber-600 hover:text-amber-700 font-semibold mx-1"
-              >
-                lãi suất ưu đãi 5,4%/năm
-              </a>
-              cho cư dân.
-            </p>
-          </div>
-
-          {/* 3-Column Grid with Linked CTAs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {/* Column 1: Bảng Giá */}
-            <a 
-              href="/k-home-cityview-ho-nai#gia-ban" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#gia-ban"); }}
-              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Bảng Giá & Sản Phẩm</h4>
-                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
-              </div>
-              <p className="text-slate-600 text-sm">
-                Khám phá chi tiết các loại căn hộ từ 1PN+A đến 3PN với giá từ 950 triệu.
-              </p>
-            </a>
-
-            {/* Column 2: Mặt Bằng & Layout */}
-            <a 
-              href="/k-home-cityview-ho-nai#mat-bang" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#mat-bang"); }}
-              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Mặt Bằng & Layout</h4>
-                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
-              </div>
-              <p className="text-slate-600 text-sm">
-                Xem chi tiết các bản vẽ mặt bằng căn hộ, hệ thống tiện ích và quy hoạch dự án.
-              </p>
-            </a>
-
-            {/* Column 3: Điều Kiện Mua */}
-            <a 
-              href="/k-home-cityview-ho-nai#dieu-kien-mua" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai#dieu-kien-mua"); }}
-              className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-amber-400/50 transition-all group cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors">Điều Kiện Mua & Thủ Tục</h4>
-                <ArrowRight className="w-5 h-5 text-amber-500 group-hover:translate-x-1 transition-transform" />
-              </div>
-              <p className="text-slate-600 text-sm">
-                Tìm hiểu điều kiện mua nhà ở xã hội, thủ tục pháp lý và hỗ trợ tài chính.
-              </p>
-            </a>
-          </div>
-
-          {/* Main CTA Button */}
-          <div className="text-center">
-            <a 
-              href="/k-home-cityview-ho-nai" 
-              onClick={(e) => { e.preventDefault(); onNavigate("/k-home-cityview-ho-nai"); }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/30"
-            >
-              Khám Phá K-Home CityView Hố Nai
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          VỊ TRÍ KẾT NỐI — 3 DỰ ÁN
+          3. VỊ TRÍ KẾT NỐI — CÁC DỰ ÁN K-HOME
           ========================================================= */}
       <section id="vi-tri" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 cv-auto">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <span className="text-xs font-bold text-amber-600 tracking-widest uppercase bg-amber-100/50 px-3.5 py-1.5 rounded-full inline-block">Vị trí chiến lược</span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Vị Trí Kết Nối – 3 Dự Án K-Home Đồng Nai</h2>
-          <p className="text-slate-500 text-sm leading-relaxed">Cả 3 dự án nhà ở xã hội K-Home đều tọa lạc tại các vị trí chiến lược, gần khu công nghiệp lớn và thuận tiện kết nối giao thông liên vùng tại tỉnh Đồng Nai.</p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">Vị Trí Kết Nối Chuỗi Dự Án K-Home Đồng Nai</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">Chuỗi dự án nhà ở xã hội K-Home tọa lạc tại các vị trí chiến lược, gần khu công nghiệp lớn và thuận tiện kết nối giao thông liên vùng tại tỉnh Đồng Nai.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all group">
@@ -3257,7 +3158,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               K-Home Đồng Nai – Chuỗi Dự Án Nhà Ở Xã Hội Uy Tín Của Kim Oanh Land
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              <strong>K-Home Đồng Nai</strong> là chuỗi dự án <strong>nhà ở xã hội (NOXH)</strong> do <strong>Kim Oanh Land</strong> – thành viên của Tập đoàn Kim Oanh Group – phát triển tại tỉnh Đồng Nai. Gồm 3 dự án trọng điểm: <strong>K-Home CityView Hố Nai (Biên Hòa)</strong>, <strong>K-Home Midtown Trảng Bom</strong> và <strong>K-Home Avenue Nhơn Trạch</strong>, chuỗi dự án này hướng đến giải pháp an cư bền vững cho người lao động, công nhân viên chức và gia đình trẻ tại Đồng Nai với mức giá phù hợp và chính sách vay ưu đãi lãi suất <strong>5,4%/năm</strong> từ Ngân hàng Chính sách Xã hội.
+              <strong>K-Home Đồng Nai</strong> là chuỗi dự án <strong>nhà ở xã hội (NOXH)</strong> chuẩn Singapore do <strong>Kim Oanh Land</strong> – thành viên của Tập đoàn Kim Oanh Group – phát triển tại tỉnh Đồng Nai. Bao gồm các dự án trọng điểm: <strong>K-Home CityView Hố Nai (Biên Hòa)</strong>, <strong>K-Home Midtown Trảng Bom</strong>, <strong>K-Home Avenue Nhơn Trạch</strong> và các phân khu tiếp theo, chuỗi dự án này hướng đến giải pháp an cư bền vững cho người lao động, công nhân viên chức và gia đình trẻ tại Đồng Nai với mức giá phù hợp và chính sách vay ưu đãi lãi suất <strong>5,4%/năm</strong> từ Ngân hàng Chính sách Xã hội.
             </p>
           </div>
 

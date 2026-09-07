@@ -102,6 +102,12 @@ const STATIC_ROUTES = [
     description: "Xem đầy đủ thông tin, bảng giá và mặt bằng 3 dự án nhà ở xã hội K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Kim Oanh Land.",
   },
   {
+    dir: "tinh-tra-gop",
+    title: "Bảng Tính Trả Góp & Lãi Suất NOXH K-Home Đồng Nai 2026 | Kim Oanh",
+    description: "Công cụ tính tiền trả góp mua nhà ở xã hội K-Home Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Vốn ban đầu từ 150tr, vay 80% lãi suất 5,4%/năm.",
+    keywords: "bảng tính trả góp k-home, tính tiền vay mua nhà ở xã hội đồng nai, lãi suất vay k-home kim oanh, tính trả góp k-home cityview, tính trả góp k-home midtown, tính trả góp k-home avenue, công cụ tính trả góp noxh",
+  },
+  {
     dir: "tin-tuc",
     title: "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
     description: "Cập nhật tin tức mới nhất về nhà ở xã hội K-Home Đồng Nai, điều kiện mua NOXH 2026, tiến độ dự án CityView, Midtown, Avenue từ Kim Oanh Land.",

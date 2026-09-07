@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useRef, startTransition } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper } from "lucide-react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper, X } from "lucide-react";
 import { Project } from "../types";
 import { STATIC_PROJECTS } from "../data/staticProjects";
 import Lightbox from "./Lightbox";
@@ -574,6 +574,46 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [formError, setFormError] = useState("");
+
+  // Popup Lead Form State (Tự động hiện sau 8 giây)
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupDismissed, setPopupDismissed] = useState(false);
+  const [popupName, setPopupName] = useState("");
+  const [popupPhone, setPopupPhone] = useState("");
+  const [popupSubmitting, setPopupSubmitting] = useState(false);
+  const [popupSuccess, setPopupSuccess] = useState(false);
+
+  useEffect(() => {
+    const sessionKey = `popupShown_${slug}`;
+    const alreadySeen = sessionStorage.getItem(sessionKey);
+    if (alreadySeen) return;
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+      sessionStorage.setItem(sessionKey, "1");
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, [slug]);
+
+  const handlePopupSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!popupName.trim() || !popupPhone.trim()) return;
+    setPopupSubmitting(true);
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: popupName.trim(),
+        phone: popupPhone.trim(),
+        email: "",
+        projectSlug: slug,
+        projectName: project?.title || slug,
+        message: `Đăng ký tư vấn từ popup trang dự án ${project?.title || slug}.`
+      })
+    })
+      .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+      .then(() => { setPopupSuccess(true); setPopupSubmitting(false); })
+      .catch(() => { setPopupSubmitting(false); });
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -3924,6 +3964,104 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         title={`Tin Tức Liên Quan ${project.name || "K-Home"}`}
         onNavigate={onNavigate}
       />
+
+      {/* =========================================================
+          POPUP LEAD FORM — Tự động xuất hiện sau 8 giây
+          ========================================================= */}
+      {showPopup && !popupDismissed && (
+        <div 
+          className="fixed inset-0 z-[99999] flex items-center justify-center p-4"
+          style={{ backgroundColor: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)" }}
+        >
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-300">
+            {/* Top gradient bar */}
+            <div className="h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600" />
+
+            <button
+              onClick={() => setPopupDismissed(true)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-700 transition-all cursor-pointer z-10"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="p-7 space-y-5">
+              {popupSuccess ? (
+                <div className="text-center py-6 space-y-4">
+                  <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle className="w-10 h-10 text-green-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800">Gửi Thành Công!</h3>
+                  <p className="text-slate-500 text-sm">Chuyên viên tư vấn dự án {project.name || project.title} sẽ liên hệ bạn trong vòng 15 phút.</p>
+                  <button
+                    onClick={() => setPopupDismissed(true)}
+                    className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-semibold transition-colors cursor-pointer"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="text-center space-y-1.5">
+                    <span className="text-xs font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full">
+                      Tư vấn & Nhận bảng giá đợt 1
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900 mt-2">
+                      Đăng Ký Nhận Báo Giá<br/>{project.name || project.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs">
+                      Chuyên viên sẽ gọi lại hỗ trợ kiểm tra điều kiện hồ sơ NOXH & phương án vay 5,4%/năm
+                    </p>
+                  </div>
+
+                  <form onSubmit={handlePopupSubmit} className="space-y-3">
+                    <div className="space-y-1">
+                      <label htmlFor="project-popup-name" className="text-xs font-semibold text-slate-600">Họ và tên *</label>
+                      <input
+                        id="project-popup-name"
+                        type="text"
+                        required
+                        placeholder="Nguyễn Văn A"
+                        value={popupName}
+                        onChange={e => setPopupName(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label htmlFor="project-popup-phone" className="text-xs font-semibold text-slate-600">Số điện thoại *</label>
+                      <input
+                        id="project-popup-phone"
+                        type="tel"
+                        required
+                        placeholder="0933 354 093"
+                        value={popupPhone}
+                        onChange={e => setPopupPhone(e.target.value)}
+                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl text-sm outline-none transition-all"
+                      />
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      disabled={popupSubmitting}
+                      className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl text-sm font-bold tracking-wide shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-60"
+                    >
+                      {popupSubmitting
+                        ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        : <><Send className="w-4 h-4" /> Nhận Tư Vấn & Bảng Giá Miễn Phí</>
+                      }
+                    </button>
+                    <p className="text-center text-xs text-slate-500">
+                      Thông tin của bạn được bảo mật tuyệt đối.{" "}
+                      <button type="button" onClick={() => setPopupDismissed(true)} className="underline hover:text-slate-600 cursor-pointer">
+                        Bỏ qua
+                      </button>
+                    </p>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
     </main>
     </>

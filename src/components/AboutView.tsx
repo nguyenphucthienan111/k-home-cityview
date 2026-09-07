@@ -204,7 +204,7 @@ export default function AboutView() {
       <section className="bg-amber-50 rounded-3xl border border-amber-100 p-8 space-y-6">
         <h2 className="text-2xl font-display font-bold text-slate-800">Thương Hiệu K-Home tại Đồng Nai</h2>
         <p className="text-slate-600 text-sm leading-relaxed max-w-3xl">
-          K-Home là dòng sản phẩm nhà ở xã hội của Kim Oanh Land — nhà ở chất lượng, giá phù hợp, pháp lý rõ ràng. Hiện tại K-Home đang triển khai <strong>3 dự án</strong> tại tỉnh Đồng Nai, cung cấp tổng cộng gần <strong>2.900 căn hộ NOXH</strong>.
+          K-Home là dòng sản phẩm nhà ở xã hội của Kim Oanh Land — nhà ở chất lượng, giá phù hợp, pháp lý rõ ràng. Chuỗi dự án K-Home đang phát triển tại các vị trí chiến lược tỉnh Đồng Nai, cung cấp hàng ngàn căn hộ NOXH chuẩn Singapore cho người lao động.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PROJECTS.map((p) => (

@@ -10,6 +10,7 @@ import HomeView from "./components/HomeView";
 const ProjectsView       = lazy(() => import("./components/ProjectsView"));
 const ProjectDetailView  = lazy(() => import("./components/ProjectDetailView"));
 const UnitDetailView     = lazy(() => import("./components/UnitDetailView"));
+const CalculatorView     = lazy(() => import("./components/CalculatorView"));
 const NewsView           = lazy(() => import("./components/NewsView"));
 const NewsDetailView     = lazy(() => import("./components/NewsDetailView"));
 const AboutView          = lazy(() => import("./components/AboutView"));
@@ -30,13 +31,14 @@ const NEWS_REDIRECTS: Record<string, string> = {
 
 // Module-level constant — không rebuild mỗi lần navigateTo chạy
 const PAGE_TITLES: Record<string, string> = {
-  "/":            "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
-  "/home":        "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
-  "/san-pham":    "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
+  "/":            "K-Home Đồng Nai | Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Group",
+  "/home":        "K-Home Đồng Nai | Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Group",
+  "/san-pham":    "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá NOXH Kim Oanh Land",
+  "/tinh-tra-gop": "Bảng Tính Trả Góp & Lãi Suất NOXH K-Home Đồng Nai 2026 | Kim Oanh",
   "/tin-tuc":     "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
   "/gioi-thieu":  "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai",
   "/lien-he":     "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438",
-  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Giỏ Hàng Mới Nhất 2026",
   "/k-home-midtown-trang-bom":  "K-Home Midtown Trảng Bom | Bảng Giá, Mặt Bằng NOXH Trảng Bom 2026",
   "/k-home-avenue-nhon-trach":  "K-Home Avenue Nhơn Trạch | Bảng Giá NOXH Gần Sân Bay Long Thành 2026",
 };
@@ -134,12 +136,12 @@ export default function App() {
     // Per-route OG data map
     const PAGE_OG: Record<string, { title: string; description: string; image: string }> = {
       "/": {
-        title: "K-Home Đồng Nai | 3 Dự Án Nhà Ở Xã Hội Kim Oanh Land tại Đồng Nai",
-        description: "K-Home Đồng Nai – 3 dự án nhà ở xã hội chuẩn Singapore: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm. Kim Oanh Land.",
+        title: "K-Home Đồng Nai | Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Kim Oanh Group",
+        description: "Cổng thông tin chính thức chuỗi dự án nhà ở xã hội K-Home tại Đồng Nai: CityView Hố Nai, Midtown Trảng Bom, Avenue Nhơn Trạch. Giá từ 750 triệu, lãi suất 5,4%/năm.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
       "/k-home-cityview-ho-nai": {
-        title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
+        title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Giỏ Hàng Mới Nhất 2026",
         description: "Dự án K-Home CityView Hố Nai, Biên Hòa: 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028. Xem bảng giá, mặt bằng, điều kiện mua.",
         image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
       },
@@ -161,6 +163,11 @@ export default function App() {
       "/san-pham": {
         title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
         description: "So sánh 3 dự án NOXH K-Home tại Đồng Nai: CityView Hố Nai (từ 950tr), Midtown Trảng Bom (từ 750tr), Avenue Nhơn Trạch (từ 750tr). Lãi suất 5,4%/năm.",
+        image: "https://k-homedongnai.com.vn/hero-background.jpg",
+      },
+      "/tinh-tra-gop": {
+        title: "Bảng Tính Trả Góp & Lãi Suất NOXH K-Home Đồng Nai 2026 | Kim Oanh",
+        description: "Công cụ tính tiền trả góp mua nhà ở xã hội K-Home Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Vốn ban đầu từ 150tr, vay 80% lãi suất 5,4%/năm.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
     };
@@ -274,6 +281,10 @@ export default function App() {
         const params = new URLSearchParams(window.location.search);
         return <ProjectsView onNavigate={navigateTo} initialProject={params.get("project") || "all"} initialBedrooms={params.get("bedrooms") || "all"} />;
       }
+      case "/tinh-tra-gop":
+      case "/calculator":
+      case "/bang-tinh-tra-gop":
+        return <CalculatorView onNavigate={navigateTo} />;
       case "/tin-tuc":
       case "/news":    return <NewsView onNavigate={navigateTo} />;
       case "/gioi-thieu":

@@ -17,11 +17,12 @@ function prefetchRoute(route: string) {
   if (prefetchedRoutes.has(route)) return;
   prefetchedRoutes.add(route);
   switch (route) {
-    case "project":    import("./ProjectDetailView"); break;
-    case "san-pham":   import("./ProjectsView");      break;
-    case "tin-tuc":    import("./NewsView");           break;
-    case "lien-he":    import("./ContactView");        break;
-    case "gioi-thieu": import("./AboutView");          break;
+    case "project":      import("./ProjectDetailView"); break;
+    case "tinh-tra-gop": import("./CalculatorView");    break;
+    case "san-pham":     import("./ProjectsView");      break;
+    case "tin-tuc":      import("./NewsView");          break;
+    case "lien-he":      import("./ContactView");       break;
+    case "gioi-thieu":   import("./AboutView");         break;
   }
 }
 
@@ -129,7 +130,7 @@ export default function Header({ currentHash }: HeaderProps) {
               {duAnOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-50">
                   <div className="px-4 py-2.5 bg-slate-50 border-b border-slate-100">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">3 Dự Án K-Home Đồng Nai</span>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Danh Sách Dự Án K-Home</span>
                   </div>
                   {PROJECTS.map((p) => (
                     <a
@@ -160,14 +161,15 @@ export default function Header({ currentHash }: HeaderProps) {
 
             {/* Tính Trả Góp */}
             <a
-              href="/#calculator"
-              onClick={(e) => handleNav(e, "/#calculator")}
+              href="/tinh-tra-gop"
+              onClick={(e) => handleNav(e, "/tinh-tra-gop")}
+              onMouseEnter={() => prefetchRoute("tinh-tra-gop")}
               className={`text-sm font-medium tracking-wide transition-colors relative py-2 ${
-                currentHash.includes("#calculator") ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
+                currentHash.startsWith("/tinh-tra-gop") || currentHash.includes("#calculator") ? "text-amber-600 font-semibold" : "text-slate-600 hover:text-amber-600"
               }`}
             >
               Tính Trả Góp
-              {currentHash.includes("#calculator") && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
+              {(currentHash.startsWith("/tinh-tra-gop") || currentHash.includes("#calculator")) && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600 rounded-full" />}
             </a>
 
             {/* Sản Phẩm */}
@@ -297,10 +299,10 @@ export default function Header({ currentHash }: HeaderProps) {
 
           {/* Tính Trả Góp */}
           <a
-            href="/#calculator"
-            onClick={(e) => handleNav(e, "/#calculator")}
+            href="/tinh-tra-gop"
+            onClick={(e) => handleNav(e, "/tinh-tra-gop")}
             className={`block py-2 px-3 rounded-lg text-base font-medium transition-colors ${
-              currentHash.includes("#calculator") ? "bg-amber-50 text-amber-700 font-semibold" : "text-slate-700 hover:bg-slate-50 hover:text-amber-600"
+              currentHash.startsWith("/tinh-tra-gop") || currentHash.includes("#calculator") ? "bg-amber-50 text-amber-700 font-semibold" : "text-slate-700 hover:bg-slate-50 hover:text-amber-600"
             }`}
           >
             Tính Trả Góp
