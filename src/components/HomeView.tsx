@@ -3355,10 +3355,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           POPUP LEAD FORM — xuất hiện sau 8 giây
           ========================================================= */}
       {showPopup && !popupDismissed && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 cursor-pointer"
           style={{ backgroundColor: "rgba(15,23,42,0.7)", backdropFilter: "blur(4px)" }}
+          onClick={() => setPopupDismissed(true)}
         >
-          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-300">
+          <div 
+            className="bg-white rounded-3xl shadow-2xl w-full max-w-md relative overflow-hidden animate-in fade-in zoom-in duration-300 cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Top gradient bar */}
             <div className="h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600" />
 
