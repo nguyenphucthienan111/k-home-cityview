@@ -536,7 +536,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
   };
 
   // Parse **bold** markers and \n\n paragraph breaks into JSX
-  const renderRichText = (text: string) => {
+  const renderRichText = (text?: string) => {
+    if (!text) return null;
     return text.split("\n\n").map((paragraph, pIdx) => {
       // Heading: toàn bộ đoạn là **...**
       const headingMatch = paragraph.match(/^\*\*(.+)\*\*$/);
@@ -2567,14 +2568,14 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   </div>
                 </div>
                 <a href="https://maps.app.goo.gl/uX3y2iK1uW8zH95b6" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Avenue - Kim Oanh Homes) →
+                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Avenue - Kim Oanh Land) →
                 </a>
               </div>
 
               <div className="w-full h-80 rounded-2xl overflow-hidden border border-emerald-200 relative shadow-md">
                 <iframe
-                  title="K-Home Avenue Nhơn Trạch Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.298520835324!2d106.89406377488157!3d10.711442389433383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31751946f2629b55%3A0x3fffa92e2b45f1d8!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Homes!5e0!3m2!1sen!2s!4v1784803690040!5m2!1sen!2s"
+                  title="K-Home Avenue - Kim Oanh Land Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"

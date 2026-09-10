@@ -81,7 +81,7 @@ export const STATIC_PROJECTS: Project[] = [
     image: "/k-home avenue/Pc09-Loi-vao-shophouse_2-min.jpg.webp",
     description: "K-Home Avenue Nhơn Trạch – dự án nhà ở xã hội tại đường 25C, quy mô 5,3 ha, 1.022 căn hộ. Gần sân bay Long Thành.",
     longDescription: "**Tổng quan dự án K-Home Avenue Nhơn Trạch**",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.298520835324!2d106.89406377488157!3d10.711442389433383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31751946f2629b55%3A0x3fffa92e2b45f1d8!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Homes!5e0!3m2!1sen!2s!4v1784803690040!5m2!1sen!2s",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s",
     gallery: ["/k-home avenue/Pc09-Loi-vao-shophouse_2-min.jpg.webp"],
     galleryAlts: ["Phối cảnh K-Home Avenue Nhơn Trạch"],
     amenities: ["Hồ bơi", "Sân chơi trẻ em"],
