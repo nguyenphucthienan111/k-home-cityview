@@ -1925,8 +1925,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((n) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4].map((n) => (
                 <div key={n} className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm animate-pulse">
                   {/* Image placeholder */}
                   <div className="h-72 bg-slate-200" />
@@ -1963,7 +1963,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {filteredProjects.map((project) => (
                     <ProjectCard
                       key={project.id}
