@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Search, MapPin, SlidersHorizontal, BedDouble, Bath, Sofa, ChevronRight } from "lucide-react";
 import { Project, UnitType } from "../types";
+import { STATIC_PROJECTS } from "../data/staticProjects";
 import { imgUrl } from "../utils/imageUrl";
 
 interface ProjectsViewProps {
@@ -13,6 +14,14 @@ interface UnitCardData {
   project: Project;
   unit: UnitType;
 }
+
+const getUnitsFromProjects = (list: Project[]): UnitCardData[] => {
+  const units: UnitCardData[] = [];
+  (list || []).forEach((project) => {
+    (project.unitTypes || []).forEach((unit) => units.push({ project, unit }));
+  });
+  return units;
+};
 
 const BEDROOM_FILTERS = [
   { label: "Tất cả", value: "all" as const },
@@ -38,8 +47,8 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 export default function ProjectsView({ onNavigate, initialProject = "all", initialBedrooms = "all" }: ProjectsViewProps) {
-  const [allUnits, setAllUnits] = useState<UnitCardData[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [allUnits, setAllUnits] = useState<UnitCardData[]>(() => getUnitsFromProjects(STATIC_PROJECTS));
+  const [loading, setLoading] = useState(false);
 
   // Check if mobile view
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 1024 : false);
@@ -71,51 +80,31 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
     }
 
     // Stale-while-revalidate: hiện cache ngay, fetch mới ngầm
-    const CACHE_KEY = "khome_projects_v3";
+    const CACHE_KEY = "khome_projects_v4";
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
       try {
         const list: Project[] = JSON.parse(cached);
-        const units: UnitCardData[] = [];
-        list.forEach((project) => {
-          (project.unitTypes || []).forEach((unit) => units.push({ project, unit }));
-        });
-        setAllUnits(units);
-        setLoading(false);
-        // Preload ảnh 6 card đầu ngay khi có cache
-        units.slice(0, 6).forEach(({ unit }) => {
-          if (unit.images[0]) {
-            const link = document.createElement("link");
-            link.rel = "preload";
-            link.as = "image";
-            link.href = unit.images[0].split("/").map(s => s.replace(/ /g, "%20")).join("/");
-            document.head.appendChild(link);
-          }
-        });
+        if (Array.isArray(list) && list.length >= 4) {
+          const units = getUnitsFromProjects(list);
+          setAllUnits(units);
+          setLoading(false);
+        }
       } catch {}
     }
 
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
-        const list = Array.isArray(data) ? data : [];
+        const list = Array.isArray(data) && data.length > 0 ? data : STATIC_PROJECTS;
         sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
-        const units: UnitCardData[] = [];
-        list.forEach((project) => {
-          (project.unitTypes || []).forEach((unit) => units.push({ project, unit }));
-        });
+        const units = getUnitsFromProjects(list);
         setAllUnits(units);
         setLoading(false);
-        // Preload ảnh 6 card đầu
-        units.slice(0, 6).forEach(({ unit }) => {
-          if (unit.images[0]) {
-            const img = new Image();
-            img.src = unit.images[0].split("/").map((s: string) => s.replace(/ /g, "%20")).join("/");
-          }
-        });
       })
       .catch((err) => {
         console.error("Failed to fetch projects:", err);
+        setAllUnits(getUnitsFromProjects(STATIC_PROJECTS));
         setLoading(false);
       });
   }, []);

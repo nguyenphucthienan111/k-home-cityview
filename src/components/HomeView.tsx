@@ -27,6 +27,7 @@ import {
   Download
 } from "lucide-react";
 import { Project } from "../types";
+import { STATIC_PROJECTS } from "../data/staticProjects";
 import { imgUrl } from "../utils/imageUrl";
 import { exportLoanScheduleToExcel } from "../utils/excelExport";
 
@@ -428,9 +429,9 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
-  const [allProjects, setAllProjects] = useState<Project[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [allProjects, setAllProjects] = useState<Project[]>(STATIC_PROJECTS);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(STATIC_PROJECTS);
+  const [loading, setLoading] = useState(false);
 
   // Check if mobile view
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 1024 : false);
@@ -845,21 +846,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   useEffect(() => {
     // Stale-while-revalidate — hiện cache ngay, fetch mới ngầm
-    const CACHE_KEY = "khome_projects_v3";
+    const CACHE_KEY = "khome_projects_v4";
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
       try {
         const list = JSON.parse(cached);
-        setAllProjects(list);
-        setFilteredProjects(list);
-        setLoading(false);
+        if (Array.isArray(list) && list.length >= 4) {
+          setAllProjects(list);
+          setFilteredProjects(list);
+          setLoading(false);
+        }
       } catch {}
     }
 
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => {
-        const list = Array.isArray(data) ? data : [];
+        const list = Array.isArray(data) && data.length > 0 ? data : STATIC_PROJECTS;
         sessionStorage.setItem(CACHE_KEY, JSON.stringify(list));
         setAllProjects(list);
         setFilteredProjects(list);
@@ -867,7 +870,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       })
       .catch((err) => {
         console.error("Failed to fetch projects on Home:", err);
-        if (!cached) { setAllProjects([]); setFilteredProjects([]); }
+        setAllProjects(STATIC_PROJECTS);
+        setFilteredProjects(STATIC_PROJECTS);
         setLoading(false);
       });
   }, []);
