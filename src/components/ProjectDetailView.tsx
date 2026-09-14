@@ -38,8 +38,8 @@ const PROJECT_SEO: Record<string, {
   avenueHighlights?: { heroImage: string; locationText: string; points: { num: string; title: string; desc: string }[] };
 }> = {
   "k-home-cityview-ho-nai": {
-    titleTag: "K-Home CityView (K Home City View) Hố Nai | Bảng Giá & Mặt Bằng 2026",
-    metaDesc: "K-Home CityView (k-home city view) Hố Nai Biên Hòa 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
+    titleTag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
+    metaDesc: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Biên Hòa 2026.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -168,9 +168,11 @@ const PROJECT_SEO: Record<string, {
       { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
     ],
     faq: [
-      // NHÓM 1: TỔNG QUAN
-      { q: "K-Home CityView là dự án gì?", a: "K-Home CityView là dự án nhà ở tại phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai, do Kim Oanh Land phát triển. Dự án được định hướng theo tiêu chuẩn nhà ở xã hội và phát triển theo tiêu chuẩn công trình xanh EDGE. K-Home CityView cung cấp nhiều loại căn hộ từ 1 phòng ngủ đến 3 phòng ngủ, hướng đến nhu cầu ở thực của người dân, gia đình trẻ, người lao động và người đang làm việc tại khu vực Biên Hòa – Đồng Nai." },
-      { q: "K-Home CityView và K Home City View có phải là một dự án không?", a: "Đúng. K-Home CityView, K Home City View, K-Home City View và Khome City View là những cách viết khác nhau mà người dùng có thể sử dụng khi tìm kiếm cùng một dự án. Tên dự án được sử dụng chính trên website là K-Home CityView Hố Nai. Dự án tọa lạc tại đường Điều Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai." },
+      // NHÓM 1: NHÀ Ở XÃ HỘI BIÊN HÒA & TỔNG QUAN
+      { q: "Dự án Nhà ở xã hội Biên Hòa nào đang tiếp nhận hồ sơ năm 2026?", a: "Tại TP. Biên Hòa hiện nay, K-Home CityView (tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai) là dự án nhà ở xã hội quy mô lớn và đồng bộ bậc nhất đang mở tiếp nhận hồ sơ xét duyệt. Dự án cung cấp 1.328 căn hộ NOXH tiêu chuẩn Singapore do Kim Oanh Land phát triển với mức giá từ 950 triệu/căn, hỗ trợ vay 80% vốn với lãi suất ưu đãi cố định 5,4%/năm trong 25 năm." },
+      { q: "Nhà ở xã hội Hố Nai Biên Hòa nằm ở vị trí nào?", a: "Dự án nhà ở xã hội Hố Nai (K-Home CityView) tọa lạc ngay mặt tiền đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai. Đây là vị trí tâm điểm kết nối các trục giao thông huyết mạch như Quốc Lộ 1A, Xa Lộ Hà Nội, ga Hố Nai và liền kề các KCN lớn như KCN Amata (10 phút), KCN Pouchen (3 phút), KCN Biên Hòa 2 và KCN Long Bình." },
+      { q: "K-Home CityView là dự án gì?", a: "K-Home CityView là dự án nhà ở xã hội chuẩn Singapore tại phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai, do Kim Oanh Land phát triển. Dự án được phát triển theo tiêu chuẩn công trình xanh quốc tế EDGE, cung cấp các loại căn hộ từ 1 phòng ngủ đến 3 phòng ngủ với đầy đủ tiện ích hoàn chỉnh như hồ bơi, công viên, trường học, phố thương mại shophouse." },
+      { q: "K-Home CityView và K Home City View có phải là một dự án không?", a: "Đúng. K-Home CityView, K Home City View, Nhà ở xã hội Hố Nai, NOXH Biên Hòa Kim Oanh và Khome City View là những cách gọi và tìm kiếm khác nhau của cùng một dự án NOXH K-Home CityView do Kim Oanh Land làm chủ đầu tư tại đường Điểu Xiển, TP. Biên Hòa." },
       { q: "K-Home CityView có quy mô bao nhiêu?", a: "Theo thông tin hiện có trên website dự án, K-Home CityView được phát triển trên quỹ đất khoảng 2,85 ha. Thông tin tổng thể hiện ghi dự án có 1.816 căn, gồm 1.328 căn hộ nhà ở xã hội, 425 căn nhà ở thương mại tại Block T4 và 39 căn shophouse. Khi trình bày số liệu này, giữ nguyên cách ghi hiện tại của dự án và không tự điều chỉnh số lượng nếu chưa có dữ liệu chính thức mới." },
       { q: "K-Home CityView do ai thiết kế?", a: "Theo thông tin hiện có trên trang dự án, K-Home CityView được thiết kế và quy hoạch bởi Tập đoàn Surbana Jurong (Singapore), đơn vị tư vấn quy hoạch và thiết kế có kinh nghiệm quốc tế. Dự án cũng được giới thiệu phát triển theo tiêu chuẩn công trình xanh EDGE của IFC/World Bank, hướng đến việc sử dụng hiệu quả năng lượng và tài nguyên." },
       // NHÓM 2: VỊ TRÍ & KẾT NỐI
@@ -2453,8 +2455,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-800">Vị Trí Thực Tế Trên Google Maps & Kết Nối Vùng</h3>
-                    <p className="text-xs text-slate-500">Mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai</p>
+                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Biên Hòa – Vị Trí Đường Điểu Xiển Hố Nai</h3>
+                    <p className="text-xs text-slate-500">Mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai (Kế bên Ga Hố Nai & KCN Amata)</p>
                   </div>
                 </div>
                 <a href="https://maps.app.goo.gl/AGywfAE793NgUYMT9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
@@ -2462,10 +2464,23 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </a>
               </div>
 
+              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Biên Hòa */}
+              <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong>Nhà ở xã hội Biên Hòa (K-Home CityView Hố Nai)</strong> là giải pháp an cư kiểu mẫu chuẩn Singapore tại trung tâm TP. Biên Hòa. Tọa lạc ngay mặt tiền đường Điểu Xiển – cửa ngõ giao thương sầm uất giữa Hố Nai và Tân Hòa, dự án giúp công nhân, kỹ sư tại <strong>KCN Amata, KCN Biên Hòa 2, KCN Pouchen và KCN Long Bình</strong> dễ dàng di chuyển đi làm chỉ từ 3 đến 10 phút.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Biên Hòa</span>
+                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Hố Nai</span>
+                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường Điểu Xiển</span>
+                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Gần KCN Amata & Pouchen</span>
+                </div>
+              </div>
+
               {/* Responsive Google Maps Iframe Embed - Official Google Business Profile */}
               <div className="w-full h-80 rounded-2xl overflow-hidden border border-amber-200 relative shadow-md">
                 <iframe
-                  title="K-Home Cityview - Kim Oanh Land Google Business Profile Map"
+                  title="Nhà ở xã hội Biên Hòa K-Home CityView Hố Nai Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0500305663313!2d106.90024047509125!3d10.959593489200515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1787364751941!5m2!1sen!2s"
                   className="w-full h-full border-0"
                   allowFullScreen

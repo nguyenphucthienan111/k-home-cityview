@@ -38,7 +38,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/tin-tuc":     "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
   "/gioi-thieu":  "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai",
   "/lien-he":     "Liên Hệ Tư Vấn K-Home Đồng Nai | Hotline 0937 587 438",
-  "/k-home-cityview-ho-nai":    "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Giỏ Hàng Mới Nhất 2026",
+  "/k-home-cityview-ho-nai":    "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
   "/k-home-midtown-trang-bom":  "K-Home Midtown Trảng Bom | Bảng Giá, Mặt Bằng NOXH Trảng Bom 2026",
   "/k-home-avenue-nhon-trach":  "K-Home Avenue Nhơn Trạch | Bảng Giá NOXH Gần Sân Bay Long Thành 2026",
 };
@@ -141,8 +141,8 @@ export default function App() {
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
       "/k-home-cityview-ho-nai": {
-        title: "K-Home CityView Hố Nai Biên Hòa | Bảng Giá & Giỏ Hàng Mới Nhất 2026",
-        description: "Dự án K-Home CityView Hố Nai, Biên Hòa: 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028. Xem bảng giá, mặt bằng, điều kiện mua.",
+        title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
+        description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) quy mô 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, vay 5,4%/năm. Hướng dẫn hồ sơ NOXH Biên Hòa từ A-Z.",
         image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
       },
       "/k-home-midtown-trang-bom": {
