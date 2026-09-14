@@ -180,6 +180,14 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="/k-home-skyview-trang-bom"
+                    title="K-Home SkyView Trảng Bom – Nhà ở xã hội Bàu Xéo Trảng Bom"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>K-Home SkyView Trảng Bom – Bàu Xéo Trảng Bom</span>
+                  </a>
+                </li>
+                <li>
                   <a href="/video/phong-su-k-home-cityview-ho-nai"
                     title="Thư viện Video Phóng Sự & Tiến Độ K-Home Đồng Nai"
                     className="hover:text-amber-600 transition-colors flex items-center gap-1">

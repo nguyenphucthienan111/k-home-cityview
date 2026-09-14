@@ -361,6 +361,34 @@ const projects = [
     ],
     status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
   },
+  {
+    id: "4", slug: "k-home-skyview-trang-bom", title: "K-Home SkyView Trảng Bom",
+    location: "Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai",
+    type: "Căn hộ nhà ở xã hội", status: "Sắp mở bán", price: "Từ 750 Triệu", priceNumber: 0.75, area: "37,0m² - 68,0m²",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373120/k-home-skyview/noxh-skyview02.jpg",
+    description: "K-Home SkyView Bàu Xéo Trảng Bom – dự án nhà ở xã hội chuẩn Singapore tại KĐT Bàu Xéo. Giá từ 750 triệu, vay gói 5,4%/năm, thiết kế Surbana Jurong, bàn giao full nội thất.",
+    longDescription: "**Tổng quan dự án K-Home SkyView Bàu Xéo Trảng Bom**\n\n**K-Home SkyView** (K-Home Sky View) là dự án nhà ở xã hội chuẩn Singapore do **Kim Oanh Land** (Tập đoàn Kim Oanh Group) phát triển tại **Khu đô thị Bàu Xéo**, thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án quy hoạch trên khu đất hơn **1,08 ha** gồm các tòa tháp cao 9 – 12 tầng, cung cấp gần **600 căn hộ NOXH** chất lượng cao.",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn",
+    gallery: [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview03",
+    ],
+    galleryAlts: [
+      "Phối cảnh tổng thể dự án nhà ở xã hội K-Home SkyView Bàu Xéo Trảng Bom",
+      "Góc nhìn cận cảnh tháp căn hộ K-Home SkyView Kim Oanh Land",
+      "Phối cảnh ban đêm dự án K-Home SkyView Bàu Xéo Đồng Nai",
+      "Phối cảnh tổng thể trên cao K-Home SkyView Trảng Bom",
+    ],
+    amenities: ["Hồ bơi người lớn & trẻ em", "Sân chơi trẻ em an toàn", "Khu thể dục ngoài trời", "Công viên cảnh quan & lối dạo bộ", "Khu BBQ dã ngoại", "Shophouse khối đế & minimart", "Nhà sinh hoạt cộng đồng", "Hệ thống an ninh 24/7"],
+    unitTypes: [
+      { slug: "can-ho-studio", name: "Căn Studio", bedrooms: 0, bathrooms: 1, constructionArea: "37,0m²", usableArea: "33,0m²", price: "Từ 750 triệu/căn", priceNumber: 750, furnished: true, description: "Studio SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02"] },
+      { slug: "can-ho-1-phong-ngu", name: "Căn 1 Phòng Ngủ +", bedrooms: 1, bathrooms: 1, constructionArea: "45,8m²", usableArea: "41,0m²", price: "Từ 990 triệu/căn", priceNumber: 990, furnished: true, description: "1PN+ SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01"] },
+      { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ", bedrooms: 2, bathrooms: 2, constructionArea: "65,3m²", usableArea: "58,5m²", price: "1,35 tỷ – 1,45 tỷ/căn", priceNumber: 1350, furnished: true, description: "2PN SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview"] },
+    ],
+    status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
+  },
 ];
 
 // news data imported from src/data/newsData.ts
@@ -371,6 +399,7 @@ const PROJECT_REDIRECTS: Record<string, string> = {
   "/projects/k-home-cityview-ho-nai":   "/k-home-cityview-ho-nai",
   "/projects/k-home-midtown-trang-bom": "/k-home-midtown-trang-bom",
   "/projects/k-home-avenue-nhon-trach": "/k-home-avenue-nhon-trach",
+  "/projects/k-home-skyview-trang-bom": "/k-home-skyview-trang-bom",
   "/projects/k-home-grand-urban":       "/k-home-cityview-ho-nai",
 };
 

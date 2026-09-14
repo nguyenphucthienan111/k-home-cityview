@@ -41,6 +41,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/k-home-cityview-ho-nai":    "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
   "/k-home-midtown-trang-bom":  "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
   "/k-home-avenue-nhon-trach":  "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
+  "/k-home-skyview-trang-bom":   "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
 };
 
 // Helper: normalize path from window.location
@@ -155,19 +156,24 @@ export default function App() {
         description: "Dự án Nhà Ở Xã Hội Nhơn Trạch (K-Home Avenue Kim Oanh) mặt tiền đường 25C gần Sân bay Long Thành, 1.022 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
         image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-avenue/Pc09-Loi-vao-shophouse_2-min",
       },
+      "/k-home-skyview-trang-bom": {
+        title: "K-Home SkyView Trảng Bom | Căn Hộ NOXH Chuẩn Singapore",
+        description: "Thông tin dự án Nhà ở xã hội K-Home SkyView Bàu Xéo Trảng Bom của Kim Oanh Land. Vị trí KĐT Bàu Xéo, bảng giá gốc từ 750 triệu, vay gói 5,4%/năm.",
+        image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-skyview/noxh-skyview02.jpg",
+      },
       "/tin-tuc": {
         title: "Tin Tức Nhà Ở Xã Hội K-Home Đồng Nai | Cập Nhật Mới Nhất",
-        description: "Tin tức mới nhất về K-Home CityView, K-Home Midtown, K-Home Avenue và thị trường nhà ở xã hội Đồng Nai. Cập nhật giá, tiến độ, chính sách NOXH 2026.",
+        description: "Tin tức mới nhất về K-Home CityView, K-Home Midtown, K-Home Avenue, K-Home SkyView và thị trường nhà ở xã hội Đồng Nai. Cập nhật giá, tiến độ, chính sách NOXH 2026.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
       "/san-pham": {
-        title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
-        description: "So sánh 3 dự án NOXH K-Home tại Đồng Nai: CityView Hố Nai (từ 950tr), Midtown Trảng Bom (từ 750tr), Avenue Nhơn Trạch (từ 750tr). Lãi suất 5,4%/năm.",
+        title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 4 Dự Án NOXH Kim Oanh",
+        description: "So sánh 4 dự án NOXH K-Home tại Đồng Nai: CityView Hố Nai (từ 950tr), Midtown Trảng Bom (từ 750tr), Avenue Nhơn Trạch (từ 750tr), SkyView Trảng Bom (từ 750tr). Lãi suất 5,4%/năm.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
       "/tinh-tra-gop": {
         title: "Bảng Tính Trả Góp & Lãi Suất NOXH K-Home Đồng Nai 2026 | Kim Oanh",
-        description: "Công cụ tính tiền trả góp mua nhà ở xã hội K-Home Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Vốn ban đầu từ 150tr, vay 80% lãi suất 5,4%/năm.",
+        description: "Công cụ tính tiền trả góp mua nhà ở xã hội K-Home Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch, SkyView Trảng Bom. Vốn ban đầu từ 150tr, vay 80% lãi suất 5,4%/năm.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
     };
@@ -202,7 +208,7 @@ export default function App() {
     const unitMatchOldCan = path.match(/^\/([^/]+)\/(can-(?!ho-)[^/]+)$/);
     if (unitMatchOldCan) {
       // Chỉ redirect nếu projectSlug là một trong các dự án thực — tránh match tin-tuc URLs
-      const PROJECT_SLUGS_CHECK = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"];
+      const PROJECT_SLUGS_CHECK = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"];
       if (PROJECT_SLUGS_CHECK.includes(unitMatchOldCan[1])) {
         const oldSlug = unitMatchOldCan[2];
         const slugMap: Record<string, string> = {
@@ -255,7 +261,7 @@ export default function App() {
       return null;
     }
 
-    const PROJECT_SLUGS = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"];
+    const PROJECT_SLUGS = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"];
     if (PROJECT_SLUGS.includes(path.slice(1))) {
       return <ProjectDetailView slug={path.slice(1)} onNavigate={navigateTo} />;
     }

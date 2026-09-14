@@ -133,6 +133,28 @@
     </image:image>
   </url>
   <url>
+    <loc>https://k-homedongnai.com.vn/k-home-skyview-trang-bom</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://k-homedongnai.com.vnhttps://res.cloudinary.com/dthv0nsq/image/upload/v1789373118/k-home-skyview/noxh-skyview.jpg</image:loc>
+      <image:title>Phối cảnh dự án Nhà Ở Xã Hội K-Home SkyView Bàu Xéo Trảng Bom</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://k-homedongnai.com.vnhttps://res.cloudinary.com/dthv0nsq/image/upload/v1789373119/k-home-skyview/noxh-skyview01.jpg</image:loc>
+      <image:title>Thiết kế căn hộ K-Home SkyView Trảng Bom Kim Oanh</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://k-homedongnai.com.vnhttps://res.cloudinary.com/dthv0nsq/image/upload/v1789373120/k-home-skyview/noxh-skyview02.jpg</image:loc>
+      <image:title>Mặt bằng căn hộ K-Home SkyView Bàu Xéo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://k-homedongnai.com.vnhttps://res.cloudinary.com/dthv0nsq/image/upload/v1789373121/k-home-skyview/noxh-skyview03.png</image:loc>
+      <image:title>Không gian sống tiện ích K-Home SkyView Trảng Bom</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://k-homedongnai.com.vn/k-home-cityview-ho-nai/can-ho-1-phong-ngu-a</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,6 +222,24 @@
   </url>
   <url>
     <loc>https://k-homedongnai.com.vn/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b-avenue</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/k-home-skyview-trang-bom/can-ho-studio</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/k-home-skyview-trang-bom/can-ho-1-phong-ngu</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://k-homedongnai.com.vn/k-home-skyview-trang-bom/can-ho-2-phong-ngu</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>

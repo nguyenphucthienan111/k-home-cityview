@@ -9,6 +9,7 @@ const PROJECTS = [
   { title: "K-Home CityView Biên Hòa",  slug: "k-home-cityview-ho-nai",   location: "Hố Nai, TP. Biên Hòa" },
   { title: "K-Home Midtown Trảng Bom",  slug: "k-home-midtown-trang-bom", location: "Trảng Bom, Đồng Nai" },
   { title: "K-Home Avenue Nhơn Trạch",  slug: "k-home-avenue-nhon-trach", location: "Nhơn Trạch, Đồng Nai" },
+  { title: "K-Home SkyView Trảng Bom",  slug: "k-home-skyview-trang-bom", location: "Bàu Xéo, Trảng Bom" },
 ];
 
 // Prefetch a lazy-loaded route chunk bằng cách trigger dynamic import sớm

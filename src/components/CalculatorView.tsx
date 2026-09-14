@@ -34,6 +34,15 @@ const PROJECTS_TAB = [
     rate: "5,4%/năm",
     badge: "Gần Sân Bay Long Thành",
   },
+  {
+    slug: "k-home-skyview-trang-bom",
+    name: "K-Home SkyView",
+    location: "Bàu Xéo, Trảng Bom",
+    priceRange: "750tr – 1,45 tỷ",
+    supportLoan: "75%",
+    rate: "5,4%/năm",
+    badge: "Bàu Xéo Trảng Bom",
+  },
 ];
 
 export default function CalculatorView({ onNavigate }: CalculatorViewProps) {
@@ -111,7 +120,7 @@ export default function CalculatorView({ onNavigate }: CalculatorViewProps) {
           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider px-3 pt-2 pb-1">
             Chọn Dự Án Cần Tính Toán Tài Chính:
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 mt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mt-1">
             {PROJECTS_TAB.map((proj) => {
               const isActive = proj.slug === selectedSlug;
               return (
@@ -315,6 +324,14 @@ export default function CalculatorView({ onNavigate }: CalculatorViewProps) {
                   className="flex items-center justify-between p-2.5 rounded-lg hover:bg-amber-50 hover:text-amber-700 text-slate-700 transition-colors group"
                 >
                   <span className="font-semibold">K-Home Avenue Nhơn Trạch</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a
+                  href="/k-home-skyview-trang-bom"
+                  onClick={(e) => { e.preventDefault(); onNavigate ? onNavigate("/k-home-skyview-trang-bom") : window.location.href = "/k-home-skyview-trang-bom"; }}
+                  className="flex items-center justify-between p-2.5 rounded-lg hover:bg-amber-50 hover:text-amber-700 text-slate-700 transition-colors group"
+                >
+                  <span className="font-semibold">K-Home SkyView Trảng Bom</span>
                   <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

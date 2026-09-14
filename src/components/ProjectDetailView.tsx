@@ -8,7 +8,7 @@ import MortgageCalculator from "./MortgageCalculator";
 import RelatedArticles from "./RelatedArticles";
 
 // Danh sách slug có calculator
-const CALC_CONFIG_SLUGS = ["k-home-cityview-ho-nai", "k-home-avenue-nhon-trach", "k-home-midtown-trang-bom"];
+const CALC_CONFIG_SLUGS = ["k-home-cityview-ho-nai", "k-home-avenue-nhon-trach", "k-home-midtown-trang-bom", "k-home-skyview-trang-bom"];
 
 // ─── Per-project SEO data ────────────────────────────────────────────────────
 
@@ -520,6 +520,122 @@ const PROJECT_SEO: Record<string, {
       ],
     },
   },
+  "k-home-skyview-trang-bom": {
+    titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
+    metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home SkyView Bàu Xéo Kim Oanh) – chung cư Trảng Bom giá rẻ chuẩn Singapore từ 750 triệu, vay 5,4%/năm. Hỗ trợ làm hồ sơ NOXH miễn phí.",
+    noxhConditions: [
+      { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
+      { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
+      { label: "Thu nhập hộ gia đình", detail: "Vợ chồng: dưới 50 triệu/tháng • Đơn thân nuôi con: dưới 35 triệu/tháng • Độc thân: dưới 25 triệu/tháng" },
+      { label: "Hộ khẩu hoặc tạm trú", detail: "Có hộ khẩu hoặc tạm trú tại tỉnh Đồng Nai từ 1 năm trở lên" },
+      { label: "Ưu tiên công nhân KCN Bàu Xéo", detail: "Ưu tiên người lao động tại KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai và lân cận" },
+    ],
+    paymentPolicy: [
+      { step: "Đặt cọc", pct: "30.000.000 đ", note: "Khi ký Phiếu xác nhận cọc" },
+      { step: "Đợt 1", pct: "15%", note: "7 ngày từ ngày cọc – ký HĐDVTV" },
+      { step: "Đợt 2–3", pct: "5% / đợt", note: "Mỗi đợt cách 30 ngày" },
+      { step: "Ngân hàng giải ngân", pct: "75%", note: "NH giải ngân theo tiến độ" },
+      { step: "Bàn giao", pct: "Phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao" },
+    ],
+    faq: [
+      { q: "K-Home SkyView Bàu Xéo ở đâu?", a: "K-Home SkyView tọa lạc tại vị trí đắc địa trong Khu đô thị Bàu Xéo, Quốc Lộ 1A, thị trấn Trảng Bom, tỉnh Đồng Nai — liền kề KCN Bàu Xéo và ga Trảng Bom, dễ dàng kết nối TP. Biên Hòa và TP.HCM." },
+      { q: "K-Home SkyView Trảng Bom giá bao nhiêu?", a: "K-Home SkyView có mức giá từ 750 triệu đến 1,45 tỷ/căn: Căn Studio từ 750 triệu, Căn 1PN+ từ 990 triệu, Căn 2PN từ 1,35 tỷ. Bàn giao full nội thất cơ bản, trả góp chỉ từ 3,5–4,5 triệu/tháng." },
+      { q: "K-Home SkyView có bao nhiêu căn và quy mô thế nào?", a: "Dự án quy hoạch trên quỹ đất hơn 1,08 ha thuộc KĐT Bàu Xéo, gồm các block cao từ 9 đến 12 tầng, cung cấp khoảng 358 đến gần 600 căn hộ NOXH hiện đại và shophouse dịch vụ." },
+      { q: "Điều kiện mua nhà ở xã hội K-Home SkyView là gì?", a: "Người mua cần: (1) Chưa sở hữu nhà ở tại Đồng Nai; (2) Chưa từng mua/thuê mua NOXH; (3) Thu nhập cá nhân dưới 25 triệu/tháng (hoặc vợ chồng dưới 50 triệu/tháng); (4) Thường trú hoặc tạm trú có BHXH từ 1 năm tại Đồng Nai. Hotline 0937.587.438 hỗ trợ kiểm tra miễn phí." },
+      { q: "Lãi suất vay mua K-Home SkyView là bao nhiêu?", a: "Người mua đủ điều kiện được vay ưu đãi từ Ngân hàng Chính sách Xã hội với lãi suất cố định 5,4%/năm trong 25 năm, hạn mức vay tối đa 75–80% giá trị hợp đồng." },
+      { q: "K-Home SkyView có những tiện ích gì?", a: "Dự án sở hữu chuỗi tiện ích chuẩn Singapore: hồ bơi người lớn và trẻ em, sân chơi thiếu nhi, khu thể dục ngoài trời, công viên cảnh quan, khu BBQ dã ngoại, siêu thị mini shophouse và camera an ninh 24/7." },
+      { q: "K-Home SkyView có sổ hồng không?", a: "Có. Dự án có pháp lý minh bạch theo quy chuẩn nhà ở xã hội, cư dân được cấp sổ hồng sở hữu lâu dài (với công dân Việt Nam) theo quy định của pháp luật." },
+      { q: "K-Home SkyView gần các khu công nghiệp nào?", a: "Dự án liền kề KCN Bàu Xéo (gần 500 ha), KCN Sông Mây, KCN Hố Nai và KCN Giang Điền, là lựa chọn an cư lý tưởng cho kỹ sư và công nhân viên chức khu vực Trảng Bom." },
+      { q: "K-Home SkyView bàn giao nội thất gì?", a: "Căn hộ bàn giao hoàn thiện full nội thất cơ bản: trần thạch cao, sàn gỗ/gạch cao cấp, tủ bếp, thiết bị vệ sinh, hệ thống chiếu sáng và cửa an ninh. Cư dân chỉ cần mang đồ cá nhân vào ở." },
+      { q: "K-Home SkyView và K-Home Midtown khác nhau thế nào?", a: "Cả 2 đều là dự án NOXH chuẩn Singapore của Kim Oanh Land tại Trảng Bom. K-Home Midtown nằm tại khu vực ngã 4 đường 30/4 trung tâm huyện, còn K-Home SkyView nằm trong Khu đô thị Bàu Xéo liền kề Quốc Lộ 1A và KCN Bàu Xéo." },
+      { q: "Hồ sơ đăng ký mua K-Home SkyView cần những giấy tờ gì?", a: "Hồ sơ gồm: CCCD gắn chip, xác nhận tình trạng hôn nhân, giấy xác nhận thực trạng nhà ở tại Đồng Nai, xác nhận thu nhập và BHXH Đồng Nai. Kim Oanh Land hỗ trợ hoàn thiện 100% miễn phí." },
+      { q: "K Home SkyView và K-Home Sky View có phải là một không?", a: "Đúng. K-Home SkyView, K Home SkyView, K-Home Sky View, NOXH Bàu Xéo Trảng Bom đều là tên gọi của cùng một dự án nhà ở xã hội chất lượng cao do Kim Oanh Land phát triển." },
+      { q: "Tiêu chuẩn xanh EDGE tại K-Home SkyView mang lại lợi ích gì?", a: "Dự án áp dụng tiêu chuẩn xanh quốc tế EDGE (IFC/World Bank), giúp giảm tối thiểu 20% lượng điện năng, 20% lượng nước tiêu thụ và 20% khí phát thải, giúp tiết kiệm chi phí hóa đơn hàng tháng cho cư dân." },
+      { q: "Khi nào K-Home SkyView chính thức mở bán?", a: "Dự án đang trong giai đoạn tiếp nhận hồ sơ xét duyệt điều kiện NOXH và tư vấn danh sách ưu tiên chọn căn tầng đẹp. Liên hệ hotline 0937.587.438 để đăng ký nhận thông tin sớm nhất." },
+    ],
+    locationImages: [
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview03", alt: "Bản đồ vị trí dự án K-Home SkyView tại Khu đô thị Bàu Xéo Trảng Bom Đồng Nai", caption: "Vị trí K-Home SkyView – KĐT Bàu Xéo, TT. Trảng Bom" },
+    ],
+    floorPlanImages: [
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02", alt: "Mặt bằng căn hộ Studio K-Home SkyView Bàu Xéo Trảng Bom", label: "Căn Studio (37,0m²)" },
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01", alt: "Mặt bằng căn hộ 1PN+ K-Home SkyView Bàu Xéo Trảng Bom", label: "Căn 1PN+ (45,8m²)" },
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview", alt: "Mặt bằng căn hộ 2PN K-Home SkyView Bàu Xéo Trảng Bom", label: "Căn 2PN (65,3m²)" },
+    ],
+    amenityImages: [
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02", alt: "Phối cảnh công viên và không gian xanh K-Home SkyView Trảng Bom", caption: "Không gian sống xanh chuẩn Singapore" },
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview", alt: "Phối cảnh mặt tiền tháp căn hộ K-Home SkyView Kim Oanh Land", caption: "Kiến trúc hiện đại K-Home SkyView" },
+    ],
+    developerImage: "/k-home cityview/mat-bang/top-10-nha-phat-trien-nha-o-xa-hoi-viet-nam-2024.jpg.webp",
+    sampleUnitImages: [
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02", alt: "Nhà mẫu căn Studio K-Home SkyView Trảng Bom", label: "Căn Studio (37,0m²)" },
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01", alt: "Nhà mẫu căn 1PN+ K-Home SkyView Trảng Bom", label: "Căn 1PN+ (45,8m²)" },
+      { src: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview", alt: "Nhà mẫu căn 2PN K-Home SkyView Trảng Bom", label: "Căn 2PN (65,3m²)" },
+    ],
+    constructionProgress: {
+      timeline: [
+        { date: "2024 – 2025", event: "Quy hoạch chi tiết 1/500 và hoàn tất thủ tục pháp lý chấp thuận chủ trương đầu tư", done: true },
+        { date: "2025 – 2026", event: "Hoàn thiện hồ sơ thiết kế cơ sở, thẩm duyệt PCCC và công bố thông tin dự án", done: true },
+        { date: "Dự kiến Q1/2027", event: "Chính thức khởi công xây dựng và thi công kết cấu móng hầm", done: false },
+        { date: "Q3–Q4/2027", event: "Thi công kết cấu phần thân các block tháp căn hộ", done: false },
+        { date: "2028 – 2029", event: "Hoàn thiện nội thất, nghiệm thu PCCC và bàn giao căn hộ cho cư dân", done: false },
+      ],
+      siteImages: [],
+    },
+    legalInfo: {
+      items: [
+        { title: "Quyết định chủ trương đầu tư", desc: "Dự án nằm trong quy hoạch phát triển nhà ở xã hội được UBND tỉnh Đồng Nai chấp thuận chủ trương đầu tư." },
+        { title: "Quy hoạch chi tiết 1/500", desc: "Được phê duyệt quy hoạch chi tiết 1/500 trong tổng thể Khu đô thị Bàu Xéo, TT. Trảng Bom." },
+        { title: "Pháp lý đất đai minh bạch", desc: "Đất sạch 100%, quy hoạch đất ở đô thị, đảm bảo điều kiện cấp sổ hồng sở hữu lâu dài cho cư dân." },
+        { title: "Chính sách tín dụng NOXH", desc: "Hỗ trợ gói vay tín dụng ưu đãi 5,4%/năm theo Nghị định 100/2024/NĐ-CP của Chính phủ." },
+      ],
+    },
+    singaporeFactors: {
+      factors: [
+        { num: "01", title: "Vị trí KĐT Bàu Xéo sầm uất", desc: "Nằm trong KĐT Bàu Xéo, Quốc Lộ 1A, đối diện KCN Bàu Xéo quy mô lớn, kết nối giao thông hoàn hảo." },
+        { num: "02", title: "Chuẩn xanh EDGE quốc tế", desc: "Tiết kiệm 20% điện năng, 20% nước sạch và giảm 20% khí thải carbon, tối ưu chi phí vận hành." },
+        { num: "03", title: "Thiết kế thông minh Surbana Jurong", desc: "100% căn hộ đón ánh sáng tự nhiên và gió trời thông thoáng, không gian vuông vức tối ưu công năng." },
+        { num: "04", title: "Hệ tiện ích hoàn chỉnh", desc: "Hồ bơi, công viên cảnh quan, khu thể thao ngoài trời, sân chơi trẻ em, shophouse thương mại tầng trệt." },
+        { num: "05", title: "Cộng đồng văn minh, an toàn", desc: "An ninh camera AI 24/7, ban quản trị chuyên nghiệp theo tiêu chuẩn Singapore." },
+        { num: "06", title: "Bàn giao hoàn thiện nội thất", desc: "Bàn giao hoàn thiện nội thất cơ bản cao cấp, giúp gia đình trẻ dọn vào ở ngay mà không lo phát sinh chi phí." },
+        { num: "07", title: "Chủ đầu tư Kim Oanh Land uy tín", desc: "Top 10 nhà phát triển NOXH hàng đầu Việt Nam, cam kết chất lượng xây dựng và tiến độ." },
+        { num: "08", title: "Giải pháp tài chính vượt trội", desc: "Giá chỉ từ 750 triệu/căn, vay vốn 75% với lãi suất 5,4%/năm trong 25 năm, trả góp từ 3,5 triệu/tháng." },
+      ],
+    },
+    edgeCert: {
+      savings: [
+        { label: "Giảm điện năng tiêu thụ", pct: "≥ 20%" },
+        { label: "Giảm lượng nước sử dụng", pct: "≥ 20%" },
+        { label: "Giảm khí phát thải carbon", pct: "≥ 20%" },
+      ],
+      desc: "K-Home SkyView Bàu Xéo mang phong cách sống xanh chuẩn Singapore, kết hợp công nghệ xây dựng hiện đại và chứng chỉ công trình xanh quốc tế EDGE, đem lại môi trường sống trong lành và bền vững.",
+    },
+    buyVsRent: {
+      tableRows: [
+        { label: "Chi phí hàng tháng", buy: "Trả góp ~3,5 triệu/tháng", rent: "Thuê trọ 3–5 triệu/tháng" },
+        { label: "Sau 25 năm", buy: "Sở hữu vĩnh viễn căn hộ 1,5–3 tỷ", rent: "Mất trắng hơn 1,5 tỷ tiền thuê" },
+        { label: "Chất lượng sống", buy: "Căn hộ chuẩn Singapore, hồ bơi, an ninh 24/7", rent: "Nhà trọ chật chội, an ninh kém" },
+        { label: "Tích lũy tài sản", buy: "BĐS gia tăng giá trị theo thời gian", rent: "Không tích lũy được gì" },
+        { label: "Lãi suất", buy: "5,4%/năm – ưu đãi nhà nước", rent: "Không áp dụng" },
+      ],
+      conclusion: "Với mức trả góp chỉ tương đương tiền thuê trọ hàng tháng tại Trảng Bom, mua K-Home SkyView là bước ngoặt tài chính giúp công nhân và gia đình trẻ sở hữu tổ ấm riêng vững chắc.",
+    },
+    awards: {
+      items: [
+        { title: "PropertyGuru Vietnam Property Awards", org: "Best Affordable Housing Development 2025 – Kim Oanh Land", year: "2025" },
+        { title: "Top 10 Nhà phát triển NOXH hàng đầu Việt Nam", org: "Bộ Xây dựng & Hiệp hội Bất động sản Việt Nam", year: "2024" },
+        { title: "Giải thưởng Kiến trúc xanh bền vững", org: "Hội Kiến trúc sư Việt Nam công nhận", year: "2024" },
+      ],
+    },
+    partners: {
+      items: [
+        { name: "Surbana Jurong (Singapore)", role: "Tư vấn quy hoạch & thiết kế kiến trúc" },
+        { name: "Global Vireon Studio", role: "Tư vấn thiết kế kiến trúc tổng thể" },
+        { name: "Kiến Trúc Việt", role: "Tư vấn thiết kế nội thất & cảnh quan" },
+        { name: "Decofi", role: "Tư vấn & thi công nội thất" },
+        { name: "K-City Property", role: "Quản lý & vận hành tòa nhà" },
+      ],
+    },
+  },
 };
 
 interface ProjectDetailViewProps {
@@ -681,6 +797,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             ? ["K-Home Midtown", "K Home Midtown", "K Home Mid Town", "K-Home Mid Town", "KHome Midtown", "K Home Midtown Trảng Bom", "NOXH K-Home Midtown Trảng Bom"]
             : activeProject.slug === "k-home-avenue-nhon-trach"
             ? ["K-Home Avenue", "K Home Avenue", "KHome Avenue", "K Home Avenue Nhơn Trạch", "NOXH K-Home Avenue Nhơn Trạch", "K-Home Avenue Đồng Nai"]
+            : activeProject.slug === "k-home-skyview-trang-bom"
+            ? ["K-Home SkyView", "K Home SkyView", "K Home Sky View", "K-Home Sky View", "KHome SkyView", "K-Home SkyView Bàu Xéo", "NOXH Bàu Xéo Trảng Bom"]
             : undefined,
           "description": activeProject.description,
           "url": `https://k-homedongnai.com.vn/${activeProject.slug}`,
@@ -923,6 +1041,24 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "tinh-tra-gop", label: "Trả Góp" },
     { id: "lien-he", label: "Liên Hệ" },
     { id: "faq", label: "FAQ" },
+  ] : slug === "k-home-skyview-trang-bom" ? [
+    { id: "tong-quan", label: "Tổng Quan" },
+    { id: "mat-bang", label: "Mặt Bằng" },
+    { id: "tien-ich", label: "Tiện Ích" },
+    { id: "nha-mau", label: "Nhà Mẫu" },
+    { id: "tien-do-trien-khai", label: "Tiến Độ" },
+    { id: "phap-ly", label: "Pháp Lý" },
+    { id: "yeu-to-singapore", label: "Tiềm Năng" },
+    { id: "chung-chi-edge", label: "EDGE" },
+    { id: "mua-vs-thue", label: "Mua vs Thuê" },
+    { id: "giai-thuong", label: "Giải Thưởng" },
+    { id: "doi-tac", label: "Đối Tác" },
+    { id: "chu-dau-tu", label: "Chủ Đầu Tư" },
+    { id: "dieu-kien-mua", label: "Điều Kiện" },
+    { id: "chinh-sach-thanh-toan", label: "Thanh Toán" },
+    { id: "tinh-tra-gop", label: "Trả Góp" },
+    { id: "lien-he", label: "Liên Hệ" },
+    { id: "faq", label: "FAQ" },
   ] : [];
 
   const scrollToSection = (id: string) => {
@@ -945,13 +1081,15 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
 
   // Track active section on scroll - SIMPLE: section whose top is closest to viewport top wins
   useEffect(() => {
-    if (!["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug)) return;
+    if (!["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"].includes(slug)) return;
     
     const sectionIds = slug === "k-home-cityview-ho-nai" 
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "tiem-nang", "tien-do-trien-khai", "video-tien-do", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : slug === "k-home-midtown-trang-bom"
       ? ["tong-quan", "mat-bang", "nha-mau", "tien-do-trien-khai", "tien-ich", "tiem-nang", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "midtown-highlights", "midtown-edge", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
-      : ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "avenue-highlights", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"];
+      : slug === "k-home-avenue-nhon-trach"
+      ? ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "avenue-highlights", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      : ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"];
     
     const trackSection = () => {
       // Skip if scroll lock is active (user just clicked a dot)
@@ -2237,6 +2375,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               ? "K-Home Midtown có 1 block cao 15 tầng, 2 tháp A và B. Tầng 1 tập trung toàn bộ tiện ích nội khu, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn, tầng 4–15 là mặt bằng căn hộ điển hình với Studio, 1PN+, và 2PN."
               : slug === "k-home-avenue-nhon-trach"
               ? "K-Home Avenue có 4 block cao 12 tầng. Tầng 1 tập trung tiện ích nội khu đầy đủ, tầng 2–3 bổ sung tiện ích, tầng 4–12 là mặt bằng căn hộ điển hình với Studio, 1PN+, 2PN-A và 2PN-B."
+              : slug === "k-home-skyview-trang-bom"
+              ? "K-Home SkyView Bàu Xéo gồm các block cao từ 9 đến 12 tầng. Khối đế shophouse thương mại và tiện ích, các tầng trên là mặt bằng căn hộ tối ưu với Studio (37m²), 1PN+ (45,8m²) và 2PN (65,3m²)."
               : "K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích \"all-in-one\" chuẩn Singapore, tầng 3 có vườn treo độc đáo, tầng 4–22 là mặt bằng căn hộ điển hình với 4 loại căn: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2 phòng ngủ (70,4m²) và 3 phòng ngủ (84,4m²). Khuôn viên được chia rõ ràng: khu căn hộ trung tâm, khu tiện ích công cộng (hồ bơi, công viên, sân thể thao, khu vui chơi trẻ em) xen kẽ giữa các tòa, tầng trệt thương mại – shophouse phục vụ mua sắm và dịch vụ hàng ngày."
             }
           </p>
@@ -2293,6 +2433,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               ? "Hệ thống tiện ích K-Home Midtown được quy hoạch trên quỹ đất 13,97 ha, đáp ứng nhu cầu sinh hoạt hàng ngày của cư dân ngay trong khuôn viên dự án."
               : slug === "k-home-avenue-nhon-trach"
               ? "Hệ tiện ích đa lớp K-Home Avenue – từ hồ bơi, sân chơi, minimart, BBQ bên trong đến TTTM, bệnh viện, trường liên cấp, sân bay Long Thành ngay bên ngoài."
+              : slug === "k-home-skyview-trang-bom"
+              ? "Hệ tiện ích hoàn chỉnh K-Home SkyView Bàu Xéo – hồ bơi người lớn & trẻ em, sân chơi thiếu nhi, công viên dạo bộ, khu thể thao và shophouse thương mại ngay tầng trệt."
               : "Được xây dựng theo mô hình đô thị khép kín chuẩn Singapore, K-Home CityView tích hợp hệ tiện ích đa tầng ngay tại khối đế và tầng trệt. Tầng trệt bố trí khoa học với hồ bơi người lớn – trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu thể dục – BBQ, vườn cộng đồng xen kẽ mảng xanh. Khối đế thương mại tích hợp shophouse, café, minimart, dịch vụ thiết yếu ngay dưới chân nhà. Tầng 3 có vườn treo độc đáo. Đặc biệt, trong khuôn viên còn có trường học nội khu phục vụ con em cư dân, trạm sạc ô tô và xe máy điện, nhà sinh hoạt cộng đồng đa năng – tất cả kết nối trong một tổng thể khép kín, giúp cư dân tiết kiệm thời gian di chuyển và tận hưởng cuộc sống xanh ngay tại nhà."
             }
           </p>
@@ -2335,13 +2477,15 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {seo?.sampleUnitImages && seo.sampleUnitImages.length > 0 && (
         <section id="nha-mau" className="space-y-5">
           <h2 className="text-2xl font-display font-bold text-slate-800">
-            Nhà Mẫu Căn Hộ {slug === "k-home-midtown-trang-bom" ? "K-Home Midtown" : slug === "k-home-avenue-nhon-trach" ? "K-Home Avenue" : "K-Home CityView"}
+            Nhà Mẫu Căn Hộ {slug === "k-home-midtown-trang-bom" ? "K-Home Midtown" : slug === "k-home-avenue-nhon-trach" ? "K-Home Avenue" : slug === "k-home-skyview-trang-bom" ? "K-Home SkyView" : "K-Home CityView"}
           </h2>
           <p className="text-slate-500 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
               ? "Căn hộ K-Home Midtown bàn giao hoàn thiện full nội thất theo tiêu chuẩn dự án, bao gồm tủ bếp, sofa, bàn ăn, giường, tủ quần áo, chăn ga gối — chỉ trừ các thiết bị điện tử."
               : slug === "k-home-avenue-nhon-trach"
               ? "Căn hộ K-Home Avenue bàn giao hoàn thiện nội thất cơ bản theo tiêu chuẩn dự án, bao gồm tủ bếp, sofa, giường, tủ quần áo, sàn gỗ — chỉ trừ các thiết bị điện tử."
+              : slug === "k-home-skyview-trang-bom"
+              ? "Căn hộ K-Home SkyView Bàu Xéo bàn giao hoàn thiện nội thất cơ bản theo tiêu chuẩn Singapore: trần thạch cao, tủ bếp, thiết bị vệ sinh, sàn gỗ — chỉ trừ các thiết bị điện tử."
               : "Khi nhận bàn giao căn hộ K-Home CityView, cư dân sẽ có đầy đủ nội thất thiết yếu sẵn sàng để ở ngay: sofa, bàn trà, kệ tivi, bàn ăn – ghế ăn, giường, chăn – ga – gối – nệm, tủ quần áo, bàn học/trang điểm, vách kính WC, bồn cầu, lavabo, gương phòng tắm, trần thạch cao, đèn điện cơ bản, hệ thống ống ruột gà máy lạnh, quạt hút mùi. Chỉ trừ các thiết bị điện tử – cư dân chỉ cần mang theo đồ dùng cá nhân là có thể dọn vào ở ngay."
             }
           </p>
@@ -2650,6 +2794,74 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
             </div>
           )}
+
+          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home SkyView */}
+          {slug === "k-home-skyview-trang-bom" && (
+            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo</h3>
+                    <p className="text-xs text-slate-500">Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai (Liền kề KCN Bàu Xéo & Ga Trảng Bom)</p>
+                  </div>
+                </div>
+                <a href="https://maps.google.com/?q=Khu+do+thi+Bau+Xeo+Trang+Bom+Dong+Nai" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+                  <MapPin className="w-3.5 h-3.5" /> Xem Bản Đồ Bàu Xéo →
+                </a>
+              </div>
+
+              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom SkyView */}
+              <div className="bg-indigo-50/70 border border-indigo-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong>Nhà ở xã hội Trảng Bom (K-Home SkyView Bàu Xéo)</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> tọa lạc đắc địa ngay trong Khu đô thị Bàu Xéo hiện hữu, mặt tiền Quốc Lộ 1A. Dự án mang đến không gian an cư chuẩn Singapore cho kỹ sư, chuyên gia và công nhân viên làm việc tại <strong>KCN Bàu Xéo, KCN Sông Mây, KCN Giang Điền</strong> với mức giá chỉ từ 750 triệu/căn, vay vốn 5,4%/năm.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
+                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Trảng Bom giá rẻ</span>
+                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 K-Home SkyView Bàu Xéo</span>
+                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH KCN Bàu Xéo</span>
+                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Vay NOXH 5,4%/năm Trảng Bom</span>
+                </div>
+              </div>
+
+              <div className="w-full h-80 rounded-2xl overflow-hidden border border-indigo-200 relative shadow-md">
+                <iframe
+                  title="Nhà ở xã hội Trảng Bom K-Home SkyView Bàu Xéo Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
+                  <span className="block text-slate-800 font-bold text-base">2 Phút (500m)</span>
+                  <span className="block text-[11px] text-slate-500">Đối diện KCN</span>
+                </div>
+                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">Ga Trảng Bom & QL1A</span>
+                  <span className="block text-slate-800 font-bold text-base">3 Phút (1km)</span>
+                  <span className="block text-[11px] text-slate-500">Trục giao thông chính</span>
+                </div>
+                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa</span>
+                  <span className="block text-slate-800 font-bold text-base">15 Phút (12km)</span>
+                  <span className="block text-[11px] text-slate-500">Dọc Quốc Lộ 1A</span>
+                </div>
+                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">TP. Hồ Chí Minh</span>
+                  <span className="block text-slate-800 font-bold text-base">35 Phút</span>
+                  <span className="block text-[11px] text-slate-500">Cao tốc Dầu Giây - TP.HCM</span>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -2667,6 +2879,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   ? "Cập nhật tiến độ xây dựng K-Home CityView Hố Nai – dự kiến bàn giao tháng 1/2028"
                   : slug === "k-home-midtown-trang-bom"
                   ? "Cập nhật tiến độ xây dựng K-Home Midtown Trảng Bom"
+                  : slug === "k-home-skyview-trang-bom"
+                  ? "Kế hoạch triển khai dự án K-Home SkyView Bàu Xéo Trảng Bom – dự kiến khởi công Q1/2027"
                   : "Cập nhật tiến độ xây dựng K-Home Avenue Nhơn Trạch"}
               </p>
             </div>
@@ -3813,6 +4027,120 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
 
               {/* Thẻ Chuyên Viên Tư Vấn Chính Thức (Tối ưu E-E-A-T Uy Tín) */}
+              <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-md">
+                    KO
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                      Chuyên Viên Tư Vấn Kim Oanh Land Chính Thức <BadgeCheck className="w-4 h-4 text-blue-600 inline" />
+                    </h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Hỗ trợ kiểm tra điều kiện mua NOXH & hướng dẫn làm hồ sơ xét duyệt miễn phí 100%</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a href="tel:0937587438" className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5" /> Hotline: 0937 587 438
+                  </a>
+                  <a href="https://zalo.me/0937587438" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors">
+                    Chat Zalo
+                  </a>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── BẢNG GIÁ & TẢI TÀI LIỆU CHO K-HOME SKYVIEW TRẢNG BOM ── */}
+          {slug === "k-home-skyview-trang-bom" && (
+            <section id="bang-gia-chi-tiet" className="space-y-5">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0 text-white">
+                    <Building className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-display font-bold text-slate-800">Bảng Giá Chi Tiết Các Loại Căn Hộ K-Home SkyView Trảng Bom</h2>
+                    <p className="text-xs text-slate-500 mt-0.5">Áp dụng gói vay nhà ở xã hội lãi suất ưu đãi 5,4%/năm – Thời hạn vay 25 năm</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    const el = document.getElementById("lien-he");
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1.5"
+                >
+                  <Send className="w-3.5 h-3.5" /> Nhận Báo Giá Căn Đẹp
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Căn Studio */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">Căn Studio</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 37,0 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~750 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~187 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~2,5 - 3,5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Phù hợp chuyên gia KCN Bàu Xéo, người độc thân</p>
+                </div>
+
+                {/* Căn 1PN+ */}
+                <div className="bg-white rounded-2xl border border-amber-200 p-5 space-y-3 relative hover:shadow-md transition-shadow">
+                  <span className="inline-block bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-md">1 Phòng Ngủ +</span>
+                  <h3 className="text-lg font-bold text-slate-800">Diện tích 45,8 m²</h3>
+                  <div className="border-t border-slate-100 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Giá tham khảo:</span>
+                      <span className="font-bold text-amber-600 text-sm">~990 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả trước (25%):</span>
+                      <span className="font-bold text-slate-800">~247 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-slate-500">Trả góp tháng:</span>
+                      <span className="font-bold text-emerald-600">~3,5 - 5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400">Vợ chồng trẻ, thiết kế thông minh đa năng</p>
+                </div>
+
+                {/* Căn 2PN */}
+                <div className="bg-amber-500 text-white rounded-2xl border border-amber-600 p-5 space-y-3 relative shadow-md">
+                  <span className="inline-block bg-white text-amber-700 text-[11px] font-bold px-2.5 py-1 rounded-md">2 Phòng Ngủ (Bán Chạy)</span>
+                  <h3 className="text-lg font-bold text-white">Diện tích 65,3 m²</h3>
+                  <div className="border-t border-amber-400/40 pt-3 space-y-1.5">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Giá tham khảo:</span>
+                      <span className="font-bold text-white text-sm">~1,35 - 1,45 Tỷ</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả trước (25%):</span>
+                      <span className="font-bold text-white">~337 Triệu</span>
+                    </div>
+                    <div className="flex justify-between text-xs">
+                      <span className="text-amber-100">Trả góp tháng:</span>
+                      <span className="font-bold text-amber-200">~5,5 - 7,5 Triệu/tháng</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-amber-100">Phù hợp gia đình 3-4 người, 2 phòng ngủ thông thoáng</p>
+                </div>
+              </div>
+
+              {/* Banner tư vấn chính thức SkyView */}
               <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-lg shrink-0 shadow-md">

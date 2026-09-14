@@ -17,6 +17,11 @@ const HERO_IMAGES = [
     label: "K-Home Avenue",
     location: "Nhơn Trạch, Đồng Nai",
   },
+  {
+    src: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-skyview/noxh-skyview02.jpg",
+    label: "K-Home SkyView",
+    location: "Bàu Xéo, Trảng Bom, Đồng Nai",
+  },
 ];
 
 const PROJECTS = [
@@ -44,6 +49,14 @@ const PROJECTS = [
     status: "Đã công bố",
     statusColor: "text-sky-600 bg-sky-50",
   },
+  {
+    name: "K-Home SkyView",
+    location: "Bàu Xéo, Trảng Bom",
+    slug: "k-home-skyview-trang-bom",
+    units: "358 căn hộ NOXH",
+    status: "Sắp mở bán",
+    statusColor: "text-indigo-600 bg-indigo-50",
+  },
 ];
 
 const COMMITMENTS = [
@@ -67,7 +80,7 @@ export default function AboutView() {
     document.title = "Giới Thiệu K-Home Đồng Nai | Kim Oanh Land – NOXH Đồng Nai";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Tìm hiểu về Kim Oanh Group và thương hiệu K-Home – đơn vị phát triển các dự án nhà ở xã hội tại Đồng Nai: CityView (Biên Hòa), Midtown (Trảng Bom), Avenue (Nhơn Trạch). Pháp lý rõ ràng, lãi suất ưu đãi 5,4%/năm.");
+      metaDesc.setAttribute("content", "Tìm hiểu về Kim Oanh Group và thương hiệu K-Home – đơn vị phát triển các dự án nhà ở xã hội tại Đồng Nai: CityView (Biên Hòa), Midtown (Trảng Bom), Avenue (Nhơn Trạch), SkyView (Bàu Xéo). Pháp lý rõ ràng, lãi suất ưu đãi 5,4%/năm.");
     }
 
     const existingSchema = document.getElementById("schema-about-org");
@@ -109,11 +122,11 @@ export default function AboutView() {
           </p>
           <div className="grid grid-cols-2 gap-4 pt-2">
             <div className="bg-amber-50 rounded-2xl p-4 text-center border border-amber-100">
-              <span className="text-2xl font-bold text-amber-600 block">3</span>
+              <span className="text-2xl font-bold text-amber-600 block">4</span>
               <span className="text-xs text-slate-500 block mt-0.5">Dự án NOXH tại Đồng Nai</span>
             </div>
             <div className="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100">
-              <span className="text-2xl font-bold text-slate-800 block">~2.900</span>
+              <span className="text-2xl font-bold text-slate-800 block">~3.300</span>
               <span className="text-xs text-slate-500 block mt-0.5">Căn hộ NOXH đang triển khai</span>
             </div>
           </div>

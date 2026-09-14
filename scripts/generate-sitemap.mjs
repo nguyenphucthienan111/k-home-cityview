@@ -53,6 +53,12 @@ const PAGE_IMAGES = {
     { loc: "/k-home avenue/Pc07-Tien-ich-be-boi_2-min.jpg.webp",     title: "Hồ bơi tiện ích K-Home Avenue Nhơn Trạch Kim Oanh" },
     { loc: "/k-home avenue/Pc05-Tien-ich-khu-vui-choi_2-min.jpg.webp", title: "Khu vui chơi trẻ em K-Home Avenue Nhơn Trạch" },
   ],
+  "/k-home-skyview-trang-bom": [
+    { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373118/k-home-skyview/noxh-skyview.jpg", title: "Phối cảnh dự án Nhà Ở Xã Hội K-Home SkyView Bàu Xéo Trảng Bom" },
+    { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373119/k-home-skyview/noxh-skyview01.jpg", title: "Thiết kế căn hộ K-Home SkyView Trảng Bom Kim Oanh" },
+    { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373120/k-home-skyview/noxh-skyview02.jpg", title: "Mặt bằng căn hộ K-Home SkyView Bàu Xéo" },
+    { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373121/k-home-skyview/noxh-skyview03.png", title: "Không gian sống tiện ích K-Home SkyView Trảng Bom" },
+  ],
   "/": [
     { loc: "/hero-background.jpg", title: "K-Home Đồng Nai – Nhà Ở Xã Hội Kim Oanh Land Biên Hòa" },
   ],
@@ -66,6 +72,7 @@ const STATIC_URLS = [
   { loc: "/k-home-cityview-ho-nai",   priority: "1.0",  changefreq: "weekly",  lastmod: TODAY }, // ⭐ SAME AS HOMEPAGE — Featured Project
   { loc: "/k-home-midtown-trang-bom", priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-avenue-nhon-trach", priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
+  { loc: "/k-home-skyview-trang-bom",  priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/tin-tuc",                  priority: "0.7",  changefreq: "weekly",  lastmod: TODAY },
   { loc: "/gioi-thieu",               priority: "0.6",  changefreq: "monthly", lastmod: TODAY },
   { loc: "/lien-he",                  priority: "0.6",  changefreq: "monthly", lastmod: TODAY },
@@ -78,6 +85,8 @@ const UNIT_URLS = [
     .map(u => ({ loc: `/k-home-midtown-trang-bom/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
   ...["can-ho-studio","can-ho-1-phong-ngu","can-ho-2-phong-ngu","can-ho-2-phong-ngu-b-avenue"]
     .map(u => ({ loc: `/k-home-avenue-nhon-trach/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
+  ...["can-ho-studio","can-ho-1-phong-ngu","can-ho-2-phong-ngu"]
+    .map(u => ({ loc: `/k-home-skyview-trang-bom/${u}`, priority: "0.75", changefreq: "weekly", lastmod: TODAY })),
 ];
 
 // ─── Tin tức — tự động parse từ api/news.ts ───────────────────────────────────

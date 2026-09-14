@@ -26,6 +26,7 @@ const PROJECT_COLORS: Record<string, string> = {
   "k-home-cityview-ho-nai":   "#7c3aed",
   "k-home-midtown-trang-bom": "#0891b2",
   "k-home-avenue-nhon-trach": "#b45309",
+  "k-home-skyview-trang-bom":  "#4f46e5",
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -63,10 +64,10 @@ export default function ProjectsView({ onNavigate, initialProject = "all", initi
   const [openFilter, setOpenFilter]             = useState<"project" | "sort" | null>(null);
 
   useEffect(() => {
-    document.title = "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh";
+    document.title = "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 4 Dự Án NOXH Kim Oanh";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Xem chi tiết từng loại căn hộ của 3 dự án K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Bảng giá, diện tích và hình ảnh thực tế từng loại căn.");
+      metaDesc.setAttribute("content", "Xem chi tiết từng loại căn hộ của 4 dự án K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch, SkyView Trảng Bom. Bảng giá, diện tích và hình ảnh thực tế từng loại căn.");
     }
 
     // Stale-while-revalidate: hiện cache ngay, fetch mới ngầm

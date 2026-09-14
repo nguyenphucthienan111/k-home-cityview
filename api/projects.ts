@@ -3,14 +3,15 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 // AUTO-GENERATED — run: node scripts/generate-api-functions.mjs
 // Data inlined from server.ts — no external imports needed
 const DATA = [
-{
+
+  {
     id: "1", slug: "k-home-cityview-ho-nai", title: "K-Home CityView Biên Hòa",
     location: "Đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, Đồng Nai",
     type: "Căn hộ nhà ở xã hội", price: "Từ 950 Triệu", priceNumber: 0.95, area: "47,3m² - 84,4m²",
-    image: "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
     description: "K-Home CityView Hố Nai – nhà ở xã hội chuẩn Singapore tại đường Điểu Xiển, Biên Hòa. 1.328 căn NOXH + 39 shophouse, diện tích 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao nội thất 2028, hỗ trợ hồ sơ miễn phí.",
-    longDescription: "**Tổng quan dự án K-Home CityView Hố Nai**\n\n**K-Home CityView** là dự án nhà ở xã hội (NOXH) chuẩn Singapore do **Kim Oanh Land** – thành viên Tập đoàn Kim Oanh Group – phát triển, tọa lạc tại mặt tiền **đường Điểu Xiển**, phường Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai. Dự án được quy hoạch trên quỹ đất rộng **2,85 ha** với **4 tòa tháp cao 22 tầng**, cung cấp khoảng **1.328 căn hộ nhà ở xã hội** cùng hệ thống **39 căn shophouse** khối đế.\n\nVị trí đắc địa tại trung tâm TP. Biên Hòa – chỉ 5 phút đến Lotte Mart và TTHC Biên Hòa, 10 phút đến GO! Tân Hiệp, 20 phút đến AEON Mall và 30 phút đến Sân bay Quốc tế Long Thành – giúp K-Home CityView trở thành lựa chọn an cư lý tưởng cho người lao động và gia đình trẻ tại Đồng Nai. Đặc biệt, Đồng Nai đang trong quá trình phát triển thành Thành phố trực thuộc Trung ương với Sân bay Quốc tế Long Thành hàng đầu thế giới đang được khẩn trương xây dựng.\n\n**Thiết kế Singapore & Đối tác chiến lược**\n\nDự án được thiết kế và quy hoạch bởi **Tập đoàn Surbana Jurong (Singapore)** – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á với hơn 70 năm kinh nghiệm. Các đối tác uy tín như **Global Vireon Studio**, **Kiến Trúc Việt**, **CDC Jsc** và **K-City** cùng đồng hành trong thiết kế nội thất, giám sát thi công và vận hành tòa nhà. Toàn bộ dự án phát triển theo tiêu chuẩn **công trình xanh EDGE** (IFC/World Bank), tiết kiệm tối thiểu 20% điện năng, 20% nước và giảm 20% khí thải carbon so với công trình thông thường.\n\n**8 lý do K-Home CityView thu hút người mua**\n\nDự án nổi bật với 8 điểm mạnh: (1) vị trí trung tâm đô thị Biên Hòa, liền kề KCN Amata, Long Bình, Biên Hòa 2; (2) hệ tiện ích nội khu phong phú gồm hồ bơi, sân chơi, khu thể dục, vườn treo, BBQ; (3) đa dạng tiện ích ngoại khu trong bán kính 5km; (4) tiêu chuẩn xanh EDGE giúp cư dân giảm chi phí sinh hoạt; (5) tầm view rộng thoáng từ tầng cao; (6) thiết kế thông minh tối ưu từng m², 100% căn hộ đón sáng tự nhiên; (7) bàn giao hoàn thiện nội thất thiết yếu gồm sofa, bàn ăn, giường, tủ quần áo, bồn cầu, lavabo, gương, trần thạch cao, đèn điện, ống dẫn máy lạnh, quạt hút mùi; (8) quản lý vận hành thông minh BMS, camera AI 24/7, kiểm soát thẻ từ.\n\n**Quy mô & Các loại căn hộ**\n\nK-Home CityView cung cấp 4 loại căn từ 47–84m²: căn 1 phòng ngủ+ A (47,3m², giá từ 950 triệu), căn 1 phòng ngủ+ B (62,4m², từ 1,20 tỷ), căn 2 phòng ngủ (70,4m², từ 1,50 tỷ) và căn 3 phòng ngủ (84,4m², từ 1,80 tỷ). Đây là dự án NOXH đầu tiên tại Đồng Nai có căn hộ 3 phòng ngủ, phù hợp cả gia đình nhiều thế hệ.\n\n**Hệ thống tiện ích nội khu chuẩn Singapore**\n\nTầng trệt bố trí hồ bơi người lớn và trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu BBQ, vườn cộng đồng và không gian sinh hoạt chung xen kẽ mảng xanh. Tầng 3 có vườn treo độc đáo. Khối đế thương mại tích hợp shophouse, café, minimart và dịch vụ thiết yếu ngay dưới chân nhà. Trường học nội khu phục vụ con em cư dân và trạm sạc xe điện hoàn chỉnh hệ sinh thái khép kín.\n\n**Pháp lý minh bạch & Chính sách hỗ trợ**\n\nPháp lý đầy đủ: QĐ chủ trương đầu tư 177/QĐ-UBND (2023), QĐ giao đất 3000/QĐ-UBND (12/2025), Quy hoạch 1/500 phê duyệt, Giấy phép xây dựng và Thư ngỏ Ngân hàng Chính sách Xã hội. Người đủ điều kiện NOXH được vay tối đa 75% với lãi suất **5,4%/năm** trong 25 năm, trả góp chỉ từ 3,5–4,5 triệu/tháng. Sổ hồng sở hữu lâu dài. Hỗ trợ hồ sơ hoàn toàn miễn phí.\n\n**Tại sao mua K-Home CityView thay vì tiếp tục thuê trọ?**\n\nNhiều công nhân và người lao động tại Đồng Nai đang phải chi 5–7 triệu/tháng tiền thuê phòng trọ hoặc căn hộ mini, nhưng sau 10–15 năm vẫn không sở hữu được gì. Với K-Home CityView, mức trả góp NOXH chỉ từ 3,5–4,5 triệu/tháng – tương đương hoặc thấp hơn tiền thuê hiện tại – nhưng mỗi tháng trả là một bước tiến đến sở hữu tài sản thực sự. Sau 25 năm, cư dân sở hữu hoàn toàn căn hộ có giá trị 2–4 tỷ, trong khi người thuê mất trắng hơn 2 tỷ tiền thuê mà không tích lũy được gì.\n\n**K-Home CityView so với căn hộ thương mại cùng vị trí**\n\nCác căn hộ thương mại tại trung tâm Biên Hòa hiện dao động 2,5–4 tỷ/căn cho diện tích tương đương, cao hơn K-Home CityView 40–60%. Người mua NOXH được hưởng lãi suất 5,4%/năm từ Ngân hàng Chính sách – thấp hơn 3–4 lần so với lãi suất vay thương mại thông thường (11–13%/năm). Đây là lợi thế tài chính vượt trội mà không có căn hộ thương mại nào có thể cạnh tranh.\n\n**Tiến độ dự án**\n\nKhởi công đầu 2026, dự kiến hoàn thành móng tháng 8–10/2026, cất nóc tháng 6/2027, hoàn thiện nội thất tháng 12/2027 và bàn giao đợt đầu cho cư dân tháng 1/2028.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31336.366419319656!2d106.85764146213!3d10.959912858798274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1786073499860!5m2!1sen!2s",
+    longDescription: "**Tổng quan dự án K-Home CityView Hố Nai**\n\n**K-Home CityView** là dự án nhà ở xã hội (NOXH) chuẩn Singapore do **Kim Oanh Land** – thành viên Tập đoàn Kim Oanh Group – phát triển, tọa lạc tại mặt tiền **đường Điểu Xiển**, phường Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai. Quy hoạch trên quỹ đất **2,85 ha** với **4 tòa tháp cao 22 tầng**, cung cấp **1.328 căn hộ NOXH** và **39 căn shophouse** khối đế.\n\nVị trí đắc địa tại trung tâm TP. Biên Hòa – 5 phút đến Lotte Mart, TTHC Biên Hòa, 10 phút đến GO! Tân Hiệp, 20 phút đến AEON Mall, 30 phút đến Sân bay Quốc tế Long Thành. Đồng Nai đang trên lộ trình trở thành Thành phố trực thuộc Trung ương với Sân bay Quốc tế Long Thành đang được khẩn trương xây dựng.\n\n**Thiết kế Singapore & Đối tác chiến lược**\n\nDự án được thiết kế và quy hoạch bởi **Tập đoàn Surbana Jurong (Singapore)** – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á hơn 70 năm kinh nghiệm. Các đối tác **Global Vireon Studio**, **Kiến Trúc Việt**, **CDC Jsc** và **K-City** cùng đồng hành trong thiết kế, thi công và vận hành. Dự án phát triển theo tiêu chuẩn **công trình xanh EDGE** (IFC/World Bank), tiết kiệm ≥20% điện năng, ≥20% nước và giảm ≥20% khí thải carbon.\n\n**8 lý do K-Home CityView thu hút người mua**\n\n(1) Vị trí trung tâm đô thị Biên Hòa, liền kề KCN Amata, Long Bình, Biên Hòa 2; (2) hệ tiện ích nội khu đầy đủ: hồ bơi, sân chơi, thể dục, vườn treo, BBQ; (3) tiện ích ngoại khu phong phú trong bán kính 5km; (4) tiêu chuẩn xanh EDGE giảm chi phí sinh hoạt; (5) tầm view rộng thoáng; (6) 100% căn hộ đón sáng và thông gió tự nhiên; (7) bàn giao full nội thất (sofa, bàn ăn, giường, tủ, bồn cầu, lavabo, gương, trần thạch cao, đèn điện, ống máy lạnh, quạt hút mùi); (8) quản lý BMS, camera AI 24/7.\n\n**Quy mô sản phẩm**\n\nBốn loại căn từ 47–84m²: 1PN+A (47,3m², từ 950 triệu), 1PN+B (62,4m², từ 1,20 tỷ), 2PN (70,4m², từ 1,50 tỷ), 3PN (84,4m², từ 1,80 tỷ). Đây là NOXH đầu tiên tại Đồng Nai có căn 3 phòng ngủ.\n\n**Hệ thống tiện ích nội khu**\n\nTầng trệt: hồ bơi trung tâm, sân chơi thiếu nhi, khu BBQ, vườn cộng đồng. Tầng 3: vườn treo độc đáo. Khối đế: shophouse, café, minimart, dịch vụ thiết yếu. Trong khuôn viên còn có trường học nội khu và trạm sạc xe điện.\n\n**Pháp lý minh bạch & Chính sách vay**\n\nQĐ chủ trương đầu tư 177/QĐ-UBND (2023), QĐ giao đất 3000/QĐ-UBND (12/2025), Quy hoạch 1/500 phê duyệt, Giấy phép xây dựng. Người đủ điều kiện NOXH được vay tối đa 75% với lãi suất **5,4%/năm** trong 25 năm, trả góp từ 3,5–4,5 triệu/tháng. Sổ hồng lâu dài. Hỗ trợ hồ sơ miễn phí.\n\n**Tại sao mua thay vì thuê trọ?**\n\nHiện nhiều công nhân tại Đồng Nai chi 5–7 triệu/tháng tiền thuê nhưng không tích lũy được gì. Với K-Home CityView, trả góp chỉ 3,5–4,5 triệu/tháng – bằng hoặc thấp hơn tiền thuê – nhưng sau 25 năm sở hữu tài sản trị giá 2–4 tỷ. Người thuê cùng giai đoạn mất trắng hơn 2 tỷ.\n\n**K-Home CityView so với căn hộ thương mại**\n\nCăn hộ thương mại cùng vị trí tại Biên Hòa dao động 2,5–4 tỷ/căn, cao hơn 40–60%. Lãi suất vay thương mại 11–13%/năm cao gấp 2–3 lần so với ưu đãi NOXH 5,4%/năm. Đây là lợi thế tài chính không nơi nào sánh được.\n\n**Tiến độ dự án**\n\nĐã khởi công. Hoàn thành móng tháng 8–10/2026 → Cất nóc tháng 6/2027 → Hoàn thiện nội thất tháng 12/2027 → Bàn giao đợt đầu tháng 1/2028.",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31336.366419319656!2d106.85764146213!3d10.959912858798274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1786073499860!5m2!1sen!2s", 
     gallery: [
       "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp",
       "/k-home cityview/V02_TAN-HOA_EXT_BBQ-GARDEN_FN_2-1.webp",
@@ -102,7 +103,7 @@ const DATA = [
     id: "2", slug: "k-home-midtown-trang-bom", title: "K-Home Midtown Trảng Bom",
     location: "Giữa 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, P. Trảng Bom, Đồng Nai",
     type: "Căn hộ nhà ở xã hội", price: "Từ 750 Triệu", priceNumber: 0.75, area: "36,1m² - 68,8m²",
-    image: "/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150",
     description: "K-Home Midtown Trảng Bom – dự án nhà ở xã hội quy mô 13,97 ha, 542 căn hộ. Vị trí trung tâm Trảng Bom, giao 4 tuyến đường lớn. Lãi suất ưu đãi 5,4%/năm, hỗ trợ hồ sơ miễn phí.",
     longDescription: "**Tổng quan dự án K-Home Midtown Trảng Bom**\n\n**K-Home Midtown** là dự án nhà ở xã hội (NOXH) do **Kim Oanh Land** phát triển, tọa lạc tại trung tâm thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án được quy hoạch trên quỹ đất rộng **13,97 ha** với **1 block cao 15 tầng**, cung cấp **542 căn hộ nhà ở xã hội** cùng **20 căn shophouse**.\n\nĐây là dự án có quy mô đất lớn nhất trong hệ thống 3 dự án K-Home tại Đồng Nai, hướng đến giải pháp an cư ổn định cho người lao động, công nhân và gia đình trẻ đang làm việc tại các khu công nghiệp trong khu vực.\n\n**Vị trí & Kết nối**\n\nK-Home Midtown sở hữu vị trí thuận lợi tại giao điểm của 4 tuyến đường chính: **đường 30/4**, **đường Hùng Vương**, **đường Lý Nam Đế** và **đường Lê Đại Hành**. Từ dự án, cư dân dễ dàng kết nối đến các khu công nghiệp lớn (Bàu Xéo, Hố Nai…), trung tâm TP. Biên Hòa và TP. Hồ Chí Minh qua cao tốc TP.HCM – Long Thành – Dầu Giây.\n\n**Thiết kế & Đối tác**\n\nDự án được thiết kế theo **tiêu chuẩn Singapore** hiện đại, chú trọng tối ưu công năng, ánh sáng tự nhiên và không gian sống thực tế. Các đơn vị tư vấn đồng hành gồm: **Global Vireon Studio**, **Kiến Trúc Việt**, **NAGECCO** và **K-City**. Dự án hướng đến tiêu chuẩn **công trình xanh EDGE**, hỗ trợ tiết kiệm điện và nước trong quá trình sử dụng.\n\n**Quy mô sản phẩm**\n\nDự án cung cấp đa dạng loại căn hộ: Studio (36,1m²), 1 phòng ngủ+ loại A (47m²), 1 phòng ngủ+ loại B (55,1m²), 2 phòng ngủ (68,8m²) và 20 căn shophouse. Tất cả bàn giao hoàn thiện nội thất theo tiêu chuẩn dự án.\n\n**Hệ thống tiện ích nội khu**\n\nVới quỹ đất rộng 13,97 ha, K-Home Midtown được quy hoạch hệ thống tiện ích đầy đủ phục vụ cư dân: **hồ bơi**, **sân chơi trẻ em**, **khu thể dục ngoài trời**, **Sky Garden & vườn cảnh quan**, **nhà sinh hoạt cộng đồng** và không gian xanh nội khu.\n\n**Pháp lý & Chính sách hỗ trợ**\n\nSổ hồng sở hữu lâu dài theo quy định nhà ở xã hội. Người mua đủ điều kiện được hỗ trợ vay từ **Ngân hàng Chính sách Xã hội** với lãi suất ưu đãi **5,4%/năm** trong 25 năm, trả góp từ khoảng 3,5 – 4,5 triệu/tháng. Đội ngũ Kim Oanh Land hỗ trợ hoàn thiện hồ sơ miễn phí.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384.902626805889!2d107.00522593899112!3d10.956108940275927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e700442d0327%3A0xc12a0db1c85bf214!2sK-Home%20Midtown!5e0!3m2!1sen!2s!4v1784803611439!5m2!1sen!2s",
@@ -119,7 +120,7 @@ const DATA = [
     ],
     amenities: ["Hồ bơi người lớn & trẻ em", "Sân chơi trẻ em", "Khu thể dục ngoài trời", "Sky Garden & vườn cảnh quan", "Shophouse thương mại nội khu", "Hệ thống an ninh 24/7"],
     unitTypes: [
-      { slug: "can-ho-studio",  name: "Căn Studio",  bedrooms: 0, bathrooms: 1, constructionArea: "36,1m²", usableArea: "32,0m²", price: "Từ 750 triệu/căn", priceNumber: 750,  furnished: true,
+      { slug: "can-ho-studio", name: "Căn Studio",  bedrooms: 0, bathrooms: 1, constructionArea: "36,1m²", usableArea: "32,0m²", price: "Từ 750 triệu/căn", priceNumber: 750,  furnished: true,
         description: "**Căn Studio K-Home Midtown** là loại căn compact thông minh với mức giá khởi điểm thấp nhất trong rổ hàng, phù hợp cho người độc thân, công nhân viên chức hoặc cặp đôi trẻ mới kết hôn muốn có chỗ ở riêng tư ngay trung tâm Trảng Bom.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **36,1m²** và diện tích sử dụng **32,0m²** — thiết kế studio mở thông minh, không phân chia vách cứng giữa phòng ngủ và phòng khách giúp không gian trông rộng rãi hơn thực tế. Bố cục bao gồm khu vực sinh hoạt kết hợp ngủ nghỉ, **1 nhà vệ sinh** đầy đủ tiện nghi, bếp nhỏ tiện lợi và ban công nhỏ đón gió.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện theo tiêu chuẩn dự án — toàn bộ nội thất cố định được thiết kế tích hợp tối ưu không gian: giường ngủ âm tường, tủ quần áo built-in, bàn làm việc gấp gọn và bếp compact. Chỉ trừ các thiết bị điện tử.\n\n**Giá bán & Chính sách**\n\nMức giá khởi điểm **750 triệu/căn** — đây là mức giá NOXH thấp nhất trong hệ thống K-Home, người đủ điều kiện được hưởng lãi suất vay ưu đãi NOXH, trả góp chỉ từ khoảng **3,5 triệu/tháng**.",
         images: [
         "/k-home midtown/Can-Studio/k-home-midtown-studio-1.jpg",
@@ -180,7 +181,7 @@ const DATA = [
     id: "3", slug: "k-home-avenue-nhon-trach", title: "K-Home Avenue Nhơn Trạch",
     location: "Đường Nguyễn Ái Quốc (25C), Xã Nhơn Trạch, Tỉnh Đồng Nai",
     type: "Căn hộ nhà ở xã hội", price: "Từ 750 Triệu", priceNumber: 0.75, area: "37,7m² - 69,5m²",
-    image: "/k-home avenue/Pc09-Loi-vao-shophouse_2-min.jpg.webp",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-avenue/Pc09-Loi-vao-shophouse_2-min",
     description: "K-Home Avenue Nhơn Trạch – dự án nhà ở xã hội tại đường 25C, quy mô 5,3 ha, 1.022 căn hộ. Gần sân bay Long Thành, lãi suất ưu đãi 5,4%/năm, hỗ trợ hồ sơ miễn phí.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s",
     gallery: [
@@ -197,7 +198,8 @@ const DATA = [
     ],
     amenities: ["Hồ bơi người lớn & trẻ em", "Sân chơi trẻ em", "Khu thể dục ngoài trời", "Sky Garden & vườn cảnh quan", "82 căn shophouse thương mại", "Hệ thống an ninh 24/7"],
     unitTypes: [
-      { slug: "can-ho-studio",   name: "Căn Studio",    bedrooms: 0, bathrooms: 1, constructionArea: "37,7m²", usableArea: "33,3m²", price: "Từ 750 triệu/căn",       priceNumber: 750,  furnished: true,
+      // ── Avenue: Chuẩn hóa slug naming để match CityView/Midtown ──
+      { slug: "can-ho-studio", name: "Căn Studio",    bedrooms: 0, bathrooms: 1, constructionArea: "37,7m²", usableArea: "33,3m²", price: "Từ 750 triệu/căn",       priceNumber: 750,  furnished: true,
         description: "**Căn Studio K-Home Avenue** là lựa chọn tối ưu cho người độc thân, công nhân kỹ thuật cao và cặp đôi trẻ tại khu vực Nhơn Trạch — nơi đang được đầu tư hạ tầng mạnh mẽ nhờ sân bay Long Thành. Đây là loại căn có mức giá khởi điểm thấp nhất và tỷ lệ đặt cọc cao nhất trong dự án.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **37,7m²** và diện tích sử dụng **33,3m²** — thiết kế studio linh hoạt tối ưu từng cm². Không gian mở thông thoáng với khu sinh hoạt kết hợp ngủ nghỉ, **1 nhà vệ sinh** đầy đủ tiện nghi, bếp mini hiện đại và ban công nhỏ đón gió mát.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** cao cấp theo tiêu chuẩn Singapore của dự án. Nội thất được thiết kế đa năng, tiết kiệm tối đa không gian: giường ngủ tích hợp tủ, bàn làm việc gấp gọn, tủ bếp compact và khu vệ sinh clean-line hiện đại. Chỉ trừ các thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **750 triệu/căn** — mức giá NOXH thấp nhất trong hệ thống K-Home, được hỗ trợ lãi suất vay ưu đãi. Khu vực Nhơn Trạch đang trong giai đoạn tăng trưởng mạnh nhờ hạ tầng sân bay Long Thành, căn studio tại đây có tiềm năng cho thuê rất tốt.",
         images: [
         "/k-home avenue/Can-Studio/layout-can-ho-khome-avenue-studio.jpg",
@@ -213,7 +215,7 @@ const DATA = [
         "/k-home avenue/Can-Studio/dsc01129.webp",
         "/k-home avenue/Can-Studio/dsc01134.webp",
       ]},
-      { slug: "can-ho-1-phong-ngu", name: "Căn 1 Phòng Ngủ +",      bedrooms: 1, bathrooms: 1, constructionArea: "46,6m²", usableArea: "41,6m²", price: "Từ 990 triệu/căn",       priceNumber: 990,  furnished: true,
+      { slug: "can-ho-1-phong-ngu-a", name: "Căn 1 Phòng Ngủ +",      bedrooms: 1, bathrooms: 1, constructionArea: "46,6m²", usableArea: "41,6m²", price: "Từ 990 triệu/căn",       priceNumber: 990,  furnished: true,
         description: "**Căn 1 Phòng Ngủ+ K-Home Avenue** là loại căn phổ biến nhất trong dự án, cân bằng tốt giữa diện tích, công năng và giá cả — phù hợp cho cặp đôi trẻ và gia đình 2–3 người muốn sở hữu tổ ấm đầu tiên tại khu vực cửa ngõ sân bay Long Thành.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **46,6m²** và diện tích sử dụng **41,6m²** với bố cục tách biệt rõ ràng: **1 phòng ngủ** riêng biệt đón ánh sáng tự nhiên, **1 nhà vệ sinh** tiện nghi, phòng khách thông bếp mở rộng thoáng và ban công đón gió. Cửa sổ được thiết kế đón hướng Đông hoặc Tây Nam theo tiêu chuẩn thiết kế Singapore.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện theo tiêu chuẩn dự án được tư vấn bởi **Surbana Jurong** Singapore. Toàn bộ nội thất cố định được lắp đặt sẵn: tủ âm tường phòng ngủ, tủ bếp trên dưới, sàn gỗ, trần thạch cao và hệ thống chiếu sáng. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **990 triệu/căn** — mức giá NOXH được Nhà nước phê duyệt, hỗ trợ vay lãi suất ưu đãi. Nhơn Trạch là khu vực có tốc độ tăng giá BĐS nhanh nhất vùng Đông Nam Bộ nhờ sân bay Long Thành — tiềm năng tăng giá và cho thuê rất cao trong tương lai gần.",
         images: [
         "/k-home avenue/Can-1PN/layout-can-ho-khome-avenue-1PN.jpg",
@@ -230,7 +232,7 @@ const DATA = [
         "/k-home avenue/Can-1PN/dsc01279.webp",
         "/k-home avenue/Can-1PN/dsc01286.webp",
       ]},
-      { slug: "can-ho-2-phong-ngu",      name: "Căn 2 Phòng Ngủ (Nhỏ)", bedrooms: 2, bathrooms: 2, constructionArea: "65,7m²", usableArea: "58,4m²", price: "1,23 tỷ – 1,39 tỷ/căn", priceNumber: 1230, furnished: true,
+      { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ (Nhỏ)", bedrooms: 2, bathrooms: 2, constructionArea: "65,7m²", usableArea: "58,4m²", price: "1,23 tỷ – 1,39 tỷ/căn", priceNumber: 1230, furnished: true,
         description: "**Căn 2 Phòng Ngủ (Nhỏ) K-Home Avenue** là loại căn 2 phòng ngủ có diện tích vừa phải, tối ưu cho gia đình 3–4 người muốn có không gian riêng tư cho mỗi thành viên với mức ngân sách hợp lý nhất trong phân khúc 2PN của dự án.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **65,7m²** và diện tích sử dụng **58,4m²** — phân bổ hợp lý với **2 phòng ngủ** riêng biệt (phòng ngủ chính rộng đủ giường đôi Queen, phòng ngủ phụ đủ giường đơn hoặc bàn làm việc), **2 nhà vệ sinh** tiện nghi, phòng khách kết hợp bàn ăn và ban công thoáng.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp, đồng bộ toàn dự án theo tiêu chuẩn thiết kế Singapore. Cả 2 phòng ngủ đều có tủ âm tường built-in, phòng khách đủ diện tích bố trí bàn ăn 4 người. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **1,23 tỷ đến 1,39 tỷ/căn** tùy tầng và hướng nhìn — đây là mức giá NOXH được kiểm soát, thấp hơn đáng kể so với căn hộ thương mại cùng diện tích tại Nhơn Trạch. Tiềm năng cho thuê cao nhờ vị trí gần các KCN Nhơn Trạch và cửa ngõ sân bay Long Thành.",
         images: [
         "/k-home avenue/Can-2PN-nho/layout-can-ho-khome-avenue-2PNA.jpg",
@@ -249,7 +251,7 @@ const DATA = [
         "/k-home avenue/Can-2PN-nho/dsc01426.webp",
         "/k-home avenue/Can-2PN-nho/dsc01440.webp",
       ]},
-      { slug: "can-ho-2-phong-ngu-b-avenue",    name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
+      { slug: "can-ho-2-phong-ngu-b-avenue", name: "Căn 2 Phòng Ngủ (Lớn)", bedrooms: 2, bathrooms: 2, constructionArea: "69,5m²", usableArea: "62,2m²", price: "1,40 tỷ – 1,47 tỷ/căn", priceNumber: 1400, furnished: true,
         description: "**Căn 2 Phòng Ngủ (Lớn) K-Home Avenue** là loại căn cao cấp nhất trong rổ hàng NOXH của dự án, dành cho gia đình cần không gian sinh hoạt rộng rãi hơn với diện tích phòng ngủ master lớn và phòng khách thoải mái hơn phiên bản nhỏ.\n\n**Diện tích & Bố cục**\n\nDiện tích xây dựng **69,5m²** và diện tích sử dụng **62,2m²** — diện tích vượt trội so với 2PN (Nhỏ) được phân bổ vào phòng ngủ master rộng hơn (đủ cho giường King size), phòng khách có diện tích bố trí bàn ăn 6 người và góc làm việc riêng. **2 nhà vệ sinh** với master bathroom riêng biệt hoàn toàn.\n\n**Nội thất bàn giao**\n\nBàn giao **full nội thất** hoàn thiện cao cấp nhất trong hệ thống K-Home Avenue, phòng ngủ master có tủ âm tường walk-in đặc biệt rộng rãi. Toàn bộ nội thất cố định được thiết kế đồng bộ theo tiêu chuẩn Singapore. Chỉ trừ thiết bị điện tử.\n\n**Giá bán & Tiềm năng**\n\nGiá từ **1,40 tỷ đến 1,47 tỷ/căn** — là mức giá đỉnh trong rổ hàng NOXH K-Home Avenue nhưng vẫn thấp hơn rất nhiều so với căn hộ thương mại cùng diện tích. Vị trí Nhơn Trạch đang trong giai đoạn bùng nổ hạ tầng, loại căn lớn nhất thường có khả năng tăng giá mạnh nhất trong dài hạn.",
         images: [
         "/k-home avenue/Can-2PN-lon/layout-can-ho-khome-avenue-2PNB.jpg",
@@ -271,10 +273,283 @@ const DATA = [
     ],
     status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
   },
+  {
+    id: "4", slug: "k-home-skyview-trang-bom", title: "K-Home SkyView Trảng Bom",
+    location: "Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai",
+    type: "Căn hộ nhà ở xã hội", price: "Từ 750 Triệu", priceNumber: 0.75, area: "37,0m² - 68,0m²",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview",
+    description: "K-Home SkyView Bàu Xéo Trảng Bom – dự án nhà ở xã hội chuẩn Singapore tại KĐT Bàu Xéo. Giá từ 750 triệu, vay gói 5,4%/năm, thiết kế Surbana Jurong, bàn giao full nội thất.",
+    longDescription: "**Tổng quan dự án K-Home SkyView Bàu Xéo Trảng Bom**\n\n**K-Home SkyView** (K-Home Sky View) là dự án nhà ở xã hội chuẩn Singapore do **Kim Oanh Land** (Tập đoàn Kim Oanh Group) phát triển tại **Khu đô thị Bàu Xéo**, thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án quy hoạch trên khu đất hơn **1,08 ha** gồm các tòa tháp cao 9 – 12 tầng, cung cấp gần **600 căn hộ NOXH** chất lượng cao.",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn",
+    gallery: [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview03",
+    ],
+    galleryAlts: [
+      "Phối cảnh tổng thể dự án nhà ở xã hội K-Home SkyView Bàu Xéo Trảng Bom",
+      "Góc nhìn cận cảnh tháp căn hộ K-Home SkyView Kim Oanh Land",
+      "Phối cảnh ban đêm dự án K-Home SkyView Bàu Xéo Đồng Nai",
+      "Phối cảnh tổng thể trên cao K-Home SkyView Trảng Bom",
+    ],
+    amenities: ["Hồ bơi người lớn & trẻ em", "Sân chơi trẻ em an toàn", "Khu thể dục ngoài trời", "Công viên cảnh quan & lối dạo bộ", "Khu BBQ dã ngoại", "Shophouse khối đế & minimart", "Nhà sinh hoạt cộng đồng", "Hệ thống an ninh 24/7"],
+    unitTypes: [
+      { slug: "can-ho-studio", name: "Căn Studio", bedrooms: 0, bathrooms: 1, constructionArea: "37,0m²", usableArea: "33,0m²", price: "Từ 750 triệu/căn", priceNumber: 750, furnished: true, description: "Studio SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview02"] },
+      { slug: "can-ho-1-phong-ngu", name: "Căn 1 Phòng Ngủ +", bedrooms: 1, bathrooms: 1, constructionArea: "45,8m²", usableArea: "41,0m²", price: "Từ 990 triệu/căn", priceNumber: 990, furnished: true, description: "1PN+ SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01"] },
+      { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ", bedrooms: 2, bathrooms: 2, constructionArea: "65,3m²", usableArea: "58,5m²", price: "1,35 tỷ – 1,45 tỷ/căn", priceNumber: 1350, furnished: true, description: "2PN SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview"] },
+    ],
+    status: "Đã công bố", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
+  },
+];
+
+// news data imported from src/data/newsData.ts
+const newsList = newsData;
+// ─── 301 Redirects: /projects/* → slug mới ───────────────────────────────────
+// Google đã index các URL /projects/... cũ, cần 301 để chuyển vĩnh viễn
+const PROJECT_REDIRECTS: Record<string, string> = {
+  "/projects/k-home-cityview-ho-nai":   "/k-home-cityview-ho-nai",
+  "/projects/k-home-midtown-trang-bom": "/k-home-midtown-trang-bom",
+  "/projects/k-home-avenue-nhon-trach": "/k-home-avenue-nhon-trach",
+  "/projects/k-home-skyview-trang-bom": "/k-home-skyview-trang-bom",
+  "/projects/k-home-grand-urban":       "/k-home-cityview-ho-nai",
+};
+
+// Redirect /projects/:slug/:unit → /:slug/:unit
+app.get("/projects/:projectSlug/:unitSlug", (req, res) => {
+  res.redirect(301, `/${req.params.projectSlug}/${req.params.unitSlug}`);
+});
+
+// ─── 301 Redirects: Old Avenue unit slugs → Standardized slugs ────────────────
+// Google đã index URLs cũ của Avenue với -nho, -lon, cần redirect lâu dài
+const AVENUE_SLUG_REDIRECTS: Record<string, string> = {
+  "can-ho-2-phong-ngu-nho": "can-ho-2-phong-ngu",
+  "can-ho-2-phong-ngu-lon": "can-ho-2-phong-ngu-b-avenue",
+};
+
+app.get("/k-home-avenue-nhon-trach/:oldUnitSlug", (req, res, next) => {
+  const newSlug = AVENUE_SLUG_REDIRECTS[req.params.oldUnitSlug];
+  if (newSlug) {
+    res.redirect(301, `/k-home-avenue-nhon-trach/${newSlug}`);
+  } else {
+    next();
+  }
+});
+
+// Redirect /projects/:slug → /:slug hoặc fallback
+app.get("/projects/:projectSlug", (req, res) => {
+  const target = PROJECT_REDIRECTS[`/projects/${req.params.projectSlug}`]
+    || `/${req.params.projectSlug}`;
+  res.redirect(301, target);
+});
+
+// Redirect /projects (trang danh sách) → /san-pham
+app.get("/projects", (_req, res) => {
+  res.redirect(301, "/san-pham");
+});
+
+// ─── 301 Redirects: Old news slugs → New news slugs ────────────────────────────
+// Google đã index các URL tin tức cũ, cần 301 để transfer link juice
+const NEWS_SLUG_REDIRECTS: Record<string, string> = {
+  "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026-khong": "/tin-tuc/k-home-cityview-la-gi-co-nen-mua-o-that-tai-bien-hoa-2026",
+  "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh-khac": "/tin-tuc/vi-tri-k-home-cityview-bien-hoa-noi-bat-so-voi-cac-du-an-noxh",
+  "/tin-tuc/mat-bang-k-home-cityview-co-toi-uu-anh-sang-va-thong-gio-khong-vay": "/tin-tuc/danh-gia-mat-bang-k-home-cityview-huong-nang-va-thong-gio-tu-nhien",
+};
+
+app.get("/tin-tuc/:slug", (req, res, next) => {
+  const oldPath = `/tin-tuc/${req.params.slug}`;
+  const newPath = NEWS_SLUG_REDIRECTS[oldPath];
+  if (newPath) {
+    res.redirect(301, newPath);
+  } else {
+    next();
+  }
+});
+
+// ─── Public API Routes ────────────────────────────────────────────────────────
+app.get("/api/projects", (_req, res) => res.json(projects));
+app.get("/api/news", (_req, res) => res.json(newsList));
+
+// Khách hàng gửi form liên hệ
+app.post("/api/contact", contactLimiter, async (req, res) => {
+  const { name, email, phone, projectSlug, projectName, message } = req.body;
+
+  if (!name || !phone) {
+    res.status(400).json({ error: "Vui lòng điền đầy đủ: Họ tên, Số điện thoại." });
+    return;
+  }
+
+  try {
+    const contact = await ContactModel.create({
+      name: String(name).trim().slice(0, 200),
+      email: String(email).trim().slice(0, 200),
+      phone: String(phone).trim().slice(0, 20),
+      projectSlug: projectSlug ? String(projectSlug).trim() : "general",
+      projectName: projectName ? String(projectName).trim() : "Tư vấn chung",
+      message: message ? String(message).trim().slice(0, 2000) : "",
+    });
+
+    // Gửi email thông báo — chạy nền, không block response
+    sendContactNotification({
+      name: contact.name,
+      email: contact.email,
+      phone: contact.phone,
+      projectName: contact.projectName,
+      message: contact.message,
+      createdAt: contact.createdAt,
+    }).catch((err) => console.error("⚠️ Gửi email thất bại (không ảnh hưởng lưu DB):", err.message));
+
+    res.status(201).json({ success: true, contact });
+  } catch (err: any) {
+    if (err.name === "ValidationError") {
+      res.status(400).json({ error: "Dữ liệu không hợp lệ: " + err.message });
+    } else {
+      console.error("POST /api/contact error:", err);
+      res.status(500).json({ error: "Lỗi máy chủ. Vui lòng thử lại." });
+    }
+  }
+});
+
+// ─── Admin Auth Route ─────────────────────────────────────────────────────────
+app.post("/api/admin/login", loginLimiter, async (req, res) => {
+  const { username, password } = req.body;
+
+  const adminUser = process.env.ADMIN_USERNAME;
+  const adminHash = process.env.ADMIN_PASSWORD_HASH;
+  const jwtSecret = process.env.JWT_SECRET;
+
+  if (!adminUser || !adminHash || !jwtSecret) {
+    res.status(500).json({ error: "Lỗi cấu hình máy chủ." });
+    return;
+  }
+
+  if (!username || !password) {
+    res.status(400).json({ error: "Vui lòng nhập tài khoản và mật khẩu." });
+    return;
+  }
+
+  const usernameMatch = String(username).toLowerCase() === adminUser.toLowerCase();
+  const passwordMatch = await bcrypt.compare(String(password), adminHash);
+
+  if (!usernameMatch || !passwordMatch) {
+    res.status(401).json({ error: "Tài khoản hoặc mật khẩu không chính xác." });
+    return;
+  }
+
+  const token = jwt.sign({ username: adminUser }, jwtSecret, { expiresIn: "8h" });
+  res.json({ success: true, token });
+});
+
+// ─── Protected Admin CRM Routes (JWT required) ───────────────────────────────
+app.get("/api/contacts", requireAuth, async (_req, res) => {
+  try {
+    const contacts = await ContactModel.find().sort({ createdAt: -1 }).lean();
+    // Chuẩn hoá _id của MongoDB thành id string cho frontend
+    const mapped = contacts.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
+    res.json(mapped);
+  } catch (err) {
+    console.error("GET /api/contacts error:", err);
+    res.status(500).json({ error: "Lỗi máy chủ khi tải danh sách." });
+  }
+});
+
+app.put("/api/contacts/:id", requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const { status, notes } = req.body;
+
+  const allowedStatuses = ["Chờ liên hệ", "Đã liên hệ", "Đang thương lượng", "Đã chốt"];
+  const update: Record<string, string> = {};
+
+  if (status !== undefined) {
+    if (!allowedStatuses.includes(status)) {
+      res.status(400).json({ error: "Trạng thái không hợp lệ." });
+      return;
+    }
+    update.status = status;
+  }
+  if (notes !== undefined) {
+    update.notes = String(notes).slice(0, 5000);
+  }
+
+  try {
+    const contact = await ContactModel.findByIdAndUpdate(id, update, { new: true, runValidators: true }).lean();
+    if (!contact) {
+      res.status(404).json({ error: "Không tìm thấy khách hàng." });
+      return;
+    }
+    const { _id, ...rest } = contact as any;
+    res.json({ success: true, contact: { id: _id.toString(), ...rest } });
+  } catch (err) {
+    console.error("PUT /api/contacts/:id error:", err);
+    res.status(500).json({ error: "Lỗi máy chủ khi cập nhật." });
+  }
+});
+
+app.delete("/api/contacts/:id", requireAuth, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const contact = await ContactModel.findByIdAndDelete(id);
+    if (!contact) {
+      res.status(404).json({ error: "Không tìm thấy khách hàng." });
+      return;
+    }
+    res.json({ success: true, message: "Đã xóa thành công." });
+  } catch (err) {
+    console.error("DELETE /api/contacts/:id error:", err);
+    res.status(500).json({ error: "Lỗi máy chủ khi xóa." });
+  }
+});
+
+// ─── Start Server ─────────────────────────────────────────────────────────────
+async function startServer() {
+  await connectDB();
+  await verifyMailer(); // kiểm tra SMTP ngay khi khởi động
+
+  if (process.env.NODE_ENV !== "production") {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: "spa",
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), "dist");
+    const publicPath = path.join(process.cwd(), "public");
+    // Serve public assets (images, etc.) — must be before dist to avoid conflicts
+    app.use(express.static(publicPath));
+    app.use(express.static(distPath));
+
+    // ── SPA fallback với canonical injection ──────────────────────────────────
+    // Googlebot đọc HTML trước khi JS chạy, nên cần inject canonical đúng URL
+    // ngay trong HTML response thay vì chờ React cập nhật
+    const { readFileSync } = await import("fs");
+    const indexHtml = readFileSync(path.join(distPath, "index.html"), "utf-8");
+    const BASE_URL = "https://k-homedongnai.com.vn";
+
+    app.get("*", (req, res) => {
+      const reqPath = req.path === "/" ? "/" : req.path.replace(/\/$/, "");
+      const canonicalUrl = `${BASE_URL}${reqPath}`;
+      // Thay canonical href trong HTML trước khi serve
+      const html = indexHtml.replace(
+        /<link rel="canonical" href="[^"]*"/,
+        `<link rel="canonical" href="${canonicalUrl}"`
+      );
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.send(html);
+    });
+  }
+
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🚀 Server đang chạy tại http://0.0.0.0:${PORT}`);
+  });
+}
+
+startServer().catch((err) => {
+  console.error("❌ Lỗi khởi động server:", err);
+  process.exit(1);
+});
 ];
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
   return res.json(DATA);
 }
-

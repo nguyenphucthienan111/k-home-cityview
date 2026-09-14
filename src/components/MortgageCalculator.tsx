@@ -97,6 +97,30 @@ const CALC_CONFIG: Record<string, CalcConfig> = {
       { dot: "Đợt 13",   pct: "5%",                   note: "15 ngày kể từ thông báo nhận GCNQSHCH (Sổ hồng)" },
     ],
   },
+  "k-home-skyview-trang-bom": {
+    name: "K-Home SkyView Trảng Bom", loanYears: 25, loanPercent: 75, policyRate: 5.4,
+    units: [
+      { label: "Studio", area: "37,0m²", price: 0.75, priceMin: 0.75, priceMax: 0.85, priceLabel: "Từ 750 triệu" },
+      { label: "1PN+",   area: "45,8m²", price: 0.99, priceMin: 0.99, priceMax: 1.15, priceLabel: "Từ 990 triệu" },
+      { label: "2PN",    area: "65,3m²", price: 1.35, priceMin: 1.35, priceMax: 1.45, priceLabel: "1,35 – 1,45 tỷ" },
+    ],
+    policySchedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",        note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                 note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "10%",                 note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3",    pct: "45% (NH giải ngân)",  note: "Ngân hàng giải ngân lần 1" },
+      { dot: "Đợt 4",    pct: "25% (NH giải ngân)",  note: "15 ngày kể từ thông báo bàn giao nhà, NH giải ngân lần 2 + KH đóng 100% phí bảo trì" },
+      { dot: "Đợt 5",    pct: "5% (NH giải ngân)",   note: "Nhận GCNQSHCH (Sổ hồng)" },
+    ],
+    cashSchedule: [
+      { dot: "Cọc",      pct: "30.000.000đ",         note: "Ngay khi ký Phiếu xác nhận cọc" },
+      { dot: "Đợt 1",    pct: "15%",                  note: "7 ngày kể từ ngày cọc, ký HĐDVTV" },
+      { dot: "Đợt 2",    pct: "10%",                  note: "30 ngày kể từ ngày đến hạn đợt 1" },
+      { dot: "Đợt 3–11", pct: "5%/đợt (9 đợt)",       note: "Mỗi đợt cách nhau 30–60 ngày theo tiến độ thi công" },
+      { dot: "Đợt 12",   pct: "25% + phí bảo trì 2%", note: "15 ngày kể từ thông báo bàn giao nhà" },
+      { dot: "Đợt 13",   pct: "5%",                   note: "15 ngày kể từ thông báo nhận GCNQSHCH (Sổ hồng)" },
+    ],
+  },
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

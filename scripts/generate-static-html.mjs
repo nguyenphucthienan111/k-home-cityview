@@ -97,9 +97,30 @@ const STATIC_ROUTES = [
     description: "Căn hộ 2 phòng ngủ lớn tại K-Home Avenue Nhơn Trạch, diện tích 69,5m², giá từ 1,4 tỷ, bàn giao full nội thất, lãi suất NOXH 5,4%/năm.",
   },
   {
+    dir: "k-home-skyview-trang-bom",
+    title: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
+    description: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home SkyView Bàu Xéo Kim Oanh) quy mô 1,08 ha, 358 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Hướng dẫn thủ tục & bảng giá 2026.",
+    keywords: "nhà ở xã hội trảng bom, noxh trảng bom, nhà ở xã hội bàu xéo, chung cư bàu xéo trảng bom, k-home skyview, khome skyview, k home skyview, k-home skyview trảng bom, căn hộ trảng bom giá rẻ, nhà ở xã hội đồng nai 2026",
+  },
+  {
+    dir: "k-home-skyview-trang-bom/can-ho-studio",
+    title: "Căn Hộ Studio K-Home SkyView Trảng Bom | 37,0m² | Giá từ 750 Triệu",
+    description: "Căn hộ Studio tại K-Home SkyView Trảng Bom, diện tích 37,0m², giá từ 750 triệu, thiết kế tối ưu công năng, chuẩn xanh EDGE, lãi suất vay 5,4%/năm.",
+  },
+  {
+    dir: "k-home-skyview-trang-bom/can-ho-1-phong-ngu",
+    title: "Căn Hộ 1 Phòng Ngủ K-Home SkyView Trảng Bom | 45,8m² | Giá từ 990 Triệu",
+    description: "Căn hộ 1 phòng ngủ + tại K-Home SkyView Trảng Bom, diện tích 45,8m², giá từ 990 triệu, bàn giao full nội thất cơ bản, lãi suất NOXH 5,4%/năm.",
+  },
+  {
+    dir: "k-home-skyview-trang-bom/can-ho-2-phong-ngu",
+    title: "Căn Hộ 2 Phòng Ngủ K-Home SkyView Trảng Bom | 65,3m² | Giá từ 1,35 Tỷ",
+    description: "Căn hộ 2 phòng ngủ tại K-Home SkyView Trảng Bom, diện tích 65,3m², 2 nhà vệ sinh, giá từ 1,35 tỷ, ban công thoáng mát, lãi suất NOXH 5,4%/năm.",
+  },
+  {
     dir: "san-pham",
-    title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 3 Dự Án NOXH Kim Oanh",
-    description: "Xem đầy đủ thông tin, bảng giá và mặt bằng 3 dự án nhà ở xã hội K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch. Kim Oanh Land.",
+    title: "Danh Sách Dự Án K-Home Đồng Nai | Bảng Giá 4 Dự Án NOXH Kim Oanh",
+    description: "Xem đầy đủ thông tin, bảng giá và mặt bằng 4 dự án nhà ở xã hội K-Home tại Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch, SkyView Trảng Bom. Kim Oanh Land.",
   },
   {
     dir: "tinh-tra-gop",
@@ -531,6 +552,50 @@ async function main() {
     }
   };
 
+  // Schemas cho SkyView
+  const SKYVIEW_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "K-Home SkyView Trảng Bom ở đâu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home SkyView tọa lạc tại Khu dân cư Bàu Xéo, huyện Trảng Bom, tỉnh Đồng Nai – liền kề KCN Bàu Xéo và Quốc Lộ 1A." } },
+      { "@type": "Question", "name": "K-Home SkyView Trảng Bom giá bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home SkyView có giá từ 750 triệu đến 1,45 tỷ/căn: Studio 37m² từ 750 triệu, 1PN+ 45,8m² từ 990 triệu, 2PN 65,3m² từ 1,35 tỷ. Hỗ trợ vay ưu đãi 5,4%/năm." } },
+      { "@type": "Question", "name": "K-Home SkyView có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án quy mô 1,08 ha gồm 358 căn hộ NOXH chuẩn Singapore do Kim Oanh Group phát triển, đạt chứng chỉ xanh EDGE." } },
+      { "@type": "Question", "name": "Điều kiện mua và gói vay K-Home SkyView là gì?", "acceptedAnswer": { "@type": "Answer", "text": "Chưa có nhà tại Đồng Nai, thu nhập dưới 50 triệu/tháng (vợ chồng) hoặc dưới 25 triệu (độc thân). Vay tối đa 80% từ Ngân hàng CSXH với lãi suất 5,4%/năm trong 25 năm." } },
+    ]
+  };
+
+  const SKYVIEW_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Dự án K-Home", "item": `${BASE_URL}/san-pham` },
+      { "@type": "ListItem", "position": 3, "name": "K-Home SkyView Trảng Bom", "item": `${BASE_URL}/k-home-skyview-trang-bom` },
+    ],
+  };
+
+  const SKYVIEW_WEBPAGE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "K-Home SkyView Trảng Bom | Bảng Giá & Mặt Bằng 2026",
+    "url": `${BASE_URL}/k-home-skyview-trang-bom`,
+    "description": "Dự án K-Home SkyView Trảng Bom: 358 căn NOXH chuẩn Singapore, quy mô 1,08 ha, giá từ 750 triệu, vay 5,4%/năm.",
+    "inLanguage": "vi-VN",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "publisher": { "@type": "Organization", "name": "Kim Oanh Land", "url": `${BASE_URL}/` },
+    "about": {
+      "@type": "Residence",
+      "name": "K-Home SkyView Trảng Bom",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KDC Bàu Xéo",
+        "addressLocality": "Huyện Trảng Bom",
+        "addressRegion": "Tỉnh Đồng Nai",
+        "addressCountry": "VN",
+      },
+    },
+  };
+
   // Map schema per dir
   const ROUTE_SCHEMAS = {
     "k-home-cityview-ho-nai": [
@@ -556,6 +621,11 @@ async function main() {
       AVENUE_WEBPAGE_SCHEMA,
       AVENUE_VIDEO_SCHEMA_1,
       AVENUE_VIDEO_SCHEMA_2
+    ],
+    "k-home-skyview-trang-bom": [
+      SKYVIEW_FAQ_SCHEMA,
+      SKYVIEW_BREADCRUMB,
+      SKYVIEW_WEBPAGE_SCHEMA,
     ],
   };
 
