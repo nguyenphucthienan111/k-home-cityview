@@ -1,6 +1,6 @@
 /**
  * node scripts/generate-api-functions.mjs
- * Generates api/projects.ts and api/news.ts with data inlined — no imports needed.
+ * Generates api/projects.ts and api/news.ts with data inlined from source files.
  */
 import { readFileSync, writeFileSync } from "fs";
 import { fileURLToPath } from "url";
@@ -10,22 +10,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const root = join(__dirname, "..");
 
-const server = readFileSync(join(root, "server.ts"), "utf8");
-
-// ── Extract projects inner content ──────────────────────────────────────────
-const PROJ_OPEN  = "const projects = [";
-const NEWS_OPEN  = "\nconst newsList = [";
-const projStart  = server.indexOf(PROJ_OPEN) + PROJ_OPEN.length;
-const newsAnchor = server.indexOf(NEWS_OPEN);
-let projectsInner = server.slice(projStart, newsAnchor).trimEnd();
+// ── Extract projects inner content from src/data/staticProjects.ts ─────────────
+const staticProjects = readFileSync(join(root, "src", "data", "staticProjects.ts"), "utf8");
+const projOpen = "export const STATIC_PROJECTS: Project[] = [";
+const projStart = staticProjects.indexOf(projOpen) + projOpen.length;
+let projectsInner = staticProjects.slice(projStart).trimEnd();
 if (projectsInner.endsWith("];")) projectsInner = projectsInner.slice(0, -2).trim();
 else if (projectsInner.endsWith("]")) projectsInner = projectsInner.slice(0, -1).trim();
 
-// ── Extract news inner content ───────────────────────────────────────────────
-const newsStart  = newsAnchor + NEWS_OPEN.length;
-// End marker — the comment separator before "Public API Routes"
-const newsEndPos = server.indexOf("// ─── Public API Routes", newsStart);
-let newsInner    = server.slice(newsStart, newsEndPos).trimEnd();
+// ── Extract news inner content from src/data/newsData.ts ───────────────────────
+const newsContent = readFileSync(join(root, "src", "data", "newsData.ts"), "utf8");
+const newsOpen = "export const newsData: News[] = [";
+const newsStart = newsContent.indexOf(newsOpen) + newsOpen.length;
+let newsInner = newsContent.slice(newsStart).trimEnd();
 if (newsInner.endsWith("];")) newsInner = newsInner.slice(0, -2).trim();
 else if (newsInner.endsWith("]")) newsInner = newsInner.slice(0, -1).trim();
 
@@ -34,7 +31,7 @@ const projectsFile = [
   `import type { VercelRequest, VercelResponse } from "@vercel/node";`,
   ``,
   `// AUTO-GENERATED — run: node scripts/generate-api-functions.mjs`,
-  `// Data inlined from server.ts — no external imports needed`,
+  `// Data inlined from src/data/staticProjects.ts — no external imports needed`,
   `const DATA = [`,
   projectsInner,
   `];`,
@@ -51,7 +48,7 @@ const newsFile = [
   `import type { VercelRequest, VercelResponse } from "@vercel/node";`,
   ``,
   `// AUTO-GENERATED — run: node scripts/generate-api-functions.mjs`,
-  `// Data inlined from server.ts — no external imports needed`,
+  `// Data inlined from src/data/newsData.ts — no external imports needed`,
   `const DATA = [`,
   newsInner,
   `];`,
@@ -68,3 +65,4 @@ writeFileSync(join(root, "api", "news.ts"),     newsFile,     "utf8");
 
 console.log("✅ api/projects.ts:", Buffer.byteLength(projectsFile), "bytes");
 console.log("✅ api/news.ts:    ", Buffer.byteLength(newsFile),     "bytes");
+
