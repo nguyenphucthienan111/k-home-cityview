@@ -217,8 +217,8 @@ const PROJECT_SEO: Record<string, {
     ],
   },
   "k-home-midtown-trang-bom": {
-    titleTag: "K-Home Midtown (K Home Mid Town) Trảng Bom | Bảng Giá 2026",
-    metaDesc: "Dự án K-Home Midtown (k-home mid town) Trảng Bom quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
+    titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
+    metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home Midtown Kim Oanh) quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Trảng Bom 2026.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -371,8 +371,8 @@ const PROJECT_SEO: Record<string, {
     },
   },
   "k-home-avenue-nhon-trach": {
-    titleTag: "K-Home Avenue (K Home Avenue) Nhơn Trạch | Bảng Giá 2026",
-    metaDesc: "K-Home Avenue (k-home avenue) Nhơn Trạch nhà ở xã hội 1.022 căn gần Sân bay Long Thành giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & mặt bằng 2026.",
+    titleTag: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
+    metaDesc: "Dự án Nhà Ở Xã Hội Nhơn Trạch (K-Home Avenue Kim Oanh) mặt tiền đường 25C gần Sân bay Long Thành, 1.022 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -2471,6 +2471,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Biên Hòa</span>
+                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Biên Hòa giá rẻ</span>
                   <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Hố Nai</span>
                   <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường Điểu Xiển</span>
                   <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Gần KCN Amata & Pouchen</span>
@@ -2524,8 +2525,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-800">Vị Trí Thực Tế Trên Google Maps & Kết Nối Vùng Trảng Bom</h3>
-                    <p className="text-xs text-slate-500">Giao lộ 4 tuyến đường 30/4 - Hùng Vương - Lý Nam Đế - Lê Đại Hành, TT. Trảng Bom</p>
+                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – Vị Trí Trung Tâm 4 Tuyến Đường Lớn</h3>
+                    <p className="text-xs text-slate-500">Giao lộ 4 tuyến đường 30/4 - Hùng Vương - Lý Nam Đế - Lê Đại Hành, TT. Trảng Bom (Liền kề KCN Bàu Xéo)</p>
                   </div>
                 </div>
                 <a href="https://maps.app.goo.gl/9c4o7FhM73Hn2N9e9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
@@ -2533,9 +2534,22 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </a>
               </div>
 
+              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom */}
+              <div className="bg-teal-50/70 border border-teal-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong>Nhà ở xã hội Trảng Bom (K-Home Midtown)</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> quy mô 13,97 ha lớn nhất tại trung tâm huyện Trảng Bom. Dự án phục vụ nhu cầu an cư chất lượng cao cho cán bộ, công nhân viên và kỹ sư làm việc tại <strong>KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai</strong> với mức giá chỉ từ 750 triệu/căn, hỗ trợ vay 5,4%/năm.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
+                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Trảng Bom giá rẻ</span>
+                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH KCN Bàu Xéo</span>
+                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Vay 5,4% mua NOXH Trảng Bom</span>
+                </div>
+              </div>
+
               <div className="w-full h-80 rounded-2xl overflow-hidden border border-teal-200 relative shadow-md">
                 <iframe
-                  title="K-Home Midtown Trảng Bom Google Maps"
+                  title="Nhà ở xã hội Trảng Bom K-Home Midtown Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384.902626805889!2d107.00522593899112!3d10.956108940275927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e700442d0327%3A0xc12a0db1c85bf214!2sK-Home%20Midtown!5e0!3m2!1sen!2s!4v1784803611439!5m2!1sen!2s"
                   className="w-full h-full border-0"
                   allowFullScreen
@@ -2578,8 +2592,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-800">Vị Trí Thực Tế Trên Google Maps & Cửa Ngõ Sân Bay Long Thành</h3>
-                    <p className="text-xs text-slate-500">Đường Nguyễn Ái Quốc (25C), xã Phước An / Long Thọ, H. Nhơn Trạch, Đồng Nai</p>
+                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Nhơn Trạch – Cửa Ngõ Sân Bay Long Thành</h3>
+                    <p className="text-xs text-slate-500">Mặt tiền đường Nguyễn Ái Quốc (25C), Xã Nhơn Trạch, Tỉnh Đồng Nai (Cách Sân Bay Long Thành 10 phút)</p>
                   </div>
                 </div>
                 <a href="https://maps.app.goo.gl/uX3y2iK1uW8zH95b6" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
@@ -2587,9 +2601,23 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                 </a>
               </div>
 
+              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Nhơn Trạch */}
+              <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong>Nhà ở xã hội Nhơn Trạch (K-Home Avenue)</strong> – khu <strong>chung cư Nhơn Trạch giá rẻ</strong> sở hữu vị trí vàng ngay mặt tiền đại lộ huyết mạch 25C (Nguyễn Ái Quốc) kết nối thẳng vào cổng số 1 Sân bay Quốc tế Long Thành. Dự án cung cấp 1.022 căn hộ tiện nghi chuẩn Singapore phục vụ chuyên gia, công nhân viên tại <strong>cụm 6 KCN Nhơn Trạch và sân bay Long Thành</strong> với giá chỉ từ 750 triệu/căn.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Nhơn Trạch</span>
+                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Nhơn Trạch giá rẻ</span>
+                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường 25C</span>
+                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Gần Sân Bay Long Thành</span>
+                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội KCN Nhơn Trạch</span>
+                </div>
+              </div>
+
               <div className="w-full h-80 rounded-2xl overflow-hidden border border-emerald-200 relative shadow-md">
                 <iframe
-                  title="K-Home Avenue - Kim Oanh Land Google Maps"
+                  title="Nhà ở xã hội Nhơn Trạch K-Home Avenue Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s"
                   className="w-full h-full border-0"
                   allowFullScreen
