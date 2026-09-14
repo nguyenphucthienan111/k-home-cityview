@@ -1,6 +1,7 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowLeft, CheckCircle, MapPin, Phone, Send, Eye, BedDouble, Bath, Sofa } from "lucide-react";
 import { Project, UnitType } from "../types";
+import { STATIC_PROJECTS } from "../data/staticProjects";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
 
@@ -10,15 +11,16 @@ interface UnitDetailViewProps {
   onNavigate: (hash: string) => void;
 }
 
-// Map of old unit slugs to new unit slugs (for 301 redirects on direct URL access)
-const OLD_UNIT_SLUGS: Record<string, string> = {
-  "can-ho-2-phong-ngu": "can-ho-2-phong-ngu-cityview",      // CityView 2BR
-  "can-ho-2-phong-ngu-b": "can-ho-2-phong-ngu-b-avenue",    // Avenue 2BR-B
-};
-
 export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: UnitDetailViewProps) {
-  const [project, setProject] = useState<Project | null>(null);
-  const [unit, setUnit] = useState<UnitType | null>(null);
+  const cleanProjectSlug = decodeURIComponent(projectSlug || "").trim();
+  const cleanUnitSlug = decodeURIComponent(unitSlug || "").trim();
+
+  const initialProject = STATIC_PROJECTS.find((p) => p.slug === cleanProjectSlug) || null;
+  const initialUnit = initialProject?.unitTypes?.find((u) => u.slug === cleanUnitSlug) || null;
+
+  const [project, setProject] = useState<Project | null>(initialProject);
+  const [unit, setUnit] = useState<UnitType | null>(initialUnit);
+  const [loading, setLoading] = useState(false);
 
   // Parse **bold** markers and \n\n paragraph breaks into JSX
   const renderRichText = (text: string) => {
@@ -47,7 +49,6 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
       );
     });
   };
-  const [loading, setLoading] = useState(true);
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -67,145 +68,135 @@ export default function UnitDetailView({ projectSlug, unitSlug, onNavigate }: Un
   const [formError, setFormError] = useState("");
 
   useEffect(() => {
-    setLoading(true);
+    const processData = (list: Project[]) => {
+      const foundProject = list.find((p) => p.slug === cleanProjectSlug) || STATIC_PROJECTS.find((p) => p.slug === cleanProjectSlug);
+      if (foundProject && foundProject.unitTypes) {
+        let foundUnit = foundProject.unitTypes.find((u) => u.slug === cleanUnitSlug);
+
+        // If CityView 2PN old slug
+        if (!foundUnit && cleanProjectSlug === "k-home-cityview-ho-nai" && cleanUnitSlug === "can-ho-2-phong-ngu") {
+          onNavigate(`/${cleanProjectSlug}/can-ho-2-phong-ngu-cityview`);
+          return;
+        }
+
+        setProject(foundProject);
+        setUnit(foundUnit || null);
+        setLoading(false);
+      } else {
+        setProject(initialProject);
+        setUnit(initialUnit);
+        setLoading(false);
+      }
+    };
+
     fetch("/api/projects")
       .then((res) => res.json())
       .then((data: Project[]) => {
-        const list = Array.isArray(data) ? data : [];
-        const foundProject = list.find((p) => p.slug === projectSlug);
-        if (foundProject && foundProject.unitTypes) {
-          const foundUnit = foundProject.unitTypes.find((u) => u.slug === unitSlug);
-          
-          // If unit not found and unitSlug is an old slug, redirect to new slug
-          if (!foundUnit && OLD_UNIT_SLUGS[unitSlug]) {
-            const newSlug = OLD_UNIT_SLUGS[unitSlug];
-            onNavigate(`/${projectSlug}/${newSlug}`);
-            setLoading(false);
-            return;
-          }
-          
-          setProject(foundProject);
-          setUnit(foundUnit || null);
-
-          if (foundProject && foundUnit) {
-            document.title = `${foundUnit.name} - ${foundProject.title} | K-Home Đồng Nai`;
-
-            // Schema Product cho loại căn hộ — thêm differentiation để Google không gom canonical
-            const existingSchema = document.getElementById("schema-unit");
-            if (existingSchema) existingSchema.remove();
-            const schema = document.createElement("script");
-            schema.id = "schema-unit";
-            schema.type = "application/ld+json";
-            schema.text = JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Product",
-              "name": `${foundUnit.name} - ${foundProject.title}`,
-              "description": foundUnit.description || `${foundUnit.name} tại ${foundProject.title}, ${foundProject.location}. Diện tích ${foundUnit.constructionArea}, giá ${foundUnit.price}.`,
-              "image": foundUnit.images.map(img => `https://k-homedongnai.com.vn${img}`),
-              "brand": { "@type": "Brand", "name": "K-Home Group" },
-              "category": foundProject.title,
-              "location": foundProject.location,
-              "sku": `${foundProject.slug}-${foundUnit.slug}`,
-              "identifier": [
-                {
-                  "@type": "PropertyValue",
-                  "name": "Unit Slug",
-                  "value": foundUnit.slug,
-                  "propertyID": "unit-slug"
-                },
-                {
-                  "@type": "PropertyValue",
-                  "name": "Project Slug",
-                  "value": foundProject.slug,
-                  "propertyID": "project-slug"
-                },
-                {
-                  "@type": "PropertyValue",
-                  "name": "Construction Area",
-                  "value": foundUnit.constructionArea,
-                  "propertyID": "construction-area"
-                },
-                {
-                  "@type": "PropertyValue",
-                  "name": "Usable Area",
-                  "value": foundUnit.usableArea,
-                  "propertyID": "usable-area"
-                }
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "1",
-                "description": `${foundUnit.constructionArea} xây dựng / ${foundUnit.usableArea} sử dụng - ${foundUnit.name} tại ${foundProject.title}`
-              },
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "VND",
-                "price": foundUnit.priceNumber ? foundUnit.priceNumber * 1000000 : undefined,
-                "availability": "https://schema.org/InStock",
-                "url": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`,
-                "seller": {
-                  "@type": "Organization",
-                  "name": foundProject.developer,
-                  "url": `https://k-homedongnai.com.vn/${foundProject.slug}`
-                }
-              },
-              "potentialAction": {
-                "@type": "TradeAction",
-                "target": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`,
-                "deliveryMethod": "OnSite"
-              }
-            });
-            document.head.appendChild(schema);
-
-            // Breadcrumb
-            const existingBc = document.getElementById("schema-breadcrumb-unit");
-            if (existingBc) existingBc.remove();
-            const bc = document.createElement("script");
-            bc.id = "schema-breadcrumb-unit";
-            bc.type = "application/ld+json";
-            bc.text = JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
-                { "@type": "ListItem", "position": 2, "name": foundProject.title, "item": `https://k-homedongnai.com.vn/${foundProject.slug}` },
-                { "@type": "ListItem", "position": 3, "name": foundUnit.name, "item": `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}` }
-              ]
-            });
-            document.head.appendChild(bc);
-
-            // Canonical URL validation: ensure canonical points to THIS unit, not consolidated to another project
-            // NOTE: Unit detail pages are pre-rendered by generate-static-html.mjs with correct canonical tags.
-            // DO NOT override canonical from pre-render to avoid conflicts that confuse Google.
-            // Canonical from pre-render HTML is sufficient and will be used by Google.
-            // const canonicalUrl = `https://k-homedongnai.com.vn/${foundProject.slug}/${foundUnit.slug}`;
-            // let canonical = document.querySelector<HTMLLinkElement>("link[rel='canonical']");
-            // if (!canonical) {
-            //   canonical = document.createElement("link");
-            //   canonical.rel = "canonical";
-            //   document.head.appendChild(canonical);
-            // }
-            // canonical.href = canonicalUrl;
-          }
-        } else {
-          setProject(null);
-          setUnit(null);
-        }
-        setLoading(false);
+        const list = Array.isArray(data) && data.length > 0 ? data : STATIC_PROJECTS;
+        processData(list);
       })
       .catch((err) => {
-        console.error("Failed to fetch unit detail:", err);
-        setLoading(false);
+        console.error("Failed to fetch projects in UnitDetailView:", err);
+        processData(STATIC_PROJECTS);
       });
+  }, [cleanProjectSlug, cleanUnitSlug]);
 
-    // Cleanup: reset title khi unmount
+  useEffect(() => {
+    if (project && unit) {
+      document.title = `${unit.name} - ${project.title} | K-Home Đồng Nai`;
+
+      // Schema Product cho loại căn hộ
+      const existingSchema = document.getElementById("schema-unit");
+      if (existingSchema) existingSchema.remove();
+      const schema = document.createElement("script");
+      schema.id = "schema-unit";
+      schema.type = "application/ld+json";
+      schema.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": `${unit.name} - ${project.title}`,
+        "description": unit.description || `${unit.name} tại ${project.title}, ${project.location}. Diện tích ${unit.constructionArea}, giá ${unit.price}.`,
+        "image": unit.images.map(img => `https://k-homedongnai.com.vn${img}`),
+        "brand": { "@type": "Brand", "name": "K-Home Group" },
+        "category": project.title,
+        "location": project.location,
+        "sku": `${project.slug}-${unit.slug}`,
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "name": "Unit Slug",
+            "value": unit.slug,
+            "propertyID": "unit-slug"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Project Slug",
+            "value": project.slug,
+            "propertyID": "project-slug"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Construction Area",
+            "value": unit.constructionArea,
+            "propertyID": "construction-area"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Usable Area",
+            "value": unit.usableArea,
+            "propertyID": "usable-area"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "1",
+          "description": `${unit.constructionArea} xây dựng / ${unit.usableArea} sử dụng - ${unit.name} tại ${project.title}`
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "VND",
+          "price": unit.priceNumber ? unit.priceNumber * 1000000 : undefined,
+          "availability": "https://schema.org/InStock",
+          "url": `https://k-homedongnai.com.vn/${project.slug}/${unit.slug}`,
+          "seller": {
+            "@type": "Organization",
+            "name": project.developer,
+            "url": `https://k-homedongnai.com.vn/${project.slug}`
+          }
+        },
+        "potentialAction": {
+          "@type": "TradeAction",
+          "target": `https://k-homedongnai.com.vn/${project.slug}/${unit.slug}`,
+          "deliveryMethod": "OnSite"
+        }
+      });
+      document.head.appendChild(schema);
+
+      // Breadcrumb
+      const existingBc = document.getElementById("schema-breadcrumb-unit");
+      if (existingBc) existingBc.remove();
+      const bc = document.createElement("script");
+      bc.id = "schema-breadcrumb-unit";
+      bc.type = "application/ld+json";
+      bc.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://k-homedongnai.com.vn/" },
+          { "@type": "ListItem", "position": 2, "name": project.title, "item": `https://k-homedongnai.com.vn/${project.slug}` },
+          { "@type": "ListItem", "position": 3, "name": unit.name, "item": `https://k-homedongnai.com.vn/${project.slug}/${unit.slug}` }
+        ]
+      });
+      document.head.appendChild(bc);
+    }
+
     return () => {
       document.title = "K-Home Đồng Nai | Nhà Ở Xã Hội Kim Oanh Land – CityView, Midtown, Avenue";
       document.getElementById("schema-unit")?.remove();
       document.getElementById("schema-breadcrumb-unit")?.remove();
     };
-  }, [projectSlug, unitSlug]);
+  }, [project, unit]);
 
   const handleSubmit = (e: React.FormEvent) => {    e.preventDefault();
     setFormError("");
