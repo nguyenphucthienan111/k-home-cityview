@@ -369,8 +369,8 @@ const projects = [
   {
     id: "4", slug: "k-home-skyview-trang-bom", title: "K-Home SkyView Trảng Bom",
     location: "Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai",
-    type: "Căn hộ nhà ở xã hội", price: "Từ 750 Triệu", priceNumber: 0.75, area: "37,0m² - 68,0m²",
-    image: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview",
+    type: "Căn hộ nhà ở xã hội", status: "Sắp mở bán", price: "Từ 750 Triệu", priceNumber: 0.75, area: "37,0m² - 68,0m²",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373120/k-home-skyview/noxh-skyview02.jpg",
     description: "K-Home SkyView Bàu Xéo Trảng Bom – dự án nhà ở xã hội chuẩn Singapore tại KĐT Bàu Xéo. Giá từ 750 triệu, vay gói 5,4%/năm, thiết kế Surbana Jurong, bàn giao full nội thất.",
     longDescription: "**Tổng quan dự án K-Home SkyView Bàu Xéo Trảng Bom**\n\n**K-Home SkyView** (K-Home Sky View) là dự án nhà ở xã hội chuẩn Singapore do **Kim Oanh Land** (Tập đoàn Kim Oanh Group) phát triển tại **Khu đô thị Bàu Xéo**, thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án quy hoạch trên khu đất hơn **1,08 ha** gồm các tòa tháp cao 9 – 12 tầng, cung cấp gần **600 căn hộ NOXH** chất lượng cao.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn",
