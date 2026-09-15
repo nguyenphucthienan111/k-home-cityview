@@ -74,7 +74,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
       r = r.filter(n => n.title.toLowerCase().includes(q) || n.excerpt.toLowerCase().includes(q));
     }
     if (category === "Video Dự Án") {
-      r = r.filter(n => n.content && n.content.includes("---VIDEO---"));
+      r = r.filter(n => (n.content && n.content.includes("---VIDEO---")) || n.category === "Video Dự Án");
     } else if (category !== "Tất cả") {
       r = r.filter(n => n.category === category);
     }
@@ -87,6 +87,12 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
 
   const countFor = (key: string) =>
     key === "tat-ca" ? news.length : news.filter(n => (n.project ?? "chung") === key).length;
+
+  const categoryCount = (cat: string) => {
+    if (cat === "Tất cả") return news.length;
+    if (cat === "Video Dự Án") return news.filter(n => (n.content && n.content.includes("---VIDEO---")) || n.category === "Video Dự Án").length;
+    return news.filter(n => n.category === cat).length;
+  };
 
   // Pagination
   const totalPages  = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -162,19 +168,27 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
 
           {/* Row 2 — Category pills */}
           <div className="flex items-center gap-2 py-2.5 overflow-x-auto scrollbar-hide">
-            {CATEGORIES.map(c => (
-              <button
-                key={c}
-                onClick={() => setCategory(c)}
-                className={`flex-shrink-0 px-3.5 py-1 rounded-full text-[11px] font-semibold border transition-all cursor-pointer ${
-                  category === c
-                    ? "bg-slate-900 text-white border-slate-900"
-                    : "bg-white text-slate-500 border-slate-200 hover:border-slate-400 hover:text-slate-700"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
+            {CATEGORIES.map(c => {
+              const count = categoryCount(c);
+              return (
+                <button
+                  key={c}
+                  onClick={() => setCategory(c)}
+                  className={`flex-shrink-0 px-3.5 py-1 rounded-full text-[11px] font-semibold border transition-all cursor-pointer ${
+                    category === c
+                      ? "bg-slate-900 text-white border-slate-900"
+                      : "bg-white text-slate-500 border-slate-200 hover:border-slate-400 hover:text-slate-700"
+                  }`}
+                >
+                  {c}
+                  {count > 0 && (
+                    <span className={`ml-1.5 text-[10px] ${category === c ? "text-slate-300" : "text-slate-400"}`}>
+                      {count}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
 
             {/* Clear */}
             {(project !== "tat-ca" || category !== "Tất cả" || search) && (
