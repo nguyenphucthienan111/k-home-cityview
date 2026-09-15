@@ -13,13 +13,25 @@ const PROJECTS = [
   { key: "cityview", label: "CityView" },
   { key: "avenue",   label: "Avenue" },
   { key: "midtown",  label: "Midtown" },
+  { key: "skyview",  label: "SkyView" },
 ];
 
 const PROJECT_ACCENT: Record<string, string> = {
   cityview: "#d97706",
   avenue:   "#059669",
   midtown:  "#0284c7",
+  skyview:  "#4f46e5",
   chung:    "#7c3aed",
+};
+
+const getProjectLabel = (proj?: string) => {
+  switch (proj) {
+    case "cityview": return "CityView";
+    case "avenue":   return "Avenue";
+    case "midtown":  return "Midtown";
+    case "skyview":  return "SkyView";
+    default:         return "";
+  }
 };
 
 const PAGE_SIZE = 10;
@@ -233,7 +245,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                       className="absolute top-5 left-5 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest"
                       style={{ backgroundColor: PROJECT_ACCENT[featured.project] ?? "#d97706" }}
                     >
-                      {featured.project === "cityview" ? "CityView" : featured.project === "avenue" ? "Avenue" : "Midtown"}
+                      {getProjectLabel(featured.project)}
                     </span>
                   )}
                 </div>
@@ -302,7 +314,7 @@ export default function NewsView({ onNavigate }: NewsViewProps) {
                             className="absolute top-3 right-3 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
                             style={{ backgroundColor: accent }}
                           >
-                            {article.project === "cityview" ? "CityView" : article.project === "avenue" ? "Avenue" : "Midtown"}
+                            {getProjectLabel(article.project)}
                           </span>
                         )}
                       </div>

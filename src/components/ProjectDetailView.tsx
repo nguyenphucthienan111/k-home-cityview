@@ -1223,7 +1223,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {/* REMOVED - will add better design later */}
 
       {/* ── Mobile: Side Dot Navigation — Option 3 ── */}
-      {isMobile && ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug) && (
+      {isMobile && ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"].includes(slug) && (
         <div style={{
           position: 'fixed',
           right: '12px',
@@ -1290,7 +1290,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
 
         {/* ── Desktop: Side Navigation (Hidden on mobile, lg:flex) ── */}
-        {["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach"].includes(slug) && (
+        {["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"].includes(slug) && (
           <div className="fixed left-4 xl:left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center">
             {/* Thanh dọc trên */}
             <div className="w-px h-8 bg-gradient-to-b from-transparent to-slate-300" />

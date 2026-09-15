@@ -43,7 +43,7 @@ export interface News {
   excerpt: string;
   image: string;
   category: string;
-  project?: string; // "cityview" | "avenue" | "midtown" | undefined (chung)
+  project?: string; // "cityview" | "avenue" | "midtown" | "skyview" | undefined (chung)
   content: string;
 }
 
