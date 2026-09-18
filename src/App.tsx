@@ -200,8 +200,18 @@ export default function App() {
       return null;
     }
 
+    // ── 1. News route (luôn ưu tiên cao nhất, tránh bị can-ho regex chặn nhầm) ──
+    const newsMatch = path.match(/^\/tin-tuc\/([^/]+)$/);
+    if (newsMatch) return <NewsDetailView slug={newsMatch[1]} onNavigate={navigateTo} />;
+
+    // ── 2. Video route ──
+    const videoMatch = path.match(/^\/video\/([^/]+)$/);
+    if (videoMatch) return <VideoWatchView videoSlug={videoMatch[1]} onNavigate={navigateTo} />;
+
+    const PROJECT_SLUGS = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"];
+
     const unitMatch = path.match(/^\/([^/]+)\/(can-ho-[^/]+|can-ho[^/]*)$/);
-    if (unitMatch) {
+    if (unitMatch && PROJECT_SLUGS.includes(unitMatch[1])) {
       return <UnitDetailView projectSlug={unitMatch[1]} unitSlug={unitMatch[2]} onNavigate={navigateTo} />;
     }
 
@@ -261,19 +271,12 @@ export default function App() {
       return null;
     }
 
-    const PROJECT_SLUGS = ["k-home-cityview-ho-nai", "k-home-midtown-trang-bom", "k-home-avenue-nhon-trach", "k-home-skyview-trang-bom"];
     if (PROJECT_SLUGS.includes(path.slice(1))) {
       return <ProjectDetailView slug={path.slice(1)} onNavigate={navigateTo} />;
     }
 
     const projectMatchOld = path.match(/^\/projects\/([^/]+)$/);
     if (projectMatchOld) { navigateTo(`/${projectMatchOld[1]}`); return null; }
-
-    const newsMatch = path.match(/^\/tin-tuc\/([^/]+)$/);
-    if (newsMatch) return <NewsDetailView slug={newsMatch[1]} onNavigate={navigateTo} />;
-
-    const videoMatch = path.match(/^\/video\/([^/]+)$/);
-    if (videoMatch) return <VideoWatchView videoSlug={videoMatch[1]} onNavigate={navigateTo} />;
 
     const newsMatchOld = path.match(/^\/news\/([^/]+)$/);
     if (newsMatchOld) { navigateTo(`/tin-tuc/${newsMatchOld[1]}`); return null; }
