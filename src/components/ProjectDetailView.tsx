@@ -1217,6 +1217,285 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     );
   }
 
+  const renderProjectMapCard = (targetSlug: string) => {
+    if (targetSlug === "k-home-midtown-trang-bom") {
+      return (
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – Vị Trí Giao Lộ 4 Tuyến Đường Lớn</h3>
+                <p className="text-xs text-slate-500">Giao lộ 4 tuyến đường 30/4 - Hùng Vương - Lý Nam Đế - Lê Đại Hành, TT. Trảng Bom (Liền kề KCN Bàu Xéo)</p>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/9c4o7FhM73Hn2N9e9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+              <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Midtown - KOG) →
+            </a>
+          </div>
+
+          {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom */}
+          <div className="bg-teal-50/70 border border-teal-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+            <p>
+              <strong>Nhà ở xã hội Trảng Bom (K-Home Midtown)</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> quy mô 13,97 ha lớn nhất tại trung tâm thị trấn Trảng Bom. Dự án phục vụ nhu cầu an cư chất lượng cao cho cán bộ, công nhân viên và kỹ sư làm việc tại <strong>KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai</strong> với mức giá chỉ từ 750 triệu/căn, hỗ trợ vay 5,4%/năm.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
+              <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Trảng Bom giá rẻ</span>
+              <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Căn hộ Trảng Bom</span>
+              <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH KCN Bàu Xéo</span>
+              <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Vay 5,4% mua NOXH Trảng Bom</span>
+            </div>
+          </div>
+
+          <div className="w-full h-80 rounded-2xl overflow-hidden border border-teal-200 relative shadow-md">
+            <iframe
+              title="Nhà ở xã hội Trảng Bom K-Home Midtown Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0666616089666!2d107.0031419750912!3d10.958337189201718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e7e5c698818b%3A0x3c5a8151d5490c00!2zTmjDoCDhu54gWMOjIEjhu5lpIFRy4bqjbmcgQm9tIC0gSy1Ib21lIE1pZHRvd24gLSBLT0c!5e0!3m2!1sen!2s!4v1789697867235!5m2!1sen!2s"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+            <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
+              <span className="block text-slate-800 font-bold text-base">3 Phút (1,5km)</span>
+              <span className="block text-[11px] text-slate-500">Liền kề KCN</span>
+            </div>
+            <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">Trung Tâm Hành Chính</span>
+              <span className="block text-slate-800 font-bold text-base">2 Phút (800m)</span>
+              <span className="block text-[11px] text-slate-500">Đường 30/4</span>
+            </div>
+            <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa</span>
+              <span className="block text-slate-800 font-bold text-base">15 Phút (12km)</span>
+              <span className="block text-[11px] text-slate-500">Trục Quốc Lộ 1A</span>
+            </div>
+            <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Hồ Chí Minh</span>
+              <span className="block text-slate-800 font-bold text-base">35 Phút</span>
+              <span className="block text-[11px] text-slate-500">Cao tốc Long Thành - Dầu Giây</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (targetSlug === "k-home-avenue-nhon-trach") {
+      return (
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Nhơn Trạch – Cửa Ngõ Sân Bay Long Thành</h3>
+                <p className="text-xs text-slate-500">Mặt tiền đại lộ Nguyễn Ái Quốc (25C), Xã Phước An, Huyện Nhơn Trạch, Tỉnh Đồng Nai (Cách Sân Bay Long Thành 10 phút)</p>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/uX3y2iK1uW8zH95b6" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+              <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Avenue - Kim Oanh Land) →
+            </a>
+          </div>
+
+          {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Nhơn Trạch */}
+          <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+            <p>
+              <strong>Nhà ở xã hội Nhơn Trạch (K-Home Avenue)</strong> – khu <strong>chung cư Nhơn Trạch giá rẻ</strong> sở hữu vị trí vàng ngay mặt tiền đại lộ huyết mạch 25C (Nguyễn Ái Quốc) rộng 100m kết nối thẳng vào cổng số 1 Sân bay Quốc tế Long Thành. Dự án cung cấp 1.022 căn hộ tiện nghi chuẩn Singapore phục vụ chuyên gia, công nhân viên tại <strong>cụm 6 KCN Nhơn Trạch, Cảng Phước An và sân bay Long Thành</strong> với giá chỉ từ 750 triệu/căn, vay ưu đãi 5,4%/năm.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Nhơn Trạch</span>
+              <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Nhơn Trạch giá rẻ</span>
+              <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Mặt tiền Đại lộ 25C</span>
+              <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Gần Sân Bay Long Thành</span>
+              <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội KCN Nhơn Trạch</span>
+            </div>
+          </div>
+
+          <div className="w-full h-80 rounded-2xl overflow-hidden border border-emerald-200 relative shadow-md">
+            <iframe
+              title="Nhà ở xã hội Nhơn Trạch K-Home Avenue Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+            <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Sân Bay Long Thành</span>
+              <span className="block text-slate-800 font-bold text-base">10 Phút (7km)</span>
+              <span className="block text-[11px] text-slate-500">Đại lộ 25C thẳng tiến</span>
+            </div>
+            <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Công Nghiệp Nhơn Trạch</span>
+              <span className="block text-slate-800 font-bold text-base">5 Phút (3km)</span>
+              <span className="block text-[11px] text-slate-500">Cụm KCN Nhơn Trạch 1-6</span>
+            </div>
+            <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">TP. Thủ Đức / TP.HCM</span>
+              <span className="block text-slate-800 font-bold text-base">20 - 25 Phút</span>
+              <span className="block text-[11px] text-slate-500">Qua Cầu Nhơn Trạch / Vành Đai 3</span>
+            </div>
+            <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Thương Mại Tự Do</span>
+              <span className="block text-slate-800 font-bold text-base">5 Phút</span>
+              <span className="block text-[11px] text-slate-500">Quy mô 1.000 ha liền kề</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (targetSlug === "k-home-skyview-trang-bom") {
+      return (
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – Vị Trí Liền Kề KCN Bàu Xéo</h3>
+                <p className="text-xs text-slate-500">Khu đô thị Bàu Xéo, Thị trấn Trảng Bom, Tỉnh Đồng Nai (Cạnh cổng KCN Bàu Xéo)</p>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/9c4o7FhM73Hn2N9e9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+              <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home SkyView) →
+            </a>
+          </div>
+
+          {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom */}
+          <div className="bg-indigo-50/70 border border-indigo-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+            <p>
+              <strong>Nhà ở xã hội K-Home SkyView Bàu Xéo Trảng Bom</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> quy mô 12 tầng với hơn 500 căn hộ đầy đủ tiện nghi ngay trung tâm Khu đô thị dịch vụ Bàu Xéo. Dự án liền kề KCN Bàu Xéo (quy mô gần 500ha), phục vụ nhu cầu an cư chất lượng cao cho công nhân, kỹ sư và gia đình trẻ với mức giá chỉ từ 750 triệu/căn, hỗ trợ vay 5,4%/năm.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
+              <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Bàu Xéo Trảng Bom</span>
+              <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Căn hộ Bàu Xéo giá rẻ</span>
+              <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH K-Home SkyView</span>
+              <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Liền kề KCN Bàu Xéo</span>
+            </div>
+          </div>
+
+          <div className="w-full h-80 rounded-2xl overflow-hidden border border-indigo-200 relative shadow-md">
+            <iframe
+              title="Nhà ở xã hội K-Home SkyView Trảng Bom Bàu Xéo Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+            <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
+              <span className="block text-slate-800 font-bold text-base">1 Phút (500m)</span>
+              <span className="block text-[11px] text-slate-500">Trực diện cổng KCN</span>
+            </div>
+            <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">Trung Tâm Hành Chính</span>
+              <span className="block text-slate-800 font-bold text-base">3 Phút (1,2km)</span>
+              <span className="block text-[11px] text-slate-500">Kết nối QL1A</span>
+            </div>
+            <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">Ga Trảng Bom</span>
+              <span className="block text-slate-800 font-bold text-base">5 Phút (2km)</span>
+              <span className="block text-[11px] text-slate-500">Trục đường 30/4</span>
+            </div>
+            <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
+              <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa / TP.HCM</span>
+              <span className="block text-slate-800 font-bold text-base">20 - 40 Phút</span>
+              <span className="block text-[11px] text-slate-500">Cao tốc Dầu Giây - TP.HCM</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Default: CityView
+    return (
+      <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Biên Hòa – Vị Trí Đường Điểu Xiển Hố Nai</h3>
+              <p className="text-xs text-slate-500">Mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai (Kế bên Ga Hố Nai & KCN Amata)</p>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/AGywfAE793NgUYMT9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
+            <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Cityview - Kim Oanh Land) →
+          </a>
+        </div>
+
+        {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Biên Hòa */}
+        <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
+          <p>
+            <strong>Nhà ở xã hội Biên Hòa (K-Home CityView Hố Nai)</strong> là giải pháp an cư kiểu mẫu chuẩn Singapore tại trung tâm TP. Biên Hòa. Tọa lạc ngay mặt tiền đường Điểu Xiển – cửa ngõ giao thương sầm uất giữa Hố Nai và Tân Hòa, dự án giúp công nhân, kỹ sư tại <strong>KCN Amata, KCN Biên Hòa 2, KCN Pouchen và KCN Long Bình</strong> dễ dàng di chuyển đi làm chỉ từ 3 đến 10 phút.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Biên Hòa</span>
+            <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Biên Hòa giá rẻ</span>
+            <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Hố Nai</span>
+            <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường Điểu Xiển</span>
+            <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Gần KCN Amata & Pouchen</span>
+          </div>
+        </div>
+
+        {/* Responsive Google Maps Iframe Embed - Official Google Business Profile */}
+        <div className="w-full h-80 rounded-2xl overflow-hidden border border-amber-200 relative shadow-md">
+          <iframe
+            title="Nhà ở xã hội Biên Hòa K-Home CityView Hố Nai Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0500305663313!2d106.90024047509125!3d10.959593489200515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1787364751941!5m2!1sen!2s"
+            className="w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+
+        {/* Ma trận thời gian di chuyển thực tế */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+          <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
+            <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">Chợ Biên Hòa</span>
+            <span className="block text-slate-800 font-bold text-base">5 Phút (2km)</span>
+            <span className="block text-[11px] text-slate-500">Qua cầu Hóa An</span>
+          </div>
+          <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
+            <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">KCN Pouchen</span>
+            <span className="block text-slate-800 font-bold text-base">3 Phút (1,2km)</span>
+            <span className="block text-[11px] text-slate-500">Trực diện KCN</span>
+          </div>
+          <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
+            <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">KCN Amata Biên Hòa</span>
+            <span className="block text-slate-800 font-bold text-base">10 Phút (4km)</span>
+            <span className="block text-[11px] text-slate-500">Trục Xa Lộ Hà Nội</span>
+          </div>
+          <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
+            <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">Sân Bay Long Thành</span>
+            <span className="block text-slate-800 font-bold text-base">30 Phút</span>
+            <span className="block text-[11px] text-slate-500">Qua Quốc Lộ 51</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       {/* ── Mobile: Sticky Top Navigation — chỉ CityView ── */}
@@ -1863,6 +2142,22 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <p className="text-xs text-slate-400">* Click vào từng loại căn để xem hình ảnh và mô tả chi tiết.</p>
                 </div>
               )}
+
+              {/* Bản đồ vị trí tương tác ngay trong tab Tổng Quan */}
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-display font-semibold text-slate-800 flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-amber-600" /> Vị Trí & Kết Nối Giao Thông
+                  </h3>
+                  <button
+                    onClick={() => setActiveTab("map")}
+                    className="text-xs font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1 transition-colors cursor-pointer"
+                  >
+                    Xem toàn màn hình →
+                  </button>
+                </div>
+                {renderProjectMapCard(slug)}
+              </div>
             </div>
           )}
 
@@ -1971,22 +2266,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           {/* Tab 4: Location Map */}
           {activeTab === "map" && (
             <div className="space-y-6">
-              <h3 className="text-xl font-display font-semibold text-slate-800">Vị Trí Dự Án</h3>
-              <p className="text-slate-500 text-sm">
-                {project.location}
-              </p>
-              <div className="w-full h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
-                <iframe
-                  src={project.mapEmbedUrl || `https://www.google.com/maps/embed/v1/place?key=AIzaSyD&q=${encodeURIComponent(project.location + ", Vietnam")}`}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Bản đồ ${project.title}`}
-                ></iframe>
-              </div>
+              {renderProjectMapCard(slug)}
             </div>
           )}
 
@@ -2520,350 +2800,95 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
-      {/* ── Tổng quan Biên Hòa / Đồng Nai ── */}
-      {seo?.dongNaiOverview && (
-        <section id="tiem-nang" className="space-y-6">
+      {/* ── Tổng quan Tiềm Năng & Vị Trí Bản Đồ ── */}
+      <section id="tiem-nang" className="space-y-6">
+        {seo?.dongNaiOverview && (
+          <>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                <Building2 className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-display font-bold text-slate-800">Tiềm Năng Phát Triển Đồng Nai – TP. Biên Hòa</h2>
+                <p className="text-xs text-slate-500 mt-0.5">Khu vực đang được đầu tư hạ tầng mạnh nhất Đông Nam Bộ</p>
+              </div>
+            </div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {seo.dongNaiOverview.stats.map((s, i) => (
+                <div key={i} className="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center space-y-1">
+                  <span className="block text-2xl font-bold text-blue-700">{s.value}</span>
+                  <span className="block text-xs text-slate-500 font-medium">{s.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Slide ảnh tổng quan Biên Hòa — click to zoom */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[2, 3, 4, 6, 7, 8, 9, 10].map((num, i) => (
+                <button key={i} onClick={() => openSlide([2, 3, 4, 6, 7, 8, 9, 10], i, [
+                    "Tổng quan về thành phố Đồng Nai – quy hoạch đô thị trực thuộc trung ương",
+                    "Biên Hòa – trung tâm kinh tế công nghiệp phía Nam Đồng Nai",
+                    "KCN Đồng Nai – 44 khu công nghiệp đang hoạt động 15.000 ha",
+                    "Tổng quan phát triển Đồng Nai Biên Hòa – slide 6",
+                    "Tổng quan phát triển Đồng Nai Biên Hòa – slide 7",
+                    "Tổng quan phát triển Đồng Nai Biên Hòa – slide 8",
+                    "Tổng quan phát triển Đồng Nai Biên Hòa – slide 9",
+                    "Tổng quan phát triển Đồng Nai Biên Hòa – slide 10",
+                  ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
+                  <img src={slideImg(num, "thumbnail")} alt={`Tổng quan phát triển Biên Hòa Đồng Nai - slide ${num}`} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" style={{ backgroundColor: "#e2e8f0" }} />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <p className="text-slate-600 text-sm leading-relaxed">{seo.dongNaiOverview.hubText}</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+              {seo.dongNaiOverview.zones.map((z, i) => (
+                <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-3 text-xs text-slate-600 leading-relaxed">
+                  <span className="block font-bold text-amber-600 mb-1">Vùng {i + 1}</span>
+                  {z.replace(`Vùng ${i + 1}: `, "")}
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-slate-800 text-white rounded-2xl p-5">
+              <p className="text-sm leading-relaxed text-slate-200">
+                <span className="font-bold text-amber-400">Kết nối giao thông: </span>
+                {seo.dongNaiOverview.transportText}
+              </p>
+            </div>
+
+            {/* Slide giao thông quốc gia — click to zoom */}
+            <button onClick={() => openSlide([5], 0, ["Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa – cao tốc sân bay Long Thành"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
+              <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa cao tốc sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="320" style={{ backgroundColor: "#e2e8f0" }} />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
+              </div>
+            </button>
+          </>
+        )}
+
+        {/* Nếu không có dongNaiOverview (như Midtown, Avenue, SkyView), hiển thị tiêu đề Tiềm năng vị trí */}
+        {!seo?.dongNaiOverview && (
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
-              <Building2 className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+              <Compass className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-slate-800">Tiềm Năng Phát Triển Đồng Nai – TP. Biên Hòa</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Khu vực đang được đầu tư hạ tầng mạnh nhất Đông Nam Bộ</p>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí & Tiềm Năng Kết Nối Giao Thông</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Tọa độ chiến lược đón đầu làn sóng phát triển hạ tầng trọng điểm Đồng Nai</p>
             </div>
           </div>
+        )}
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {seo.dongNaiOverview.stats.map((s, i) => (
-              <div key={i} className="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center space-y-1">
-                <span className="block text-2xl font-bold text-blue-700">{s.value}</span>
-                <span className="block text-xs text-slate-500 font-medium">{s.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Slide ảnh tổng quan Biên Hòa — click to zoom */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[2, 3, 4, 6, 7, 8, 9, 10].map((num, i) => (
-              <button key={i} onClick={() => openSlide([2, 3, 4, 6, 7, 8, 9, 10], i, [
-                  "Tổng quan về thành phố Đồng Nai – quy hoạch đô thị trực thuộc trung ương",
-                  "Biên Hòa – trung tâm kinh tế công nghiệp phía Nam Đồng Nai",
-                  "KCN Đồng Nai – 44 khu công nghiệp đang hoạt động 15.000 ha",
-                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 6",
-                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 7",
-                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 8",
-                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 9",
-                  "Tổng quan phát triển Đồng Nai Biên Hòa – slide 10",
-                ])} className="relative group rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in w-full">
-                <img src={slideImg(num, "thumbnail")} alt={`Tổng quan phát triển Biên Hòa Đồng Nai - slide ${num}`} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" style={{ backgroundColor: "#e2e8f0" }} />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 text-slate-800 px-2 py-1 rounded-full text-[10px] font-bold flex items-center gap-1"><Eye className="w-3 h-3" /> Phóng to</span>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          <p className="text-slate-600 text-sm leading-relaxed">{seo.dongNaiOverview.hubText}</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-            {seo.dongNaiOverview.zones.map((z, i) => (
-              <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-3 text-xs text-slate-600 leading-relaxed">
-                <span className="block font-bold text-amber-600 mb-1">Vùng {i + 1}</span>
-                {z.replace(`Vùng ${i + 1}: `, "")}
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-slate-800 text-white rounded-2xl p-5">
-            <p className="text-sm leading-relaxed text-slate-200">
-              <span className="font-bold text-amber-400">Kết nối giao thông: </span>
-              {seo.dongNaiOverview.transportText}
-            </p>
-          </div>
-
-          {/* Slide giao thông quốc gia — click to zoom */}
-          <button onClick={() => openSlide([5], 0, ["Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa – cao tốc sân bay Long Thành"])} className="relative group w-full rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in block">
-            <img src={slideImg(5, "thumbnail")} alt="Hạ tầng giao thông quốc gia kết nối Đồng Nai Biên Hòa cao tốc sân bay Long Thành" className="w-full object-cover max-h-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" width="800" height="320" style={{ backgroundColor: "#e2e8f0" }} />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-              <span className="bg-white/90 text-slate-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5"><Eye className="w-3.5 h-3.5" /> Xem toàn màn hình</span>
-            </div>
-          </button>
-
-          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển (Thêm mới cho SEO Geotargeting & Dwell Time) */}
-          {slug === "k-home-cityview-ho-nai" && (
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
-              <div className="flex items-center justify-between flex-wrap gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Biên Hòa – Vị Trí Đường Điểu Xiển Hố Nai</h3>
-                    <p className="text-xs text-slate-500">Mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa, Tỉnh Đồng Nai (Kế bên Ga Hố Nai & KCN Amata)</p>
-                  </div>
-                </div>
-                <a href="https://maps.app.goo.gl/AGywfAE793NgUYMT9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Cityview - Kim Oanh Land) →
-                </a>
-              </div>
-
-              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Biên Hòa */}
-              <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
-                <p>
-                  <strong>Nhà ở xã hội Biên Hòa (K-Home CityView Hố Nai)</strong> là giải pháp an cư kiểu mẫu chuẩn Singapore tại trung tâm TP. Biên Hòa. Tọa lạc ngay mặt tiền đường Điểu Xiển – cửa ngõ giao thương sầm uất giữa Hố Nai và Tân Hòa, dự án giúp công nhân, kỹ sư tại <strong>KCN Amata, KCN Biên Hòa 2, KCN Pouchen và KCN Long Bình</strong> dễ dàng di chuyển đi làm chỉ từ 3 đến 10 phút.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Biên Hòa</span>
-                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Biên Hòa giá rẻ</span>
-                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Hố Nai</span>
-                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường Điểu Xiển</span>
-                  <span className="bg-white text-amber-800 border border-amber-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Gần KCN Amata & Pouchen</span>
-                </div>
-              </div>
-
-              {/* Responsive Google Maps Iframe Embed - Official Google Business Profile */}
-              <div className="w-full h-80 rounded-2xl overflow-hidden border border-amber-200 relative shadow-md">
-                <iframe
-                  title="Nhà ở xã hội Biên Hòa K-Home CityView Hố Nai Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0500305663313!2d106.90024047509125!3d10.959593489200515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1787364751941!5m2!1sen!2s"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-
-              {/* Ma trận thời gian di chuyển thực tế */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-                <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">Chợ Biên Hòa</span>
-                  <span className="block text-slate-800 font-bold text-base">5 Phút (2km)</span>
-                  <span className="block text-[11px] text-slate-500">Qua cầu Hóa An</span>
-                </div>
-                <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">KCN Pouchen</span>
-                  <span className="block text-slate-800 font-bold text-base">3 Phút (1,2km)</span>
-                  <span className="block text-[11px] text-slate-500">Trực diện KCN</span>
-                </div>
-                <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">KCN Amata Biên Hòa</span>
-                  <span className="block text-slate-800 font-bold text-base">10 Phút (4km)</span>
-                  <span className="block text-[11px] text-slate-500">Trục Xa Lộ Hà Nội</span>
-                </div>
-                <div className="bg-amber-50/60 border border-amber-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-amber-600 text-xs font-bold uppercase tracking-wider">Sân Bay Long Thành</span>
-                  <span className="block text-slate-800 font-bold text-base">30 Phút</span>
-                  <span className="block text-[11px] text-slate-500">Qua Quốc Lộ 51</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home Midtown */}
-          {slug === "k-home-midtown-trang-bom" && (
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
-              <div className="flex items-center justify-between flex-wrap gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – Vị Trí Trung Tâm 4 Tuyến Đường Lớn</h3>
-                    <p className="text-xs text-slate-500">Giao lộ 4 tuyến đường 30/4 - Hùng Vương - Lý Nam Đế - Lê Đại Hành, TT. Trảng Bom (Liền kề KCN Bàu Xéo)</p>
-                  </div>
-                </div>
-                <a href="https://maps.app.goo.gl/9c4o7FhM73Hn2N9e9" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Midtown) →
-                </a>
-              </div>
-
-              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom */}
-              <div className="bg-teal-50/70 border border-teal-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
-                <p>
-                  <strong>Nhà ở xã hội Trảng Bom (K-Home Midtown)</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> quy mô 13,97 ha lớn nhất tại trung tâm huyện Trảng Bom. Dự án phục vụ nhu cầu an cư chất lượng cao cho cán bộ, công nhân viên và kỹ sư làm việc tại <strong>KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai</strong> với mức giá chỉ từ 750 triệu/căn, hỗ trợ vay 5,4%/năm.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
-                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Trảng Bom giá rẻ</span>
-                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH KCN Bàu Xéo</span>
-                  <span className="bg-white text-teal-800 border border-teal-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Vay 5,4% mua NOXH Trảng Bom</span>
-                </div>
-              </div>
-
-              <div className="w-full h-80 rounded-2xl overflow-hidden border border-teal-200 relative shadow-md">
-                <iframe
-                  title="Nhà ở xã hội Trảng Bom K-Home Midtown Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0666616089666!2d107.0031419750912!3d10.958337189201718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e7e5c698818b%3A0x3c5a8151d5490c00!2zTmjDoCDhu54gWMOjIEjhu5lpIFRy4bqjbmcgQm9tIC0gSy1Ib21lIE1pZHRvd24gLSBLT0c!5e0!3m2!1sen!2s!4v1789697867235!5m2!1sen!2s"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
-                  <span className="block text-slate-800 font-bold text-base">3 Phút (1,5km)</span>
-                  <span className="block text-[11px] text-slate-500">Liền kề KCN</span>
-                </div>
-                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">Trung Tâm Hành Chính</span>
-                  <span className="block text-slate-800 font-bold text-base">2 Phút (800m)</span>
-                  <span className="block text-[11px] text-slate-500">Đường 30/4</span>
-                </div>
-                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa</span>
-                  <span className="block text-slate-800 font-bold text-base">15 Phút (12km)</span>
-                  <span className="block text-[11px] text-slate-500">Trục Quốc Lộ 1A</span>
-                </div>
-                <div className="bg-teal-50/60 border border-teal-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-teal-700 text-xs font-bold uppercase tracking-wider">TP. Hồ Chí Minh</span>
-                  <span className="block text-slate-800 font-bold text-base">35 Phút</span>
-                  <span className="block text-[11px] text-slate-500">Cao tốc Long Thành - Dầu Giây</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home Avenue */}
-          {slug === "k-home-avenue-nhon-trach" && (
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
-              <div className="flex items-center justify-between flex-wrap gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Nhơn Trạch – Cửa Ngõ Sân Bay Long Thành</h3>
-                    <p className="text-xs text-slate-500">Mặt tiền đường Nguyễn Ái Quốc (25C), Xã Nhơn Trạch, Tỉnh Đồng Nai (Cách Sân Bay Long Thành 10 phút)</p>
-                  </div>
-                </div>
-                <a href="https://maps.app.goo.gl/uX3y2iK1uW8zH95b6" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5" /> Xem Google Maps (K-Home Avenue - Kim Oanh Land) →
-                </a>
-              </div>
-
-              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Nhơn Trạch */}
-              <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
-                <p>
-                  <strong>Nhà ở xã hội Nhơn Trạch (K-Home Avenue)</strong> – khu <strong>chung cư Nhơn Trạch giá rẻ</strong> sở hữu vị trí vàng ngay mặt tiền đại lộ huyết mạch 25C (Nguyễn Ái Quốc) kết nối thẳng vào cổng số 1 Sân bay Quốc tế Long Thành. Dự án cung cấp 1.022 căn hộ tiện nghi chuẩn Singapore phục vụ chuyên gia, công nhân viên tại <strong>cụm 6 KCN Nhơn Trạch và sân bay Long Thành</strong> với giá chỉ từ 750 triệu/căn.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Nhơn Trạch</span>
-                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Nhơn Trạch giá rẻ</span>
-                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Đường 25C</span>
-                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH Gần Sân Bay Long Thành</span>
-                  <span className="bg-white text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội KCN Nhơn Trạch</span>
-                </div>
-              </div>
-
-              <div className="w-full h-80 rounded-2xl overflow-hidden border border-emerald-200 relative shadow-md">
-                <iframe
-                  title="Nhà ở xã hội Nhơn Trạch K-Home Avenue Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.328778771721!2d106.89716427508769!3d10.709104289435636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317523bdb83ec7b7%3A0x2844491869659151!2sK-Home%20Avenue%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1789027052579!5m2!1sen!2s"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Sân Bay Long Thành</span>
-                  <span className="block text-slate-800 font-bold text-base">10 Phút (7km)</span>
-                  <span className="block text-[11px] text-slate-500">Đại lộ 25C thẳng tiến</span>
-                </div>
-                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Công Nghiệp Nhơn Trạch</span>
-                  <span className="block text-slate-800 font-bold text-base">5 Phút (3km)</span>
-                  <span className="block text-[11px] text-slate-500">Cụm KCN Nhơn Trạch 1-6</span>
-                </div>
-                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">TP. Thủ Đức / TP.HCM</span>
-                  <span className="block text-slate-800 font-bold text-base">20 - 25 Phút</span>
-                  <span className="block text-[11px] text-slate-500">Qua Cầu Nhơn Trạch / Vành Đai 3</span>
-                </div>
-                <div className="bg-emerald-50/60 border border-emerald-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-emerald-700 text-xs font-bold uppercase tracking-wider">Khu Thương Mại Tự Do</span>
-                  <span className="block text-slate-800 font-bold text-base">5 Phút</span>
-                  <span className="block text-[11px] text-slate-500">Quy mô 1.000 ha liền kề</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển cho K-Home SkyView */}
-          {slug === "k-home-skyview-trang-bom" && (
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-5 shadow-sm">
-              <div className="flex items-center justify-between flex-wrap gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-800">Dự Án Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo</h3>
-                    <p className="text-xs text-slate-500">Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai (Liền kề KCN Bàu Xéo & Ga Trảng Bom)</p>
-                  </div>
-                </div>
-                <a href="https://maps.google.com/?q=Khu+do+thi+Bau+Xeo+Trang+Bom+Dong+Nai" target="_blank" rel="noopener noreferrer" className="text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm">
-                  <MapPin className="w-3.5 h-3.5" /> Xem Bản Đồ Bàu Xéo →
-                </a>
-              </div>
-
-              {/* Thông tin ngữ cảnh SEO cho Nhà ở xã hội Trảng Bom SkyView */}
-              <div className="bg-indigo-50/70 border border-indigo-200/80 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed space-y-2">
-                <p>
-                  <strong>Nhà ở xã hội Trảng Bom (K-Home SkyView Bàu Xéo)</strong> – khu <strong>chung cư Trảng Bom giá rẻ</strong> tọa lạc đắc địa ngay trong Khu đô thị Bàu Xéo hiện hữu, mặt tiền Quốc Lộ 1A. Dự án mang đến không gian an cư chuẩn Singapore cho kỹ sư, chuyên gia và công nhân viên làm việc tại <strong>KCN Bàu Xéo, KCN Sông Mây, KCN Giang Điền</strong> với mức giá chỉ từ 750 triệu/căn, vay vốn 5,4%/năm.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Nhà ở xã hội Trảng Bom</span>
-                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Chung cư Trảng Bom giá rẻ</span>
-                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 K-Home SkyView Bàu Xéo</span>
-                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 NOXH KCN Bàu Xéo</span>
-                  <span className="bg-white text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-lg font-medium text-[11px]">📍 Vay NOXH 5,4%/năm Trảng Bom</span>
-                </div>
-              </div>
-
-              <div className="w-full h-80 rounded-2xl overflow-hidden border border-indigo-200 relative shadow-md">
-                <iframe
-                  title="Nhà ở xã hội Trảng Bom K-Home SkyView Bàu Xéo Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.541172084478!2d107.0185!3d10.9655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU3JzU1LjgiTiAxMDfCsDAxJzA2LjYiRQ!5e0!3m2!1svi!2svn!4v1789373500000!5m2!1svi!2svn"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">KCN Bàu Xéo</span>
-                  <span className="block text-slate-800 font-bold text-base">2 Phút (500m)</span>
-                  <span className="block text-[11px] text-slate-500">Đối diện KCN</span>
-                </div>
-                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">Ga Trảng Bom & QL1A</span>
-                  <span className="block text-slate-800 font-bold text-base">3 Phút (1km)</span>
-                  <span className="block text-[11px] text-slate-500">Trục giao thông chính</span>
-                </div>
-                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">TP. Biên Hòa</span>
-                  <span className="block text-slate-800 font-bold text-base">15 Phút (12km)</span>
-                  <span className="block text-[11px] text-slate-500">Dọc Quốc Lộ 1A</span>
-                </div>
-                <div className="bg-indigo-50/60 border border-indigo-100 p-3.5 rounded-xl text-center space-y-1">
-                  <span className="block text-indigo-700 text-xs font-bold uppercase tracking-wider">TP. Hồ Chí Minh</span>
-                  <span className="block text-slate-800 font-bold text-base">35 Phút</span>
-                  <span className="block text-[11px] text-slate-500">Cao tốc Dầu Giây - TP.HCM</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </section>
-      )}
+        {/* Bản đồ vị trí tương tác Google Maps & Ma trận di chuyển */}
+        {renderProjectMapCard(slug)}
+      </section>
 
       {/* ── Tiến độ xây dựng ── */}
       {seo?.constructionProgress && (
