@@ -2142,22 +2142,6 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                   <p className="text-xs text-slate-400">* Click vào từng loại căn để xem hình ảnh và mô tả chi tiết.</p>
                 </div>
               )}
-
-              {/* Bản đồ vị trí tương tác ngay trong tab Tổng Quan */}
-              <div className="space-y-4 pt-6 border-t border-slate-100">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-display font-semibold text-slate-800 flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-amber-600" /> Vị Trí & Kết Nối Giao Thông
-                  </h3>
-                  <button
-                    onClick={() => setActiveTab("map")}
-                    className="text-xs font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1 transition-colors cursor-pointer"
-                  >
-                    Xem toàn màn hình →
-                  </button>
-                </div>
-                {renderProjectMapCard(slug)}
-              </div>
             </div>
           )}
 
