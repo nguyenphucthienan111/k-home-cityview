@@ -2694,7 +2694,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <div className="w-full h-80 rounded-2xl overflow-hidden border border-teal-200 relative shadow-md">
                 <iframe
                   title="Nhà ở xã hội Trảng Bom K-Home Midtown Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1384.902626805889!2d107.00522593899112!3d10.956108940275927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e700442d0327%3A0xc12a0db1c85bf214!2sK-Home%20Midtown!5e0!3m2!1sen!2s!4v1784803611439!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0666616089666!2d107.0031419750912!3d10.958337189201718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e7e5c698818b%3A0x3c5a8151d5490c00!2zTmjDoCDhu54gWMOjIEjhu5lpIFRy4bqjbmcgQm9tIC0gSy1Ib21lIE1pZHRvd24gLSBLT0c!5e0!3m2!1sen!2s!4v1789697867235!5m2!1sen!2s"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
