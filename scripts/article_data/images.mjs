@@ -1,0 +1,20 @@
+export const IMG = {
+  dnAerial: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1.webp",
+  cityviewFacade: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+  cityviewPool: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V11_TH_EXT_NOTM_POOL_2.webp",
+  cityviewPlay: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1.webp",
+  cityviewGarden: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2.webp",
+  cityviewStreet: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V09_TH_EXT_STREET-VIEW_FINAL_2.webp",
+  cityviewAerial: "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2.webp",
+  midtownNight: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230298/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.jpg",
+  midtownPool: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230300/k-home-midtown/Du-an-K-Home-Midtown-3d-ho-boi-view-2-2048x1150.jpg",
+  midtownPark: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230302/k-home-midtown/Du-an-K-Home-Midtown-3d-cong-vien-thap-tang-2048x1150.jpg",
+  avenueShophouse: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230305/k-home-avenue/Pc09-Loi-vao-shophouse_2-min.jpg",
+  avenueFacade: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230307/k-home-avenue/PC01-TT-copy_2_2-min.jpg",
+  avenuePool: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230309/k-home-avenue/Pc07-Tien-ich-be-boi_2-min.jpg",
+  avenuePlay: "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230311/k-home-avenue/Pc05-Tien-ich-khu-vui-choi_2-min.jpg",
+  skyviewMain: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373118/k-home-skyview/noxh-skyview.jpg",
+  skyview01: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373119/k-home-skyview/noxh-skyview01.jpg",
+  skyview02: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373120/k-home-skyview/noxh-skyview02.jpg",
+  skyview03: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373121/k-home-skyview/noxh-skyview03.png"
+};
