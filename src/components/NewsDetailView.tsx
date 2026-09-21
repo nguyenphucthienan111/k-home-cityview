@@ -427,9 +427,9 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
       <article
         className="max-w-none text-slate-700 leading-relaxed space-y-0"
         onClick={(e) => {
-          const target = e.target as HTMLElement;
-          if (target.tagName === "A") {
-            const href = target.getAttribute("href");
+          const anchor = (e.target as HTMLElement).closest("a");
+          if (anchor) {
+            const href = anchor.getAttribute("href");
             if (href && href.startsWith("/") && !href.startsWith("//")) {
               e.preventDefault();
               onNavigate(href);
@@ -447,6 +447,13 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           const elements: React.ReactNode[] = [];
           let i = 0;
           const articleId = article.id || "default";
+
+          const renderMarkdownInline = (text: string) => {
+            return text
+              .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-slate-900">$1</strong>')
+              .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em class="italic text-slate-800">$1</em>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium hover:font-semibold transition-colors cursor-pointer">$1</a>');
+          };
 
           while (i < lines.length) {
             const line = lines[i];
@@ -700,6 +707,27 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
+            // H3
+            if (line.startsWith("### ")) {
+              elements.push(
+                <h3 key={`${articleId}-h3-${i}`} className="text-lg font-bold text-slate-800 mt-6 mb-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full inline-block shrink-0" />
+                  {line.slice(4)}
+                </h3>
+              );
+              i++; continue;
+            }
+
+            // Blockquote
+            if (line.startsWith("> ")) {
+              elements.push(
+                <blockquote key={`${articleId}-bq-${i}`} className="border-l-4 border-amber-500 bg-amber-50/60 pl-4 py-2.5 my-4 rounded-r-xl italic text-slate-700 text-sm">
+                  <span dangerouslySetInnerHTML={{ __html: renderMarkdownInline(line.slice(2)) }} />
+                </blockquote>
+              );
+              i++; continue;
+            }
+
             // Table: collect all table rows
             if (line.startsWith("|") && line.includes("|", 1)) {
               const tableLines: string[] = [];
@@ -707,29 +735,41 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                 tableLines.push(lines[i]);
                 i++;
               }
-              // Filter out separator rows (|---|)
-              const dataRows = tableLines.filter(l => !l.replace(/[\s|:-]/g, ""));
-              const allRows = tableLines.filter(l => !/^\|[\s|:-]+\|$/.test(l));
-              const parseCells = (l: string) => l.split("|").map(c => c.trim()).filter(Boolean);
+              const allRows = tableLines.filter(l => !/^\|[\s|:-]+\|$/.test(l.trim()));
+              const parseCells = (l: string) => {
+                const trimmed = l.trim();
+                const raw = trimmed.startsWith("|") && trimmed.endsWith("|")
+                  ? trimmed.slice(1, -1)
+                  : trimmed;
+                return raw.split("|").map(c => c.trim());
+              };
 
               if (allRows.length > 0) {
                 const headerCells = parseCells(allRows[0]);
                 const bodyRows = allRows.slice(1);
                 elements.push(
-                  <div key={`${articleId}-table-${i}`} className="my-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                  <div key={`${articleId}-table-${i}`} className="my-6 rounded-2xl overflow-x-auto border border-slate-200 shadow-sm">
                     <table className="w-full border-collapse text-sm">
                       <thead>
                         <tr className="bg-amber-500 text-white">
                           {headerCells.map((cell, ci) => (
-                            <th key={ci} className="px-5 py-3 text-left font-bold tracking-wide">{cell}</th>
+                            <th
+                              key={ci}
+                              className="px-5 py-3 text-left font-bold tracking-wide whitespace-nowrap"
+                              dangerouslySetInnerHTML={{ __html: renderMarkdownInline(cell) }}
+                            />
                           ))}
                         </tr>
                       </thead>
                       <tbody>
                         {bodyRows.map((row, ri) => (
-                          <tr key={ri} className={ri % 2 === 0 ? "bg-white" : "bg-amber-50/40"}>
+                          <tr key={ri} className={ri % 2 === 0 ? "bg-white hover:bg-amber-50/20" : "bg-amber-50/40 hover:bg-amber-50/60"}>
                             {parseCells(row).map((cell, ci) => (
-                              <td key={ci} className="px-5 py-3 text-slate-700 border-b border-slate-100">{cell}</td>
+                              <td
+                                key={ci}
+                                className="px-5 py-3 text-slate-700 border-b border-slate-100"
+                                dangerouslySetInnerHTML={{ __html: renderMarkdownInline(cell) }}
+                              />
                             ))}
                           </tr>
                         ))}
@@ -750,17 +790,12 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               }
               elements.push(
                 <ul key={`${articleId}-list-${i}`} className="my-3 space-y-2">
-                  {items.map((item, ii) => {
-                    const html = item
-                      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900">$1</strong>')
-                      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
-                    return (
-                      <li key={`${articleId}-item-${i}-${ii}`} className="flex items-start gap-2.5 text-sm text-slate-700">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
-                        <span dangerouslySetInnerHTML={{ __html: html }} />
-                      </li>
-                    );
-                  })}
+                  {items.map((item, ii) => (
+                    <li key={`${articleId}-item-${i}-${ii}`} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
+                      <span dangerouslySetInnerHTML={{ __html: renderMarkdownInline(item) }} />
+                    </li>
+                  ))}
                 </ul>
               );
               continue;
@@ -772,13 +807,10 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
               i++; continue;
             }
 
-            // Normal paragraph with **bold** and [link](url) support
-            const html = line
-              .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>')
-              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-amber-600 hover:text-amber-700 underline underline-offset-2 font-medium">$1</a>');
+            // Normal paragraph with **bold**, *italic*, and [link](url) support
             elements.push(
               <p key={`${articleId}-p-${i}`} className="text-sm text-slate-700 leading-7 mb-1"
-                dangerouslySetInnerHTML={{ __html: html }} />
+                dangerouslySetInnerHTML={{ __html: renderMarkdownInline(line) }} />
             );
             i++;
           }
