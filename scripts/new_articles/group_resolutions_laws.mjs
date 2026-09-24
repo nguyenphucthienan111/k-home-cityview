@@ -7,12 +7,12 @@ export const resolutionLawArticles = [
     title: "Nghị Quyết 21-NQ/TW Của Ban Chấp Hành Trung Ương Đảng: Định Hướng Sửa Đổi Luật Đất Đai Và Cú Hích Cho Nhà Ở Xã Hội",
     date: "2026-09-24",
     excerpt: "Phân tích toàn văn Nghị quyết số 21-NQ/TW ngày 28/7/2026 của Ban Chấp hành Trung ương Đảng khóa XIV về sửa đổi Luật Đất đai: khơi thông nguồn lực đất đai, ưu tiên bố trí quỹ đất phát triển nhà ở xã hội và đổi mới cơ chế định giá đất.",
-    image: "https://xdcs.cdnchinhphu.vn/zoom/1200_630/446259493575335936/2026/7/29/vn-17853138819652017831959.jpg",
+    image: "https://res.cloudinary.com/dthv0nsq/image/upload/v1790226099/hoi_nghi_real_rkc6mw.png",
     category: "Chính sách & Quy hoạch",
     project: "chung",
     content: `> **Tiêu điểm chính sách quốc gia 2026:** *Ngày 28/7/2026, Tổng Bí thư đã ký ban hành Nghị quyết số 21-NQ/TW của Hội nghị lần thứ ba Ban Chấp hành Trung ương Đảng khóa XIV về "Quan điểm, định hướng sửa đổi Luật Đất đai và các luật có liên quan". Đây là văn kiện chiến lược đặc biệt quan trọng, kế thừa những thành tựu của Nghị quyết 18-NQ/TW, đồng thời tạo ra những đột phá mang tính lịch sử nhằm khơi thông nguồn lực đất đai, giải quyết dứt điểm các điểm nghẽn về bồi thường, tái định cư, định giá đất và đặc biệt là ưu tiên bố trí quỹ đất phát triển nhà ở xã hội trên cả nước.*
 
-![Nghị quyết 21-NQ/TW về sửa đổi Luật Đất đai và các luật liên quan](https://xdcs.cdnchinhphu.vn/zoom/1200_630/446259493575335936/2026/7/29/vn-17853138819652017831959.jpg)
+![Nghị quyết 21-NQ/TW về sửa đổi Luật Đất đai và các luật liên quan](https://res.cloudinary.com/dthv0nsq/image/upload/v1790226099/hoi_nghi_real_rkc6mw.png)
 
 ## 1. Bối Cảnh Ban Hành Và Vị Trí Lịch Sử Của Nghị Quyết Số 21-NQ/TW
 
