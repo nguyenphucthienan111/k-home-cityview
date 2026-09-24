@@ -1664,8 +1664,20 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
             Bộ Sưu Tập Hình Ảnh
-            <span className="text-xs font-normal text-slate-400">(Click để mở rộng xem chi tiết)</span>
+            <span className="text-xs font-normal text-slate-400">
+              ({project.gallery.length} ảnh – Click để phóng to xem chi tiết)
+            </span>
           </h2>
+          {project.gallery.length > 3 && (
+            <button
+              type="button"
+              onClick={() => openLightbox(0)}
+              className="text-xs font-semibold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+            >
+              <Eye className="w-3.5 h-3.5 text-amber-600" />
+              <span>Xem tất cả {project.gallery.length} ảnh</span>
+            </button>
+          )}
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1675,7 +1687,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           >
             <img
               src={imgUrl(project.image, "full")}
-              alt={project.galleryAlts?.[0] ?? `${project.title} - Nhà ở xã hội Hố Nai Biên Hòa Đồng Nai Kim Oanh Land`}
+              alt={project.galleryAlts?.[0] ?? `${project.title} - ${project.location} Kim Oanh Land`}
               className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -1694,14 +1706,23 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               >
                 <img
                   src={imgUrl(img, "full")}
-                  alt={project.galleryAlts?.[idx + 1] ?? `${project.title} - Căn hộ nhà ở xã hội Hố Nai Biên Hòa Đồng Nai - ảnh ${idx + 2}`}
+                  alt={project.galleryAlts?.[idx + 1] ?? `${project.title} - ảnh ${idx + 2}`}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-white/90 backdrop-blur-sm text-slate-800 p-2 rounded-full shadow flex items-center justify-center">
-                    <Eye className="w-3.5 h-3.5" />
-                  </span>
-                </div>
+                {idx === 1 && project.gallery.length > 3 ? (
+                  <div className="absolute inset-0 bg-slate-950/60 group-hover:bg-slate-950/70 transition-colors flex flex-col items-center justify-center text-white backdrop-blur-[1px]">
+                    <span className="text-xl md:text-2xl font-bold font-tech text-white">+{project.gallery.length - 3}</span>
+                    <span className="text-xs font-medium text-amber-200 flex items-center gap-1 mt-0.5">
+                      <Eye className="w-3 h-3" /> Xem tất cả ảnh
+                    </span>
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-white/90 backdrop-blur-sm text-slate-800 p-2 rounded-full shadow flex items-center justify-center">
+                      <Eye className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -4334,6 +4355,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           images={project.gallery}
           initialIndex={lightboxIndex}
           caption={`${project.title} - Phối cảnh không gian sống`}
+          alts={project.galleryAlts}
           onClose={() => setLightboxOpen(false)}
         />
       )}
