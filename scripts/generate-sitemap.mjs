@@ -14,6 +14,7 @@ import { parseNewsData } from "./parse-news.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(__dirname, "../public");
+const DIST_DIR   = path.join(__dirname, "../dist");
 const BASE_URL   = "https://k-homedongnai.com.vn";
 const TODAY      = new Date().toISOString().split("T")[0];
 
@@ -266,13 +267,17 @@ const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
 </sitemapindex>`;
 
-// Ghi tất cả files
-fs.writeFileSync(path.join(PUBLIC_DIR, "post-sitemap.xml"),  postSitemap,  "utf-8");
-fs.writeFileSync(path.join(PUBLIC_DIR, "page-sitemap.xml"),  pageSitemap,  "utf-8");
-fs.writeFileSync(path.join(PUBLIC_DIR, "video-sitemap.xml"), videoSitemap, "utf-8");
-fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap_index.xml"), sitemapIndex, "utf-8");
-// sitemap.xml = alias của sitemap_index để tương thích các tool cũ
-fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"), sitemapIndex, "utf-8");
+// Ghi tất cả files vào public/ và dist/ (nếu tồn tại)
+const dirsToWrite = [PUBLIC_DIR];
+if (fs.existsSync(DIST_DIR)) dirsToWrite.push(DIST_DIR);
+
+for (const d of dirsToWrite) {
+  fs.writeFileSync(path.join(d, "post-sitemap.xml"),  postSitemap,  "utf-8");
+  fs.writeFileSync(path.join(d, "page-sitemap.xml"),  pageSitemap,  "utf-8");
+  fs.writeFileSync(path.join(d, "video-sitemap.xml"), videoSitemap, "utf-8");
+  fs.writeFileSync(path.join(d, "sitemap_index.xml"), sitemapIndex, "utf-8");
+  fs.writeFileSync(path.join(d, "sitemap.xml"),       sitemapIndex, "utf-8");
+}
 
 console.log(`✅ sitemap_index.xml — 3 sitemaps (post, page, video)`);
 console.log(`   post-sitemap.xml   — ${postUrls.length} URLs, ${postUrls.reduce((s,u)=>s+(PAGE_IMAGES[u.loc]?.length||0),0)} images`);
@@ -290,6 +295,8 @@ Disallow: /api/admin
 Sitemap: ${BASE_URL}/sitemap_index.xml
 `;
 
-fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt, "utf-8");
+for (const d of dirsToWrite) {
+  fs.writeFileSync(path.join(d, "robots.txt"), robotsTxt, "utf-8");
+}
 const totalImages = ALL_URLS.reduce((s, u) => s + (PAGE_IMAGES[u.loc]?.length || 0), 0);
 console.log(`\n📊 Total: ${ALL_URLS.length} URLs | ${totalImages} images | ${DEDICATED_VIDEOS.length} videos | ${TODAY}`);

@@ -193,6 +193,7 @@ function getDaysInMonth(monthIdx: number, startYear: number): number {
 
 // ─── Props ────────────────────────────────────────────────────────────────────
 interface Props {
+  key?: any;
   slug: string;           // slug của dự án — tự động chọn đúng config
   onContact: () => void;  // callback scroll/navigate tới form liên hệ
 }

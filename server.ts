@@ -387,7 +387,7 @@ const projects = [
       { slug: "can-ho-1-phong-ngu", name: "Căn 1 Phòng Ngủ +", bedrooms: 1, bathrooms: 1, constructionArea: "45,8m²", usableArea: "41,0m²", price: "Từ 990 triệu/căn", priceNumber: 990, furnished: true, description: "1PN+ SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview01"] },
       { slug: "can-ho-2-phong-ngu", name: "Căn 2 Phòng Ngủ", bedrooms: 2, bathrooms: 2, constructionArea: "65,3m²", usableArea: "58,5m²", price: "1,35 tỷ – 1,45 tỷ/căn", priceNumber: 1350, furnished: true, description: "2PN SkyView", images: ["https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-skyview/noxh-skyview"] },
     ],
-    status: "Sắp mở bán", rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
+    rating: 4.8, floorCount: 12, developer: "Kim Oanh Land (Tập đoàn Kim Oanh Group)",
   },
 ];
 
