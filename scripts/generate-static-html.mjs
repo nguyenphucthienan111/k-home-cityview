@@ -10,7 +10,15 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { parseNewsData } from "./parse-news.mjs";
+import * as esbuild from "esbuild";
+import { markdownToHtml } from "./markdown-to-html.mjs";
+import {
+  renderCityViewHtml,
+  renderMidtownHtml,
+  renderAvenueHtml,
+  renderSkyViewHtml,
+  renderNewsDetailHtml,
+} from "./static-project-content.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.join(__dirname, "../dist");
@@ -219,6 +227,11 @@ function injectMeta(template, { title, description, canonical, keywords, ogType 
 // Ghi file HTML với optional static internal links cho Googlebot
 function writeRoute(template, dirPath, meta) {
   let html = injectMeta(template, meta);
+
+  // Bơm HTML tĩnh chuẩn SEO vào bên trong <div id="root">...</div> để Googlebot đọc ngay lập tức
+  if (meta.bodyHtml) {
+    html = html.replace('<div id="root"></div>', `<div id="root">${meta.bodyHtml}</div>`);
+  }
 
   const staticLinks = meta.staticLinks || [];
   if (staticLinks.length > 0) {
@@ -653,6 +666,17 @@ async function main() {
     const dirPath = path.join(DIST_DIR, route.dir);
     const projVideos = PROJECT_STATIC_VIDEOS[route.dir] || [];
 
+    let bodyHtml = null;
+    if (route.dir === "k-home-cityview-ho-nai") {
+      bodyHtml = renderCityViewHtml();
+    } else if (route.dir === "k-home-midtown-trang-bom") {
+      bodyHtml = renderMidtownHtml();
+    } else if (route.dir === "k-home-avenue-nhon-trach") {
+      bodyHtml = renderAvenueHtml();
+    } else if (route.dir === "k-home-skyview-trang-bom") {
+      bodyHtml = renderSkyViewHtml();
+    }
+
     writeRoute(template, dirPath, {
       title: route.title,
       description: route.description,
@@ -660,23 +684,36 @@ async function main() {
       keywords: route.keywords ?? null,
       schemas: ROUTE_SCHEMAS[route.dir] ?? [],
       staticVideos: projVideos,
+      bodyHtml,
     });
     count++;
     console.log(`✅ /${route.dir}`);
   }
 
   // 2. News article routes  — dist/tin-tuc/[slug]/index.html
-  const NEWS_DATA = parseNewsData();
-  console.log(`\n── Bài tin tức (${NEWS_DATA.length} bài) ────────────────────`);
+  // Biên dịch newsData.ts sang ESM để nạp trọn vẹn 100% nội dung bài viết
+  const cacheNewsFile = path.join(__dirname, ".cache-newsData.mjs");
+  await esbuild.build({
+    entryPoints: [path.join(__dirname, "../src/data/newsData.ts")],
+    format: "esm",
+    outfile: cacheNewsFile,
+  });
+  const { newsData: ALL_NEWS } = await import(`file:///${cacheNewsFile.replace(/\\/g, "/")}`);
+  console.log(`\n── Bài tin tức (${ALL_NEWS.length} bài) ────────────────────`);
   const newsDirBase = path.join(DIST_DIR, "tin-tuc");
 
-  for (const article of NEWS_DATA) {
+  for (const article of ALL_NEWS) {
     const canonical = `${BASE_URL}/tin-tuc/${article.slug}`;
     // Title cho bài tin tức: "[title] | K-Home Đồng Nai"
     const title = article.title.includes("K-Home") || article.title.includes("NOXH")
       ? `${article.title} | K-Home Đồng Nai`
       : `${article.title} | K-Home CityView Đồng Nai`;
     const dirPath = path.join(newsDirBase, article.slug);
+
+    // Chuyển đổi toàn bộ nội dung markdown sang HTML ngữ nghĩa để bot Google đọc 100%
+    const contentHtml = markdownToHtml(article.content, article);
+    const related = ALL_NEWS.filter(n => n.slug !== article.slug && (n.project === article.project || !article.project)).slice(0, 2);
+    const bodyHtml = renderNewsDetailHtml(article, contentHtml, related);
 
     // Tạo NewsArticle + BreadcrumbList + VideoObject schema cho từng bài
     const schemas = [
@@ -756,9 +793,12 @@ async function main() {
       });
     }
 
-    // Static links + Static Video Element cho Googlebot nhận diện Video Watch Page
+    // Static links chuẩn SEO truyền link juice mạnh mẽ về trang dự án chính
     const staticLinks = [
-      { href: "/k-home-cityview-ho-nai", text: "K-Home CityView Hố Nai Biên Hòa" },
+      { href: "/k-home-cityview-ho-nai", text: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai" },
+      { href: "/k-home-cityview-ho-nai", text: "Mua Nhà Ở Xã Hội Biên Hòa" },
+      { href: "/k-home-midtown-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown" },
+      { href: "/k-home-avenue-nhon-trach", text: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue" },
       { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
       { href: "/", text: "K-Home Đồng Nai" },
     ];
@@ -770,6 +810,7 @@ async function main() {
       ogType: "article",
       schemas,
       staticLinks,
+      bodyHtml,
       staticVideoUrl: article.videoUrl ? (article.videoUrl.includes("youtube.com") || article.videoUrl.includes("youtu.be") ? `https://www.youtube.com/embed/${article.videoUrl.match(/(?:embed\/|v=|shorts\/|youtu\.be\/)([^?&/\s]+)/)?.[1]}` : article.videoUrl) : null,
       staticVideoTitle: article.videoCaption || article.title,
     });
@@ -905,7 +946,7 @@ async function main() {
     console.log(`✅ /video/${vid.slug}`);
   }
 
-  console.log(`\n🎉 Done — ${count} files generated (${STATIC_ROUTES.length} static + ${NEWS_DATA.length} news + ${DEDICATED_VIDEOS.length} watch pages)`);
+  console.log(`\n🎉 Done — ${count} files generated (${STATIC_ROUTES.length} static + ${ALL_NEWS.length} news + ${DEDICATED_VIDEOS.length} watch pages)`);
 
   // 4. Vercel root 404.html — Vercel dùng file này khi không tìm thấy asset tĩnh
   // (khác với /404/index.html dành cho route /404 trong SPA)
