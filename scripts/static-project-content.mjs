@@ -796,10 +796,14 @@ export function renderNewsDetailHtml(article, contentHtml, relatedArticles = [])
 /**
  * Render HTML tĩnh cho trang Nhà Ở Xã Hội Trảng Bom – K-Home Midtown
  */
+/**
+ * Render HTML tĩnh cho trang Nhà Ở Xã Hội Trảng Bom – K-Home Midtown
+ */
 export function renderMidtownHtml() {
   return `
     ${renderCommonHeader("k-home-midtown-trang-bom")}
     <main class="bg-white text-slate-800">
+      <!-- Breadcrumb -->
       <nav class="bg-slate-50 border-b border-slate-200 py-3 text-xs sm:text-sm" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-600">
           <a href="/" class="hover:text-amber-600 transition-colors">Trang chủ</a>
@@ -810,57 +814,371 @@ export function renderMidtownHtml() {
         </div>
       </nav>
 
+      <!-- Hero Header Section -->
       <section class="bg-gradient-to-b from-amber-50/50 via-white to-white pt-10 pb-12 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-4xl">
             <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-              <span>Đang Tiếp Nhận Hồ Sơ Trảng Bom 2026</span>
+              <span>Đang Tiếp Nhận Hồ Sơ Xét Duyệt Trảng Bom 2026</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
               Nhà Ở Xã Hội Trảng Bom – Dự Án K-Home Midtown | Bảng Giá & Điều Kiện 2026
             </h1>
             <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-              Đại đô thị <strong>nhà ở xã hội Trảng Bom</strong> quy mô <strong>13,97 ha</strong> với <strong>542 căn hộ NOXH chuẩn Singapore</strong> tọa lạc ngay trung tâm thị trấn Trảng Bom giữa 4 tuyến đường lớn: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành. Mức giá chỉ từ <strong>750 triệu đồng/căn</strong>, hỗ trợ vay 80% vốn với lãi suất ưu đãi <strong>5,4%/năm trong 25 năm</strong>.
+              Đại đô thị <strong>nhà ở xã hội Trảng Bom</strong> quy mô <strong>13,97 ha</strong> với <strong>542 căn hộ NOXH chuẩn Singapore</strong> và 20 căn shophouse dịch vụ, tọa lạc ngay trung tâm thị trấn Trảng Bom giữa 4 tuyến đường huyết mạch: <strong>30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành</strong>. Mức giá chỉ từ <strong>750 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi cố định <strong>5,4%/năm trong 25 năm</strong> từ Ngân hàng Chính sách Xã hội.
             </p>
             <div class="flex flex-wrap items-center gap-4">
-              <a href="tel:0937587438" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
-                Tư Vấn Hồ Sơ: 0937 587 438
+              <a href="#bang-gia" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Xem Bảng Giá Căn Hộ 2026
               </a>
-              <a href="/tinh-tra-gop" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
-                Tính Tiền Trả Góp Hàng Tháng
+              <a href="#dieu-kien" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Kiểm Tra Điều Kiện Mua
+              </a>
+              <a href="tel:0937587438" class="border-2 border-amber-600 text-amber-700 hover:bg-amber-50 px-6 py-3.5 rounded-xl font-bold text-base transition-colors no-underline">
+                Tư Vấn Hồ Sơ: 0937 587 438
               </a>
             </div>
           </div>
 
+          <!-- Quick Stats Grid -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200">
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Vị Trí Đắc Địa</span>
               <p class="text-base font-bold text-slate-900">4 mặt tiền đường, trung tâm Trảng Bom</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Quy Mô Đại Đô Thị</span>
-              <p class="text-base font-bold text-slate-900">13,97 ha · 542 căn hộ NOXH</p>
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Quy Mô Công Trình</span>
+              <p class="text-base font-bold text-slate-900">13,97 ha · 542 căn hộ NOXH (15 tầng)</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Giá Bán Niêm Yết</span>
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Mức Giá Niêm Yết</span>
               <p class="text-base font-bold text-amber-600">Từ 750 Triệu – 1,5 Tỷ/Căn</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Gói Vay Ưu Đãi</span>
-              <p class="text-base font-bold text-emerald-600">Vay 80% · Trả góp từ 3,5 tr/tháng</p>
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Chính Sách Vay NOXH</span>
+              <p class="text-base font-bold text-emerald-600">Vay 80% vốn · Trả góp từ 3,5 tr/tháng</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Main Content Container -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="prose max-w-none text-slate-700 leading-relaxed space-y-6">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pb-3 border-b-2 border-amber-500">
-            Tổng Quan Dự Án K-Home Midtown Trảng Bom
-          </h2>
-          <p>
-            Dự án [nhà ở xã hội Trảng Bom](/k-home-midtown-trang-bom) – K-Home Midtown do Kim Oanh Land đầu tư phát triển tại huyện Trảng Bom, tỉnh Đồng Nai. Nằm liền kề KCN Bàu Xéo, KCN Sông Mây và KCN Hố Nai, dự án giải quyết nhu cầu nhà ở cho hàng chục ngàn người lao động với mức giá rẻ từ 750 triệu/căn. Khách hàng quan tâm đến khu vực trung tâm Biên Hòa có thể tham khảo thêm [nhà ở xã hội Biên Hòa K-Home CityView](/k-home-cityview-ho-nai).
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Main Left Column -->
+          <div class="lg:col-span-2 space-y-12">
+
+            <!-- Section 1: Tổng quan -->
+            <section id="tong-quan">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                1. Tổng Quan Dự Án Nhà Ở Xã Hội K-Home Midtown Trảng Bom
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  <strong>K-Home Midtown</strong> là dự án <strong>nhà ở xã hội Trảng Bom</strong> kiểu mẫu quy mô bậc nhất tỉnh Đồng Nai do <strong>Kim Oanh Land</strong> (thành viên Tập đoàn Kim Oanh Group) làm chủ đầu tư và phát triển. Dự án tọa lạc tại vị trí độc tôn sở hữu 4 mặt tiền đường lớn gồm 30/4, Hùng Vương, Lý Nam Đế và Lê Đại Hành, ngay vùng lõi trung tâm thị trấn Trảng Bom sầm uất.
+                </p>
+                <p>
+                  Với tổng diện tích quy hoạch lên đến <strong>13,97 hecta</strong>, K-Home Midtown được phát triển như một khu đô thị phức hợp đa chức năng hoàn chỉnh, gồm các tòa tháp chung cư cao <strong>15 tầng</strong> cung ứng <strong>542 căn hộ NOXH</strong> chất lượng vượt trội, 20 căn shophouse thương mại, cùng hệ thống công viên cây xanh, hồ bơi tràn bờ và trường học nội khu. Dự án được tư vấn thiết kế bởi Tập đoàn hàng đầu Singapore <strong>Surbana Jurong</strong> và đạt chứng chỉ công trình xanh quốc tế <strong>EDGE</strong>.
+                </p>
+
+                <!-- Specs Table -->
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-slate-100 text-slate-900 border-b border-slate-200">
+                      <tr>
+                        <th class="p-3 font-bold w-1/3">Thông Số Quy Hoạch</th>
+                        <th class="p-3 font-bold">Chi Tiết K-Home Midtown Trảng Bom</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                      <tr><td class="p-3 font-semibold text-slate-800">Tên thương mại</td><td class="p-3">K-Home Midtown (K-Home Midtown Trảng Bom)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Chủ đầu tư</td><td class="p-3">Kim Oanh Land (Tập đoàn Kim Oanh Group)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Vị trí địa chỉ</td><td class="p-3">Giao lộ đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, TT. Trảng Bom, Đồng Nai</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tư vấn thiết kế kiến trúc</td><td class="p-3">Tập đoàn Surbana Jurong (Singapore)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô quỹ đất</td><td class="p-3">13,97 hecta</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Mật độ xây dựng</td><td class="p-3">Khoảng 38% (còn lại dành cho công viên, hồ bơi & hạ tầng dịch vụ)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô công trình</td><td class="p-3">Tòa tháp cao 15 tầng hiện đại, tầng hầm để xe thông thoáng</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tổng số lượng căn hộ</td><td class="p-3">542 căn hộ NOXH + 20 căn shophouse khối đế</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Diện tích căn hộ</td><td class="p-3">36,1 m² – 68,8 m² (Studio, 1PN+A, 1PN+B, 2PN)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tiêu chuẩn bàn giao</td><td class="p-3">Hoàn thiện nội thất cơ bản chuẩn Singapore: sàn gỗ, tủ bếp, thiết bị vệ sinh cao cấp</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Hình thức sở hữu</td><td class="p-3">Sổ hồng sở hữu lâu dài (vĩnh viễn)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Thời gian bàn giao</td><td class="p-3">Dự kiến Quý 3/2027 – Quý 1/2028 (thi công thần tốc)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 2: Bảng giá căn hộ -->
+            <section id="bang-gia">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                2. Bảng Giá Căn Hộ Nhà Ở Xã Hội Trảng Bom – K-Home Midtown 2026
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Mức giá <strong>mua nhà ở xã hội Trảng Bom</strong> tại dự án K-Home Midtown được công bố niêm yết theo khung giá nhà ở xã hội được phê duyệt, cam kết bán đúng giá gốc chủ đầu tư, không chênh lệch:
+                </p>
+
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-amber-600 text-white">
+                      <tr>
+                        <th class="p-3 font-bold">Mẫu Căn Hộ</th>
+                        <th class="p-3 font-bold">DT Xây Dựng</th>
+                        <th class="p-3 font-bold">DT Thông Thủy</th>
+                        <th class="p-3 font-bold">Giá Bán Niêm Yết</th>
+                        <th class="p-3 font-bold">Vốn Tự Có 20%</th>
+                        <th class="p-3 font-bold">Gói Vay 80% (5,4%)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 bg-white">
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-midtown-trang-bom/can-ho-studio" class="text-amber-700 underline font-semibold">Căn Hộ Studio</a></td>
+                        <td class="p-3">36,1 m²</td>
+                        <td class="p-3">32,0 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 750 triệu</td>
+                        <td class="p-3">~ 150 triệu</td>
+                        <td class="p-3">Trả góp ~3,5 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-midtown-trang-bom/can-ho-1-phong-ngu-a" class="text-amber-700 underline font-semibold">Căn 1 Phòng Ngủ + A</a></td>
+                        <td class="p-3">47,0 m²</td>
+                        <td class="p-3">42,0 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 990 triệu</td>
+                        <td class="p-3">~ 198 triệu</td>
+                        <td class="p-3">Trả góp ~4,6 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-midtown-trang-bom/can-ho-1-phong-ngu-b" class="text-amber-700 underline font-semibold">Căn 1 Phòng Ngủ + B (2WC)</a></td>
+                        <td class="p-3">55,1 m²</td>
+                        <td class="p-3">48,8 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 1,20 tỷ</td>
+                        <td class="p-3">~ 240 triệu</td>
+                        <td class="p-3">Trả góp ~5,6 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-midtown-trang-bom/can-ho-2-phong-ngu" class="text-amber-700 underline font-semibold">Căn 2 Phòng Ngủ (2WC)</a></td>
+                        <td class="p-3">68,8 m²</td>
+                        <td class="p-3">61,6 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 1,50 tỷ</td>
+                        <td class="p-3">~ 300 triệu</td>
+                        <td class="p-3">Trả góp ~6,9 tr/tháng</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="text-sm text-slate-600 italic">
+                  * Giá bán đã bao gồm thuế VAT 5% theo luật NOXH ưu đãi. Cư dân tại Trảng Bom cũng có thể tham khảo thêm dự án <a href="/k-home-skyview-trang-bom" class="text-amber-600 font-bold hover:underline">K-Home SkyView Bàu Xéo</a> hoặc <a href="/k-home-cityview-ho-nai" class="text-amber-600 font-bold hover:underline">nhà ở xã hội Biên Hòa K-Home CityView</a> để so sánh vị trí và diện tích phù hợp nhu cầu.
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 3: Vị trí & Kết nối -->
+            <section id="vi-tri">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                3. Vị Trí Vàng Giữa 4 Tuyến Đường Lớn & Kết Nối Giao Thông Trảng Bom
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  K-Home Midtown sở hữu vị trí kim cương hiếm có tại huyện Trảng Bom khi nằm gọn giữa 4 trục lộ huyết mạch của thị trấn: <strong>đường 30/4, Hùng Vương, Lý Nam Đế và Lê Đại Hành</strong>. Đây là tâm điểm kết nối các khu công nghiệp trọng điểm lớn nhất Đồng Nai:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li><strong>Cách KCN Bàu Xéo (gần 500 ha):</strong> Chỉ 3 – 5 phút di chuyển (nơi có hơn 30.000 chuyên gia, kỹ sư và công nhân làm việc).</li>
+                  <li><strong>Kết nối KCN Sông Mây (473 ha):</strong> Khoảng 10 – 12 phút qua đường ĐT 767.</li>
+                  <li><strong>Kết nối KCN Hố Nai & KCN Giang Điền:</strong> Chỉ 10 – 15 phút.</li>
+                  <li><strong>Đến trung tâm hành chính TP. Biên Hòa:</strong> Khoảng 15 km (20 phút lái xe dọc Quốc Lộ 1A).</li>
+                  <li><strong>Đến Ga Trảng Bom:</strong> Khoảng 5 phút (điểm trung chuyển hàng hóa và hành khách đường sắt trọng yếu).</li>
+                  <li><strong>Kết nối Sân bay Quốc tế Long Thành:</strong> Khoảng 25 – 30 phút theo các trục ĐT 777 và vành đai liên vùng đang triển khai.</li>
+                </ul>
+                <p>
+                  Nhờ vị trí trung tâm hành chính, cư dân Midtown dễ dàng tiếp cận hệ sinh thái tiện ích đầy đủ quanh bán kính 1km: Trường THPT Thống Nhất, Trường THCS Hùng Vương, Chợ Trảng Bom, Bệnh viện Đa khoa Trảng Bom và Trung tâm Văn hóa Thể thao huyện.
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 4: Pháp lý -->
+            <section id="phap-ly">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                4. Hồ Sơ Pháp Lý Dự Án K-Home Midtown Trảng Bom Đã Hoàn Chỉnh
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  K-Home Midtown là một trong những dự án [nhà ở xã hội Trảng Bom](/k-home-midtown-trang-bom) có tính pháp lý minh bạch hàng đầu, được UBND tỉnh Đồng Nai phê duyệt đầy đủ các thủ tục theo Luật Nhà ở và Luật Đất đai:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Quyết định phê duyệt đồ án Quy hoạch chi tiết xây dựng tỷ lệ 1/500 toàn khu đô thị 13,97 ha.</li>
+                  <li>Quyết định chấp thuận chủ trương đầu tư và công nhận Kim Oanh Land là chủ đầu tư dự án.</li>
+                  <li>Giấy phép xây dựng công trình tháp chung cư NOXH được Sở Xây dựng tỉnh Đồng Nai cấp phép.</li>
+                  <li>Biên bản nghiệm thu hoàn thành các hạng mục móng cọc và hạ tầng kỹ thuật đúng tiêu chuẩn quốc gia.</li>
+                  <li>Hình thức sở hữu: <strong>Sổ hồng lâu dài</strong>, đảm bảo quyền sở hữu tài sản an toàn tuyệt đối cho người mua.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 5: Chuẩn Singapore & EDGE -->
+            <section id="chuan-singapore">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                5. Thiết Kế Chuẩn Singapore Surbana Jurong & Tiêu Chuẩn Công Trình Xanh EDGE
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Khác với quan niệm cũ về nhà ở xã hội đơn điệu, K-Home Midtown được thiết kế bởi <strong>Surbana Jurong (Singapore)</strong> mang đến diện mạo như một khu căn hộ thương mại cao cấp:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li><strong>100% căn hộ đón ánh sáng và gió tự nhiên:</strong> Thiết kế hành lang mở, đối lưu không khí trong lành, tối ưu hóa ban công và logia giặt phơi riêng biệt.</li>
+                  <li><strong>Chứng chỉ xanh quốc tế EDGE (IFC - World Bank):</strong> Giảm ít nhất 20% mức tiêu thụ năng lượng điện, 20% lượng nước sinh hoạt và giảm phát thải carbon, giúp cư dân tiết kiệm hàng triệu đồng hóa đơn sinh hoạt mỗi năm.</li>
+                  <li><strong>Hệ tiện ích đa tầng:</strong> Hồ bơi tràn bờ chuẩn phong cách resort, công viên cây xanh tháp tầng, đường chạy bộ nội khu, sân chơi trẻ em an toàn và phòng gym hiện đại.</li>
+                  <li><strong>Vật liệu bàn giao cao cấp:</strong> Cửa chống cháy, khóa từ thông minh, thiết bị vệ sinh tiết kiệm nước, tủ bếp chống ẩm và sàn gỗ phòng ngủ cao cấp.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 6: Vay 80% Lãi 5.4% -->
+            <section id="chinh-sach-vay">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                6. Chính Sách Vay Vốn Ngân Hàng CSXH 80% – Lãi Suất 5,4%/Năm Trong 25 Năm
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Nhằm hỗ trợ công nhân, kỹ sư và người thu nhập thấp tại Trảng Bom hiện thực hóa giấc mơ sở hữu nhà riêng, chính sách tài chính cho K-Home Midtown cực kỳ nhẹ nhàng:
+                </p>
+                <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                  <h4 class="font-bold text-emerald-900 text-lg">Điểm Nổi Bật Của Gói Vay NOXH Trảng Bom:</h4>
+                  <p class="text-emerald-800 text-sm leading-relaxed">
+                    • <strong>Tỷ lệ vay:</strong> Lên đến 75% – 80% giá trị căn hộ trên Hợp đồng mua bán.<br>
+                    • <strong>Lãi suất ưu đãi:</strong> Cố định <strong>5,4%/năm</strong> do Ngân hàng Chính sách Xã hội bảo trợ.<br>
+                    • <strong>Thời hạn vay:</strong> Tối đa <strong>25 năm</strong> (300 tháng).<br>
+                    • <strong>Số tiền trả góp:</strong> Chỉ từ <strong>3,5 – 5,5 triệu đồng/tháng</strong> (cả gốc và lãi giảm dần), thấp hơn hoặc bằng chi phí thuê nhà trọ chật chội bên ngoài.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 7: Điều kiện & Thủ tục -->
+            <section id="dieu-kien">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                7. Điều Kiện & Thủ Tục Đăng Ký Mua Nhà Ở Xã Hội Trảng Bom 2026
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Theo Luật Nhà ở 2023 (có hiệu lực từ ngày 01/08/2024), điều kiện mua nhà ở xã hội đã được nới lỏng tạo điều kiện tối đa cho người lao động:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">1. Điều Kiện Nhà Ở</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Chưa sở hữu nhà ở hoặc đất ở đứng tên tại tỉnh Đồng Nai, hoặc diện tích nhà ở bình quân dưới 15 m² sàn/người.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">2. Điều Kiện Thu Nhập</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Thu nhập chịu thuế dưới 15 triệu/tháng (với người độc thân) hoặc tổng thu nhập hai vợ chồng dưới 30–50 triệu/tháng theo hướng dẫn mới nhất.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">3. Điều Kiện Cư Trú</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Có thường trú hoặc tạm trú xác thực qua ứng dụng VNeID mức 2 tại tỉnh Đồng Nai. Không còn yêu cầu đóng BHXH 1 năm phức tạp như trước.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 8: FAQ -->
+            <section id="faq">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                8. Câu Hỏi Thường Gặp Về Dự Án K-Home Midtown Trảng Bom
+              </h2>
+              <div class="space-y-4">
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>K-Home Midtown Trảng Bom có vị trí chính xác ở đâu?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Dự án tọa lạc ngay trung tâm thị trấn Trảng Bom, tiếp giáp 4 tuyến đường: 30/4, Hùng Vương, Lý Nam Đế và Lê Đại Hành, huyện Trảng Bom, tỉnh Đồng Nai. Vị trí chỉ cách KCN Bàu Xéo 3 phút và cách Biên Hòa 15km.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Giá bán căn hộ K-Home Midtown Trảng Bom là bao nhiêu?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Giá căn hộ tại K-Home Midtown chỉ từ 750 triệu đồng/căn cho căn Studio, từ 990 triệu đồng/căn cho căn 1PN+A, từ 1,2 tỷ cho căn 1PN+B và từ 1,5 tỷ cho căn 2PN. Tất cả đều được bàn giao hoàn thiện full nội thất cơ bản theo chuẩn Singapore.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Người lao động làm việc tại KCN Bàu Xéo có được mua không?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Có! Dự án ưu tiên đặc biệt cho cán bộ, công nhân viên và người lao động làm việc tại các khu công nghiệp trên địa bàn Trảng Bom (Bàu Xéo, Sông Mây, Hố Nai, Giang Điền) đáp ứng đủ điều kiện về nhà ở và thu nhập theo quy định.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Làm thế nào để nộp hồ sơ xét duyệt căn hộ K-Home Midtown?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Quý khách chỉ cần liên hệ Hotline Kim Oanh Land: <a href="tel:0937587438" class="text-amber-600 font-bold hover:underline">0937 587 438</a>. Đội ngũ chuyên viên sẽ hỗ trợ kiểm tra điều kiện, hướng dẫn điền mẫu đơn (Mẫu 01, 02, 04) và nộp hồ sơ xét duyệt miễn phí 100%.</p>
+                  </div>
+                </details>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="lg:col-span-1 space-y-8">
+            <div class="sticky top-24 space-y-6">
+              <!-- Hotline Card -->
+              <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white p-6 rounded-2xl shadow-xl">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-200 block mb-2">Ban Quản Lý Dự Án K-Home</span>
+                <h3 class="text-xl font-bold mb-3">Tư Vấn Hồ Sơ Midtown Trảng Bom</h3>
+                <p class="text-sm text-amber-100 mb-6 leading-relaxed">
+                  Đăng ký tư vấn miễn phí điều kiện mua nhà ở xã hội, chuẩn bị biểu mẫu hồ sơ và thẩm định gói vay vốn 5,4%/năm.
+                </p>
+                <a href="tel:0937587438" class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3.5 rounded-xl font-extrabold text-center block shadow-md transition-all no-underline">
+                  Gọi Ngay: 0937 587 438
+                </a>
+              </div>
+
+              <!-- Other Projects Nav -->
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Các Dự Án NOXH K-Home Khác</h4>
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home CityView Biên Hòa &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-avenue-nhon-trach" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home Avenue Nhơn Trạch &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Mặt tiền 25C gần Sân bay Long Thành, 1.022 căn</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-skyview-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home SkyView Bàu Xéo &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">KĐT Bàu Xéo Trảng Bom, 358 căn từ 750 tr</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Calculator Box -->
+              <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-200">
+                <h4 class="font-bold text-blue-950 text-sm mb-2">Bảng Tính Trả Góp Ngân Hàng</h4>
+                <p class="text-xs text-blue-800 leading-relaxed mb-4">
+                  Tính toán số tiền gốc và lãi trả góp hàng tháng theo dư nợ giảm dần của gói vay CSXH 5,4%/năm.
+                </p>
+                <a href="/tinh-tra-gop" class="text-blue-700 font-bold text-xs hover:underline flex items-center gap-1">
+                  Mở công cụ tính trả góp &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -875,6 +1193,7 @@ export function renderAvenueHtml() {
   return `
     ${renderCommonHeader("k-home-avenue-nhon-trach")}
     <main class="bg-white text-slate-800">
+      <!-- Breadcrumb -->
       <nav class="bg-slate-50 border-b border-slate-200 py-3 text-xs sm:text-sm" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-600">
           <a href="/" class="hover:text-amber-600 transition-colors">Trang chủ</a>
@@ -885,28 +1204,33 @@ export function renderAvenueHtml() {
         </div>
       </nav>
 
+      <!-- Hero Header Section -->
       <section class="bg-gradient-to-b from-amber-50/50 via-white to-white pt-10 pb-12 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-4xl">
             <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-              <span>Đang Tiếp Nhận Hồ Sơ Nhơn Trạch 2026</span>
+              <span>Đang Tiếp Nhận Hồ Sơ Xét Duyệt Nhơn Trạch 2026</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
               Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026
             </h1>
             <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-              Dự án <strong>nhà ở xã hội Nhơn Trạch</strong> (K-Home Avenue Kim Oanh) tọa lạc ngay mặt tiền đại lộ Nguyễn Ái Quốc (đường 25C rộng 100m kết nối cổng số 1 Sân bay Quốc tế Long Thành). Quy mô <strong>1.022 căn hộ NOXH chuẩn Singapore</strong>, giá chỉ từ <strong>750 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi cố định <strong>5,4%/năm trong 25 năm</strong>.
+              Tổ hợp <strong>nhà ở xã hội Nhơn Trạch</strong> quy mô <strong>5,3 ha</strong> với <strong>1.022 căn hộ NOXH chuẩn Singapore</strong> và 82 căn shophouse tọa lạc ngay mặt tiền <strong>đại lộ Nguyễn Ái Quốc (đường 25C rộng 100m)</strong> kết nối trực tiếp cổng số 1 Sân bay Quốc tế Long Thành và đường Vành Đai 3 TP.HCM. Mức giá chỉ từ <strong>750 triệu đồng/căn</strong>, hỗ trợ vay 80% vốn cố định <strong>5,4%/năm trong 25 năm</strong>.
             </p>
             <div class="flex flex-wrap items-center gap-4">
-              <a href="tel:0937587438" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
-                Tư Vấn Hồ Sơ: 0937 587 438
+              <a href="#bang-gia" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Xem Bảng Giá Căn Hộ 2026
               </a>
-              <a href="/tinh-tra-gop" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
-                Tính Tiền Trả Góp Hàng Tháng
+              <a href="#dieu-kien" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Kiểm Tra Điều Kiện Mua
+              </a>
+              <a href="tel:0937587438" class="border-2 border-amber-600 text-amber-700 hover:bg-amber-50 px-6 py-3.5 rounded-xl font-bold text-base transition-colors no-underline">
+                Tư Vấn Hồ Sơ: 0937 587 438
               </a>
             </div>
           </div>
 
+          <!-- Quick Stats Grid -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200">
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Mặt Tiền Đại Lộ 25C</span>
@@ -917,25 +1241,328 @@ export function renderAvenueHtml() {
               <p class="text-base font-bold text-slate-900">4 block 12 tầng · 1.022 căn NOXH</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Giá Bán Niêm Yết</span>
-              <p class="text-base font-bold text-amber-600">Từ 750 Triệu – 1,4 Tỷ/Căn</p>
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Mức Giá Niêm Yết</span>
+              <p class="text-base font-bold text-amber-600">Từ 750 Triệu – 1,47 Tỷ/Căn</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Chính Sách Vay NOXH</span>
-              <p class="text-base font-bold text-emerald-600">Vay 80% · Trả góp từ 3,5 tr/tháng</p>
+              <p class="text-base font-bold text-emerald-600">Vay 80% vốn · Trả góp từ 3,5 tr/tháng</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Main Content Container -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="prose max-w-none text-slate-700 leading-relaxed space-y-6">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 pb-3 border-b-2 border-amber-500">
-            Tổng Quan Dự Án K-Home Avenue Nhơn Trạch
-          </h2>
-          <p>
-            Dự án [nhà ở xã hội Nhơn Trạch](/k-home-avenue-nhon-trach) – K-Home Avenue là cơ hội an cư vàng cho hơn 130.000 công nhân và chuyên gia tại 9 khu công nghiệp Nhơn Trạch. Vị trí mặt tiền đường 25C kết nối nhanh chóng đến Cầu Cát Lái, Cao tốc Bến Lức – Long Thành và TP.HCM. Nếu công tác tại Biên Hòa, bạn có thể tham khảo thêm [nhà ở xã hội Biên Hòa – K-Home CityView](/k-home-cityview-ho-nai).
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Main Left Column -->
+          <div class="lg:col-span-2 space-y-12">
+
+            <!-- Section 1: Tổng quan -->
+            <section id="tong-quan">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                1. Tổng Quan Dự Án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  <strong>K-Home Avenue</strong> là đại dự án <strong>nhà ở xã hội Nhơn Trạch</strong> tiêu biểu do <strong>Kim Oanh Land</strong> đầu tư và phát triển tại huyện Nhơn Trạch, tỉnh Đồng Nai. Dự án nằm tại vị trí chiến lược ngay mặt tiền tuyến đường 25C (Đại lộ Nguyễn Ái Quốc) có lộ giới mở rộng 100m, là cửa ngõ trực tiếp dẫn vào Cảng Hàng không Quốc tế Long Thành.
+                </p>
+                <p>
+                  Dự án được quy hoạch trên tổng diện tích <strong>5,3 hecta</strong>, gồm <strong>4 tòa tháp cao 12 tầng</strong> với <strong>1.022 căn hộ NOXH</strong> chuẩn Singapore, cùng 82 căn nhà phố thương mại shophouse. K-Home Avenue ra đời nhằm đáp ứng cơn khát nhà ở chất lượng cao, giá rẻ cho hơn 130.000 chuyên gia, kỹ sư và công nhân tại 9 khu công nghiệp Nhơn Trạch và nguồn nhân lực phục vụ sân bay Long Thành.
+                </p>
+
+                <!-- Specs Table -->
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-slate-100 text-slate-900 border-b border-slate-200">
+                      <tr>
+                        <th class="p-3 font-bold w-1/3">Thông Số Kỹ Thuật</th>
+                        <th class="p-3 font-bold">Chi Tiết Quy Hoạch K-Home Avenue</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                      <tr><td class="p-3 font-semibold text-slate-800">Tên thương mại</td><td class="p-3">K-Home Avenue (K-Home Avenue Nhơn Trạch)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Chủ đầu tư</td><td class="p-3">Kim Oanh Land (Tập đoàn Kim Oanh Group)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Vị trí địa chỉ</td><td class="p-3">Mặt tiền đường 25C (Nguyễn Ái Quốc), Xã Phước An, Huyện Nhơn Trạch, Tỉnh Đồng Nai</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tư vấn thiết kế kiến trúc</td><td class="p-3">Tập đoàn Surbana Jurong (Singapore)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô quỹ đất</td><td class="p-3">5,3 hecta</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Mật độ xây dựng</td><td class="p-3">Khoảng 35% – 38%</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô công trình</td><td class="p-3">4 block cao 12 tầng hiện đại</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tổng số lượng căn hộ</td><td class="p-3">1.022 căn hộ NOXH + 82 shophouse khối đế</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Diện tích căn hộ</td><td class="p-3">37,7 m² – 69,5 m² (Studio, 1PN+, 2PN Nhỏ, 2PN Lớn)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tiêu chuẩn bàn giao</td><td class="p-3">Bàn giao hoàn thiện nội thất chuẩn Singapore cao cấp</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Hình thức sở hữu</td><td class="p-3">Sổ hồng sở hữu lâu dài (vĩnh viễn)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Thời gian bàn giao dự kiến</td><td class="p-3">Dự kiến Quý 4/2027 – Quý 2/2028</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 2: Bảng giá căn hộ -->
+            <section id="bang-gia">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                2. Bảng Giá Căn Hộ Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue 2026
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Giá bán căn hộ [nhà ở xã hội Nhơn Trạch](/k-home-avenue-nhon-trach) K-Home Avenue được Sở Xây dựng tỉnh thẩm định nghiêm ngặt, áp dụng giá gốc cho người thu nhập thấp:
+                </p>
+
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-amber-600 text-white">
+                      <tr>
+                        <th class="p-3 font-bold">Mẫu Căn Hộ</th>
+                        <th class="p-3 font-bold">DT Xây Dựng</th>
+                        <th class="p-3 font-bold">DT Thông Thủy</th>
+                        <th class="p-3 font-bold">Giá Bán Niêm Yết</th>
+                        <th class="p-3 font-bold">Vốn Tự Có 20%</th>
+                        <th class="p-3 font-bold">Gói Vay 80% (5,4%)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 bg-white">
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-avenue-nhon-trach/can-ho-studio" class="text-amber-700 underline font-semibold">Căn Hộ Studio</a></td>
+                        <td class="p-3">37,7 m²</td>
+                        <td class="p-3">33,3 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 750 triệu</td>
+                        <td class="p-3">~ 150 triệu</td>
+                        <td class="p-3">Trả góp ~3,5 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-avenue-nhon-trach/can-ho-1-phong-ngu" class="text-amber-700 underline font-semibold">Căn 1 Phòng Ngủ +</a></td>
+                        <td class="p-3">46,6 m²</td>
+                        <td class="p-3">41,6 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 990 triệu</td>
+                        <td class="p-3">~ 198 triệu</td>
+                        <td class="p-3">Trả góp ~4,6 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-avenue-nhon-trach/can-ho-2-phong-ngu" class="text-amber-700 underline font-semibold">Căn 2 Phòng Ngủ (Nhỏ - 2WC)</a></td>
+                        <td class="p-3">65,7 m²</td>
+                        <td class="p-3">58,4 m²</td>
+                        <td class="p-3 font-bold text-amber-600">1,23 tỷ – 1,39 tỷ</td>
+                        <td class="p-3">246 – 278 triệu</td>
+                        <td class="p-3">Trả góp ~5,7 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-avenue-nhon-trach/can-ho-2-phong-ngu-b-avenue" class="text-amber-700 underline font-semibold">Căn 2 Phòng Ngủ (Lớn - 2WC)</a></td>
+                        <td class="p-3">69,5 m²</td>
+                        <td class="p-3">62,2 m²</td>
+                        <td class="p-3 font-bold text-amber-600">1,40 tỷ – 1,47 tỷ</td>
+                        <td class="p-3">280 – 294 triệu</td>
+                        <td class="p-3">Trả góp ~6,5 tr/tháng</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="text-sm text-slate-600 italic">
+                  * Giá bán căn hộ đã bao gồm thuế VAT ưu đãi 5% cho NOXH. Nếu quý khách đang công tác tại khu vực Biên Hòa, vui lòng tham khảo thêm dự án <a href="/k-home-cityview-ho-nai" class="text-amber-600 font-bold hover:underline">nhà ở xã hội Biên Hòa K-Home CityView</a> (từ 950 triệu).
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 3: Vị trí & Kết nối -->
+            <section id="vi-tri">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                3. Vị Trí Mặt Tiền Đường 25C, Kết Nối Sân Bay Long Thành & Cầu Cát Lái
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  K-Home Avenue tọa lạc tại vị trí độc đắc trên trục đường huyết mạch <strong>Nguyễn Ái Quốc (Tỉnh lộ 25C)</strong>, trung tâm giao thương của toàn bộ vùng kinh tế trọng điểm phía Nam:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li><strong>Cách Cổng số 1 Sân bay Quốc tế Long Thành:</strong> Chỉ 10 – 12 phút di chuyển dọc theo tuyến đại lộ 25C thẳng tắp rộng 100m.</li>
+                  <li><strong>Kết nối Cầu Nhơn Trạch & Tuyến Vành Đai 3 TP.HCM:</strong> Chỉ 10 phút, rút ngắn thời gian di chuyển về TP. Thủ Đức xuống còn 20 phút.</li>
+                  <li><strong>Kết nối Cầu Cát Lái & Quận 2 cũ (TP. Thủ Đức):</strong> Khoảng 15 – 20 phút sau khi cầu được hoàn thiện, thuận lợi kết nối trung tâm TP.HCM.</li>
+                  <li><strong>Liền kề 9 khu công nghiệp Nhơn Trạch:</strong> KCN Nhơn Trạch 1, 2, 3, 5, 6, KCN Dệt may Nhơn Trạch, KCN Ông Kèo chỉ trong vòng bán kính 3 – 7 km.</li>
+                  <li><strong>Kết nối Cao tốc Bến Lức – Long Thành và Cao tốc TP.HCM – Long Thành – Dầu Giây:</strong> Dễ dàng kết nối về các tỉnh miền Tây và Vũng Tàu.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 4: Pháp lý -->
+            <section id="phap-ly">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                4. Hồ Sơ Pháp Lý Dự Án K-Home Avenue Nhơn Trạch
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Dự án nhà ở xã hội K-Home Avenue đã hoàn tất đầy đủ quy trình pháp lý theo luật định:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Quyết định phê duyệt Quy hoạch chi tiết 1/500 dự án khu nhà ở xã hội do cơ quan thẩm quyền ban hành.</li>
+                  <li>Quyết định giao đất sạch và chấp thuận chủ trương đầu tư cho Kim Oanh Land.</li>
+                  <li>Giấy phép xây dựng công trình 4 block chung cư 12 tầng.</li>
+                  <li>Hình thức sở hữu pháp lý: <strong>Sổ hồng sở hữu lâu dài</strong>, sang tên chuyển nhượng minh bạch sau 5 năm theo quy định NOXH.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 5: Tiêu chuẩn Singapore & Tiện ích -->
+            <section id="chuan-singapore">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                5. Thiết Kế Singapore Hiện Đại & Hệ Tiện Ích Đa Lớp Tại K-Home Avenue
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Được đồng hành bởi <strong>Surbana Jurong (Singapore)</strong>, K-Home Avenue mang đến trải nghiệm sống vượt xa chuẩn nhà ở xã hội truyền thống:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li><strong>Công trình xanh EDGE:</strong> Ứng dụng giải pháp thiết kế thông minh giảm hấp thụ nhiệt, tối ưu hóa gió mát tự nhiên, tiết kiệm chi phí điện nước lâu dài.</li>
+                  <li><strong>Hệ sinh thái tiện ích:</strong> Bể bơi resort xanh mát, công viên dạo bộ, khu vui chơi vận động trẻ em, chòi nghỉ thư giãn, trạm sạc xe điện thông minh nội khu và khu thể dục ngoài trời.</li>
+                  <li><strong>Dãy shophouse thương mại 82 căn:</strong> Cung cấp chuỗi cửa hàng tiện lợi siêu thị minimart, cafe sân vườn, nhà thuốc và dịch vụ ẩm thực tại chân tòa nhà.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 6: Vay CSXH 5.4% -->
+            <section id="chinh-sach-vay">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                6. Chính Sách Vay Vốn Ưu Đãi 80% Lãi Suất 5,4%/Năm Trong 25 Năm
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Chính sách vay mua [nhà ở xã hội Nhơn Trạch](/k-home-avenue-nhon-trach) mang lại giải pháp tài chính vô cùng thiết thực:
+                </p>
+                <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                  <h4 class="font-bold text-emerald-900 text-lg">Chính Sách Tài Chính Hỗ Trợ Người Mua NOXH Avenue:</h4>
+                  <p class="text-emerald-800 text-sm leading-relaxed">
+                    • <strong>Vốn ban đầu:</strong> Chỉ cần tích lũy 20% giá trị căn hộ (khoảng 150 – 250 triệu đồng).<br>
+                    • <strong>Hạn mức vay:</strong> Lên đến 80% giá trị căn hộ thông qua Ngân hàng Chính sách Xã hội.<br>
+                    • <strong>Lãi suất ưu đãi:</strong> Cố định <strong>5,4%/năm</strong> với thời hạn kéo dài tới <strong>25 năm</strong>.<br>
+                    • <strong>Gánh nặng hàng tháng:</strong> Trả góp chỉ từ <strong>3,5 – 5,7 triệu đồng/tháng</strong>, phù hợp thu nhập công nhân và vợ chồng trẻ.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 7: Điều kiện mua -->
+            <section id="dieu-kien">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                7. Điều Kiện & Thủ Tục Đăng Ký Mua K-Home Avenue Nhơn Trạch
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Người mua căn hộ K-Home Avenue chỉ cần đáp ứng các tiêu chí nới lỏng của Luật Nhà ở 2023:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">1. Tiêu Chí Nhà Ở</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Chưa có tên trong sổ đỏ/sổ hồng nhà ở tại tỉnh Đồng Nai hoặc diện tích ở bình quân dưới 15 m² sàn/người.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">2. Tiêu Chí Thu Nhập</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Mức thu nhập không chịu thuế thu nhập cá nhân ở mức cao, hoặc thu nhập hộ gia đình dưới mức trần quy định của chính phủ.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-2 text-sm uppercase">3. Xác Thực Cư Trú</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Xác thực đăng ký thường trú hoặc tạm trú thông qua ứng dụng VNeID mức 2 nhanh chóng, không yêu cầu xác nhận rườm rà.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 8: FAQ -->
+            <section id="faq">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                8. Câu Hỏi Thường Gặp Về Dự Án K-Home Avenue Nhơn Trạch
+              </h2>
+              <div class="space-y-4">
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>K-Home Avenue Nhơn Trạch nằm ở đoạn nào trên đường 25C?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Dự án nằm ngay mặt tiền đường Nguyễn Ái Quốc (25C), thuộc địa phận xã Phước An, huyện Nhơn Trạch, Đồng Nai. Tuyến đường này kết nối trực diện thẳng vào cổng số 1 của Sân bay Long Thành.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Công nhân làm việc tại KCN Nhơn Trạch có được vay vốn mua không?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Có. Dự án hướng trực tiếp đến đối tượng người lao động, công nhân, kỹ sư tại 9 KCN Nhơn Trạch với gói vay ưu đãi tối đa 80% giá trị căn hộ từ Ngân hàng Chính sách Xã hội, lãi suất 5,4%/năm.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Người làm việc tại TP.HCM có mua được K-Home Avenue không?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Người lao động làm việc tại TP.HCM (đặc biệt khu vực TP. Thủ Đức, Quận 7 lân cận Cầu Cát Lái và Vành Đai 3) hoàn toàn có thể mua nếu đăng ký tạm trú tại Đồng Nai và đáp ứng tiêu chuẩn chưa có nhà ở theo Luật Nhà ở 2023.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Hotline tiếp nhận và kiểm tra hồ sơ xét duyệt là số nào?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Quý khách vui lòng gọi Hotline chính thức Kim Oanh Land: <a href="tel:0937587438" class="text-amber-600 font-bold hover:underline">0937 587 438</a> để được chuyên viên hỗ trợ thẩm định hồ sơ trực tuyến hoàn toàn miễn phí.</p>
+                  </div>
+                </details>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="lg:col-span-1 space-y-8">
+            <div class="sticky top-24 space-y-6">
+              <!-- Hotline Card -->
+              <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white p-6 rounded-2xl shadow-xl">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-200 block mb-2">Kim Oanh Land — Đồng Nai</span>
+                <h3 class="text-xl font-bold mb-3">Tư Vấn Hồ Sơ Avenue Nhơn Trạch</h3>
+                <p class="text-sm text-amber-100 mb-6 leading-relaxed">
+                  Đăng ký tư vấn miễn phí bảng giá gốc, kiểm tra điều kiện hồ sơ xét duyệt và hướng dẫn gói vay 5,4%/năm.
+                </p>
+                <a href="tel:0937587438" class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3.5 rounded-xl font-extrabold text-center block shadow-md transition-all no-underline">
+                  Gọi Ngay: 0937 587 438
+                </a>
+              </div>
+
+              <!-- Other Projects Nav -->
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Các Dự Án NOXH K-Home Khác</h4>
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home CityView Biên Hòa &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-midtown-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home Midtown Trảng Bom &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Trung tâm Trảng Bom, 13,97 ha, 542 căn</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-skyview-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home SkyView Bàu Xéo &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">KĐT Bàu Xéo Trảng Bom, 358 căn từ 750 tr</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Calculator Box -->
+              <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-200">
+                <h4 class="font-bold text-blue-950 text-sm mb-2">Bảng Tính Trả Góp Ngân Hàng</h4>
+                <p class="text-xs text-blue-800 leading-relaxed mb-4">
+                  Tính chi tiết tiền gốc và tiền lãi mỗi tháng khi vay mua căn hộ K-Home Avenue với lãi suất 5,4%/năm.
+                </p>
+                <a href="/tinh-tra-gop" class="text-blue-700 font-bold text-xs hover:underline flex items-center gap-1">
+                  Mở công cụ tính trả góp &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -950,6 +1577,7 @@ export function renderSkyViewHtml() {
   return `
     ${renderCommonHeader("k-home-skyview-trang-bom")}
     <main class="bg-white text-slate-800">
+      <!-- Breadcrumb -->
       <nav class="bg-slate-50 border-b border-slate-200 py-3 text-xs sm:text-sm" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-slate-600">
           <a href="/" class="hover:text-amber-600 transition-colors">Trang chủ</a>
@@ -960,28 +1588,278 @@ export function renderSkyViewHtml() {
         </div>
       </nav>
 
+      <!-- Hero Header Section -->
       <section class="bg-gradient-to-b from-amber-50/50 via-white to-white pt-10 pb-12 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-4xl">
+            <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+              <span>Đang Nhận Đăng Ký Tư Vấn SkyView Bàu Xéo 2026</span>
+            </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-              Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026
+              Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá & Điều Kiện 2026
             </h1>
             <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-              Dự án <strong>nhà ở xã hội Trảng Bom</strong> (K-Home SkyView Bàu Xéo) quy mô <strong>1,08 ha</strong> gồm <strong>358 căn hộ NOXH chuẩn Singapore</strong> ngay cạnh KCN Bàu Xéo. Giá từ <strong>750 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi <strong>5,4%/năm trong 25 năm</strong>.
+              Dự án <strong>nhà ở xã hội Trảng Bom</strong> (K-Home SkyView Bàu Xéo) quy mô <strong>1,08 ha</strong> với <strong>358 căn hộ NOXH chuẩn Singapore</strong> tọa lạc ngay trong Khu đô thị Bàu Xéo, liền kề KCN Bàu Xéo và Quốc Lộ 1A. Mức giá chỉ từ <strong>750 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi cố định <strong>5,4%/năm trong 25 năm</strong> từ Ngân hàng Chính sách Xã hội.
             </p>
             <div class="flex flex-wrap items-center gap-4">
-              <a href="tel:0937587438" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
+              <a href="#bang-gia" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Xem Bảng Giá Căn Hộ 2026
+              </a>
+              <a href="#dieu-kien" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
+                Kiểm Tra Điều Kiện Mua
+              </a>
+              <a href="tel:0937587438" class="border-2 border-amber-600 text-amber-700 hover:bg-amber-50 px-6 py-3.5 rounded-xl font-bold text-base transition-colors no-underline">
                 Tư Vấn Hồ Sơ: 0937 587 438
               </a>
-              <a href="/k-home-cityview-ho-nai" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md transition-all no-underline">
-                Xem Dự Án CityView Biên Hòa
-              </a>
+            </div>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200">
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Vị Trí KĐT Bàu Xéo</span>
+              <p class="text-base font-bold text-slate-900">Liền kề KCN Bàu Xéo, QL1A Trảng Bom</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Quy Mô Công Trình</span>
+              <p class="text-base font-bold text-slate-900">1,08 ha · 358 căn hộ NOXH (9-12 tầng)</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Mức Giá Niêm Yết</span>
+              <p class="text-base font-bold text-amber-600">Từ 750 Triệu – 1,45 Tỷ/Căn</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Chính Sách Vay NOXH</span>
+              <p class="text-base font-bold text-emerald-600">Vay 80% vốn · Trả góp từ 3,5 tr/tháng</p>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Main Content Container -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Main Left Column -->
+          <div class="lg:col-span-2 space-y-12">
+
+            <!-- Section 1: Tổng quan -->
+            <section id="tong-quan">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                1. Tổng Quan Dự Án K-Home SkyView Bàu Xéo Trảng Bom
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  <strong>K-Home SkyView</strong> (K-Home Sky View Bàu Xéo) là dự án căn hộ <strong>nhà ở xã hội Trảng Bom</strong> chất lượng cao do <strong>Kim Oanh Land</strong> phát triển tại Khu đô thị Bàu Xéo, thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án nằm sát cạnh Khu công nghiệp Bàu Xéo quy mô gần 500 ha – một trong những trung tâm sản xuất công nghiệp sôi động nhất tỉnh.
+                </p>
+                <p>
+                  Được quy hoạch trên quỹ đất rộng <strong>1,08 ha</strong>, dự án bao gồm các block căn hộ cao <strong>9 đến 12 tầng</strong>, cung cấp ra thị trường <strong>358 căn hộ NOXH</strong> chuẩn Singapore. Dự án hướng tới giải quyết bài toán an cư ổn định, lâu dài cho hàng chục ngàn công nhân, chuyên viên kỹ thuật và gia đình trẻ đang sinh sống và làm việc tại Trảng Bom.
+                </p>
+
+                <!-- Specs Table -->
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-slate-100 text-slate-900 border-b border-slate-200">
+                      <tr>
+                        <th class="p-3 font-bold w-1/3">Thông Số Kỹ Thuật</th>
+                        <th class="p-3 font-bold">Chi Tiết Quy Hoạch K-Home SkyView</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                      <tr><td class="p-3 font-semibold text-slate-800">Tên thương mại</td><td class="p-3">K-Home SkyView (K-Home SkyView Bàu Xéo)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Chủ đầu tư</td><td class="p-3">Kim Oanh Land (Tập đoàn Kim Oanh Group)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Vị trí địa chỉ</td><td class="p-3">Khu đô thị Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tư vấn thiết kế kiến trúc</td><td class="p-3">Tập đoàn Surbana Jurong (Singapore)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô quỹ đất</td><td class="p-3">1,08 hecta</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Mật độ xây dựng</td><td class="p-3">Khoảng 38%</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Quy mô công trình</td><td class="p-3">Các khối tháp cao 9 – 12 tầng</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tổng số lượng căn hộ</td><td class="p-3">358 căn hộ NOXH chuẩn Singapore</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Diện tích căn hộ</td><td class="p-3">37,0 m² – 65,3 m² (Studio, 1PN+, 2PN)</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tiêu chuẩn bàn giao</td><td class="p-3">Hoàn thiện nội thất cơ bản cao cấp</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Hình thức sở hữu</td><td class="p-3">Sổ hồng sở hữu lâu dài (vĩnh viễn)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 2: Bảng giá căn hộ -->
+            <section id="bang-gia">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                2. Bảng Giá Căn Hộ K-Home SkyView Bàu Xéo Trảng Bom 2026
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Bảng giá căn hộ [nhà ở xã hội Trảng Bom](/k-home-skyview-trang-bom) SkyView được áp dụng theo đúng quy định hỗ trợ người thu nhập thấp:
+                </p>
+
+                <div class="overflow-x-auto my-6 rounded-xl border border-slate-200">
+                  <table class="w-full text-left text-sm border-collapse">
+                    <thead class="bg-amber-600 text-white">
+                      <tr>
+                        <th class="p-3 font-bold">Mẫu Căn Hộ</th>
+                        <th class="p-3 font-bold">DT Xây Dựng</th>
+                        <th class="p-3 font-bold">DT Thông Thủy</th>
+                        <th class="p-3 font-bold">Giá Bán Niêm Yết</th>
+                        <th class="p-3 font-bold">Vốn Tự Có 20%</th>
+                        <th class="p-3 font-bold">Gói Vay 80% (5,4%)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 bg-white">
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-skyview-trang-bom/can-ho-studio" class="text-amber-700 underline font-semibold">Căn Hộ Studio</a></td>
+                        <td class="p-3">37,0 m²</td>
+                        <td class="p-3">33,0 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 750 triệu</td>
+                        <td class="p-3">~ 150 triệu</td>
+                        <td class="p-3">Trả góp ~3,5 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-skyview-trang-bom/can-ho-1-phong-ngu" class="text-amber-700 underline font-semibold">Căn 1 Phòng Ngủ +</a></td>
+                        <td class="p-3">45,8 m²</td>
+                        <td class="p-3">41,0 m²</td>
+                        <td class="p-3 font-bold text-amber-600">Từ 990 triệu</td>
+                        <td class="p-3">~ 198 triệu</td>
+                        <td class="p-3">Trả góp ~4,6 tr/tháng</td>
+                      </tr>
+                      <tr class="hover:bg-amber-50/50">
+                        <td class="p-3 font-bold text-slate-900"><a href="/k-home-skyview-trang-bom/can-ho-2-phong-ngu" class="text-amber-700 underline font-semibold">Căn 2 Phòng Ngủ (2WC)</a></td>
+                        <td class="p-3">65,3 m²</td>
+                        <td class="p-3">58,5 m²</td>
+                        <td class="p-3 font-bold text-amber-600">1,35 tỷ – 1,45 tỷ</td>
+                        <td class="p-3">270 – 290 triệu</td>
+                        <td class="p-3">Trả góp ~6,2 tr/tháng</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="text-sm text-slate-600 italic">
+                  * Khách hàng tại Trảng Bom cũng có thể tham khảo thêm đại đô thị <a href="/k-home-midtown-trang-bom" class="text-amber-600 font-bold hover:underline">K-Home Midtown Trảng Bom</a> (13,97 ha) hoặc dự án trọng điểm <a href="/k-home-cityview-ho-nai" class="text-amber-600 font-bold hover:underline">nhà ở xã hội Biên Hòa K-Home CityView</a> (từ 950 triệu).
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 3: Vị trí & Kết nối -->
+            <section id="vi-tri">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                3. Vị Trí Liền Kề KCN Bàu Xéo & Kết Nối Giao Thông
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  K-Home SkyView sở hữu vị trí đắt giá ngay trong lòng Khu đô thị Bàu Xéo, trực tiếp kết nối với các trục giao thông đối ngoại quan trọng:
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                  <li><strong>Liền kề ngay Khu công nghiệp Bàu Xéo:</strong> Chỉ mất 1 – 2 phút đi bộ hoặc xe máy đến nơi làm việc.</li>
+                  <li><strong>Cách Quốc Lộ 1A:</strong> Chỉ 300m, kết nối thuận lợi về TP. Biên Hòa (15 phút) và TP.HCM (45 phút).</li>
+                  <li><strong>Kết nối KCN Giang Điền & KCN Sông Mây:</strong> Trong vòng 10 – 15 phút.</li>
+                  <li><strong>Tiện ích liền kề:</strong> Bệnh viện Đa khoa Trảng Bom, hệ thống ngân hàng, siêu thị, trường học các cấp trong bán kính 1,5 km.</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Section 4: Chính sách vay & Điều kiện -->
+            <section id="chinh-sach-vay">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                4. Chính Sách Vay Vốn Ngân Hàng CSXH & Điều Kiện Mua Căn Hộ
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <div class="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+                  <h4 class="font-bold text-emerald-900 text-lg">Thông Tin Gói Vay Mua NOXH SkyView:</h4>
+                  <p class="text-emerald-800 text-sm leading-relaxed">
+                    • <strong>Tỷ lệ cho vay:</strong> Tối đa 80% giá trị căn hộ trên HĐMB.<br>
+                    • <strong>Lãi suất ưu đãi:</strong> Cố định <strong>5,4%/năm</strong> theo gói bảo trợ của Ngân hàng Chính sách Xã hội.<br>
+                    • <strong>Thời hạn vay:</strong> Lên tới <strong>25 năm</strong>.<br>
+                    • <strong>Điều kiện:</strong> Chưa sở hữu nhà ở tại Đồng Nai, thu nhập cá nhân/gia đình đáp ứng khung thu nhập NOXH theo Luật Nhà ở 2023, có xác thực VNeID mức 2.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 5: FAQ -->
+            <section id="faq">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                5. Câu Hỏi Thường Gặp Về Dự Án K-Home SkyView Bàu Xéo
+              </h2>
+              <div class="space-y-4">
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>K-Home SkyView Bàu Xéo khi nào mở bán chính thức?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Dự án hiện đang tiếp nhận thông tin đăng ký tư vấn và hỗ trợ khách hàng chuẩn bị hồ sơ xét duyệt trước. Quý khách liên hệ Hotline: 0937 587 438 để nhận thông báo thời gian mở bán đợt đầu.</p>
+                  </div>
+                </details>
+                <details class="group bg-slate-50 p-5 rounded-xl border border-slate-200">
+                  <summary class="font-bold text-slate-900 cursor-pointer flex items-center justify-between">
+                    <span>Căn hộ K-Home SkyView có sổ hồng vĩnh viễn không?</span>
+                    <span class="transition group-open:rotate-180">▼</span>
+                  </summary>
+                  <div class="mt-4 text-slate-700 leading-relaxed border-t border-slate-200 pt-4 text-sm">
+                    <p>Có. Dự án có pháp lý hoàn chỉnh theo quy chuẩn nhà ở xã hội, được cấp sổ hồng sở hữu lâu dài (vĩnh viễn) cho người mua sau khi nhận bàn giao nhà.</p>
+                  </div>
+                </details>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="lg:col-span-1 space-y-8">
+            <div class="sticky top-24 space-y-6">
+              <!-- Hotline Card -->
+              <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white p-6 rounded-2xl shadow-xl">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-amber-200 block mb-2">Kim Oanh Land — Đồng Nai</span>
+                <h3 class="text-xl font-bold mb-3">Tư Vấn Hồ Sơ SkyView Bàu Xéo</h3>
+                <p class="text-sm text-amber-100 mb-6 leading-relaxed">
+                  Đăng ký tư vấn miễn phí thủ tục mua nhà ở xã hội, kiểm tra điều kiện hồ sơ và hỗ trợ vay vốn ngân hàng 5,4%/năm.
+                </p>
+                <a href="tel:0937587438" class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3.5 rounded-xl font-extrabold text-center block shadow-md transition-all no-underline">
+                  Gọi Ngay: 0937 587 438
+                </a>
+              </div>
+
+              <!-- Other Projects Nav -->
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Các Dự Án NOXH K-Home Khác</h4>
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home CityView Biên Hòa &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-midtown-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home Midtown Trảng Bom &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Trung tâm Trảng Bom, 13,97 ha, 542 căn</span>
+                  </li>
+                  <li>
+                    <a href="/k-home-avenue-nhon-trach" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
+                      K-Home Avenue Nhơn Trạch &rarr;
+                    </a>
+                    <span class="text-xs text-slate-500">Mặt tiền 25C gần Sân bay Long Thành, 1.022 căn</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Calculator Box -->
+              <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-200">
+                <h4 class="font-bold text-blue-950 text-sm mb-2">Bảng Tính Trả Góp Ngân Hàng</h4>
+                <p class="text-xs text-blue-800 leading-relaxed mb-4">
+                  Tính số tiền trả góp hàng tháng theo gói vay 5,4%/năm cho dự án K-Home SkyView Bàu Xéo.
+                </p>
+                <a href="/tinh-tra-gop" class="text-blue-700 font-bold text-xs hover:underline flex items-center gap-1">
+                  Mở công cụ tính trả góp &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     ${renderCommonFooter()}
   `;
 }
+
 
