@@ -387,6 +387,168 @@ export function renderCityViewHtml() {
               </div>
             </section>
 
+            <!-- Section 6.1: Mặt bằng tầng & thiết kế -->
+            <section id="mat-bang">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                7. Mặt Bằng Tầng Điển Hình & Thiết Kế Căn Hộ Chuẩn Singapore
+              </h2>
+              <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4">
+                <p>
+                  Mặt bằng tổng thể K-Home CityView gồm 4 tòa tháp bố trí so le thông minh, giúp 100% căn hộ đều có mặt thoáng đón gió và ánh sáng tự nhiên. Dự án quy hoạch giao thông phân tầng riêng biệt:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-1">Mặt bằng Tầng 1 (Tiện ích & Thương mại)</h4>
+                    <p class="text-xs text-slate-600">39 căn Shophouse thương mại, sảnh đón lễ tân, nhà trẻ, nhà sinh hoạt cộng đồng và khu đỗ xe liên thông.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-1">Mặt bằng Tầng 2 & 3 (Vườn treo cảnh quan)</h4>
+                    <p class="text-xs text-slate-600">Không gian vườn treo ngoài trời, hồ bơi tràn bờ, khu BBQ và lối dạo bộ thư giãn biệt lập cho cư dân.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-1">Mặt bằng Tầng 4–11 (Tầng căn hộ thấp)</h4>
+                    <p class="text-xs text-slate-600">Bố trí mật độ căn hộ hợp lý, hành lang rộng thoáng, hệ thống 4 thang máy tốc độ cao mỗi tháp.</p>
+                  </div>
+                  <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-1">Mặt bằng Tầng 12A–22 (Tầng căn hộ cao)</h4>
+                    <p class="text-xs text-slate-600">Tầm nhìn không giới hạn toàn cảnh TP. Biên Hòa, đón luồng gió đối lưu tự nhiên trong lành.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 6.2: 8 Yếu tố Singapore Surbana Jurong -->
+            <section id="singapore-factors">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                8. 8 Yếu Tố Vượt Trội Chuẩn Singapore Tại K-Home CityView (Surbana Jurong)
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 01</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Vị Trí Trung Tâm Đô Thị Biên Hòa</h4>
+                  <p class="text-xs text-slate-600">Mặt tiền Điểu Xiển, P. Hố Nai – liền kề chuỗi KCN Amata, Pouchen, Long Bình, giao thông đồng bộ.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 02</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Tiện Ích Nội Khu Phong Phú</h4>
+                  <p class="text-xs text-slate-600">Hồ bơi người lớn & trẻ em, sân chơi trẻ em an toàn, vườn treo, khu BBQ, shophouse thương mại.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 03</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Đa Dạng Tiện Ích Ngoại Khu Quanh Nhà</h4>
+                  <p class="text-xs text-slate-600">Trong bán kính 3km có đầy đủ trường học các cấp, bệnh viện Đa khoa Thống Nhất, chợ Sặt, siêu thị Big C.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 04</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Tiêu Chuẩn Công Trình Xanh EDGE</h4>
+                  <p class="text-xs text-slate-600">Chứng nhận của IFC/World Bank, giảm ít nhất 20% điện năng, nước và năng lượng vật liệu xây dựng.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 05</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Tầm View Thoáng Đãng Rộng Mở</h4>
+                  <p class="text-xs text-slate-600">4 tháp 22 tầng so le không che chắn nhau, đảm bảo đón sáng và thông gió tự nhiên tối đa.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 06</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Thiết Kế Thông Minh Zero Dead Space</h4>
+                  <p class="text-xs text-slate-600">100% không gian đều hữu ích, phòng khách nối liền ban công, bếp kín thoát mùi, logia giặt phơi riêng.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 07</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Bàn Giao Hoàn Thiện Full Nội Thất Cơ Bản</h4>
+                  <p class="text-xs text-slate-600">Tủ bếp trên dưới, sofa, giường, tủ quần áo, thiết bị vệ sinh cao cấp, sàn gỗ – xách vali vào ở ngay.</p>
+                </div>
+                <div class="p-4 bg-amber-50/50 rounded-xl border border-amber-200">
+                  <span class="text-xs font-bold text-amber-700 bg-amber-200/60 px-2 py-0.5 rounded">Yếu tố 08</span>
+                  <h4 class="font-bold text-slate-900 mt-2 mb-1">Quản Lý Vận Hành Thông Minh BMS</h4>
+                  <p class="text-xs text-slate-600">Kiểm soát ra vào thẻ từ thang máy phân tầng, camera giám sát AI 24/7 và ứng dụng cư dân K-City.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section 6.3: Tiến độ xây dựng & thanh toán -->
+            <section id="tien-do">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                9. Tiến Độ Xây Dựng & Kế Hoạch Bàn Giao Căn Hộ
+              </h2>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 p-3 bg-emerald-50 rounded-xl border-l-4 border-emerald-500 text-sm">
+                  <span class="font-bold text-emerald-800">Tháng 02/2026:</span>
+                  <span class="text-slate-700">Khởi công xây dựng – Lễ động thổ chính thức tại đường Điểu Xiển, P. Hố Nai (Đã hoàn thành)</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border-l-4 border-amber-500 text-sm">
+                  <span class="font-bold text-amber-800">Tháng 08–10/2026:</span>
+                  <span class="text-slate-700">Hoàn thành toàn bộ móng cọc & đài móng của 4 block căn hộ</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border-l-4 border-blue-500 text-sm">
+                  <span class="font-bold text-blue-800">Tháng 06/2027:</span>
+                  <span class="text-slate-700">Cất nóc công trình – hoàn thành kết cấu thô 22 tầng</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border-l-4 border-indigo-500 text-sm">
+                  <span class="font-bold text-indigo-800">Tháng 12/2027:</span>
+                  <span class="text-slate-700">Hoàn thiện nội thất, nghiệm thu hệ thống PCCC và cảnh quan</span>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border-l-4 border-purple-500 text-sm">
+                  <span class="font-bold text-purple-800">Tháng 01/2028:</span>
+                  <span class="text-slate-700">Bàn giao đợt đầu tiên cho cư dân đón Tết nguyên đán</span>
+                </div>
+              </div>
+
+              <!-- Payment policy -->
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Chính Sách & Tiến Độ Thanh Toán 5 Đợt Linh Hoạt</h3>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left text-sm border-collapse">
+                  <thead class="bg-slate-100 text-slate-900">
+                    <tr>
+                      <th class="p-3 font-bold">Đợt Thanh Toán</th>
+                      <th class="p-3 font-bold">Tỷ Lệ Thanh Toán</th>
+                      <th class="p-3 font-bold">Thời Điểm Thanh Toán</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100">
+                    <tr><td class="p-3 font-semibold">Đặt cọc</td><td class="p-3 text-amber-600 font-bold">30.000.000 đ</td><td class="p-3">Ký Phiếu xác nhận đặt cọc giữ chỗ</td></tr>
+                    <tr><td class="p-3 font-semibold">Đợt 1</td><td class="p-3 text-amber-600 font-bold">15% (đã gồm tiền cọc)</td><td class="p-3">Trong vòng 7 ngày kể từ ngày cọc – Ký HĐDVTV</td></tr>
+                    <tr><td class="p-3 font-semibold">Đợt 2 & 3</td><td class="p-3 text-amber-600 font-bold">5% mỗi đợt</td><td class="p-3">Mỗi đợt cách nhau 30 ngày theo tiến độ</td></tr>
+                    <tr><td class="p-3 font-semibold">Ngân hàng giải ngân</td><td class="p-3 text-emerald-600 font-bold">75% giá trị</td><td class="p-3">Ngân hàng CSXH giải ngân trực tiếp theo tiến độ xây dựng</td></tr>
+                    <tr><td class="p-3 font-semibold">Bàn giao nhà</td><td class="p-3 font-bold text-slate-900">2% kinh phí bảo trì</td><td class="p-3">Khi có thông báo bàn giao căn hộ chính thức</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Section 6.4: Đối tác phát triển -->
+            <section id="doi-tac">
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
+                10. Các Đơn Vị Đồng Hành & Phát Triển Dự Án K-Home CityView
+              </h2>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">Surbana Jurong</p>
+                  <p class="text-xs text-slate-500">Quy hoạch kiến trúc (Singapore)</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">Global Vireon Studio</p>
+                  <p class="text-xs text-slate-500">Thiết kế chi tiết</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">Kiến Trúc Việt</p>
+                  <p class="text-xs text-slate-500">Thiết kế cảnh quan nội thất</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">CDC Jsc</p>
+                  <p class="text-xs text-slate-500">Tư vấn giám sát thi công</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">Phước Thành</p>
+                  <p class="text-xs text-slate-500">Tổng thầu xây dựng chính</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                  <p class="font-bold text-slate-900 text-sm">K-City</p>
+                  <p class="text-xs text-slate-500">Quản lý & vận hành tòa nhà</p>
+                </div>
+              </div>
+            </section>
+
             <!-- Section 7: Tiện ích & Chứng nhận EDGE -->
             <section id="tien-ich">
               <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-amber-500">
