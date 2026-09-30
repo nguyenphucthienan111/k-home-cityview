@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { News } from "../types";
+import { newsSummary } from "../data/newsSummary";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface NewsViewProps {
@@ -36,10 +37,12 @@ const getProjectLabel = (proj?: string) => {
 
 const PAGE_SIZE = 10;
 
+const INITIAL_NEWS = ([...newsSummary] as News[]).sort((a, b) => b.date.localeCompare(a.date));
+
 export default function NewsView({ onNavigate }: NewsViewProps) {
-  const [news, setNews]               = useState<News[]>([]);
-  const [filtered, setFiltered]       = useState<News[]>([]);
-  const [loading, setLoading]         = useState(true);
+  const [news, setNews]               = useState<News[]>(() => INITIAL_NEWS);
+  const [filtered, setFiltered]       = useState<News[]>(() => INITIAL_NEWS);
+  const [loading, setLoading]         = useState(false);
   const [search, setSearch]           = useState("");
   const [category, setCategory]       = useState("Tất cả");
   const [project, setProject]         = useState("tat-ca");

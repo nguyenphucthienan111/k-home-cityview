@@ -66,3 +66,19 @@ writeFileSync(join(root, "api", "news.ts"),     newsFile,     "utf8");
 console.log("✅ api/projects.ts:", Buffer.byteLength(projectsFile), "bytes");
 console.log("✅ api/news.ts:    ", Buffer.byteLength(newsFile),     "bytes");
 
+// ── Generate src/data/newsSummary.ts (Lightweight metadata without 2MB content) ──
+import * as esbuild from "esbuild";
+const cacheNewsFile = join(root, "scripts", ".cache-newsData.mjs");
+await esbuild.build({
+  entryPoints: [join(root, "src", "data", "newsData.ts")],
+  format: "esm",
+  outfile: cacheNewsFile,
+});
+const { newsData } = await import(`file:///${cacheNewsFile.replace(/\\/g, "/")}`);
+const summaries = newsData.map(({ id, slug, title, date, excerpt, image, category, project }) => ({
+  id, slug, title, date, excerpt, image, category, project
+}));
+const summaryContent = "export const newsSummary = " + JSON.stringify(summaries, null, 2) + ";\n";
+writeFileSync(join(root, "src", "data", "newsSummary.ts"), summaryContent, "utf8");
+console.log("✅ src/data/newsSummary.ts:", Buffer.byteLength(summaryContent), "bytes");
+

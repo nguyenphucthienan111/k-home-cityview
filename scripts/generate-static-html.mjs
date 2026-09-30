@@ -280,8 +280,13 @@ async function main() {
     renderUnitHtml,
     renderProjectsPageHtml,
     renderCalculatorPageHtml,
+    renderNewsPageHtml,
     renderAboutPageHtml,
     renderContactPageHtml,
+    renderNotFoundHtml,
+    renderForbiddenHtml,
+    renderServerErrorHtml,
+    renderVideoWatchHtml,
   } = await import(`file:///${cacheSsrFile.replace(/\\/g, "/")}`);
   console.log("✅ SSR renderer loaded successfully\n");
 
@@ -716,10 +721,18 @@ async function main() {
       bodyHtml = renderProjectsPageHtml();
     } else if (route.dir === "tinh-tra-gop") {
       bodyHtml = renderCalculatorPageHtml();
+    } else if (route.dir === "tin-tuc") {
+      bodyHtml = renderNewsPageHtml();
     } else if (route.dir === "gioi-thieu") {
       bodyHtml = renderAboutPageHtml();
     } else if (route.dir === "lien-he") {
       bodyHtml = renderContactPageHtml();
+    } else if (route.dir === "404") {
+      bodyHtml = renderNotFoundHtml();
+    } else if (route.dir === "403") {
+      bodyHtml = renderForbiddenHtml();
+    } else if (route.dir === "500") {
+      bodyHtml = renderServerErrorHtml(500);
     }
 
     writeRoute(template, dirPath, {
@@ -986,6 +999,7 @@ async function main() {
       staticLinks,
       staticVideoUrl: `https://www.youtube.com/embed/${vid.youtubeId}`,
       staticVideoTitle: vid.title,
+      bodyHtml: renderVideoWatchHtml(vid.slug),
     });
     count++;
     console.log(`✅ /video/${vid.slug}`);
@@ -995,12 +1009,13 @@ async function main() {
 
   // 4. Vercel root 404.html — Vercel dùng file này khi không tìm thấy asset tĩnh
   // (khác với /404/index.html dành cho route /404 trong SPA)
-  const notFoundHtml = injectMeta(template, {
+  let notFoundHtml = injectMeta(template, {
     title: "Không Tìm Thấy Trang | K-Home Đồng Nai",
     description: "Trang bạn đang tìm không tồn tại. Hãy quay lại trang chủ hoặc xem các dự án nhà ở xã hội K-Home tại Đồng Nai.",
     canonical: `${BASE_URL}/404`,
     keywords: null,
   });
+  notFoundHtml = notFoundHtml.replace('<div id="root"></div>', `<div id="root">${renderNotFoundHtml()}</div>`);
   fs.writeFileSync(path.join(DIST_DIR, "404.html"), notFoundHtml, "utf-8");
   console.log("✅ /404.html (Vercel root error page)");
 }

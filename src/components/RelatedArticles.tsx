@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { newsData } from "../data/newsData";
+import { newsSummary } from "../data/newsSummary";
 
 interface Article {
   slug: string;
@@ -28,7 +28,7 @@ const PROJECT_KEYWORDS: Record<string, string[]> = {
 
 function getRelatedArticlesSync(projectSlug: string, limit: number): Article[] {
   const keywords = PROJECT_KEYWORDS[projectSlug] || [];
-  const related = newsData.filter((article) => {
+  const related = newsSummary.filter((article) => {
     if (!article) return false;
     const content = (
       (article.title || "") + " " + (article.excerpt || "") + " " + (article.category || "")
