@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Project } from "../types";
+import { STATIC_PROJECTS } from "../data/staticProjects";
 
 const SUPPORT_ITEMS = [
   "Kiểm tra điều kiện mua nhà ở xã hội",
@@ -11,7 +12,7 @@ const SUPPORT_ITEMS = [
 ];
 
 export default function ContactView() {
-  const [projectsList, setProjectsList] = useState<Project[]>([]);
+  const [projectsList, setProjectsList] = useState<Project[]>(() => STATIC_PROJECTS);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

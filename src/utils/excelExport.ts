@@ -1,5 +1,3 @@
-import * as XLSX from "xlsx";
-
 export interface ExportLoanScheduleParams {
   projectName: string;
   unitLabel: string;
@@ -28,7 +26,8 @@ export interface ExportLoanScheduleParams {
   totalPayment: number;
 }
 
-export function exportLoanScheduleToExcel(params: ExportLoanScheduleParams) {
+export async function exportLoanScheduleToExcel(params: ExportLoanScheduleParams) {
+  const XLSX = await import("xlsx");
   const wb = XLSX.utils.book_new();
 
   // Tạo cấu trúc dữ liệu AOA đẹp mắt, rõ ràng

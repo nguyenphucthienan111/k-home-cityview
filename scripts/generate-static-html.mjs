@@ -13,10 +13,6 @@ import { fileURLToPath } from "url";
 import * as esbuild from "esbuild";
 import { markdownToHtml } from "./markdown-to-html.mjs";
 import {
-  renderCityViewHtml,
-  renderMidtownHtml,
-  renderAvenueHtml,
-  renderSkyViewHtml,
   renderNewsDetailHtml,
 } from "./static-project-content.mjs";
 
@@ -267,7 +263,36 @@ async function main() {
   const template = fs.readFileSync(templatePath, "utf-8");
   console.log("📄 Template loaded from dist/index.html\n");
 
-  let count = 0;
+  // 0. Compile and load React SSR renderer
+  console.log("⚡ Compiling ssr-render.tsx with esbuild...");
+  const cacheSsrFile = path.join(__dirname, ".cache-ssr-render.mjs");
+  await esbuild.build({
+    entryPoints: [path.join(__dirname, "ssr-render.tsx")],
+    bundle: true,
+    platform: "node",
+    format: "esm",
+    outfile: cacheSsrFile,
+    external: ["react", "react-dom", "react-dom/server", "lucide-react", "xlsx"],
+  });
+  const {
+    renderHomeHtml,
+    renderProjectHtml,
+    renderUnitHtml,
+    renderProjectsPageHtml,
+    renderCalculatorPageHtml,
+    renderAboutPageHtml,
+    renderContactPageHtml,
+  } = await import(`file:///${cacheSsrFile.replace(/\\/g, "/")}`);
+  console.log("✅ SSR renderer loaded successfully\n");
+
+  // Render Trang Chủ (/) trực tiếp vào dist/index.html
+  console.log("── Rendering Homepage (/) ─────────────────────────");
+  const homeHtml = renderHomeHtml();
+  const homeFullHtml = template.replace('<div id="root"></div>', `<div id="root">${homeHtml}</div>`);
+  fs.writeFileSync(templatePath, homeFullHtml, "utf-8");
+  console.log(`✅ / (dist/index.html — ${Math.round(homeFullHtml.length / 1024)} KB static HTML)\n`);
+
+  let count = 1;
 
   // 1. Static routes
   console.log("── Static routes ──────────────────────────────");
@@ -668,13 +693,33 @@ async function main() {
 
     let bodyHtml = null;
     if (route.dir === "k-home-cityview-ho-nai") {
-      bodyHtml = renderCityViewHtml();
+      bodyHtml = renderProjectHtml("k-home-cityview-ho-nai");
     } else if (route.dir === "k-home-midtown-trang-bom") {
-      bodyHtml = renderMidtownHtml();
+      bodyHtml = renderProjectHtml("k-home-midtown-trang-bom");
     } else if (route.dir === "k-home-avenue-nhon-trach") {
-      bodyHtml = renderAvenueHtml();
+      bodyHtml = renderProjectHtml("k-home-avenue-nhon-trach");
     } else if (route.dir === "k-home-skyview-trang-bom") {
-      bodyHtml = renderSkyViewHtml();
+      bodyHtml = renderProjectHtml("k-home-skyview-trang-bom");
+    } else if (route.dir.startsWith("k-home-cityview-ho-nai/can-ho-")) {
+      const uSlug = route.dir.split("/")[1];
+      bodyHtml = renderUnitHtml("k-home-cityview-ho-nai", uSlug);
+    } else if (route.dir.startsWith("k-home-midtown-trang-bom/can-ho-")) {
+      const uSlug = route.dir.split("/")[1];
+      bodyHtml = renderUnitHtml("k-home-midtown-trang-bom", uSlug);
+    } else if (route.dir.startsWith("k-home-avenue-nhon-trach/can-ho-")) {
+      const uSlug = route.dir.split("/")[1];
+      bodyHtml = renderUnitHtml("k-home-avenue-nhon-trach", uSlug);
+    } else if (route.dir.startsWith("k-home-skyview-trang-bom/can-ho-")) {
+      const uSlug = route.dir.split("/")[1];
+      bodyHtml = renderUnitHtml("k-home-skyview-trang-bom", uSlug);
+    } else if (route.dir === "san-pham") {
+      bodyHtml = renderProjectsPageHtml();
+    } else if (route.dir === "tinh-tra-gop") {
+      bodyHtml = renderCalculatorPageHtml();
+    } else if (route.dir === "gioi-thieu") {
+      bodyHtml = renderAboutPageHtml();
+    } else if (route.dir === "lien-he") {
+      bodyHtml = renderContactPageHtml();
     }
 
     writeRoute(template, dirPath, {

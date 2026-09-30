@@ -644,7 +644,8 @@ interface ProjectDetailViewProps {
 }
 
 export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailViewProps) {
-  const [project, setProject] = useState<Project | null>(null);
+  const [project, setProject] = useState<Project | null>(() => STATIC_PROJECTS.find(p => p.slug === slug) || null);
+  const [loading, setLoading] = useState(() => !STATIC_PROJECTS.some(p => p.slug === slug));
   const seo = PROJECT_SEO[slug];
 
   // Redirect mapping for old URL slugs
@@ -681,7 +682,6 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       );
     });
   };
-  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
   const [activeFloorTab, setActiveFloorTab] = useState(0);
 
