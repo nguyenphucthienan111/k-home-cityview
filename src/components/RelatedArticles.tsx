@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { newsData } from "../data/newsData";
 
 interface Article {
   slug: string;
@@ -18,83 +19,56 @@ interface RelatedArticlesProps {
   onNavigate?: (path: string) => void;
 }
 
+const PROJECT_KEYWORDS: Record<string, string[]> = {
+  "k-home-cityview-ho-nai": ["CityView", "Hố Nai", "Biên Hòa", "cityview", "city-view"],
+  "k-home-midtown-trang-bom": ["Midtown", "Trảng Bom", "midtown"],
+  "k-home-avenue-nhon-trach": ["Avenue", "Nhơn Trạch", "avenue", "Long Thành"],
+  "k-home-skyview-trang-bom": ["SkyView", "Skyview", "skyview", "Bàu Xéo", "Trảng Bom"],
+};
+
+function getRelatedArticlesSync(projectSlug: string, limit: number): Article[] {
+  const keywords = PROJECT_KEYWORDS[projectSlug] || [];
+  const related = newsData.filter((article) => {
+    if (!article) return false;
+    const content = (
+      (article.title || "") + " " + (article.excerpt || "") + " " + (article.category || "")
+    ).toLowerCase();
+    const keywordMatch = keywords.some((kw) => content.includes(kw.toLowerCase()));
+    const projectMatch = Boolean(article.project && (
+      (projectSlug.includes("cityview") && article.project === "cityview") ||
+      (projectSlug.includes("midtown") && article.project === "midtown") ||
+      (projectSlug.includes("avenue") && article.project === "avenue") ||
+      (projectSlug.includes("skyview") && article.project === "skyview")
+    ));
+    return keywordMatch || projectMatch;
+  });
+
+  related.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  return related.slice(0, limit).map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    description: a.excerpt,
+    category: a.category,
+    date: a.date,
+    image: a.image,
+    projectSlugs: [projectSlug],
+  }));
+}
+
 export default function RelatedArticles({
   projectSlug,
   limit = 6,
   title = "Tin Tức Liên Quan",
   onNavigate,
 }: RelatedArticlesProps) {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [articles, setArticles] = useState<Article[]>(() =>
+    getRelatedArticlesSync(projectSlug, limit)
+  );
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchRelatedArticles = async () => {
-      try {
-        const response = await fetch("/api/news");
-        if (!response.ok) throw new Error("Failed to fetch news");
-
-        const allArticles: Article[] = await response.json();
-
-        // Filter articles that mention the current project
-        // Articles should have projectSlugs array or title/description should contain project name
-        const projectNameMap: Record<string, string[]> = {
-          "k-home-cityview-ho-nai": [
-            "CityView",
-            "Hố Nai",
-            "Biên Hòa",
-            "cityview",
-          ],
-          "k-home-midtown-trang-bom": ["Midtown", "Trảng Bom", "midtown"],
-          "k-home-avenue-nhon-trach": [
-            "Avenue",
-            "Nhơn Trạch",
-            "avenue",
-            "Long Thành",
-          ],
-        };
-
-        const keywords = projectNameMap[projectSlug] || [];
-
-        const related = allArticles.filter((article) => {
-          // Skip null or undefined articles
-          if (!article) return false;
-
-          // Check if article has projectSlugs array that includes current project
-          if (
-            article.projectSlugs &&
-            Array.isArray(article.projectSlugs) &&
-            article.projectSlugs.includes(projectSlug)
-          ) {
-            return true;
-          }
-
-          // Fallback: check if title or description contains project keywords
-          const content = (
-            (article.title || "") +
-            " " +
-            (article.description || "") +
-            " " +
-            (article.category || "")
-          ).toLowerCase();
-          return keywords.some((kw) => content.includes(kw.toLowerCase()));
-        });
-
-        // Sort by date descending (newest first)
-        related.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
-
-        // Limit results
-        setArticles(related.slice(0, limit));
-      } catch (error) {
-        console.error("Error fetching related articles:", error);
-        setArticles([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRelatedArticles();
+    setArticles(getRelatedArticlesSync(projectSlug, limit));
   }, [projectSlug, limit]);
 
   if (loading) {
