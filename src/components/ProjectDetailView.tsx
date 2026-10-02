@@ -15,6 +15,8 @@ const CALC_CONFIG_SLUGS = ["k-home-cityview-ho-nai", "k-home-avenue-nhon-trach",
 const PROJECT_SEO: Record<string, {
   titleTag: string;
   metaDesc: string;
+  h1Tag?: string;
+  leadDesc?: string;
   noxhConditions: { label: string; detail: string }[];
   paymentPolicy: { step: string; pct: string; note: string }[];
   faq: { q: string; a: string }[];
@@ -40,6 +42,8 @@ const PROJECT_SEO: Record<string, {
   "k-home-cityview-ho-nai": {
     titleTag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
     metaDesc: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Biên Hòa 2026.",
+    h1Tag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai",
+    leadDesc: "Dự án nhà ở xã hội Biên Hòa quy mô 1.328 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Cập nhật bảng giá, tiến độ và hướng dẫn điều kiện mua nhà ở xã hội Biên Hòa với gói vay ưu đãi 5,4%/năm.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -219,6 +223,8 @@ const PROJECT_SEO: Record<string, {
   "k-home-midtown-trang-bom": {
     titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
     metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home Midtown Kim Oanh) quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Trảng Bom 2026.",
+    h1Tag: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown",
+    leadDesc: "Dự án nhà ở xã hội Trảng Bom quy mô 13,97 ha, 542 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Hướng dẫn hồ sơ, điều kiện mua nhà ở xã hội Trảng Bom và gói vay ngân hàng chính sách 5,4%/năm.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -373,6 +379,8 @@ const PROJECT_SEO: Record<string, {
   "k-home-avenue-nhon-trach": {
     titleTag: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
     metaDesc: "Dự án Nhà Ở Xã Hội Nhơn Trạch (K-Home Avenue Kim Oanh) mặt tiền đường 25C gần Sân bay Long Thành, 1.022 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
+    h1Tag: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành",
+    leadDesc: "Dự án nhà ở xã hội Nhơn Trạch mặt tiền đường 25C kết nối Sân bay Long Thành, 1.022 căn hộ chuẩn Singapore. Hỗ trợ tư vấn điều kiện mua nhà ở xã hội Nhơn Trạch và gói vay ưu đãi 5,4%/năm.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -523,6 +531,8 @@ const PROJECT_SEO: Record<string, {
   "k-home-skyview-trang-bom": {
     titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
     metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home SkyView Bàu Xéo Kim Oanh) – chung cư Trảng Bom giá rẻ chuẩn Singapore từ 750 triệu, vay 5,4%/năm. Hỗ trợ làm hồ sơ NOXH miễn phí.",
+    h1Tag: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo",
+    leadDesc: "Dự án nhà ở xã hội Trảng Bom tại KĐT Bàu Xéo do Kim Oanh Land phát triển. Căn hộ chuẩn Singapore từ 750 triệu, hỗ trợ hồ sơ và điều kiện mua nhà ở xã hội Trảng Bom với lãi suất ưu đãi 5,4%/năm.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -1635,11 +1645,16 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             </span>
           </div>
           <h1 className="text-3xl md:text-5xl font-display font-semibold text-slate-900 tracking-tight">
-            {project.title}
+            {seo?.h1Tag || project.title}
           </h1>
           <p className="text-slate-500 text-sm flex items-center gap-1.5 font-light">
             <MapPin className="w-4 h-4 text-amber-500 shrink-0" /> {project.location}
           </p>
+          {seo?.leadDesc && (
+            <p className="text-slate-600 text-sm md:text-base leading-relaxed pt-1 max-w-3xl">
+              {seo.leadDesc}
+            </p>
+          )}
           {/* Freshness badge — SEO signal + user trust */}
           <p className="text-xs text-slate-400 flex items-center gap-1.5">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400" />
