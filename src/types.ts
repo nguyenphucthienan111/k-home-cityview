@@ -45,6 +45,8 @@ export interface News {
   category: string;
   project?: string; // "cityview" | "avenue" | "midtown" | "skyview" | undefined (chung)
   readTime?: string;
+  videoUrl?: string;
+  videoCaption?: string;
   content: string;
 }
 

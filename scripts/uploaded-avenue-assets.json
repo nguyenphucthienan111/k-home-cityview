@@ -1,0 +1,34 @@
+{
+  "images": [
+    {
+      "fileName": "1791093831065_6670155327040053447_g6189235973430287538_a4c287b5273b5ec4abf763d01c7f2f1a.jpg",
+      "publicId": "k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-1",
+      "url": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121793/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-1.jpg"
+    },
+    {
+      "fileName": "1791093831096_6670155327040053447_g6189235973430287538_1daa818b01790b945cd996364a73798e.jpg",
+      "publicId": "k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-2",
+      "url": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121795/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-2.jpg"
+    },
+    {
+      "fileName": "1791093831117_6670155327040053447_g6189235973430287538_2164b330b252560050e213a92210fcfb.jpg",
+      "publicId": "k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-3",
+      "url": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121797/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-3.jpg"
+    },
+    {
+      "fileName": "1791093831133_6670155327040053447_g6189235973430287538_a687ed83608490e2ed835170fdcb1dba.jpg",
+      "publicId": "k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-4",
+      "url": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121799/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-4.jpg"
+    },
+    {
+      "fileName": "1791093831147_6670155327040053447_g6189235973430287538_6e08a9261ac426567562c7042882d975.jpg",
+      "publicId": "k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-5",
+      "url": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121801/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-5.jpg"
+    }
+  ],
+  "video": {
+    "fileName": "1790939554694_6670155327040053447_g6189235973430287538.mp4",
+    "publicId": "k-home-avenue/news/video-pho-thu-tuong-kiem-tra-san-bay-long-thanh",
+    "url": "https://res.cloudinary.com/dthv0nsq/video/upload/v1791121805/k-home-avenue/news/video-pho-thu-tuong-kiem-tra-san-bay-long-thanh.mp4"
+  }
+}

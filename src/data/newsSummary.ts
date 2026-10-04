@@ -1,5 +1,25 @@
 export const newsSummary = [
   {
+    "id": "n250",
+    "slug": "pho-thu-tuong-pham-gia-tuc-kiem-tra-san-bay-long-thanh-giao-thong-ket-noi-k-home-avenue",
+    "title": "✈️ Phó Thủ Tướng Thường Trực Chính Phủ Phạm Gia Túc Kiểm Tra Dự Án Sân Bay Long Thành Và Các Tuyến Giao Thông Kết Nối: Đòn Bẩy Đột Phá Cho K-Home Avenue Nhơn Trạch",
+    "date": "2026-10-04",
+    "excerpt": "🏗️ Ngày 4-10, đoàn công tác của Chính phủ do đồng chí Phạm Gia Túc, Ủy viên Bộ Chính trị, Phó Thủ tướng Thường trực Chính phủ làm trưởng đoàn đã kiểm tra thực tế tiến độ thi công Dự án Cảng hàng không quốc tế (sân bay) Long Thành và các tuyến giao thông kết nối. Tiếp và tham gia đoàn công tác có Thành ủy viên, Phó Chủ tịch UBND thành phố Đồng Nai Hồ Văn Hà.",
+    "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1791121793/k-home-avenue/news/pho-thu-tuong-kiem-tra-san-bay-long-thanh-1.jpg",
+    "category": "Quy hoạch & Hạ tầng",
+    "project": "avenue"
+  },
+  {
+    "id": "n251",
+    "slug": "tien-do-xay-dung-k-home-avenue-nhon-trach-moi-nhat-2026",
+    "title": "Tiến Độ Xây Dựng K-Home Avenue Nhơn Trạch Cập Nhật Mới Nhất Tháng 10/2026: Thi Công Thần Tốc 4 Block Chuẩn Singapore Cửa Ngõ Sân Bay Long Thành",
+    "date": "2026-10-04",
+    "excerpt": "Cập nhật thực tế tiến độ xây dựng dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch mới nhất tháng 10/2026: Hình ảnh công trường thi công 4 block căn hộ cao 12 tầng trên mặt tiền đường 25C, tiến độ pháp lý, mốc thời gian cất nóc và lộ trình bàn giao nhà chuẩn Singapore.",
+    "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699472/k-home-avenue/image-maps-avenue/avenue-5.jpg",
+    "category": "Tiến độ thi công",
+    "project": "avenue"
+  },
+  {
     "id": "n220",
     "slug": "mua-nha-o-xa-hoi-nhon-trach-2026-cam-nang-phap-ly-dieu-kien-ho-so",
     "title": "Mua Nhà Ở Xã Hội Nhơn Trạch 2026: Cẩm Nang Pháp Lý, Điều Kiện Thu Nhập & Quy Trình Nộp Hồ Sơ Từ A-Z",
