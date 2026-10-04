@@ -19,9 +19,7 @@ const SITE_IMG_2 = "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699473
 const SITE_IMG_3 = "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699474/k-home-avenue/image-maps-avenue/avenue-7.jpg";
 const SITE_IMG_4 = "https://res.cloudinary.com/dthv0nsq/image/upload/v1788699475/k-home-avenue/image-maps-avenue/avenue-8.jpg";
 
-const article1_content = `---VIDEO---${VIDEO_URL}|Video toàn cảnh: Phó Thủ tướng Thường trực Chính phủ Phạm Gia Túc kiểm tra đại công trường Sân bay Long Thành và các tuyến giao thông kết nối
-
-![Phó Thủ tướng Thường trực Chính phủ Phạm Gia Túc kiểm tra nhà ga T1 Sân bay Long Thành](${IMG_1})
+const article1_content = `![Phó Thủ tướng Thường trực Chính phủ Phạm Gia Túc kiểm tra nhà ga T1 Sân bay Long Thành](${IMG_1})
 
 ## 1. Toàn Cảnh Chuyến Kiểm Tra Thực Tế Của Phó Thủ Tướng Thường Trực Phạm Gia Túc Ngày 4-10
 
@@ -148,7 +146,9 @@ Quý khách hàng có thể chủ động kiểm tra tiến độ dòng tiền v
 
 ---RELATED---tien-do-xay-dung-k-home-avenue-nhon-trach-moi-nhat-2026|Tiến Độ Xây Dựng K-Home Avenue Mới Nhất 2026;mua-nha-o-xa-hoi-nhon-trach-2026-cam-nang-phap-ly-dieu-kien-ho-so|Cẩm Nang Mua Nhà Ở Xã Hội Nhơn Trạch;bang-gia-m2-nha-o-xa-hoi-nhon-trach-2026-so-sanh-chi-phi|Bảng Giá m2 Nhà Ở Xã Hội Nhơn Trạch`;
 
-const article2_content = `![Đại công trường thi công K-Home Avenue Nhơn Trạch tháng 10/2026](${SITE_IMG_1})
+const article2_content = `---VIDEO---${VIDEO_URL}|Video thực tế: Tiến độ thi công đại công trường dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch
+ 
+![Đại công trường thi công K-Home Avenue Nhơn Trạch tháng 10/2026](${SITE_IMG_1})
 
 ## 1. Tổng Quan Quy Mô Dự Án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch
 
@@ -329,6 +329,8 @@ const newArticles = [
     category: "Tiến độ thi công",
     project: "avenue",
     readTime: "11 phút đọc",
+    videoUrl: VIDEO_URL,
+    videoCaption: "Tiến độ thi công đại công trường dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch",
     content: article2_content
   }
 ];
