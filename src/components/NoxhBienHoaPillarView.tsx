@@ -74,7 +74,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
       </header>
 
       {/* ── Main Content Container ── */}
-      <div className="max-w-5xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Left Column: Core Pillar Article */}
         <div className="lg:col-span-8 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
@@ -775,7 +775,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
         </div>
 
         {/* Right Column: Sticky Sidebar / Consultation Form */}
-        <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 self-start">
+        <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto no-scrollbar">
           
           {/* Form đăng ký nhận bảng giá & tư vấn hồ sơ */}
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
