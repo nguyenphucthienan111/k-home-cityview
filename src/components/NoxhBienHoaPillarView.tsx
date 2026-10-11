@@ -414,12 +414,13 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-600"></span>
-                  1. Điều kiện thu nhập (Nới rộng theo Luật 2023)
+                  1. Điều kiện thu nhập (Nới rộng theo Luật Nhà ở mới nhất)
                 </h4>
-                <p className="text-sm text-slate-700">
-                  - <strong>Người độc thân:</strong> Thu nhập thực nhận sau thuế không vượt quá <strong>15 triệu đồng/tháng</strong>.<br />
-                  - <strong>Hộ gia đình hai vợ chồng:</strong> Tổng thu nhập thực nhận sau thuế của 2 vợ chồng không vượt quá <strong>30 triệu đồng/tháng</strong>.
-                </p>
+                <div className="text-sm text-slate-700 space-y-1.5 mt-2">
+                  <p>• <strong>Người độc thân:</strong> Thu nhập thực nhận sau thuế không vượt quá <strong>25 triệu đồng/tháng</strong>.</p>
+                  <p>• <strong>Người độc thân nuôi con nhỏ:</strong> Thu nhập thực nhận sau thuế không vượt quá <strong>35 triệu đồng/tháng</strong>.</p>
+                  <p>• <strong>Hộ gia đình hai vợ chồng:</strong> Tổng thu nhập thực nhận sau thuế của 2 vợ chồng không vượt quá <strong>50 triệu đồng/tháng</strong>.</p>
+                </div>
               </div>
 
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -475,7 +476,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                   </tr>
                   <tr>
                     <td className="p-3 font-semibold">Mẫu 04 (Xác nhận thu nhập)</td>
-                    <td className="p-3">Xác nhận thu nhập dưới 15tr (hoặc dưới 30tr/cặp)</td>
+                    <td className="p-3">Xác nhận thu nhập (Độc thân &lt; 25tr, Độc thân nuôi con &lt; 35tr, Vợ chồng &lt; 50tr)</td>
                     <td className="p-3">Cơ quan/doanh nghiệp đang làm việc</td>
                   </tr>
                   <tr>
