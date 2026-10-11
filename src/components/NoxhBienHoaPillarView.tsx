@@ -228,20 +228,23 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <a href="#dieu-kien-mua-nha-o-xa-hoi-bien-hoa-2026" className="block text-slate-700 hover:text-amber-700 hover:underline">
                 4. Điều kiện mua nhà ở xã hội Biên Hòa 2026 theo quy định mới
               </a>
+              <a href="#quy-trinh-6-buoc-mua-nha-o-xa-hoi-bien-hoa" className="block text-slate-700 hover:text-amber-700 hover:underline font-semibold text-emerald-800">
+                5. Quy trình 6 bước mua nhà ở xã hội Biên Hòa từ nộp hồ sơ đến nhận nhà
+              </a>
               <a href="#ho-so-thu-tuc-mua-noxh-bien-hoa" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                5. Hướng dẫn hồ sơ & biểu mẫu chuẩn Mẫu 01, 02, 04, VNeID & VssID
+                6. Hướng dẫn hồ sơ & biểu mẫu chuẩn Mẫu 01, 02, 04, VNeID & VssID
               </a>
               <a href="#gia-va-chinh-sach-vay-lai-suat-5-4" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                6. Bảng tính dòng tiền trả góp gói vay 5,4%/năm cho từng loại căn hộ
+                7. Bảng tính dòng tiền trả góp gói vay 5,4%/năm cho từng loại căn hộ
               </a>
               <a href="#canh-bao-chieu-tro-lua-dao-noxh" className="block text-slate-700 hover:text-amber-700 hover:underline font-semibold text-rose-700">
-                7. Cảnh báo 5 chiêu trò lừa đảo mua bán NOXH người dân cần tránh
+                8. Cảnh báo 5 chiêu trò lừa đảo mua bán NOXH người dân cần tránh
               </a>
               <a href="#so-sanh-cac-du-an-noxh-bien-hoa" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                8. Bảng so sánh tổng quan 5 dự án NOXH Biên Hòa 2026
+                9. Bảng so sánh tổng quan 5 dự án NOXH Biên Hòa 2026
               </a>
               <a href="#cau-hoi-thuong-gap-faq" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                9. Giải đáp 8 câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
+                10. Giải đáp thắc mắc thường gặp khi mua nhà ở xã hội Biên Hòa (FAQ)
               </a>
             </nav>
           </div>
@@ -572,10 +575,95 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
+          {/* ── SECTION 5: QUY TRÌNH 6 BƯỚC MUA NHÀ Ở XÃ HỘI BIÊN HÒA ── */}
+          <section id="quy-trinh-6-buoc-mua-nha-o-xa-hoi-bien-hoa" className="mb-10 scroll-mt-20">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold">5</span>
+              Quy trình 6 bước mua nhà ở xã hội Biên Hòa chuẩn pháp lý 2026
+            </h2>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Để đảm bảo quyền lợi hợp pháp và tránh phát sinh rủi ro tài chính, người có nhu cầu <strong>mua nhà ở xã hội Biên Hòa</strong> cần nắm vững quy trình giao dịch chuẩn gồm 6 bước theo hướng dẫn của Sở Xây dựng:
+            </p>
+
+            <div className="space-y-3.5 mb-6">
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  1
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 1: Tư vấn điều kiện & Chuẩn bị hồ sơ đăng ký</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Khách hàng liên hệ trực tiếp văn phòng chủ đầu tư (như Kim Oanh Land) để được chuyên viên pháp lý kiểm tra thông tin cư trú trên VNeID, xác nhận tình trạng thu nhập và hướng dẫn điền đầy đủ bộ hồ sơ gồm Mẫu 01, Mẫu 02, Mẫu 04.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  2
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 2: Nộp hồ sơ xét duyệt & Chủ đầu tư gửi thẩm định Sở Xây dựng</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Chủ đầu tư tiếp nhận hồ sơ hợp lệ, lập danh sách người đăng ký mua gửi về Sở Xây dựng tỉnh Đồng Nai để hậu kiểm chéo với cơ sở dữ liệu quốc gia về đất đai nhằm đảm bảo ứng viên chưa sở hữu nhà đất nào tại địa phương.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  3
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 3: Công bố danh sách đủ điều kiện & Đặt cọc giữ căn đẹp</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Sau khi Sở Xây dựng phê duyệt danh sách hợp lệ, chủ đầu tư thông báo cho khách hàng tiến hành chọn vị trí tầng, căn và ký Phiếu xác nhận đặt cọc (30.000.000 VNĐ) để khóa căn ưng ý.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  4
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 4: Ký hợp đồng & Đóng vốn tự có 25% (chia 3 đợt trong 2 tháng)</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Khách hàng thanh toán Đợt 1 (15% đã bao gồm tiền cọc) trong vòng 7 ngày để ký HĐDVTV / HĐMB, sau đó thanh toán tiếp Đợt 2 (5% sau 30 ngày) và Đợt 3 (5% sau 30 ngày tiếp theo).
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  5
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 5: Thẩm định hồ sơ tín dụng & Ngân hàng giải ngân gói vay 5,4%</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Ngân hàng Chính sách Xã hội hoặc các Ngân hàng thương mại liên kết (Vietcombank, BIDV, Agribank, VietinBank) tiến hành thẩm định dòng tiền thu nhập và thực hiện giải ngân trực tiếp cho Chủ đầu tư theo tiến độ xây dựng (45% Đợt 4 và 25% khi bàn giao).
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white font-extrabold flex items-center justify-center shrink-0 text-sm">
+                  6
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Bước 6: Nghiệm thu bàn giao căn hộ hoàn thiện & Cấp sổ hồng lâu dài</h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Khách hàng nhận bàn giao nhà thực tế, đóng 100% kinh phí bảo trì và dọn vào ở. Chủ đầu tư nộp hồ sơ xin cấp Giấy chứng nhận quyền sở hữu nhà ở (Sổ hồng) cho cư dân theo quy định pháp luật.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* ── SECTION 6 ── */}
           <section id="ho-so-thu-tuc-mua-noxh-bien-hoa" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">5</span>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">6</span>
               Hướng dẫn hồ sơ & biểu mẫu chuẩn Mẫu 01, 02, 04, VNeID & VssID
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
@@ -619,7 +707,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
           {/* ── SECTION 7 ── */}
           <section id="gia-va-chinh-sach-vay-lai-suat-5-4" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">6</span>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">7</span>
               Bảng tính dòng tiền trả góp gói vay 5,4%/năm (Vốn 25% chia 3 đợt trong 2 tháng)
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
@@ -784,7 +872,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
           {/* ── SECTION 9: BẢNG SO SÁNH TỔNG QUAN ── */}
           <section id="so-sanh-cac-du-an-noxh-bien-hoa" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">8</span>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">9</span>
               Bảng so sánh tổng quan 5 dự án NOXH Biên Hòa 2026
             </h2>
             <div className="overflow-x-auto rounded-xl border border-slate-200 mb-6">
@@ -842,8 +930,8 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
           {/* ── SECTION 10: FAQ ── */}
           <section id="cau-hoi-thuong-gap-faq" className="mb-8 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">9</span>
-              Giải đáp 8 câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">10</span>
+              Giải đáp thắc mắc thường gặp khi mua nhà ở xã hội Biên Hòa (FAQ)
             </h2>
 
             <div className="space-y-3">
@@ -876,7 +964,34 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
 
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-1">
-                  Q4: Dự án nào gần KCN Amata và KCN Biên Hòa 2 nhất?
+                  Q4: Mua nhà ở xã hội Biên Hòa cần chuẩn bị trước bao nhiêu tiền vốn tự có?
+                </h4>
+                <p className="text-sm text-slate-700">
+                  <strong>Trả lời:</strong> Khách hàng chỉ cần chuẩn bị trước <strong>25% tổng giá trị căn hộ</strong>, được chia thành 3 đợt đóng trong vòng 2 tháng (Cọc 30 triệu, Đợt 1 đóng 15%, Đợt 2 đóng 5%, Đợt 3 đóng 5%). Ví dụ với căn 1PN giá 950 triệu, vốn ban đầu chỉ cần khoảng <strong>237 triệu đồng</strong>; 75% còn lại ngân hàng giải ngân theo gói vay ưu đãi 5,4%/năm trong 25 năm.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1">
+                  Q5: Hộ khẩu ở tỉnh khác chưa có KT3 có được đăng ký mua nhà ở xã hội Biên Hòa không?
+                </h4>
+                <p className="text-sm text-slate-700">
+                  <strong>Trả lời:</strong> Hoàn toàn ĐƯỢC. Theo quy định mới tại Luật Nhà ở 2023, rào cản về sổ hộ khẩu thường trú và sổ tạm trú KT3 đã được bãi bỏ. Bất kỳ công dân Việt Nam nào chỉ cần có hợp đồng lao động và tham gia Bảo hiểm Xã hội (BHXH) từ 12 tháng trở lên tại địa bàn tỉnh Đồng Nai đều được quyền đăng ký mua bình đẳng.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1">
+                  Q6: Đang có khoản vay tiêu dùng hoặc mua xe tại ngân hàng thì có vay mua NOXH Biên Hòa được không?
+                </h4>
+                <p className="text-sm text-slate-700">
+                  <strong>Trả lời:</strong> Vẫn được xét duyệt bình thường nếu lịch sử tín dụng CIC của bạn thuộc nhóm 1 (không có nợ quá hạn, nợ xấu) và thu nhập sau khi trừ chi phí trả nợ cũ vẫn đảm bảo khả năng trả gốc + lãi của gói vay NOXH (từ 3,5 – 4,8 triệu/tháng).
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1">
+                  Q7: Dự án nào gần KCN Amata và KCN Biên Hòa 2 nhất?
                 </h4>
                 <p className="text-sm text-slate-700">
                   <strong>Trả lời:</strong> Dự án K-Home CityView Hố Nai nằm ngay đường Điểu Xiển, chỉ cách KCN Amata khoảng 3–5 phút di chuyển xe máy, là vị trí thuận tiện nhất cho cán bộ, công nhân làm việc tại khu vực này.

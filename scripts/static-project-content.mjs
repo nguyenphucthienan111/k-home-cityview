@@ -756,6 +756,28 @@ export function renderNewsDetailHtml(article, contentHtml, relatedArticles = [])
           ${contentHtml}
         </div>
 
+        <!-- Pillar Cross-Link Banner -->
+        <div class="my-8 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-start gap-3.5">
+            <span class="w-10 h-10 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 shadow-xs">★</span>
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 block">Cẩm Nang Bất Động Sản Biên Hòa 2026</span>
+              <h4 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
+                <a href="/nha-o-xa-hoi-bien-hoa" class="text-amber-800 hover:text-amber-900 hover:underline">
+                  Nhà Ở Xã Hội Biên Hòa: Tổng Hợp 5 Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z
+                </a>
+              </h4>
+              <p class="text-xs text-slate-600 mt-1">
+                Xem chi tiết danh sách dự án, quy trình 6 bước nộp hồ sơ chuẩn pháp lý và cách thức vay 80% vốn mua nhà ở xã hội Biên Hòa.
+              </p>
+            </div>
+          </div>
+          <a href="/nha-o-xa-hoi-bien-hoa" class="shrink-0 inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition no-underline">
+            <span>Khám Phá Cẩm Nang</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+
         <!-- Conversion CTA Banner -->
         <div class="my-12 p-6 sm:p-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div class="space-y-2 text-center sm:text-left">

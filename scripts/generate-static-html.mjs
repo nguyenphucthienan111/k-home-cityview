@@ -702,7 +702,31 @@ async function main() {
         "name": "Điều kiện thu nhập để mua nhà ở xã hội Biên Hòa năm 2026 là bao nhiêu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Theo quy định mới của Luật Nhà ở 2023, người độc thân có thu nhập thực nhận dưới 15 triệu đồng/tháng; vợ chồng có tổng thu nhập thực nhận dưới 30 triệu đồng/tháng đủ điều kiện đăng ký mua."
+          "text": "Theo quy định mới: Người độc thân có thu nhập thực nhận dưới 25 triệu đồng/tháng; Người độc thân nuôi con nhỏ dưới 35 triệu đồng/tháng; Cặp vợ chồng có tổng thu nhập thực nhận dưới 50 triệu đồng/tháng đủ điều kiện đăng ký mua."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mua nhà ở xã hội Biên Hòa cần chuẩn bị trước bao nhiêu tiền vốn tự có?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khách hàng chỉ cần chuẩn bị trước 25% tổng giá trị căn hộ, đóng chia làm 3 đợt trong vòng 2 tháng. Ví dụ căn hộ 1PN giá 950 triệu tại K-Home CityView chỉ cần vốn ban đầu khoảng 237 triệu đồng, 75% còn lại được ngân hàng CSXH giải ngân cho vay với lãi suất 5,4%/năm trong 25 năm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hộ khẩu ở tỉnh khác chưa có KT3 có được đăng ký mua nhà ở xã hội Biên Hòa không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hoàn toàn được. Theo Luật Nhà ở 2023, điều kiện sổ hộ khẩu thường trú và tạm trú KT3 đã được bãi bỏ. Bất kỳ người lao động nào chỉ cần có hợp đồng lao động và tham gia BHXH tại Đồng Nai từ 12 tháng trở lên đều được xét duyệt bình đẳng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quy trình mua nhà ở xã hội Biên Hòa chuẩn pháp lý gồm những bước nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quy trình chuẩn gồm 6 bước: 1. Tư vấn điều kiện & chuẩn bị hồ sơ (Mẫu 01, 02, 04); 2. Nộp hồ sơ và chủ đầu tư gửi thẩm định Sở Xây dựng; 3. Công bố danh sách hợp lệ & đặt cọc giữ căn; 4. Ký hợp đồng & đóng vốn tự có 25% chia 3 đợt; 5. Hoàn tất giải ngân gói vay NOXH 5,4%/năm; 6. Nhận bàn giao căn hộ và cấp sổ hồng lâu dài."
         }
       },
       {
@@ -935,10 +959,11 @@ async function main() {
       });
     }
 
-    // Static links chuẩn SEO truyền link juice mạnh mẽ về trang dự án chính
+    // Static links chuẩn SEO truyền link juice mạnh mẽ về trang pillar và trang dự án chính
     const staticLinks = [
+      { href: "/nha-o-xa-hoi-bien-hoa", text: "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z" },
+      { href: "/nha-o-xa-hoi-bien-hoa", text: "Mua Nhà Ở Xã Hội Biên Hòa" },
       { href: "/k-home-cityview-ho-nai", text: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai" },
-      { href: "/k-home-cityview-ho-nai", text: "Mua Nhà Ở Xã Hội Biên Hòa" },
       { href: "/k-home-midtown-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown" },
       { href: "/k-home-avenue-nhon-trach", text: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue" },
       { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
