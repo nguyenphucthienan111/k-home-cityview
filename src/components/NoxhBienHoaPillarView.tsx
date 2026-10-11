@@ -38,60 +38,63 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
 
       {/* ── Header / Hero Banner (Light / Bright Premium Real Estate Editorial Style) ── */}
       <header className="relative bg-[#FAF9F6] text-[#172033] overflow-hidden border-b border-slate-200/80">
-        {/* Background Aerial / Urban Image with Bright Multi-stop Gradient Overlay */}
+        {/* Background Aerial / Urban Image with Asymmetric Bright Gradient (Rõ nét ở 40-45% bên phải) */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230285/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.jpg"
             alt="Toàn cảnh quy hoạch đô thị nhà ở xã hội Biên Hòa 2026"
-            className="w-full h-full object-cover object-right md:object-right opacity-35 filter contrast-105"
+            className="w-full h-full object-cover object-right filter brightness-95 contrast-105"
             loading="eager"
           />
-          {/* Multi-stop Bright Gradient Overlay: Trắng đục phía bên trái để chữ cực nét, mở sáng dần về bên phải */}
+          {/* Asymmetric Bright Gradient: Trắng tinh chữ nét bên trái, trong suốt 20-30% ở góc phải để nhìn rõ kiến trúc */}
           <div 
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `linear-gradient(90deg, 
-                #FAF9F6 0%, 
-                rgba(250, 249, 246, 0.98) 38%, 
-                rgba(250, 249, 246, 0.78) 68%, 
-                rgba(250, 249, 246, 0.35) 100%)`
+                #FFFFFF 0%, 
+                rgba(255, 255, 255, 0.96) 35%, 
+                rgba(255, 255, 255, 0.72) 60%, 
+                rgba(255, 255, 255, 0.20) 100%)`
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F6] via-transparent to-white/60 pointer-events-none" />
+          {/* Subtle Warm Amber Glow phía góc phải đằng sau card */}
+          <div className="absolute top-1/2 right-12 -translate-y-1/2 w-96 h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none" />
         </div>
 
-        {/* Content Container (Chiều cao chuẩn 550 - 620px trên desktop) */}
+        {/* Content Container (55% left / 45% right) */}
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left 7 Columns: Editorial Typography & Key Facts */}
-            <div className="lg:col-span-8 space-y-4 md:space-y-5">
+            {/* Left Column (55% ~ lg:col-span-7): Editorial Typography & Key Facts */}
+            <div className="lg:col-span-7 space-y-5">
               
-              {/* Badge phía trên H1: Light warm style */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FFF7E6] text-amber-800 border border-[#F5B942] rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                BÁO CÁO THỊ TRƯỜNG NOXH • CẬP NHẬT 10/2026
+              {/* Badge phía trên H1 */}
+              <div>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FFF7E6] text-amber-800 border border-[#F5B942] rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  BÁO CÁO THỊ TRƯỜNG NOXH • CẬP NHẬT 10/2026
+                </span>
               </div>
 
               {/* H1: Điểm nhấn lớn nhất, typography hiện đại & quyền lực */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#172033] leading-[1.14]">
-                Nhà Ở Xã Hội <br className="hidden sm:inline" />
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] font-extrabold tracking-tight text-[#172033] leading-[1.12]">
+                Nhà Ở Xã Hội <br />
                 <span className="bg-gradient-to-r from-amber-600 via-amber-500 to-orange-500 bg-clip-text text-transparent">
                   Biên Hòa 2026
                 </span>
               </h1>
 
-              {/* Sub-heading / Tagline */}
+              {/* Subtitle */}
               <p className="text-lg md:text-xl font-semibold text-slate-700 leading-snug">
                 Tổng hợp dự án, bảng giá & hướng dẫn mua A–Z
               </p>
 
-              {/* Description: Rút gọn tối đa ~2 dòng trên desktop, dễ đọc */}
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl font-normal">
+              {/* Description: Tối đa khoảng 2 dòng trên desktop */}
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl font-normal">
                 Phân tích 5 dự án NOXH đáng chú ý tại Biên Hòa, cập nhật giá bán, điều kiện mua và chính sách vay mới nhất.
               </p>
 
-              {/* Highlight Metrics: Dòng research highlights tinh tế với dot màu */}
+              {/* Key Facts: Một dòng thông tin nhỏ tinh tế */}
               <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs md:text-sm text-slate-700">
                 <span className="inline-flex items-center gap-2 font-medium">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
@@ -108,47 +111,62 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               </div>
 
               {/* Ngày cập nhật nhỏ, tinh tế */}
-              <div className="text-xs text-slate-400 pt-1 flex items-center gap-1.5 font-light">
+              <div className="text-xs text-slate-400 pt-0.5 flex items-center gap-1.5 font-light">
                 <Clock className="w-3.5 h-3.5 text-slate-400" />
-                <span>Cập nhật lần cuối: <strong>11/10/2026</strong></span>
+                <span>Cập nhật lần cuối: <strong className="font-medium text-slate-500">11/10/2026</strong></span>
               </div>
             </div>
 
-            {/* Right 4 Columns: Light Glass White Report Card */}
-            <div className="lg:col-span-4">
-              <div className="bg-white/90 backdrop-blur-md border border-amber-200/80 rounded-[20px] p-6 sm:p-7 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-28 h-28 bg-amber-100/50 rounded-full blur-2xl pointer-events-none" />
-                
-                <div className="flex items-center justify-between pb-3.5 border-b border-slate-100 mb-6">
-                  <span className="text-xs font-bold text-amber-800 uppercase tracking-widest flex items-center gap-1.5">
-                    <FileText className="w-4 h-4 text-amber-600" /> NOXH REPORT CARD
+            {/* Right Column (45% ~ lg:col-span-5): Light Glass Premium Report Card cân đối */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div 
+                className="w-full max-w-md rounded-[20px] p-5 sm:p-6 relative overflow-hidden"
+                style={{
+                  background: "rgba(255, 255, 255, 0.82)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid rgba(245, 158, 11, 0.35)",
+                  boxShadow: "0 20px 60px rgba(15, 23, 42, 0.08)"
+                }}
+              >
+                {/* 1. Card Header */}
+                <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/60 mb-4">
+                  <span className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                    <FileText className="w-4 h-4 text-amber-600" /> NOXH REPORT
                   </span>
-                  <span className="text-[10px] bg-amber-50 text-amber-800 border border-amber-300 px-2 py-0.5 rounded-full font-mono font-bold">
-                    2026
+                  <span className="text-[11px] font-mono font-bold bg-amber-100/80 text-amber-900 px-2.5 py-0.5 rounded-md border border-amber-300/60">
+                    10/2026
                   </span>
                 </div>
 
-                {/* 3 Khối số liệu cốt lõi, tinh gọn & thoáng đãng */}
-                <div className="grid grid-cols-3 gap-2.5 text-center mb-2">
-                  <div className="bg-amber-50/50 p-3 rounded-xl border border-amber-100/80">
-                    <div className="text-2xl md:text-3xl font-extrabold text-amber-700 font-tech">05</div>
-                    <div className="text-[11px] text-slate-600 font-medium mt-1 leading-tight">Dự án nổi bật</div>
+                {/* 2. Main Metrics (3 ô đều nhau, chiều cao bằng nhau) */}
+                <div className="grid grid-cols-3 gap-2.5 text-center mb-4">
+                  <div className="bg-white/90 p-3 rounded-xl border border-amber-100/90 shadow-2xs flex flex-col justify-center">
+                    <div className="text-2xl md:text-3xl font-extrabold text-amber-600 font-tech leading-none">05</div>
+                    <div className="text-[11px] text-slate-600 font-medium mt-1.5 leading-tight">Dự án nổi bật</div>
                   </div>
-                  <div className="bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/80">
-                    <div className="text-2xl md:text-3xl font-extrabold text-emerald-700 font-tech">2026</div>
-                    <div className="text-[11px] text-slate-600 font-medium mt-1 leading-tight">Cập nhật</div>
+                  <div className="bg-white/90 p-3 rounded-xl border border-emerald-100/90 shadow-2xs flex flex-col justify-center">
+                    <div className="text-2xl md:text-3xl font-extrabold text-emerald-600 font-tech leading-none">2026</div>
+                    <div className="text-[11px] text-slate-600 font-medium mt-1.5 leading-tight">Cập nhật</div>
                   </div>
-                  <div className="bg-sky-50/50 p-3 rounded-xl border border-sky-100/80">
-                    <div className="text-2xl md:text-3xl font-extrabold text-sky-700 font-tech">A → Z</div>
-                    <div className="text-[11px] text-slate-600 font-medium mt-1 leading-tight">Hướng dẫn mua</div>
+                  <div className="bg-white/90 p-3 rounded-xl border border-sky-100/90 shadow-2xs flex flex-col justify-center">
+                    <div className="text-2xl md:text-3xl font-extrabold text-sky-600 font-tech leading-none">A → Z</div>
+                    <div className="text-[11px] text-slate-600 font-medium mt-1.5 leading-tight">Hướng dẫn mua</div>
                   </div>
                 </div>
 
-                <div className="pt-4 text-center">
-                  <span className="text-[11px] text-slate-400 italic">
-                    Dữ liệu độc lập phục vụ nhu cầu an cư thực tế
-                  </span>
+                {/* 3. Bottom Information (2 thông tin cùng 1 hàng, gọn gàng, vừa vặn) */}
+                <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-600">
+                  <div>
+                    <span className="text-slate-400 block text-[10px] uppercase font-semibold">Cập nhật lần cuối</span>
+                    <span className="font-bold text-slate-800">11/10/2026</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-slate-400 block text-[10px] uppercase font-semibold">Thời gian đọc</span>
+                    <span className="font-bold text-slate-800">~15 phút</span>
+                  </div>
                 </div>
+
               </div>
             </div>
 
