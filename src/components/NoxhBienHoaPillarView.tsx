@@ -775,10 +775,10 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
         </div>
 
         {/* Right Column: Sticky Sidebar / Consultation Form */}
-        <aside className="lg:col-span-4 space-y-6">
+        <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 self-start">
           
           {/* Form đăng ký nhận bảng giá & tư vấn hồ sơ */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm sticky top-24">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <div className="flex items-center gap-2 text-amber-600 font-bold text-sm uppercase tracking-wider mb-2">
               <ShieldCheck className="w-5 h-5" />
               Tư Vấn Hồ Sơ Miễn Phí
