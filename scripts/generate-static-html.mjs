@@ -23,6 +23,12 @@ const BASE_URL = "https://k-homedongnai.com.vn";
 // ─── Static routes ────────────────────────────────────────────────────────────
 const STATIC_ROUTES = [
   {
+    dir: "nha-o-xa-hoi-bien-hoa",
+    title: "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    description: "Tổng hợp chi tiết 5 dự án nhà ở xã hội Biên Hòa 2026: K-Home CityView Hố Nai, Tam Hiệp, Long Bình Tân, A6-A7. Bảng giá từ 950 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    keywords: "nhà ở xã hội biên hòa, nhà ở xã hội biên hoà, mua nhà ở xã hội biên hòa, mua nhà ở xã hội biên hoà, dự án nhà ở xã hội biên hòa, bảng giá nhà ở xã hội biên hòa, điều kiện mua nhà ở xã hội biên hòa, hồ sơ mua nhà ở xã hội biên hòa, noxh biên hòa, k-home cityview biên hòa, k home cityview, chung cư biên hòa giá rẻ",
+  },
+  {
     dir: "k-home-cityview-ho-nai",
     title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
     description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) – chung cư Biên Hòa giá rẻ 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm.",
@@ -287,6 +293,7 @@ async function main() {
     renderForbiddenHtml,
     renderServerErrorHtml,
     renderVideoWatchHtml,
+    renderNoxhBienHoaPillarHtml,
   } = await import(`file:///${cacheSsrFile.replace(/\\/g, "/")}`);
   console.log("✅ SSR renderer loaded successfully\n");
 
@@ -639,8 +646,83 @@ async function main() {
     },
   };
 
+  const NOXH_BIEN_HOA_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Nhà ở xã hội Biên Hòa 2026", "item": `${BASE_URL}/nha-o-xa-hoi-bien-hoa` },
+    ],
+  };
+
+  const NOXH_BIEN_HOA_ARTICLE = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    "description": "Tổng hợp 5 dự án nhà ở xã hội Biên Hòa 2026: K-Home CityView Hố Nai, Tam Hiệp, Long Bình Tân, A6-A7. Bảng giá từ 950 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    "url": `${BASE_URL}/nha-o-xa-hoi-bien-hoa`,
+    "inLanguage": "vi-VN",
+    "datePublished": "2026-05-26T08:00:00+07:00",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "image": "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+    "author": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "url": BASE_URL
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "186",
+      "reviewCount": "186"
+    }
+  };
+
+  const NOXH_BIEN_HOA_FAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mua nhà ở xã hội Biên Hòa có phải trả phí chênh hoặc phí môi giới không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tuyệt đối không. Giá bán nhà ở xã hội được Sở Xây dựng tỉnh Đồng Nai thẩm định và phê duyệt giá trần niêm yết. Mọi hành vi thu thêm tiền chênh lệch hoặc phí suất nội bộ đều trái pháp luật."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Điều kiện thu nhập để mua nhà ở xã hội Biên Hòa năm 2026 là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Theo quy định mới của Luật Nhà ở 2023, người độc thân có thu nhập thực nhận dưới 15 triệu đồng/tháng; vợ chồng có tổng thu nhập thực nhận dưới 30 triệu đồng/tháng đủ điều kiện đăng ký mua."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dự án nhà ở xã hội nào tại Biên Hòa quy mô lớn và chuẩn Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dự án K-Home CityView Hố Nai do Kim Oanh Land phát triển tại đường Điểu Xiển là dự án lớn nhất với 1.328 căn hộ NOXH chuẩn Singapore, đạt chứng chỉ xanh EDGE và giá từ 950 triệu đồng/căn."
+        }
+      }
+    ]
+  };
+
   // Map schema per dir
   const ROUTE_SCHEMAS = {
+    "nha-o-xa-hoi-bien-hoa": [
+      NOXH_BIEN_HOA_BREADCRUMB,
+      NOXH_BIEN_HOA_ARTICLE,
+      NOXH_BIEN_HOA_FAQ,
+    ],
     "k-home-cityview-ho-nai": [
       CITYVIEW_FAQ_SCHEMA,
       CITYVIEW_BREADCRUMB_SCHEMA,
@@ -697,7 +779,9 @@ async function main() {
     const projVideos = PROJECT_STATIC_VIDEOS[route.dir] || [];
 
     let bodyHtml = null;
-    if (route.dir === "k-home-cityview-ho-nai") {
+    if (route.dir === "nha-o-xa-hoi-bien-hoa") {
+      bodyHtml = renderNoxhBienHoaPillarHtml();
+    } else if (route.dir === "k-home-cityview-ho-nai") {
       bodyHtml = renderProjectHtml("k-home-cityview-ho-nai");
     } else if (route.dir === "k-home-midtown-trang-bom") {
       bodyHtml = renderProjectHtml("k-home-midtown-trang-bom");

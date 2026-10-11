@@ -14,6 +14,7 @@ import NotFoundView from "../src/components/NotFoundView";
 import ForbiddenView from "../src/components/ForbiddenView";
 import ServerErrorView from "../src/components/ServerErrorView";
 import VideoWatchView from "../src/components/VideoWatchView";
+import NoxhBienHoaPillarView from "../src/components/NoxhBienHoaPillarView";
 
 export function renderHomeHtml(): string {
   return ReactDOMServer.renderToString(
@@ -177,6 +178,20 @@ export function renderVideoWatchHtml(videoSlug: string): string {
       React.createElement(Header, { currentHash: "/video/" + videoSlug }),
       React.createElement("main", { id: "main-content", className: "flex-grow" },
         React.createElement(VideoWatchView, { videoSlug, onNavigate: () => {} })
+      ),
+      React.createElement(Footer, null)
+    )
+  );
+}
+
+export function renderNoxhBienHoaPillarHtml(): string {
+  return ReactDOMServer.renderToString(
+    React.createElement(
+      "div",
+      { className: "min-h-screen bg-white text-slate-800 flex flex-col font-sans" },
+      React.createElement(Header, { currentHash: "/nha-o-xa-hoi-bien-hoa" }),
+      React.createElement("main", { id: "main-content", className: "flex-grow" },
+        React.createElement(NoxhBienHoaPillarView, { onNavigate: () => {} })
       ),
       React.createElement(Footer, null)
     )

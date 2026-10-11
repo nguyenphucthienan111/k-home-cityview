@@ -20,6 +20,11 @@ const TODAY      = new Date().toISOString().split("T")[0];
 
 // ─── Ảnh khai báo cho từng trang (giống đối thủ khai báo image trong sitemap) ─
 const PAGE_IMAGES = {
+  "/nha-o-xa-hoi-bien-hoa": [
+    { loc: "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp", title: "Nhà ở xã hội Biên Hòa 2026 K-Home CityView Hố Nai" },
+    { loc: "/k-home cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1.webp", title: "Tổng quan các dự án nhà ở xã hội Biên Hòa Đồng Nai" },
+    { loc: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", title: "Bản đồ vị trí nhà ở xã hội Biên Hòa" },
+  ],
   "/k-home-cityview-ho-nai": [
     { loc: "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp",            title: "Phối cảnh tổng thể K-Home CityView Hố Nai Biên Hòa Đồng Nai" },
     { loc: "/k-home cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1.webp",              title: "Toàn cảnh nhìn từ trên cao K-Home CityView NOXH Hố Nai" },
@@ -68,6 +73,7 @@ const PAGE_IMAGES = {
 // ─── URL list ─────────────────────────────────────────────────────────────────
 const STATIC_URLS = [
   { loc: "/",                         priority: "0.6",  changefreq: "daily",   lastmod: TODAY },
+  { loc: "/nha-o-xa-hoi-bien-hoa",     priority: "1.0",  changefreq: "daily",   lastmod: TODAY }, // ⭐ PILLAR PAGE - Target Keyword
   { loc: "/san-pham",                 priority: "0.8",  changefreq: "weekly",  lastmod: TODAY },
   { loc: "/tinh-tra-gop",             priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-cityview-ho-nai",   priority: "1.0",  changefreq: "weekly",  lastmod: TODAY }, // ⭐ SAME AS HOMEPAGE — Featured Project

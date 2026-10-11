@@ -20,6 +20,7 @@ const NotFoundView       = lazy(() => import("./components/NotFoundView"));
 const ServerErrorView    = lazy(() => import("./components/ServerErrorView"));
 const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
 const VideoWatchView     = lazy(() => import("./components/VideoWatchView"));
+const NoxhBienHoaPillarView = lazy(() => import("./components/NoxhBienHoaPillarView"));
 
 // ── 301 Redirect map for old news slugs → new slugs ──
 // When Googlebot crawls old URL, it will see redirect and transfer link juice
@@ -42,6 +43,7 @@ const PAGE_TITLES: Record<string, string> = {
   "/k-home-midtown-trang-bom":  "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
   "/k-home-avenue-nhon-trach":  "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
   "/k-home-skyview-trang-bom":   "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
+  "/nha-o-xa-hoi-bien-hoa":     "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
 };
 
 // Helper: normalize path from window.location
@@ -176,6 +178,11 @@ export default function App() {
         description: "Công cụ tính tiền trả góp mua nhà ở xã hội K-Home Đồng Nai: CityView Biên Hòa, Midtown Trảng Bom, Avenue Nhơn Trạch, SkyView Trảng Bom. Vốn ban đầu từ 150tr, vay 80% lãi suất 5,4%/năm.",
         image: "https://k-homedongnai.com.vn/hero-background.jpg",
       },
+      "/nha-o-xa-hoi-bien-hoa": {
+        title: "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+        description: "Tổng hợp 5 dự án nhà ở xã hội Biên Hòa 2026: K-Home CityView Hố Nai, Tam Hiệp, Long Bình Tân, A6-A7. Bảng giá từ 950 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+        image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+      },
     };
     const ogData = PAGE_OG[cleanPath] ?? PAGE_OG["/"];
     const selectors: [string, string][] = [
@@ -294,6 +301,8 @@ export default function App() {
       case "/calculator":
       case "/bang-tinh-tra-gop":
         return <CalculatorView onNavigate={navigateTo} />;
+      case "/nha-o-xa-hoi-bien-hoa":
+        return <NoxhBienHoaPillarView onNavigate={navigateTo} />;
       case "/tin-tuc":
       case "/news":    return <NewsView onNavigate={navigateTo} />;
       case "/gioi-thieu":

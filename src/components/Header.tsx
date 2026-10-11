@@ -156,6 +156,15 @@ export default function Header({ currentHash }: HeaderProps) {
                       </div>
                     </a>
                   ))}
+                  <div className="p-2 border-t border-slate-100 bg-amber-50/50">
+                    <a
+                      href="/nha-o-xa-hoi-bien-hoa"
+                      onClick={(e) => handleNav(e, "/nha-o-xa-hoi-bien-hoa")}
+                      className="block text-center text-xs font-bold text-amber-700 hover:text-amber-800 py-1.5 rounded-lg bg-amber-100/70 hover:bg-amber-100 transition"
+                    >
+                      Tổng hợp NOXH Biên Hòa 2026 A–Z ➔
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
@@ -294,6 +303,13 @@ export default function Header({ currentHash }: HeaderProps) {
                     {p.title}
                   </a>
                 ))}
+                <a
+                  href="/nha-o-xa-hoi-bien-hoa"
+                  onClick={(e) => handleNav(e, "/nha-o-xa-hoi-bien-hoa")}
+                  className="block py-2 px-3 rounded-lg text-sm font-bold text-amber-700 bg-amber-50"
+                >
+                  ⭐ Tổng hợp NOXH Biên Hòa 2026 A–Z
+                </a>
               </div>
             )}
           </div>
