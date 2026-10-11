@@ -36,55 +36,152 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
         </div>
       </nav>
 
-      {/* ── Header / Hero Banner (Sáng sủa, Hiện đại & Sang trọng) ── */}
-      <header className="relative bg-gradient-to-br from-amber-950 via-slate-900 to-amber-900 text-white py-14 md:py-20 px-4 overflow-hidden border-b border-amber-500/20">
-        {/* Glow & Lighting Effects */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 -right-24 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+      {/* ── Header / Hero Banner (Editorial Magazine / Real Estate Report Style) ── */}
+      <header className="relative bg-slate-950 text-white overflow-hidden border-b border-slate-800">
+        {/* Background Aerial / Urban Image with Smooth Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230285/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.jpg"
+            alt="Toàn cảnh quy hoạch đô thị nhà ở xã hội Biên Hòa 2026"
+            className="w-full h-full object-cover object-center md:object-right scale-105 filter brightness-75"
+            loading="eager"
+          />
+          {/* Multi-stop Dark Gradient Overlay: tối đậm bên trái để nổi bật chữ, hé lộ kiến trúc bên phải */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `linear-gradient(90deg, 
+                rgba(8, 15, 30, 0.98) 0%, 
+                rgba(8, 15, 30, 0.94) 42%, 
+                rgba(8, 15, 30, 0.72) 72%, 
+                rgba(8, 15, 30, 0.45) 100%)`
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60 pointer-events-none" />
+        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-amber-500/25 to-orange-500/25 text-amber-300 border border-amber-400/40 rounded-full text-xs font-bold uppercase tracking-wider mb-5 shadow-inner backdrop-blur-md">
-            <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
-            Báo Cáo Trụ Cột Độc Quyền 2026 • Cập Nhật Tháng 10/2026
+        {/* Content Container */}
+        <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 lg:py-20 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left 7 Columns: Editorial Headline & Meta */}
+            <div className="lg:col-span-8 space-y-4 md:space-y-5">
+              
+              {/* Eyebrow Label */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-400/35 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                BÁO CÁO THỊ TRƯỜNG NOXH • CẬP NHẬT 10/2026
+              </div>
+
+              {/* H1: Tinh gọn, trọng tâm, cực mạnh SEO */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+                Nhà Ở Xã Hội <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400 bg-clip-text text-transparent">
+                  Biên Hòa 2026
+                </span>
+              </h1>
+
+              {/* Sub-heading / Tagline */}
+              <p className="text-lg md:text-xl font-medium text-amber-100/90 leading-snug">
+                Tổng hợp dự án, bảng giá & hướng dẫn mua A–Z
+              </p>
+
+              {/* Lead Paragraph */}
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl font-light">
+                Báo cáo nghiên cứu độc lập và toàn diện về thị trường nhà ở xã hội (NOXH) TP. Biên Hòa: Đánh giá thực tế 5 dự án đang triển khai, khung giá gốc từ Sở Xây dựng, điều kiện thu nhập theo Luật Nhà ở mới nhất và cẩm nang xét duyệt hồ sơ không qua trung gian.
+              </p>
+
+              {/* Key Highlights Strip */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-2 text-xs md:text-sm text-slate-300 border-t border-slate-800/80">
+                <span className="flex items-center gap-1.5 font-semibold text-white">
+                  <span className="w-2 h-2 rounded-full bg-amber-400" />
+                  05 Dự án nổi bật
+                </span>
+                <span className="flex items-center gap-1.5 font-semibold text-white">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  Giá từ 950 Triệu
+                </span>
+                <span className="flex items-center gap-1.5 font-semibold text-white">
+                  <span className="w-2 h-2 rounded-full bg-sky-400" />
+                  Gói vay 5,4%/năm (25 năm)
+                </span>
+                <span className="text-slate-400 italic text-xs">
+                  *Đề cập dự án của Kim Oanh Land & các CĐT khác
+                </span>
+              </div>
+            </div>
+
+            {/* Right 4 Columns: Report Card (Phong cách Báo Cáo Nghiên Cứu) */}
+            <div className="lg:col-span-4">
+              <div className="bg-slate-900/85 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+                
+                <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+                  <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
+                    <FileText className="w-3.5 h-3.5" /> NOXH REPORT CARD
+                  </span>
+                  <span className="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded font-mono font-bold">
+                    10/2026
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 text-center mb-5">
+                  <div className="bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
+                    <div className="text-2xl font-extrabold text-amber-400 font-tech">05</div>
+                    <div className="text-[11px] text-slate-300 font-medium mt-0.5 leading-tight">Dự án trọng điểm</div>
+                  </div>
+                  <div className="bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
+                    <div className="text-2xl font-extrabold text-emerald-400 font-tech">2026</div>
+                    <div className="text-[11px] text-slate-300 font-medium mt-0.5 leading-tight">Năm cập nhật</div>
+                  </div>
+                  <div className="bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/60">
+                    <div className="text-2xl font-extrabold text-sky-400 font-tech">A → Z</div>
+                    <div className="text-[11px] text-slate-300 font-medium mt-0.5 leading-tight">Hướng dẫn mua</div>
+                  </div>
+                </div>
+
+                <div className="space-y-2 text-xs text-slate-300 pt-2 border-t border-slate-800/80">
+                  <div className="flex justify-between items-center py-1">
+                    <span className="text-slate-400">Đối tượng phục vụ:</span>
+                    <span className="font-semibold text-white">Công nhân, viên chức & người thu nhập thấp</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <span className="text-slate-400">Hình thức thanh toán:</span>
+                    <span className="font-semibold text-emerald-400">Vốn 25% (2 tháng) • Vay 25 năm</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <span className="text-slate-400">Thời gian đọc nghiên cứu:</span>
+                    <span className="font-semibold text-white">~15 phút</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+        </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 leading-[1.15] max-w-5xl">
-            Nhà Ở Xã Hội Biên Hòa 2026:{" "}
-            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400 bg-clip-text text-transparent">
-              Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A–Z
-            </span>
-          </h1>
-
-          <p className="text-slate-200 text-base md:text-lg max-w-4xl leading-relaxed mb-8 font-light">
-            Báo cáo toàn diện nhất về thị trường nhà ở xã hội (NOXH) TP. Biên Hòa: Đánh giá chi tiết 5 dự án đang triển khai, khung giá gốc từ Sở Xây dựng, cập nhật điều kiện thu nhập theo Luật Nhà ở mới nhất, cẩm nang nộp hồ sơ chuẩn và cảnh báo các chiêu trò lừa đảo cần tránh.
-          </p>
-
-          {/* Social Proof & Rating Badge dạng Glassmorphism Card */}
-          <div className="flex flex-wrap items-center gap-3 md:gap-6 pt-2">
-            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium transition shadow-sm">
+        {/* Sub-strip Rating & Meta Bar (Đặt ngay dưới Hero theo góp ý) */}
+        <div className="bg-slate-900/90 border-t border-slate-800/80 py-3 px-4 backdrop-blur-md">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
+            <div className="flex items-center gap-2">
               <div className="flex text-amber-400">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="text-amber-300 font-bold">5.0</span>
-              <span className="text-slate-300 text-xs hidden sm:inline">(186 đánh giá thực tế)</span>
+              <span className="font-bold text-white">5.0</span>
+              <span>(186 lượt đánh giá từ người mua thực tế tại Biên Hòa)</span>
             </div>
-
-            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm transition shadow-sm">
-              <Clock className="w-4 h-4 text-emerald-400" />
-              <span className="text-slate-200">Thời gian đọc: <strong className="text-white">15 phút</strong></span>
-            </div>
-
-            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm transition shadow-sm">
-              <Building2 className="w-4 h-4 text-sky-400" />
-              <span className="text-slate-200">Đơn vị phát triển: <strong className="text-white font-semibold">Kim Oanh Land</strong></span>
-            </div>
-
-            <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 px-3.5 py-2 rounded-xl text-xs md:text-sm text-amber-300 font-semibold shadow-sm">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
-              <span>Pháp lý minh bạch 100%</span>
+            <div className="flex items-center gap-4 text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-slate-500" />
+                Cập nhật dữ liệu: 10/2026
+              </span>
+              <span className="hidden sm:inline text-slate-600">•</span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                Cơ sở dữ liệu: Sở Xây dựng Đồng Nai & Luật Nhà ở 2023
+              </span>
             </div>
           </div>
         </div>
