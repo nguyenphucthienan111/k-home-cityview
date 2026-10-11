@@ -156,13 +156,28 @@ export default function Header({ currentHash }: HeaderProps) {
                       </div>
                     </a>
                   ))}
-                  <div className="p-2 border-t border-slate-100 bg-amber-50/50">
+                  <div className="p-2 border-t border-slate-100 bg-amber-50/50 space-y-1">
+                    <div className="px-2 pt-1 text-[10px] font-bold text-amber-800 uppercase tracking-wider">Cẩm nang thị trường NOXH 2026:</div>
                     <a
                       href="/nha-o-xa-hoi-bien-hoa"
                       onClick={(e) => handleNav(e, "/nha-o-xa-hoi-bien-hoa")}
-                      className="block text-center text-xs font-bold text-amber-700 hover:text-amber-800 py-1.5 rounded-lg bg-amber-100/70 hover:bg-amber-100 transition"
+                      className="block text-xs font-bold text-slate-800 hover:text-amber-700 hover:bg-amber-100/70 py-1.5 px-2 rounded-lg transition"
                     >
-                      Tổng hợp NOXH Biên Hòa 2026 A–Z ➔
+                      ➔ NOXH Biên Hòa 2026 A–Z
+                    </a>
+                    <a
+                      href="/nha-o-xa-hoi-nhon-trach"
+                      onClick={(e) => handleNav(e, "/nha-o-xa-hoi-nhon-trach")}
+                      className="block text-xs font-bold text-slate-800 hover:text-amber-700 hover:bg-amber-100/70 py-1.5 px-2 rounded-lg transition"
+                    >
+                      ➔ NOXH Nhơn Trạch 2026 A–Z
+                    </a>
+                    <a
+                      href="/nha-o-xa-hoi-trang-bom"
+                      onClick={(e) => handleNav(e, "/nha-o-xa-hoi-trang-bom")}
+                      className="block text-xs font-bold text-slate-800 hover:text-amber-700 hover:bg-amber-100/70 py-1.5 px-2 rounded-lg transition"
+                    >
+                      ➔ NOXH Trảng Bom 2026 A–Z
                     </a>
                   </div>
                 </div>
@@ -308,7 +323,21 @@ export default function Header({ currentHash }: HeaderProps) {
                   onClick={(e) => handleNav(e, "/nha-o-xa-hoi-bien-hoa")}
                   className="block py-2 px-3 rounded-lg text-sm font-bold text-amber-700 bg-amber-50"
                 >
-                  ⭐ Tổng hợp NOXH Biên Hòa 2026 A–Z
+                  ⭐ Cẩm nang NOXH Biên Hòa 2026 A–Z
+                </a>
+                <a
+                  href="/nha-o-xa-hoi-nhon-trach"
+                  onClick={(e) => handleNav(e, "/nha-o-xa-hoi-nhon-trach")}
+                  className="block py-2 px-3 rounded-lg text-sm font-bold text-amber-700 bg-amber-50"
+                >
+                  ⭐ Cẩm nang NOXH Nhơn Trạch 2026 A–Z
+                </a>
+                <a
+                  href="/nha-o-xa-hoi-trang-bom"
+                  onClick={(e) => handleNav(e, "/nha-o-xa-hoi-trang-bom")}
+                  className="block py-2 px-3 rounded-lg text-sm font-bold text-amber-700 bg-amber-50"
+                >
+                  ⭐ Cẩm nang NOXH Trảng Bom 2026 A–Z
                 </a>
               </div>
             )}

@@ -164,6 +164,22 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="/nha-o-xa-hoi-nhon-trach"
+                    title="Nhà ở xã hội Nhơn Trạch 2026 – Đón đầu sân bay Long Thành"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1 font-semibold text-amber-700">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Nhà ở xã hội Nhơn Trạch 2026 (Tổng hợp A-Z)</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/nha-o-xa-hoi-trang-bom"
+                    title="Nhà ở xã hội Trảng Bom 2026 – Trung tâm & Bàu Xéo"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1 font-semibold text-amber-700">
+                    <ChevronRight className="w-3 h-3 shrink-0" />
+                    <span>Nhà ở xã hội Trảng Bom 2026 (Tổng hợp A-Z)</span>
+                  </a>
+                </li>
+                <li>
                   <a href="/k-home-cityview-ho-nai"
                     title="Nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai"
                     className="hover:text-amber-600 transition-colors flex items-center gap-1">
