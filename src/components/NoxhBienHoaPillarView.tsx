@@ -30,7 +30,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
       {/* ── Breadcrumb ── */}
       <nav aria-label="Breadcrumb" className="bg-white border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center text-sm text-slate-500">
-          <button onClick={() => onNavigate("/")} className="hover:text-amber-600 transition">Trang chủ</button>
+          <button onClick={() => onNavigate("/")} className="cursor-pointer hover:text-amber-600 transition">Trang chủ</button>
           <ChevronRight className="w-4 h-4 mx-2 text-slate-400" />
           <span className="text-slate-900 font-medium truncate">Nhà ở xã hội Biên Hòa 2026</span>
         </div>
@@ -93,10 +93,10 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 2. Danh sách dự án nhà ở xã hội Biên Hòa đang triển khai 2026
               </a>
               <a href="#k-home-cityview-ho-nai-du-an-trong-diem" className="block text-slate-700 hover:text-amber-700 hover:underline font-semibold text-amber-800">
-                ➔ Tiêu điểm số 1: K-Home CityView Hố Nai (1.328 căn chuẩn Singapore)
+                ➔ Tiêu điểm số 1: K-Home CityView Hố Nai (1.382 căn chuẩn Singapore)
               </a>
-              <a href="#so-sanh-mua-nha-vs-thue-tro-20-nam" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                3. Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 20 năm tại Biên Hòa
+              <a href="#so-sanh-mua-nha-vs-thue-tro-25-nam" className="block text-slate-700 hover:text-amber-700 hover:underline">
+                3. Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 25 năm tại Biên Hòa
               </a>
               <a href="#dieu-kien-mua-nha-o-xa-hoi-bien-hoa-2026" className="block text-slate-700 hover:text-amber-700 hover:underline">
                 4. Điều kiện mua nhà ở xã hội Biên Hòa 2026 theo quy định mới
@@ -178,7 +178,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-700 mb-3 bg-white p-2.5 rounded-lg border border-amber-200">
                   <div><strong>Quy mô:</strong> 2,85 ha (4 block, 22 tầng)</div>
-                  <div><strong>Số căn:</strong> 1.328 căn NOXH + 39 Shophouse</div>
+                  <div><strong>Số căn:</strong> 1.382 căn NOXH + 39 Shophouse</div>
                   <div><strong>Giá bán:</strong> Từ 950 Triệu/căn</div>
                   <div><strong>Tiến độ:</strong> Khởi công & chuẩn bị mở bán</div>
                 </div>
@@ -187,7 +187,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 </p>
                 <button 
                   onClick={() => onNavigate("/k-home-cityview-ho-nai")}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition"
+                  className="cursor-pointer inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition"
                 >
                   Xem chi tiết bảng giá & mặt bằng K-Home CityView <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -342,27 +342,27 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             <div className="flex flex-wrap gap-3">
               <button 
                 onClick={() => onNavigate("/k-home-cityview-ho-nai")}
-                className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-sm"
+                className="cursor-pointer bg-amber-600 hover:bg-amber-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-sm"
               >
                 Xem Trang Chi Tiết Dự Án K-Home CityView
               </button>
               <button 
                 onClick={() => onNavigate("/tinh-tra-gop")}
-                className="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-semibold px-4 py-2.5 rounded-xl text-sm transition"
+                className="cursor-pointer bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-semibold px-4 py-2.5 rounded-xl text-sm transition"
               >
                 Tính Bảng Trả Góp Gói 5,4%
               </button>
             </div>
           </section>
 
-          {/* ── SECTION 4: BÀI TOÁN KINH TẾ: MUA NHÀ VS THUÊ TRỌ 20 NĂM ── */}
-          <section id="so-sanh-mua-vs-thue-tro-20-nam" className="mb-10 scroll-mt-20">
+          {/* ── SECTION 4: BÀI TOÁN KINH TẾ: MUA NHÀ VS THUÊ TRỌ 25 NĂM ── */}
+          <section id="so-sanh-mua-nha-vs-thue-tro-25-nam" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">3</span>
-              Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 20 năm tại Biên Hòa
+              Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 25 năm tại Biên Hòa
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Nhiều công nhân tại KCN Biên Hòa 2 và KCN Amata e ngại việc vay ngân hàng. Tuy nhiên, khi đặt lên bàn cân kinh tế giữa việc tiếp tục thuê trọ và mua căn hộ NOXH trả góp trong 20 năm:
+              Nhiều gia đình công nhân tại Biên Hòa e ngại việc vay ngân hàng và lựa chọn ở trọ lâu năm. Tuy nhiên, khi đặt lên bàn cân kinh tế giữa việc tiếp tục thuê trọ và mua căn hộ NOXH trả góp trong thời hạn vay tối đa <strong>25 năm (300 tháng)</strong>:
             </p>
 
             <div className="overflow-x-auto rounded-xl border border-slate-200 mb-4">
@@ -370,30 +370,30 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 <thead className="bg-slate-100 text-slate-800 font-semibold border-b border-slate-200">
                   <tr>
                     <th className="p-3">Tiêu chí so sánh</th>
-                    <th className="p-3 text-rose-700 bg-rose-50/50">Thuê phòng trọ gia đình</th>
-                    <th className="p-3 text-emerald-800 bg-emerald-50/50">Mua NOXH K-Home CityView</th>
+                    <th className="p-3 text-rose-700 bg-rose-50/50">Thuê phòng trọ gia đình (25 năm)</th>
+                    <th className="p-3 text-emerald-800 bg-emerald-50/50">Mua NOXH K-Home CityView (Trả góp 25 năm)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-slate-700">
                   <tr>
-                    <td className="p-3 font-semibold">Chi phí hàng tháng</td>
-                    <td className="p-3">3,5 – 4,5 triệu (tiền phòng + điện nước kinh doanh)</td>
-                    <td className="p-3 font-bold text-emerald-700">3,8 – 5,2 triệu (gốc + lãi giảm dần)</td>
+                    <td className="p-3 font-semibold">Chi phí trả hàng tháng</td>
+                    <td className="p-3">3,5 – 4,5 triệu (tiền trọ + điện nước giá kinh doanh tăng dần theo lạm phát)</td>
+                    <td className="p-3 font-bold text-emerald-700">Từ 3,5 – 4,8 triệu (gốc + lãi ưu đãi 5,4%, giảm dần theo dư nợ)</td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold">Tổng tiền sau 20 năm</td>
-                    <td className="p-3 text-rose-600 font-semibold">Khoảng 1,2 – 1,5 tỷ đồng (mất trắng)</td>
-                    <td className="p-3 text-emerald-700 font-semibold">Tích lũy trọn vẹn vào giá trị căn nhà</td>
+                    <td className="p-3 font-semibold">Tổng số tiền chi ra sau 25 năm</td>
+                    <td className="p-3 text-rose-600 font-semibold">Khoảng 1,5 – 1,9 tỷ đồng (mất trắng không thể thu hồi)</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Tích lũy hoàn toàn vào quyền sở hữu căn nhà của chính mình</td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold">Tài sản sau 20 năm</td>
-                    <td className="p-3">Không có gì (vẫn ở trọ)</td>
-                    <td className="p-3 font-bold text-emerald-800">Sở hữu vĩnh viễn sổ hồng căn hộ (trị giá 2,5 - 3 tỷ)</td>
+                    <td className="p-3 font-semibold">Tài sản sở hữu sau 25 năm</td>
+                    <td className="p-3 text-rose-600 font-bold">Không có gì (vẫn đi ở thuê trọ)</td>
+                    <td className="p-3 font-bold text-emerald-800">Sở hữu vĩnh viễn sổ hồng căn hộ (giá trị gia tăng 3 – 4 tỷ đồng)</td>
                   </tr>
                   <tr>
-                    <td className="p-3 font-semibold">Môi trường sống con trẻ</td>
-                    <td className="p-3">Chật hẹp, ẩm thấp, phức tạp an ninh</td>
-                    <td className="p-3">Công viên, hồ bơi, camera an ninh 24/7, trường học</td>
+                    <td className="p-3 font-semibold">Môi trường sống con cái & tiện ích</td>
+                    <td className="p-3">Chật hẹp, ẩm thấp, tiếng ồn, an ninh không đảm bảo</td>
+                    <td className="p-3">Khu compound khép kín, hồ bơi, công viên, an ninh camera 24/7, trường học</td>
                   </tr>
                 </tbody>
               </table>
@@ -492,30 +492,132 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
           <section id="gia-va-chinh-sach-vay-lai-suat-5-4" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">6</span>
-              Bảng tính dòng tiền trả góp gói vay 5,4%/năm cho từng loại căn hộ
+              Bảng tính dòng tiền trả góp gói vay 5,4%/năm (Vốn 25% chia 3 đợt trong 2 tháng)
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Người mua nhà ở xã hội Biên Hòa được Ngân hàng Chính sách Xã hội (VBSP) hỗ trợ gói tín dụng ưu đãi 5,4%/năm với thời hạn lên tới 25 năm:
+              Người mua nhà ở xã hội Biên Hòa được Ngân hàng Chính sách Xã hội (VBSP) hoặc các ngân hàng thương mại nhà nước hỗ trợ gói tín dụng ưu đãi <strong>5,4%/năm</strong> với thời hạn vay tối đa lên tới <strong>25 năm (300 tháng)</strong>. Đặc biệt, khách hàng chỉ cần chuẩn bị <strong>25% vốn tự có ban đầu</strong>, được chia nhỏ thành <strong>3 đợt thanh toán nhẹ nhàng trong vòng 2 tháng</strong>:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
               <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 text-center">
-                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 1 Phòng Ngủ + A (47m²)</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 1 Phòng Ngủ + A (47,3m²)</div>
                 <div className="text-xl font-extrabold text-amber-700">Giá: ~950 Triệu</div>
-                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>190 Triệu</strong></div>
-                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 3,5 – 4,2 tr/tháng</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 25% (2 tháng): <strong>~237 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp 25 năm: ~3,5 – 4,2 tr/tháng</div>
               </div>
               <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-center">
                 <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 2 Phòng Ngủ (62m² - 70m²)</div>
                 <div className="text-xl font-extrabold text-emerald-700">Giá: ~1,35 - 1,5 Tỷ</div>
-                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>270 Triệu</strong></div>
-                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 4,8 – 5,8 tr/tháng</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 25% (2 tháng): <strong>~337 - 375 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp 25 năm: ~4,8 – 5,8 tr/tháng</div>
               </div>
               <div className="bg-sky-50 p-4 rounded-xl border border-sky-200 text-center">
-                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 3 Phòng Ngủ (84m²)</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 3 Phòng Ngủ (84,4m²)</div>
                 <div className="text-xl font-extrabold text-sky-700">Giá: ~1,85 Tỷ</div>
-                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>370 Triệu</strong></div>
-                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 6,5 – 7,5 tr/tháng</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 25% (2 tháng): <strong>~462 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp 25 năm: ~6,5 – 7,5 tr/tháng</div>
+              </div>
+            </div>
+
+            {/* Chi tiết 2 phương thức thanh toán chuẩn CĐT */}
+            <div className="space-y-6">
+              {/* Phương thức 1: Vay ngân hàng */}
+              <div className="bg-white rounded-xl border-2 border-emerald-500 overflow-hidden shadow-sm">
+                <div className="bg-emerald-600 text-white px-4 py-3 font-bold text-sm flex items-center justify-between">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-200" />
+                    PHƯƠNG THỨC 1: THANH TOÁN BẰNG VỐN VAY NGÂN HÀNG (TỐI ƯU NHẤT)
+                  </span>
+                  <span className="text-xs bg-emerald-700 px-2.5 py-1 rounded-full uppercase tracking-wider font-semibold">
+                    Vay 70 - 75% trong 25 năm
+                  </span>
+                </div>
+                <div className="p-4 text-xs md:text-sm">
+                  <div className="mb-3 text-slate-700">
+                    💡 <strong>Lộ trình vốn ban đầu 25% trả trong 2 tháng (3 đợt):</strong>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs text-left border-collapse">
+                      <thead className="bg-slate-100 text-slate-800 font-semibold border-b border-slate-200">
+                        <tr>
+                          <th className="p-2.5">Đợt</th>
+                          <th className="p-2.5">Thời điểm thanh toán</th>
+                          <th className="p-2.5 text-center">Tỷ lệ</th>
+                          <th className="p-2.5">Chi tiết thực hiện</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 text-slate-700">
+                        <tr className="bg-amber-50/50">
+                          <td className="p-2.5 font-bold text-amber-800">Đặt cọc</td>
+                          <td className="p-2.5">Ngay khi ký Phiếu xác nhận cọc</td>
+                          <td className="p-2.5 text-center font-bold text-amber-700">30.000.000 đ</td>
+                          <td className="p-2.5">Ký phiếu xác nhận cọc giữ căn đẹp</td>
+                        </tr>
+                        <tr className="bg-emerald-50/40">
+                          <td className="p-2.5 font-bold text-emerald-800">Đợt 1</td>
+                          <td className="p-2.5">Trong vòng 07 ngày kể từ ngày cọc</td>
+                          <td className="p-2.5 text-center font-bold text-emerald-700">15%</td>
+                          <td className="p-2.5">Đã bao gồm tiền cọc. Ký Hợp đồng dịch vụ tư vấn (HĐDVTV)</td>
+                        </tr>
+                        <tr className="bg-emerald-50/40">
+                          <td className="p-2.5 font-bold text-emerald-800">Đợt 2</td>
+                          <td className="p-2.5">Trong vòng 30 ngày kể từ ngày đến hạn Đợt 1</td>
+                          <td className="p-2.5 text-center font-bold text-emerald-700">5%</td>
+                          <td className="p-2.5">Thanh toán theo tiến độ (tháng thứ 1)</td>
+                        </tr>
+                        <tr className="bg-emerald-50/40">
+                          <td className="p-2.5 font-bold text-emerald-800">Đợt 3</td>
+                          <td className="p-2.5">Trong vòng 30 ngày kể từ ngày đến hạn Đợt 2</td>
+                          <td className="p-2.5 text-center font-bold text-emerald-700">5%</td>
+                          <td className="p-2.5 font-semibold text-emerald-800">Hoàn tất đủ 25% vốn tự có (sau ~2 tháng)</td>
+                        </tr>
+                        <tr className="bg-sky-50/40">
+                          <td className="p-2.5 font-bold text-sky-800">Đợt 4</td>
+                          <td className="p-2.5">Theo thông báo giải ngân của CĐT</td>
+                          <td className="p-2.5 text-center font-bold text-sky-700">45%</td>
+                          <td className="p-2.5">Ngân hàng giải ngân trực tiếp cho Chủ đầu tư</td>
+                        </tr>
+                        <tr className="bg-sky-50/40">
+                          <td className="p-2.5 font-bold text-sky-800">Đợt 5</td>
+                          <td className="p-2.5">Trong vòng 15 ngày kể từ ngày nhận thông báo bàn giao</td>
+                          <td className="p-2.5 text-center font-bold text-sky-700">25%</td>
+                          <td className="p-2.5">Ngân hàng giải ngân 25% + Khách thanh toán 100% Phí bảo trì (PBT)</td>
+                        </tr>
+                        <tr className="bg-slate-50">
+                          <td className="p-2.5 font-bold text-slate-800">Đợt 6</td>
+                          <td className="p-2.5">Trong vòng 15 ngày kể từ ngày nhận thông báo cấp sổ</td>
+                          <td className="p-2.5 text-center font-bold text-slate-700">5%</td>
+                          <td className="p-2.5">Nhận giấy chứng nhận quyền sở hữu nhà ở (Sổ hồng)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Phương thức 2: Vốn tự có */}
+              <div className="bg-white rounded-xl border border-slate-300 overflow-hidden shadow-sm">
+                <div className="bg-slate-800 text-white px-4 py-3 font-bold text-sm flex items-center justify-between">
+                  <span>PHƯƠNG THỨC 2: THANH TOÁN BẰNG VỐN TỰ CÓ (CHIA LÀM 17 ĐỢT)</span>
+                  <span className="text-xs bg-slate-700 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Tiến độ xây dựng giãn cách
+                  </span>
+                </div>
+                <div className="p-4 text-xs md:text-sm">
+                  <div className="mb-2 text-slate-700">
+                    Khách hàng không sử dụng vốn vay được chia nhỏ thanh toán theo 17 đợt nhẹ nhàng:
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-600">
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đặt cọc:</strong> 30.000.000 đ ký phiếu xác nhận cọc</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 1 (7 ngày):</strong> 15% (bao gồm cọc) ký HĐDVTV</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 2 (30 ngày sau đợt 1):</strong> 10% giá trị hợp đồng</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 3 & 4 (mỗi 30 ngày):</strong> 5% mỗi đợt</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 5 đến Đợt 14 (10 đợt tiếp theo):</strong> 3% mỗi đợt (mỗi 30 ngày)</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 15 (30 ngày sau đợt 14):</strong> 5% giá trị hợp đồng</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 16 (Bàn giao nhà):</strong> 25% + 100% kinh phí bảo trì</li>
+                    <li className="bg-slate-50 p-2 rounded border border-slate-100">• <strong>Đợt 17 (Bàn giao sổ):</strong> 5% nhận giấy chứng nhận</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -573,7 +675,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                     <td className="p-3 font-bold text-amber-800">K-Home CityView</td>
                     <td className="p-3">Hố Nai (Đường Điểu Xiển)</td>
                     <td className="p-3 font-bold text-emerald-700">Từ 950 tr/căn</td>
-                    <td className="p-3">1.328 căn</td>
+                    <td className="p-3">1.382 căn</td>
                     <td className="p-3">Chuẩn Singapore Surbana Jurong, tiêu chuẩn xanh EDGE, hồ bơi</td>
                   </tr>
                   <tr className="bg-white">
@@ -733,7 +835,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5"
+                  className="cursor-pointer w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5"
                 >
                   <Send className="w-4 h-4" />
                   Gửi Yêu Cầu Tư Vấn Ngay
