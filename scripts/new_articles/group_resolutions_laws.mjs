@@ -157,7 +157,7 @@ Nghị quyết 21-NQ/TW và các quyết sách mới của tỉnh Đồng Nai đ
 ---
 
 > [!IMPORTANT]
-> **Đăng ký nhận thông tin quy hoạch và suất mua:** Để nắm bắt rổ hàng mới nhất tại các dự án nhà ở xã hội Đồng Nai được hưởng chính sách ưu tiên theo Nghị quyết 21-NQ/TW, quý khách vui lòng liên hệ Bộ phận Pháp chế & Tiếp nhận hồ sơ qua Hotline: **0909.123.456**.`
+> **Đăng ký nhận thông tin quy hoạch và suất mua:** Để nắm bắt rổ hàng mới nhất tại các dự án nhà ở xã hội Đồng Nai được hưởng chính sách ưu tiên theo Nghị quyết 21-NQ/TW, quý khách vui lòng liên hệ Bộ phận Pháp chế & Tiếp nhận hồ sơ qua Hotline: **0937.587.438**.`
   },
   {
     id: "n178",
@@ -243,7 +243,7 @@ Với hành lang chính sách thông thoáng và rổ hàng phong phú từ các
 ---
 
 > [!TIP]
-> **Nhận hỗ trợ hồ sơ và thủ tục vay ưu đãi 5,4%:** Để được kiểm tra trước hồ sơ và tư vấn quy trình vay vốn Ngân hàng Chính sách Xã hội mua căn hộ K-Home, quý khách vui lòng liên hệ Hotline: **0909.123.456**.`
+> **Nhận hỗ trợ hồ sơ và thủ tục vay ưu đãi 5,4%:** Để được kiểm tra trước hồ sơ và tư vấn quy trình vay vốn Ngân hàng Chính sách Xã hội mua căn hộ K-Home, quý khách vui lòng liên hệ Hotline: **0937.587.438**.`
   },
   {
     id: "n179",
@@ -322,6 +322,6 @@ Toàn bộ quy trình tiếp nhận, kiểm tra và chuyển hồ sơ lên Sở 
 ---
 
 > [!NOTE]
-> **Nhận bộ biểu mẫu Mẫu 01, 03, 04 chuẩn của Bộ Xây dựng:** Quý khách có thể tải miễn phí hoặc nhận bản in trực tiếp tại Văn phòng tiếp nhận hồ sơ dự án K-Home. Hotline hỗ trợ: **0909.123.456**.`
+> **Nhận bộ biểu mẫu Mẫu 01, 03, 04 chuẩn của Bộ Xây dựng:** Quý khách có thể tải miễn phí hoặc nhận bản in trực tiếp tại Văn phòng tiếp nhận hồ sơ dự án K-Home. Hotline hỗ trợ: **0937.587.438**.`
   }
 ];

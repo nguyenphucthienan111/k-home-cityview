@@ -117,7 +117,7 @@ Mức trả góp này tương đương với tiền thuê nhà trọ và chi ph�
 ---
 
 > [!TIP]
-> **Hỗ trợ hồ sơ xét duyệt miễn phí 100%:** Nếu bạn đang cần tư vấn thủ tục, biểu mẫu Mẫu 01, 02, 04 hoặc kiểm tra điều kiện vay vốn khi **mua nhà ở xã hội Biên Hoà**, hãy liên hệ ngay với đội ngũ chuyên viên dự án K-Home Cityview qua Hotline: **0909.123.456** để được hỗ trợ trọn gói nhanh nhất.`
+> **Hỗ trợ hồ sơ xét duyệt miễn phí 100%:** Nếu bạn đang cần tư vấn thủ tục, biểu mẫu Mẫu 01, 02, 04 hoặc kiểm tra điều kiện vay vốn khi **mua nhà ở xã hội Biên Hoà**, hãy liên hệ ngay với đội ngũ chuyên viên dự án K-Home Cityview qua Hotline: **0937.587.438** để được hỗ trợ trọn gói nhanh nhất.`
   },
   {
     id: "n174",
@@ -226,7 +226,7 @@ Với số tiền trả góp chỉ 4 triệu đồng/tháng, chỉ cần hai v�
 ---
 
 > [!TIP]
-> **Nhận bảng giá và sơ đồ mặt bằng chi tiết:** Quý khách hàng công nhân viên chức có nhu cầu tìm hiểu để **mua nhà ở xã hội Nhơn Trạch** dự án K-Home Avenue vui lòng liên hệ Ban Quản Lý qua Hotline: **0909.123.456** để nhận trọn bộ tài liệu pháp lý và hỗ trợ làm hồ sơ miễn phí.`
+> **Nhận bảng giá và sơ đồ mặt bằng chi tiết:** Quý khách hàng công nhân viên chức có nhu cầu tìm hiểu để **mua nhà ở xã hội Nhơn Trạch** dự án K-Home Avenue vui lòng liên hệ Ban Quản Lý qua Hotline: **0937.587.438** để nhận trọn bộ tài liệu pháp lý và hỗ trợ làm hồ sơ miễn phí.`
   },
   {
     id: "n175",
@@ -343,6 +343,6 @@ Mức chi trả này hoàn toàn nằm trong tầm chi trả của một cặp v
 ---
 
 > [!TIP]
-> **Đăng ký nhận phiếu nguyện vọng chọn căn K-Home Midtown:** Nếu bạn đang có nhu cầu **mua nhà ở xã hội Trảng Bom**, hãy gọi ngay đến Hotline: **0909.123.456** để được hướng dẫn chuẩn bị hồ sơ và nhận thư mời tham quan nhà mẫu thực tế.`
+> **Đăng ký nhận phiếu nguyện vọng chọn căn K-Home Midtown:** Nếu bạn đang có nhu cầu **mua nhà ở xã hội Trảng Bom**, hãy gọi ngay đến Hotline: **0937.587.438** để được hướng dẫn chuẩn bị hồ sơ và nhận thư mời tham quan nhà mẫu thực tế.`
   }
 ];
