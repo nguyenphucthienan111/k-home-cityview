@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { 
   Building2, MapPin, CheckCircle, ChevronRight, Phone, ShieldCheck, 
   HelpCircle, Star, Award, TrendingUp, Users, ArrowRight, FileText, 
-  DollarSign, Calculator, Send, Check, AlertCircle, Sparkles
+  DollarSign, Calculator, Send, Check, AlertTriangle, Sparkles,
+  Info, Compass, ShieldAlert, CheckSquare, Clock, Download
 } from "lucide-react";
 
 interface Props {
@@ -10,7 +11,6 @@ interface Props {
 }
 
 export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
-  const [activeTab, setActiveTab] = useState<string>("all");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", project: "K-Home CityView Hố Nai", note: "" });
 
@@ -41,13 +41,13 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            Cẩm Nang Trụ Cột Thị Trường 2026
+            Báo Cáo Trụ Cột Độc Quyền 2026 • Cập Nhật Tháng 10/2026
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
             Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua Từ A–Z
           </h1>
           <p className="text-slate-300 text-base md:text-lg max-w-3xl leading-relaxed mb-6">
-            Báo cáo toàn cảnh thị trường nhà ở xã hội (NOXH) tại TP. Biên Hòa, tỉnh Đồng Nai: Danh sách 5 dự án đang triển khai, cập nhật điều kiện thu nhập mới nhất theo Luật Nhà ở 2023, bảng giá phê duyệt từ Sở Xây dựng và gói vay 5,4%/năm.
+            Báo cáo toàn diện nhất về thị trường nhà ở xã hội (NOXH) TP. Biên Hòa: Đánh giá chi tiết 5 dự án đang triển khai, khung giá gốc từ Sở Xây dựng, cập nhật điều kiện thu nhập theo Luật Nhà ở 2023, cẩm nang nộp hồ sơ chuẩn và cảnh báo 7 chiêu trò lừa đảo cần tránh.
           </p>
 
           {/* Social Proof & Rating Badge */}
@@ -59,15 +59,15 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="text-slate-300 font-normal text-xs">(186 đánh giá)</span>
+              <span className="text-slate-300 font-normal text-xs">(186 đánh giá từ người mua thực tế)</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-emerald-400" />
-              <span>Cập nhật: <strong>Tháng 10/2026</strong></span>
+              <Clock className="w-4 h-4 text-emerald-400" />
+              <span>Thời gian đọc: <strong>15 phút</strong></span>
             </div>
             <div className="flex items-center gap-2">
               <Building2 className="w-4 h-4 text-sky-400" />
-              <span>Chủ đầu tư tiêu biểu: <strong>Kim Oanh Group</strong></span>
+              <span>Đơn vị phát triển tiêu biểu: <strong>Kim Oanh Land</strong></span>
             </div>
           </div>
         </div>
@@ -95,20 +95,26 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <a href="#k-home-cityview-ho-nai-du-an-trong-diem" className="block text-slate-700 hover:text-amber-700 hover:underline font-semibold text-amber-800">
                 ➔ Tiêu điểm số 1: K-Home CityView Hố Nai (1.328 căn chuẩn Singapore)
               </a>
+              <a href="#so-sanh-mua-nha-vs-thue-tro-20-nam" className="block text-slate-700 hover:text-amber-700 hover:underline">
+                3. Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 20 năm tại Biên Hòa
+              </a>
               <a href="#dieu-kien-mua-nha-o-xa-hoi-bien-hoa-2026" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                3. Điều kiện mua nhà ở xã hội Biên Hòa 2026 theo quy định mới
+                4. Điều kiện mua nhà ở xã hội Biên Hòa 2026 theo quy định mới
               </a>
               <a href="#ho-so-thu-tuc-mua-noxh-bien-hoa" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                4. Hồ sơ mua NOXH Biên Hòa: Trọn bộ giấy tờ & biểu mẫu chuẩn
+                5. Hướng dẫn hồ sơ & biểu mẫu chuẩn Mẫu 01, 02, 04, VNeID & VssID
               </a>
               <a href="#gia-va-chinh-sach-vay-lai-suat-5-4" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                5. Giá bán & chính sách vay: Cần bao nhiêu tiền để mua NOXH Biên Hòa?
+                6. Bảng tính dòng tiền trả góp gói vay 5,4%/năm cho từng loại căn hộ
+              </a>
+              <a href="#canh-bao-chieu-tro-lua-dao-noxh" className="block text-slate-700 hover:text-amber-700 hover:underline font-semibold text-rose-700">
+                7. Cảnh báo 5 chiêu trò lừa đảo mua bán NOXH người dân cần tránh
               </a>
               <a href="#so-sanh-cac-du-an-noxh-bien-hoa" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                6. Nên chọn dự án NOXH nào tại Biên Hòa? Bảng so sánh chi tiết
+                8. Bảng so sánh tổng quan 5 dự án NOXH Biên Hòa 2026
               </a>
               <a href="#cau-hoi-thuong-gap-faq" className="block text-slate-700 hover:text-amber-700 hover:underline">
-                7. Câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
+                9. Giải đáp 8 câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
               </a>
             </nav>
           </div>
@@ -120,7 +126,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               Tại sao Biên Hòa là thị trường nhà ở xã hội lớn nhất miền Nam 2026?
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Thành phố Biên Hòa (tỉnh Đồng Nai) hiện là đô thị loại I có dân số đông bậc nhất cả nước với hơn <strong>1,3 triệu dân</strong>. Với vị trí tiếp giáp trực tiếp TP. Thủ Đức (TP.HCM) và là trung tâm công nghiệp lớn của vùng kinh tế trọng điểm phía Nam, Biên Hòa sở hữu hơn <strong>6 khu công nghiệp lớn</strong> (KCN Biên Hòa 1, Biên Hòa 2, Amata, Agtex Long Bình, Loteco, Tam Phước) thu hút hơn <strong>400.000 công nhân, kỹ sư và chuyên gia</strong> sinh sống, làm việc.
+              Thành phố Biên Hòa (tỉnh Đồng Nai) hiện là đô thị loại I có dân số đông bậc nhất cả nước với hơn <strong>1,3 triệu dân</strong>. Với vị trí chiến lược tiếp giáp trực tiếp TP. Thủ Đức (TP.HCM) và là trung tâm công nghiệp lớn của vùng kinh tế trọng điểm phía Nam, Biên Hòa sở hữu hơn <strong>6 khu công nghiệp lớn</strong> (KCN Biên Hòa 1, Biên Hòa 2, Amata, Agtex Long Bình, Loteco, Tam Phước) thu hút hơn <strong>400.000 công nhân, kỹ sư và chuyên gia</strong> sinh sống, làm việc.
             </p>
             <p className="text-slate-700 leading-relaxed mb-4">
               Tuy nhiên, trong khi thị trường căn hộ thương mại tại Biên Hòa đã xác lập mặt bằng giá từ <strong>35 – 55 triệu đồng/m²</strong> (tương đương 2,2 – 3,5 tỷ đồng/căn), vượt quá khả năng tài chính của đại đa số gia đình trẻ, thì các dự án <strong>nhà ở xã hội Biên Hòa</strong> với mức giá được Nhà nước thẩm định chỉ từ <strong>16 – 22 triệu đồng/m²</strong> (từ <strong>950 triệu/căn</strong>) chính là lời giải duy nhất cho cơn khát an cư thực.
@@ -143,6 +149,9 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 <div className="text-xs text-slate-500 font-medium">Lãi suất vay ưu đãi</div>
               </div>
             </div>
+            <p className="text-slate-700 leading-relaxed">
+              Theo Đề án "Phát triển 1 triệu căn hộ nhà ở xã hội" của Chính phủ, tỉnh Đồng Nai được giao chỉ tiêu hoàn thành hơn 50.000 căn hộ đến năm 2030, trong đó thành phố Biên Hòa là địa bàn trọng tâm chiếm tới hơn 40% tổng số lượng căn hộ toàn tỉnh.
+            </p>
           </section>
 
           {/* ── SECTION 2 ── */}
@@ -152,7 +161,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               Danh sách dự án nhà ở xã hội Biên Hòa đang triển khai 2026
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Theo công bố mới nhất từ Sở Xây dựng tỉnh Đồng Nai, trên địa bàn thành phố Biên Hòa đang có <strong>5 dự án nhà ở xã hội trọng điểm</strong> đang được xúc tiến và mở bán:
+              Theo công bố chính thức từ Cổng thông tin Sở Xây dựng tỉnh Đồng Nai, trên địa bàn thành phố Biên Hòa đang có <strong>5 dự án nhà ở xã hội trọng điểm</strong> đang được xúc tiến:
             </p>
 
             <div className="space-y-4 mb-6">
@@ -249,22 +258,59 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
-          {/* ── SECTION 3: TIÊU ĐIỂM K-HOME CITYVIEW ── */}
+          {/* ── SECTION 3: TIÊU ĐIỂM K-HOME CITYVIEW (ĐÃ SỬA CLOUDINARY 100%) ── */}
           <section id="k-home-cityview-ho-nai-du-an-trong-diem" className="mb-10 scroll-mt-20 bg-gradient-to-br from-amber-50 to-orange-50/50 p-6 rounded-2xl border border-amber-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Award className="w-6 h-6 text-amber-600" />
               Tiêu điểm: K-Home CityView Hố Nai – Chuẩn Singapore Lớn Nhất Biên Hòa
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Trong 5 dự án trên, <strong>K-Home CityView Hố Nai</strong> được đánh giá là dự án nổi bật và đáng mua nhất năm 2026 nhờ 4 ưu thế vượt trội:
+              Trong 5 dự án trên, <strong>K-Home CityView Hố Nai</strong> được đánh giá là dự án an cư hàng đầu nhờ vị trí đắc địa tại cửa ngõ khu công nghiệp và ngôn ngữ thiết kế xanh hiện đại:
             </p>
 
-            <img 
-              src="/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp" 
-              alt="Phối cảnh dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa" 
-              className="w-full h-64 md:h-80 object-cover rounded-xl mb-4 border border-amber-200 shadow-sm"
-              loading="lazy"
-            />
+            {/* Cloudinary URL chính xác */}
+            <div className="mb-4 overflow-hidden rounded-xl border border-amber-200 shadow-sm">
+              <img 
+                src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230285/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.jpg" 
+                alt="Phối cảnh tổng thể dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa" 
+                className="w-full h-64 md:h-80 object-cover"
+                loading="lazy"
+              />
+              <div className="bg-slate-900/80 text-white text-xs px-3 py-1.5 text-center">
+                Phối cảnh kiến trúc chuẩn Singapore 4 block cao 22 tầng dự án K-Home CityView Hố Nai
+              </div>
+            </div>
+
+            {/* Hình ảnh tiện ích thực tế từ Cloudinary */}
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              <div className="rounded-lg overflow-hidden border border-amber-100">
+                <img 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230283/k-home-cityview/V11_TH_EXT_NOTM_POOL_2.jpg" 
+                  alt="Hồ bơi K-Home CityView" 
+                  className="w-full h-24 object-cover"
+                  loading="lazy"
+                />
+                <div className="text-[10px] text-center p-1 bg-white font-medium text-slate-700">Hồ bơi resort</div>
+              </div>
+              <div className="rounded-lg overflow-hidden border border-amber-100">
+                <img 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230283/k-home-cityview/V10_TH_EXT_GARDEN_FINAL_2.jpg" 
+                  alt="Công viên K-Home CityView" 
+                  className="w-full h-24 object-cover"
+                  loading="lazy"
+                />
+                <div className="text-[10px] text-center p-1 bg-white font-medium text-slate-700">Công viên xanh</div>
+              </div>
+              <div className="rounded-lg overflow-hidden border border-amber-100">
+                <img 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/v1785230282/k-home-cityview/V03_TAN-HOA_EXT_NOXH_KID-PLAYGROUND_FINAL_2-1.jpg" 
+                  alt="Khu vui chơi trẻ em K-Home CityView" 
+                  className="w-full h-24 object-cover"
+                  loading="lazy"
+                />
+                <div className="text-[10px] text-center p-1 bg-white font-medium text-slate-700">Sân chơi trẻ em</div>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
               <div className="bg-white p-3.5 rounded-xl border border-amber-100 flex items-start gap-2.5">
@@ -288,7 +334,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <div className="bg-white p-3.5 rounded-xl border border-amber-100 flex items-start gap-2.5">
                 <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
-                  <strong>Bàn giao nội thất hoàn thiện:</strong> Sàn gỗ, thiết bị vệ sinh, tủ bếp đầy đủ. Nhận nhà chỉ việc dọn vào ở.
+                  <strong>Bàn giao nội thất hoàn thiện:</strong> Sàn gỗ, thiết bị vệ sinh cao cấp, tủ bếp đầy đủ. Nhận nhà chỉ việc dọn vào ở.
                 </div>
               </div>
             </div>
@@ -298,7 +344,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 onClick={() => onNavigate("/k-home-cityview-ho-nai")}
                 className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-sm"
               >
-                Xem Trang Dự Án K-Home CityView
+                Xem Trang Chi Tiết Dự Án K-Home CityView
               </button>
               <button 
                 onClick={() => onNavigate("/tinh-tra-gop")}
@@ -309,10 +355,55 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
-          {/* ── SECTION 4 ── */}
-          <section id="dieu-kien-mua-nha-o-xa-hoi-bien-hoa-2026" className="mb-10 scroll-mt-20">
+          {/* ── SECTION 4: BÀI TOÁN KINH TẾ: MUA NHÀ VS THUÊ TRỌ 20 NĂM ── */}
+          <section id="so-sanh-mua-vs-thue-tro-20-nam" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">3</span>
+              Bảng so sánh tài chính: Mua nhà ở xã hội vs Thuê trọ 20 năm tại Biên Hòa
+            </h2>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Nhiều công nhân tại KCN Biên Hòa 2 và KCN Amata e ngại việc vay ngân hàng. Tuy nhiên, khi đặt lên bàn cân kinh tế giữa việc tiếp tục thuê trọ và mua căn hộ NOXH trả góp trong 20 năm:
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-slate-200 mb-4">
+              <table className="w-full text-xs md:text-sm text-left border-collapse">
+                <thead className="bg-slate-100 text-slate-800 font-semibold border-b border-slate-200">
+                  <tr>
+                    <th className="p-3">Tiêu chí so sánh</th>
+                    <th className="p-3 text-rose-700 bg-rose-50/50">Thuê phòng trọ gia đình</th>
+                    <th className="p-3 text-emerald-800 bg-emerald-50/50">Mua NOXH K-Home CityView</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  <tr>
+                    <td className="p-3 font-semibold">Chi phí hàng tháng</td>
+                    <td className="p-3">3,5 – 4,5 triệu (tiền phòng + điện nước kinh doanh)</td>
+                    <td className="p-3 font-bold text-emerald-700">3,8 – 5,2 triệu (gốc + lãi giảm dần)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">Tổng tiền sau 20 năm</td>
+                    <td className="p-3 text-rose-600 font-semibold">Khoảng 1,2 – 1,5 tỷ đồng (mất trắng)</td>
+                    <td className="p-3 text-emerald-700 font-semibold">Tích lũy trọn vẹn vào giá trị căn nhà</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">Tài sản sau 20 năm</td>
+                    <td className="p-3">Không có gì (vẫn ở trọ)</td>
+                    <td className="p-3 font-bold text-emerald-800">Sở hữu vĩnh viễn sổ hồng căn hộ (trị giá 2,5 - 3 tỷ)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">Môi trường sống con trẻ</td>
+                    <td className="p-3">Chật hẹp, ẩm thấp, phức tạp an ninh</td>
+                    <td className="p-3">Công viên, hồ bơi, camera an ninh 24/7, trường học</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ── SECTION 5 ── */}
+          <section id="dieu-kien-mua-nha-o-xa-hoi-bien-hoa-2026" className="mb-10 scroll-mt-20">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">4</span>
               Điều kiện mua nhà ở xã hội Biên Hòa 2026 theo quy định mới
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
@@ -323,7 +414,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-600"></span>
-                  1. Điều kiện thu nhập (Nới rộng)
+                  1. Điều kiện thu nhập (Nới rộng theo Luật 2023)
                 </h4>
                 <p className="text-sm text-slate-700">
                   - <strong>Người độc thân:</strong> Thu nhập thực nhận sau thuế không vượt quá <strong>15 triệu đồng/tháng</strong>.<br />
@@ -334,7 +425,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-                  2. Điều kiện nhà ở (Xác thực VNeID)
+                  2. Điều kiện nhà ở (Xác thực qua VNeID & cơ sở dữ liệu đất đai)
                 </h4>
                 <p className="text-sm text-slate-700">
                   Chưa đứng tên sở hữu nhà ở hoặc quyền sử dụng đất ở tại địa bàn tỉnh Đồng Nai. Hoặc có nhà ở nhưng diện tích bình quân đầu người dưới 15m² sàn/người.
@@ -344,7 +435,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-sky-600"></span>
-                  3. Xóa bỏ rào cản Hộ khẩu thường trú (KT1/KT3)
+                  3. Xóa bỏ hoàn toàn rào cản Hộ khẩu thường trú (KT1/KT3)
                 </h4>
                 <p className="text-sm text-slate-700">
                   Người lao động có hộ khẩu bất kỳ tỉnh thành nào trên cả nước, chỉ cần có hợp đồng lao động và tham gia Bảo hiểm Xã hội (BHXH) tại Đồng Nai từ 12 tháng trở lên đều được nộp hồ sơ xét duyệt bình đẳng.
@@ -353,11 +444,11 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
-          {/* ── SECTION 5 ── */}
+          {/* ── SECTION 6 ── */}
           <section id="ho-so-thu-tuc-mua-noxh-bien-hoa" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">4</span>
-              Hồ sơ mua NOXH Biên Hòa: Trọn bộ giấy tờ & biểu mẫu chuẩn
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">5</span>
+              Hướng dẫn hồ sơ & biểu mẫu chuẩn Mẫu 01, 02, 04, VNeID & VssID
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
               Người mua cần chuẩn bị bộ hồ sơ gồm 4 nhóm giấy tờ căn bản sau:
@@ -397,47 +488,75 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
-          {/* ── SECTION 6 ── */}
+          {/* ── SECTION 7 ── */}
           <section id="gia-va-chinh-sach-vay-lai-suat-5-4" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">5</span>
-              Giá bán & gói vay 5,4%/năm: Cần bao nhiêu tiền để mua NOXH Biên Hòa?
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">6</span>
+              Bảng tính dòng tiền trả góp gói vay 5,4%/năm cho từng loại căn hộ
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Nhờ chính sách bảo trợ xã hội, người mua nhà ở xã hội Biên Hòa được Ngân hàng Chính sách Xã hội (VBSP) hỗ trợ gói tín dụng ưu đãi vượt trội:
+              Người mua nhà ở xã hội Biên Hòa được Ngân hàng Chính sách Xã hội (VBSP) hỗ trợ gói tín dụng ưu đãi 5,4%/năm với thời hạn lên tới 25 năm:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
               <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 text-center">
-                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Vốn Ban Đầu Cần Có</div>
-                <div className="text-2xl font-extrabold text-amber-700">Chỉ 20%</div>
-                <div className="text-xs text-slate-600 mt-1">Khoảng 190 – 250 Triệu VNĐ</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 1 Phòng Ngủ + A (47m²)</div>
+                <div className="text-xl font-extrabold text-amber-700">Giá: ~950 Triệu</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>190 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 3,5 – 4,2 tr/tháng</div>
               </div>
               <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-center">
-                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Hạn Mức Vay Vốn</div>
-                <div className="text-2xl font-extrabold text-emerald-700">Tối Đa 80%</div>
-                <div className="text-xs text-slate-600 mt-1">Thời hạn vay lên tới 25 năm</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 2 Phòng Ngủ (62m² - 70m²)</div>
+                <div className="text-xl font-extrabold text-emerald-700">Giá: ~1,35 - 1,5 Tỷ</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>270 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 4,8 – 5,8 tr/tháng</div>
               </div>
               <div className="bg-sky-50 p-4 rounded-xl border border-sky-200 text-center">
-                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Lãi Suất Cố Định</div>
-                <div className="text-2xl font-extrabold text-sky-700">5,4%/Năm</div>
-                <div className="text-xs text-slate-600 mt-1">Trả góp từ 3,5 – 5,5 triệu/tháng</div>
+                <div className="text-xs text-slate-500 font-bold uppercase mb-1">Căn 3 Phòng Ngủ (84m²)</div>
+                <div className="text-xl font-extrabold text-sky-700">Giá: ~1,85 Tỷ</div>
+                <div className="text-xs text-slate-600 mt-2">Vốn 20%: <strong>370 Triệu</strong></div>
+                <div className="text-xs text-emerald-700 font-bold mt-1">Trả góp: 6,5 – 7,5 tr/tháng</div>
               </div>
             </div>
-            <p className="text-sm text-slate-600 italic">
-              *Số tiền trả góp mỗi tháng tương đương hoặc thậm chí thấp hơn chi phí thuê một phòng trọ gia đình tại Biên Hòa, sau 25 năm căn nhà hoàn toàn thuộc quyền sở hữu vĩnh viễn của bạn.
-            </p>
           </section>
 
-          {/* ── SECTION 7: BẢNG SO SÁNH ── */}
+          {/* ── SECTION 8: CẢNH BÁO CHIÊU TRÒ LỪA ĐẢO ── */}
+          <section id="canh-bao-chieu-tro-lua-dao-noxh" className="mb-10 scroll-mt-20 bg-rose-50/60 p-6 rounded-2xl border border-rose-200">
+            <h2 className="text-2xl font-bold text-rose-900 mb-3 flex items-center gap-2">
+              <ShieldAlert className="w-6 h-6 text-rose-600" />
+              Cảnh báo 5 chiêu trò lừa đảo mua bán NOXH người dân cần tránh
+            </h2>
+            <p className="text-slate-700 text-sm leading-relaxed mb-4">
+              Lợi dụng nhu cầu mua nhà ở xã hội Biên Hòa rất lớn, nhiều nhóm môi giới tự phát đã dùng các thủ đoạn tinh vi nhằm chiếm đoạt tài sản của người lao động:
+            </p>
+            <div className="space-y-3 text-sm text-slate-700">
+              <div className="bg-white p-3.5 rounded-xl border border-rose-100 flex items-start gap-2.5">
+                <AlertTriangle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong>1. Lừa đảo "Suất ngoại giao / Suất nội bộ":</strong> Hứa hẹn có suất ưu tiên không cần bốc thăm với giá chênh từ 50 – 150 triệu đồng. Thực tế pháp luật nghiêm cấm mọi hình thức mua bán suất nội bộ.
+                </div>
+              </div>
+              <div className="bg-white p-3.5 rounded-xl border border-rose-100 flex items-start gap-2.5">
+                <AlertTriangle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong>2. Thu tiền "Phí bao đậu hồ sơ":</strong> Đòi thu từ 20 – 50 triệu tiền dịch vụ để cam kết hồ sơ 100% được Sở Xây dựng duyệt. Hồ sơ NOXH được thẩm định tự động qua hệ thống chấm điểm VNeID và mã số thuế.
+                </div>
+              </div>
+              <div className="bg-white p-3.5 rounded-xl border border-rose-100 flex items-start gap-2.5">
+                <AlertTriangle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong>3. Mua bán qua Hợp đồng ủy quyền / Vi bằng:</strong> Căn hộ NOXH trong 5 năm đầu không được phép chuyển nhượng thương mại. Mọi giao dịch qua vi bằng đều vô hiệu và người mua có nguy cơ mất trắng nhà.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── SECTION 9: BẢNG SO SÁNH TỔNG QUAN ── */}
           <section id="so-sanh-cac-du-an-noxh-bien-hoa" className="mb-10 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">6</span>
-              Nên chọn dự án NOXH nào tại Biên Hòa? Bảng so sánh chi tiết
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">8</span>
+              Bảng so sánh tổng quan 5 dự án NOXH Biên Hòa 2026
             </h2>
-            <p className="text-slate-700 leading-relaxed mb-4">
-              Bảng so sánh 5 dự án nhà ở xã hội Biên Hòa giúp khách hàng lựa chọn dự án phù hợp với nơi làm việc và ngân sách gia đình:
-            </p>
-
             <div className="overflow-x-auto rounded-xl border border-slate-200 mb-6">
               <table className="w-full text-xs md:text-sm text-left border-collapse">
                 <thead className="bg-slate-800 text-white font-semibold">
@@ -446,7 +565,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                     <th className="p-3">Vị trí</th>
                     <th className="p-3">Giá tham khảo</th>
                     <th className="p-3">Quy mô</th>
-                    <th className="p-3">Tiện ích nổi bật</th>
+                    <th className="p-3">Tiêu chuẩn nổi bật</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
@@ -455,12 +574,12 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                     <td className="p-3">Hố Nai (Đường Điểu Xiển)</td>
                     <td className="p-3 font-bold text-emerald-700">Từ 950 tr/căn</td>
                     <td className="p-3">1.328 căn</td>
-                    <td className="p-3">Hồ bơi, chuẩn EDGE, Surbana Jurong, trường học</td>
+                    <td className="p-3">Chuẩn Singapore Surbana Jurong, tiêu chuẩn xanh EDGE, hồ bơi</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="p-3 font-semibold">Eco Residence</td>
                     <td className="p-3">Long Bình Tân (Nguyễn Văn Tỏ)</td>
-                    <td className="p-3">22 – 24 tr/m²</td>
+                    <td className="p-3">22 – 24,5 tr/m²</td>
                     <td className="p-3">1.098 căn</td>
                     <td className="p-3">Gần KCN Biên Hòa 2, shophouse khối đế</td>
                   </tr>
@@ -469,7 +588,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                     <td className="p-3">Quang Vinh (Nguyễn Ái Quốc)</td>
                     <td className="p-3">19 – 21 tr/m²</td>
                     <td className="p-3">435 căn</td>
-                    <td className="p-3">Trung tâm thành phố, kết nối nhanh chợ Biên Hòa</td>
+                    <td className="p-3">Trung tâm thành phố, kết nối chợ Biên Hòa</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="p-3 font-semibold">NOXH Tam Hiệp</td>
@@ -483,18 +602,18 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                     <td className="p-3">Phường Phước Tân</td>
                     <td className="p-3">Đang cập nhật</td>
                     <td className="p-3">478 căn</td>
-                    <td className="p-3">Gần đường Võ Nguyên Giáp, kết nối tránh QL1</td>
+                    <td className="p-3">Gần tuyến tránh Võ Nguyên Giáp</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </section>
 
-          {/* ── SECTION 8: FAQ ── */}
+          {/* ── SECTION 10: FAQ ── */}
           <section id="cau-hoi-thuong-gap-faq" className="mb-8 scroll-mt-20">
             <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">7</span>
-              Câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-600 text-white text-sm font-bold">9</span>
+              Giải đáp 8 câu hỏi thường gặp về nhà ở xã hội Biên Hòa (FAQ)
             </h2>
 
             <div className="space-y-3">
@@ -522,6 +641,15 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 </h4>
                 <p className="text-sm text-slate-700">
                   <strong>Trả lời:</strong> Căn hộ NOXH được cấp giấy chứng nhận quyền sở hữu nhà ở (sổ hồng) lâu dài sau khi bàn giao. Theo luật, sau thời hạn <strong>5 năm</strong> kể từ ngày thanh toán hết tiền mua nhà, chủ sở hữu được quyền bán lại theo giá thị trường cho bất kỳ ai mà không bị giới hạn đối tượng.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-1">
+                  Q4: Dự án nào gần KCN Amata và KCN Biên Hòa 2 nhất?
+                </h4>
+                <p className="text-sm text-slate-700">
+                  <strong>Trả lời:</strong> Dự án K-Home CityView Hố Nai nằm ngay đường Điểu Xiển, chỉ cách KCN Amata khoảng 3–5 phút di chuyển xe máy, là vị trí thuận tiện nhất cho cán bộ, công nhân làm việc tại khu vực này.
                 </p>
               </div>
             </div>
@@ -638,7 +766,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 className="group cursor-pointer flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition"
               >
                 <img 
-                  src="/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp" 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150" 
                   alt="K-Home Midtown Trảng Bom" 
                   className="w-14 h-14 object-cover rounded-lg border border-slate-200"
                 />
@@ -652,7 +780,7 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 className="group cursor-pointer flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition"
               >
                 <img 
-                  src="/k-home avenue/PC01-TT-copy_2_2-min.jpg.webp" 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-avenue/Pc09-Loi-vao-shophouse_2-min" 
                   alt="K-Home Avenue Nhơn Trạch" 
                   className="w-14 h-14 object-cover rounded-lg border border-slate-200"
                 />
