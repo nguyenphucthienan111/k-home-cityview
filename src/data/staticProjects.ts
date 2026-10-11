@@ -11,8 +11,8 @@ export const STATIC_PROJECTS: Project[] = [
     priceNumber: 0.95,
     area: "47,3m² - 84,4m²",
     image: "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp",
-    description: "K-Home CityView Hố Nai – nhà ở xã hội chuẩn Singapore tại đường Điểu Xiển, Biên Hòa. 1.328 căn NOXH + 39 shophouse, diện tích 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao nội thất 2028, hỗ trợ hồ sơ miễn phí.",
-    longDescription: "**Tổng quan dự án K-Home CityView Hố Nai**\n\n**K-Home CityView** là dự án nhà ở xã hội (NOXH) chuẩn Singapore do **Kim Oanh Land** – thành viên Tập đoàn Kim Oanh Group – phát triển, tọa lạc tại mặt tiền **đường Điểu Xiển**, phường Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai. Dự án được quy hoạch trên quỹ đất rộng **2,85 ha** với **4 tòa tháp cao 22 tầng**, cung cấp khoảng **1.328 căn hộ nhà ở xã hội** cùng hệ thống **39 căn shophouse** khối đế.",
+    description: "K-Home CityView Hố Nai – nhà ở xã hội chuẩn Singapore tại đường Điểu Xiển, Biên Hòa. 1.382 căn NOXH + 39 shophouse, diện tích 47–84m², thiết kế Surbana Jurong, tiêu chuẩn xanh EDGE, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao nội thất 2028, hỗ trợ hồ sơ miễn phí.",
+    longDescription: "**Tổng quan dự án K-Home CityView Hố Nai**\n\n**K-Home CityView** là dự án nhà ở xã hội (NOXH) chuẩn Singapore do **Kim Oanh Land** – thành viên Tập đoàn Kim Oanh Group – phát triển, tọa lạc tại mặt tiền **đường Điểu Xiển**, phường Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai. Dự án được quy hoạch trên quỹ đất rộng **2,85 ha** với **4 tòa tháp cao 22 tầng**, cung cấp khoảng **1.382 căn hộ nhà ở xã hội** cùng hệ thống **39 căn shophouse** khối đế.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0500305663313!2d106.90024047509125!3d10.959593489200515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174ddbb3dca0a9d%3A0x6a42d2ebd1b96a45!2sK-Home%20Cityview%20-%20Kim%20Oanh%20Land!5e0!3m2!1sen!2s!4v1787364751941!5m2!1sen!2s",
     gallery: [
       "/k-home cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2.webp",

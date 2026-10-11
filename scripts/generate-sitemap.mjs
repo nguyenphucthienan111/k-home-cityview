@@ -172,7 +172,7 @@ const DEDICATED_VIDEOS = [
   {
     slug: "phong-su-k-home-cityview-ho-nai",
     title: "Phóng Sự Toàn Cảnh Dự Án Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa — Kim Oanh Land",
-    description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.328 căn chuẩn Singapore, giá từ 950 triệu.",
+    description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.382 căn chuẩn Singapore, giá từ 950 triệu.",
     youtubeId: "RJGULOh6Wrs",
     date: "2026-08-26",
   },

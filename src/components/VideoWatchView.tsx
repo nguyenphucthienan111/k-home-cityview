@@ -20,7 +20,7 @@ export const VIDEO_DATA: Record<string, VideoDetail> = {
     videoUrl: "https://www.youtube.com/embed/RJGULOh6Wrs",
     youtubeId: "RJGULOh6Wrs",
     date: "2026-08-26",
-    description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.328 căn chuẩn Singapore, giá từ 950 triệu.",
+    description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.382 căn chuẩn Singapore, giá từ 950 triệu.",
     project: "cityview",
     projectSlug: "k-home-cityview-ho-nai",
     projectName: "K-Home CityView Hố Nai",

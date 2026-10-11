@@ -1114,7 +1114,7 @@ export const newsSummary = [
     "slug": "nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026",
     "title": "Nhà Ở Xã Hội Biên Hòa: Danh Sách Dự Án Đang Mở Bán & Điều Kiện Mua 2026",
     "date": "2026-09-15",
-    "excerpt": "Cập nhật toàn diện thị trường nhà ở xã hội Biên Hòa 2026: danh sách các dự án đang mở bán, dự án tiêu biểu K-Home CityView Hố Nai 1.328 căn từ 950 triệu, bảng giá niêm yết, điều kiện thu nhập theo Luật Nhà ở 2023 và gói vay ưu đãi 5,4%.",
+    "excerpt": "Cập nhật toàn diện thị trường nhà ở xã hội Biên Hòa 2026: danh sách các dự án đang mở bán, dự án tiêu biểu K-Home CityView Hố Nai 1.382 căn từ 950 triệu, bảng giá niêm yết, điều kiện thu nhập theo Luật Nhà ở 2023 và gói vay ưu đãi 5,4%.",
     "image": "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
     "category": "Tin tức dự án",
     "project": "cityview"
@@ -1171,10 +1171,10 @@ export const newsSummary = [
   },
   {
     "id": "n121",
-    "slug": "nha-o-xa-hoi-k-home-cityview-quy-mo-1328-can-chuan-edge",
-    "title": "Nhà Ở Xã Hội K-Home CityView: Quy Mô 1.328 Căn Tiêu Chuẩn Xanh EDGE Singapore",
+    "slug": "nha-o-xa-hoi-k-home-cityview-quy-mo-1382-can-chuan-edge",
+    "title": "Nhà Ở Xã Hội K-Home CityView: Quy Mô 1.382 Căn Tiêu Chuẩn Xanh EDGE Singapore",
     "date": "2026-09-15",
-    "excerpt": "Khám phá quy mô đại dự án nhà ở xã hội K-Home CityView Biên Hòa: 1.328 căn hộ đạt chuẩn xanh quốc tế EDGE (IFC), thiết kế thông minh Singapore bởi Surbana Jurong, tiết kiệm 20% điện nước và hồ bơi resort.",
+    "excerpt": "Khám phá quy mô đại dự án nhà ở xã hội K-Home CityView Biên Hòa: 1.382 căn hộ đạt chuẩn xanh quốc tế EDGE (IFC), thiết kế thông minh Singapore bởi Surbana Jurong, tiết kiệm 20% điện nước và hồ bơi resort.",
     "image": "https://res.cloudinary.com/dthv0nsq/image/upload/q_auto,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
     "category": "Tin tức dự án",
     "project": "cityview"
@@ -1764,7 +1764,7 @@ export const newsSummary = [
     "slug": "le-dong-tho-du-an-k-home-cityview-ho-nai-bien-hoa",
     "title": "Lễ Động Thổ Dự Án K-Home CityView Hố Nai Biên Hòa - Mốc Khởi Đầu Chuỗi NOXH Singapore",
     "date": "2025-09-23",
-    "excerpt": "Sáng ngày 23/09/2025, Kim Oanh Group đã chính thức tổ chức Lễ động thổ dự án nhà ở xã hội K-Home CityView (k-home city view) tại Hố Nai, Biên Hòa. Dự án quy mô 1.328 căn hộ NOXH chuẩn Singapore, mở ra cơ hội an cư chất lượng cho người lao động Đồng Nai.",
+    "excerpt": "Sáng ngày 23/09/2025, Kim Oanh Group đã chính thức tổ chức Lễ động thổ dự án nhà ở xã hội K-Home CityView (k-home city view) tại Hố Nai, Biên Hòa. Dự án quy mô 1.382 căn hộ NOXH chuẩn Singapore, mở ra cơ hội an cư chất lượng cho người lao động Đồng Nai.",
     "image": "https://img.youtube.com/vi/v-l5Dosbi3M/hqdefault.jpg",
     "category": "Video Dự Án",
     "project": "cityview"
@@ -2492,7 +2492,7 @@ export const newsSummary = [
     "slug": "k-home-cityview-da-ban-het-chua-tinh-trang-ros-hang-2026",
     "title": "K-Home CityView Đã Bán Hết Chưa? Tình Trạng Rổ Hàng Tháng 8/2026",
     "date": "2026-08-17",
-    "excerpt": "K-Home CityView (k home cityview) vẫn đang nhận hồ sơ đăng ký mua NOXH. Tình trạng rổ hàng tháng 8/2026: 1.328 căn NOXH đang trong giai đoạn xét duyệt hồ sơ, chưa bán hết. Đăng ký sớm để được ưu tiên.",
+    "excerpt": "K-Home CityView (k home cityview) vẫn đang nhận hồ sơ đăng ký mua NOXH. Tình trạng rổ hàng tháng 8/2026: 1.382 căn NOXH đang trong giai đoạn xét duyệt hồ sơ, chưa bán hết. Đăng ký sớm để được ưu tiên.",
     "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1786456831/1-200-khach-hang-tham-du-su-kien-gioi-thieu-du-an-k-home-cityview-tai-trung-tam-do-thi-bien-hoa-1-2_bqb2ss.webp",
     "category": "Tin tức dự án",
     "project": "cityview"

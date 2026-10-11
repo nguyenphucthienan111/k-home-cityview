@@ -145,7 +145,7 @@ export default function App() {
       },
       "/k-home-cityview-ho-nai": {
         title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
-        description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) quy mô 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, vay 5,4%/năm. Hướng dẫn hồ sơ NOXH Biên Hòa từ A-Z.",
+        description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) quy mô 1.382 căn NOXH chuẩn Singapore, giá từ 950 triệu, vay 5,4%/năm. Hướng dẫn hồ sơ NOXH Biên Hòa từ A-Z.",
         image: "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
       },
       "/k-home-midtown-trang-bom": {

@@ -118,7 +118,7 @@ export function renderCityViewHtml() {
               Nhà Ở Xã Hội Biên Hòa – Dự Án K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026
             </h1>
             <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-              Tổ hợp <strong>nhà ở xã hội Biên Hòa</strong> quy mô <strong>2,85 ha</strong> gồm <strong>1.328 căn hộ NOXH chuẩn Singapore</strong> và 39 căn shophouse tọa lạc ngay mặt tiền <strong>đường Điểu Xiển</strong>, phường Hố Nai, TP. Biên Hòa. Mức giá chỉ từ <strong>950 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi cố định <strong>5,4%/năm trong 25 năm</strong> từ Ngân hàng Chính sách Xã hội.
+              Tổ hợp <strong>nhà ở xã hội Biên Hòa</strong> quy mô <strong>2,85 ha</strong> gồm <strong>1.382 căn hộ NOXH chuẩn Singapore</strong> và 39 căn shophouse tọa lạc ngay mặt tiền <strong>đường Điểu Xiển</strong>, phường Hố Nai, TP. Biên Hòa. Mức giá chỉ từ <strong>950 triệu đồng/căn</strong>, hỗ trợ gói vay ưu đãi cố định <strong>5,4%/năm trong 25 năm</strong> từ Ngân hàng Chính sách Xã hội.
             </p>
             <div class="flex flex-wrap items-center gap-4">
               <a href="#bang-gia" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all no-underline">
@@ -141,7 +141,7 @@ export function renderCityViewHtml() {
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Quy Mô Công Trình</span>
-              <p class="text-base font-bold text-slate-900">4 block 22 tầng · 1.328 căn NOXH</p>
+              <p class="text-base font-bold text-slate-900">4 block 22 tầng · 1.382 căn NOXH</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold block mb-1">Mức Giá Niêm Yết</span>
@@ -171,7 +171,7 @@ export function renderCityViewHtml() {
                   <strong>K-Home CityView</strong> là dự án <strong>nhà ở xã hội Biên Hòa</strong> trọng điểm chuẩn quốc tế do <strong>Kim Oanh Land</strong> (thành viên Tập đoàn Kim Oanh Group) làm chủ đầu tư và phát triển, tọa lạc ngay mặt tiền tuyến đường huyết mạch Điểu Xiển, thuộc địa phận phường Hố Nai, thành phố Biên Hòa, tỉnh Đồng Nai.
                 </p>
                 <p>
-                  Được quy hoạch trên quỹ đất rộng <strong>2,85 ha</strong> với tổng mức đầu tư hàng nghìn tỷ đồng, dự án bao gồm <strong>4 tòa tháp chung cư cao 22 tầng</strong>, cung cấp ra thị trường <strong>1.328 căn hộ nhà ở xã hội</strong> chất lượng cao, 425 căn nhà ở thương mại tại Block T4 và 39 căn shophouse dịch vụ khối đế. Đây là dự án NOXH đầu tiên tại tỉnh Đồng Nai được thiết kế và quy hoạch bởi Tập đoàn danh tiếng <strong>Surbana Jurong (Singapore)</strong> và xây dựng theo tiêu chuẩn công trình xanh quốc tế <strong>EDGE</strong> của Tổ chức Tài chính Quốc tế (IFC - World Bank).
+                  Được quy hoạch trên quỹ đất rộng <strong>2,85 ha</strong> với tổng mức đầu tư hàng nghìn tỷ đồng, dự án bao gồm <strong>4 tòa tháp chung cư cao 22 tầng</strong>, cung cấp ra thị trường <strong>1.382 căn hộ nhà ở xã hội</strong> chất lượng cao, 425 căn nhà ở thương mại tại Block T4 và 39 căn shophouse dịch vụ khối đế. Đây là dự án NOXH đầu tiên tại tỉnh Đồng Nai được thiết kế và quy hoạch bởi Tập đoàn danh tiếng <strong>Surbana Jurong (Singapore)</strong> và xây dựng theo tiêu chuẩn công trình xanh quốc tế <strong>EDGE</strong> của Tổ chức Tài chính Quốc tế (IFC - World Bank).
                 </p>
                 
                 <!-- Project Specs Table -->
@@ -191,7 +191,7 @@ export function renderCityViewHtml() {
                       <tr><td class="p-3 font-semibold text-slate-800">Quy mô quỹ đất</td><td class="p-3">2,85 hecta</td></tr>
                       <tr><td class="p-3 font-semibold text-slate-800">Mật độ xây dựng</td><td class="p-3">Khoảng 38% (còn lại dành cho công viên cây xanh, hồ bơi & tiện ích)</td></tr>
                       <tr><td class="p-3 font-semibold text-slate-800">Quy mô công trình</td><td class="p-3">4 tòa tháp cao 22 tầng, 1 tầng hầm để xe liên thông hiện đại</td></tr>
-                      <tr><td class="p-3 font-semibold text-slate-800">Tổng số lượng căn hộ</td><td class="p-3">1.328 căn hộ NOXH + 425 căn thương mại + 39 shophouse</td></tr>
+                      <tr><td class="p-3 font-semibold text-slate-800">Tổng số lượng căn hộ</td><td class="p-3">1.382 căn hộ NOXH + 425 căn thương mại + 39 shophouse</td></tr>
                       <tr><td class="p-3 font-semibold text-slate-800">Diện tích căn hộ</td><td class="p-3">47,3 m² – 84,4 m² (1PN+, 2PN, 3PN)</td></tr>
                       <tr><td class="p-3 font-semibold text-slate-800">Tiêu chuẩn bàn giao</td><td class="p-3">Bàn giao hoàn thiện nội thất chuẩn Singapore cao cấp</td></tr>
                       <tr><td class="p-3 font-semibold text-slate-800">Hình thức sở hữu</td><td class="p-3">Sổ hồng sở hữu lâu dài (vĩnh viễn)</td></tr>
@@ -587,7 +587,7 @@ export function renderCityViewHtml() {
                     <span class="text-amber-600 font-bold text-xl group-open:rotate-180 transition-transform">↓</span>
                   </summary>
                   <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-                    Tại TP. Biên Hòa hiện nay, dự án <strong>K-Home CityView</strong> (tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai) do Kim Oanh Land làm chủ đầu tư là dự án nhà ở xã hội quy mô lớn nhất (1.328 căn hộ) đang mở tiếp nhận hồ sơ xét duyệt. Mức giá từ 950 triệu/căn với gói vay 5,4%/năm trong 25 năm.
+                    Tại TP. Biên Hòa hiện nay, dự án <strong>K-Home CityView</strong> (tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai) do Kim Oanh Land làm chủ đầu tư là dự án nhà ở xã hội quy mô lớn nhất (1.382 căn hộ) đang mở tiếp nhận hồ sơ xét duyệt. Mức giá từ 950 triệu/căn với gói vay 5,4%/năm trong 25 năm.
                   </p>
                 </details>
 
@@ -1150,7 +1150,7 @@ export function renderMidtownHtml() {
                     <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
                       K-Home CityView Biên Hòa &rarr;
                     </a>
-                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.382 căn từ 950 tr</span>
                   </li>
                   <li>
                     <a href="/k-home-avenue-nhon-trach" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
@@ -1534,7 +1534,7 @@ export function renderAvenueHtml() {
                     <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
                       K-Home CityView Biên Hòa &rarr;
                     </a>
-                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.382 căn từ 950 tr</span>
                   </li>
                   <li>
                     <a href="/k-home-midtown-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
@@ -1826,7 +1826,7 @@ export function renderSkyViewHtml() {
                     <a href="/k-home-cityview-ho-nai" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">
                       K-Home CityView Biên Hòa &rarr;
                     </a>
-                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.328 căn từ 950 tr</span>
+                    <span class="text-xs text-slate-500">Mặt tiền Điểu Xiển, 1.382 căn từ 950 tr</span>
                   </li>
                   <li>
                     <a href="/k-home-midtown-trang-bom" class="font-semibold text-slate-800 hover:text-amber-600 transition-colors block">

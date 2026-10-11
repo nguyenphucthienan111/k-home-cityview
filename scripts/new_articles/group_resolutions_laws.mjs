@@ -117,7 +117,7 @@ Theo Kế hoạch phát triển nhà ở giai đoạn 2026 - 2030 (Quyết đị
 
 | Địa bàn trọng điểm | Chỉ tiêu quy hoạch NOXH 2026 - 2030 | Quỹ đất sạch dự kiến bố trí | Dự án động lực đang triển khai |
 |---|---|---|---|
-| **TP. Biên Hòa** | 22.000 căn | ~95 ha (phường Hố Nai, Long Bình, Phước Tân) | [K-Home Cityview](/k-home-cityview-ho-nai) (1.328 căn), NXH2 Phước Tân |
+| **TP. Biên Hòa** | 22.000 căn | ~95 ha (phường Hố Nai, Long Bình, Phước Tân) | [K-Home Cityview](/k-home-cityview-ho-nai) (1.382 căn), NXH2 Phước Tân |
 | **Huyện Nhơn Trạch** | 18.000 căn | ~120 ha (dọc trục đường 25C, Phước An, Hiệp Phước) | [K-Home Avenue](/k-home-avenue-nhon-trach) (1.022 căn) |
 | **Huyện Trảng Bom** | 15.000 căn | ~85 ha (trung tâm thị trấn và quanh KCN Bàu Xéo) | [K-Home Midtown](/k-home-midtown-trang-bom) (13,97 ha), [K-Home SkyView](/k-home-skyview-trang-bom) |
 | **Huyện Long Thành & các huyện khác** | 12.000 căn | ~100 ha (quanh đại công trường Sân bay Long Thành) | Các khu đô thị tái định cư và nhà ở xã hội phục vụ sân bay |

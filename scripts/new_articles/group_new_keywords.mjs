@@ -33,7 +33,7 @@ Nếu bạn đang có kế hoạch **mua nhà ở xã hội Biên Hoà** trong n
 
 ### Quy Mô & Thông Số Kỹ Thuật Dự Án K-Home Cityview
 * **Chủ đầu tư phát triển:** Kim Oanh Group (Kim Oanh Land) – đơn vị phát triển bất động sản uy tín hàng đầu miền Nam.
-* **Quy mô dự án:** 4 tháp căn hộ cao 22 tầng nổi và 1 tầng hầm liên thông, cung ứng 1.328 căn hộ nhà ở xã hội hiện đại.
+* **Quy mô dự án:** 4 tháp căn hộ cao 22 tầng nổi và 1 tầng hầm liên thông, cung ứng 1.382 căn hộ nhà ở xã hội hiện đại.
 * **Tư vấn kiến trúc quốc tế:** Surbana Jurong (Singapore) kết hợp Global Vireon Studio và NAGECCO.
 * **Tiêu chuẩn công trình:** Đạt chứng chỉ công trình xanh quốc tế EDGE (IFC - World Bank), giúp tiết kiệm từ 20% đến 28% điện năng và nước sinh hoạt hàng tháng.
 * **Đơn vị quản lý vận hành:** K-City với hệ thống camera AI an ninh 24/7, thẻ từ thang máy phân tầng và ứng dụng cư dân thông minh.

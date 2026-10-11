@@ -32,7 +32,7 @@ Trong hệ sinh thái các dự án NOXH chất lượng cao tại Đồng Nai, 
 
 | Tên dự án NOXH | Địa chỉ / Vị trí | Quy mô công trình | Mức giá gốc (gồm VAT) | Tình trạng tiếp nhận hồ sơ |
 |---|---|---|---|---|
-| [K-Home CityView](/k-home-cityview-ho-nai) | Mặt tiền Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 4 tháp 22 tầng (1.328 căn) | **Từ 950 tr – 1,8 tỷ/căn** | Đang thi công móng, nhận hồ sơ xét duyệt |
+| [K-Home CityView](/k-home-cityview-ho-nai) | Mặt tiền Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 4 tháp 22 tầng (1.382 căn) | **Từ 950 tr – 1,8 tỷ/căn** | Đang thi công móng, nhận hồ sơ xét duyệt |
 | [K-Home Midtown](/k-home-midtown-trang-bom) | Trung tâm TT. Trảng Bom (4 mặt tiền) | 13,97 ha, 542 căn hộ + 20 shophouse | **Từ 750 tr – 1,5 tỷ/căn** | Mở bán giai đoạn 1, nhận đăng ký suất mua |
 | [K-Home Avenue](/k-home-avenue-nhon-trach) | Mặt tiền đại lộ 25C (100m), H. Nhơn Trạch | 4 tháp 12 tầng (1.022 căn) | **Từ 750 tr – 1,4 tỷ/căn** | Nhận hồ sơ đợt 1, cam kết giao nhà Q1/2028 |
 | [K-Home SkyView](/k-home-skyview-trang-bom) | Cổng KCN Bàu Xéo, QL1A, H. Trảng Bom | 1 tháp căn hộ xanh chuẩn Singapore | **Từ 750 tr – 1,2 tỷ/căn** | Đang tiếp nhận phiếu đăng ký nguyện vọng |
@@ -124,7 +124,7 @@ Trong bối cảnh giá chung cư thương mại tại TP. Biên Hòa đã chạ
 ### 3. K-Home CityView Hố Nai Biên Hòa – Căn 1PN+A 47,3 m² Từ 950 Triệu
 - **Vị trí:** Mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa, liền kề ga Hố Nai và cách ngã ba Phát Triển 3 phút.
 - **Mức giá công bố:** Từ **950 triệu – 1,08 tỷ đồng/căn 1PN+A** (thiết kế 1 phòng ngủ lớn + không gian đa năng).
-- **Quy mô:** 4 tháp 22 tầng biểu tượng với 1.328 căn hộ, hồ bơi tràn bờ, sân chơi trẻ em Smart Kids.
+- **Quy mô:** 4 tháp 22 tầng biểu tượng với 1.382 căn hộ, hồ bơi tràn bờ, sân chơi trẻ em Smart Kids.
 - **Phù hợp:** Gia đình trẻ làm việc tại KCN Amata, Loteco, Biên Hòa 2.
 - Xem chi tiết: [Dự án K-Home CityView Biên Hòa](/k-home-cityview-ho-nai).
 

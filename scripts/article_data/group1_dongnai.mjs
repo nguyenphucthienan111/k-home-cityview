@@ -24,7 +24,7 @@ Sự khác biệt mang tính bước ngoặt của phân khúc **nhà ở xã h�
 
 | Tên dự án | Vị trí tọa lạc | Quy mô xây dựng | Giá bán niêm yết (gồm VAT) | Tình trạng tiếp nhận hồ sơ |
 |---|---|---|---|---|
-| [K-Home CityView](/k-home-cityview-ho-nai) | Mặt tiền Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 4 tháp 22 tầng (1.328 căn) | **Từ 950 triệu/căn** | Đang nhận hồ sơ & xây dựng phần móng hầm |
+| [K-Home CityView](/k-home-cityview-ho-nai) | Mặt tiền Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 4 tháp 22 tầng (1.382 căn) | **Từ 950 triệu/căn** | Đang nhận hồ sơ & xây dựng phần móng hầm |
 | [K-Home Midtown](/k-home-midtown-trang-bom) | Đại đô thị 13,97 ha, trung tâm H. Trảng Bom | 3 block căn hộ + 20 shophouse | **Từ 750 triệu/căn** | Mở bán giai đoạn 1, nhận đăng ký suất mua |
 | [K-Home Avenue](/k-home-avenue-nhon-trach) | Mặt tiền đại lộ 25C (100m), H. Nhơn Trạch | 4 block 12 tầng (1.022 căn) | **Từ 750 triệu/căn** | Nhận hồ sơ thẩm định đợt 1, bàn giao Q1/2028 |
 | [K-Home SkyView](/k-home-skyview-trang-bom) | Cổng KCN Bàu Xéo, Quốc Lộ 1A, Trảng Bom | 1 tháp căn hộ tiện ích cao cấp | **Từ 750 triệu/căn** | Đang tiếp nhận phiếu đăng ký nguyện vọng |
@@ -118,7 +118,7 @@ Không dàn trải, chiến lược **quy hoạch nhà ở xã hội Đồng Nai
 
 ### 1. Thành Phố Biên Hòa – Cửa Ngõ Đô Thị Loại I:
 - Là trung tâm chính trị, văn hóa và kinh tế lâu đời của tỉnh với dân số trên 1,2 triệu người. Quỹ đất nội đô Biên Hòa hiện vô cùng khan hiếm.
-- Trọng tâm quy hoạch NOXH của Biên Hòa tập trung vào trục đường Điểu Xiển (phường Hố Nai) với dự án kiểu mẫu [K-Home CityView Hố Nai](/k-home-cityview-ho-nai) quy mô 1.328 căn hộ, giải quyết chỗ ở cho công nhân KCN Amata, Loteco và Biên Hòa 2.
+- Trọng tâm quy hoạch NOXH của Biên Hòa tập trung vào trục đường Điểu Xiển (phường Hố Nai) với dự án kiểu mẫu [K-Home CityView Hố Nai](/k-home-cityview-ho-nai) quy mô 1.382 căn hộ, giải quyết chỗ ở cho công nhân KCN Amata, Loteco và Biên Hòa 2.
 - Song song đó là đề án chuyển đổi công năng toàn bộ 329 ha của KCN Biên Hòa 1 thành Khu trung tâm hành chính – thương mại – dịch vụ ven sông, tạo động lực dịch chuyển các khu nhà ở cũ sang mô hình chung cư văn minh.
 
 ### 2. Huyện Trảng Bom – Đón Đầu Lên Thị Xã 2026 – 2030:

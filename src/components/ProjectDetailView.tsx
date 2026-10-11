@@ -41,9 +41,9 @@ const PROJECT_SEO: Record<string, {
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
-    metaDesc: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Biên Hòa 2026.",
+    metaDesc: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) 1.382 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Biên Hòa 2026.",
     h1Tag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai",
-    leadDesc: "Dự án nhà ở xã hội Biên Hòa quy mô 1.328 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Cập nhật bảng giá, tiến độ và hướng dẫn điều kiện mua nhà ở xã hội Biên Hòa với gói vay ưu đãi 5,4%/năm.",
+    leadDesc: "Dự án nhà ở xã hội Biên Hòa quy mô 1.382 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Cập nhật bảng giá, tiến độ và hướng dẫn điều kiện mua nhà ở xã hội Biên Hòa với gói vay ưu đãi 5,4%/năm.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -173,11 +173,11 @@ const PROJECT_SEO: Record<string, {
     ],
     faq: [
       // NHÓM 1: NHÀ Ở XÃ HỘI BIÊN HÒA & TỔNG QUAN
-      { q: "Dự án Nhà ở xã hội Biên Hòa nào đang tiếp nhận hồ sơ năm 2026?", a: "Tại TP. Biên Hòa hiện nay, K-Home CityView (tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai) là dự án nhà ở xã hội quy mô lớn và đồng bộ bậc nhất đang mở tiếp nhận hồ sơ xét duyệt. Dự án cung cấp 1.328 căn hộ NOXH tiêu chuẩn Singapore do Kim Oanh Land phát triển với mức giá từ 950 triệu/căn, hỗ trợ vay 80% vốn với lãi suất ưu đãi cố định 5,4%/năm trong 25 năm." },
+      { q: "Dự án Nhà ở xã hội Biên Hòa nào đang tiếp nhận hồ sơ năm 2026?", a: "Tại TP. Biên Hòa hiện nay, K-Home CityView (tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai) là dự án nhà ở xã hội quy mô lớn và đồng bộ bậc nhất đang mở tiếp nhận hồ sơ xét duyệt. Dự án cung cấp 1.382 căn hộ NOXH tiêu chuẩn Singapore do Kim Oanh Land phát triển với mức giá từ 950 triệu/căn, hỗ trợ vay 80% vốn với lãi suất ưu đãi cố định 5,4%/năm trong 25 năm." },
       { q: "Nhà ở xã hội Hố Nai Biên Hòa nằm ở vị trí nào?", a: "Dự án nhà ở xã hội Hố Nai (K-Home CityView) tọa lạc ngay mặt tiền đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai. Đây là vị trí tâm điểm kết nối các trục giao thông huyết mạch như Quốc Lộ 1A, Xa Lộ Hà Nội, ga Hố Nai và liền kề các KCN lớn như KCN Amata (10 phút), KCN Pouchen (3 phút), KCN Biên Hòa 2 và KCN Long Bình." },
       { q: "K-Home CityView là dự án gì?", a: "K-Home CityView là dự án nhà ở xã hội chuẩn Singapore tại phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai, do Kim Oanh Land phát triển. Dự án được phát triển theo tiêu chuẩn công trình xanh quốc tế EDGE, cung cấp các loại căn hộ từ 1 phòng ngủ đến 3 phòng ngủ với đầy đủ tiện ích hoàn chỉnh như hồ bơi, công viên, trường học, phố thương mại shophouse." },
       { q: "K-Home CityView và K Home City View có phải là một dự án không?", a: "Đúng. K-Home CityView, K Home City View, Nhà ở xã hội Hố Nai, NOXH Biên Hòa Kim Oanh và Khome City View là những cách gọi và tìm kiếm khác nhau của cùng một dự án NOXH K-Home CityView do Kim Oanh Land làm chủ đầu tư tại đường Điểu Xiển, TP. Biên Hòa." },
-      { q: "K-Home CityView có quy mô bao nhiêu?", a: "Theo thông tin hiện có trên website dự án, K-Home CityView được phát triển trên quỹ đất khoảng 2,85 ha. Thông tin tổng thể hiện ghi dự án có 1.816 căn, gồm 1.328 căn hộ nhà ở xã hội, 425 căn nhà ở thương mại tại Block T4 và 39 căn shophouse. Khi trình bày số liệu này, giữ nguyên cách ghi hiện tại của dự án và không tự điều chỉnh số lượng nếu chưa có dữ liệu chính thức mới." },
+      { q: "K-Home CityView có quy mô bao nhiêu?", a: "Theo thông tin hiện có trên website dự án, K-Home CityView được phát triển trên quỹ đất khoảng 2,85 ha. Thông tin tổng thể hiện ghi dự án có 1.816 căn, gồm 1.382 căn hộ nhà ở xã hội, 425 căn nhà ở thương mại tại Block T4 và 39 căn shophouse. Khi trình bày số liệu này, giữ nguyên cách ghi hiện tại của dự án và không tự điều chỉnh số lượng nếu chưa có dữ liệu chính thức mới." },
       { q: "K-Home CityView do ai thiết kế?", a: "Theo thông tin hiện có trên trang dự án, K-Home CityView được thiết kế và quy hoạch bởi Tập đoàn Surbana Jurong (Singapore), đơn vị tư vấn quy hoạch và thiết kế có kinh nghiệm quốc tế. Dự án cũng được giới thiệu phát triển theo tiêu chuẩn công trình xanh EDGE của IFC/World Bank, hướng đến việc sử dụng hiệu quả năng lượng và tài nguyên." },
       // NHÓM 2: VỊ TRÍ & KẾT NỐI
       { q: "K-Home CityView ở đâu?", a: "K-Home CityView tọa lạc tại đường Điều Xiển, phường Hố Nai, TP. Biên Hòa, tỉnh Đồng Nai. Vị trí này nằm trong khu vực dân cư hiện hữu của Biên Hòa và có kết nối đến nhiều khu công nghiệp trong khu vực. Theo thông tin hiện có trên website, dự án cách trung tâm Biên Hòa khoảng 3 km và nằm gần các khu vực như KCN Biên Hòa 1, KCN Biên Hòa 2, KCN Amata, KCN Hố Nai và KCN Long Bình." },
@@ -2111,7 +2111,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
                       { label: "Địa chỉ", value: "Đường Điểu Xiển, phường Hố Nai, tỉnh Đồng Nai (TP. Biên Hòa cũ)" },
                       { label: "Chủ đầu tư", value: "Công ty CP Đầu tư & Phát triển BĐS Miền Đông (thành viên Tập đoàn Kim Oanh Group)" },
                       { label: "Quy mô", value: "2,85 ha · 4 Block cao 22 tầng · 1.816 căn" },
-                      { label: "Loại hình", value: "NOXH: 1.328 căn · Shophouse: 39 căn" },
+                      { label: "Loại hình", value: "NOXH: 1.382 căn · Shophouse: 39 căn" },
                       { label: "Diện tích căn", value: "47m² (1PN+) · 62–70m² (2PN) · 84m² (3PN)" },
                       { label: "Đơn vị thiết kế", value: "Tập đoàn Surbana Jurong (Singapore)" },
                       { label: "Tiêu chuẩn", value: "Công trình xanh EDGE (IFC / World Bank Group)" },
@@ -3026,7 +3026,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <span className="inline-block bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-md font-semibold">Mốc Lịch Sử • 23/09/2025</span>
               <h3 className="text-lg font-bold text-slate-800 leading-snug">Khởi Đầu Chuỗi Nhà Ở Xã Hội Chuẩn Singapore Tại Đồng Nai</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Vào ngày 23/09/2025, Kim Oanh Group đã chính thức tổ chức lễ động thổ xây dựng dự án K-Home CityView Hố Nai. Dự án đánh dấu bước ngoặt lớn mang 1.328 căn hộ chất lượng cao đến với người lao động Biên Hòa.
+                Vào ngày 23/09/2025, Kim Oanh Group đã chính thức tổ chức lễ động thổ xây dựng dự án K-Home CityView Hố Nai. Dự án đánh dấu bước ngoặt lớn mang 1.382 căn hộ chất lượng cao đến với người lao động Biên Hòa.
               </p>
               <div className="pt-2">
                 <button
@@ -3078,7 +3078,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
             <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200">
               <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">Công trình xanh EDGE</span>
               <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">Thiết kế Singapore</span>
-              <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-semibold">1.328 căn NOXH</span>
+              <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-semibold">1.382 căn NOXH</span>
             </div>
           </div>
         </section>

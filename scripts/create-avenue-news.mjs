@@ -208,7 +208,7 @@ Một trong những yếu tố quan trọng nhất mang lại sự an tâm tuy�
 5. **Đơn vị tư vấn giám sát chất lượng:** **Công ty Cổ phần Tư vấn Công nghệ, Thiết bị và Kiểm định Xây dựng - CONINCO** – đơn vị kiểm định độc lập trực thuộc Bộ Xây dựng, chịu trách nhiệm túc trực 24/7 kiểm định nghiêm ngặt từng mẻ bê tông, thanh thép và chất lượng mối hàn trước khi nghiệm thu từng công đoạn.
 6. **Đơn vị quản lý vận hành tòa nhà:** **K-City Property Management** – công ty vận hành chuyên nghiệp theo tiêu chuẩn dịch vụ Singapore, đảm bảo môi trường sống văn minh, an toàn và sạch đẹp lâu dài cho cộng đồng cư dân.
 
-Bên cạnh K-Home Avenue, khách hàng tại khu vực Đồng Nai cũng có thể tìm hiểu thêm về tiến độ thi công của hai dự án cùng chuỗi thương hiệu K-Home: [nhà ở xã hội Biên Hòa](/k-home-cityview-ho-nai) quy mô 1.328 căn tại đường Điểu Xiển và [nhà ở xã hội Trảng Bom](/k-home-midtown-trang-bom) quy mô 542 căn tại trung tâm hành chính Trảng Bom.
+Bên cạnh K-Home Avenue, khách hàng tại khu vực Đồng Nai cũng có thể tìm hiểu thêm về tiến độ thi công của hai dự án cùng chuỗi thương hiệu K-Home: [nhà ở xã hội Biên Hòa](/k-home-cityview-ho-nai) quy mô 1.382 căn tại đường Điểu Xiển và [nhà ở xã hội Trảng Bom](/k-home-midtown-trang-bom) quy mô 542 căn tại trung tâm hành chính Trảng Bom.
 
 ---
 

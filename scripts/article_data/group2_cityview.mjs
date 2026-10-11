@@ -47,7 +47,7 @@ Luật Nhà ở số 27/2023/QH15 và Nghị định số 100/2024/NĐ-CP đã c
 
 Trong số các dự án **nhà ở xã hội Biên Hòa** đang triển khai, [K-Home CityView Hố Nai](/k-home-cityview-ho-nai) do Công ty CP Bất động sản Tân Hòa (thành viên Kim Oanh Group) làm chủ đầu tư là dự án có quy mô và tiêu chuẩn cao cấp nhất:
 - **Tọa độ xây dựng:** Mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa (cách ga Hố Nai 300m, cách ngã ba Phát Triển và QL1A chỉ 3 phút).
-- **Quy mô công trình:** Khu đất rộng 2,85 ha với 4 tòa tháp cao 22 tầng, cung cấp **1.328 căn hộ NOXH** đạt chuẩn xanh quốc tế EDGE (tiết kiệm hơn 20% năng lượng).
+- **Quy mô công trình:** Khu đất rộng 2,85 ha với 4 tòa tháp cao 22 tầng, cung cấp **1.382 căn hộ NOXH** đạt chuẩn xanh quốc tế EDGE (tiết kiệm hơn 20% năng lượng).
 - **Đơn vị thiết kế quy hoạch:** Surbana Jurong (Singapore).
 - **Đơn vị vận hành chuyên nghiệp:** K-City với hệ thống camera an ninh AI 24/7 và ứng dụng cư dân thông minh.
 
@@ -467,7 +467,7 @@ Với danh mục bàn giao hoàn thiện chất lượng cao này, các gia đì
 |---|---|---|
 | **Chủ đầu tư** | Tập đoàn Địa ốc Kim Oanh (Kim Oanh Group) | Công ty KD Nhà Đồng Nai (Kinh Don) |
 | **Vị trí** | Mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa | Đường Nguyễn Ái Quốc, P. Quang Vinh, TP. Biên Hòa |
-| **Quy mô** | 4 tháp căn hộ cao 22 tầng (**1.328 căn hộ**) | 2 khối tháp cao 19 tầng (**435 căn hộ**) |
+| **Quy mô** | 4 tháp căn hộ cao 22 tầng (**1.382 căn hộ**) | 2 khối tháp cao 19 tầng (**435 căn hộ**) |
 | **Tiêu chuẩn thiết kế** | Chuẩn xanh quốc tế **EDGE**, tư vấn bởi Surbana Jurong | Thiết kế căn hộ chung cư NOXH truyền thống |
 | **Hệ thống tiện ích** | Hồ bơi resort tràn bờ, vườn treo tầng 3, sân chơi trẻ em, gym, shophouse | Khuôn viên sinh hoạt chung nhỏ, bãi đỗ xe tầng trệt |
 | **Giá bán hiện tại** | Từ **950 triệu/căn** (~19 – 22 tr/m² giá gốc phê duyệt) | Chuyển nhượng thứ cấp từ **1,1 – 1,5 tỷ/căn** (~25 – 30 tr/m²) |

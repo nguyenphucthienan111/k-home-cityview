@@ -31,7 +31,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-cityview-ho-nai",
     title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
-    description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) – chung cư Biên Hòa giá rẻ 1.328 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm.",
+    description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) – chung cư Biên Hòa giá rẻ 1.382 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm.",
     keywords: "chung cư biên hòa giá rẻ, chung cư biên hoà giá rẻ, nhà ở xã hội biên hoà, nhà ở xã hội biên hòa, nhà ở xã hội hố nai, noxh biên hòa, noxh hố nai, chung cư hố nai giá rẻ, căn hộ giá rẻ biên hòa, nhà ở xã hội đồng nai 2026, chung cư nhà ở xã hội biên hòa, k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội đường điểu xiển, chung cư đường điểu xiển biên hòa, mua nhà ở xã hội biên hòa, điều kiện mua nhà ở xã hội biên hòa, k home đồng nai",
   },
   {
@@ -321,14 +321,14 @@ async function main() {
       { "@type": "Question", "name": "K-Home CityView khi nào bàn giao nhà?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án đã khởi công và đang thi công. Tiến độ dự kiến: hoàn thành móng tháng 8–10/2026, cất nóc tháng 6/2027, hoàn thiện nội thất tháng 12/2027 và bàn giao đợt đầu tháng 1/2028." } },
       { "@type": "Question", "name": "Vay mua K-Home CityView được bao nhiêu?", "acceptedAnswer": { "@type": "Answer", "text": "Người mua đủ điều kiện NOXH được vay tối đa 75–80% giá trị căn hộ từ Ngân hàng Chính sách Xã hội với lãi suất 5,4%/năm trong 25 năm. Trả góp chỉ từ khoảng 3,5–4,5 triệu/tháng." } },
       { "@type": "Question", "name": "K-Home CityView có được bán lại không?", "acceptedAnswer": { "@type": "Answer", "text": "Theo quy định NOXH, người mua phải ở tối thiểu 5 năm sau khi nhận bàn giao mới được bán lại. Khi bán phải bán lại cho người đủ điều kiện NOXH hoặc trả lại cho chủ đầu tư." } },
-      { "@type": "Question", "name": "K-Home CityView có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án có tổng cộng 1.816 căn gồm: 1.328 căn hộ NOXH, 425 căn nhà ở thương mại (Block T4) và 39 căn shophouse, phân bổ trong 4 block cao 22 tầng trên quỹ đất 2,85 hecta tại Hố Nai, Biên Hòa." } },
+      { "@type": "Question", "name": "K-Home CityView có bao nhiêu căn?", "acceptedAnswer": { "@type": "Answer", "text": "Dự án có tổng cộng 1.816 căn gồm: 1.382 căn hộ NOXH, 425 căn nhà ở thương mại (Block T4) và 39 căn shophouse, phân bổ trong 4 block cao 22 tầng trên quỹ đất 2,85 hecta tại Hố Nai, Biên Hòa." } },
       { "@type": "Question", "name": "Hỗ trợ hồ sơ NOXH K-Home CityView như thế nào?", "acceptedAnswer": { "@type": "Answer", "text": "Đội ngũ Kim Oanh Land hỗ trợ hoàn toàn miễn phí: kiểm tra điều kiện đủ tiêu chuẩn, chuẩn bị giấy tờ, nộp hồ sơ xét duyệt và kết nối Ngân hàng Chính sách Xã hội. Hotline: 0937.587.438." } },
       { "@type": "Question", "name": "Mặt bằng K-Home CityView gồm những loại căn nào?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView Hố Nai có 4 loại căn hộ: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2 phòng ngủ (70,4m²) và 3 phòng ngủ (84,4m²). NOXH đầu tiên tại Đồng Nai có căn 3 phòng ngủ." } },
       { "@type": "Question", "name": "Tiện ích K-Home CityView Hố Nai có gì?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView có hồ bơi người lớn và trẻ em, sân chơi trẻ em, khu thể dục ngoài trời, nhà sinh hoạt cộng đồng, vườn cảnh quan, khu BBQ, bãi đỗ xe và hệ thống shophouse khối đế." } },
       { "@type": "Question", "name": "K-Home CityView có sổ hồng không?", "acceptedAnswer": { "@type": "Answer", "text": "Có. Dự án được pháp lý đầy đủ theo quy định nhà ở xã hội, cấp sổ hồng sở hữu lâu dài. Hồ sơ pháp lý minh bạch từ giai đoạn đặt cọc đến khi nhận nhà." } },
       { "@type": "Question", "name": "K-Home CityView do ai thiết kế?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView được thiết kế và quy hoạch bởi Tập đoàn Surbana Jurong (Singapore) – đơn vị tư vấn quy hoạch đô thị hàng đầu châu Á. Dự án phát triển theo tiêu chuẩn công trình xanh EDGE của IFC/World Bank." } },
       { "@type": "Question", "name": "K-Home CityView đường Điểu Xiển gần KCN nào?", "acceptedAnswer": { "@type": "Answer", "text": "K-Home CityView nằm tại đường Điểu Xiển, Hố Nai – liền kề KCN Amata, KCN Long Bình, KCN Biên Hòa 2, KCN Hố Nai. Từ dự án chỉ mất 10–15 phút đến các KCN này." } },
-      { "@type": "Question", "name": "K Home City View Biên Hòa là dự án gì?", "acceptedAnswer": { "@type": "Answer", "text": "K Home City View (hay K-Home CityView) là dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa, Đồng Nai do Kim Oanh Land phát triển. 1.328 căn NOXH + 39 shophouse, giá từ 950 triệu, lãi suất 5,4%/năm." } },
+      { "@type": "Question", "name": "K Home City View Biên Hòa là dự án gì?", "acceptedAnswer": { "@type": "Answer", "text": "K Home City View (hay K-Home CityView) là dự án nhà ở xã hội chuẩn Singapore tại Biên Hòa, Đồng Nai do Kim Oanh Land phát triển. 1.382 căn NOXH + 39 shophouse, giá từ 950 triệu, lãi suất 5,4%/năm." } },
     ],
   };
 
@@ -347,7 +347,7 @@ async function main() {
     "@type": "WebPage",
     "name": "K-Home CityView Hố Nai Biên Hòa | Bảng Giá, Mặt Bằng & Hồ Sơ NOXH 2026",
     "url": `${BASE_URL}/k-home-cityview-ho-nai`,
-    "description": "Dự án K-Home CityView Hố Nai Biên Hòa: 1.328 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
+    "description": "Dự án K-Home CityView Hố Nai Biên Hòa: 1.382 căn NOXH chuẩn Singapore, giá từ 950 triệu, lãi suất 5,4%/năm, bàn giao 2028.",
     "inLanguage": "vi-VN",
     "dateModified": new Date().toISOString().split("T")[0],
     "publisher": {
@@ -710,7 +710,7 @@ async function main() {
         "name": "Dự án nhà ở xã hội nào tại Biên Hòa quy mô lớn và chuẩn Singapore?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dự án K-Home CityView Hố Nai do Kim Oanh Land phát triển tại đường Điểu Xiển là dự án lớn nhất với 1.328 căn hộ NOXH chuẩn Singapore, đạt chứng chỉ xanh EDGE và giá từ 950 triệu đồng/căn."
+          "text": "Dự án K-Home CityView Hố Nai do Kim Oanh Land phát triển tại đường Điểu Xiển là dự án lớn nhất với 1.382 căn hộ NOXH chuẩn Singapore, đạt chứng chỉ xanh EDGE và giá từ 950 triệu đồng/căn."
         }
       }
     ]
@@ -966,7 +966,7 @@ async function main() {
     {
       slug: "phong-su-k-home-cityview-ho-nai",
       title: "Phóng Sự Toàn Cảnh Dự Án Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa — Kim Oanh Land",
-      description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.328 căn chuẩn Singapore, giá từ 950 triệu.",
+      description: "Xem video phóng sự truyền hình toàn cảnh về dự án nhà ở xã hội K-Home CityView tại Hố Nai, TP. Biên Hòa do Kim Oanh Land phát triển. Quy mô 1.382 căn chuẩn Singapore, giá từ 950 triệu.",
       youtubeId: "RJGULOh6Wrs",
       date: "2026-08-26",
     },

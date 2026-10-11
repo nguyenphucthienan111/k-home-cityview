@@ -56,7 +56,7 @@ flowchart LR
 
 | Dự Án | Vị Trí | Quy Mô | Loại Căn | Giá Khởi Điểm |
 | :--- | :--- | :--- | :--- | :--- |
-| **K-Home CityView** | Đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 2,85 ha · 4 Block 22 Tầng (1.328 căn) | 1PN+A, 1PN+B, 2PN, 3PN | Từ 950 Triệu |
+| **K-Home CityView** | Đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa | 2,85 ha · 4 Block 22 Tầng (1.382 căn) | 1PN+A, 1PN+B, 2PN, 3PN | Từ 950 Triệu |
 | **K-Home Midtown** | Giao 4 tuyến đường trung tâm Trảng Bom | 13,97 ha · 1 Block 15 Tầng (542 căn) | Studio, 1PN+A, 1PN+B, 2PN | Từ 750 Triệu |
 | **K-Home Avenue** | Đường Nguyễn Ái Quốc (25C), Xã Nhơn Trạch | 5,3 ha · 4 Block 12 Tầng (1.022 căn) | Studio, 1PN+, 2PN Nhỏ, 2PN Lớn | Từ 750 Triệu |
 

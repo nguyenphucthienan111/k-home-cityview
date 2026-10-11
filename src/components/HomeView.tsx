@@ -468,7 +468,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       image: "/k-home cityview/V32_TAN-HOA_EXT_AERIAL_2_FINAL_2.webp",
       location: "Đường Điều Xiển, P. Hố Nai, TP. Biên Hòa, Đồng Nai",
       scale: "2,85 hecta",
-      product: "1.328 căn hộ NOXH và 39 căn shophouse",
+      product: "1.382 căn hộ NOXH và 39 căn shophouse",
       developer: "Kim Oanh Land • K-Home Group",
       partner: "Global Vireon Studio, Kiến Trúc Việt, CDC Jsc, K-City",
       status: "Đang bốc thăm",
@@ -3284,7 +3284,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </a>
               </h3>
               <p className="text-slate-500 text-xs leading-relaxed">
-                <strong>K-Home CityView</strong> tọa lạc tại đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa. Quy mô 2,85 ha với 4 block cao 22 tầng, cung cấp <strong>1.328 căn hộ NOXH</strong> và 39 căn shophouse. Các loại căn hộ gồm: <strong>1 phòng ngủ từ 47m²</strong>, 2 phòng ngủ từ 62m² đến 70m² và <strong>3 phòng ngủ 84m²</strong>. Giá bán từ <strong>950 triệu đồng</strong>, bàn giao full nội thất, pháp lý sổ hồng sở hữu lâu dài.
+                <strong>K-Home CityView</strong> tọa lạc tại đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa. Quy mô 2,85 ha với 4 block cao 22 tầng, cung cấp <strong>1.382 căn hộ NOXH</strong> và 39 căn shophouse. Các loại căn hộ gồm: <strong>1 phòng ngủ từ 47m²</strong>, 2 phòng ngủ từ 62m² đến 70m² và <strong>3 phòng ngủ 84m²</strong>. Giá bán từ <strong>950 triệu đồng</strong>, bàn giao full nội thất, pháp lý sổ hồng sở hữu lâu dài.
               </p>
               <a href="/k-home-cityview-ho-nai" className="text-amber-600 text-xs font-semibold hover:text-amber-700 flex items-center gap-1">
                 Xem bảng giá CityView →

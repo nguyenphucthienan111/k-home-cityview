@@ -6,7 +6,7 @@ export const group2Articles = [
     slug: "nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026",
     title: "Nhà Ở Xã Hội Biên Hòa: Danh Sách Dự Án Đang Mở Bán & Điều Kiện Mua 2026",
     date: "2026-09-15",
-    excerpt: "Cập nhật toàn diện thị trường nhà ở xã hội Biên Hòa 2026: danh sách các dự án đang mở bán, dự án tiêu biểu K-Home CityView Hố Nai 1.328 căn từ 950 triệu, bảng giá niêm yết, điều kiện thu nhập theo Luật Nhà ở 2023 và gói vay ưu đãi 5,4%.",
+    excerpt: "Cập nhật toàn diện thị trường nhà ở xã hội Biên Hòa 2026: danh sách các dự án đang mở bán, dự án tiêu biểu K-Home CityView Hố Nai 1.382 căn từ 950 triệu, bảng giá niêm yết, điều kiện thu nhập theo Luật Nhà ở 2023 và gói vay ưu đãi 5,4%.",
     image: IMG.cityviewFacade,
     category: "Tin tức dự án",
     project: "cityview",
@@ -30,7 +30,7 @@ Theo khảo sát của Liên đoàn Lao động Tỉnh Đồng Nai, có tới **
 Trong các dự án **nhà ở xã hội Biên Hòa**, tổ hợp [K-Home CityView Hố Nai](/k-home-cityview-ho-nai) do Tập đoàn Địa ốc Kim Oanh (Kim Oanh Group) đầu tư phát triển nổi lên như biểu tượng sống xanh hiện đại và quy mô lớn nhất:
 - **Tên dự án thương mại:** K-Home CityView Hố Nai (K-Home Biên Hòa).
 - **Vị trí xây dựng:** Mặt tiền đường Điểu Xiển, Phường Hố Nai, TP. Biên Hòa (cách ga Hố Nai 300m, cách ngã ba Phát Triển 3 phút).
-- **Quy mô dự án:** Khu đất rộng **2,85 ha** gồm **4 tòa tháp cao 22 tầng** với **1.328 căn hộ NOXH** và 39 căn shophouse thương mại tầng trệt.
+- **Quy mô dự án:** Khu đất rộng **2,85 ha** gồm **4 tòa tháp cao 22 tầng** với **1.382 căn hộ NOXH** và 39 căn shophouse thương mại tầng trệt.
 - **Đơn vị tư vấn kiến trúc quốc tế:** Surbana Jurong (Singapore).
 - **Tiêu chuẩn công trình xanh:** Chứng nhận xanh quốc tế EDGE (IFC/World Bank), giúp giảm hơn 20% chi phí điện nước sinh hoạt mỗi tháng.
 - **Đơn vị quản lý vận hành:** K-City ứng dụng công nghệ số thông minh, bảo vệ 3 lớp 24/7.
@@ -257,7 +257,7 @@ K-Home CityView được quy hoạch trên khu đất rộng **2,85 ha** với m
 - **Pháp lý hoàn thiện:** Dự án đã có Quyết định phê duyệt quy hoạch 1/500, Quyết định giao đất và Giấy phép xây dựng chính thức từ Sở Xây dựng Tỉnh Đồng Nai.
 - **Mốc thời gian bàn giao dự kiến:** Dự án sẽ cất nóc vào năm 2027 và chính thức bàn giao chìa khóa căn hộ hoàn thiện cho cư dân vào **Quý 1/2028**.
 
----RELATED---can-ho-ho-nai-bien-hoa-tiem-nang-song-ket-noi-giao-thong|Tiềm Năng Sống Hố Nai Biên Hòa;nha-o-xa-hoi-k-home-cityview-quy-mo-1328-can-chuan-edge|Quy Mô K-Home CityView 1.328 Căn;nha-o-xa-hoi-k-home-cityview-ho-nai-bien-hoa-bang-gia|Bảng Giá K-Home CityView`
+---RELATED---can-ho-ho-nai-bien-hoa-tiem-nang-song-ket-noi-giao-thong|Tiềm Năng Sống Hố Nai Biên Hòa;nha-o-xa-hoi-k-home-cityview-quy-mo-1382-can-chuan-edge|Quy Mô K-Home CityView 1.382 Căn;nha-o-xa-hoi-k-home-cityview-ho-nai-bien-hoa-bang-gia|Bảng Giá K-Home CityView`
   },
   {
     id: "n120",
@@ -299,26 +299,26 @@ Không chỉ phục vụ nhu cầu ở thực, căn hộ tại Hố Nai còn s�
 - Cụm công nghiệp Amata và Loteco tập trung hàng ngàn chuyên gia nước ngoài và quản lý cấp trung luôn tìm kiếm căn hộ khép kín, tiện nghi.
 - Giá thuê kỳ vọng đối với căn 1PN+ từ **4,5 – 5,5 triệu/tháng**, căn 2PN từ **6,5 – 8,0 triệu/tháng**, đem lại tỷ suất lợi nhuận ròng từ **7% – 8,5%/năm**.
 
----RELATED---nha-o-xa-hoi-ho-nai-bien-hoa-vi-tri-tien-do-2026|Vị Trí & Tiến Độ NOXH Hố Nai;nha-o-xa-hoi-k-home-cityview-quy-mo-1328-can-chuan-edge|Quy Mô K-Home CityView 1.328 Căn;nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026|Danh Sách NOXH Biên Hòa 2026`
+---RELATED---nha-o-xa-hoi-ho-nai-bien-hoa-vi-tri-tien-do-2026|Vị Trí & Tiến Độ NOXH Hố Nai;nha-o-xa-hoi-k-home-cityview-quy-mo-1382-can-chuan-edge|Quy Mô K-Home CityView 1.382 Căn;nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026|Danh Sách NOXH Biên Hòa 2026`
   },
   {
     id: "n121",
-    slug: "nha-o-xa-hoi-k-home-cityview-quy-mo-1328-can-chuan-edge",
-    title: "Nhà Ở Xã Hội K-Home CityView: Quy Mô 1.328 Căn Tiêu Chuẩn Xanh EDGE Singapore",
+    slug: "nha-o-xa-hoi-k-home-cityview-quy-mo-1382-can-chuan-edge",
+    title: "Nhà Ở Xã Hội K-Home CityView: Quy Mô 1.382 Căn Tiêu Chuẩn Xanh EDGE Singapore",
     date: "2026-09-15",
-    excerpt: "Khám phá quy mô đại dự án nhà ở xã hội K-Home CityView Biên Hòa: 1.328 căn hộ đạt chuẩn xanh quốc tế EDGE (IFC), thiết kế thông minh Singapore bởi Surbana Jurong, tiết kiệm 20% điện nước và hồ bơi resort.",
+    excerpt: "Khám phá quy mô đại dự án nhà ở xã hội K-Home CityView Biên Hòa: 1.382 căn hộ đạt chuẩn xanh quốc tế EDGE (IFC), thiết kế thông minh Singapore bởi Surbana Jurong, tiết kiệm 20% điện nước và hồ bơi resort.",
     image: IMG.cityviewFacade,
     category: "Tin tức dự án",
     project: "cityview",
-    content: `> **Biểu tượng sống xanh:** *Được định vị trở thành dự án nhà ở xã hội kiểu mẫu tiên phong tại tỉnh Đồng Nai, K-Home CityView Hố Nai với quy mô 1.328 căn hộ đạt chứng chỉ xanh quốc tế EDGE do Tổ chức Tài chính Quốc tế (IFC) chứng nhận. Cùng khám phá những điểm nhấn công nghệ và kiến trúc xanh tạo nên đẳng cấp của dự án.*
+    content: `> **Biểu tượng sống xanh:** *Được định vị trở thành dự án nhà ở xã hội kiểu mẫu tiên phong tại tỉnh Đồng Nai, K-Home CityView Hố Nai với quy mô 1.382 căn hộ đạt chứng chỉ xanh quốc tế EDGE do Tổ chức Tài chính Quốc tế (IFC) chứng nhận. Cùng khám phá những điểm nhấn công nghệ và kiến trúc xanh tạo nên đẳng cấp của dự án.*
 
-![Quy mô 1328 căn hộ K-Home CityView Biên Hòa](${IMG.cityviewFacade})
+![Quy mô 1382 căn hộ K-Home CityView Biên Hòa](${IMG.cityviewFacade})
 
-## 1. Đại Dự Án Quy Mô 1.328 Căn Hộ Tại TP. Biên Hòa
+## 1. Đại Dự Án Quy Mô 1.382 Căn Hộ Tại TP. Biên Hòa
 
 Dự án [K-Home CityView](/k-home-cityview-ho-nai) do Công ty CP Bất động sản Tân Hòa (thành viên Tập đoàn Kim Oanh) làm chủ đầu tư:
 - **Diện tích toàn khu đất:** 2,85 héc-ta.
-- **Số lượng sản phẩm:** 4 khối tháp cao 22 tầng với **1.328 căn hộ nhà ở xã hội** hiện đại và 39 căn shophouse thương mại dịch vụ tại khối đế.
+- **Số lượng sản phẩm:** 4 khối tháp cao 22 tầng với **1.382 căn hộ nhà ở xã hội** hiện đại và 39 căn shophouse thương mại dịch vụ tại khối đế.
 - **Mật độ xây dựng:** Khống chế ở mức tối ưu dưới 40%, phần diện tích còn lại dành trọn cho công viên cây xanh, hồ bơi và hạ tầng giao thông nội bộ.
 
 ---
@@ -381,7 +381,7 @@ Kim Oanh Group đã bắt tay cùng tập đoàn quy hoạch hàng đầu Singap
 - Thu nhập 15 triệu đồng được tính là **thu nhập thực nhận sau thuế**, đã trừ các khoản giảm trừ người phụ thuộc và đóng bảo hiểm bắt buộc.
 - Tuyệt đối không giao dịch mua bán suất "nội bộ" hay cọc chênh qua các cá nhân môi giới tự do bên ngoài để tránh bị mất tiền oan.
 
----RELATED---nha-o-xa-hoi-k-home-cityview-ho-nai-bien-hoa-bang-gia|Bảng Giá K-Home CityView Hố Nai;nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026|Danh Sách NOXH Biên Hòa 2026;nha-o-xa-hoi-k-home-cityview-quy-mo-1328-can-chuan-edge|Quy Mô K-Home CityView 1.328 Căn`
+---RELATED---nha-o-xa-hoi-k-home-cityview-ho-nai-bien-hoa-bang-gia|Bảng Giá K-Home CityView Hố Nai;nha-o-xa-hoi-bien-hoa-danh-sach-du-an-dieu-kien-mua-2026|Danh Sách NOXH Biên Hòa 2026;nha-o-xa-hoi-k-home-cityview-quy-mo-1382-can-chuan-edge|Quy Mô K-Home CityView 1.382 Căn`
   },
   {
     id: "n123",
