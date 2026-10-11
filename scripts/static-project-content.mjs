@@ -756,27 +756,51 @@ export function renderNewsDetailHtml(article, contentHtml, relatedArticles = [])
           ${contentHtml}
         </div>
 
-        <!-- Pillar Cross-Link Banner -->
-        <div class="my-8 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-start gap-3.5">
-            <span class="w-10 h-10 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 shadow-xs">★</span>
-            <div>
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 block">Cẩm Nang Bất Động Sản Biên Hòa 2026</span>
-              <h4 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
-                <a href="/nha-o-xa-hoi-bien-hoa" class="text-amber-800 hover:text-amber-900 hover:underline">
-                  Nhà Ở Xã Hội Biên Hòa: Tổng Hợp 5 Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z
-                </a>
-              </h4>
-              <p class="text-xs text-slate-600 mt-1">
-                Xem chi tiết danh sách dự án, quy trình 6 bước nộp hồ sơ chuẩn pháp lý và cách thức vay 80% vốn mua nhà ở xã hội Biên Hòa.
-              </p>
+        <!-- Contextual Pillar Cross-Link Banner -->
+        ${(() => {
+          const isNhonTrach = article.project === "k-home-avenue-nhon-trach" || article.slug.includes("nhon-trach") || article.title.toLowerCase().includes("nhơn trạch") || article.slug.includes("avenue");
+          const isTrangBom = article.project === "k-home-midtown-trang-bom" || article.project === "k-home-skyview-trang-bom" || article.slug.includes("trang-bom") || article.title.toLowerCase().includes("trảng bom") || article.slug.includes("midtown") || article.slug.includes("skyview");
+          
+          let pUrl = "/nha-o-xa-hoi-bien-hoa";
+          let pTitle = "Nhà Ở Xã Hội Biên Hòa: Tổng Hợp 5 Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+          let pSub = "Cẩm Nang Bất Động Sản Biên Hòa 2026";
+          let pDesc = "Xem chi tiết danh sách dự án, quy trình 6 bước nộp hồ sơ chuẩn pháp lý và cách thức vay 80% vốn mua nhà ở xã hội Biên Hòa.";
+
+          if (isNhonTrach) {
+            pUrl = "/nha-o-xa-hoi-nhon-trach";
+            pTitle = "Nhà Ở Xã Hội Nhơn Trạch: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+            pSub = "Cẩm Nang Bất Động Sản Nhơn Trạch 2026";
+            pDesc = "Tổng hợp dự án NOXH đón đầu Sân bay Long Thành, bảng giá K-Home Avenue từ 750 triệu và hướng dẫn vay 5,4%/năm.";
+          } else if (isTrangBom) {
+            pUrl = "/nha-o-xa-hoi-trang-bom";
+            pTitle = "Nhà Ở Xã Hội Trảng Bom: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+            pSub = "Cẩm Nang Bất Động Sản Trảng Bom 2026";
+            pDesc = "Phân tích đại đô thị K-Home Midtown 13,97 ha, K-Home SkyView Bàu Xéo và bảng tính trả góp từ 3,0 triệu/tháng.";
+          }
+
+          return `
+          <div class="my-8 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 shadow-xs">★</span>
+              <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 block">${pSub}</span>
+                <h4 class="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
+                  <a href="${pUrl}" class="text-amber-800 hover:text-amber-900 hover:underline">
+                    ${pTitle}
+                  </a>
+                </h4>
+                <p class="text-xs text-slate-600 mt-1">
+                  ${pDesc}
+                </p>
+              </div>
             </div>
+            <a href="${pUrl}" class="shrink-0 inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition no-underline">
+              <span>Khám Phá Cẩm Nang</span>
+              <span>&rarr;</span>
+            </a>
           </div>
-          <a href="/nha-o-xa-hoi-bien-hoa" class="shrink-0 inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition no-underline">
-            <span>Khám Phá Cẩm Nang</span>
-            <span>&rarr;</span>
-          </a>
-        </div>
+          `;
+        })()}
 
         <!-- Conversion CTA Banner -->
         <div class="my-12 p-6 sm:p-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">

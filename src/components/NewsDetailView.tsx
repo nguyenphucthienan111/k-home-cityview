@@ -819,47 +819,72 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
         })()}
       </article>
       
-      {/* Pillar Cross-Link Banner */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8">
-        <div className="p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-start gap-3.5">
-            <span className="w-10 h-10 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 shadow-xs text-sm">
-              ★
-            </span>
-            <div>
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 block">
-                Cẩm Nang Bất Động Sản Biên Hòa 2026
-              </span>
-              <h4 className="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
-                <a
-                  href="/nha-o-xa-hoi-bien-hoa"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onNavigate("/nha-o-xa-hoi-bien-hoa");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="text-amber-800 hover:text-amber-900 hover:underline"
-                >
-                  Nhà Ở Xã Hội Biên Hòa: Tổng Hợp 5 Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z
-                </a>
-              </h4>
-              <p className="text-xs text-slate-600 mt-1">
-                Xem chi tiết danh sách dự án, quy trình 6 bước nộp hồ sơ chuẩn pháp lý và cách thức vay 80% vốn mua nhà ở xã hội Biên Hòa.
-              </p>
+      {/* Contextual Pillar Cross-Link Banner */}
+      {(() => {
+        if (!article) return null;
+        const isNhonTrach = article.project === "k-home-avenue-nhon-trach" || article.slug.includes("nhon-trach") || article.title.toLowerCase().includes("nhơn trạch") || article.slug.includes("avenue");
+        const isTrangBom = article.project === "k-home-midtown-trang-bom" || article.project === "k-home-skyview-trang-bom" || article.slug.includes("trang-bom") || article.title.toLowerCase().includes("trảng bom") || article.slug.includes("midtown") || article.slug.includes("skyview");
+        
+        let pUrl = "/nha-o-xa-hoi-bien-hoa";
+        let pTitle = "Nhà Ở Xã Hội Biên Hòa: Tổng Hợp 5 Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+        let pSub = "Cẩm Nang Bất Động Sản Biên Hòa 2026";
+        let pDesc = "Xem chi tiết danh sách dự án, quy trình 6 bước nộp hồ sơ chuẩn pháp lý và cách thức vay 80% vốn mua nhà ở xã hội Biên Hòa.";
+
+        if (isNhonTrach) {
+          pUrl = "/nha-o-xa-hoi-nhon-trach";
+          pTitle = "Nhà Ở Xã Hội Nhơn Trạch: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+          pSub = "Cẩm Nang Bất Động Sản Nhơn Trạch 2026";
+          pDesc = "Tổng hợp dự án NOXH đón đầu Sân bay Long Thành, bảng giá K-Home Avenue từ 750 triệu và hướng dẫn vay 5,4%/năm.";
+        } else if (isTrangBom) {
+          pUrl = "/nha-o-xa-hoi-trang-bom";
+          pTitle = "Nhà Ở Xã Hội Trảng Bom: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z";
+          pSub = "Cẩm Nang Bất Động Sản Trảng Bom 2026";
+          pDesc = "Phân tích đại đô thị K-Home Midtown 13,97 ha, K-Home SkyView Bàu Xéo và bảng tính trả góp từ 3,0 triệu/tháng.";
+        }
+
+        return (
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8">
+            <div className="p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-start gap-3.5">
+                <span className="w-10 h-10 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 shadow-xs text-sm">
+                  ★
+                </span>
+                <div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 block">
+                    {pSub}
+                  </span>
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base mt-0.5">
+                    <a
+                      href={pUrl}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigate(pUrl);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="text-amber-800 hover:text-amber-900 hover:underline"
+                    >
+                      {pTitle}
+                    </a>
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-1">
+                    {pDesc}
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  onNavigate(pUrl);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="shrink-0 inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition"
+              >
+                <span>Khám Phá Cẩm Nang</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
-          <button
-            onClick={() => {
-              onNavigate("/nha-o-xa-hoi-bien-hoa");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="shrink-0 inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition"
-          >
-            <span>Khám Phá Cẩm Nang</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-      </div>
+        );
+      })()}
 
       {/* Related Articles */}
       {(() => {

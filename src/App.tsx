@@ -21,6 +21,8 @@ const ServerErrorView    = lazy(() => import("./components/ServerErrorView"));
 const ForbiddenView      = lazy(() => import("./components/ForbiddenView"));
 const VideoWatchView     = lazy(() => import("./components/VideoWatchView"));
 const NoxhBienHoaPillarView = lazy(() => import("./components/NoxhBienHoaPillarView"));
+const NoxhNhonTrachPillarView = lazy(() => import("./components/NoxhNhonTrachPillarView"));
+const NoxhTrangBomPillarView = lazy(() => import("./components/NoxhTrangBomPillarView"));
 
 // ── 301 Redirect map for old news slugs → new slugs ──
 // When Googlebot crawls old URL, it will see redirect and transfer link juice
@@ -44,6 +46,8 @@ const PAGE_TITLES: Record<string, string> = {
   "/k-home-avenue-nhon-trach":  "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
   "/k-home-skyview-trang-bom":   "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
   "/nha-o-xa-hoi-bien-hoa":     "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+  "/nha-o-xa-hoi-nhon-trach":   "Nhà Ở Xã Hội Nhơn Trạch 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+  "/nha-o-xa-hoi-trang-bom":    "Nhà Ở Xã Hội Trảng Bom 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
 };
 
 // Helper: normalize path from window.location
@@ -303,6 +307,10 @@ export default function App() {
         return <CalculatorView onNavigate={navigateTo} />;
       case "/nha-o-xa-hoi-bien-hoa":
         return <NoxhBienHoaPillarView onNavigate={navigateTo} />;
+      case "/nha-o-xa-hoi-nhon-trach":
+        return <NoxhNhonTrachPillarView onNavigate={navigateTo} />;
+      case "/nha-o-xa-hoi-trang-bom":
+        return <NoxhTrangBomPillarView onNavigate={navigateTo} />;
       case "/tin-tuc":
       case "/news":    return <NewsView onNavigate={navigateTo} />;
       case "/gioi-thieu":

@@ -29,6 +29,18 @@ const STATIC_ROUTES = [
     keywords: "nhà ở xã hội biên hòa, nhà ở xã hội biên hoà, mua nhà ở xã hội biên hòa, mua nhà ở xã hội biên hoà, dự án nhà ở xã hội biên hòa, bảng giá nhà ở xã hội biên hòa, điều kiện mua nhà ở xã hội biên hòa, hồ sơ mua nhà ở xã hội biên hòa, noxh biên hòa, k-home cityview biên hòa, k home cityview, chung cư biên hòa giá rẻ",
   },
   {
+    dir: "nha-o-xa-hoi-nhon-trach",
+    title: "Nhà Ở Xã Hội Nhơn Trạch 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    description: "Tổng hợp chi tiết các dự án nhà ở xã hội Nhơn Trạch 2026 đón đầu Sân bay Long Thành: K-Home Avenue mặt tiền 25C, Phước An. Bảng giá từ 750 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    keywords: "nhà ở xã hội nhơn trạch, nhà ở xã hội nhơn trạch đồng nai, mua nhà ở xã hội nhơn trạch, chung cư nhơn trạch giá rẻ, noxh nhơn trạch, k-home avenue, k home avenue nhơn trạch, căn hộ giá rẻ nhơn trạch, nhà ở xã hội đường 25c, nhà ở xã hội gần sân bay long thành, điều kiện mua nhà ở xã hội nhơn trạch",
+  },
+  {
+    dir: "nha-o-xa-hoi-trang-bom",
+    title: "Nhà Ở Xã Hội Trảng Bom 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    description: "Tổng hợp chi tiết các dự án nhà ở xã hội Trảng Bom 2026: K-Home Midtown 13,97 ha trung tâm thị trấn, K-Home SkyView KĐT Bàu Xéo. Bảng giá từ 750 triệu, điều kiện mua & gói vay 5,4%/năm.",
+    keywords: "nhà ở xã hội trảng bom, nhà ở xã hội trảng bom đồng nai, mua nhà ở xã hội trảng bom, chung cư trảng bom giá rẻ, noxh trảng bom, k-home midtown, k-home skyview, k home midtown trảng bom, nhà ở xã hội bàu xéo, điều kiện mua nhà ở xã hội trảng bom",
+  },
+  {
     dir: "k-home-cityview-ho-nai",
     title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
     description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) – chung cư Biên Hòa giá rẻ 1.382 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm.",
@@ -294,6 +306,8 @@ async function main() {
     renderServerErrorHtml,
     renderVideoWatchHtml,
     renderNoxhBienHoaPillarHtml,
+    renderNoxhNhonTrachPillarHtml,
+    renderNoxhTrangBomPillarHtml,
   } = await import(`file:///${cacheSsrFile.replace(/\\/g, "/")}`);
   console.log("✅ SSR renderer loaded successfully\n");
 
@@ -740,12 +754,172 @@ async function main() {
     ]
   };
 
+  // Schemas cho Nhà ở xã hội Nhơn Trạch
+  const NOXH_NHON_TRACH_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Nhà ở xã hội Nhơn Trạch 2026", "item": `${BASE_URL}/nha-o-xa-hoi-nhon-trach` },
+    ],
+  };
+
+  const NOXH_NHON_TRACH_ARTICLE = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nhà Ở Xã Hội Nhơn Trạch 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    "description": "Tổng hợp chi tiết các dự án nhà ở xã hội Nhơn Trạch 2026: K-Home Avenue mặt tiền 25C gần Sân bay Long Thành, Phước An. Bảng giá từ 750 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    "url": `${BASE_URL}/nha-o-xa-hoi-nhon-trach`,
+    "inLanguage": "vi-VN",
+    "datePublished": "2026-06-15T08:00:00+07:00",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230307/k-home-avenue/PC01-TT-copy_2_2-min.jpg",
+    "author": { "@type": "Organization", "name": "Kim Oanh Group", "url": BASE_URL },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "152",
+      "reviewCount": "152"
+    }
+  };
+
+  const NOXH_NHON_TRACH_FAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mua nhà ở xã hội Nhơn Trạch cần chuẩn bị trước bao nhiêu tiền vốn tự có?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khách hàng chỉ cần chuẩn bị trước 20 – 25% giá trị căn hộ, tương đương từ khoảng 150 triệu đồng đối với căn Studio giá 750 triệu tại K-Home Avenue. Số tiền được chia làm 3 đợt thanh toán trong vòng 2 tháng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Điều kiện thu nhập để mua nhà ở xã hội Nhơn Trạch năm 2026 là bao nhiêu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Người độc thân có thu nhập thực nhận dưới 25 triệu/tháng; người độc thân nuôi con nhỏ dưới 35 triệu/tháng; cặp vợ chồng có tổng thu nhập thực nhận dưới 50 triệu/tháng đủ điều kiện đăng ký mua."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Công nhân KCN Nhơn Trạch hộ khẩu ngoài tỉnh có mua được NOXH không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hoàn toàn được. Rào cản hộ khẩu và tạm trú KT3 đã được bãi bỏ. Bất kỳ công dân nào có hợp đồng lao động và tham gia BHXH từ 12 tháng tại Đồng Nai đều được đăng ký mua bình đẳng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dự án K-Home Avenue Nhơn Trạch cách Sân bay Long Thành bao xa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dự án tọa lạc trên đường Nguyễn Ái Quốc (25C), chỉ cách cổng Sân bay Quốc tế Long Thành khoảng 10 – 12 phút di chuyển thẳng tắp."
+        }
+      }
+    ]
+  };
+
+  // Schemas cho Nhà ở xã hội Trảng Bom
+  const NOXH_TRANG_BOM_BREADCRUMB = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": `${BASE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Nhà ở xã hội Trảng Bom 2026", "item": `${BASE_URL}/nha-o-xa-hoi-trang-bom` },
+    ],
+  };
+
+  const NOXH_TRANG_BOM_ARTICLE = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nhà Ở Xã Hội Trảng Bom 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    "description": "Tổng hợp chi tiết các dự án nhà ở xã hội Trảng Bom 2026: K-Home Midtown 13,97 ha trung tâm thị trấn, K-Home SkyView Bàu Xéo. Bảng giá từ 750 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    "url": `${BASE_URL}/nha-o-xa-hoi-trang-bom`,
+    "inLanguage": "vi-VN",
+    "datePublished": "2026-06-20T08:00:00+07:00",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230298/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.jpg",
+    "author": { "@type": "Organization", "name": "Kim Oanh Group", "url": BASE_URL },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kim Oanh Group",
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "168",
+      "reviewCount": "168"
+    }
+  };
+
+  const NOXH_TRANG_BOM_FAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mua nhà ở xã hội Trảng Bom cần chuẩn bị trước bao nhiêu tiền vốn tự có?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Khách hàng chỉ cần chuẩn bị trước 20 – 25% giá trị căn hộ, tương đương từ khoảng 150 triệu đồng đối với căn Studio giá 750 triệu tại K-Home Midtown hoặc SkyView. Số tiền được chia làm 3 đợt thanh toán trong vòng 2 tháng."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Công nhân KCN Bàu Xéo hoặc Sông Mây có được mua NOXH Trảng Bom không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hoàn toàn được. Công nhân và người lao động làm việc tại các KCN tại Trảng Bom là nhóm đối tượng ưu tiên hàng đầu theo đề án phát triển nhà ở xã hội của tỉnh Đồng Nai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dự án K-Home Midtown Trảng Bom nằm ở vị trí nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dự án tọa lạc tại trung tâm thị trấn Trảng Bom, giữa 4 tuyến đường huyết mạch: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, kết nối thuận lợi về TP. Biên Hòa và TP.HCM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Nhà ở xã hội Trảng Bom sau bao lâu thì được bán lại?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Theo Luật Nhà ở, sau thời hạn 5 năm kể từ ngày hoàn tất thanh toán và nhận bàn giao nhà, chủ sở hữu được quyền bán lại theo giá thị trường tự do."
+        }
+      }
+    ]
+  };
+
   // Map schema per dir
   const ROUTE_SCHEMAS = {
     "nha-o-xa-hoi-bien-hoa": [
       NOXH_BIEN_HOA_BREADCRUMB,
       NOXH_BIEN_HOA_ARTICLE,
       NOXH_BIEN_HOA_FAQ,
+    ],
+    "nha-o-xa-hoi-nhon-trach": [
+      NOXH_NHON_TRACH_BREADCRUMB,
+      NOXH_NHON_TRACH_ARTICLE,
+      NOXH_NHON_TRACH_FAQ,
+    ],
+    "nha-o-xa-hoi-trang-bom": [
+      NOXH_TRANG_BOM_BREADCRUMB,
+      NOXH_TRANG_BOM_ARTICLE,
+      NOXH_TRANG_BOM_FAQ,
     ],
     "k-home-cityview-ho-nai": [
       CITYVIEW_FAQ_SCHEMA,
@@ -805,6 +979,10 @@ async function main() {
     let bodyHtml = null;
     if (route.dir === "nha-o-xa-hoi-bien-hoa") {
       bodyHtml = renderNoxhBienHoaPillarHtml();
+    } else if (route.dir === "nha-o-xa-hoi-nhon-trach") {
+      bodyHtml = renderNoxhNhonTrachPillarHtml();
+    } else if (route.dir === "nha-o-xa-hoi-trang-bom") {
+      bodyHtml = renderNoxhTrangBomPillarHtml();
     } else if (route.dir === "k-home-cityview-ho-nai") {
       bodyHtml = renderProjectHtml("k-home-cityview-ho-nai");
     } else if (route.dir === "k-home-midtown-trang-bom") {
@@ -959,13 +1137,15 @@ async function main() {
       });
     }
 
-    // Static links chuẩn SEO truyền link juice mạnh mẽ về trang pillar và trang dự án chính
+    // Static links chuẩn SEO truyền link juice mạnh mẽ về các trang pillar và trang dự án chính
     const staticLinks = [
       { href: "/nha-o-xa-hoi-bien-hoa", text: "Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z" },
-      { href: "/nha-o-xa-hoi-bien-hoa", text: "Mua Nhà Ở Xã Hội Biên Hòa" },
+      { href: "/nha-o-xa-hoi-nhon-trach", text: "Nhà Ở Xã Hội Nhơn Trạch 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z" },
+      { href: "/nha-o-xa-hoi-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z" },
       { href: "/k-home-cityview-ho-nai", text: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai" },
-      { href: "/k-home-midtown-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown" },
       { href: "/k-home-avenue-nhon-trach", text: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue" },
+      { href: "/k-home-midtown-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown" },
+      { href: "/k-home-skyview-trang-bom", text: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo" },
       { href: "/tin-tuc", text: "Tin tức K-Home Đồng Nai" },
       { href: "/", text: "K-Home Đồng Nai" },
     ];
