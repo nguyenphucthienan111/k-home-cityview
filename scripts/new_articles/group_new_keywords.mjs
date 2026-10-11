@@ -40,9 +40,10 @@ Nếu bạn đang có kế hoạch **mua nhà ở xã hội Biên Hoà** trong n
 
 | Loại hình căn hộ khi mua nhà ở xã hội Biên Hoà | Diện tích thông thủy | Thiết kế công năng | Giá bán dự kiến (gồm VAT) |
 |---|---|---|---|
-| Căn hộ Studio Smart | 35,5 m² – 38,2 m² | 1 phòng đa năng, 1 WC, ban công thoáng | **Từ 950 triệu/căn** |
-| Căn hộ 1 Phòng ngủ + 1 (1PN+1) | 48,0 m² – 53,5 m² | 1 PN master, 1 phòng mở, 1 WC, bếp kín | **Từ 1,2 – 1,35 tỷ/căn** |
-| Căn hộ 2 Phòng ngủ (2PN) | 65,0 m² – 68,8 m² | 2 PN riêng biệt, 2 WC, logia giặt phơi riêng | **Từ 1,6 – 1,75 tỷ/căn** |
+| Căn hộ 1 Phòng ngủ tích hợp | 47,3 m² | 1 phòng ngủ, 1 phòng ngủ tích hợp, 1 WC, 1 ban công logia | **Từ 950 triệu/căn** |
+| Căn hộ 2 Phòng ngủ nhỏ | 62,4 m² | 1 phòng ngủ master, 1 phòng ngủ riêng, 2 WC, 2 ban công logia | **Từ 1,35 tỷ/căn** |
+| Căn hộ 2 Phòng ngủ lớn | 70,4 m² | 1 phòng ngủ master, 1 phòng ngủ riêng, 2 WC, 2 ban công logia | **Từ 1,6 – 1,75 tỷ/căn** |
+| Căn hộ 3 Phòng ngủ | 84,4 m² | 1 phòng ngủ master, 2 phòng ngủ riêng, 2 WC, 2 ban công logia | **Từ 1,85 tỷ/căn** |
 
 ---GALLERY---${IMG.cityviewFacade}|${IMG.cityviewPool}|${IMG.cityviewGarden}|${IMG.cityviewStreet}|Không gian sống chuẩn Singapore tại dự án K-Home Cityview Biên Hòa
 
