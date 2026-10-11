@@ -36,38 +36,55 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
         </div>
       </nav>
 
-      {/* ── Header / Hero Banner ── */}
-      <header className="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-950 text-white py-12 px-4 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+      {/* ── Header / Hero Banner (Sáng sủa, Hiện đại & Sang trọng) ── */}
+      <header className="relative bg-gradient-to-br from-amber-950 via-slate-900 to-amber-900 text-white py-14 md:py-20 px-4 overflow-hidden border-b border-amber-500/20">
+        {/* Glow & Lighting Effects */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 -right-24 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-amber-500/25 to-orange-500/25 text-amber-300 border border-amber-400/40 rounded-full text-xs font-bold uppercase tracking-wider mb-5 shadow-inner backdrop-blur-md">
+            <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
             Báo Cáo Trụ Cột Độc Quyền 2026 • Cập Nhật Tháng 10/2026
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-            Nhà Ở Xã Hội Biên Hòa 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua Từ A–Z
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 leading-[1.15] max-w-5xl">
+            Nhà Ở Xã Hội Biên Hòa 2026:{" "}
+            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-orange-400 bg-clip-text text-transparent">
+              Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A–Z
+            </span>
           </h1>
-          <p className="text-slate-300 text-base md:text-lg max-w-3xl leading-relaxed mb-6">
-            Báo cáo toàn diện nhất về thị trường nhà ở xã hội (NOXH) TP. Biên Hòa: Đánh giá chi tiết 5 dự án đang triển khai, khung giá gốc từ Sở Xây dựng, cập nhật điều kiện thu nhập theo Luật Nhà ở 2023, cẩm nang nộp hồ sơ chuẩn và cảnh báo 7 chiêu trò lừa đảo cần tránh.
+
+          <p className="text-slate-200 text-base md:text-lg max-w-4xl leading-relaxed mb-8 font-light">
+            Báo cáo toàn diện nhất về thị trường nhà ở xã hội (NOXH) TP. Biên Hòa: Đánh giá chi tiết 5 dự án đang triển khai, khung giá gốc từ Sở Xây dựng, cập nhật điều kiện thu nhập theo Luật Nhà ở mới nhất, cẩm nang nộp hồ sơ chuẩn và cảnh báo các chiêu trò lừa đảo cần tránh.
           </p>
 
-          {/* Social Proof & Rating Badge */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300 border-t border-slate-700/60 pt-4">
-            <div className="flex items-center gap-1.5 text-amber-400 font-semibold bg-white/10 px-3 py-1 rounded-full">
-              <span className="text-white">5,0</span>
+          {/* Social Proof & Rating Badge dạng Glassmorphism Card */}
+          <div className="flex flex-wrap items-center gap-3 md:gap-6 pt-2">
+            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm font-medium transition shadow-sm">
               <div className="flex text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="text-slate-300 font-normal text-xs">(186 đánh giá từ người mua thực tế)</span>
+              <span className="text-amber-300 font-bold">5.0</span>
+              <span className="text-slate-300 text-xs hidden sm:inline">(186 đánh giá thực tế)</span>
             </div>
-            <div className="flex items-center gap-2">
+
+            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm transition shadow-sm">
               <Clock className="w-4 h-4 text-emerald-400" />
-              <span>Thời gian đọc: <strong>15 phút</strong></span>
+              <span className="text-slate-200">Thời gian đọc: <strong className="text-white">15 phút</strong></span>
             </div>
-            <div className="flex items-center gap-2">
+
+            <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs md:text-sm transition shadow-sm">
               <Building2 className="w-4 h-4 text-sky-400" />
-              <span>Đơn vị phát triển tiêu biểu: <strong>Kim Oanh Land</strong></span>
+              <span className="text-slate-200">Đơn vị phát triển: <strong className="text-white font-semibold">Kim Oanh Land</strong></span>
+            </div>
+
+            <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 px-3.5 py-2 rounded-xl text-xs md:text-sm text-amber-300 font-semibold shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span>Pháp lý minh bạch 100%</span>
             </div>
           </div>
         </div>
