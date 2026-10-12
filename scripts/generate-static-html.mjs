@@ -819,6 +819,32 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "about": {
+      "@type": "Product",
+      "name": "Dự Án Nhà Ở Xã Hội Biên Hòa 2026",
+      "image": "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+      "description": "Tổng hợp các dự án nhà ở xã hội tiêu biểu tại TP. Biên Hòa chuẩn Singapore, giá từ 950 triệu/căn, hỗ trợ vay 5,4%/năm.",
+      "brand": { "@type": "Brand", "name": "Kim Oanh Group" },
+      "category": "Nhà Ở Xã Hội Biên Hòa",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "VND",
+        "lowPrice": "950000000",
+        "highPrice": "2000000000",
+        "offerCount": "1816",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${BASE_URL}/nha-o-xa-hoi-bien-hoa`
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "186",
+        "reviewCount": "186"
+      }
     }
   };
 
@@ -902,6 +928,32 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "about": {
+      "@type": "Product",
+      "name": "Dự Án Nhà Ở Xã Hội Nhơn Trạch 2026 (K-Home Avenue Phú Hội)",
+      "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230307/k-home-avenue/PC01-TT-copy_2_2-min.jpg",
+      "description": "Dự án nhà ở xã hội Nhơn Trạch K-Home Avenue mặt tiền đại lộ 25C kết nối Sân bay Long Thành, 1.104 căn NOXH chuẩn Singapore giá từ 750 triệu.",
+      "brand": { "@type": "Brand", "name": "Kim Oanh Group" },
+      "category": "Nhà Ở Xã Hội Nhơn Trạch",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "VND",
+        "lowPrice": "750000000",
+        "highPrice": "1470000000",
+        "offerCount": "1104",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${BASE_URL}/nha-o-xa-hoi-nhon-trach`
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "152",
+        "reviewCount": "152"
+      }
     }
   };
 
@@ -969,6 +1021,32 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
+    },
+    "about": {
+      "@type": "Product",
+      "name": "Dự Án Nhà Ở Xã Hội Trảng Bom 2026 (K-Home Midtown Kim Oanh)",
+      "image": "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230298/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.jpg",
+      "description": "Dự án nhà ở xã hội Trảng Bom K-Home Midtown (Khu dân cư và siêu thị Trảng Bom) 562 căn hộ chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
+      "brand": { "@type": "Brand", "name": "Kim Oanh Group" },
+      "category": "Nhà Ở Xã Hội Trảng Bom",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "VND",
+        "lowPrice": "750000000",
+        "highPrice": "1500000000",
+        "offerCount": "562",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${BASE_URL}/nha-o-xa-hoi-trang-bom`
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "168",
+        "reviewCount": "168"
+      }
     }
   };
 
