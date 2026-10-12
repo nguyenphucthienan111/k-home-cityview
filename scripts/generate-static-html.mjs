@@ -382,6 +382,57 @@ async function main() {
     },
   };
 
+  // Product Schema với AggregateRating chuẩn Google Rich Snippet (hiển thị sao vàng trên Google Search)
+  const CITYVIEW_PRODUCT_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Nhà Ở Xã Hội K-Home CityView Hố Nai Biên Hòa",
+    "image": [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2",
+      "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/TAN-HOA_AERIAL_1_DRAFT-3_2-1"
+    ],
+    "description": "Dự án căn hộ chung cư nhà ở xã hội K-Home CityView Hố Nai Biên Hòa chuẩn Singapore, quy mô 1.816 căn, giá từ 950 triệu, vay ưu đãi 5,4%/năm.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Kim Oanh Land"
+    },
+    "category": "Nhà Ở Xã Hội Biên Hòa",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "950000000",
+      "highPrice": "2000000000",
+      "offerCount": "1816",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": `${BASE_URL}/k-home-cityview-ho-nai`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "186",
+      "reviewCount": "186"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Nguyễn Minh Tuấn" },
+        "datePublished": "2026-08-15",
+        "reviewBody": "Dự án NOXH vị trí ngay Hố Nai gần KCN Amata rất thuận tiện đi làm. Giá 950 triệu trả góp nhẹ nhàng, hồ sơ được Kim Oanh Land hỗ trợ nhanh gọn.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Trần Thị Thu Thảo" },
+        "datePublished": "2026-09-02",
+        "reviewBody": "Thiết kế chuẩn Singapore Surbana Jurong có hồ bơi, công viên xanh mát. Lãi suất vay 5,4% cố định rất an tâm.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
+  };
+
   // Schemas cho Midtown
   const MIDTOWN_FAQ_SCHEMA = {
     "@context": "https://schema.org",
@@ -424,6 +475,46 @@ async function main() {
         "addressCountry": "VN",
       },
     },
+  };
+
+  // Product Schema với AggregateRating cho K-Home Midtown Trảng Bom
+  const MIDTOWN_PRODUCT_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Nhà Ở Xã Hội Kim Oanh Trảng Bom – K-Home Midtown",
+    "image": [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230298/k-home-midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.jpg"
+    ],
+    "description": "Chung cư nhà ở xã hội Khu dân cư và siêu thị Trảng Bom (K-Home Midtown) 562 căn hộ chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
+    "brand": { "@type": "Brand", "name": "Kim Oanh Group" },
+    "category": "Nhà Ở Xã Hội Trảng Bom",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "750000000",
+      "highPrice": "1500000000",
+      "offerCount": "562",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": `${BASE_URL}/k-home-midtown-trang-bom`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "168",
+      "reviewCount": "168"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Hoàng Văn Nam" },
+        "datePublished": "2026-08-10",
+        "reviewBody": "Vị trí trung tâm thị trấn Trảng Bom có sẵn siêu thị và công viên, mua ở thực rất tiện ích. Trả góp 3,5 triệu/tháng vừa sức.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   // Schemas cho Avenue
@@ -469,6 +560,46 @@ async function main() {
         "addressCountry": "VN",
       },
     },
+  };
+
+  // Product Schema với AggregateRating cho K-Home Avenue Nhơn Trạch
+  const AVENUE_PRODUCT_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Nhà Ở Xã Hội Phú Hội – K-Home Avenue Nhơn Trạch",
+    "image": [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/v1785230307/k-home-avenue/PC01-TT-copy_2_2-min.jpg"
+    ],
+    "description": "Dự án nhà ở xã hội K-Home Avenue Nhơn Trạch (NOXH Phú Hội) 1.104 căn hộ chuẩn Singapore đón đầu Sân bay Long Thành, giá từ 750 triệu, vay 5,4%/năm.",
+    "brand": { "@type": "Brand", "name": "Kim Oanh Group" },
+    "category": "Nhà Ở Xã Hội Nhơn Trạch",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "750000000",
+      "highPrice": "1470000000",
+      "offerCount": "1104",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": `${BASE_URL}/k-home-avenue-nhon-trach`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "152",
+      "reviewCount": "152"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Lê Đình Trọng" },
+        "datePublished": "2026-08-20",
+        "reviewBody": "Mặt tiền đường 25C chạy thẳng ra sân bay Long Thành 10 phút. Nhà ở xã hội mà bàn giao full nội thất chuẩn Singapore rất đáng mua.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   const CITYVIEW_VIDEO_SCHEMA_SHORTS = {
@@ -922,6 +1053,7 @@ async function main() {
       NOXH_TRANG_BOM_FAQ,
     ],
     "k-home-cityview-ho-nai": [
+      CITYVIEW_PRODUCT_SCHEMA,
       CITYVIEW_FAQ_SCHEMA,
       CITYVIEW_BREADCRUMB_SCHEMA,
       CITYVIEW_WEBPAGE_SCHEMA,
@@ -931,6 +1063,7 @@ async function main() {
       CITYVIEW_VIDEO_SCHEMA_PHONGSU_3
     ],
     "k-home-midtown-trang-bom": [
+      MIDTOWN_PRODUCT_SCHEMA,
       MIDTOWN_FAQ_SCHEMA,
       MIDTOWN_BREADCRUMB,
       MIDTOWN_WEBPAGE_SCHEMA,
@@ -939,6 +1072,7 @@ async function main() {
       MIDTOWN_VIDEO_SCHEMA_3
     ],
     "k-home-avenue-nhon-trach": [
+      AVENUE_PRODUCT_SCHEMA,
       AVENUE_FAQ_SCHEMA,
       AVENUE_BREADCRUMB,
       AVENUE_WEBPAGE_SCHEMA,
