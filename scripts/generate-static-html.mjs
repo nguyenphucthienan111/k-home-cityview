@@ -748,6 +748,48 @@ async function main() {
   };
 
   // Schemas cho SkyView
+  const SKYVIEW_PRODUCT_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "K-Home SkyView Trảng Bom",
+    "image": [
+      "https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2"
+    ],
+    "description": "Dự án căn hộ nhà ở xã hội K-Home SkyView Trảng Bom do Kim Oanh Group phát triển. Quy mô 1,08 ha, 358 căn hộ chuẩn Singapore đạt chứng chỉ xanh EDGE, giá từ 750 triệu/căn.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Kim Oanh Group"
+    },
+    "category": "Nhà Ở Xã Hội",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "VND",
+      "lowPrice": "750000000",
+      "highPrice": "1450000000",
+      "offerCount": "358",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": `${BASE_URL}/k-home-skyview-trang-bom`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "135",
+      "reviewCount": "135"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Nguyễn Hoàng Nam" },
+        "datePublished": "2026-08-22",
+        "reviewBody": "K-Home SkyView vị trí rất đẹp sát ngay KCN Bàu Xéo và QL1A Trảng Bom, mức giá từ 750 triệu và hỗ trợ gói vay ưu đãi 5,4%/năm rất phù hợp cho công nhân viên và gia đình trẻ.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
+  };
+
   const SKYVIEW_FAQ_SCHEMA = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1134,6 +1176,7 @@ async function main() {
       AVENUE_VIDEO_SCHEMA_2
     ],
     "k-home-skyview-trang-bom": [
+      SKYVIEW_PRODUCT_SCHEMA,
       SKYVIEW_FAQ_SCHEMA,
       SKYVIEW_BREADCRUMB,
       SKYVIEW_WEBPAGE_SCHEMA,
