@@ -79,11 +79,11 @@ export default function NoxhTrangBomPillarView({ onNavigate }: Props) {
               </h1>
 
               <p className="text-lg md:text-xl font-semibold text-slate-700 leading-snug">
-                Tổng hợp dự án trung tâm & KCN Bàu Xéo, bảng giá & hướng dẫn mua A–Z
+                Tổng hợp dự án NOXH Kim Oanh Trảng Bom, Khu dân cư & Siêu thị Trảng Bom A–Z
               </p>
 
               <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl font-normal">
-                Đánh giá chi tiết 2 dự án trọng điểm K-Home Midtown (13,97 ha) và K-Home SkyView Bàu Xéo, cập nhật giá bán từ 750 triệu và chính sách vay 5,4%/năm.
+                Báo cáo chuyên sâu dự án Nhà ở xã hội Kim Oanh Trảng Bom (Chung cư NOXH Khu dân cư và siêu thị Trảng Bom - K-Home Midtown 562 căn) & K-Home SkyView Bàu Xéo, giá từ 750 triệu, vay 5,4%/năm.
               </p>
 
               <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs md:text-sm text-slate-700">
@@ -284,19 +284,19 @@ export default function NoxhTrangBomPillarView({ onNavigate }: Props) {
                   Đại Đô Thị Trung Tâm 13,97 Ha
                 </span>
                 <h3 className="text-lg font-bold text-slate-900 mb-1">
-                  1. K-Home Midtown Trảng Bom (Kim Oanh Land)
+                  1. Nhà Ở Xã Hội Kim Oanh Trảng Bom – K-Home Midtown (Khu Dân Cư và Siêu Thị Trảng Bom)
                 </h3>
                 <p className="text-sm text-slate-600 mb-2">
-                  📍 <strong>Vị trí:</strong> Giao lộ 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, TT. Trảng Bom
+                  📍 <strong>Vị trí:</strong> Phân khu NOXH thuộc dự án Khu dân cư và siêu thị Trảng Bom (giao lộ 30/4 – Hùng Vương – Lý Nam Đế), TT. Trảng Bom, Đồng Nai
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-700 mb-3 bg-white p-2.5 rounded-lg border border-amber-200">
-                  <div><strong>Quy mô:</strong> 13,97 ha (542 căn NOXH)</div>
-                  <div><strong>Loại căn:</strong> Studio, 1PN+, 2PN</div>
-                  <div><strong>Giá bán:</strong> Từ 750 Triệu – 1,5 Tỷ</div>
-                  <div><strong>Tiêu chuẩn:</strong> Xanh EDGE (Singapore)</div>
+                  <div><strong>Chủ đầu tư:</strong> Cty TNHH MTV Địa ốc Cao su Đồng Nai (Kim Oanh Group)</div>
+                  <div><strong>Quy mô:</strong> Tháp 15 tầng (562 căn NOXH + 20 shophouse)</div>
+                  <div><strong>Diện tích:</strong> 36m² – 69m² (Studio, 1PN, 2PN)</div>
+                  <div><strong>Pháp lý:</strong> Văn bản công bố mở bán Sở Xây dựng Đồng Nai</div>
                 </div>
                 <p className="text-sm text-slate-700 mb-3">
-                  Tọa lạc tại "trái tim" thị trấn Trảng Bom, dự án sở hữu công viên trung tâm, hồ bơi ngoài trời, shophouse thương mại, trường mầm non và hệ thống an ninh 24/7.
+                  Tên thương mại là <strong>K-Home Midtown Trảng Bom</strong>. Dự án được phê duyệt và công bố chính thức theo thông báo mở bán của Sở Xây dựng Đồng Nai. Tọa lạc ngay trung tâm hành chính sầm uất với siêu thị, công viên cây xanh, shophouse thương mại, an ninh khép kín.
                 </p>
                 <button 
                   onClick={() => onNavigate("/k-home-midtown-trang-bom")}

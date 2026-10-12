@@ -82,17 +82,17 @@ export default function NoxhNhonTrachPillarView({ onNavigate }: Props) {
               </h1>
 
               <p className="text-lg md:text-xl font-semibold text-slate-700 leading-snug">
-                Tổng hợp dự án đón đầu Sân bay Long Thành, bảng giá & hướng dẫn mua A–Z
+                Tổng hợp dự án NOXH Phú Hội, căn hộ đón đầu Sân bay Long Thành & bảng giá A–Z
               </p>
 
               <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl font-normal">
-                Phân tích toàn cảnh các dự án NOXH tại Nhơn Trạch mặt tiền đường 25C, cập nhật giá bán từ 750 triệu, điều kiện xét duyệt và gói vay 5,4%/năm.
+                Báo cáo chuyên sâu dự án Nhà ở xã hội Phú Hội (K-Home Avenue Nhơn Trạch) mặt tiền đường 25C, cập nhật giá bán từ 750 triệu, điều kiện xét duyệt và gói vay ưu đãi 5,4%/năm.
               </p>
 
               <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs md:text-sm text-slate-700">
                 <span className="inline-flex items-center gap-2 font-medium">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
-                  1.022 căn NOXH chuẩn Singapore
+                  1.104 căn NOXH Phú Hội + 82 shophouse
                 </span>
                 <span className="inline-flex items-center gap-2 font-medium">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
@@ -287,19 +287,19 @@ export default function NoxhNhonTrachPillarView({ onNavigate }: Props) {
                   Dự Án Trọng Điểm Số 1
                 </span>
                 <h3 className="text-lg font-bold text-slate-900 mb-1">
-                  1. K-Home Avenue Nhơn Trạch (Kim Oanh Land)
+                  1. Nhà Ở Xã Hội Phú Hội – K-Home Avenue Nhơn Trạch (Kim Oanh Group)
                 </h3>
                 <p className="text-sm text-slate-600 mb-2">
-                  📍 <strong>Vị trí:</strong> Đường Nguyễn Ái Quốc (Tỉnh lộ 25C), xã Phước An / Long Thọ, Huyện Nhơn Trạch
+                  📍 <strong>Vị trí:</strong> Mặt tiền Tỉnh lộ 25C (Đại lộ Nguyễn Ái Quốc), khu dân cư Phú Hội / Phước An, Huyện Nhơn Trạch, Đồng Nai
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-700 mb-3 bg-white p-2.5 rounded-lg border border-amber-200">
                   <div><strong>Quy mô:</strong> 5,3 ha (4 block 12 tầng)</div>
-                  <div><strong>Số căn:</strong> 1.022 căn NOXH + 82 shophouse</div>
+                  <div><strong>Số căn:</strong> 1.104 căn NOXH + 82 shophouse</div>
                   <div><strong>Giá bán:</strong> Từ 750 Triệu/căn</div>
                   <div><strong>Tiêu chuẩn:</strong> Xanh EDGE (Singapore)</div>
                 </div>
                 <p className="text-sm text-slate-700 mb-3">
-                  Tọa lạc ngay mặt tiền đại lộ 25C rộng 100m kết nối thẳng vào cổng chính Sân bay Quốc tế Long Thành. Dự án có hồ bơi resort, công viên cây xanh, shophouse thương mại, trạm sạc xe điện thông minh.
+                  Thường được biết đến với tên gọi <strong>Nhà ở xã hội Phú Hội</strong> hoặc <strong>K-Home Avenue</strong>. Tọa lạc ngay mặt tiền đại lộ 25C rộng 100m kết nối thẳng vào cổng chính Sân bay Quốc tế Long Thành. Dự án có hồ bơi resort, công viên cây xanh, shophouse thương mại, trạm sạc xe điện thông minh.
                 </p>
                 <button 
                   onClick={() => onNavigate("/k-home-avenue-nhon-trach")}
@@ -340,14 +340,14 @@ export default function NoxhNhonTrachPillarView({ onNavigate }: Props) {
             </div>
           </section>
 
-          {/* ── SECTION 3: TIÊU ĐIỂM K-HOME AVENUE ── */}
+          {/* ── SECTION 3: TIÊU ĐIỂM K-HOME AVENUE / NOXH PHÚ HỘI ── */}
           <section id="k-home-avenue-nhon-trach-tieu-diem" className="mb-10 scroll-mt-20 bg-gradient-to-br from-amber-50 to-orange-50/50 p-6 rounded-2xl border border-amber-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Award className="w-6 h-6 text-amber-600" />
-              Tiêu điểm: K-Home Avenue Nhơn Trạch – Chuẩn Singapore Cửa Ngõ Sân Bay
+              Tiêu điểm: Nhà Ở Xã Hội Phú Hội (K-Home Avenue) – Chuẩn Singapore Cửa Ngõ Sân Bay
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Trong các dự án trên, <strong>K-Home Avenue Nhơn Trạch</strong> do Kim Oanh Land làm chủ đầu tư là dự án hiện đại và đồng bộ bậc nhất khu vực:
+              Trong các dự án trên, <strong>Nhà ở xã hội Phú Hội (K-Home Avenue Nhơn Trạch)</strong> do Tập đoàn Kim Oanh (Kim Oanh Group) làm chủ đầu tư và đối tác Singapore tư vấn thiết kế là dự án quy mô, hiện đại và đồng bộ bậc nhất huyện Nhơn Trạch:
             </p>
 
             <div className="mb-4 overflow-hidden rounded-xl border border-amber-200 shadow-sm">

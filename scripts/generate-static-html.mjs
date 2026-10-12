@@ -30,15 +30,15 @@ const STATIC_ROUTES = [
   },
   {
     dir: "nha-o-xa-hoi-nhon-trach",
-    title: "Nhà Ở Xã Hội Nhơn Trạch 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
-    description: "Tổng hợp chi tiết các dự án nhà ở xã hội Nhơn Trạch 2026 đón đầu Sân bay Long Thành: K-Home Avenue mặt tiền 25C, Phước An. Bảng giá từ 750 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
-    keywords: "nhà ở xã hội nhơn trạch, nhà ở xã hội nhơn trạch đồng nai, mua nhà ở xã hội nhơn trạch, chung cư nhơn trạch giá rẻ, noxh nhơn trạch, k-home avenue, k home avenue nhơn trạch, căn hộ giá rẻ nhơn trạch, nhà ở xã hội đường 25c, nhà ở xã hội gần sân bay long thành, điều kiện mua nhà ở xã hội nhơn trạch",
+    title: "Nhà Ở Xã Hội Nhơn Trạch (Phú Hội) 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
+    description: "Tổng hợp chi tiết các dự án nhà ở xã hội Nhơn Trạch (NOXH Phú Hội) 2026 đón đầu Sân bay Long Thành: K-Home Avenue Phú Hội mặt tiền 25C. Bảng giá từ 750 triệu, điều kiện xét duyệt & gói vay 5,4%/năm.",
+    keywords: "nhà ở xã hội nhơn trạch, nhà ở xã hội phú hội, noxh phú hội, nhà ở xã hội phú hội nhơn trạch, mua nhà ở xã hội nhơn trạch, mua nhà ở xã hội phú hội, k-home avenue, k home avenue nhơn trạch, nhà ở xã hội đường 25c, chung cư nhơn trạch giá rẻ, căn hộ giá rẻ nhơn trạch, noxh nhơn trạch, điều kiện mua nhà ở xã hội nhơn trạch",
   },
   {
     dir: "nha-o-xa-hoi-trang-bom",
-    title: "Nhà Ở Xã Hội Trảng Bom 2026: Tổng Hợp Dự Án, Bảng Giá & Hướng Dẫn Mua A-Z",
-    description: "Tổng hợp chi tiết các dự án nhà ở xã hội Trảng Bom 2026: K-Home Midtown 13,97 ha trung tâm thị trấn, K-Home SkyView KĐT Bàu Xéo. Bảng giá từ 750 triệu, điều kiện mua & gói vay 5,4%/năm.",
-    keywords: "nhà ở xã hội trảng bom, nhà ở xã hội trảng bom đồng nai, mua nhà ở xã hội trảng bom, chung cư trảng bom giá rẻ, noxh trảng bom, k-home midtown, k-home skyview, k home midtown trảng bom, nhà ở xã hội bàu xéo, điều kiện mua nhà ở xã hội trảng bom",
+    title: "Nhà Ở Xã Hội Trảng Bom (Kim Oanh) 2026: Dự Án K-Home Midtown, Bảng Giá & Hướng Dẫn Mua A-Z",
+    description: "Tổng hợp dự án nhà ở xã hội Trảng Bom 2026: Chung cư NOXH Khu dân cư và siêu thị Trảng Bom (K-Home Midtown Kim Oanh) 562 căn hộ từ 750 triệu, K-Home SkyView Bàu Xéo. Điều kiện mua & gói vay 5,4%/năm.",
+    keywords: "nhà ở xã hội trảng bom, nhà ở xã hội kim oanh trảng bom, mua nhà ở xã hội trảng bom, chung cư nhà ở xã hội trảng bom, khu dân cư và siêu thị trảng bom, noxh trảng bom, k-home midtown, k home midtown trảng bom, căn hộ giá rẻ trảng bom, nhà ở xã hội bàu xéo, k-home skyview, điều kiện mua nhà ở xã hội trảng bom",
   },
   {
     dir: "k-home-cityview-ho-nai",
