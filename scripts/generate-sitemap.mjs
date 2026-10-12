@@ -59,6 +59,16 @@ const PAGE_IMAGES = {
     { loc: "/k-home avenue/Pc07-Tien-ich-be-boi_2-min.jpg.webp",     title: "Hồ bơi tiện ích K-Home Avenue Nhơn Trạch Kim Oanh" },
     { loc: "/k-home avenue/Pc05-Tien-ich-khu-vui-choi_2-min.jpg.webp", title: "Khu vui chơi trẻ em K-Home Avenue Nhơn Trạch" },
   ],
+  "/nha-o-xa-hoi-nhon-trach": [
+    { loc: "/k-home avenue/PC01-TT-copy_2_2-min.jpg.webp",           title: "Nhà ở xã hội Phú Hội Nhơn Trạch 2026 K-Home Avenue" },
+    { loc: "/k-home avenue/Pc09-Loi-vao-shophouse_2-min.jpg.webp",   title: "Shophouse khối đế NOXH Phú Hội Nhơn Trạch" },
+    { loc: "/k-home avenue/Pc07-Tien-ich-be-boi_2-min.jpg.webp",     title: "Hồ bơi nội khu nhà ở xã hội Nhơn Trạch" },
+  ],
+  "/nha-o-xa-hoi-trang-bom": [
+    { loc: "/k-home midtown/Du-an-K-Home-Midtown-3d-birdview-toan-canh-dem-2048x1150.webp", title: "Nhà ở xã hội Kim Oanh Trảng Bom K-Home Midtown" },
+    { loc: "/k-home midtown/Du-an-K-Home-Midtown-3d-ho-boi-view-2-2048x1150.webp",          title: "Hồ bơi dự án Khu dân cư và siêu thị Trảng Bom" },
+    { loc: "/k-home midtown/Du-an-K-Home-Midtown-3d-cong-vien-thap-tang-2048x1150.webp",    title: "Công viên trung tâm K-Home Midtown Trảng Bom" },
+  ],
   "/k-home-skyview-trang-bom": [
     { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373118/k-home-skyview/noxh-skyview.jpg", title: "Phối cảnh dự án Nhà Ở Xã Hội K-Home SkyView Bàu Xéo Trảng Bom" },
     { loc: "https://res.cloudinary.com/dthv0nsq/image/upload/v1789373119/k-home-skyview/noxh-skyview01.jpg", title: "Thiết kế căn hộ K-Home SkyView Trảng Bom Kim Oanh" },
@@ -74,6 +84,8 @@ const PAGE_IMAGES = {
 const STATIC_URLS = [
   { loc: "/",                         priority: "0.6",  changefreq: "daily",   lastmod: TODAY },
   { loc: "/nha-o-xa-hoi-bien-hoa",     priority: "1.0",  changefreq: "daily",   lastmod: TODAY }, // ⭐ PILLAR PAGE - Target Keyword
+  { loc: "/nha-o-xa-hoi-nhon-trach",   priority: "1.0",  changefreq: "daily",   lastmod: TODAY }, // ⭐ PILLAR PAGE - Nhơn Trạch Phú Hội
+  { loc: "/nha-o-xa-hoi-trang-bom",    priority: "1.0",  changefreq: "daily",   lastmod: TODAY }, // ⭐ PILLAR PAGE - Trảng Bom Kim Oanh
   { loc: "/san-pham",                 priority: "0.8",  changefreq: "weekly",  lastmod: TODAY },
   { loc: "/tinh-tra-gop",             priority: "0.85", changefreq: "weekly",  lastmod: TODAY },
   { loc: "/k-home-cityview-ho-nai",   priority: "1.0",  changefreq: "weekly",  lastmod: TODAY }, // ⭐ SAME AS HOMEPAGE — Featured Project
