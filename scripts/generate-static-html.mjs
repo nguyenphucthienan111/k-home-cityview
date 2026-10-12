@@ -819,14 +819,6 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "186",
-      "reviewCount": "186"
     }
   };
 
@@ -910,14 +902,6 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "152",
-      "reviewCount": "152"
     }
   };
 
@@ -985,14 +969,6 @@ async function main() {
       "@type": "Organization",
       "name": "Kim Oanh Group",
       "logo": { "@type": "ImageObject", "url": `${BASE_URL}/android-chrome-512x512.png` }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "168",
-      "reviewCount": "168"
     }
   };
 
