@@ -1983,6 +1983,159 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* =========================================================
+          2B. HỆ SINH THÁI ĐÔ THỊ THƯƠNG MẠI & ĐẤT NỀN KIM OANH TẠI ĐỒNG NAI
+          ========================================================= */}
+      <section id="du-an-do-thi-kim-oanh" className="py-20 bg-white border-b border-slate-100 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div className="space-y-3">
+              <span className="text-xs font-bold text-emerald-700 tracking-widest uppercase bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+                <Building className="w-3.5 h-3.5 text-emerald-600" /> Hệ sinh thái đô thị thương mại
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 tracking-tight">
+                Dự Án Đô Thị & Đất Nền Kim Oanh Đồng Nai
+              </h2>
+              <p className="text-slate-500 text-sm max-w-2xl leading-relaxed">
+                Bên cạnh chuỗi nhà ở xã hội K-Home, Kim Oanh Group còn phát triển các đại đô thị thương mại quy mô lớn với pháp lý hoàn chỉnh, sổ đỏ từng nền tại Đồng Nai.
+              </p>
+              <div className="w-16 h-1 bg-amber-500 rounded-full" />
+            </div>
+            
+            <div>
+              <a
+                href="https://kimoanhdongnai.com.vn"
+                target="_blank"
+                rel="noopener"
+                title="Cổng thông tin tổng hợp dự án Kim Oanh Đồng Nai"
+                className="inline-flex items-center gap-2 text-slate-700 hover:text-amber-600 font-bold text-sm bg-slate-50 hover:bg-amber-50 px-5 py-2.5 rounded-full border border-slate-200 hover:border-amber-300 transition-all shadow-xs"
+              >
+                <span>Xem Cổng Thông Tin Kim Oanh Đồng Nai</span>
+                <ArrowUpRight className="w-4 h-4 text-amber-600" />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* Project 1: The Link City */}
+            <div className="bg-slate-50/80 rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-400/40 transition-all duration-300 flex flex-col group">
+              <div className="relative aspect-[16/9] overflow-hidden bg-slate-200">
+                <img
+                  src="https://res.cloudinary.com/dqy4lfmcf/image/upload/f_auto,q_auto:good,w_1000,c_limit/thelinkcity/overview/1.webp"
+                  alt="Dự án The Link City Dầu Giây Thống Nhất Đồng Nai – Kim Oanh Group"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width="700"
+                  height="394"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                  Đất Nền · Nhà Phố · Shophouse Sổ Sẵn
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-1.5 text-xs text-amber-300 font-medium mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>Ngã tư QL1A & QL20, TT. Dầu Giây, H. Thống Nhất, Đồng Nai</span>
+                  </div>
+                  <h3 className="text-2xl font-bold font-display text-white">The Link City</h3>
+                </div>
+              </div>
+
+              <div className="p-7 flex flex-col flex-grow justify-between space-y-6">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Khu đô thị A1-C1 Đô thị Dầu Giây tọa lạc ngay giao lộ huyết mạch Quốc lộ 1A & Quốc lộ 20. Dự án có hạ tầng hoàn thiện 100%, sổ hồng riêng từng nền, công viên trung tâm và hơn 50 tiện ích nội khu đẳng cấp.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200/80">
+                    <span className="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">Quy mô dự án</span>
+                    <span className="font-extrabold text-slate-800 text-sm mt-0.5 block">~21 ha · 1.397 sản phẩm</span>
+                  </div>
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200/80">
+                    <span className="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">Pháp lý dự án</span>
+                    <span className="font-extrabold text-emerald-700 text-sm mt-0.5 block">Sổ hồng từng nền</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-xs text-slate-500 font-medium">Chủ đầu tư: <strong>Kim Oanh Group</strong></span>
+                  <a
+                    href="https://kimoanhdongnai.com.vn/the-link-city"
+                    target="_blank"
+                    rel="noopener"
+                    title="Xem chi tiết dự án The Link City Dầu Giây tại Kim Oanh Đồng Nai"
+                    className="inline-flex items-center gap-1.5 text-amber-700 hover:text-amber-800 font-bold text-sm group-hover:translate-x-1 transition-all"
+                  >
+                    <span>Khám phá The Link City</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2: Mega City 2 */}
+            <div className="bg-slate-50/80 rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-400/40 transition-all duration-300 flex flex-col group">
+              <div className="relative aspect-[16/9] overflow-hidden bg-slate-200">
+                <img
+                  src="https://res.cloudinary.com/dqy4lfmcf/image/upload/f_auto,q_auto:good,w_1000,c_limit/megacity2/overview/1.jpg"
+                  alt="Dự án Mega City 2 Phú Hội Nhơn Trạch Đồng Nai – Kim Oanh Group"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width="700"
+                  height="394"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                  Đại Đô Thị Liền Kề Sân Bay Long Thành
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-1.5 text-xs text-amber-300 font-medium mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>Mặt tiền đường 25C, Xã Phú Hội, H. Nhơn Trạch, Đồng Nai</span>
+                  </div>
+                  <h3 className="text-2xl font-bold font-display text-white">Mega City 2</h3>
+                </div>
+              </div>
+
+              <div className="p-7 flex flex-col flex-grow justify-between space-y-6">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Đại đô thị sinh thái quy mô 84 ha tọa lạc ngay trung tâm Nhơn Trạch trên trục đại lộ huyết mạch 25C chạy thẳng ra Sân bay Quốc tế Long Thành. Quy hoạch đồng bộ với nhà phố, biệt thự vườn và trung tâm thương mại.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200/80">
+                    <span className="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">Quy mô đại đô thị</span>
+                    <span className="font-extrabold text-slate-800 text-sm mt-0.5 block">~84 ha · 3.160 sản phẩm</span>
+                  </div>
+                  <div className="bg-white p-3 rounded-2xl border border-slate-200/80">
+                    <span className="text-[10px] text-slate-400 block uppercase font-bold tracking-wider">Vị trí kết nối</span>
+                    <span className="font-extrabold text-blue-700 text-sm mt-0.5 block">Trực diện Sân Bay Long Thành</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-xs text-slate-500 font-medium">Chủ đầu tư: <strong>Kim Oanh Group</strong></span>
+                  <a
+                    href="https://kimoanhdongnai.com.vn/mega-city-2"
+                    target="_blank"
+                    rel="noopener"
+                    title="Xem chi tiết dự án Mega City 2 Nhơn Trạch tại Kim Oanh Đồng Nai"
+                    className="inline-flex items-center gap-1.5 text-amber-700 hover:text-amber-800 font-bold text-sm group-hover:translate-x-1 transition-all"
+                  >
+                    <span>Khám phá Mega City 2</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================================
           3. VỊ TRÍ KẾT NỐI — CÁC DỰ ÁN K-HOME
           ========================================================= */}
       <section id="vi-tri" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 cv-auto">

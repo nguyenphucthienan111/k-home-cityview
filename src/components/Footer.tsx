@@ -227,6 +227,29 @@ export default function Footer() {
                     <span>Xem bảng giá tất cả loại căn hộ K-Home</span>
                   </a>
                 </li>
+                <li className="pt-2 border-t border-slate-200/60">
+                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Khu đô thị Kim Oanh Group</span>
+                </li>
+                <li>
+                  <a href="https://kimoanhdongnai.com.vn/the-link-city"
+                    target="_blank"
+                    rel="noopener"
+                    title="Dự án The Link City Dầu Giây Đồng Nai – Đất nền sổ hồng riêng Kim Oanh"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1 text-slate-600 font-medium">
+                    <ChevronRight className="w-3 h-3 shrink-0 text-emerald-600" />
+                    <span>The Link City Dầu Giây (Sổ đỏ từng nền) ↗</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://kimoanhdongnai.com.vn/mega-city-2"
+                    target="_blank"
+                    rel="noopener"
+                    title="Dự án Mega City 2 Phú Hội Nhơn Trạch – Đại đô thị 84ha Kim Oanh"
+                    className="hover:text-amber-600 transition-colors flex items-center gap-1 text-slate-600 font-medium">
+                    <ChevronRight className="w-3 h-3 shrink-0 text-blue-600" />
+                    <span>Mega City 2 Nhơn Trạch (Đại đô thị 84ha) ↗</span>
+                  </a>
+                </li>
               </ul>
             </div>
 
