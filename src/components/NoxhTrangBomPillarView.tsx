@@ -274,7 +274,7 @@ export default function NoxhTrangBomPillarView({ onNavigate }: Props) {
               Tổng hợp 2 dự án nhà ở xã hội quy mô lớn nhất Trảng Bom
             </h2>
             <p className="text-slate-700 leading-relaxed mb-4">
-              Tại Trảng Bom hiện nay, Kim Oanh Land là đơn vị tiên phong phát triển 2 dự án nhà ở xã hội kiểu mẫu chuẩn quốc tế:
+              Tại huyện Trảng Bom năm 2026, Kim Oanh Land là đơn vị chủ lực phát triển <strong>2 dự án nhà ở xã hội kiểu mẫu chuẩn Singapore</strong>: <strong>1. K-Home Midtown Trảng Bom</strong> (dự án NOXH Khu dân cư và siêu thị Trảng Bom, quy mô 13,97 ha, 542 căn hộ + 20 shophouse tại ngã tư 30/4 – Hùng Vương, giá từ 750 triệu) và <strong>2. K-Home SkyView Bàu Xéo</strong> (quy mô 1,08 ha, 358 căn hộ nằm trong KĐT Bàu Xéo, mặt tiền QL1A trực diện KCN Bàu Xéo, giá từ 750 triệu). Cả 2 dự án đều hỗ trợ gói vay ưu đãi 5,4%/năm trong 25 năm.
             </p>
 
             <div className="space-y-4 mb-6">
@@ -805,6 +805,20 @@ export default function NoxhTrangBomPillarView({ onNavigate }: Props) {
                 <div>
                   <div className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">K-Home Avenue Nhơn Trạch</div>
                   <div className="text-[11px] text-slate-500">1.022 căn • Giá từ 750 Triệu</div>
+                </div>
+              </div>
+              <div 
+                onClick={() => onNavigate("/k-home-skyview-trang-bom")}
+                className="group cursor-pointer flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition"
+              >
+                <img 
+                  src="https://res.cloudinary.com/dthv0nsq/image/upload/w_1200,q_auto:good,f_auto/k-home-cityview/V34_TAN-HOA_EXT_FACADE_FINAL_2" 
+                  alt="K-Home SkyView Bàu Xéo Trảng Bom" 
+                  className="w-14 h-14 object-cover rounded-lg border border-slate-200"
+                />
+                <div>
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-amber-600 transition">K-Home SkyView Bàu Xéo</div>
+                  <div className="text-[11px] text-slate-500">358 căn • Giá từ 750 Triệu</div>
                 </div>
               </div>
             </div>
