@@ -378,9 +378,9 @@ const PROJECT_SEO: Record<string, {
   },
   "k-home-avenue-nhon-trach": {
     titleTag: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
-    metaDesc: "Dự án Nhà Ở Xã Hội Nhơn Trạch (K-Home Avenue Kim Oanh) mặt tiền đường 25C gần Sân bay Long Thành, 1.022 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
+    metaDesc: "K-Home Avenue Nhơn Trạch (NOXH Phú Hội) Kim Oanh Land quy mô 5,3ha gồm 4 block 12 tầng, 1.104 căn hộ chuẩn Singapore mặt tiền đường 25C gần Sân bay Long Thành. Giá từ 750 triệu, vay 5,4%/năm.",
     h1Tag: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành",
-    leadDesc: "Dự án nhà ở xã hội Nhơn Trạch mặt tiền đường 25C kết nối Sân bay Long Thành, 1.022 căn hộ chuẩn Singapore. Hỗ trợ tư vấn điều kiện mua nhà ở xã hội Nhơn Trạch và gói vay ưu đãi 5,4%/năm.",
+    leadDesc: "K-Home Avenue Nhơn Trạch (dự án nhà ở xã hội Phú Hội) do Kim Oanh Land phát triển có quy mô 5,3 ha gồm 4 block cao 12 tầng, cung cấp 1.104 sản phẩm (1.022 căn hộ NOXH chuẩn Singapore + 82 shophouse) trên mặt tiền đại lộ 25C (đường Nguyễn Ái Quốc), xã Phú Hội, Nhơn Trạch, Đồng Nai. Giá bán từ 750 triệu/căn (Studio 35m², 1PN+ 46m², 2PN 68m²), hỗ trợ vay 5,4%/năm trong 25 năm, kết nối chỉ 10 phút ra Sân bay Quốc tế Long Thành.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -1034,6 +1034,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "faq", label: "FAQ" },
   ] : slug === "k-home-avenue-nhon-trach" ? [
     { id: "tong-quan", label: "Tổng Quan" },
+    { id: "vi-tri", label: "Vị Trí" },
+    { id: "gia-ban", label: "Giá Bán" },
     { id: "mat-bang", label: "Mặt Bằng" },
     { id: "tien-ich", label: "Tiện Ích" },
     { id: "nha-mau", label: "Nhà Mẫu" },
@@ -1098,7 +1100,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       : slug === "k-home-midtown-trang-bom"
       ? ["tong-quan", "mat-bang", "nha-mau", "tien-do-trien-khai", "tien-ich", "tiem-nang", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "midtown-highlights", "midtown-edge", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : slug === "k-home-avenue-nhon-trach"
-      ? ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "avenue-highlights", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "nha-mau", "tien-do-trien-khai", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "avenue-highlights", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"];
     
     const trackSection = () => {
@@ -2541,6 +2543,42 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Khoảng cách kết nối — chỉ Avenue Nhơn Trạch ── */}
+      {slug === "k-home-avenue-nhon-trach" && (
+        <section id="vi-tri" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+              <Compass className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí Dự Án K-Home Avenue Nhơn Trạch – Mặt Tiền Đại Lộ 25C</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Dự án nhà ở xã hội K-Home Avenue (NOXH Phú Hội) tọa lạc mặt tiền đường Nguyễn Ái Quốc (25C), Nhơn Trạch, Đồng Nai</p>
+            </div>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Vị trí dự án nhà ở xã hội <strong>K-Home Avenue Nhơn Trạch</strong> (NOXH Phú Hội) tọa lạc ngay mặt tiền đại lộ 25C (đường Nguyễn Ái Quốc) rộng 100m – trục xương sống kết nối trực tiếp cổng số 1 Sân bay Quốc tế Long Thành. Liền kề cụm 6 KCN Nhơn Trạch, đường Vành Đai 3 TP.HCM (cầu Nhơn Trạch) và cao tốc Bến Lức – Long Thành, dự án sở hữu khả năng kết nối liên vùng vượt trội về TP. Thủ Đức (20–25 phút) và Sân bay Long Thành (chỉ 10 phút).
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { time: "5 phút", places: "Cụm KCN Nhơn Trạch 1-6 · Chợ Phú Hội · TTHC Nhơn Trạch", color: "bg-emerald-600" },
+              { time: "10 phút", places: "Sân bay Quốc tế Long Thành qua đại lộ 25C", color: "bg-amber-500" },
+              { time: "20-25 phút", places: "TP. Thủ Đức & TP.HCM qua Cầu Nhơn Trạch (Vành Đai 3)", color: "bg-blue-600" },
+              { time: "30 phút", places: "TP. Biên Hòa · Cảng Quốc tế Phước An · Cát Lái", color: "bg-indigo-600" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow space-y-2">
+                <span className={`inline-block ${item.color} text-white text-xs font-bold px-3 py-1 rounded-full`}>{item.time}</span>
+                <p className="text-sm text-slate-700 font-medium leading-relaxed">{item.places}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5">
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Nhờ vị trí vàng mặt tiền trục 25C đón đầu cả Sân bay Long Thành và Khu thương mại tự do 1.000 ha, <strong>K-Home Avenue Nhơn Trạch</strong> là giải pháp an cư hàng đầu cho hàng chục ngàn cán bộ, kỹ sư công nghiệp, nhân sự vận hành sân bay và phi hành đoàn tìm kiếm căn hộ chất lượng cao, pháp lý sổ hồng sở hữu lâu dài.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* ── Giá Bán & Thanh Toán — chỉ CityView ── */}
       {slug === "k-home-cityview-ho-nai" && (
         <section id="gia-ban" className="space-y-6">
@@ -2669,17 +2707,139 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Giá Bán & Thanh Toán — chỉ Avenue Nhơn Trạch ── */}
+      {slug === "k-home-avenue-nhon-trach" && (
+        <section id="gia-ban" className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+              <Building2 className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Giá Bán Căn Hộ K-Home Avenue Nhơn Trạch 2026</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Bảng giá dự kiến nhà ở xã hội Phú Hội (K-Home Avenue Nhơn Trạch) – cập nhật mới nhất từ chủ đầu tư Kim Oanh Land</p>
+            </div>
+          </div>
+
+          {/* Intro text SEO Snippet Trap */}
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Hiện tại, <strong>giá bán căn hộ K-Home Avenue Nhơn Trạch</strong> (nhà ở xã hội Phú Hội) có mức giá dự kiến chỉ từ <strong>750 triệu – 1,47 tỷ/căn</strong> (tương đương 18–21 triệu/m² đã bao gồm VAT và nội thất hoàn thiện cơ bản). Với gói vay ưu đãi từ Ngân hàng Chính sách Xã hội lãi suất cố định <strong>5,4%/năm</strong> trong suốt 25 năm, khách hàng chỉ cần chuẩn bị <strong>vốn tự có 150 – 250 triệu đồng (20–25%)</strong> và trả góp từ <strong>2,5 – 4,5 triệu đồng/tháng</strong> (thấp hơn tiền thuê trọ tại Nhơn Trạch).
+          </p>
+
+          {/* 4 loại căn */}
+          <div className="space-y-3">
+            <h3 className="text-base font-bold text-slate-700">Bảng giá các loại căn hộ NOXH K-Home Avenue Nhơn Trạch</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                {
+                  type: "Căn Hộ Studio",
+                  area: "37,7m²",
+                  price: "Từ 750 triệu/căn",
+                  note: "Tối ưu cho người độc thân, chuyên gia trẻ, nhân viên sân bay",
+                  features: ["Không gian đa năng mở · 1 ban công thoáng mát", "1 WC · Bếp · Bàn giao full nội thất cơ bản"],
+                  tag: "Vốn chỉ từ 150tr",
+                  tagColor: "bg-emerald-600",
+                },
+                {
+                  type: "Căn 1 Phòng Ngủ +",
+                  area: "46,6m²",
+                  price: "Từ 990 triệu/căn",
+                  note: "Lý tưởng cho cặp đôi mới cưới, có phòng làm việc/phòng trẻ nhỏ",
+                  features: ["1 phòng ngủ lớn + 1 không gian mở linh hoạt", "1 WC · Ban công · Bếp + phòng khách liên hoàn"],
+                  tag: "Bán chạy nhất",
+                  tagColor: "bg-amber-500",
+                },
+                {
+                  type: "Căn 2 Phòng Ngủ Nhỏ (2PN-A)",
+                  area: "65,7m²",
+                  price: "Từ 1,23 tỷ/căn",
+                  note: "Gia đình trẻ 3-4 thành viên, tối ưu diện tích và tiện nghi",
+                  features: ["2 phòng ngủ tách biệt đầy đủ ánh sáng", "2 WC tiện lợi · Ban công riêng · Bếp rộng"],
+                  tag: "Chuẩn gia đình",
+                  tagColor: "bg-blue-600",
+                },
+                {
+                  type: "Căn 2 Phòng Ngủ Lớn (2PN-B)",
+                  area: "69,5m²",
+                  price: "Từ 1,40 tỷ/căn",
+                  note: "Căn góc rộng rãi, tầm view thông thoáng hướng sân bay Long Thành",
+                  features: ["2 phòng ngủ lớn (1 Master WC riêng)", "2 WC · 2 ban công · Phòng khách đại gia đình"],
+                  tag: "View đẹp nhất",
+                  tagColor: "bg-purple-600",
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white border border-emerald-100 rounded-2xl p-5 hover:border-emerald-300 hover:shadow-md transition-all space-y-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`text-[10px] font-bold text-white px-2 py-0.5 rounded-full ${item.tagColor}`}>{item.tag}</span>
+                      </div>
+                      <span className="block font-bold text-slate-800 text-sm">{item.type}</span>
+                      <span className="block text-xs text-slate-400 mt-0.5">Diện tích tim tường: {item.area}</span>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-emerald-600 text-right">{item.price}</span>
+                  </div>
+                  <p className="text-xs text-slate-500 italic">{item.note}</p>
+                  <ul className="space-y-1">
+                    {item.features.map((f, fi) => (
+                      <li key={fi} className="flex items-center gap-1.5 text-xs text-slate-600">
+                        <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hỗ trợ vay vốn Avenue */}
+          <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5 space-y-4">
+            <div>
+              <p className="text-sm font-bold text-slate-800 mb-0.5">Chính sách hỗ trợ vay vốn mua NOXH K-Home Avenue Nhơn Trạch</p>
+              <p className="text-xs text-slate-500">Ngân hàng Chính sách Xã hội giải ngân tối đa 75–80% giá trị hợp đồng mua bán</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { label: "Vốn tự có ban đầu", value: "20–25%", sub: "khoảng 150–280 triệu" },
+                { label: "Hạn mức vay vốn", value: "75–80%", sub: "giải ngân theo tiến độ" },
+                { label: "Lãi suất ưu đãi", value: "5,4%/năm", sub: "cố định theo gói NOXH" },
+                { label: "Thời hạn vay", value: "25 năm", sub: "góp từ 2,5–4,5 tr/tháng" },
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-xl p-3 text-center border border-emerald-100 shadow-sm">
+                  <span className="block text-xl font-bold text-emerald-600">{s.value}</span>
+                  <span className="block text-xs font-semibold text-slate-700 mt-0.5">{s.label}</span>
+                  <span className="block text-[10px] text-slate-400 mt-0.5">{s.sub}</span>
+                </div>
+              ))}
+            </div>
+            <div className="bg-white border border-emerald-100 rounded-xl p-4 space-y-1">
+              <p className="text-xs font-bold text-slate-700">Điều kiện xét duyệt mua K-Home Avenue Nhơn Trạch:</p>
+              <ul className="space-y-1 text-xs text-slate-600">
+                <li>• Chưa sở hữu nhà ở hoặc đất ở tại tỉnh Đồng Nai & chưa từng mua nhà ở xã hội</li>
+                <li>• Thu nhập cá nhân dưới 25 triệu/tháng (độc thân) hoặc dưới 50 triệu/tháng (vợ chồng)</li>
+                <li>• Có đăng ký thường trú hoặc tạm trú tại Đồng Nai (không bắt buộc hộ khẩu theo Luật Nhà ở mới)</li>
+                <li>• Ưu tiên người lao động làm việc tại các KCN Nhơn Trạch, Long Thành và nhân sự ngành hàng không</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Mặt bằng tầng ── */}
       {seo?.floorPlanImages && seo.floorPlanImages.length > 0 && (
         <section id="mat-bang" className="space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">
-            {slug === "k-home-cityview-ho-nai" ? "Mặt Bằng Căn Hộ K-Home CityView Hố Nai Biên Hòa" : "Mặt Bằng & Layout Căn Hộ"}
+            {slug === "k-home-cityview-ho-nai"
+              ? "Mặt Bằng Căn Hộ K-Home CityView Hố Nai Biên Hòa"
+              : slug === "k-home-avenue-nhon-trach"
+              ? "Mặt Bằng Căn Hộ K-Home Avenue Nhơn Trạch Chuẩn Singapore"
+              : "Mặt Bằng & Layout Căn Hộ"}
           </h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
               ? "K-Home Midtown có 1 block cao 15 tầng, 2 tháp A và B. Tầng 1 tập trung toàn bộ tiện ích nội khu, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn, tầng 4–15 là mặt bằng căn hộ điển hình với Studio, 1PN+, và 2PN."
               : slug === "k-home-avenue-nhon-trach"
-              ? "K-Home Avenue có 4 block cao 12 tầng. Tầng 1 tập trung tiện ích nội khu đầy đủ, tầng 2–3 bổ sung tiện ích, tầng 4–12 là mặt bằng căn hộ điển hình với Studio, 1PN+, 2PN-A và 2PN-B."
+              ? "Mặt bằng căn hộ K-Home Avenue Nhơn Trạch (NOXH Phú Hội) được quy hoạch gồm 4 block cao 12 tầng, cung cấp 1.022 căn hộ chuẩn Singapore và 82 căn shophouse khối đế. Dự án thiết kế 4 layout chính: Căn Studio (37,7m²), Căn 1PN+ (46,6m²), Căn 2PN-A (65,7m²) và Căn 2PN-B (69,5m²). Tầng 1 tập trung tiện ích nội khu và thương mại, tầng 2–3 là không gian sinh hoạt cộng đồng & tiện ích, tầng 4–12 là căn hộ ở thoáng mát 100% đón sáng tự nhiên."
               : slug === "k-home-skyview-trang-bom"
               ? "K-Home SkyView Bàu Xéo gồm các block cao từ 9 đến 12 tầng. Khối đế shophouse thương mại và tiện ích, các tầng trên là mặt bằng căn hộ tối ưu với Studio (37m²), 1PN+ (45,8m²) và 2PN (65,3m²)."
               : "Tại K-Home CityView Biên Hòa, chủ đầu tư Kim Oanh Land thiết kế nhà ở xã hội với diện tích đa dạng từ 47,3m² đến 84,4m² bao gồm 4 loại căn hộ chính: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2PN 2WC (70,4m²) và 3PN 2WC (84,4m²). Dự án có 4 block cao 22 tầng, tầng 1–2 bố trí tiện ích và shophouse thương mại, tầng 3 là vườn treo trên cao, tầng 4–22 là khu căn hộ ở thoáng mát đón ánh sáng tự nhiên."
@@ -2733,13 +2893,17 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {seo?.amenityImages && seo.amenityImages.length > 0 && (
         <section id="tien-ich" className="space-y-5">
           <h2 className="text-2xl font-display font-bold text-slate-800">
-            {slug === "k-home-cityview-ho-nai" ? "Tiện Ích Căn Hộ K-Home CityView Hố Nai Chuẩn Singapore" : "Tiện Ích Nội Khu"}
+            {slug === "k-home-cityview-ho-nai"
+              ? "Tiện Ích Căn Hộ K-Home CityView Hố Nai Chuẩn Singapore"
+              : slug === "k-home-avenue-nhon-trach"
+              ? "Tiện Ích Dự Án K-Home Avenue Nhơn Trạch Chuẩn Singapore"
+              : "Tiện Ích Nội Khu"}
           </h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
               ? "Hệ thống tiện ích K-Home Midtown được quy hoạch trên quỹ đất 13,97 ha, đáp ứng nhu cầu sinh hoạt hàng ngày của cư dân ngay trong khuôn viên dự án."
               : slug === "k-home-avenue-nhon-trach"
-              ? "Hệ tiện ích đa lớp K-Home Avenue – từ hồ bơi, sân chơi, minimart, BBQ bên trong đến TTTM, bệnh viện, trường liên cấp, sân bay Long Thành ngay bên ngoài."
+              ? "Hệ thống tiện ích dự án K-Home Avenue Nhơn Trạch được thiết kế theo tiêu chuẩn resort Singapore đa lớp: hồ bơi phong cách nghỉ dưỡng, công viên cây xanh, khu vui chơi trẻ em an toàn, vườn BBQ dã ngoại, khu thể dục ngoài trời, trạm sạc xe điện thông minh và 82 căn shophouse khối đế phục vụ mua sắm – ẩm thực 24/7. Bên ngoài là hệ thống trường liên cấp, trung tâm y tế, chợ Phú Hội và kết nối trực tiếp chỉ 10 phút đến Sân bay Quốc tế Long Thành."
               : slug === "k-home-skyview-trang-bom"
               ? "Hệ tiện ích hoàn chỉnh K-Home SkyView Bàu Xéo – hồ bơi người lớn & trẻ em, sân chơi thiếu nhi, công viên dạo bộ, khu thể thao và shophouse thương mại ngay tầng trệt."
               : "Hệ thống tiện ích căn hộ K-Home CityView Hố Nai được xây dựng theo mô hình đô thị khép kín chuẩn Singapore: hồ bơi người lớn và trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu thể dục ngoài trời, vườn nướng BBQ, vườn treo sinh thái tầng 3 và khối đế shophouse thương mại café, minimart phục vụ trọn vẹn nhu cầu cư dân."

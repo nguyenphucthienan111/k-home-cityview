@@ -95,7 +95,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-avenue-nhon-trach",
     title: "Nhà Ở Xã Hội Nhơn Trạch – K-Home Avenue Gần Sân Bay Long Thành | Bảng Giá 2026",
-    description: "Dự án Nhà Ở Xã Hội Nhơn Trạch (K-Home Avenue Kim Oanh) – chung cư Nhơn Trạch giá rẻ mặt tiền đường 25C gần Sân bay Long Thành, 1.022 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm.",
+    description: "K-Home Avenue Nhơn Trạch (NOXH Phú Hội) Kim Oanh Land quy mô 5,3ha gồm 4 block 12 tầng, 1.104 căn hộ chuẩn Singapore mặt tiền đường 25C gần Sân bay Long Thành. Giá từ 750 triệu, vay 5,4%/năm.",
     keywords: "chung cư nhơn trạch giá rẻ, chung cư nhơn trạch, nhà ở xã hội nhơn trạch, nhà ở xã hội nhơn trạch đồng nai, noxh nhơn trạch, căn hộ giá rẻ nhơn trạch, nhà ở xã hội đường 25c, nhà ở xã hội gần sân bay long thành, nhà ở xã hội cho công nhân nhơn trạch, k-home avenue, k home avenue, k home avenue nhơn trạch, k-home avenue nhơn trạch, khome avenue, mua nhà ở xã hội nhơn trạch, điều kiện mua nhà ở xã hội nhơn trạch, k home đồng nai",
   },
   {
