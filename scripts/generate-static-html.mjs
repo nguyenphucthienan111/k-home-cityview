@@ -43,7 +43,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-cityview-ho-nai",
     title: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
-    description: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) – chung cư Biên Hòa giá rẻ 1.382 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm.",
+    description: "K-Home CityView Hố Nai Biên Hòa quy mô 2,85ha gồm 4 block 22 tầng, 1.816 căn (1.382 căn NOXH) do Kim Oanh Land phát triển. Giá từ 950 triệu/căn, vay ưu đãi 5,4%/năm.",
     keywords: "chung cư biên hòa giá rẻ, chung cư biên hoà giá rẻ, nhà ở xã hội biên hoà, nhà ở xã hội biên hòa, nhà ở xã hội hố nai, noxh biên hòa, noxh hố nai, chung cư hố nai giá rẻ, căn hộ giá rẻ biên hòa, nhà ở xã hội đồng nai 2026, chung cư nhà ở xã hội biên hòa, k-home cityview, k home cityview, k home city view, khome cityview, k-home city view, k-home cityview hố nai, k-home cityview biên hòa, k home cityview biên hòa, nhà ở xã hội đường điểu xiển, chung cư đường điểu xiển biên hòa, mua nhà ở xã hội biên hòa, điều kiện mua nhà ở xã hội biên hòa, k home đồng nai",
   },
   {

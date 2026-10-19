@@ -41,9 +41,9 @@ const PROJECT_SEO: Record<string, {
 }> = {
   "k-home-cityview-ho-nai": {
     titleTag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai | Bảng Giá & Điều Kiện 2026",
-    metaDesc: "Dự án Nhà Ở Xã Hội Biên Hòa (K-Home CityView Hố Nai Kim Oanh Land) 1.382 căn NOXH chuẩn Singapore giá từ 950 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Biên Hòa 2026.",
+    metaDesc: "K-Home CityView Hố Nai Biên Hòa quy mô 2,85ha gồm 4 block 22 tầng, 1.816 căn (1.382 căn NOXH) do Kim Oanh Land phát triển. Giá từ 950 triệu/căn, vay ưu đãi 5,4%/năm.",
     h1Tag: "Nhà Ở Xã Hội Biên Hòa – K-Home CityView Hố Nai",
-    leadDesc: "Dự án nhà ở xã hội Biên Hòa quy mô 1.382 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Cập nhật bảng giá, tiến độ và hướng dẫn điều kiện mua nhà ở xã hội Biên Hòa với gói vay ưu đãi 5,4%/năm.",
+    leadDesc: "K-Home CityView Kim Oanh có quy mô 2,85 ha gồm 4 block căn hộ cao 22 tầng, 1.816 căn hộ (1.382 căn NOXH) chuẩn Singapore trên mặt tiền đường Điểu Xiển, phường Hố Nai, TP. Biên Hòa, Đồng Nai. Giá bán từ 950 triệu/căn với diện tích đa dạng: 1PN+ (47m²), 2PN (62–70m²), 3PN (84m²), hỗ trợ vay gói tín dụng ưu đãi 5,4%/năm.",
     locationImages: [
       { src: "/k-home cityview/mat-bang/vi-tri-k-home-dong-nai-kim-oanh-1-scaled.jpg.webp", alt: "Vị trí dự án nhà ở xã hội K-Home CityView Hố Nai Biên Hòa Đồng Nai", caption: "Vị trí K-Home CityView – Hố Nai, TP. Biên Hòa" },
       { src: "/k-home cityview/mat-bang/vi-tri-du-an-noxh-k-home-city-view-dong-nai.jpg.webp", alt: "Bản đồ vị trí dự án NOXH K-Home City View Đồng Nai Kim Oanh Land", caption: "Bản đồ kết nối – K-Home CityView liền kề các KCN lớn" },
@@ -2453,10 +2453,13 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <Compass className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí – Vô Vàn Trải Nghiệm</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Chỉ vài phút từ K-Home CityView đến mọi điểm đến quan trọng</p>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí Dự Án K-Home CityView Hố Nai Biên Hòa</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Dự án nhà ở xã hội K-Home CityView tọa lạc mặt tiền đường Điểu Xiển, P. Hố Nai, TP. Biên Hòa, Đồng Nai</p>
             </div>
           </div>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Vị trí dự án nhà ở xã hội <strong>K-Home CityView Hố Nai Biên Hòa</strong> tọa lạc ngay mặt tiền đường Điểu Xiển, kết nối trực tiếp Quốc lộ 1A và Xa Lộ Hà Nội. Từ dự án, cư dân dễ dàng di chuyển nhanh chóng đến KCN Amata (10 phút), KCN Biên Hòa 2 (12 phút), KCN Long Bình và trung tâm TP. Biên Hòa chỉ trong bán kính 3–5km.
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { time: "5 phút", places: "Lotte Mart · TTHC Biên Hòa · Công viên 30-4", color: "bg-green-500" },
@@ -2546,14 +2549,14 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               <Building2 className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-display font-bold text-slate-800">Giá Bán & Chính Sách Thanh Toán</h2>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Giá Bán Căn Hộ K-Home CityView Hố Nai Biên Hòa</h2>
               <p className="text-xs text-slate-500 mt-0.5">Bảng giá dự kiến nhà ở xã hội K-Home CityView Hố Nai – cập nhật mới nhất từ chủ đầu tư Kim Oanh Land</p>
             </div>
           </div>
 
           {/* Intro text SEO */}
           <p className="text-slate-600 text-sm leading-relaxed">
-            Với chính sách giá nhà ở xã hội được Nhà nước phê duyệt và kiểm soát chặt chẽ, <strong className="text-slate-800">K-Home CityView Hố Nai</strong> mang đến mức giá thấp hơn đáng kể so với căn hộ thương mại cùng vị trí tại TP. Biên Hòa. Cư dân còn được hỗ trợ vay vốn ưu đãi từ <strong className="text-slate-800">Ngân hàng Chính sách Xã hội TP. Đồng Nai</strong> với lãi suất chỉ <strong className="text-slate-800">5,4%/năm</strong> — thấp hơn 2–3 lần so với lãi suất ngân hàng thương mại thông thường. Đây là cơ hội hiếm có để người lao động tại Đồng Nai sở hữu căn hộ chất lượng cao với chi phí hàng tháng tương đương hoặc thấp hơn tiền thuê trọ.
+            Hiện tại, <strong>giá bán K-Home CityView Hố Nai Biên Hòa</strong> có mức giá dự kiến cực kỳ ưu đãi chỉ từ <strong>950 triệu – 1,8 tỷ/căn</strong> (tương đương 19–22 triệu/m² đã bao gồm VAT). Với chính sách hỗ trợ vay vốn mua nhà ở xã hội từ Ngân hàng Chính sách Xã hội lãi suất chỉ <strong>5,4%/năm</strong> trong 25 năm, người lao động chỉ cần trả góp từ <strong>3,5 – 5,5 triệu đồng/tháng</strong> để sở hữu căn hộ hoàn thiện nội thất chuẩn Singapore.
           </p>
 
           {/* 4 loại căn */}
@@ -2669,15 +2672,17 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {/* ── Mặt bằng tầng ── */}
       {seo?.floorPlanImages && seo.floorPlanImages.length > 0 && (
         <section id="mat-bang" className="space-y-4">
-          <h2 className="text-2xl font-display font-bold text-slate-800">Mặt Bằng & Layout Căn Hộ</h2>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <h2 className="text-2xl font-display font-bold text-slate-800">
+            {slug === "k-home-cityview-ho-nai" ? "Mặt Bằng Căn Hộ K-Home CityView Hố Nai Biên Hòa" : "Mặt Bằng & Layout Căn Hộ"}
+          </h2>
+          <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
               ? "K-Home Midtown có 1 block cao 15 tầng, 2 tháp A và B. Tầng 1 tập trung toàn bộ tiện ích nội khu, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn, tầng 4–15 là mặt bằng căn hộ điển hình với Studio, 1PN+, và 2PN."
               : slug === "k-home-avenue-nhon-trach"
               ? "K-Home Avenue có 4 block cao 12 tầng. Tầng 1 tập trung tiện ích nội khu đầy đủ, tầng 2–3 bổ sung tiện ích, tầng 4–12 là mặt bằng căn hộ điển hình với Studio, 1PN+, 2PN-A và 2PN-B."
               : slug === "k-home-skyview-trang-bom"
               ? "K-Home SkyView Bàu Xéo gồm các block cao từ 9 đến 12 tầng. Khối đế shophouse thương mại và tiện ích, các tầng trên là mặt bằng căn hộ tối ưu với Studio (37m²), 1PN+ (45,8m²) và 2PN (65,3m²)."
-              : "K-Home CityView có tầng trệt & tầng 2 tập trung tiện ích \"all-in-one\" chuẩn Singapore, tầng 3 có vườn treo độc đáo, tầng 4–22 là mặt bằng căn hộ điển hình với 4 loại căn: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2 phòng ngủ (70,4m²) và 3 phòng ngủ (84,4m²). Khuôn viên được chia rõ ràng: khu căn hộ trung tâm, khu tiện ích công cộng (hồ bơi, công viên, sân thể thao, khu vui chơi trẻ em) xen kẽ giữa các tòa, tầng trệt thương mại – shophouse phục vụ mua sắm và dịch vụ hàng ngày."
+              : "Tại K-Home CityView Biên Hòa, chủ đầu tư Kim Oanh Land thiết kế nhà ở xã hội với diện tích đa dạng từ 47,3m² đến 84,4m² bao gồm 4 loại căn hộ chính: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2PN 2WC (70,4m²) và 3PN 2WC (84,4m²). Dự án có 4 block cao 22 tầng, tầng 1–2 bố trí tiện ích và shophouse thương mại, tầng 3 là vườn treo trên cao, tầng 4–22 là khu căn hộ ở thoáng mát đón ánh sáng tự nhiên."
             }
           </p>
 
@@ -2727,15 +2732,17 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       {/* ── Tiện ích chi tiết ── */}
       {seo?.amenityImages && seo.amenityImages.length > 0 && (
         <section id="tien-ich" className="space-y-5">
-          <h2 className="text-2xl font-display font-bold text-slate-800">Tiện Ích Nội Khu</h2>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <h2 className="text-2xl font-display font-bold text-slate-800">
+            {slug === "k-home-cityview-ho-nai" ? "Tiện Ích Căn Hộ K-Home CityView Hố Nai Chuẩn Singapore" : "Tiện Ích Nội Khu"}
+          </h2>
+          <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
               ? "Hệ thống tiện ích K-Home Midtown được quy hoạch trên quỹ đất 13,97 ha, đáp ứng nhu cầu sinh hoạt hàng ngày của cư dân ngay trong khuôn viên dự án."
               : slug === "k-home-avenue-nhon-trach"
               ? "Hệ tiện ích đa lớp K-Home Avenue – từ hồ bơi, sân chơi, minimart, BBQ bên trong đến TTTM, bệnh viện, trường liên cấp, sân bay Long Thành ngay bên ngoài."
               : slug === "k-home-skyview-trang-bom"
               ? "Hệ tiện ích hoàn chỉnh K-Home SkyView Bàu Xéo – hồ bơi người lớn & trẻ em, sân chơi thiếu nhi, công viên dạo bộ, khu thể thao và shophouse thương mại ngay tầng trệt."
-              : "Được xây dựng theo mô hình đô thị khép kín chuẩn Singapore, K-Home CityView tích hợp hệ tiện ích đa tầng ngay tại khối đế và tầng trệt. Tầng trệt bố trí khoa học với hồ bơi người lớn – trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu thể dục – BBQ, vườn cộng đồng xen kẽ mảng xanh. Khối đế thương mại tích hợp shophouse, café, minimart, dịch vụ thiết yếu ngay dưới chân nhà. Tầng 3 có vườn treo độc đáo. Đặc biệt, trong khuôn viên còn có trường học nội khu phục vụ con em cư dân, trạm sạc ô tô và xe máy điện, nhà sinh hoạt cộng đồng đa năng – tất cả kết nối trong một tổng thể khép kín, giúp cư dân tiết kiệm thời gian di chuyển và tận hưởng cuộc sống xanh ngay tại nhà."
+              : "Hệ thống tiện ích căn hộ K-Home CityView Hố Nai được xây dựng theo mô hình đô thị khép kín chuẩn Singapore: hồ bơi người lớn và trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu thể dục ngoài trời, vườn nướng BBQ, vườn treo sinh thái tầng 3 và khối đế shophouse thương mại café, minimart phục vụ trọn vẹn nhu cầu cư dân."
             }
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
