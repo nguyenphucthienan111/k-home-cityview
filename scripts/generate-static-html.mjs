@@ -69,7 +69,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-midtown-trang-bom",
     title: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
-    description: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home Midtown Kim Oanh) quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Hướng dẫn hồ sơ NOXH Trảng Bom từ A-Z.",
+    description: "K-Home Midtown Trảng Bom (NOXH Khu dân cư và siêu thị Trảng Bom) do Kim Oanh Land phát triển quy mô 13,97ha, gồm 542 căn hộ chuẩn Singapore và 20 shophouse tại ngã tư 30/4 – Hùng Vương. Giá từ 750 triệu, vay 5,4%/năm.",
     keywords: "chung cư trảng bom giá rẻ, nhà ở xã hội trảng bom, nhà ở xã hội trảng bom đồng nai, noxh trảng bom, nhà ở xã hội kcn bàu xéo, căn hộ giá rẻ trảng bom, k-home midtown, k home midtown, k home midtown trảng bom, k-home midtown trảng bom, khome midtown, k home mid town, k-home mid town, mua nhà ở xã hội trảng bom, điều kiện mua nhà ở xã hội trảng bom, noxh trảng bom kim oanh, k home đồng nai trảng bom",
   },
   {
@@ -121,7 +121,7 @@ const STATIC_ROUTES = [
   {
     dir: "k-home-skyview-trang-bom",
     title: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
-    description: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home SkyView Bàu Xéo Kim Oanh) quy mô 1,08 ha, 358 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Hướng dẫn thủ tục & bảng giá 2026.",
+    description: "K-Home SkyView Bàu Xéo Trảng Bom (Kim Oanh Land) quy mô 1,08ha trong KĐT Bàu Xéo gồm 358 căn hộ NOXH chuẩn xanh EDGE mặt tiền QL1A trực diện KCN Bàu Xéo. Giá từ 750 triệu, vay 5,4%/năm.",
     keywords: "nhà ở xã hội trảng bom, noxh trảng bom, nhà ở xã hội bàu xéo, chung cư bàu xéo trảng bom, k-home skyview, khome skyview, k home skyview, k-home skyview trảng bom, căn hộ trảng bom giá rẻ, nhà ở xã hội đồng nai 2026",
   },
   {

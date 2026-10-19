@@ -222,9 +222,9 @@ const PROJECT_SEO: Record<string, {
   },
   "k-home-midtown-trang-bom": {
     titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown | Bảng Giá & Điều Kiện 2026",
-    metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home Midtown Kim Oanh) quy mô 13,97 ha, 542 căn NOXH chuẩn Singapore giá từ 750 triệu, vay 5,4%/năm. Cập nhật bảng giá & hồ sơ NOXH Trảng Bom 2026.",
+    metaDesc: "K-Home Midtown Trảng Bom (NOXH Khu dân cư và siêu thị Trảng Bom) do Kim Oanh Land phát triển quy mô 13,97ha, gồm 542 căn hộ chuẩn Singapore và 20 shophouse tại ngã tư 30/4 – Hùng Vương. Giá từ 750 triệu, vay 5,4%/năm.",
     h1Tag: "Nhà Ở Xã Hội Trảng Bom – K-Home Midtown",
-    leadDesc: "Dự án nhà ở xã hội Trảng Bom quy mô 13,97 ha, 542 căn hộ chuẩn Singapore do Kim Oanh Land phát triển. Hướng dẫn hồ sơ, điều kiện mua nhà ở xã hội Trảng Bom và gói vay ngân hàng chính sách 5,4%/năm.",
+    leadDesc: "K-Home Midtown Trảng Bom (dự án nhà ở xã hội Khu dân cư và siêu thị Trảng Bom) do Kim Oanh Land phát triển có quy mô 13,97 ha, gồm 1 block cao 15 tầng cung cấp 562 sản phẩm (542 căn hộ NOXH chuẩn Singapore + 20 shophouse khối đế) tọa lạc ngay giao lộ 4 tuyến đường 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, TT. Trảng Bom, Đồng Nai. Giá bán từ 750 triệu/căn (Studio 36m², 1PN+ 47m²-55m², 2PN 68m²), hỗ trợ vay gói ưu đãi 5,4%/năm cố định 25 năm, trả góp chỉ từ 3,5 triệu/tháng.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -530,9 +530,9 @@ const PROJECT_SEO: Record<string, {
   },
   "k-home-skyview-trang-bom": {
     titleTag: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo | Bảng Giá 2026",
-    metaDesc: "Dự án Nhà Ở Xã Hội Trảng Bom (K-Home SkyView Bàu Xéo Kim Oanh) – chung cư Trảng Bom giá rẻ chuẩn Singapore từ 750 triệu, vay 5,4%/năm. Hỗ trợ làm hồ sơ NOXH miễn phí.",
+    metaDesc: "K-Home SkyView Bàu Xéo Trảng Bom (Kim Oanh Land) quy mô 1,08ha trong KĐT Bàu Xéo gồm 358 căn hộ NOXH chuẩn xanh EDGE mặt tiền QL1A trực diện KCN Bàu Xéo. Giá từ 750 triệu, vay 5,4%/năm.",
     h1Tag: "Nhà Ở Xã Hội Trảng Bom – K-Home SkyView Bàu Xéo",
-    leadDesc: "Dự án nhà ở xã hội Trảng Bom tại KĐT Bàu Xéo do Kim Oanh Land phát triển. Căn hộ chuẩn Singapore từ 750 triệu, hỗ trợ hồ sơ và điều kiện mua nhà ở xã hội Trảng Bom với lãi suất ưu đãi 5,4%/năm.",
+    leadDesc: "K-Home SkyView Bàu Xéo Trảng Bom do Kim Oanh Land phát triển có quy mô hơn 1,08 ha thuộc Khu đô thị Bàu Xéo, Quốc lộ 1A, thị trấn Trảng Bom, tỉnh Đồng Nai. Dự án gồm các block cao từ 9 đến 12 tầng cung cấp 358 căn hộ NOXH chuẩn xanh quốc tế EDGE nằm trực diện cổng KCN Bàu Xéo (gần 500 ha). Giá bán từ 750 triệu/căn (Studio 37m², 1PN+ 45,8m², 2PN 65,3m²), hỗ trợ vay ngân hàng chính sách 5,4%/năm, giải pháp an cư hàng đầu cho kỹ sư và công nhân KCN.",
     noxhConditions: [
       { label: "Chưa có nhà tại Đồng Nai", detail: "Không đứng tên sổ đỏ nhà ở tại tỉnh Đồng Nai" },
       { label: "Chưa từng mua NOXH", detail: "Chưa từng mua/thuê mua nhà ở xã hội tại bất kỳ tỉnh thành nào" },
@@ -1014,6 +1014,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "faq", label: "FAQ" },
   ] : slug === "k-home-midtown-trang-bom" ? [
     { id: "tong-quan", label: "Tổng Quan" },
+    { id: "vi-tri", label: "Vị Trí" },
+    { id: "gia-ban", label: "Giá Bán" },
     { id: "mat-bang", label: "Mặt Bằng" },
     { id: "tien-ich", label: "Tiện Ích" },
     { id: "nha-mau", label: "Nhà Mẫu" },
@@ -1055,6 +1057,8 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     { id: "faq", label: "FAQ" },
   ] : slug === "k-home-skyview-trang-bom" ? [
     { id: "tong-quan", label: "Tổng Quan" },
+    { id: "vi-tri", label: "Vị Trí" },
+    { id: "gia-ban", label: "Giá Bán" },
     { id: "mat-bang", label: "Mặt Bằng" },
     { id: "tien-ich", label: "Tiện Ích" },
     { id: "nha-mau", label: "Nhà Mẫu" },
@@ -1098,9 +1102,11 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
     const sectionIds = slug === "k-home-cityview-ho-nai" 
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "tiem-nang", "tien-do-trien-khai", "video-tien-do", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : slug === "k-home-midtown-trang-bom"
-      ? ["tong-quan", "mat-bang", "nha-mau", "tien-do-trien-khai", "tien-ich", "tiem-nang", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "midtown-highlights", "midtown-edge", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "nha-mau", "tien-do-trien-khai", "tien-ich", "tiem-nang", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "midtown-highlights", "midtown-edge", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : slug === "k-home-avenue-nhon-trach"
       ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "nha-mau", "tien-do-trien-khai", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "avenue-highlights", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
+      : slug === "k-home-skyview-trang-bom"
+      ? ["tong-quan", "vi-tri", "gia-ban", "mat-bang", "tien-ich", "nha-mau", "tien-do-trien-khai", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"]
       : ["tong-quan", "mat-bang", "nha-mau", "tiem-nang", "tien-do-trien-khai", "tien-ich", "phap-ly", "yeu-to-singapore", "chung-chi-edge", "mua-vs-thue", "giai-thuong", "doi-tac", "chu-dau-tu", "dieu-kien-mua", "chinh-sach-thanh-toan", "tinh-tra-gop", "lien-he", "faq"];
     
     const trackSection = () => {
@@ -2579,6 +2585,78 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Khoảng cách kết nối — chỉ Midtown Trảng Bom ── */}
+      {slug === "k-home-midtown-trang-bom" && (
+        <section id="vi-tri" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+              <Compass className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí Dự Án K-Home Midtown Trảng Bom – Trung Tâm Hành Chính Đường 30/4</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Dự án NOXH K-Home Midtown tọa lạc giữa 4 mặt tiền đường: 30/4 – Hùng Vương – Lý Nam Đế – Lê Đại Hành, TT. Trảng Bom, Đồng Nai</p>
+            </div>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Vị trí dự án nhà ở xã hội <strong>K-Home Midtown Trảng Bom</strong> (Khu dân cư và siêu thị Trảng Bom) tọa lạc tại tâm điểm hành chính sầm uất bậc nhất huyện Trảng Bom, được bao bọc bởi 4 trục đường huyết mạch: 30/4, Hùng Vương, Lý Nam Đế và Lê Đại Hành. Từ dự án, cư dân dễ dàng kết nối đến Quốc lộ 1A (chỉ 2 phút), Trung tâm hành chính huyện (3 phút), Ga Trảng Bom (5 phút) và các cụm công nghiệp trọng điểm như KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { time: "2-3 phút", places: "UBND huyện Trảng Bom · Chợ Trảng Bom · TTTM", color: "bg-emerald-600" },
+              { time: "5-7 phút", places: "Ga Trảng Bom · KCN Bàu Xéo (gần 500 ha)", color: "bg-amber-500" },
+              { time: "15 phút", places: "KCN Sông Mây · KCN Giang Điền · KCN Hố Nai", color: "bg-blue-600" },
+              { time: "20-30 phút", places: "TP. Biên Hòa · Sân bay Quốc tế Long Thành", color: "bg-indigo-600" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow space-y-2">
+                <span className={`inline-block ${item.color} text-white text-xs font-bold px-3 py-1 rounded-full`}>{item.time}</span>
+                <p className="text-sm text-slate-700 font-medium leading-relaxed">{item.places}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Tọa lạc ngay lõi đô thị trung tâm huyện đang chuẩn bị lên Thị xã, <strong>K-Home Midtown Trảng Bom</strong> thừa hưởng trọn vẹn hạ tầng dịch vụ dân sinh sẵn có: trường học các cấp, bệnh viện đa khoa, trung tâm thương mại và công viên cây xanh, giúp gia đình trẻ an tâm lập nghiệp và sinh sống lâu dài.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Khoảng cách kết nối — chỉ SkyView Bàu Xéo ── */}
+      {slug === "k-home-skyview-trang-bom" && (
+        <section id="vi-tri" className="space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shrink-0">
+              <Compass className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Vị Trí Dự Án K-Home SkyView Bàu Xéo Trảng Bom – Liền Kề Quốc Lộ 1A</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Dự án nhà ở xã hội K-Home SkyView tọa lạc trong KĐT Bàu Xéo, Quốc Lộ 1A, TT. Trảng Bom, Tỉnh Đồng Nai</p>
+            </div>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Vị trí dự án nhà ở xã hội <strong>K-Home SkyView Bàu Xéo Trảng Bom</strong> tọa lạc ngay mặt tiền Quốc lộ 1A trong lòng Khu đô thị Bàu Xéo, nằm trực diện cổng Khu công nghiệp Bàu Xéo (gần 500 ha). Vị trí đắc địa này giúp hàng chục ngàn chuyên gia, kỹ sư và công nhân viên chức có thể đi bộ đi làm mỗi ngày, xóa tan hoàn toàn nỗi lo kẹt xe và chi phí đi lại.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { time: "1 phút (500m)", places: "Cổng KCN Bàu Xéo · Phố thương mại Bàu Xéo", color: "bg-indigo-600" },
+              { time: "3 phút", places: "Trung tâm hành chính huyện Trảng Bom · QL1A", color: "bg-emerald-600" },
+              { time: "5 phút", places: "Ga Trảng Bom · Chợ Trảng Bom · Bệnh viện huyện", color: "bg-amber-500" },
+              { time: "20-25 phút", places: "TP. Biên Hòa · KCN Giang Điền · KCN Hố Nai", color: "bg-blue-600" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow space-y-2">
+                <span className={`inline-block ${item.color} text-white text-xs font-bold px-3 py-1 rounded-full`}>{item.time}</span>
+                <p className="text-sm text-slate-700 font-medium leading-relaxed">{item.places}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5">
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Nhờ nằm trong Khu đô thị dịch vụ Bàu Xéo đã hiện hữu đồng bộ đường nhựa, công viên, trường học và hệ thống điện nước ngầm, <strong>K-Home SkyView</strong> mang đến môi trường an cư văn minh, an toàn 24/7 với mức giá cực kỳ dễ tiếp cận cho người lao động.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* ── Giá Bán & Thanh Toán — chỉ CityView ── */}
       {slug === "k-home-cityview-ho-nai" && (
         <section id="gia-ban" className="space-y-6">
@@ -2825,23 +2903,254 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
         </section>
       )}
 
+      {/* ── Giá Bán & Thanh Toán — chỉ Midtown Trảng Bom ── */}
+      {slug === "k-home-midtown-trang-bom" && (
+        <section id="gia-ban" className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+              <Building2 className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Giá Bán Căn Hộ K-Home Midtown Trảng Bom 2026</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Bảng giá dự kiến nhà ở xã hội Khu dân cư và siêu thị Trảng Bom (K-Home Midtown) – cập nhật mới nhất từ Kim Oanh Land</p>
+            </div>
+          </div>
+
+          {/* Intro text SEO Snippet Trap */}
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Hiện tại, <strong>giá bán căn hộ K-Home Midtown Trảng Bom</strong> có mức giá dự kiến chỉ từ <strong>750 triệu – 1,5 tỷ/căn</strong> (tương đương 18–21 triệu/m² đã bao gồm VAT và gói nội thất hoàn thiện theo tiêu chuẩn Singapore). Với chính sách hỗ trợ vay vốn mua nhà ở xã hội từ Ngân hàng Chính sách Xã hội với lãi suất ưu đãi cố định <strong>5,4%/năm</strong> trong 25 năm, khách hàng chỉ cần chuẩn bị <strong>vốn tự có từ 150 – 250 triệu đồng (20%)</strong> và trả góp từ <strong>3,5 – 5,5 triệu đồng/tháng</strong> (tương đương chi phí thuê nhà trọ nhưng được sở hữu vĩnh viễn căn hộ cao cấp).
+          </p>
+
+          {/* 4 loại căn */}
+          <div className="space-y-3">
+            <h3 className="text-base font-bold text-slate-700">Bảng giá các loại căn hộ NOXH K-Home Midtown Trảng Bom</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                {
+                  type: "Căn Hộ Studio",
+                  area: "36,1m²",
+                  price: "Từ 750 triệu/căn",
+                  note: "Phù hợp cho công nhân, kỹ sư độc thân hoặc chuyên gia KCN",
+                  features: ["Không gian studio thông minh mở · 1 WC rộng rãi", "Ban công đón gió tự nhiên · Bàn giao full nội thất cơ bản"],
+                  tag: "Vốn từ 150tr",
+                  tagColor: "bg-emerald-600",
+                },
+                {
+                  type: "Căn 1 Phòng Ngủ + A",
+                  area: "47,0m²",
+                  price: "Từ 990 triệu/căn",
+                  note: "Lựa chọn tối ưu cho cặp đôi mới cưới hoặc có 1 con nhỏ",
+                  features: ["1 phòng ngủ riêng + 1 phòng đa năng linh hoạt", "1 WC · Ban công thoáng mát · Bếp + phòng khách"],
+                  tag: "Bán chạy nhất",
+                  tagColor: "bg-amber-500",
+                },
+                {
+                  type: "Căn 1 Phòng Ngủ + B",
+                  area: "55,1m²",
+                  price: "Từ 1,20 tỷ/căn",
+                  note: "Căn 1PN+ diện tích lớn, thiết kế 2 nhà vệ sinh hiếm có",
+                  features: ["1 phòng ngủ master rộng + không gian phụ", "2 WC tiện lợi · Ban công riêng · Bếp nấu tách biệt"],
+                  tag: "Thiết kế 2 WC",
+                  tagColor: "bg-teal-600",
+                },
+                {
+                  type: "Căn 2 Phòng Ngủ",
+                  area: "68,8m²",
+                  price: "Từ 1,50 tỷ/căn",
+                  note: "Không gian chuẩn chỉnh cho gia đình 3-5 thành viên",
+                  features: ["2 phòng ngủ tách biệt vuông vức", "2 WC · 2 ban công · Phòng khách đại gia đình"],
+                  tag: "Chuẩn gia đình",
+                  tagColor: "bg-blue-600",
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white border border-amber-100 rounded-2xl p-5 hover:border-amber-300 hover:shadow-md transition-all space-y-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`text-[10px] font-bold text-white px-2 py-0.5 rounded-full ${item.tagColor}`}>{item.tag}</span>
+                      </div>
+                      <span className="block font-bold text-slate-800 text-sm">{item.type}</span>
+                      <span className="block text-xs text-slate-400 mt-0.5">Diện tích sàn: {item.area}</span>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-amber-600 text-right">{item.price}</span>
+                  </div>
+                  <p className="text-xs text-slate-500 italic">{item.note}</p>
+                  <ul className="space-y-1">
+                    {item.features.map((f, fi) => (
+                      <li key={fi} className="flex items-center gap-1.5 text-xs text-slate-600">
+                        <CheckCircle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hỗ trợ vay vốn Midtown */}
+          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5 space-y-4">
+            <div>
+              <p className="text-sm font-bold text-slate-800 mb-0.5">Chính sách hỗ trợ vay vốn mua NOXH K-Home Midtown Trảng Bom</p>
+              <p className="text-xs text-slate-500">Ngân hàng Chính sách Xã hội huyện Trảng Bom giải ngân tối đa 80% giá trị căn hộ</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { label: "Vốn tự có ban đầu", value: "20%", sub: "khoảng 150–250 triệu" },
+                { label: "Hạn mức vay vốn", value: "80%", sub: "giải ngân theo tiến độ" },
+                { label: "Lãi suất ưu đãi", value: "5,4%/năm", sub: "cố định suốt 25 năm" },
+                { label: "Thời hạn vay", value: "25 năm", sub: "góp từ 3,5–5,5 tr/tháng" },
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-xl p-3 text-center border border-amber-100 shadow-sm">
+                  <span className="block text-xl font-bold text-amber-600">{s.value}</span>
+                  <span className="block text-xs font-semibold text-slate-700 mt-0.5">{s.label}</span>
+                  <span className="block text-[10px] text-slate-400 mt-0.5">{s.sub}</span>
+                </div>
+              ))}
+            </div>
+            <div className="bg-white border border-amber-100 rounded-xl p-4 space-y-1">
+              <p className="text-xs font-bold text-slate-700">Điều kiện xét duyệt mua K-Home Midtown Trảng Bom:</p>
+              <ul className="space-y-1 text-xs text-slate-600">
+                <li>• Chưa đứng tên sở hữu nhà ở hoặc đất ở tại tỉnh Đồng Nai & chưa từng mua nhà ở xã hội</li>
+                <li>• Thu nhập cá nhân dưới 25 triệu/tháng (độc thân) hoặc dưới 50 triệu/tháng (vợ chồng)</li>
+                <li>• Có hộ khẩu thường trú hoặc đăng ký tạm trú tại Đồng Nai từ 1 năm trở lên</li>
+                <li>• Ưu tiên người lao động, kỹ sư tại các KCN Bàu Xéo, KCN Sông Mây, KCN Hố Nai</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Giá Bán & Thanh Toán — chỉ SkyView Bàu Xéo ── */}
+      {slug === "k-home-skyview-trang-bom" && (
+        <section id="gia-ban" className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shrink-0">
+              <Building2 className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-display font-bold text-slate-800">Giá Bán Căn Hộ K-Home SkyView Bàu Xéo 2026</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Bảng giá dự kiến nhà ở xã hội K-Home SkyView (KĐT Bàu Xéo Trảng Bom) – cập nhật mới nhất từ Kim Oanh Land</p>
+            </div>
+          </div>
+
+          {/* Intro text SEO Snippet Trap */}
+          <p className="text-slate-600 text-sm leading-relaxed">
+            Hiện tại, <strong>giá bán căn hộ K-Home SkyView Bàu Xéo Trảng Bom</strong> có mức giá dự kiến chỉ từ <strong>750 triệu – 1,45 tỷ/căn</strong> (tương đương 18–21 triệu/m² đã bao gồm VAT và bàn giao nội thất cơ bản). Người mua đủ điều kiện được hỗ trợ vay vốn từ Ngân hàng Chính sách Xã hội với lãi suất ưu đãi <strong>5,4%/năm</strong> cố định trong 25 năm, vốn ban đầu chỉ cần <strong>150 triệu đồng (20%)</strong> và trả góp từ <strong>3,5 – 4,5 triệu đồng/tháng</strong>.
+          </p>
+
+          {/* 3 loại căn */}
+          <div className="space-y-3">
+            <h3 className="text-base font-bold text-slate-700">Bảng giá các loại căn hộ NOXH K-Home SkyView Bàu Xéo</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  type: "Căn Hộ Studio",
+                  area: "37,0m²",
+                  price: "Từ 750 triệu/căn",
+                  note: "Tối ưu cho công nhân KCN Bàu Xéo và người độc thân",
+                  features: ["Thiết kế studio không gian mở thông minh", "1 WC · Ban công riêng thoáng mát"],
+                  tag: "Giá tốt nhất",
+                  tagColor: "bg-emerald-600",
+                },
+                {
+                  type: "Căn 1 Phòng Ngủ +",
+                  area: "45,8m²",
+                  price: "Từ 990 triệu/căn",
+                  note: "Lựa chọn hoàn hảo cho vợ chồng trẻ mới kết hôn",
+                  features: ["1 phòng ngủ chính + 1 góc phụ làm việc/trẻ nhỏ", "1 WC · Ban công đón nắng tự nhiên"],
+                  tag: "Phổ biến nhất",
+                  tagColor: "bg-amber-500",
+                },
+                {
+                  type: "Căn 2 Phòng Ngủ",
+                  area: "65,3m²",
+                  price: "Từ 1,35 tỷ/căn",
+                  note: "Căn hộ chuẩn tiện nghi cho gia đình từ 3–4 thành viên",
+                  features: ["2 phòng ngủ riêng biệt đón gió", "2 WC · 2 ban công rộng rãi"],
+                  tag: "Chuẩn gia đình",
+                  tagColor: "bg-indigo-600",
+                },
+              ].map((item, i) => (
+                <div key={i} className="bg-white border border-indigo-100 rounded-2xl p-5 hover:border-indigo-300 hover:shadow-md transition-all space-y-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`text-[10px] font-bold text-white px-2 py-0.5 rounded-full ${item.tagColor}`}>{item.tag}</span>
+                      </div>
+                      <span className="block font-bold text-slate-800 text-sm">{item.type}</span>
+                      <span className="block text-xs text-slate-400 mt-0.5">Diện tích: {item.area}</span>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-indigo-600 text-right">{item.price}</span>
+                  </div>
+                  <p className="text-xs text-slate-500 italic">{item.note}</p>
+                  <ul className="space-y-1">
+                    {item.features.map((f, fi) => (
+                      <li key={fi} className="flex items-center gap-1.5 text-xs text-slate-600">
+                        <CheckCircle className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hỗ trợ vay vốn SkyView */}
+          <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 space-y-4">
+            <div>
+              <p className="text-sm font-bold text-slate-800 mb-0.5">Chính sách hỗ trợ vay vốn mua NOXH K-Home SkyView Bàu Xéo</p>
+              <p className="text-xs text-slate-500">Ngân hàng Chính sách Xã hội hỗ trợ tối đa 75–80% giá trị hợp đồng</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { label: "Vốn tự có ban đầu", value: "20–25%", sub: "khoảng 150–270 triệu" },
+                { label: "Hạn mức vay vốn", value: "75–80%", sub: "từ Ngân hàng Chính sách" },
+                { label: "Lãi suất ưu đãi", value: "5,4%/năm", sub: "cố định trong 25 năm" },
+                { label: "Thời hạn vay", value: "25 năm", sub: "góp từ 3,5–4,5 tr/tháng" },
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-xl p-3 text-center border border-indigo-100 shadow-sm">
+                  <span className="block text-xl font-bold text-indigo-600">{s.value}</span>
+                  <span className="block text-xs font-semibold text-slate-700 mt-0.5">{s.label}</span>
+                  <span className="block text-[10px] text-slate-400 mt-0.5">{s.sub}</span>
+                </div>
+              ))}
+            </div>
+            <div className="bg-white border border-indigo-100 rounded-xl p-4 space-y-1">
+              <p className="text-xs font-bold text-slate-700">Điều kiện xét duyệt mua K-Home SkyView Bàu Xéo:</p>
+              <ul className="space-y-1 text-xs text-slate-600">
+                <li>• Chưa sở hữu nhà ở hoặc đất ở tại tỉnh Đồng Nai & chưa từng mua nhà ở xã hội</li>
+                <li>• Thu nhập: dưới 50 triệu/tháng (hộ gia đình) · dưới 35 triệu (đơn thân nuôi con) · dưới 25 triệu (độc thân)</li>
+                <li>• Có hộ khẩu hoặc tạm trú tại Đồng Nai từ 1 năm trở lên</li>
+                <li>• Ưu tiên người lao động làm việc trực tiếp tại KCN Bàu Xéo và các KCN huyện Trảng Bom</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Mặt bằng tầng ── */}
       {seo?.floorPlanImages && seo.floorPlanImages.length > 0 && (
         <section id="mat-bang" className="space-y-4">
           <h2 className="text-2xl font-display font-bold text-slate-800">
             {slug === "k-home-cityview-ho-nai"
               ? "Mặt Bằng Căn Hộ K-Home CityView Hố Nai Biên Hòa"
+              : slug === "k-home-midtown-trang-bom"
+              ? "Mặt Bằng Căn Hộ K-Home Midtown Trảng Bom Chuẩn Singapore"
               : slug === "k-home-avenue-nhon-trach"
               ? "Mặt Bằng Căn Hộ K-Home Avenue Nhơn Trạch Chuẩn Singapore"
+              : slug === "k-home-skyview-trang-bom"
+              ? "Mặt Bằng Căn Hộ K-Home SkyView Bàu Xéo Trảng Bom"
               : "Mặt Bằng & Layout Căn Hộ"}
           </h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
-              ? "K-Home Midtown có 1 block cao 15 tầng, 2 tháp A và B. Tầng 1 tập trung toàn bộ tiện ích nội khu, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn, tầng 4–15 là mặt bằng căn hộ điển hình với Studio, 1PN+, và 2PN."
+              ? "Mặt bằng căn hộ K-Home Midtown Trảng Bom gồm 1 block cao 15 tầng với 2 tháp A và B, cung cấp 542 căn hộ NOXH và 20 căn shophouse. Tầng 1 là chuỗi tiện ích hồ bơi và thương mại, tầng 2 nhà xe và sinh hoạt cộng đồng, tầng 3 sân vườn cảnh quan, tầng 4–15 là mặt bằng căn hộ điển hình với 4 loại layout: Studio (36,1m²), 1PN+A (47m²), 1PN+B (55,1m² có 2 WC) và 2PN (68,8m²) chuẩn công trình xanh EDGE."
               : slug === "k-home-avenue-nhon-trach"
               ? "Mặt bằng căn hộ K-Home Avenue Nhơn Trạch (NOXH Phú Hội) được quy hoạch gồm 4 block cao 12 tầng, cung cấp 1.022 căn hộ chuẩn Singapore và 82 căn shophouse khối đế. Dự án thiết kế 4 layout chính: Căn Studio (37,7m²), Căn 1PN+ (46,6m²), Căn 2PN-A (65,7m²) và Căn 2PN-B (69,5m²). Tầng 1 tập trung tiện ích nội khu và thương mại, tầng 2–3 là không gian sinh hoạt cộng đồng & tiện ích, tầng 4–12 là căn hộ ở thoáng mát 100% đón sáng tự nhiên."
               : slug === "k-home-skyview-trang-bom"
-              ? "K-Home SkyView Bàu Xéo gồm các block cao từ 9 đến 12 tầng. Khối đế shophouse thương mại và tiện ích, các tầng trên là mặt bằng căn hộ tối ưu với Studio (37m²), 1PN+ (45,8m²) và 2PN (65,3m²)."
+              ? "Mặt bằng căn hộ K-Home SkyView Bàu Xéo Trảng Bom gồm các block cao từ 9 đến 12 tầng với 358 căn hộ NOXH chuẩn xanh quốc tế EDGE. Khối đế tầng trệt là shophouse thương mại và tiện ích cư dân, các tầng trên là các căn hộ thiết kế tối ưu đón ánh sáng tự nhiên với 3 layout: Studio (37m²), 1PN+ (45,8m²) và 2PN (65,3m² có 2 ban công)."
               : "Tại K-Home CityView Biên Hòa, chủ đầu tư Kim Oanh Land thiết kế nhà ở xã hội với diện tích đa dạng từ 47,3m² đến 84,4m² bao gồm 4 loại căn hộ chính: 1PN+ A (47,3m²), 1PN+ B (62,4m²), 2PN 2WC (70,4m²) và 3PN 2WC (84,4m²). Dự án có 4 block cao 22 tầng, tầng 1–2 bố trí tiện ích và shophouse thương mại, tầng 3 là vườn treo trên cao, tầng 4–22 là khu căn hộ ở thoáng mát đón ánh sáng tự nhiên."
             }
           </p>
@@ -2895,17 +3204,21 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
           <h2 className="text-2xl font-display font-bold text-slate-800">
             {slug === "k-home-cityview-ho-nai"
               ? "Tiện Ích Căn Hộ K-Home CityView Hố Nai Chuẩn Singapore"
+              : slug === "k-home-midtown-trang-bom"
+              ? "Tiện Ích Căn Hộ K-Home Midtown Trảng Bom Chuẩn Singapore"
               : slug === "k-home-avenue-nhon-trach"
               ? "Tiện Ích Dự Án K-Home Avenue Nhơn Trạch Chuẩn Singapore"
+              : slug === "k-home-skyview-trang-bom"
+              ? "Tiện Ích Dự Án K-Home SkyView Bàu Xéo Trảng Bom"
               : "Tiện Ích Nội Khu"}
           </h2>
           <p className="text-slate-600 text-sm leading-relaxed">
             {slug === "k-home-midtown-trang-bom"
-              ? "Hệ thống tiện ích K-Home Midtown được quy hoạch trên quỹ đất 13,97 ha, đáp ứng nhu cầu sinh hoạt hàng ngày của cư dân ngay trong khuôn viên dự án."
+              ? "Hệ thống tiện ích căn hộ K-Home Midtown Trảng Bom được tích hợp trọn vẹn trong khuôn viên khu đô thị 13,97 ha theo chuẩn Singapore: hồ bơi người lớn & trẻ em ngoài trời, vườn Sky Garden trên cao tầng 3, sân chơi thiếu nhi, khu tập gym – dưỡng sinh ngoài trời, nhà sinh hoạt cộng đồng và 20 căn shophouse phục vụ cà phê, mua sắm 24/7."
               : slug === "k-home-avenue-nhon-trach"
               ? "Hệ thống tiện ích dự án K-Home Avenue Nhơn Trạch được thiết kế theo tiêu chuẩn resort Singapore đa lớp: hồ bơi phong cách nghỉ dưỡng, công viên cây xanh, khu vui chơi trẻ em an toàn, vườn BBQ dã ngoại, khu thể dục ngoài trời, trạm sạc xe điện thông minh và 82 căn shophouse khối đế phục vụ mua sắm – ẩm thực 24/7. Bên ngoài là hệ thống trường liên cấp, trung tâm y tế, chợ Phú Hội và kết nối trực tiếp chỉ 10 phút đến Sân bay Quốc tế Long Thành."
               : slug === "k-home-skyview-trang-bom"
-              ? "Hệ tiện ích hoàn chỉnh K-Home SkyView Bàu Xéo – hồ bơi người lớn & trẻ em, sân chơi thiếu nhi, công viên dạo bộ, khu thể thao và shophouse thương mại ngay tầng trệt."
+              ? "Hệ thống tiện ích dự án K-Home SkyView Bàu Xéo được quy hoạch hoàn chỉnh chuẩn Singapore: hồ bơi phong cách resort, công viên cây xanh dạo bộ, khu thể thao ngoài trời, sân chơi thiếu nhi an toàn, khu BBQ dã ngoại và shophouse khối đế ngay mặt tiền QL1A."
               : "Hệ thống tiện ích căn hộ K-Home CityView Hố Nai được xây dựng theo mô hình đô thị khép kín chuẩn Singapore: hồ bơi người lớn và trẻ em trung tâm, sân chơi thiếu nhi an toàn, khu thể dục ngoài trời, vườn nướng BBQ, vườn treo sinh thái tầng 3 và khối đế shophouse thương mại café, minimart phục vụ trọn vẹn nhu cầu cư dân."
             }
           </p>
