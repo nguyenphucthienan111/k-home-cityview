@@ -90,7 +90,7 @@ const PROJECT_SEO: Record<string, {
     constructionProgress: {
       timeline: [
         { date: "02/2026", event: "Khởi công xây dựng – Lễ động thổ chính thức tại phường Hố Nai", done: true },
-        { date: "08–10/2026", event: "Hoàn thành phần móng cọc & đài móng 4 block", done: false },
+        { date: "08–10/2026", event: "Hoàn thành phần móng cọc & đài móng 4 block", done: true },
         { date: "06/2027", event: "Cất nóc – hoàn thành kết cấu thô toàn bộ 22 tầng", done: false },
         { date: "12/2027", event: "Hoàn thiện nội thất, bàn giao nhà mẫu & chuẩn bị nghiệm thu", done: false },
         { date: "01/2028", event: "Dự kiến bàn giao đợt đầu cho cư dân (theo tiến độ được duyệt)", done: false },
