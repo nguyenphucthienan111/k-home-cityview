@@ -57,6 +57,79 @@ async function sendMail(contact: {
   });
 }
 
+// ─── Gửi Zalo Webhook thông báo tức thì ─────────────────────────────────────────
+async function sendZaloWebhook(contact: {
+  name: string; email: string; phone: string;
+  projectName: string; message: string; createdAt: Date;
+}) {
+  const webhookUrl = process.env.ZALO_WEBHOOK_URL || process.env.WEBHOOK_URL;
+  if (!webhookUrl) return;
+
+  const formattedDate = contact.createdAt.toLocaleString("vi-VN", {
+    timeZone: "Asia/Ho_Chi_Minh", dateStyle: "short", timeStyle: "short",
+  });
+
+  const payload = {
+    event: "new_lead",
+    source: "k-homedongnai.com.vn",
+    name: contact.name,
+    phone: contact.phone,
+    email: contact.email || "",
+    projectName: contact.projectName,
+    message: contact.message || "",
+    createdAt: contact.createdAt.toISOString(),
+    formattedDate,
+    text: `🏠 KHÁCH HÀNG MỚI ĐĂNG KÝ TƯ VẤN K-HOME\n\n👤 Họ tên: ${contact.name}\n📞 SĐT: ${contact.phone}\n🏢 Dự án: ${contact.projectName}\n💬 Lời nhắn: ${contact.message || "Tư vấn hồ sơ & bảng giá"}\n⏰ Thời gian: ${formattedDate}`,
+    content: `🏠 KHÁCH HÀNG MỚI ĐĂNG KÝ TƯ VẤN K-HOME\n\n👤 Họ tên: ${contact.name}\n📞 SĐT: ${contact.phone}\n🏢 Dự án: ${contact.projectName}\n💬 Lời nhắn: ${contact.message || "Tư vấn hồ sơ & bảng giá"}\n⏰ Thời gian: ${formattedDate}`
+  };
+
+  try {
+    await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (err: any) {
+    console.error("⚠️ Gửi Zalo Webhook thất bại:", err.message);
+  }
+}
+
+// ─── Gửi Telegram Bot thông báo (nếu có cấu hình) ──────────────────────────────
+async function sendTelegramAlert(contact: {
+  name: string; email: string; phone: string;
+  projectName: string; message: string; createdAt: Date;
+}) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return;
+
+  const formattedDate = contact.createdAt.toLocaleString("vi-VN", {
+    timeZone: "Asia/Ho_Chi_Minh", dateStyle: "short", timeStyle: "short",
+  });
+
+  const text = `🏠 <b>KHÁCH HÀNG MỚI ĐĂNG KÝ K-HOME</b>\n\n` +
+    `👤 <b>Họ tên:</b> ${contact.name}\n` +
+    `📞 <b>SĐT:</b> <code>${contact.phone}</code>\n` +
+    `🏢 <b>Dự án:</b> ${contact.projectName}\n` +
+    `✉️ <b>Email:</b> ${contact.email || "Không có"}\n` +
+    `💬 <b>Nội dung:</b> ${contact.message || "Đăng ký tư vấn"}\n` +
+    `⏰ <b>Thời gian:</b> ${formattedDate}`;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: "HTML",
+      }),
+    });
+  } catch (err: any) {
+    console.error("⚠️ Gửi Telegram thất bại:", err.message);
+  }
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
@@ -71,7 +144,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await client.connect();
     const contact = {
       name: String(name).trim().slice(0, 200),
-      email: String(email).trim().slice(0, 200),
+      email: String(email || "").trim().slice(0, 200),
       phone: String(phone).trim().slice(0, 20),
       projectSlug: projectSlug ? String(projectSlug).trim() : "general",
       projectName: projectName ? String(projectName).trim() : "Tư vấn chung",
@@ -83,12 +156,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     };
     const result = await client.db().collection("contacts").insertOne(contact);
 
-    // Gửi email thông báo — await để đảm bảo gửi xong trước khi Vercel function kết thúc
-    try {
-      await sendMail({ ...contact, createdAt: contact.createdAt });
-    } catch (mailErr: any) {
-      console.error("⚠️ Gửi email thất bại:", mailErr.message);
-    }
+    // Gửi song song: Email + Zalo Webhook + Telegram Alert
+    await Promise.allSettled([
+      sendMail({ ...contact, createdAt: contact.createdAt }),
+      sendZaloWebhook({ ...contact, createdAt: contact.createdAt }),
+      sendTelegramAlert({ ...contact, createdAt: contact.createdAt }),
+    ]);
 
     return res.status(201).json({ success: true, id: result.insertedId.toString() });
   } catch (err: any) {

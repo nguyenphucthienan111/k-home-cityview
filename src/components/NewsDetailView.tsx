@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
-import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight, X, ZoomIn, ChevronLeft } from "lucide-react";
+import { ArrowLeft, Calendar, Bookmark, Share2, ChevronRight, X, ZoomIn, ChevronLeft, Copy, Check } from "lucide-react";
 import { News } from "../types";
 import { newsData } from "../data/newsData";
+import { trackSocialShare } from "../utils/analytics";
 
 interface NewsDetailViewProps {
   slug: string;
@@ -103,6 +104,31 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
   const [loading, setLoading] = useState(false);
   const [galleryIndexes, setGalleryIndexes] = useState<Record<string, number>>({});
   const [lightbox, setLightbox] = useState<LightboxState | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const currentUrl = typeof window !== "undefined" 
+    ? window.location.href 
+    : `https://k-homedongnai.com.vn/tin-tuc/${article?.slug}`;
+
+  const handleShareZalo = () => {
+    if (!article) return;
+    trackSocialShare("zalo", article.title);
+    window.open(`https://sp.zalo.me/plugins/share?url=${encodeURIComponent(currentUrl)}`, "_blank", "noopener,noreferrer,width=600,height=500");
+  };
+
+  const handleShareFacebook = () => {
+    if (!article) return;
+    trackSocialShare("facebook", article.title);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`, "_blank", "noopener,noreferrer,width=600,height=500");
+  };
+
+  const handleCopyLink = () => {
+    if (!article) return;
+    trackSocialShare("copy_link", article.title);
+    navigator.clipboard.writeText(currentUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const openLightbox = useCallback((images: { src: string; alt: string }[], index: number) => {
     setLightbox({ images, index });
@@ -330,12 +356,28 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <button className="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-50 transition-colors" title="Lưu bài viết">
-              <Bookmark className="w-4 h-4" />
+          <div className="flex items-center gap-1.5">
+            <button 
+              onClick={handleCopyLink} 
+              className="px-3 py-1.5 text-xs text-slate-600 hover:text-amber-600 rounded-full hover:bg-slate-50 transition-colors flex items-center gap-1.5 border border-slate-200 cursor-pointer" 
+              title="Sao chép liên kết"
+            >
+              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copied ? "Đã chép link!" : "Chép link"}</span>
             </button>
-            <button className="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-50 transition-colors" title="Chia sẻ">
-              <Share2 className="w-4 h-4" />
+            <button 
+              onClick={handleShareFacebook} 
+              className="p-2 text-[#1877F2] hover:bg-blue-50 rounded-full transition-colors cursor-pointer" 
+              title="Chia sẻ lên Facebook"
+            >
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </button>
+            <button 
+              onClick={handleShareZalo} 
+              className="p-1.5 hover:bg-blue-50 rounded-full transition-colors cursor-pointer" 
+              title="Chia sẻ lên Zalo"
+            >
+              <img src="/z.png" alt="Zalo" className="w-4 h-4 object-contain" />
             </button>
           </div>
         </div>
@@ -818,6 +860,39 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
           return elements;
         })()}
       </article>
+
+      {/* ── Social Share Bar ── */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8">
+        <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <span className="text-xs font-bold text-slate-800 uppercase tracking-wider block">Chia sẻ bài viết này</span>
+            <span className="text-xs text-slate-500">Giúp người thân, bạn bè nắm bắt thông tin nhà ở xã hội chính thống</span>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap justify-center">
+            <button
+              onClick={handleShareFacebook}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-xs"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </button>
+            <button
+              onClick={handleShareZalo}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#0068FF] hover:bg-[#0057d6] text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-xs"
+            >
+              <img src="/z.png" alt="Zalo" className="w-3.5 h-3.5 object-contain" />
+              <span>Zalo</span>
+            </button>
+            <button
+              onClick={handleCopyLink}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-bold rounded-xl transition cursor-pointer shadow-xs"
+            >
+              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copied ? "Đã sao chép link!" : "Sao chép liên kết"}</span>
+            </button>
+          </div>
+        </div>
+      </div>
       
       {/* Contextual Pillar Cross-Link Banner */}
       {(() => {

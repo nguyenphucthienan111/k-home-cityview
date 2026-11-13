@@ -30,6 +30,7 @@ import { Project } from "../types";
 import { STATIC_PROJECTS } from "../data/staticProjects";
 import { imgUrl } from "../utils/imageUrl";
 import { exportLoanScheduleToExcel } from "../utils/excelExport";
+import { trackLeadConversion, trackPhoneClick, trackZaloClick } from "../utils/analytics";
 
 // ─── Memoized sub-components để tránh re-render khi HomeView state thay đổi ───
 
@@ -969,7 +970,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       })
     })
       .then(res => { if (!res.ok) throw new Error(); return res.json(); })
-      .then(() => { setCtaSuccess(true); setCtaSubmitting(false); })
+      .then(() => { 
+        setCtaSuccess(true); 
+        setCtaSubmitting(false); 
+        trackLeadConversion("Home Banner Form", { project: ctaProject });
+      })
       .catch(() => { setCtaError("Có lỗi xảy ra. Vui lòng thử lại."); setCtaSubmitting(false); });
   };
 
@@ -997,7 +1002,11 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       })
     })
       .then(res => { if (!res.ok) throw new Error(); return res.json(); })
-      .then(() => { setPopupSuccess(true); setPopupSubmitting(false); })
+      .then(() => { 
+        setPopupSuccess(true); 
+        setPopupSubmitting(false); 
+        trackLeadConversion("Home Auto Popup", { project: popupProject });
+      })
       .catch(() => { setPopupSubmitting(false); });
   };
 
@@ -3006,12 +3015,34 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </div>
               ))}
             </div>
-            <div className="bg-amber-500 text-white rounded-2xl p-4 flex items-center justify-between gap-4">
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
               <div>
-                <p className="font-bold text-sm">Không chắc mình đủ điều kiện?</p>
-                <p className="text-amber-100 text-xs mt-0.5">Gọi ngay để được kiểm tra miễn phí trong 5 phút</p>
+                <p className="font-bold text-sm">Không chắc mình có đủ điều kiện mua NOXH?</p>
+                <p className="text-amber-100 text-xs mt-0.5">Làm bài trắc nghiệm 30 giây hoặc tải trọn bộ hồ sơ Mẫu 01, 02, 04</p>
               </div>
-              <a href="tel:0937587438" className="shrink-0 bg-white text-amber-600 font-bold text-xs px-4 py-2 rounded-xl hover:bg-amber-50 transition-colors">0937 587 438</a>
+              <div className="flex items-center gap-2 flex-wrap shrink-0">
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-eligibility-quiz", { detail: { project: "K-Home Đồng Nai" } }))}
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+                >
+                  <Sparkles className="w-3.5 h-3.5" /> Trắc Nghiệm (30s)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-download-docs", { detail: { project: "K-Home Đồng Nai" } }))}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+                >
+                  <Download className="w-3.5 h-3.5" /> Tải Mẫu Đơn
+                </button>
+                <a 
+                  href="tel:0937587438" 
+                  onClick={() => trackPhoneClick("0937587438", "Home Dieu Kien")}
+                  className="bg-white text-amber-600 font-bold text-xs px-3.5 py-2 rounded-xl hover:bg-amber-50 transition-colors shadow-xs"
+                >
+                  0937 587 438
+                </a>
+              </div>
             </div>
           </div>
           <div className="space-y-4">

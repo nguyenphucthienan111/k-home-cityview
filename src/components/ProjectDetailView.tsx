@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useMemo, useRef, startTransition } from "react";
-import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper, X } from "lucide-react";
+import { ArrowLeft, CheckCircle, MapPin, Building, Star, Compass, Phone, Send, Eye, LayoutGrid, HelpCircle, ShieldCheck, BadgeCheck, Award, TrendingUp, Users, Building2, Handshake, Newspaper, X, Sparkles, FileText } from "lucide-react";
 import { Project } from "../types";
 import { STATIC_PROJECTS } from "../data/staticProjects";
 import Lightbox from "./Lightbox";
 import { imgUrl } from "../utils/imageUrl";
 import MortgageCalculator from "./MortgageCalculator";
 import RelatedArticles from "./RelatedArticles";
+import { trackPhoneClick, trackZaloClick, trackLeadConversion } from "../utils/analytics";
 
 // Danh sách slug có calculator
 const CALC_CONFIG_SLUGS = ["k-home-cityview-ho-nai", "k-home-avenue-nhon-trach", "k-home-midtown-trang-bom", "k-home-skyview-trang-bom"];
@@ -964,6 +965,7 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
       .then(() => {
         setSubmitSuccess(true);
         setIsSubmitting(false);
+        trackLeadConversion("Project Detail Form", { projectName: project?.title });
         // Clear fields
         setFormName("");
         setFormEmail("");
@@ -4082,14 +4084,34 @@ export default function ProjectDetailView({ slug, onNavigate }: ProjectDetailVie
               </div>
             ))}
           </div>
-          <div className="bg-white rounded-2xl p-4 border border-amber-200 flex items-center justify-between gap-4 flex-wrap">
+          <div className="bg-gradient-to-r from-amber-50/80 to-orange-50/80 rounded-2xl p-4 sm:p-5 border border-amber-200 flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <p className="text-sm font-bold text-slate-800">Không chắc mình có đủ điều kiện không?</p>
-              <p className="text-xs text-slate-500 mt-0.5">Gọi ngay để được kiểm tra miễn phí trong 5 phút</p>
+              <p className="text-sm font-bold text-slate-800">Không chắc mình có đủ điều kiện mua căn hộ này không?</p>
+              <p className="text-xs text-slate-600 mt-0.5">Kiểm tra trực tuyến trong 30 giây hoặc tải trọn bộ hồ sơ Mẫu 01, 02, 04 miễn phí</p>
             </div>
-            <a href="tel:0937587438" className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-colors flex items-center gap-2">
-              <Phone className="w-4 h-4" /> 0937 587 438
-            </a>
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent("open-eligibility-quiz", { detail: { project: project?.title || "K-Home Đồng Nai" } }))}
+                className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              >
+                <Sparkles className="w-3.5 h-3.5" /> Trắc Nghiệm (30s)
+              </button>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent("open-download-docs", { detail: { project: project?.title || "K-Home Đồng Nai" } }))}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              >
+                <FileText className="w-3.5 h-3.5" /> Tải Mẫu Đơn &amp; Giá
+              </button>
+              <a 
+                href="tel:0937587438" 
+                onClick={() => trackPhoneClick("0937587438", `Project ${project?.title}`)}
+                className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-colors flex items-center gap-1.5"
+              >
+                <Phone className="w-3.5 h-3.5" /> 0937 587 438
+              </a>
+            </div>
           </div>
         </section>
       )}

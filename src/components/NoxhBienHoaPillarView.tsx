@@ -5,6 +5,7 @@ import {
   DollarSign, Calculator, Send, Check, AlertTriangle, Sparkles,
   Info, Compass, ShieldAlert, CheckSquare, Clock, Download
 } from "lucide-react";
+import { trackLeadConversion } from "../utils/analytics";
 
 interface Props {
   onNavigate: (path: string) => void;
@@ -12,6 +13,8 @@ interface Props {
 
 export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
   const [formData, setFormData] = useState({ name: "", phone: "", project: "K-Home CityView Hố Nai", note: "" });
 
   useEffect(() => {
@@ -19,10 +22,37 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.phone) return;
-    setFormSubmitted(true);
+    if (!formData.phone.trim()) return;
+    setFormSubmitting(true);
+    setFormError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name.trim() || "Khách quan tâm NOXH Biên Hòa",
+          phone: formData.phone.trim(),
+          projectSlug: "k-home-cityview-ho-nai",
+          projectName: formData.project,
+          message: `Đăng ký từ Cẩm nang NOXH Biên Hòa 2026. Dự án chọn: ${formData.project}. ${formData.note || "Nhận bảng giá và hỗ trợ hồ sơ Mẫu 01, 02, 04."}`,
+        }),
+      });
+
+      if (res.ok) {
+        setFormSubmitted(true);
+        trackLeadConversion("Pillar NOXH Bien Hoa", { project: formData.project });
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setFormError(data.error || "Gửi yêu cầu không thành công. Vui lòng gọi Hotline.");
+      }
+    } catch {
+      setFormError("Không thể kết nối đến máy chủ. Vui lòng gọi trực tiếp hotline 0937 587 438.");
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -1041,6 +1071,11 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
+                {formError && (
+                  <div className="p-2.5 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg font-medium">
+                    {formError}
+                  </div>
+                )}
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">Họ và tên của bạn</label>
                   <input 
@@ -1078,10 +1113,17 @@ export default function NoxhBienHoaPillarView({ onNavigate }: Props) {
                 </div>
                 <button 
                   type="submit" 
-                  className="cursor-pointer w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5"
+                  disabled={formSubmitting}
+                  className="cursor-pointer w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5 disabled:opacity-60"
                 >
-                  <Send className="w-4 h-4" />
-                  Gửi Yêu Cầu Tư Vấn Ngay
+                  {formSubmitting ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Gửi Yêu Cầu Tư Vấn Ngay
+                    </>
+                  )}
                 </button>
                 <div className="text-[11px] text-slate-400 text-center">
                   🔒 Thông tin của bạn được cam kết bảo mật 100%

@@ -1,10 +1,13 @@
 import React, { useState, useEffect, lazy, Suspense, useCallback, useMemo, startTransition } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Phone, Mail, ArrowUp, Send, X } from "lucide-react";
+import { Phone, Mail, ArrowUp, Send, X, FileText, Sparkles } from "lucide-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./components/HomeView";
+import DocumentDownloadModal from "./components/DocumentDownloadModal";
+import EligibilityQuizModal from "./components/EligibilityQuizModal";
+import { trackPhoneClick, trackZaloClick, trackMessengerClick, trackLeadConversion } from "./utils/analytics";
 
 // Lazy load các view ít dùng hơn
 const ProjectsView       = lazy(() => import("./components/ProjectsView"));
@@ -346,6 +349,29 @@ export default function App() {
   const [contactSuccess, setContactSuccess] = useState(false);
   const [contactError, setContactError] = useState("");
 
+  // Lead Magnet & Eligibility Quiz Modals
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showQuizModal, setShowQuizModal] = useState(false);
+  const [activeModalProject, setActiveModalProject] = useState("K-Home CityView Hố Nai");
+
+  useEffect(() => {
+    const handleOpenDocs = (e: any) => {
+      if (e.detail?.project) setActiveModalProject(e.detail.project);
+      setShowDownloadModal(true);
+    };
+    const handleOpenQuiz = (e: any) => {
+      if (e.detail?.project) setActiveModalProject(e.detail.project);
+      setShowQuizModal(true);
+    };
+
+    window.addEventListener("open-download-docs", handleOpenDocs);
+    window.addEventListener("open-eligibility-quiz", handleOpenQuiz);
+    return () => {
+      window.removeEventListener("open-download-docs", handleOpenDocs);
+      window.removeEventListener("open-eligibility-quiz", handleOpenQuiz);
+    };
+  }, []);
+
   const handleContactSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setContactError("");
@@ -369,6 +395,7 @@ export default function App() {
       });
       if (!res.ok) throw new Error();
       setContactSuccess(true);
+      trackLeadConversion("App Floating Modal", { projectName: "Tư vấn chung" });
       setContactName(""); setContactPhone(""); setContactEmail(""); setContactMessage("");
     } catch {
       setContactError("Có lỗi xảy ra. Vui lòng thử lại.");
@@ -401,6 +428,7 @@ export default function App() {
         <div className="fixed bottom-6 right-4 z-[9999] flex flex-col gap-3">
           <a
             href="tel:0937587438"
+            onClick={() => trackPhoneClick("0937587438", "Floating Widget")}
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
             title="Gọi Hotline: 0937587438"
           >
@@ -414,6 +442,7 @@ export default function App() {
             href="https://zalo.me/0937587438"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackZaloClick("Floating Widget")}
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-[#0068FF] text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
             title="Liên hệ Zalo"
           >
@@ -428,6 +457,7 @@ export default function App() {
             href="https://m.me/61592416756280"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackMessengerClick("Floating Widget")}
             className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
             title="Chat Messenger"
           >
@@ -439,7 +469,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Left-side buttons: Contact popup + Scroll to top */}
+      {/* Left-side buttons: Quiz + Download Docs + Contact popup + Scroll to top */}
       {!isAdmin && (
         <div className="fixed bottom-6 left-4 lg:left-16 z-[9999] flex flex-col gap-3">
           {/* Scroll to top */}
@@ -453,6 +483,32 @@ export default function App() {
               Lên đầu trang
             </span>
             <ArrowUp className="w-5 h-5" />
+          </button>
+
+          {/* Trắc nghiệm điều kiện NOXH 30s */}
+          <button
+            onClick={() => setShowQuizModal(true)}
+            aria-label="Trắc nghiệm điều kiện NOXH"
+            title="Trắc nghiệm điều kiện NOXH"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+          >
+            <span className="absolute left-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-left pointer-events-none border border-slate-800">
+              Kiểm tra điều kiện NOXH (30s)
+            </span>
+            <Sparkles className="w-5 h-5" />
+          </button>
+
+          {/* Tải hồ sơ Mẫu 01, 02, 04 */}
+          <button
+            onClick={() => setShowDownloadModal(true)}
+            aria-label="Tải bộ hồ sơ NOXH"
+            title="Tải bộ hồ sơ NOXH"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+          >
+            <span className="absolute left-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-lg whitespace-nowrap opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 origin-left pointer-events-none border border-slate-800">
+              Tải Mẫu Đơn &amp; Bảng Giá 2026
+            </span>
+            <FileText className="w-5 h-5" />
           </button>
 
           {/* Contact popup trigger */}
@@ -592,6 +648,19 @@ export default function App() {
           </div>
         </div>
       )}
+      {/* Modal Tải Biểu Mẫu NOXH & Bảng Giá */}
+      <DocumentDownloadModal
+        isOpen={showDownloadModal}
+        onClose={() => setShowDownloadModal(false)}
+        defaultProject={activeModalProject}
+      />
+
+      {/* Modal Trắc Nghiệm Điều Kiện NOXH */}
+      <EligibilityQuizModal
+        isOpen={showQuizModal}
+        onClose={() => setShowQuizModal(false)}
+        defaultProject={activeModalProject}
+      />
     </div>
   );
 }
