@@ -1,11 +1,11 @@
 export const newsSummary = [
   {
     "id": "n252",
-    "slug": "cap-nhat-tien-do-k-home-avenue-nhon-trach-thang-11-2026-thi-cong-tang-4",
-    "title": "🏗️ Tiến Độ K-Home Avenue Nhơn Trạch Mới Nhất Tháng 11/2026: Vươn Cao Tầng 4, Handong E&C Thi Công Thần Tốc Đón Đầu Sân Bay Long Thành",
+    "slug": "cap-nhat-tien-do-k-home-avenue-nhon-trach-thang-11-2026-thi-cong-tang-6",
+    "title": "🏗️ Tiến Độ K-Home Avenue Nhơn Trạch Mới Nhất Tháng 11/2026: Vươn Cao Tầng 6, Handong E&C Thi Công Thần Tốc Đón Đầu Sân Bay Long Thành",
     "date": "2026-11-16",
-    "excerpt": "Cập nhật thực địa tiến độ xây dựng dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch mới nhất giữa tháng 11/2026: Khối công trình đã vươn cao đến tầng 4, tổng thầu Handong E&C vận hành cần trục tháp lắp dựng cốp pha cốt thép sàn thần tốc, hạ tầng mặt tiền đại lộ 25C và cổng chào Kim Oanh Group khang trang chuẩn bị bước vào giai đoạn cất nóc.",
-    "image": "/k-home-avenue/tien-do-thuc-te/tien-do-k-home-avenue-thi-cong-tang-4-toan-canh.jpg",
+    "excerpt": "Cập nhật thực địa tiến độ xây dựng dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch mới nhất giữa tháng 11/2026: Khối công trình đã vươn cao đến tầng 6 (chính thức đạt 50% chiều cao tòa nhà 12 tầng), tổng thầu Handong E&C vận hành cần trục tháp lắp dựng cốp pha cốt thép sàn thần tốc, hạ tầng mặt tiền đại lộ 25C và cổng chào Kim Oanh Group khang trang chuẩn bị bước vào giai đoạn cất nóc.",
+    "image": "/k-home-avenue/tien-do-thuc-te/tien-do-k-home-avenue-thi-cong-tang-6-toan-canh.jpg",
     "category": "Tiến độ thi công",
     "project": "avenue"
   },
