@@ -1,5 +1,15 @@
 export const newsSummary = [
   {
+    "id": "n252",
+    "slug": "cap-nhat-tien-do-k-home-avenue-nhon-trach-thang-11-2026-thi-cong-tang-4",
+    "title": "🏗️ Tiến Độ K-Home Avenue Nhơn Trạch Mới Nhất Tháng 11/2026: Vươn Cao Tầng 4, Handong E&C Thi Công Thần Tốc Đón Đầu Sân Bay Long Thành",
+    "date": "2026-11-16",
+    "excerpt": "Cập nhật thực địa tiến độ xây dựng dự án Nhà Ở Xã Hội K-Home Avenue Nhơn Trạch mới nhất giữa tháng 11/2026: Khối công trình đã vươn cao đến tầng 4, tổng thầu Handong E&C vận hành cần trục tháp lắp dựng cốp pha cốt thép sàn thần tốc, hạ tầng mặt tiền đại lộ 25C và cổng chào Kim Oanh Group khang trang chuẩn bị bước vào giai đoạn cất nóc.",
+    "image": "/k-home-avenue/tien-do-thuc-te/tien-do-k-home-avenue-thi-cong-tang-4-toan-canh.jpg",
+    "category": "Tiến độ thi công",
+    "project": "avenue"
+  },
+  {
     "id": "n250",
     "slug": "pho-thu-tuong-pham-gia-tuc-kiem-tra-san-bay-long-thanh-giao-thong-ket-noi-k-home-avenue",
     "title": "✈️ Phó Thủ Tướng Thường Trực Chính Phủ Phạm Gia Túc Kiểm Tra Dự Án Sân Bay Long Thành Và Các Tuyến Giao Thông Kết Nối: Đòn Bẩy Đột Phá Cho K-Home Avenue Nhơn Trạch",

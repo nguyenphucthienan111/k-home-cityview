@@ -55,10 +55,10 @@ export function parseNewsData() {
   return entries;
 }
 
-/** Extract giá trị của field dạng `fieldName: "value"` trong một block text */
+/** Extract giá trị của field dạng `fieldName: "value"` hoặc `"fieldName": "value"` trong một block text */
 function extractField(block, fieldName) {
-  // Hỗ trợ cả `"..."` và không có nội dung đặc biệt
-  const re = new RegExp(`${fieldName}:\\s*"([^"]*)"`, "s");
+  // Hỗ trợ cả `"fieldName":` và `fieldName:`
+  const re = new RegExp(`["']?${fieldName}["']?\\s*:\\s*"([^"]*)"`, "s");
   const m  = block.match(re);
   return m ? m[1] : null;
 }

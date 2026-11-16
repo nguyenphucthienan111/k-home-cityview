@@ -656,7 +656,7 @@ export default function NewsDetailView({ slug, onNavigate }: NewsDetailViewProps
                         preload="auto"
                         className="w-full h-full object-cover"
                         style={{ display: "block" }}
-                        poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : undefined}
+                        poster={videoUrl.includes("cloudinary") ? videoUrl.replace("/upload/", "/upload/so_0,w_1200,c_scale/") + ".jpg" : (article.image || undefined)}
                       />
                     </div>
                   )}
